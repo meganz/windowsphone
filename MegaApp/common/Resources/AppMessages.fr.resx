@@ -303,7 +303,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
     <comment>Title of the dialog displayed when the process/request remove definitely an item from the rubbish bin failed - (String as short as possible).</comment>
   </data>
   <data name="RemoveNodeSuccess" xml:space="preserve">
-    <value>Élément supprimé avec succès</value>
+    <value>L’élément a été supprimé avec succès</value>
     <comment>Message of the dialog displayed when remove successfully a node definitely from the rubbish bin.</comment>
   </data>
   <data name="RemoveNodeSuccess_Title" xml:space="preserve">
@@ -582,9 +582,7 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
     <comment>Title of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type - (String as short as possible).</comment>
   </data>
   <data name="NoDownloadLocationSelected" xml:space="preserve">
-    <value>Vous n'avez pas sélectionné d'emplacement de téléchargement par défaut pour vos fichiers.
-
-Pour poursuivre le téléchargement, veuillez sélectionner un dossier de destination ou aller dans les paramètres afin de définir votre emplacement de téléchargement par défaut.</value>
+    <value>Vous n’avez pas sélectionné d’emplacement de téléchargement par défaut pour vos fichiers. Pour poursuivre le téléchargement, veuillez sélectionner un dossier de destination ou aller dans les paramètres afin de définir votre emplacement de téléchargement par défaut.</value>
     <comment>Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</comment>
   </data>
   <data name="PrepareFileForUploadFailed" xml:space="preserve">
@@ -631,7 +629,7 @@ Veuillez plutôt essayer d'enregistrer ou de copier le fichier dans la mémoire 
     <comment>Message of the dialog displayed when a user are trying to create or change a PIN lock code and the introduced code is too short (less than 4 digits). Try to preserve the PIN uppercase word.</comment>
   </data>
   <data name="PinLockTooShort_Title" xml:space="preserve">
-    <value>NIP trop court</value>
+    <value>Le NIP est trop court</value>
     <comment>Title of the dialog displayed when a user are trying to create or change a PIN lock code and the introduced code is too short (less than 4 digits). Try to preserve the PIN uppercase word - (String as short as possible).</comment>
   </data>
   <data name="CacheCleared" xml:space="preserve">
@@ -690,7 +688,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process to select files failed - (String as short as possible).</comment>
   </data>
   <data name="MalformedEmail" xml:space="preserve">
-    <value>Adresse courriel mal formée. Veuillez ressayer.</value>
+    <value>L’adresse courriel est mal formée. Veuillez ressayer.</value>
     <comment>Message of the dialog displayed when the user types a malformed email address.</comment>
   </data>
   <data name="WrongEmailPasswordLogin" xml:space="preserve">
@@ -760,7 +758,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the user is trying to open an invalid shortcut - (String as short as possible).</comment>
   </data>
   <data name="CreditCardStoreFailed" xml:space="preserve">
-    <value>Les informations de la carte de crédit sont incorrectes. La carte de crédit ne sera pas facturée.</value>
+    <value>Les informations liées à la carte de crédit sont incorrectes. La carte de crédit ne sera pas facturée.</value>
     <comment>Message of the dialog displayed when the process/request to store a user credit card failed.</comment>
   </data>
   <data name="CreditCardStoreFailed_Title" xml:space="preserve">
@@ -804,7 +802,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when required fields for cancel subscription are not filled in.</comment>
   </data>
   <data name="UpgradeAccountFailed" xml:space="preserve">
-    <value>Échec d'opération. Votre carte de crédit n'a pas été facturée.</value>
+    <value>L'opération a échoué. Votre carte de crédit n'a pas été facturée.</value>
     <comment>Message of the dialog displayed when the process/request to upgrade an user account failed.</comment>
   </data>
   <data name="UpgradeAccountFailed_Title" xml:space="preserve">
@@ -892,7 +890,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</co
     <comment>Title of the dialog displayed when the account is updated (upgraded or downgraded).</comment>
   </data>
   <data name="SSLKeyError" xml:space="preserve">
-    <value>Notre certificat SSL/TLS ne peut pas être vérifié. Vous pourriez être affecté par une attaque de l'homme du milieu.</value>
+    <value>Notre certificat SSL/TLS ne peut pas être vérifié. Vous pourriez être la cible d'une attaque de l'intercepteur.</value>
     <comment>Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
   </data>
   <data name="SSLKeyError_Title" xml:space="preserve">
@@ -985,7 +983,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the user is trying to perform any online action without an active Internet connection.</comment>
   </data>
   <data name="AM_CancelSubscription" xml:space="preserve">
-    <value>Vous allez annuler votre abonnement MEGA.Si nous pouvons faire quoi que ce soit pour vous faire changer d'idée, n'hésitez pas à nous le dire.</value>
+    <value>Vous êtes sur le point d'annuler votre abonnement MEGA. Si nous pouvons faire quoi que ce soit pour vous faire changer d'idée, n'hésitez pas à nous le dire.</value>
     <comment>Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</comment>
   </data>
   <data name="FolderUnauthorizedAccess" xml:space="preserve">
@@ -1125,14 +1123,14 @@ Preserve the [{0}] code because is for include the error code or the error messa
   </data>
   <data name="AM_FileLinkUnavailable" xml:space="preserve">
     <value>Cela pourrait être causé par les raisons suivantes :
-- Le fichier a été retiré à cause d'une violation des conditions générales d'utilisation ou de la politique d'utilisation acceptable.
+- Le fichier a été retiré en raison du non-respect des conditions générales d'utilisation ou de la politique d'utilisation acceptable.
 - L'URL est invalide. Le lien auquel vous essayez d'accéder n'existe pas.
 - Le fichier a été supprimé par l'utilisateur.</value>
     <comment>Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</comment>
   </data>
   <data name="AM_FolderLinkUnavailable" xml:space="preserve">
     <value>Cela pourrait être causé par les raisons suivantes :
-- Le lien de dossier a été retiré à cause d'une violation des conditions générales d'utilisation ou de la politique d'utilisation acceptable.
+- Le lien de dossier a été retiré en raison du non-respect des conditions générales d'utilisation ou de la politique d'utilisation acceptable.
 - L'URL est invalide. Le lien auquel vous essayez d'accéder n'existe pas.
 - Le lien de dossier a été supprimé par l'utilisateur.</value>
     <comment>Error message shown when a folder link doesn't exist. Keep "\n"</comment>
@@ -1277,7 +1275,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Title of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</comment>
   </data>
   <data name="AM_AssociatedUserAccountTerminated" xml:space="preserve">
-    <value>Le compte qui a créé ce lien à été annulé à la suite de plusieurs violations de nos conditions générales d'utilisation.</value>
+    <value>Le compte qui a créé ce lien a été annulé en raison du non-respect répété de nos conditions générales d'utilisation.</value>
     <comment>Error message shown when you open a file/folder link (or other shared resource) and it's no longer available because the the associated user account has been terminated due to multiple violations of our Terms of Service.</comment>
   </data>
   <data name="AM_DownloadFailed_Title" xml:space="preserve">
@@ -1305,7 +1303,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Message of the dialog displayed when a user try to confirm a MEGA account but the confirm link is incomplete because it has less characters than it should (probably because the user hasn't copied and pasted the entire link).</comment>
   </data>
   <data name="AM_NewSignUpInvalidLink" xml:space="preserve">
-    <value>Le lien que vous utilisez pour une nouvelle adhésion est invalide.</value>
+    <value>Le lien que vous utilisez pour une nouvelle inscription est invalide.</value>
     <comment>Message of the warning dialog shown when the user tries to make a new sign up using an invalid link (#newsignup).</comment>
   </data>
   <data name="AM_AccountBlocked" xml:space="preserve">
@@ -1397,5 +1395,21 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="AM_ShareLinkFailed_Title" xml:space="preserve">
     <value>Erreur de partage du lien</value>
     <comment>Title of the dialog displayed when fails the process/request to share a file/folder link.</comment>
+  </data>
+  <data name="AM_InternalNodeFailed" xml:space="preserve">
+    <value>Échec d’ouverture du fichier ou dossier interne du lien. Veuillez ressayer.</value>
+    <comment>Title of the dialog displayed when fail trying to open a link of an internal node.</comment>
+  </data>
+  <data name="AM_InternalNodeFailed_Title" xml:space="preserve">
+    <value>Échec d’ouverture du fichier ou dossier interne</value>
+    <comment>Title of the dialog displayed when fail trying to open a link of an internal node - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ClearCacheFailed" xml:space="preserve">
+    <value>Échec de nettoyage du cache. Veuillez ressayer.</value>
+    <comment>Message of the dialog displayed when the process to clear cache failed.</comment>
+  </data>
+  <data name="AM_ClearCacheFailed_Title" xml:space="preserve">
+    <value>Échec de nettoyage du cache</value>
+    <comment>Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</comment>
   </data>
 </root>

@@ -350,7 +350,7 @@
     <comment>Text placed just before app version number into the 'about' page.</comment>
   </data>
   <data name="AskDownloadLocationText" xml:space="preserve">
-    <value>Toujours demander l'emplacement des téléchargements</value>
+    <value>Toujours demander l'emplacement de téléchargement</value>
     <comment>Text placed just before a switch button (on/off) into the 'settings' page indicating if the app should ask always for a download location or use a default download location.</comment>
   </data>
   <data name="Available" xml:space="preserve">
@@ -374,7 +374,7 @@
     <comment>Label for any 'Capture' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="ChangePinLock" xml:space="preserve">
-    <value>Changer de NIP</value>
+    <value>Changer le NIP de verrouillage</value>
     <comment>Label for any 'Change PIN Lock' button, link, text, title, etc. Try to preserve the PIN uppercase word. - (String as short as possible).</comment>
   </data>
   <data name="CleanUpTransfers" xml:space="preserve">
@@ -382,7 +382,7 @@
     <comment>Label for any 'Clean up transfers' button, link, text, title, etc. - (String as short as possible, MAX 15 characters).</comment>
   </data>
   <data name="ClearCache" xml:space="preserve">
-    <value>nettoyer le cache</value>
+    <value>vider le cache</value>
     <comment>Label for any 'Clean cache' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="ClearSelection" xml:space="preserve">
@@ -418,11 +418,11 @@
     <comment>Text placed just before the amount free space into the 'my account' page - (String as short as possible).</comment>
   </data>
   <data name="LargestSortOption" xml:space="preserve">
-    <value>du plus grand</value>
+    <value>Du plus grand</value>
     <comment>Label for the menu option to sort the nodes of the cloud drive in descending order by size (from bigger to smaller) - (String as short as possible).</comment>
   </data>
   <data name="MakePinLock" xml:space="preserve">
-    <value>Créer un NIP</value>
+    <value>Créer un NIP de verrouillage</value>
     <comment>Text placed just before the form to 'Make a PIN Lock'. Try to preserve the PIN uppercase word. - (String as short as possible).</comment>
   </data>
   <data name="Monthly" xml:space="preserve">
@@ -438,7 +438,7 @@
     <comment>Label for the menu option to sort the nodes of the cloud drive in descending order by name - (String as short as possible).</comment>
   </data>
   <data name="NewestSortOption" xml:space="preserve">
-    <value>du plus récent</value>
+    <value>Du plus récent</value>
     <comment>Label for the menu option to sort the nodes of the cloud drive in descending order by date (from newer to older) - (String as short as possible).</comment>
   </data>
   <data name="NoDataToShow" xml:space="preserve">
@@ -450,7 +450,7 @@
     <comment>Label shown when the app has no information about the subscription plans to show into 'subscription' page - (String as short as possible).</comment>
   </data>
   <data name="OldestSortOption" xml:space="preserve">
-    <value>du plus ancien</value>
+    <value>Du plus ancien</value>
     <comment>Label for the menu option to sort the nodes of the cloud drive in ascending order by size (from smaller to bigger) - (String as short as possible).</comment>
   </data>
   <data name="PauseAll" xml:space="preserve">
@@ -462,7 +462,7 @@
     <comment>Label for any 'Privacy policy' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="SmallestSortOption" xml:space="preserve">
-    <value>du plus petit</value>
+    <value>Du plus petit</value>
     <comment>Label for the menu option to sort the nodes of the cloud drive in ascending order by size (from smaller to bigger) - (String as short as possible).</comment>
   </data>
   <data name="SortByMenuTitle" xml:space="preserve">
@@ -570,7 +570,7 @@
     <comment>Label '50 GB of free space.' for the second part of the sentence 'register now and get 50 GB of free space.', to build this sentence in two colors into the init tour page. Don't forget to place '.' at the end of the string.</comment>
   </data>
   <data name="InitTourSpace_Title" xml:space="preserve">
-    <value>Espace MEGA</value>
+    <value>L’espace MEGA</value>
     <comment>Label for the title of the init tour page dedicated to the space. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</comment>
   </data>
   <data name="InitTourSpeed1" xml:space="preserve">
@@ -739,7 +739,7 @@ Preserve the {0} code because is for include the name/type of the selected plan 
     <comment>Label to indicate the user that is needed select a membership (monthly or annualy) for upgrade his account.</comment>
   </data>
   <data name="SettingsShort" xml:space="preserve">
-    <value>Paramètres</value>
+    <value>Réglages</value>
     <comment>Label abreviated for any 'Settings' button, link, text, title, etc. - (String as short as possible - MAX 10 characteres).</comment>
   </data>
   <data name="State" xml:space="preserve">
@@ -1243,5 +1243,56 @@ Keep the code {1} because is for include currency in runtime.</comment>
   <data name="UI_NoCompletedTransfers" xml:space="preserve">
     <value>Aucun transfert terminé</value>
     <comment>Label for the background of an empty completed transfers page - (String as short as possible).</comment>
+  </data>
+  <data name="UI_AgreeTermsOfService" xml:space="preserve">
+    <value>J’accepte les conditions générales d'utilisation</value>
+    <comment>Text placed just after a checkbox to indicate that user is agree with the 'Terms of Service' into the 'create account' page.</comment>
+  </data>
+  <data name="UI_ConfirmPassword" xml:space="preserve">
+    <value>Confirmer le mot de passe</value>
+    <comment>Label for any 'Confirm password' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_Email" xml:space="preserve">
+    <value>Adresse courriel</value>
+    <comment>Label for any 'Email' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_FirstName" xml:space="preserve">
+    <value>Prénom</value>
+    <comment>Label for any 'First name' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_Password" xml:space="preserve">
+    <value>Mot de passe</value>
+    <comment>Label for any 'Password' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_ConfirmPinLock" xml:space="preserve">
+    <value>Confirmer le NIP de verrouillage</value>
+    <comment>Label for any 'Confirm PIN lock' button, link, text, title, etc. - (String as short as possible).
+Preserve the PIN uppercase word.</comment>
+  </data>
+  <data name="UI_PinLock" xml:space="preserve">
+    <value>NIP de verrouillage</value>
+    <comment>Label for any 'PIN Lock' button, link, text, title, etc. - (String as short as possible).
+Try to preserve the PIN uppercase word.</comment>
+  </data>
+  <data name="UI_MEGA_SDK_Version" xml:space="preserve">
+    <value>Version du kit SDK MEGA</value>
+    <comment>Label for any 'MEGA SDK version' button, link, text, title, etc. Preserve the "MEGA SDK" in uppercase - (String as short as possible).</comment>
+  </data>
+  <data name="UI_NewPinLock" xml:space="preserve">
+    <value>Nouveau NIP de verrouillage</value>
+    <comment>Label for any 'New PIN lock' button, link, text, title, etc. - (String as short as possible).
+Preserve the PIN uppercase word.</comment>
+  </data>
+  <data name="UI_NewPassword" xml:space="preserve">
+    <value>Nouveau mot de passe</value>
+    <comment>Label for any 'New password' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_LastName" xml:space="preserve">
+    <value>Nom</value>
+    <comment>Label for any 'Last name' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_ViewTermsOfService" xml:space="preserve">
+    <value>Consulter ici les conditions générales d'utilisation</value>
+    <comment>Text used as a link to view the 'Terms of Service' into the 'create account' page.</comment>
   </data>
 </root>

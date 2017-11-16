@@ -121,7 +121,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/GetLinkFailed_Title" translate="yes" space="preserve">
           <source>Link creation failed</source>
-          <target state="translated">فشل الحصول علي الرابط</target>
+          <target state="translated">من المستحيل الحصول على الرابط</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to get a link to a node failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/GetPreviewFailed" translate="yes" space="preserve">
@@ -245,7 +245,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
         </trans-unit>
         <trans-unit id="Resx/RemoveNodeSuccess" translate="yes" space="preserve">
           <source>Item successfully removed</source>
-          <target state="translated">عنصر تم إزالته بنجاح</target>
+          <target state="translated">تم حذف البند بنجاح</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when remove successfully a node definitely from the rubbish bin.</note>
         </trans-unit>
         <trans-unit id="Resx/RemoveNodeSuccess_Title" translate="yes" space="preserve">
@@ -597,9 +597,7 @@ Preserve the {0} code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/NoDownloadLocationSelected" translate="yes" space="preserve">
           <source>You have not selected a default download location for your files.To proceed with the download, please select a destination folder or go to settings in order to set up your default download location.</source>
-          <target state="translated">لم تقم بتحديد الموقع الافتراضي لتحميل الملفات. 
-
-للاستمرار في التحميل، يرجى تحديد مجلد وجهة أو الذهاب إلى الإعدادات من أجل إنشاء موقع للتنزيل الافتراضي.</target>
+          <target state="translated">You have not selected a default download location for your files.To proceed with the download, please select a destination folder or go to settings in order to set up your default download location.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</note>
         </trans-unit>
         <trans-unit id="Resx/PrepareFileForUploadFailed" translate="yes" space="preserve">
@@ -632,7 +630,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException" translate="yes" space="preserve">
           <source>You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?
 Please try to save/copy the file to your device's internal memory instead.</source>
-          <target state="needs-review-translation">ليس لديك الإذن لنسخ نوعية هذا الملف للمجلد الوجهة. هل تحاول حفظ/نسخ ملف غير مدعوم لبطاقة الذاكرة؟
+          <target state="translated">ليس لديك الإذن لنسخ نوعية هذا الملف للمجلد الوجهة. هل تحاول حفظ/نسخ ملف غير مدعوم لبطاقة الذاكرة؟
 الرجاء المحاولة لحفظ/نسخ الملف إلى ذاكرتك الداخلية بدلا من الخارجية</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</note>
         </trans-unit>
@@ -1276,22 +1274,26 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - The file has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The file has been deleted by the user.</source>
-          <target state="needs-review-translation">This could be due to the following reasons:
-- The file has been removed because of a ToS/AUP violation.
-- Invalid URL – the link you are trying to access does not exist.
-- The file has been deleted by the user.</target>
+          <target state="needs-review-translation">قد يرجع ذلك إلى الأسباب التالية:
+
+- تمت إزالة الملف بسبب انتهاك ToS/AUP.
+- رابط غير موجود - الرابط الذي تحاول الدخول إليه غير موجود.
+- تم حذف الملف من قبل المستخدم.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_FolderLinkUnavailable" translate="yes" space="preserve">
           <source>This could be due to the following reasons:
 - The folder link has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The folder link has been deleted by the user.</source>
-          <target state="needs-review-translation">This could be due to the following reasons:
-- The folder link has been removed because of a ToS/AUP violation.
-- Invalid URL – the link you are trying to access does not exist.
-- The folder link has been deleted by the user.</target>
+          <target state="needs-review-translation">قد يرجع ذلك إلى الأسباب التالية:
+
+- تمت إزالة رابط المجلد بسبب انتهاك ToS/AUP.
+- رابط غير موجود - الرابط الذي تحاول الدخول إليه غير موجود.
+- تم حذف رابط المجلد من قبل المستخدم.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when a folder link doesn't exist. Keep "\n"</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_LinkUnavailableTitle" translate="yes" space="preserve">
           <source>Unavailable link</source>
@@ -1439,7 +1441,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseValidationFailed" translate="yes" space="preserve">
           <source>Your purchase of a MEGA subscription has not passed validation at our licence server. On restart of this app we will retry to validate your subscription licences. Please contact MEGA support if the error continues.</source>
-          <target state="needs-review-translation">عملية شراء الاشتراك من MEGA لم يجتز صحة التحقق لدى شهادات الخادم. بإعادة تشغيل التطبيق سنحاول ثانية من صحة التحقق لشهادات الاشتراك. الرجاء التواصل مع الدعم الخاص ب MEGA إن استمر هذا الخطأ.</target>
+          <target state="translated">عملية شراء الاشتراك من MEGA لم يجتز صحة التحقق لدى شهادات الخادم. بإعادة تشغيل التطبيق سنحاول ثانية من صحة التحقق لشهادات الاشتراك. الرجاء التواصل مع الدعم الخاص ب MEGA إن استمر هذا الخطأ.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseValidationFailed_Title" translate="yes" space="preserve">
@@ -1531,7 +1533,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_InternalNodeNotFound" translate="yes" space="preserve">
           <source>The file/folder of the link that you are trying to open was not found. You are probably logged in to a different account. Please, log in to the correct account and try again.</source>
-          <target state="translated">The file/folder of the link that you are trying to open was not found. You are probably logged in to a different account. Please, log in to the correct account and try again.</target>
+          <target state="translated">لم يتم العثور على ملف / مجلد الرابط الذي تحاول فتحه. ربما تكون مسجل الدخول إلى حساب مختلف. الرجاء تسجيل الدخول إلى الحساب الصحيح والمحاولة مرة أخرى.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when trying to open a link of an internal node and this node is not found in the account in which the user is logged in.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_InternalNodeNotFound_Title" translate="yes" space="preserve">
@@ -1541,7 +1543,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_TransferOverquotaWarning" translate="yes" space="preserve">
           <source>Your queued transfer exceeds the current transfer quota available for your account and may therefore be interrupted.</source>
-          <target state="translated">Your queued transfer exceeds the current transfer quota available for your account and may therefore be interrupted.</target>
+          <target state="translated">تتجاوز عمليات النقل في قائمة الانتظار حصة التحويل الحالية المتاحة لحسابك، وبالتالي قد يتم قطعها.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user exceeds the transfer quota limits of the account (transfer overquota error).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_TransferOverquotaWarning_Title" translate="yes" space="preserve">
@@ -1561,17 +1563,17 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_ViewContactDetailsFailed" translate="yes" space="preserve">
           <source>Failed to view the contact details. Please try again later.</source>
-          <target state="translated">Failed to view the contact details. Please try again later.</target>
+          <target state="translated">فشل في عرض تفاصيل جهة الاتصال. الرجاء معاودة المحاولة في وقت لاحق.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to view a contact details failed.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ViewContactDetailsFailed_Title" translate="yes" space="preserve">
           <source>Contact details failed</source>
-          <target state="translated">Contact details failed</target>
+          <target state="translated">فشل في تفاصيل جهة الاتصال</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to view a contact details failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShowUploadOptionsFailed" translate="yes" space="preserve">
           <source>Failed to show the upload options. Please try again later.</source>
-          <target state="translated">Failed to show the upload options. Please try again later.</target>
+          <target state="translated">فشل في عرض خيارات التحميل. الرجاء معاودة المحاولة في وقت لاحق.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to show the upload options failed.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShowUploadOptionsFailed_Title" translate="yes" space="preserve">
@@ -1581,43 +1583,43 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_SaveLogFile" translate="yes" space="preserve">
           <source>Do you want to save the log file in an external location to use it later?</source>
-          <target state="translated">Do you want to save the log file in an external location to use it later?</target>
+          <target state="translated">هل تريد حفظ ملف السجل في موقع خارجي لاستخدامه لاحقا؟</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_SaveLogFile_Title" translate="yes" space="preserve">
           <source>Save the log file</source>
-          <target state="translated">Save the log file</target>
+          <target state="translated">احفظ ملف السجل </target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShareLinkFailed" translate="yes" space="preserve">
           <source>Failed to share the file/folder link. Please try again.</source>
-          <target state="translated">Failed to share the file/folder link. Please try again.</target>
+          <target state="translated">فشل في مشاركة رابط الملف / المجلد. حاول مرة اخرى.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to share a file/folder link.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShareLinkFailed_Title" translate="yes" space="preserve">
           <source>Error sharing link</source>
-          <target state="translated">Error sharing link</target>
+          <target state="translated">خطأ في مشاركة الرابط</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to share a file/folder link.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_InternalNodeFailed_Title" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/AM_InternalNodeFailed" translate="yes" space="preserve">
+          <source>Failed to open the internal file/folder of the link. Please try again.</source>
+          <target state="translated">Failed to open the internal file/folder of the link. Please try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fail trying to open a link of an internal node.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_InternalNodeFailed_Title" translate="yes" space="preserve">
           <source>Failed to open the internal file/folder</source>
-          <target state="new">Failed to open the internal file/folder</target>
+          <target state="translated">Failed to open the internal file/folder</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fail trying to open a link of an internal node - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_ClearCacheFailed_Title" translate="yes" xml:space="preserve">
-          <source>Clear cache failed</source>
-          <target state="new">Clear cache failed</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_ClearCacheFailed" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/AM_ClearCacheFailed" translate="yes" space="preserve">
           <source>Failed to clear cache. Please try again.</source>
-          <target state="new">Failed to clear cache. Please try again.</target>
+          <target state="translated">Failed to clear cache. Please try again.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to clear cache failed.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_InternalNodeFailed" translate="yes" xml:space="preserve">
-          <source>Failed to open the internal file/folder of the link. Please try again.</source>
-          <target state="new">Failed to open the internal file/folder of the link. Please try again.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fail trying to open a link of an internal node.</note>
+        <trans-unit id="Resx/AM_ClearCacheFailed_Title" translate="yes" space="preserve">
+          <source>Clear cache failed</source>
+          <target state="translated">Clear cache failed</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>

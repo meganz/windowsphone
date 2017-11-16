@@ -209,7 +209,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the process/request to get a link to a node failed.</comment>
   </data>
   <data name="GetLinkFailed_Title" xml:space="preserve">
-    <value>生成連接失敗</value>
+    <value>如法獲得連接</value>
     <comment>Title of the dialog displayed when the process/request to get a link to a node failed - (String as short as possible).</comment>
   </data>
   <data name="GetPreviewFailed" xml:space="preserve">
@@ -304,7 +304,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
     <comment>Title of the dialog displayed when the process/request remove definitely an item from the rubbish bin failed - (String as short as possible).</comment>
   </data>
   <data name="RemoveNodeSuccess" xml:space="preserve">
-    <value>成功刪除檔案</value>
+    <value>項目已刪除</value>
     <comment>Message of the dialog displayed when remove successfully a node definitely from the rubbish bin.</comment>
   </data>
   <data name="RemoveNodeSuccess_Title" xml:space="preserve">
@@ -583,9 +583,7 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
     <comment>Title of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type - (String as short as possible).</comment>
   </data>
   <data name="NoDownloadLocationSelected" xml:space="preserve">
-    <value>您尚未為您的檔案選擇預設下載位置。
-
-若要繼續進行下載，請先選擇目標資料夾，或至設定中指定您的預設下載位置。</value>
+    <value>您尚未為檔案選擇預設下載位置。要繼續下載，請選擇一個目標資料夾，或至設定頁面以設置預設下載位置。</value>
     <comment>Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</comment>
   </data>
   <data name="PrepareFileForUploadFailed" xml:space="preserve">
@@ -1046,7 +1044,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 Preserve the {0} and ({1}) codes because is for include the maximum reliable download number and the precise number of nodes to be downloaded in runtime.</comment>
   </data>
   <data name="AM_CancelSubscriptionConfirmation" xml:space="preserve">
-    <value>感謝您的反饋！您確定要取消您的MEGA訂購嗎？</value>
+    <value>感謝您的建議！您確定要取消您的MEGA訂購嗎？</value>
     <comment>Message of the dialog displayed when a user is trying to cancel a subscription. This sentence is for give thanks to the user for the feedback sent during the cancellation process and asking for confirmation to do it.</comment>
   </data>
   <data name="AM_ImportFileFailedNoErrorCode" xml:space="preserve">
@@ -1399,5 +1397,21 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="AM_ShareLinkFailed_Title" xml:space="preserve">
     <value>無法分享連結</value>
     <comment>Title of the dialog displayed when fails the process/request to share a file/folder link.</comment>
+  </data>
+  <data name="AM_InternalNodeFailed" xml:space="preserve">
+    <value>無法打開該連結的內部檔案/ 資料夾。請再試一次。</value>
+    <comment>Title of the dialog displayed when fail trying to open a link of an internal node.</comment>
+  </data>
+  <data name="AM_InternalNodeFailed_Title" xml:space="preserve">
+    <value>Failed to open the internal file/folder</value>
+    <comment>Title of the dialog displayed when fail trying to open a link of an internal node - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ClearCacheFailed" xml:space="preserve">
+    <value>Failed to clear cache. Please try again.</value>
+    <comment>Message of the dialog displayed when the process to clear cache failed.</comment>
+  </data>
+  <data name="AM_ClearCacheFailed_Title" xml:space="preserve">
+    <value>Clear cache failed</value>
+    <comment>Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</comment>
   </data>
 </root>

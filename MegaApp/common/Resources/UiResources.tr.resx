@@ -350,7 +350,7 @@
     <comment>Text placed just before app version number into the 'about' page.</comment>
   </data>
   <data name="AskDownloadLocationText" xml:space="preserve">
-    <value>İndirme konumunu her zaman sor</value>
+    <value>İndirme yerini her zaman sor</value>
     <comment>Text placed just before a switch button (on/off) into the 'settings' page indicating if the app should ask always for a download location or use a default download location.</comment>
   </data>
   <data name="Available" xml:space="preserve">
@@ -610,7 +610,7 @@
     <comment>Label for any 'Sort' button, link, text, etc. - (String as short as possible).</comment>
   </data>
   <data name="ClearRubbishBin" xml:space="preserve">
-    <value>Çöp kutusunu boşalt</value>
+    <value>Çöp Kutusunu Boşalt</value>
     <comment>Label for any 'Empty rubbish' button, link, text, etc. - (String as short as possible).</comment>
   </data>
   <data name="Ok" xml:space="preserve">
@@ -642,7 +642,7 @@
     <comment>Label for any 'Security' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Back" xml:space="preserve">
-    <value>Önceki</value>
+    <value>Geri</value>
     <comment>Label for any 'Back' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Dismiss" xml:space="preserve">
@@ -666,7 +666,7 @@
     <comment>Label to indicate the user that is needed choose a renewal period for upgrade his account.</comment>
   </data>
   <data name="City" xml:space="preserve">
-    <value>Şehir</value>
+    <value>İl</value>
     <comment>Label for any 'City' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Country" xml:space="preserve">
@@ -1193,7 +1193,7 @@ Keep the code {1} because is for include currency in runtime.</comment>
     <comment>Label for the state of a download transfer when is finished - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStateDownloading" xml:space="preserve">
-    <value>İndiriliyor: %[X]</value>
+    <value>İndiriliyor...</value>
     <comment>Label for the state of a transfer when is being downloading - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStateError" xml:space="preserve">
@@ -1243,5 +1243,56 @@ Keep the code {1} because is for include currency in runtime.</comment>
   <data name="UI_NoCompletedTransfers" xml:space="preserve">
     <value>Tamamlanan aktarma yok</value>
     <comment>Label for the background of an empty completed transfers page - (String as short as possible).</comment>
+  </data>
+  <data name="UI_AgreeTermsOfService" xml:space="preserve">
+    <value>Hizmet Şartları'nı kabul ediyorum</value>
+    <comment>Text placed just after a checkbox to indicate that user is agree with the 'Terms of Service' into the 'create account' page.</comment>
+  </data>
+  <data name="UI_ConfirmPassword" xml:space="preserve">
+    <value>Parolayı onayla</value>
+    <comment>Label for any 'Confirm password' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_Email" xml:space="preserve">
+    <value>Eposta</value>
+    <comment>Label for any 'Email' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_FirstName" xml:space="preserve">
+    <value>Ad</value>
+    <comment>Label for any 'First name' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_Password" xml:space="preserve">
+    <value>Şifre</value>
+    <comment>Label for any 'Password' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_ConfirmPinLock" xml:space="preserve">
+    <value>PIN kilidini onayla</value>
+    <comment>Label for any 'Confirm PIN lock' button, link, text, title, etc. - (String as short as possible).
+Preserve the PIN uppercase word.</comment>
+  </data>
+  <data name="UI_PinLock" xml:space="preserve">
+    <value>PIN Kilidi</value>
+    <comment>Label for any 'PIN Lock' button, link, text, title, etc. - (String as short as possible).
+Try to preserve the PIN uppercase word.</comment>
+  </data>
+  <data name="UI_MEGA_SDK_Version" xml:space="preserve">
+    <value>MEGA SDK sürümü</value>
+    <comment>Label for any 'MEGA SDK version' button, link, text, title, etc. Preserve the "MEGA SDK" in uppercase - (String as short as possible).</comment>
+  </data>
+  <data name="UI_NewPinLock" xml:space="preserve">
+    <value>Yeni PIN kilidi</value>
+    <comment>Label for any 'New PIN lock' button, link, text, title, etc. - (String as short as possible).
+Preserve the PIN uppercase word.</comment>
+  </data>
+  <data name="UI_NewPassword" xml:space="preserve">
+    <value>Yeni parola</value>
+    <comment>Label for any 'New password' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_LastName" xml:space="preserve">
+    <value>Soyad</value>
+    <comment>Label for any 'Last name' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_ViewTermsOfService" xml:space="preserve">
+    <value>Hizmet Şartlarını burada görüntüle</value>
+    <comment>Text used as a link to view the 'Terms of Service' into the 'create account' page.</comment>
   </data>
 </root>

@@ -209,7 +209,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the process/request to get a link to a node failed.</comment>
   </data>
   <data name="GetLinkFailed_Title" xml:space="preserve">
-    <value>Resgate de link falhou</value>
+    <value>Impossível pegar o link</value>
     <comment>Title of the dialog displayed when the process/request to get a link to a node failed - (String as short as possible).</comment>
   </data>
   <data name="GetPreviewFailed" xml:space="preserve">
@@ -582,9 +582,7 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
     <comment>Title of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type - (String as short as possible).</comment>
   </data>
   <data name="NoDownloadLocationSelected" xml:space="preserve">
-    <value>Você não selecionou um local de download padrão para seus arquivos.
-
-Para prosseguir com o download, por favor selecione uma pasta de destino ou ir para definições, a fim de configurar o local de download padrão.</value>
+    <value>Você não selecionou nenhum destino de download padrão para os seus arquivos. Para continuar com o download, selecione uma pasta de destino ou vá para as configurações para definir o seu destino de download padrão.</value>
     <comment>Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</comment>
   </data>
   <data name="PrepareFileForUploadFailed" xml:space="preserve">
@@ -1351,7 +1349,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when trying to open a link of an internal node and this node is not found in the account in which the user is logged in - (String as short as possible).</comment>
   </data>
   <data name="AM_TransferOverquotaWarning" xml:space="preserve">
-    <value>Sua transferência em fila excede a atual cota de transferência disponível para sua conta e, portanto, pode ser interrompida.</value>
+    <value>A sua transferência em fila excede a atual cota de transferência disponível para seu endereço IP e, portanto, pode ser interrompida.</value>
     <comment>Message of the dialog displayed when a user exceeds the transfer quota limits of the account (transfer overquota error).</comment>
   </data>
   <data name="AM_TransferOverquotaWarning_Title" xml:space="preserve">
@@ -1397,5 +1395,21 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="AM_ShareLinkFailed_Title" xml:space="preserve">
     <value>Erro ao compartilhar o link</value>
     <comment>Title of the dialog displayed when fails the process/request to share a file/folder link.</comment>
+  </data>
+  <data name="AM_InternalNodeFailed" xml:space="preserve">
+    <value>Falha ao abrir o arquivo/pasta do link. Por favor, tente novamente.</value>
+    <comment>Title of the dialog displayed when fail trying to open a link of an internal node.</comment>
+  </data>
+  <data name="AM_InternalNodeFailed_Title" xml:space="preserve">
+    <value>Failed to open the internal file/folder</value>
+    <comment>Title of the dialog displayed when fail trying to open a link of an internal node - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ClearCacheFailed" xml:space="preserve">
+    <value>Falha ao limpar o cache. Por favor, tente novamente.</value>
+    <comment>Message of the dialog displayed when the process to clear cache failed.</comment>
+  </data>
+  <data name="AM_ClearCacheFailed_Title" xml:space="preserve">
+    <value>Falha ao limpar o cache.</value>
+    <comment>Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</comment>
   </data>
 </root>

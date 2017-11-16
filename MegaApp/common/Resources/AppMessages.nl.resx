@@ -209,7 +209,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the process/request to get a link to a node failed.</comment>
   </data>
   <data name="GetLinkFailed_Title" xml:space="preserve">
-    <value>Verkrijgen van koppeling is mislukt</value>
+    <value>Onmogelijk om de koppeling te krijgen</value>
     <comment>Title of the dialog displayed when the process/request to get a link to a node failed - (String as short as possible).</comment>
   </data>
   <data name="GetPreviewFailed" xml:space="preserve">
@@ -303,7 +303,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
     <comment>Title of the dialog displayed when the process/request remove definitely an item from the rubbish bin failed - (String as short as possible).</comment>
   </data>
   <data name="RemoveNodeSuccess" xml:space="preserve">
-    <value>Item succesvol verwijderd</value>
+    <value>Bestand succesvol verwijderd</value>
     <comment>Message of the dialog displayed when remove successfully a node definitely from the rubbish bin.</comment>
   </data>
   <data name="RemoveNodeSuccess_Title" xml:space="preserve">
@@ -583,9 +583,7 @@ Handeling niet toegestaan, u zult het opslag limiet van van uw rekening overschr
     <comment>Title of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type - (String as short as possible).</comment>
   </data>
   <data name="NoDownloadLocationSelected" xml:space="preserve">
-    <value>U heeft geen standaard download locatie voor uw bestanden geselecteerd.
-
-Om verder te gaan met downloaden, selecteert u een doelmap of ga naar instellingen om uw standaard downloadlocatie in te stellen.</value>
+    <value>U heeft geen standaard download locatie geselecteerd voor uw bestanden. Om door te gaan met de download, selecteer een bestemmings-map of ga naar instellingen om uw standaard download locatie in te stellen.</value>
     <comment>Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</comment>
   </data>
   <data name="PrepareFileForUploadFailed" xml:space="preserve">
@@ -611,8 +609,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException" xml:space="preserve">
-    <value>You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?
-Please try to save/copy the file to your device's internal memory instead.</value>
+    <value>U heeft geen toestemming om dit bestandstype te kopiëren naar de locatie map. Probeert u een bestand vanuit een type SD kaart die niet ondersteund wordt op te slaan/kopiëren?
+Probeer in plaats daarvan het bestand op te slaan/kopiëren naar uw apparaat's interne geheugen</value>
     <comment>Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException_Title" xml:space="preserve">
@@ -1277,7 +1275,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Title of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</comment>
   </data>
   <data name="AM_AssociatedUserAccountTerminated" xml:space="preserve">
-    <value>De account die deze koppeling gecreëerd heeft is beëindigd door meerdere overtredingen van onze Gebruikersvoorwaarden.</value>
+    <value>De account die deze koppeling gecreëerd heeft is beëindigd door meerdere overtredingen van onze Algemene Voorwaarden.</value>
     <comment>Error message shown when you open a file/folder link (or other shared resource) and it's no longer available because the the associated user account has been terminated due to multiple violations of our Terms of Service.</comment>
   </data>
   <data name="AM_DownloadFailed_Title" xml:space="preserve">
@@ -1355,7 +1353,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when a user exceeds the transfer quota limits of the account (transfer overquota error).</comment>
   </data>
   <data name="AM_TransferOverquotaWarning_Title" xml:space="preserve">
-    <value>Uitgeputte overdracht tegoed</value>
+    <value>Verminderde overdracht tegoed</value>
     <comment>Message of the dialog displayed when a user exceeds the transfer quota limits of the account (transfer overquota error) - (String as short as possible).</comment>
   </data>
   <data name="AM_CancelDownloadsQuestion" xml:space="preserve">
@@ -1383,11 +1381,11 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to show the upload options failed - (String as short as possible).</comment>
   </data>
   <data name="AM_SaveLogFile" xml:space="preserve">
-    <value>Do you want to save the log file in an external location to use it later?</value>
+    <value>Wilt u het logbestand opslaan in een externe locatie om het later te gebruiken?</value>
     <comment>Message of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app.</comment>
   </data>
   <data name="AM_SaveLogFile_Title" xml:space="preserve">
-    <value>Save the log file</value>
+    <value>Het logbestand opslaan</value>
     <comment>Title of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app - (String as short as possible).</comment>
   </data>
   <data name="AM_ShareLinkFailed" xml:space="preserve">
@@ -1397,5 +1395,21 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="AM_ShareLinkFailed_Title" xml:space="preserve">
     <value>Fout delende koppeling</value>
     <comment>Title of the dialog displayed when fails the process/request to share a file/folder link.</comment>
+  </data>
+  <data name="AM_InternalNodeFailed" xml:space="preserve">
+    <value>Mislukt om het interne bestand/map van de koppeling te openen. Probeer nogmaals.</value>
+    <comment>Title of the dialog displayed when fail trying to open a link of an internal node.</comment>
+  </data>
+  <data name="AM_InternalNodeFailed_Title" xml:space="preserve">
+    <value>Mislukt om het interne bestand/folder te openen.</value>
+    <comment>Title of the dialog displayed when fail trying to open a link of an internal node - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ClearCacheFailed" xml:space="preserve">
+    <value>Mislukt om cache te wissen. Probeer nogmaals.</value>
+    <comment>Message of the dialog displayed when the process to clear cache failed.</comment>
+  </data>
+  <data name="AM_ClearCacheFailed_Title" xml:space="preserve">
+    <value>Wis cache mislukt</value>
+    <comment>Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</comment>
   </data>
 </root>

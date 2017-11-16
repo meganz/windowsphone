@@ -266,7 +266,7 @@
     <comment>Text placed into the 'acknowledgements' page introducing the list of acknowledgements.</comment>
   </data>
   <data name="RubbishBinName" xml:space="preserve">
-    <value>פח אשפה</value>
+    <value>פח מחזור</value>
     <comment>Label for any 'Rubbish bin' button, link, text, etc. - (String as short as possible).</comment>
   </data>
   <data name="Off" xml:space="preserve">
@@ -350,7 +350,7 @@
     <comment>Text placed just before app version number into the 'about' page.</comment>
   </data>
   <data name="AskDownloadLocationText" xml:space="preserve">
-    <value>שאל תמיד למיקום ההורדה</value>
+    <value>תמיד שאל על מיקום ההורדה</value>
     <comment>Text placed just before a switch button (on/off) into the 'settings' page indicating if the app should ask always for a download location or use a default download location.</comment>
   </data>
   <data name="Available" xml:space="preserve">
@@ -362,7 +362,7 @@
     <comment>Label for any 'Bandwidth' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Cache" xml:space="preserve">
-    <value>זכרון מטמון</value>
+    <value>cache</value>
     <comment>Label for any 'Cache' (cache memory) button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="CancelAll" xml:space="preserve">
@@ -382,7 +382,7 @@
     <comment>Label for any 'Clean up transfers' button, link, text, title, etc. - (String as short as possible, MAX 15 characters).</comment>
   </data>
   <data name="ClearCache" xml:space="preserve">
-    <value>נקה זכרון מטמון</value>
+    <value>clear cache</value>
     <comment>Label for any 'Clean cache' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="ClearSelection" xml:space="preserve">
@@ -514,7 +514,7 @@
     <comment>Label for any 'Select folder' button, link, text, title, etc. - (String as short as possible, MAX 14 characters).</comment>
   </data>
   <data name="About" xml:space="preserve">
-    <value>הודות</value>
+    <value>אודות</value>
     <comment>Label for any 'About' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Pause" xml:space="preserve">
@@ -610,7 +610,7 @@
     <comment>Label for any 'Sort' button, link, text, etc. - (String as short as possible).</comment>
   </data>
   <data name="ClearRubbishBin" xml:space="preserve">
-    <value>רוקן פח אשפה</value>
+    <value>רוקן את האשפתון</value>
     <comment>Label for any 'Empty rubbish' button, link, text, etc. - (String as short as possible).</comment>
   </data>
   <data name="Ok" xml:space="preserve">
@@ -642,7 +642,7 @@
     <comment>Label for any 'Security' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Back" xml:space="preserve">
-    <value>חזרה</value>
+    <value>חזור</value>
     <comment>Label for any 'Back' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Dismiss" xml:space="preserve">
@@ -1193,7 +1193,7 @@ Keep the code {1} because is for include currency in runtime.</comment>
     <comment>Label for the state of a download transfer when is finished - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStateDownloading" xml:space="preserve">
-    <value>מוריד [X]%</value>
+    <value>Downloading...</value>
     <comment>Label for the state of a transfer when is being downloading - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStateError" xml:space="preserve">
@@ -1243,5 +1243,56 @@ Keep the code {1} because is for include currency in runtime.</comment>
   <data name="UI_NoCompletedTransfers" xml:space="preserve">
     <value>אין העברות שהושלמו</value>
     <comment>Label for the background of an empty completed transfers page - (String as short as possible).</comment>
+  </data>
+  <data name="UI_AgreeTermsOfService" xml:space="preserve">
+    <value>I agree with the Terms of Service</value>
+    <comment>Text placed just after a checkbox to indicate that user is agree with the 'Terms of Service' into the 'create account' page.</comment>
+  </data>
+  <data name="UI_ConfirmPassword" xml:space="preserve">
+    <value>Confirm password</value>
+    <comment>Label for any 'Confirm password' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_Email" xml:space="preserve">
+    <value>אימייל</value>
+    <comment>Label for any 'Email' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_FirstName" xml:space="preserve">
+    <value>שם פרטי</value>
+    <comment>Label for any 'First name' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_Password" xml:space="preserve">
+    <value>סיסמא</value>
+    <comment>Label for any 'Password' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_ConfirmPinLock" xml:space="preserve">
+    <value>Confirm PIN lock</value>
+    <comment>Label for any 'Confirm PIN lock' button, link, text, title, etc. - (String as short as possible).
+Preserve the PIN uppercase word.</comment>
+  </data>
+  <data name="UI_PinLock" xml:space="preserve">
+    <value>נעילת קוד</value>
+    <comment>Label for any 'PIN Lock' button, link, text, title, etc. - (String as short as possible).
+Try to preserve the PIN uppercase word.</comment>
+  </data>
+  <data name="UI_MEGA_SDK_Version" xml:space="preserve">
+    <value>גרסת SDK של MEGA</value>
+    <comment>Label for any 'MEGA SDK version' button, link, text, title, etc. Preserve the "MEGA SDK" in uppercase - (String as short as possible).</comment>
+  </data>
+  <data name="UI_NewPinLock" xml:space="preserve">
+    <value>New PIN lock</value>
+    <comment>Label for any 'New PIN lock' button, link, text, title, etc. - (String as short as possible).
+Preserve the PIN uppercase word.</comment>
+  </data>
+  <data name="UI_NewPassword" xml:space="preserve">
+    <value>New password</value>
+    <comment>Label for any 'New password' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_LastName" xml:space="preserve">
+    <value>שם משפחה</value>
+    <comment>Label for any 'Last name' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_ViewTermsOfService" xml:space="preserve">
+    <value>View Terms of Service here</value>
+    <comment>Text used as a link to view the 'Terms of Service' into the 'create account' page.</comment>
   </data>
 </root>

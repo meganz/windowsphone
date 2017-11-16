@@ -209,7 +209,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the process/request to get a link to a node failed.</comment>
   </data>
   <data name="GetLinkFailed_Title" xml:space="preserve">
-    <value>生成连接失败</value>
+    <value>如法获得连接</value>
     <comment>Title of the dialog displayed when the process/request to get a link to a node failed - (String as short as possible).</comment>
   </data>
   <data name="GetPreviewFailed" xml:space="preserve">
@@ -303,7 +303,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
     <comment>Title of the dialog displayed when the process/request remove definitely an item from the rubbish bin failed - (String as short as possible).</comment>
   </data>
   <data name="RemoveNodeSuccess" xml:space="preserve">
-    <value>成功删除文件</value>
+    <value>项目已删除</value>
     <comment>Message of the dialog displayed when remove successfully a node definitely from the rubbish bin.</comment>
   </data>
   <data name="RemoveNodeSuccess_Title" xml:space="preserve">
@@ -582,7 +582,7 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
     <comment>Title of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type - (String as short as possible).</comment>
   </data>
   <data name="NoDownloadLocationSelected" xml:space="preserve">
-    <value>您尚未为您的文件选择预设下载位置。若要继续进行下载，请先选择目标文件夹，或至设定中指定您的预设下载位置。</value>
+    <value>您尚未为文件选择默认的下载位置。要继续下载，请选择目标文件夹或转到设置，以设置默认的下载位置。</value>
     <comment>Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</comment>
   </data>
   <data name="PrepareFileForUploadFailed" xml:space="preserve">
@@ -608,8 +608,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException" xml:space="preserve">
-    <value>You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?
-Please try to save/copy the file to your device's internal memory instead.</value>
+    <value>您没有将此文件类型复制到目标文件夹的权限。您是否要将不支持类型的文件储存/复制到SD卡中？请尝试将文件储存/复制到您的设备的内部记忆体中。</value>
     <comment>Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException_Title" xml:space="preserve">
@@ -1041,7 +1040,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 Preserve the {0} and ({1}) codes because is for include the maximum reliable download number and the precise number of nodes to be downloaded in runtime.</comment>
   </data>
   <data name="AM_CancelSubscriptionConfirmation" xml:space="preserve">
-    <value>感谢您的反馈！您确定要取消您的MEGA订购吗？</value>
+    <value>感谢您的建议！您确定要取消您的MEGA订购吗？</value>
     <comment>Message of the dialog displayed when a user is trying to cancel a subscription. This sentence is for give thanks to the user for the feedback sent during the cancellation process and asking for confirmation to do it.</comment>
   </data>
   <data name="AM_ImportFileFailedNoErrorCode" xml:space="preserve">
@@ -1121,21 +1120,15 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Alert title shown when you have written a decryption key not valid - (String as short as possible).</comment>
   </data>
   <data name="AM_FileLinkUnavailable" xml:space="preserve">
-    <value>该连接已失效，可能的原因： 
-- 因ToS / AUP违规，该链接已被删除。 
-- 无效的网址– 您尝试存取的链接并不存在。 
-- 该文件的上传者已将此链接删除。</value>
+    <value>文件链接不存在之可能原因： - 因ToS / AUP违规，故该文件链接已被删除。 - 无效的网址– 您尝试存取的链接并不存在。 - 该使用者已将文件链接删除。</value>
     <comment>Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</comment>
   </data>
   <data name="AM_FolderLinkUnavailable" xml:space="preserve">
-    <value>该连接已失效，可能的原因： 
-- 因ToS / AUP违规，该链接已被删除。 
-- 无效的网址– 您尝试存取的链接并不存在。 
-- 该文件夹的上传者已将此链接删除。</value>
+    <value>文件夹链接不存在之可能原因： - 因ToS / AUP违规，故该文件夹链接已被删除。 - 无效的网址– 您尝试存取的链接并不存在。 - 该使用者已将文件夹链接删除。</value>
     <comment>Error message shown when a folder link doesn't exist. Keep "\n"</comment>
   </data>
   <data name="AM_LinkUnavailableTitle" xml:space="preserve">
-    <value>无效的链接</value>
+    <value>不可用的链接</value>
     <comment>Error title shown when you open a file or folder link and it's no longer available - (String as short as possible).</comment>
   </data>
   <data name="AM_OpenLinkFailed" xml:space="preserve">
@@ -1319,7 +1312,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
 Preserve the {0} code because is for include the exact time until the user has to wait.</comment>
   </data>
   <data name="AM_AccountBlocked_Title" xml:space="preserve">
-    <value>帐号锁定</value>
+    <value>帐号被封锁</value>
     <comment>Title of the dialog shown when the user is trying to login and the account has been blocked.</comment>
   </data>
   <data name="AM_ShareFromMegaAppBusy_Message" xml:space="preserve">
@@ -1348,11 +1341,11 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when trying to open a link of an internal node and this node is not found in the account in which the user is logged in - (String as short as possible).</comment>
   </data>
   <data name="AM_TransferOverquotaWarning" xml:space="preserve">
-    <value>您进程中的传输量已超过您帐户目前可用的传输配额，因此传输可能会中断。</value>
+    <value>您进程中的传输量已超过您帐户目前可用的流量，因此传输可能会中断。</value>
     <comment>Message of the dialog displayed when a user exceeds the transfer quota limits of the account (transfer overquota error).</comment>
   </data>
   <data name="AM_TransferOverquotaWarning_Title" xml:space="preserve">
-    <value>传输配额不足</value>
+    <value>流量不足</value>
     <comment>Message of the dialog displayed when a user exceeds the transfer quota limits of the account (transfer overquota error) - (String as short as possible).</comment>
   </data>
   <data name="AM_CancelDownloadsQuestion" xml:space="preserve">
@@ -1380,19 +1373,35 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to show the upload options failed - (String as short as possible).</comment>
   </data>
   <data name="AM_SaveLogFile" xml:space="preserve">
-    <value>Do you want to save the log file in an external location to use it later?</value>
+    <value>要将日志文件储存于外部位置以便稍后使用吗？</value>
     <comment>Message of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app.</comment>
   </data>
   <data name="AM_SaveLogFile_Title" xml:space="preserve">
-    <value>Save the log file</value>
+    <value>储存日志文件</value>
     <comment>Title of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app - (String as short as possible).</comment>
   </data>
   <data name="AM_ShareLinkFailed" xml:space="preserve">
-    <value>分享链接失败，请再试一次。</value>
+    <value>无法分享文件/ 文件夹链接。请再试一次。</value>
     <comment>Message of the dialog displayed when fails the process/request to share a file/folder link.</comment>
   </data>
   <data name="AM_ShareLinkFailed_Title" xml:space="preserve">
-    <value>链接分享错误</value>
+    <value>无法分享链接</value>
     <comment>Title of the dialog displayed when fails the process/request to share a file/folder link.</comment>
+  </data>
+  <data name="AM_InternalNodeFailed" xml:space="preserve">
+    <value>无法打开链接的内部文件/文件夹。请再试一次。</value>
+    <comment>Title of the dialog displayed when fail trying to open a link of an internal node.</comment>
+  </data>
+  <data name="AM_InternalNodeFailed_Title" xml:space="preserve">
+    <value>无法打开内部文件/文件夹</value>
+    <comment>Title of the dialog displayed when fail trying to open a link of an internal node - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ClearCacheFailed" xml:space="preserve">
+    <value>无法清除缓存。请再试一次。</value>
+    <comment>Message of the dialog displayed when the process to clear cache failed.</comment>
+  </data>
+  <data name="AM_ClearCacheFailed_Title" xml:space="preserve">
+    <value>清除缓存失败</value>
+    <comment>Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</comment>
   </data>
 </root>

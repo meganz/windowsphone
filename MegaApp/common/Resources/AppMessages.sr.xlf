@@ -121,7 +121,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/GetLinkFailed_Title" translate="yes" space="preserve">
           <source>Link creation failed</source>
-          <target state="translated">Добијање линка неуспешно</target>
+          <target state="translated">Немогуће добити линк</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to get a link to a node failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/GetPreviewFailed" translate="yes" space="preserve">
@@ -597,9 +597,7 @@ Preserve the {0} code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/NoDownloadLocationSelected" translate="yes" space="preserve">
           <source>You have not selected a default download location for your files.To proceed with the download, please select a destination folder or go to settings in order to set up your default download location.</source>
-          <target state="translated">Нисте изабрали подразумевану локацију за преузимање ваших фајлова.
-
-Да наставите са преузмањем, молимо изаберите дестинацијски фолдер или идите у подешавања да би подесили подразумевану локацију за преузимање.</target>
+          <target state="translated">You have not selected a default download location for your files.To proceed with the download, please select a destination folder or go to settings in order to set up your default download location.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</note>
         </trans-unit>
         <trans-unit id="Resx/PrepareFileForUploadFailed" translate="yes" space="preserve">
@@ -632,7 +630,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException" translate="yes" space="preserve">
           <source>You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?
 Please try to save/copy the file to your device's internal memory instead.</source>
-          <target state="needs-review-translation">You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?
+          <target state="translated">You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?
 Please try to save/copy the file to your device's internal memory instead.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</note>
         </trans-unit>
@@ -1281,6 +1279,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - Invalid URL – the link you are trying to access does not exist.
 - The file has been deleted by the user.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_FolderLinkUnavailable" translate="yes" space="preserve">
           <source>This could be due to the following reasons:
@@ -1292,6 +1291,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - Invalid URL – the link you are trying to access does not exist.
 - The folder link has been deleted by the user.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when a folder link doesn't exist. Keep "\n"</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_LinkUnavailableTitle" translate="yes" space="preserve">
           <source>Unavailable link</source>
@@ -1438,7 +1438,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseValidationFailed" translate="yes" space="preserve">
           <source>Your purchase of a MEGA subscription has not passed validation at our licence server. On restart of this app we will retry to validate your subscription licences. Please contact MEGA support if the error continues.</source>
-          <target state="needs-review-translation">Ваша куповина MEGA претплате није прошла валидацију на нашем серверз лиценца. Приликом поновног покретања ове апликације покушаћемо да валидирамо Ваше лиценце претплате. Молимо контактирајте MEGA подршку ако се грешка настави.</target>
+          <target state="translated">Ваша куповина MEGA претплате није прошла валидацију на нашем серверз лиценца. Приликом поновног покретања ове апликације покушаћемо да валидирамо Ваше лиценце претплате. Молимо контактирајте MEGA подршку ако се грешка настави.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseValidationFailed_Title" translate="yes" space="preserve">
@@ -1598,25 +1598,25 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="translated">Error sharing link</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to share a file/folder link.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_InternalNodeFailed_Title" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/AM_InternalNodeFailed" translate="yes" space="preserve">
+          <source>Failed to open the internal file/folder of the link. Please try again.</source>
+          <target state="translated">Failed to open the internal file/folder of the link. Please try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fail trying to open a link of an internal node.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_InternalNodeFailed_Title" translate="yes" space="preserve">
           <source>Failed to open the internal file/folder</source>
-          <target state="new">Failed to open the internal file/folder</target>
+          <target state="translated">Failed to open the internal file/folder</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fail trying to open a link of an internal node - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_ClearCacheFailed_Title" translate="yes" xml:space="preserve">
-          <source>Clear cache failed</source>
-          <target state="new">Clear cache failed</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_ClearCacheFailed" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/AM_ClearCacheFailed" translate="yes" space="preserve">
           <source>Failed to clear cache. Please try again.</source>
-          <target state="new">Failed to clear cache. Please try again.</target>
+          <target state="translated">Failed to clear cache. Please try again.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to clear cache failed.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_InternalNodeFailed" translate="yes" xml:space="preserve">
-          <source>Failed to open the internal file/folder of the link. Please try again.</source>
-          <target state="new">Failed to open the internal file/folder of the link. Please try again.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fail trying to open a link of an internal node.</note>
+        <trans-unit id="Resx/AM_ClearCacheFailed_Title" translate="yes" space="preserve">
+          <source>Clear cache failed</source>
+          <target state="translated">Clear cache failed</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>

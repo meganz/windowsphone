@@ -186,7 +186,7 @@
     <comment>Label for any 'Next' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Open" xml:space="preserve">
-    <value>Bukan</value>
+    <value>Buka</value>
     <comment>Label for any 'Open' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Preview" xml:space="preserve">
@@ -350,7 +350,7 @@
     <comment>Text placed just before app version number into the 'about' page.</comment>
   </data>
   <data name="AskDownloadLocationText" xml:space="preserve">
-    <value>Selalu tanya untuk download lokasi</value>
+    <value>Selalu tanya lokasi download</value>
     <comment>Text placed just before a switch button (on/off) into the 'settings' page indicating if the app should ask always for a download location or use a default download location.</comment>
   </data>
   <data name="Available" xml:space="preserve">
@@ -514,7 +514,7 @@
     <comment>Label for any 'Select folder' button, link, text, title, etc. - (String as short as possible, MAX 14 characters).</comment>
   </data>
   <data name="About" xml:space="preserve">
-    <value>Tentang</value>
+    <value>Perihal</value>
     <comment>Label for any 'About' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Pause" xml:space="preserve">
@@ -598,7 +598,7 @@
     <comment>Label for any 'Camera Uploads' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Contacts" xml:space="preserve">
-    <value>Kontak</value>
+    <value>Daftar Kontak</value>
     <comment>Label for any 'Contacts' button, link, text, etc. - (String as short as possible).</comment>
   </data>
   <data name="SharedItems" xml:space="preserve">
@@ -610,7 +610,7 @@
     <comment>Label for any 'Sort' button, link, text, etc. - (String as short as possible).</comment>
   </data>
   <data name="ClearRubbishBin" xml:space="preserve">
-    <value>Kosongkan sampah</value>
+    <value>Hapus Sampah</value>
     <comment>Label for any 'Empty rubbish' button, link, text, etc. - (String as short as possible).</comment>
   </data>
   <data name="Ok" xml:space="preserve">
@@ -1193,7 +1193,7 @@ Keep the code {1} because is for include currency in runtime.</comment>
     <comment>Label for the state of a download transfer when is finished - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStateDownloading" xml:space="preserve">
-    <value>Men-download: [X]%</value>
+    <value>Mengunduh...</value>
     <comment>Label for the state of a transfer when is being downloading - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStateError" xml:space="preserve">
@@ -1244,5 +1244,58 @@ Keep the code {1} because is for include currency in runtime.</comment>
   <data name="UI_NoCompletedTransfers" xml:space="preserve">
     <value>Tidak ada transfer selesai</value>
     <comment>Label for the background of an empty completed transfers page - (String as short as possible).</comment>
+  </data>
+  <data name="UI_AgreeTermsOfService" xml:space="preserve">
+    <value>I agree with the Terms of Service</value>
+    <comment>Text placed just after a checkbox to indicate that user is agree with the 'Terms of Service' into the 'create account' page.</comment>
+  </data>
+  <data name="UI_ConfirmPassword" xml:space="preserve">
+    <value>Konfirmasi sandi
+</value>
+    <comment>Label for any 'Confirm password' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_Email" xml:space="preserve">
+    <value>Email</value>
+    <comment>Label for any 'Email' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_FirstName" xml:space="preserve">
+    <value>Nama depan</value>
+    <comment>Label for any 'First name' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_Password" xml:space="preserve">
+    <value>Sandi</value>
+    <comment>Label for any 'Password' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_ConfirmPinLock" xml:space="preserve">
+    <value>Confirm PIN lock</value>
+    <comment>Label for any 'Confirm PIN lock' button, link, text, title, etc. - (String as short as possible).
+Preserve the PIN uppercase word.</comment>
+  </data>
+  <data name="UI_PinLock" xml:space="preserve">
+    <value>PIN Lock</value>
+    <comment>Label for any 'PIN Lock' button, link, text, title, etc. - (String as short as possible).
+Try to preserve the PIN uppercase word.</comment>
+  </data>
+  <data name="UI_MEGA_SDK_Version" xml:space="preserve">
+    <value>Versi MEGA SDK</value>
+    <comment>Label for any 'MEGA SDK version' button, link, text, title, etc. Preserve the "MEGA SDK" in uppercase - (String as short as possible).</comment>
+  </data>
+  <data name="UI_NewPinLock" xml:space="preserve">
+    <value>New PIN lock</value>
+    <comment>Label for any 'New PIN lock' button, link, text, title, etc. - (String as short as possible).
+Preserve the PIN uppercase word.</comment>
+  </data>
+  <data name="UI_NewPassword" xml:space="preserve">
+    <value>Kata sandi baru
+</value>
+    <comment>Label for any 'New password' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_LastName" xml:space="preserve">
+    <value>Nama belakang</value>
+    <comment>Label for any 'Last name' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_ViewTermsOfService" xml:space="preserve">
+    <value>View Terms of Service here</value>
+    <comment>Text used as a link to view the 'Terms of Service' into the 'create account' page.</comment>
   </data>
 </root>
