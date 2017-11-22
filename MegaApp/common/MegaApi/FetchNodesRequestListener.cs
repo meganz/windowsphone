@@ -225,10 +225,21 @@ namespace MegaApp.MegaApi
 
                             Deployment.Current.Dispatcher.BeginInvoke(() =>
                             {
-                                if (node.IsFolder)
-                                    _mainPageViewModel.ActiveFolderView.BrowseToFolder(node);
+                                if (node != null)
+                                {
+                                    if (node.IsFolder)
+                                        _mainPageViewModel.ActiveFolderView.BrowseToFolder(node);
+                                    else
+                                        node.Download(TransfersService.MegaTransfers);
+                                }
                                 else
-                                    node.Download(TransfersService.MegaTransfers);
+                                {
+                                    new CustomMessageDialog(
+                                        AppMessages.AM_InternalNodeNotFound_Title,
+                                        AppMessages.AM_InternalNodeNotFound,
+                                        App.AppInformation,
+                                        MessageDialogButtons.Ok).ShowDialog();
+                                }
                             });
                         }
                         else

@@ -73,17 +73,6 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="translated">Cartella creata</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when create a folder successfully - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/DeleteNodeFailed" translate="yes" space="preserve">
-          <source>Failed to delete item. Please try again [{0}]</source>
-          <target state="translated">Cancellazione dell'oggetto fallita. Per favore, riprova [{0}]</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to delete a node failed.
-Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
-        </trans-unit>
-        <trans-unit id="Resx/DeleteNodeFailed_Title" translate="yes" space="preserve">
-          <source>Deletion failed</source>
-          <target state="translated">Eliminazione fallita</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to delete a node failed - (String as short as possible).</note>
-        </trans-unit>
         <trans-unit id="Resx/DownloadLinkFailed" translate="yes" space="preserve">
           <source>Failed to retrieve a download link. Please try again.</source>
           <target state="translated">Impossibile recuperare un link per il download. Riprova, per favore.</target>
@@ -132,7 +121,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/GetLinkFailed_Title" translate="yes" space="preserve">
           <source>Link creation failed</source>
-          <target state="translated">Creazione link fallita</target>
+          <target state="translated">Impossibile generare il link</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to get a link to a node failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/GetPreviewFailed" translate="yes" space="preserve">
@@ -256,7 +245,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
         </trans-unit>
         <trans-unit id="Resx/RemoveNodeSuccess" translate="yes" space="preserve">
           <source>Item successfully removed</source>
-          <target state="translated">Oggetto rimosso con successo</target>
+          <target state="translated">Item rimosso con successo</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when remove successfully a node definitely from the rubbish bin.</note>
         </trans-unit>
         <trans-unit id="Resx/RemoveNodeSuccess_Title" translate="yes" space="preserve">
@@ -608,9 +597,7 @@ Preserve the {0} code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/NoDownloadLocationSelected" translate="yes" space="preserve">
           <source>You have not selected a default download location for your files.To proceed with the download, please select a destination folder or go to settings in order to set up your default download location.</source>
-          <target state="translated">Non hai selezionato una cartella predefinita per i tuoi download.
-
-Per procedere con il download, per favore seleziona una cartella di destinazione o vai nelle Impostazioni per selezionare una cartella di download predefinita.</target>
+          <target state="translated">Non hai selezionato una cartella di default per i download dei tuoi file. Per procedere con il download, per favore seleziona una cartella di destinazione oppure vai nelle Impostazioni per poter selezionare una cartella di default per i tuoi download.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</note>
         </trans-unit>
         <trans-unit id="Resx/PrepareFileForUploadFailed" translate="yes" space="preserve">
@@ -641,9 +628,10 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException" translate="yes" space="preserve">
-          <source>You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?Please try to save/copy the file to your device's internal memory instead.</source>
-          <target state="needs-review-translation">You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?
-Please try to save/copy the file to your device's internal memory instead.</target>
+          <source>You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?
+Please try to save/copy the file to your device's internal memory instead.</source>
+          <target state="translated">Non hai il permesso di copiare questo formato di file all'interno della cartella di destinazione. Stai provando a salvare/copiare un file di un formato non supportato all'interno di una scheda SD?
+Per favore, prova a salvare/copiare il file all'interno della memoria interna del dispositivo invece.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</note>
         </trans-unit>
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException_Title" translate="yes" space="preserve">
@@ -1448,7 +1436,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseValidationFailed" translate="yes" space="preserve">
           <source>Your purchase of a MEGA subscription has not passed validation at our licence server. On restart of this app we will retry to validate your subscription licences. Please contact MEGA support if the error continues.</source>
-          <target state="needs-review-translation">Il tuo acquisto di una sottoscrizione MEGA non ha superato la validazione al nostro server delle licenze. Al riavvio di quest'app proveremo a validare le tue licenze di sottoscrizione. Per favore, contatta il supporto di MEGA se l'errore continua.</target>
+          <target state="translated">Il tuo acquisto di una sottoscrizione MEGA non ha superato la validazione al nostro server delle licenze. Al riavvio di quest'app proveremo a validare le tue licenze di sottoscrizione. Per favore, contatta il supporto di MEGA se l'errore continua.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseValidationFailed_Title" translate="yes" space="preserve">
@@ -1590,12 +1578,12 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_SaveLogFile" translate="yes" space="preserve">
           <source>Do you want to save the log file in an external location to use it later?</source>
-          <target state="translated">Do you want to save the log file in an external location to use it later?</target>
+          <target state="translated">Vuoi salvare il file log in una posizione esterna per utilizzarlo successivamente?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_SaveLogFile_Title" translate="yes" space="preserve">
           <source>Save the log file</source>
-          <target state="translated">Save the log file</target>
+          <target state="translated">Salva il file log</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShareLinkFailed" translate="yes" space="preserve">
@@ -1607,6 +1595,26 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <source>Error sharing link</source>
           <target state="translated">Errore nella condivisione del link</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to share a file/folder link.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_InternalNodeFailed" translate="yes" space="preserve">
+          <source>Failed to open the internal file/folder of the link. Please try again.</source>
+          <target state="translated">Apertura del file/cartella del link fallita. Per favore, ritenta.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fail trying to open a link of an internal node.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_InternalNodeFailed_Title" translate="yes" space="preserve">
+          <source>Failed to open the internal file/folder</source>
+          <target state="translated">Apertura del file o della cartella fallita</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fail trying to open a link of an internal node - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ClearCacheFailed" translate="yes" space="preserve">
+          <source>Failed to clear cache. Please try again.</source>
+          <target state="translated">Pulizia della memoria cache fallita. Per favore, riprova.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to clear cache failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ClearCacheFailed_Title" translate="yes" space="preserve">
+          <source>Clear cache failed</source>
+          <target state="translated">Pulizia della memoria cache fallita</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>

@@ -8,7 +8,7 @@
       <group id="Resx">
         <trans-unit id="Resx/AgreeTermsOfService" translate="yes" space="preserve">
           <source>You must agree with our Terms of Service</source>
-          <target state="translated">Trebuie să fii de acord cu termenii de utilizare a serviciului nostru</target>
+          <target state="translated">Trebuie să fii de acord cu Termenii de utilizare a serviciului nostru</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user try to create a new MEGA account without accept previously the 'Terms of Service'.</note>
         </trans-unit>
         <trans-unit id="Resx/ConfirmAccountFailed" translate="yes" space="preserve">
@@ -72,17 +72,6 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <source>Folder created</source>
           <target state="translated">Folder creat</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when create a folder successfully - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/DeleteNodeFailed" translate="yes" space="preserve">
-          <source>Failed to delete item. Please try again [{0}]</source>
-          <target state="translated">Eşec la ştergerea elementului. Te rugăm să reîncerci [{0}]</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to delete a node failed.
-Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
-        </trans-unit>
-        <trans-unit id="Resx/DeleteNodeFailed_Title" translate="yes" space="preserve">
-          <source>Deletion failed</source>
-          <target state="translated">Ştergere eşuată</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to delete a node failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/DownloadLinkFailed" translate="yes" space="preserve">
           <source>Failed to retrieve a download link. Please try again.</source>
@@ -608,9 +597,7 @@ Preserve the {0} code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/NoDownloadLocationSelected" translate="yes" space="preserve">
           <source>You have not selected a default download location for your files.To proceed with the download, please select a destination folder or go to settings in order to set up your default download location.</source>
-          <target state="translated">Nu ai selectate o locaţie implicită de descărcare pentru fişierele tale.
-
-Penrtu a continua cu descărcarea, te rugăm să selectezi un folder de destinaţie sau să mergi la setări pentru a configura locaţia implicită de descărcare.</target>
+          <target state="translated">Nu ai selectat o locaţie implicită de descărcare pentru fişierele tale. Pentru a continua cu descărcarea, te rugăm să selectezi un folder de destinaţie sau să mergi la setări pentru a configura locaţia implicită de descărcare.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</note>
         </trans-unit>
         <trans-unit id="Resx/PrepareFileForUploadFailed" translate="yes" space="preserve">
@@ -641,9 +628,10 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException" translate="yes" space="preserve">
-          <source>You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?Please try to save/copy the file to your device's internal memory instead.</source>
-          <target state="needs-review-translation">You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?
-Please try to save/copy the file to your device's internal memory instead.</target>
+          <source>You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?
+Please try to save/copy the file to your device's internal memory instead.</source>
+          <target state="translated">Nu ai permisiunea de a copia acest tip de fişiere în dosarul de destinaţie. Încerci să salvezi/copiezi un fişier de un tip nesuportat pe un card SD?
+Te rugăm să încerci să salvezi/copiezi fişierul în memoria internă a dispozitivului în schimb.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</note>
         </trans-unit>
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException_Title" translate="yes" space="preserve">
@@ -663,12 +651,12 @@ Please try to save/copy the file to your device's internal memory instead.</targ
         </trans-unit>
         <trans-unit id="Resx/CurrentPinLockCodeDoNotMatch" translate="yes" space="preserve">
           <source>Current PIN lock is not correct or does not match</source>
-          <target state="translated">Blocarea prin PIN actuală nu e corectă sau nu se potriveşte</target>
+          <target state="translated">PIN-ul actual nu e corect sau nu se potriveşte</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user is trying to change the PIN lock code and introduces an incorrect code into the field for the current PIN lock code. Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/CurrentPinLockCodeDoNotMatch_Title" translate="yes" space="preserve">
           <source>Current PIN lock no match</source>
-          <target state="translated">Blocarea prin PIN actuală nu se potriveşte</target>
+          <target state="translated">PIN-ul actual nu se potriveşte</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user is trying to change the PIN lock code and introduces an incorrect code into the field for the current PIN lock code - (String as short as possible). Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_RecoveryKeyCopied" translate="yes" space="preserve">
@@ -683,12 +671,12 @@ Please try to save/copy the file to your device's internal memory instead.</targ
         </trans-unit>
         <trans-unit id="Resx/PinLockTooShort" translate="yes" space="preserve">
           <source>PIN lock must be at least four digits</source>
-          <target state="translated">Blocarea prin PIN trebuie să fie de cel puţin 4 cifre</target>
+          <target state="translated">PIN-ul trebuie să fie de cel puţin 4 cifre</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user are trying to create or change a PIN lock code and the introduced code is too short (less than 4 digits). Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/PinLockTooShort_Title" translate="yes" space="preserve">
           <source>PIN lock too short</source>
-          <target state="translated">Blocare prin PIN prea scurtă</target>
+          <target state="translated">PIN-ul prea scurt</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user are trying to create or change a PIN lock code and the introduced code is too short (less than 4 digits). Try to preserve the PIN uppercase word - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CacheCleared" translate="yes" space="preserve">
@@ -912,7 +900,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/UpgradeAccountFailed" translate="yes" space="preserve">
           <source>The operation failed. Your credit card has not been charged.</source>
-          <target state="translated">Operaţia a eşuat. Nu ţi se va retrage nicio sumă de pe cardul de credit.</target>
+          <target state="translated">Operaţia a eşuat. Nu ţi s-a retras nicio sumă de pe cardul de credit.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to upgrade an user account failed.</note>
         </trans-unit>
         <trans-unit id="Resx/UpgradeAccountFailed_Title" translate="yes" space="preserve">
@@ -1286,10 +1274,10 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - The file has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The file has been deleted by the user.</source>
-          <target state="needs-review-translation">This could be due to the following reasons:
-- The file has been removed because of a ToS/AUP violation.
-- Invalid URL – the link you are trying to access does not exist.
-- The file has been deleted by the user.</target>
+          <target state="needs-review-translation">Acest lucru ar putea fi din cauza următoarelor motive:
+- Fişierul a fost eliminat din cauza unei încălcări a ToS/AUP.
+- URL invalid – linkul pe care încerci să-l accesezi nu există.
+- Fişierul a fost şters de către utilizator.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</note>
         </trans-unit>
         <trans-unit id="Resx/AM_FolderLinkUnavailable" translate="yes" space="preserve">
@@ -1297,10 +1285,10 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - The folder link has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The folder link has been deleted by the user.</source>
-          <target state="needs-review-translation">This could be due to the following reasons:
-- The folder link has been removed because of a ToS/AUP violation.
-- Invalid URL – the link you are trying to access does not exist.
-- The folder link has been deleted by the user.</target>
+          <target state="needs-review-translation">Acest lucru ar putea fi din cauza următoarelor motive:
+- Linkul folderului a fost eliminat din cauza unei încălcări a ToS/AUP.
+- URL invalid – linkul pe care încerci să-l accesezi nu există.
+- Linkul folderului a fost şters de către utilizator.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when a folder link doesn't exist. Keep "\n"</note>
         </trans-unit>
         <trans-unit id="Resx/AM_LinkUnavailableTitle" translate="yes" space="preserve">
@@ -1448,7 +1436,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseValidationFailed" translate="yes" space="preserve">
           <source>Your purchase of a MEGA subscription has not passed validation at our licence server. On restart of this app we will retry to validate your subscription licences. Please contact MEGA support if the error continues.</source>
-          <target state="needs-review-translation">Achiziţionarea unui abonament MEGA nu a trecut validarea la serverul nostru de licenţă. La repornirea acestei aplicaţii vom reîncerca să validăm licenţele de abonament. Te rugăm să contactezi suportul MEGA dacă eroarea continuă.</target>
+          <target state="translated">Achiziţionarea unui abonament MEGA nu a trecut validarea la serverul nostru de licenţă. La repornirea acestei aplicaţii vom reîncerca să validăm licenţele de abonament. Te rugăm să contactezi suportul MEGA dacă eroarea continuă.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseValidationFailed_Title" translate="yes" space="preserve">
@@ -1534,13 +1522,13 @@ Preserve the {0} code because is for include the exact time until the user has t
         </trans-unit>
         <trans-unit id="Resx/AM_DownloadPathUnknownError" translate="yes" space="preserve">
           <source>There is an unknown error in the download path. Please try again and if it continues to fail, please contact support@mega.nz. [{0}]</source>
-          <target state="translated">There is an unknown error in the download path. Please try again and if it continues to fail, please contact support@mega.nz. [{0}]</target>
+          <target state="translated">Există o eroare necunoscută în calea de descărcare. Te rugăm să încerci din nou şi dacă continuă să eşueze, contactează support@mega.nz. [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to download a file/folder failed because an unknown error in the download path.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_InternalNodeNotFound" translate="yes" space="preserve">
           <source>The file/folder of the link that you are trying to open was not found. You are probably logged in to a different account. Please, log in to the correct account and try again.</source>
-          <target state="translated">The file/folder of the link that you are trying to open was not found. You are probably logged in to a different account. Please, log in to the correct account and try again.</target>
+          <target state="translated">Fişierul/folderul linkului pe care încerci să îl deschizi nu a fost găsit. Probabil că eşti autentificat într-un cont diferit. Te rugăm să te autentifici în contul corect şi să încerci din nou.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when trying to open a link of an internal node and this node is not found in the account in which the user is logged in.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_InternalNodeNotFound_Title" translate="yes" space="preserve">
@@ -1550,37 +1538,37 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_TransferOverquotaWarning" translate="yes" space="preserve">
           <source>Your queued transfer exceeds the current transfer quota available for your account and may therefore be interrupted.</source>
-          <target state="translated">Your queued transfer exceeds the current transfer quota available for your account and may therefore be interrupted.</target>
+          <target state="translated">Transferul în coadă depăşeşte cota de transfer actuală disponibilă pentru contul tău şi, prin urmare, poate fi întreruptă.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user exceeds the transfer quota limits of the account (transfer overquota error).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_TransferOverquotaWarning_Title" translate="yes" space="preserve">
           <source>Depleted transfer quota</source>
-          <target state="translated">Depleted transfer quota</target>
+          <target state="translated">Cotă de transfer epuizată</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user exceeds the transfer quota limits of the account (transfer overquota error) - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_CancelDownloadsQuestion" translate="yes" space="preserve">
           <source>Are you sure you want to cancel all the pending downloads?</source>
-          <target state="translated">Are you sure you want to cancel all the pending downloads?</target>
+          <target state="translated">Sigur doreşti să anulezi toate descărcările în aşteptare?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user wants to cancel all the pending downloads.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_CancelUploadsQuestion" translate="yes" space="preserve">
           <source>Are you sure you want to cancel all the pending uploads?</source>
-          <target state="translated">Are you sure you want to cancel all the pending uploads?</target>
+          <target state="translated">Sigur doreşti să anulezi toate încărcările în aşteptare?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user wants to cancel all the pending uploads.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ViewContactDetailsFailed" translate="yes" space="preserve">
           <source>Failed to view the contact details. Please try again later.</source>
-          <target state="translated">Failed to view the contact details. Please try again later.</target>
+          <target state="translated">Eşec la vizualizarea detaliilor contactului. Te rugăm să încerci din nou mai târziu.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to view a contact details failed.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ViewContactDetailsFailed_Title" translate="yes" space="preserve">
           <source>Contact details failed</source>
-          <target state="translated">Contact details failed</target>
+          <target state="translated">Detaliile contactului au eşuat</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to view a contact details failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShowUploadOptionsFailed" translate="yes" space="preserve">
           <source>Failed to show the upload options. Please try again later.</source>
-          <target state="translated">Failed to show the upload options. Please try again later.</target>
+          <target state="translated">Eşec la afişarea opţiunilor de încărcare. Te rugăm să încerci din nou mai târziu.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to show the upload options failed.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShowUploadOptionsFailed_Title" translate="yes" space="preserve">
@@ -1590,23 +1578,43 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_SaveLogFile" translate="yes" space="preserve">
           <source>Do you want to save the log file in an external location to use it later?</source>
-          <target state="translated">Do you want to save the log file in an external location to use it later?</target>
+          <target state="translated">Doreşti să salvezi fişierul log într-o locaţie externă pentru a-l folosi mai târziu?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_SaveLogFile_Title" translate="yes" space="preserve">
           <source>Save the log file</source>
-          <target state="translated">Save the log file</target>
+          <target state="translated">Salvează fişierul log</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShareLinkFailed" translate="yes" space="preserve">
           <source>Failed to share the file/folder link. Please try again.</source>
-          <target state="translated">Failed to share the file/folder link. Please try again.</target>
+          <target state="translated">Eşec la partajarea linkului fişierului/folderului. Te rugăm să încerci din nou.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to share a file/folder link.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShareLinkFailed_Title" translate="yes" space="preserve">
           <source>Error sharing link</source>
-          <target state="translated">Error sharing link</target>
+          <target state="translated">Eroare la partajarea linkului</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to share a file/folder link.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_InternalNodeFailed" translate="yes" space="preserve">
+          <source>Failed to open the internal file/folder of the link. Please try again.</source>
+          <target state="translated">Eşec la deschiderea fişierului/folderului intern al linkului. Te rugăm să încerci din nou.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fail trying to open a link of an internal node.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_InternalNodeFailed_Title" translate="yes" space="preserve">
+          <source>Failed to open the internal file/folder</source>
+          <target state="translated">Failed to open the internal file/folder</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fail trying to open a link of an internal node - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ClearCacheFailed" translate="yes" space="preserve">
+          <source>Failed to clear cache. Please try again.</source>
+          <target state="translated">Failed to clear cache. Please try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to clear cache failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ClearCacheFailed_Title" translate="yes" space="preserve">
+          <source>Clear cache failed</source>
+          <target state="translated">Clear cache failed</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>

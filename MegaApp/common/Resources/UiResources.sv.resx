@@ -125,10 +125,6 @@
     <value>Lägg till mapp</value>
     <comment>Label for any 'Add folder' button, link, etc. - (String as short as possible).</comment>
   </data>
-  <data name="AgreeCreateAccount" xml:space="preserve">
-    <value>Jag godkänner</value>
-    <comment>Text placed just before a link labeled 'Term of Service' into the 'create account' page.</comment>
-  </data>
   <data name="AppName" xml:space="preserve">
     <value>MEGA Privacy</value>
     <comment>Label with the application name. Try to preserve uppercase - (NO-TRANSLATION).</comment>
@@ -145,17 +141,9 @@
     <value>bekräfta</value>
     <comment>Label for any 'Confirm' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
-  <data name="ConfirmPasswordWatermark" xml:space="preserve">
-    <value>Bekräfta lösenord</value>
-    <comment>Watermark label for the confirmation password field into 'create account' page or when changing the password  - (String as short as possible).</comment>
-  </data>
   <data name="Copy" xml:space="preserve">
     <value>Kopiera</value>
     <comment>Label for any 'Copy' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
-  <data name="EmailWatermark" xml:space="preserve">
-    <value>din e-mail adress</value>
-    <comment>Watermark label for the e-mail address field when create/confirm account and login - (String as short as possible).</comment>
   </data>
   <data name="EmptyFolder" xml:space="preserve">
     <value>Tom mapp</value>
@@ -198,12 +186,8 @@
     <comment>Label for any 'Next' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Open" xml:space="preserve">
-    <value>Öppen</value>
+    <value>Öppna</value>
     <comment>Label for any 'Open' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
-  <data name="PasswordWatermark" xml:space="preserve">
-    <value>ditt lösenord</value>
-    <comment>Watermark label for the user's password field when create/confirm account and login - (String as short as possible).</comment>
   </data>
   <data name="Preview" xml:space="preserve">
     <value>Förhandsvisning</value>
@@ -234,7 +218,7 @@
     <comment>Text placed into the dialog to type the new name when the user wants to rename a file or folder.</comment>
   </data>
   <data name="Save" xml:space="preserve">
-    <value>Save</value>
+    <value>Spara</value>
     <comment>Label for any 'Save' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Share" xml:space="preserve">
@@ -305,21 +289,6 @@
     <value>Papperskorg</value>
     <comment>Label for the name of the Rubbish bin breadcum root node - (String as short as possible).</comment>
   </data>
-  <data name="ConfirmPinLockWatermark" xml:space="preserve">
-    <value>bekräfta din PIN kod</value>
-    <comment>Watermark label for the confirmation PIN lock field when creating or changing a PIN lock code  - (String as short as possible).
-Try to preserve the PIN uppercase word.</comment>
-  </data>
-  <data name="PinLock" xml:space="preserve">
-    <value>PIN lås</value>
-    <comment>Label for any 'PIN Lock' button, link, text, title, etc. - (String as short as possible).
-Try to preserve the PIN uppercase word.</comment>
-  </data>
-  <data name="PinLockWatermark" xml:space="preserve">
-    <value>din PIN kod</value>
-    <comment>Watermark label for the PIN lock field when introducing, creating or changing a PIN lock code  - (String as short as possible).
-Try to preserve the PIN uppercase word.</comment>
-  </data>
   <data name="No" xml:space="preserve">
     <value>Nej</value>
     <comment>Label for any 'No' button, link, text, title, etc. - (String as short as possible).</comment>
@@ -381,7 +350,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Text placed just before app version number into the 'about' page.</comment>
   </data>
   <data name="AskDownloadLocationText" xml:space="preserve">
-    <value>Fråga alltid efter nedladdningsplats</value>
+    <value>Fråga alltid efter destination</value>
     <comment>Text placed just before a switch button (on/off) into the 'settings' page indicating if the app should ask always for a download location or use a default download location.</comment>
   </data>
   <data name="Available" xml:space="preserve">
@@ -413,7 +382,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for any 'Clean up transfers' button, link, text, title, etc. - (String as short as possible, MAX 15 characters).</comment>
   </data>
   <data name="ClearCache" xml:space="preserve">
-    <value>Rensa cache</value>
+    <value>clear cache</value>
     <comment>Label for any 'Clean cache' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="ClearSelection" xml:space="preserve">
@@ -471,11 +440,6 @@ Try to preserve the PIN uppercase word.</comment>
   <data name="NewestSortOption" xml:space="preserve">
     <value>Senaste</value>
     <comment>Label for the menu option to sort the nodes of the cloud drive in descending order by date (from newer to older) - (String as short as possible).</comment>
-  </data>
-  <data name="NewPinLockWatermark" xml:space="preserve">
-    <value>din nya PIN kod</value>
-    <comment>Watermark label for the new PIN lock field when changing a PIN lock code  - (String as short as possible).
-Try to preserve the PIN uppercase word.</comment>
   </data>
   <data name="NoDataToShow" xml:space="preserve">
     <value>Ingen data visad</value>
@@ -550,7 +514,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for any 'Select folder' button, link, text, title, etc. - (String as short as possible, MAX 14 characters).</comment>
   </data>
   <data name="About" xml:space="preserve">
-    <value>About</value>
+    <value>Om</value>
     <comment>Label for any 'About' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Pause" xml:space="preserve">
@@ -646,7 +610,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for any 'Sort' button, link, text, etc. - (String as short as possible).</comment>
   </data>
   <data name="ClearRubbishBin" xml:space="preserve">
-    <value>Tom papperskorg</value>
+    <value>Töm papperskorgen</value>
     <comment>Label for any 'Empty rubbish' button, link, text, etc. - (String as short as possible).</comment>
   </data>
   <data name="Ok" xml:space="preserve">
@@ -941,7 +905,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
     <comment>Label for any 'Decline' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Delete" xml:space="preserve">
-    <value>Ta bort</value>
+    <value>Radera</value>
     <comment>Label for any 'Delete' button, link, text, label, etc. - (String as short as possible).</comment>
   </data>
   <data name="Ignore" xml:space="preserve">
@@ -1011,10 +975,6 @@ Preserve the {0} code because is for include a number in runtime.</comment>
   <data name="ShareFolder" xml:space="preserve">
     <value>Dela mapp</value>
     <comment>Label for any 'Share folder' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
-  <data name="NewPasswordWatermark" xml:space="preserve">
-    <value>Ditt nya lösenord</value>
-    <comment>Watermark label for the new password field when changing account password - (String as short as possible).</comment>
   </data>
   <data name="ManageLink" xml:space="preserve">
     <value>Hantera länk</value>
@@ -1107,14 +1067,6 @@ Preserve the {0} code because is for include a number in runtime.</comment>
   <data name="UI_RemoveLink" xml:space="preserve">
     <value>Ta bort länk</value>
     <comment>Label for any 'Remove link' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
-  <data name="UI_FirstNameWatermark" xml:space="preserve">
-    <value>ditt förnamn</value>
-    <comment>Watermark label for the user's first name field when create account - (String as short as possible).</comment>
-  </data>
-  <data name="UI_LastNameWatermark" xml:space="preserve">
-    <value>ditt efternamn</value>
-    <comment>Watermark label for the user's last name field when create account - (String as short as possible).</comment>
   </data>
   <data name="SelectAll" xml:space="preserve">
     <value>Markera alla</value>
@@ -1241,7 +1193,7 @@ Keep the code {1} because is for include currency in runtime.</comment>
     <comment>Label for the state of a download transfer when is finished - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStateDownloading" xml:space="preserve">
-    <value>Laddar ner: [X]%</value>
+    <value>Downloading...</value>
     <comment>Label for the state of a transfer when is being downloading - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStateError" xml:space="preserve">
@@ -1291,5 +1243,56 @@ Keep the code {1} because is for include currency in runtime.</comment>
   <data name="UI_NoCompletedTransfers" xml:space="preserve">
     <value>No completed transfers</value>
     <comment>Label for the background of an empty completed transfers page - (String as short as possible).</comment>
+  </data>
+  <data name="UI_AgreeTermsOfService" xml:space="preserve">
+    <value>I agree with the Terms of Service</value>
+    <comment>Text placed just after a checkbox to indicate that user is agree with the 'Terms of Service' into the 'create account' page.</comment>
+  </data>
+  <data name="UI_ConfirmPassword" xml:space="preserve">
+    <value>Confirm password</value>
+    <comment>Label for any 'Confirm password' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_Email" xml:space="preserve">
+    <value>Email</value>
+    <comment>Label for any 'Email' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_FirstName" xml:space="preserve">
+    <value>Förnamn</value>
+    <comment>Label for any 'First name' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_Password" xml:space="preserve">
+    <value>Lösenord</value>
+    <comment>Label for any 'Password' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_ConfirmPinLock" xml:space="preserve">
+    <value>Confirm PIN lock</value>
+    <comment>Label for any 'Confirm PIN lock' button, link, text, title, etc. - (String as short as possible).
+Preserve the PIN uppercase word.</comment>
+  </data>
+  <data name="UI_PinLock" xml:space="preserve">
+    <value>PIN lås</value>
+    <comment>Label for any 'PIN Lock' button, link, text, title, etc. - (String as short as possible).
+Try to preserve the PIN uppercase word.</comment>
+  </data>
+  <data name="UI_MEGA_SDK_Version" xml:space="preserve">
+    <value>MEGA SDK version</value>
+    <comment>Label for any 'MEGA SDK version' button, link, text, title, etc. Preserve the "MEGA SDK" in uppercase - (String as short as possible).</comment>
+  </data>
+  <data name="UI_NewPinLock" xml:space="preserve">
+    <value>New PIN lock</value>
+    <comment>Label for any 'New PIN lock' button, link, text, title, etc. - (String as short as possible).
+Preserve the PIN uppercase word.</comment>
+  </data>
+  <data name="UI_NewPassword" xml:space="preserve">
+    <value>New password</value>
+    <comment>Label for any 'New password' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_LastName" xml:space="preserve">
+    <value>Efternamn</value>
+    <comment>Label for any 'Last name' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_ViewTermsOfService" xml:space="preserve">
+    <value>View Terms of Service here</value>
+    <comment>Text used as a link to view the 'Terms of Service' into the 'create account' page.</comment>
   </data>
 </root>

@@ -36,11 +36,12 @@ namespace ScheduledCameraUploadTaskAgent.MegaApi
         {
             if(_timer != null) 
                 _timer.Dispose();
-            
-            if (e.getErrorCode() == MErrorType.API_EOVERQUOTA)
+
+            if (e.getErrorCode() == MErrorType.API_EGOINGOVERQUOTA || e.getErrorCode() == MErrorType.API_EOVERQUOTA)
             {
                 //Stop the Camera Upload Service
-                LogService.Log(MLogLevel.LOG_LEVEL_INFO, "Storage quota exceeded (API_EOVERQUOTA) - Disabling CAMERA UPLOADS service");
+                LogService.Log(MLogLevel.LOG_LEVEL_INFO, 
+                    "Storage quota exceeded ({0}) - Disabling CAMERA UPLOADS service", e.getErrorCode().ToString());
                 OnStorageQuotaExceeded(EventArgs.Empty);
                 return;
             }

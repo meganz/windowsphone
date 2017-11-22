@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using Windows.ApplicationModel.Activation;
 using Windows.Storage.Pickers;
+using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.Models;
@@ -66,62 +67,88 @@ namespace MegaApp.Services
             Directory.CreateDirectory(path);            
         }
         
-        public static void DeleteFolder(string path, bool recursive = false)
+        public static bool DeleteFolder(string path, bool recursive = false)
         {
             try
             {
-                if (!String.IsNullOrWhiteSpace(path) && Directory.Exists(path))
-                    Directory.Delete(path, recursive);
+                if (String.IsNullOrWhiteSpace(path) && !Directory.Exists(path)) return false;
+                Directory.Delete(path, recursive);
+                return true;
             }
             catch (Exception e)
             {
-                Deployment.Current.Dispatcher.BeginInvoke(() =>
-                {
-                    new CustomMessageDialog(
-                        AppMessages.DeleteNodeFailed_Title,
-                        String.Format(AppMessages.DeleteNodeFailed, e.Message),
-                        App.AppInformation,
-                        MessageDialogButtons.Ok).ShowDialog();
-                });
+                LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error deleting folder.", e);
+                return false;
             }
         }
 
         public static bool HasIllegalChars(string path)
         {
-            var invalidChars = Path.GetInvalidPathChars();
-            foreach (var c in invalidChars)
+            try
             {
-                if (path.Contains(c.ToString())) return true;
+                if (string.IsNullOrWhiteSpace(path))
+                {
+                    LogService.Log(MLogLevel.LOG_LEVEL_WARNING, "Null or empty path.");
+                    return true;
+                }
+
+                var invalidChars = Path.GetInvalidPathChars();
+                foreach (var c in invalidChars)
+                {
+                    if (path.Contains(c.ToString()))
+                    {
+                        LogService.Log(MLogLevel.LOG_LEVEL_WARNING,
+                            string.Format("Invalid character '{0}' in path '{1}'.", c.ToString(), path));
+                        return true;
+                    }
+                }
+                return false;
             }
-            return false;
+            catch (Exception e)
+            {
+                LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error checking invalid path characters.", e);
+                return false;
+            }
         }        
 
-        public static void Clear(string path)
+        public static bool Clear(string path)
         {
             try
             {
+                if (HasIllegalChars(path))
+                {
+                    LogService.Log(MLogLevel.LOG_LEVEL_WARNING, string.Format("Error cleaning folder '{0}'.", path));
+                    return false;
+                }
+
+                bool result = true;
                 IEnumerable<string> foldersToDelete = Directory.GetDirectories(path);
                 if (foldersToDelete != null)
                 {
                     foreach (var folder in foldersToDelete)
                     {
                         if (folder != null)
+                        {
+                            if (HasIllegalChars(folder))
+                            {
+                                LogService.Log(MLogLevel.LOG_LEVEL_WARNING, string.Format("Error deleting folder '{0}'.", path));
+                                result = false;
+                                continue;
+                            }
+
                             Directory.Delete(folder, true);
+                        }
                     }
                 }
 
-                FileService.ClearFiles(Directory.GetFiles(path));
+                result = result & FileService.ClearFiles(Directory.GetFiles(path));
+
+                return true;
             }
-            catch (IOException e)
+            catch (Exception e)
             {
-                Deployment.Current.Dispatcher.BeginInvoke(() =>
-                {
-                    new CustomMessageDialog(
-                            AppMessages.DeleteNodeFailed_Title,
-                            String.Format(AppMessages.DeleteNodeFailed, e.Message),
-                            App.AppInformation,
-                            MessageDialogButtons.Ok).ShowDialog();
-                });
+                LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error cleaning folder.", e);
+                return false;
             }
         }
 

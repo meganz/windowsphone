@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AgreeTermsOfService" xml:space="preserve">
-    <value>Trebuie să fii de acord cu termenii de utilizare a serviciului nostru</value>
+    <value>Trebuie să fii de acord cu Termenii de utilizare a serviciului nostru</value>
     <comment>Message of the dialog displayed when a user try to create a new MEGA account without accept previously the 'Terms of Service'.</comment>
   </data>
   <data name="ConfirmAccountFailed" xml:space="preserve">
@@ -170,15 +170,6 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="CreateFolderSuccess_Title" xml:space="preserve">
     <value>Folder creat</value>
     <comment>Title of the dialog displayed when create a folder successfully - (String as short as possible).</comment>
-  </data>
-  <data name="DeleteNodeFailed" xml:space="preserve">
-    <value>Eşec la ştergerea elementului. Te rugăm să reîncerci [{0}]</value>
-    <comment>Message of the dialog displayed when the process/request to delete a node failed.
-Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
-  </data>
-  <data name="DeleteNodeFailed_Title" xml:space="preserve">
-    <value>Ştergere eşuată</value>
-    <comment>Title of the dialog displayed when the process/request to delete a node failed - (String as short as possible).</comment>
   </data>
   <data name="DownloadLinkFailed" xml:space="preserve">
     <value>Eşec la preluarea unui link de descărcare. Te rugăm să reîncerci.</value>
@@ -591,9 +582,7 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
     <comment>Title of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type - (String as short as possible).</comment>
   </data>
   <data name="NoDownloadLocationSelected" xml:space="preserve">
-    <value>Nu ai selectate o locaţie implicită de descărcare pentru fişierele tale.
-
-Penrtu a continua cu descărcarea, te rugăm să selectezi un folder de destinaţie sau să mergi la setări pentru a configura locaţia implicită de descărcare.</value>
+    <value>Nu ai selectat o locaţie implicită de descărcare pentru fişierele tale. Pentru a continua cu descărcarea, te rugăm să selectezi un folder de destinaţie sau să mergi la setări pentru a configura locaţia implicită de descărcare.</value>
     <comment>Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</comment>
   </data>
   <data name="PrepareFileForUploadFailed" xml:space="preserve">
@@ -619,8 +608,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException" xml:space="preserve">
-    <value>You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?
-Please try to save/copy the file to your device's internal memory instead.</value>
+    <value>Nu ai permisiunea de a copia acest tip de fişiere în dosarul de destinaţie. Încerci să salvezi/copiezi un fişier de un tip nesuportat pe un card SD?
+Te rugăm să încerci să salvezi/copiezi fişierul în memoria internă a dispozitivului în schimb.</value>
     <comment>Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException_Title" xml:space="preserve">
@@ -628,19 +617,19 @@ Please try to save/copy the file to your device's internal memory instead.</valu
     <comment>Title of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type) - (String as short as possible).</comment>
   </data>
   <data name="CurrentPinLockCodeDoNotMatch" xml:space="preserve">
-    <value>Blocarea prin PIN actuală nu e corectă sau nu se potriveşte</value>
+    <value>PIN-ul actual nu e corect sau nu se potriveşte</value>
     <comment>Message of the dialog displayed when a user is trying to change the PIN lock code and introduces an incorrect code into the field for the current PIN lock code. Try to preserve the PIN uppercase word.</comment>
   </data>
   <data name="CurrentPinLockCodeDoNotMatch_Title" xml:space="preserve">
-    <value>Blocarea prin PIN actuală nu se potriveşte</value>
+    <value>PIN-ul actual nu se potriveşte</value>
     <comment>Title of the dialog displayed when a user is trying to change the PIN lock code and introduces an incorrect code into the field for the current PIN lock code - (String as short as possible). Try to preserve the PIN uppercase word.</comment>
   </data>
   <data name="PinLockTooShort" xml:space="preserve">
-    <value>Blocarea prin PIN trebuie să fie de cel puţin 4 cifre</value>
+    <value>PIN-ul trebuie să fie de cel puţin 4 cifre</value>
     <comment>Message of the dialog displayed when a user are trying to create or change a PIN lock code and the introduced code is too short (less than 4 digits). Try to preserve the PIN uppercase word.</comment>
   </data>
   <data name="PinLockTooShort_Title" xml:space="preserve">
-    <value>Blocare prin PIN prea scurtă</value>
+    <value>PIN-ul prea scurt</value>
     <comment>Title of the dialog displayed when a user are trying to create or change a PIN lock code and the introduced code is too short (less than 4 digits). Try to preserve the PIN uppercase word - (String as short as possible).</comment>
   </data>
   <data name="CacheCleared" xml:space="preserve">
@@ -813,7 +802,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when required fields for cancel subscription are not filled in.</comment>
   </data>
   <data name="UpgradeAccountFailed" xml:space="preserve">
-    <value>Operaţia a eşuat. Nu ţi se va retrage nicio sumă de pe cardul de credit.</value>
+    <value>Operaţia a eşuat. Nu ţi s-a retras nicio sumă de pe cardul de credit.</value>
     <comment>Message of the dialog displayed when the process/request to upgrade an user account failed.</comment>
   </data>
   <data name="UpgradeAccountFailed_Title" xml:space="preserve">
@@ -1132,17 +1121,17 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Alert title shown when you have written a decryption key not valid - (String as short as possible).</comment>
   </data>
   <data name="AM_FileLinkUnavailable" xml:space="preserve">
-    <value>This could be due to the following reasons:
-- The file has been removed because of a ToS/AUP violation.
-- Invalid URL – the link you are trying to access does not exist.
-- The file has been deleted by the user.</value>
+    <value>Acest lucru ar putea fi din cauza următoarelor motive:
+- Fişierul a fost eliminat din cauza unei încălcări a ToS/AUP.
+- URL invalid – linkul pe care încerci să-l accesezi nu există.
+- Fişierul a fost şters de către utilizator.</value>
     <comment>Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</comment>
   </data>
   <data name="AM_FolderLinkUnavailable" xml:space="preserve">
-    <value>This could be due to the following reasons:
-- The folder link has been removed because of a ToS/AUP violation.
-- Invalid URL – the link you are trying to access does not exist.
-- The folder link has been deleted by the user.</value>
+    <value>Acest lucru ar putea fi din cauza următoarelor motive:
+- Linkul folderului a fost eliminat din cauza unei încălcări a ToS/AUP.
+- URL invalid – linkul pe care încerci să-l accesezi nu există.
+- Linkul folderului a fost şters de către utilizator.</value>
     <comment>Error message shown when a folder link doesn't exist. Keep "\n"</comment>
   </data>
   <data name="AM_LinkUnavailableTitle" xml:space="preserve">
@@ -1346,12 +1335,12 @@ Preserve the {0} code because is for include the exact time until the user has t
     <comment>Title of the dialog displayed when the process/request to get node details failed - (String as short as possible).</comment>
   </data>
   <data name="AM_DownloadPathUnknownError" xml:space="preserve">
-    <value>There is an unknown error in the download path. Please try again and if it continues to fail, please contact support@mega.nz. [{0}]</value>
+    <value>Există o eroare necunoscută în calea de descărcare. Te rugăm să încerci din nou şi dacă continuă să eşueze, contactează support@mega.nz. [{0}]</value>
     <comment>Message of the dialog displayed when the process/request to download a file/folder failed because an unknown error in the download path.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="AM_InternalNodeNotFound" xml:space="preserve">
-    <value>The file/folder of the link that you are trying to open was not found. You are probably logged in to a different account. Please, log in to the correct account and try again.</value>
+    <value>Fişierul/folderul linkului pe care încerci să îl deschizi nu a fost găsit. Probabil că eşti autentificat într-un cont diferit. Te rugăm să te autentifici în contul corect şi să încerci din nou.</value>
     <comment>Title of the dialog displayed when trying to open a link of an internal node and this node is not found in the account in which the user is logged in.</comment>
   </data>
   <data name="AM_InternalNodeNotFound_Title" xml:space="preserve">
@@ -1359,31 +1348,31 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when trying to open a link of an internal node and this node is not found in the account in which the user is logged in - (String as short as possible).</comment>
   </data>
   <data name="AM_TransferOverquotaWarning" xml:space="preserve">
-    <value>Your queued transfer exceeds the current transfer quota available for your account and may therefore be interrupted.</value>
+    <value>Transferul în coadă depăşeşte cota de transfer actuală disponibilă pentru contul tău şi, prin urmare, poate fi întreruptă.</value>
     <comment>Message of the dialog displayed when a user exceeds the transfer quota limits of the account (transfer overquota error).</comment>
   </data>
   <data name="AM_TransferOverquotaWarning_Title" xml:space="preserve">
-    <value>Depleted transfer quota</value>
+    <value>Cotă de transfer epuizată</value>
     <comment>Message of the dialog displayed when a user exceeds the transfer quota limits of the account (transfer overquota error) - (String as short as possible).</comment>
   </data>
   <data name="AM_CancelDownloadsQuestion" xml:space="preserve">
-    <value>Are you sure you want to cancel all the pending downloads?</value>
+    <value>Sigur doreşti să anulezi toate descărcările în aşteptare?</value>
     <comment>Message of the dialog displayed when a user wants to cancel all the pending downloads.</comment>
   </data>
   <data name="AM_CancelUploadsQuestion" xml:space="preserve">
-    <value>Are you sure you want to cancel all the pending uploads?</value>
+    <value>Sigur doreşti să anulezi toate încărcările în aşteptare?</value>
     <comment>Message of the dialog displayed when a user wants to cancel all the pending uploads.</comment>
   </data>
   <data name="AM_ViewContactDetailsFailed" xml:space="preserve">
-    <value>Failed to view the contact details. Please try again later.</value>
+    <value>Eşec la vizualizarea detaliilor contactului. Te rugăm să încerci din nou mai târziu.</value>
     <comment>Message of the dialog displayed when the process/request to view a contact details failed.</comment>
   </data>
   <data name="AM_ViewContactDetailsFailed_Title" xml:space="preserve">
-    <value>Contact details failed</value>
+    <value>Detaliile contactului au eşuat</value>
     <comment>Title of the dialog displayed when the process/request to view a contact details failed - (String as short as possible).</comment>
   </data>
   <data name="AM_ShowUploadOptionsFailed" xml:space="preserve">
-    <value>Failed to show the upload options. Please try again later.</value>
+    <value>Eşec la afişarea opţiunilor de încărcare. Te rugăm să încerci din nou mai târziu.</value>
     <comment>Message of the dialog displayed when the process/request to show the upload options failed.</comment>
   </data>
   <data name="AM_ShowUploadOptionsFailed_Title" xml:space="preserve">
@@ -1391,19 +1380,35 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to show the upload options failed - (String as short as possible).</comment>
   </data>
   <data name="AM_SaveLogFile" xml:space="preserve">
-    <value>Do you want to save the log file in an external location to use it later?</value>
+    <value>Doreşti să salvezi fişierul log într-o locaţie externă pentru a-l folosi mai târziu?</value>
     <comment>Message of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app.</comment>
   </data>
   <data name="AM_SaveLogFile_Title" xml:space="preserve">
-    <value>Save the log file</value>
+    <value>Salvează fişierul log</value>
     <comment>Title of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app - (String as short as possible).</comment>
   </data>
   <data name="AM_ShareLinkFailed" xml:space="preserve">
-    <value>Failed to share the file/folder link. Please try again.</value>
+    <value>Eşec la partajarea linkului fişierului/folderului. Te rugăm să încerci din nou.</value>
     <comment>Message of the dialog displayed when fails the process/request to share a file/folder link.</comment>
   </data>
   <data name="AM_ShareLinkFailed_Title" xml:space="preserve">
-    <value>Error sharing link</value>
+    <value>Eroare la partajarea linkului</value>
     <comment>Title of the dialog displayed when fails the process/request to share a file/folder link.</comment>
+  </data>
+  <data name="AM_InternalNodeFailed" xml:space="preserve">
+    <value>Eşec la deschiderea fişierului/folderului intern al linkului. Te rugăm să încerci din nou.</value>
+    <comment>Title of the dialog displayed when fail trying to open a link of an internal node.</comment>
+  </data>
+  <data name="AM_InternalNodeFailed_Title" xml:space="preserve">
+    <value>Failed to open the internal file/folder</value>
+    <comment>Title of the dialog displayed when fail trying to open a link of an internal node - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ClearCacheFailed" xml:space="preserve">
+    <value>Failed to clear cache. Please try again.</value>
+    <comment>Message of the dialog displayed when the process to clear cache failed.</comment>
+  </data>
+  <data name="AM_ClearCacheFailed_Title" xml:space="preserve">
+    <value>Clear cache failed</value>
+    <comment>Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</comment>
   </data>
 </root>

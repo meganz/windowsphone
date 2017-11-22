@@ -199,6 +199,8 @@ namespace MegaApp.Pages
 
             if (navParam == NavigationParameter.Downloads)
                 TransfersPivot.SelectedItem = DownloadsPivot;
+            else if (navParam == NavigationParameter.Uploads)
+                TransfersPivot.SelectedItem = UploadsPivot;
 
             if (!NetworkService.IsNetworkAvailable())
             {
@@ -264,12 +266,12 @@ namespace MegaApp.Pages
             switch (TransfersPivot.SelectedIndex)
             {
                 case 0:
-                    SetUploadsPivotGUI(SdkService.MegaSdk.areTransfersPaused((int)MTransferType.TYPE_UPLOAD));
-                    this._transfersViewModel.ActiveViewModel = this._transfersViewModel.Uploads;
-                    break;
-                case 1:
                     SetDownloadsPivotGUI(SdkService.MegaSdk.areTransfersPaused((int)MTransferType.TYPE_DOWNLOAD));
                     this._transfersViewModel.ActiveViewModel = this._transfersViewModel.Downloads;
+                    break;
+                case 1:
+                    SetUploadsPivotGUI(SdkService.MegaSdk.areTransfersPaused((int)MTransferType.TYPE_UPLOAD));
+                    this._transfersViewModel.ActiveViewModel = this._transfersViewModel.Uploads;
                     break;
                 case 2:
                     SetCompletedPivotGUI();

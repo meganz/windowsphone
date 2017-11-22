@@ -18,7 +18,7 @@ namespace MegaApp.Models
             this.Uploads = new TransferListViewModel(MTransferType.TYPE_UPLOAD);
             this.Completed = new TransferListViewModel();
 
-            this.ActiveViewModel = this.Uploads;
+            this.ActiveViewModel = this.Downloads;
         }        
 
         #region Methods

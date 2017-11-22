@@ -73,17 +73,6 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="translated">Dossier créé</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when create a folder successfully - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/DeleteNodeFailed" translate="yes" space="preserve">
-          <source>Failed to delete item. Please try again [{0}]</source>
-          <target state="translated">Échec de suppression de l'élément. Veuillez ressayer [{0}]</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to delete a node failed.
-Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
-        </trans-unit>
-        <trans-unit id="Resx/DeleteNodeFailed_Title" translate="yes" space="preserve">
-          <source>Deletion failed</source>
-          <target state="translated">Échec de suppression</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to delete a node failed - (String as short as possible).</note>
-        </trans-unit>
         <trans-unit id="Resx/DownloadLinkFailed" translate="yes" space="preserve">
           <source>Failed to retrieve a download link. Please try again.</source>
           <target state="translated">Échec de récupération d'un lien de téléchargement. Veuillez ressayer.</target>
@@ -256,7 +245,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
         </trans-unit>
         <trans-unit id="Resx/RemoveNodeSuccess" translate="yes" space="preserve">
           <source>Item successfully removed</source>
-          <target state="translated">Élément supprimé avec succès</target>
+          <target state="translated">L’élément a été supprimé avec succès</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when remove successfully a node definitely from the rubbish bin.</note>
         </trans-unit>
         <trans-unit id="Resx/RemoveNodeSuccess_Title" translate="yes" space="preserve">
@@ -608,9 +597,7 @@ Preserve the {0} code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/NoDownloadLocationSelected" translate="yes" space="preserve">
           <source>You have not selected a default download location for your files.To proceed with the download, please select a destination folder or go to settings in order to set up your default download location.</source>
-          <target state="translated">Vous n'avez pas sélectionné d'emplacement de téléchargement par défaut pour vos fichiers.
-
-Pour poursuivre le téléchargement, veuillez sélectionner un dossier de destination ou aller dans les paramètres afin de définir votre emplacement de téléchargement par défaut.</target>
+          <target state="translated">Vous n’avez pas sélectionné d’emplacement de téléchargement par défaut pour vos fichiers. Pour poursuivre le téléchargement, veuillez sélectionner un dossier de destination ou aller dans les paramètres afin de définir votre emplacement de téléchargement par défaut.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</note>
         </trans-unit>
         <trans-unit id="Resx/PrepareFileForUploadFailed" translate="yes" space="preserve">
@@ -641,8 +628,9 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException" translate="yes" space="preserve">
-          <source>You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?Please try to save/copy the file to your device's internal memory instead.</source>
-          <target state="needs-review-translation">Vous n'avez pas le droit de copier ce type de fichier dans le dossier de destination. Tentez-vous d'enregistrer ou de copier un fichier d'un type non pris en charge vers une carte SD?
+          <source>You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?
+Please try to save/copy the file to your device's internal memory instead.</source>
+          <target state="translated">Vous n'avez pas le droit de copier ce type de fichier dans le dossier de destination. Tentez-vous d'enregistrer ou de copier un fichier d'un type non pris en charge vers une carte SD?
 Veuillez plutôt essayer d'enregistrer ou de copier le fichier dans la mémoire interne de votre appareil.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</note>
         </trans-unit>
@@ -688,7 +676,7 @@ Veuillez plutôt essayer d'enregistrer ou de copier le fichier dans la mémoire 
         </trans-unit>
         <trans-unit id="Resx/PinLockTooShort_Title" translate="yes" space="preserve">
           <source>PIN lock too short</source>
-          <target state="translated">NIP trop court</target>
+          <target state="translated">Le NIP est trop court</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user are trying to create or change a PIN lock code and the introduced code is too short (less than 4 digits). Try to preserve the PIN uppercase word - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CacheCleared" translate="yes" space="preserve">
@@ -761,7 +749,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/MalformedEmail" translate="yes" space="preserve">
           <source>Malformed e-mail. Please try again.</source>
-          <target state="translated">Adresse courriel mal formée. Veuillez ressayer.</target>
+          <target state="translated">L’adresse courriel est mal formée. Veuillez ressayer.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user types a malformed email address.</note>
         </trans-unit>
         <trans-unit id="Resx/WrongEmailPasswordLogin" translate="yes" space="preserve">
@@ -847,7 +835,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/CreditCardStoreFailed" translate="yes" space="preserve">
           <source>The credit card information is not correct. The credit card will not be charged.</source>
-          <target state="translated">Les informations de la carte de crédit sont incorrectes. La carte de crédit ne sera pas facturée.</target>
+          <target state="translated">Les informations liées à la carte de crédit sont incorrectes. La carte de crédit ne sera pas facturée.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to store a user credit card failed.</note>
         </trans-unit>
         <trans-unit id="Resx/CreditCardStoreFailed_Title" translate="yes" space="preserve">
@@ -872,7 +860,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_CancelSubscription" translate="yes" space="preserve">
           <source>You are about to cancel your MEGA subscription. Please let us know if there is anything we can do to help change your mind.</source>
-          <target state="translated">Vous allez annuler votre abonnement MEGA.Si nous pouvons faire quoi que ce soit pour vous faire changer d'idée, n'hésitez pas à nous le dire.</target>
+          <target state="translated">Vous êtes sur le point d'annuler votre abonnement MEGA. Si nous pouvons faire quoi que ce soit pour vous faire changer d'idée, n'hésitez pas à nous le dire.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_CancelSubscriptionConfirmation" translate="yes" space="preserve">
@@ -912,7 +900,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/UpgradeAccountFailed" translate="yes" space="preserve">
           <source>The operation failed. Your credit card has not been charged.</source>
-          <target state="translated">Échec d'opération. Votre carte de crédit n'a pas été facturée.</target>
+          <target state="translated">L'opération a échoué. Votre carte de crédit n'a pas été facturée.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to upgrade an user account failed.</note>
         </trans-unit>
         <trans-unit id="Resx/UpgradeAccountFailed_Title" translate="yes" space="preserve">
@@ -1021,7 +1009,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</no
         </trans-unit>
         <trans-unit id="Resx/SSLKeyError" translate="yes" space="preserve">
           <source>Our SSL/TLS certificate can't be verified. You could be affected by a man-in-the-middle attack.</source>
-          <target state="translated">Notre certificat SSL/TLS ne peut pas être vérifié. Vous pourriez être affecté par une attaque de l'homme du milieu.</target>
+          <target state="translated">Notre certificat SSL/TLS ne peut pas être vérifié. Vous pourriez être la cible d'une attaque de l'intercepteur.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</note>
         </trans-unit>
         <trans-unit id="Resx/SSLKeyError_Title" translate="yes" space="preserve">
@@ -1288,7 +1276,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - Invalid URL – the link you are trying to access does not exist.
 - The file has been deleted by the user.</source>
           <target state="needs-review-translation">Cela pourrait être causé par les raisons suivantes :
-- Le fichier a été retiré à cause d'une violation des conditions générales d'utilisation ou de la politique d'utilisation acceptable.
+- Le fichier a été retiré en raison du non-respect des conditions générales d'utilisation ou de la politique d'utilisation acceptable.
 - L'URL est invalide. Le lien auquel vous essayez d'accéder n'existe pas.
 - Le fichier a été supprimé par l'utilisateur.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</note>
@@ -1299,7 +1287,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - Invalid URL – the link you are trying to access does not exist.
 - The folder link has been deleted by the user.</source>
           <target state="needs-review-translation">Cela pourrait être causé par les raisons suivantes :
-- Le lien de dossier a été retiré à cause d'une violation des conditions générales d'utilisation ou de la politique d'utilisation acceptable.
+- Le lien de dossier a été retiré en raison du non-respect des conditions générales d'utilisation ou de la politique d'utilisation acceptable.
 - L'URL est invalide. Le lien auquel vous essayez d'accéder n'existe pas.
 - Le lien de dossier a été supprimé par l'utilisateur.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when a folder link doesn't exist. Keep "\n"</note>
@@ -1449,7 +1437,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseValidationFailed" translate="yes" space="preserve">
           <source>Your purchase of a MEGA subscription has not passed validation at our licence server. On restart of this app we will retry to validate your subscription licences. Please contact MEGA support if the error continues.</source>
-          <target state="needs-review-translation">Votre achat d'un abonnement MEGA n'a pas été validé par notre serveur de licences. Lors du redémarrage de cette appli, nous retenterons de valider vos licences d'abonnement. Veuillez contacter l'assistance MEGA si l'erreur persiste.</target>
+          <target state="translated">Votre achat d'un abonnement MEGA n'a pas été validé par notre serveur de licences. Lors du redémarrage de cette appli, nous retenterons de valider vos licences d'abonnement. Veuillez contacter l'assistance MEGA si l'erreur persiste.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseValidationFailed_Title" translate="yes" space="preserve">
@@ -1459,7 +1447,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AssociatedUserAccountTerminated" translate="yes" space="preserve">
           <source>The account that created this link has been terminated due to multiple violations of our Terms of Service.</source>
-          <target state="translated">Le compte qui a créé ce lien à été annulé à la suite de plusieurs violations de nos conditions générales d'utilisation.</target>
+          <target state="translated">Le compte qui a créé ce lien a été annulé en raison du non-respect répété de nos conditions générales d'utilisation.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when you open a file/folder link (or other shared resource) and it's no longer available because the the associated user account has been terminated due to multiple violations of our Terms of Service.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DownloadFailed_Title" translate="yes" space="preserve">
@@ -1494,7 +1482,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_NewSignUpInvalidLink" translate="yes" space="preserve">
           <source>The link you are using for a new signup is not valid.</source>
-          <target state="translated">Le lien que vous utilisez pour une nouvelle adhésion est invalide.</target>
+          <target state="translated">Le lien que vous utilisez pour une nouvelle inscription est invalide.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the warning dialog shown when the user tries to make a new sign up using an invalid link (#newsignup).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AccountBlocked" translate="yes" space="preserve">
@@ -1608,6 +1596,26 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <source>Error sharing link</source>
           <target state="translated">Erreur de partage du lien</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to share a file/folder link.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_InternalNodeFailed" translate="yes" space="preserve">
+          <source>Failed to open the internal file/folder of the link. Please try again.</source>
+          <target state="translated">Échec d’ouverture du fichier ou dossier interne du lien. Veuillez ressayer.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fail trying to open a link of an internal node.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_InternalNodeFailed_Title" translate="yes" space="preserve">
+          <source>Failed to open the internal file/folder</source>
+          <target state="translated">Échec d’ouverture du fichier ou dossier interne</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fail trying to open a link of an internal node - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ClearCacheFailed" translate="yes" space="preserve">
+          <source>Failed to clear cache. Please try again.</source>
+          <target state="translated">Échec de nettoyage du cache. Veuillez ressayer.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to clear cache failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ClearCacheFailed_Title" translate="yes" space="preserve">
+          <source>Clear cache failed</source>
+          <target state="translated">Échec de nettoyage du cache</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>

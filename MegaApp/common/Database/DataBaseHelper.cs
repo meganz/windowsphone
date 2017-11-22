@@ -5,7 +5,9 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using mega;
 using MegaApp.Classes;
+using MegaApp.Services;
 
 namespace MegaApp.Database
 {
@@ -17,7 +19,13 @@ namespace MegaApp.Database
             return (ReadNode(tableName, fieldName, fieldValue) != null) ? true : false;
         }
 
-        // Retrieve the first node found in the database table.
+        /// <summary>
+        /// Retrieve the first node found in the database table
+        /// </summary>
+        /// <param name="tableName">Name of the database table</param>
+        /// <param name="fieldName">Field by which to search the database</param>
+        /// <param name="fieldValue">Field value to search in the database table</param>
+        /// <returns>The first node found in the database table</returns>
         public static T ReadNode(String tableName, String fieldName, String fieldValue)
         {
             try
@@ -28,10 +36,20 @@ namespace MegaApp.Database
                     return existingNode;
                 }
             }
-            catch (SQLiteException) { return default(T); }
+            catch (Exception e) 
+            {
+                LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error reading node from DB", e);
+                return default(T);
+            }
         }
 
-        // Retrieve the node list found in the database table.
+        /// <summary>
+        /// Retrieve the node list found in the database table
+        /// </summary>
+        /// <param name="tableName">Name of the database table</param>
+        /// <param name="fieldName">Field by which to search the database</param>
+        /// <param name="fieldValue">Field value to search in the database table</param>
+        /// <returns>Node list found in the database table</returns>
         public static ObservableCollection<T> ReadNodes(String tableName, String fieldName, String fieldValue)
         {
             try 
@@ -43,10 +61,17 @@ namespace MegaApp.Database
                     return nodeList;
                 }            
             }
-            catch (SQLiteException) { return null; }
+            catch (Exception e)
+            {
+                LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error reading nodes from DB", e);
+                return null;
+            }
         }
 
-        // Retrieve the all node list from the database table.
+        /// <summary>
+        /// Retrieve the all node list from the database table
+        /// </summary>
+        /// <returns>All node list from the database table</returns>
         public static ObservableCollection<T> ReadAllNodes()
         {
             try
@@ -58,10 +83,17 @@ namespace MegaApp.Database
                     return nodeList;
                 }
             }
-            catch (SQLiteException) { return null; }
+            catch (Exception e)
+            {
+                LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error reading all nodes from DB", e);
+                return null;
+            }
         }                
 
-        // Update existing node 
+        /// <summary>
+        /// Update existing node
+        /// </summary>
+        /// <param name="node">Node to update</param>
         public static void UpdateNode(T node)
         {
             try
@@ -74,10 +106,16 @@ namespace MegaApp.Database
                     });
                 }
             }
-            catch (SQLiteException) { }
+            catch (Exception e)
+            {
+                LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error updating node of the DB", e);
+            }
         }        
 
-        // Insert the new node in the database. 
+        /// <summary>
+        /// Insert the new node in the database
+        /// </summary>
+        /// <param name="newNode">No to insert</param>
         public static void Insert(T newNode)
         {
             try
@@ -90,10 +128,18 @@ namespace MegaApp.Database
                     });
                 }
             }
-            catch (SQLiteException) { }
+            catch (Exception e)
+            {
+                LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error inserting node in the DB", e);
+            }
         }        
 
-        // Delete the first node found with the specified field value
+        /// <summary>
+        /// Delete the first node found with the specified field value
+        /// </summary>
+        /// <param name="tableName">Name of the database table</param>
+        /// <param name="fieldName">Field by which to search the database</param>
+        /// <param name="fieldValue">Field value to search in the database table</param>
         public static void DeleteNode(String tableName, String fieldName, String fieldValue)
         {
             try
@@ -110,10 +156,16 @@ namespace MegaApp.Database
                     }
                 }
             }
-            catch (SQLiteException) { }
+            catch (Exception e)
+            {
+                LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error deleting node from the DB", e);
+            }
         }
 
-        // Delete specific node
+        /// <summary>
+        /// Delete specific node
+        /// </summary>
+        /// <param name="node">Node to delete</param>
         public static void DeleteNode(T node)
         {
             try
@@ -126,11 +178,17 @@ namespace MegaApp.Database
                     });
                 }
             }
-            catch (SQLiteException) { }
+            catch (Exception e)
+            {
+                LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error deleting node from the DB", e);
+            }
         }
 
-        // Delete all node list or delete table 
-        public static void DeleteAllNodes()
+        /// <summary>
+        /// Delete all node list or delete table 
+        /// </summary>
+        /// <returns>TRUE if all went well or FALSE in other case</returns>
+        public static bool DeleteAllNodes()
         {
             try
             {
@@ -140,9 +198,15 @@ namespace MegaApp.Database
                     dbConn.CreateTable<T>();
                     dbConn.Dispose();
                     dbConn.Close();
+
+                    return true;
                 }
             }
-            catch (SQLiteException) { }
+            catch (Exception e) 
+            {
+                LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error deleting DB table", e);
+                return false; 
+            }
         }        
     }
 }

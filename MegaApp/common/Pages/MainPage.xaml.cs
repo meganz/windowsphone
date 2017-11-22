@@ -253,17 +253,27 @@ namespace MegaApp.Pages
                                 containerType = ContainerType.RubbishBin : containerType = ContainerType.CloudDrive;
 
                             var node = NodeService.CreateNew(SdkService.MegaSdk, App.AppInformation, megaNode, containerType);
-
-                            if (node.IsFolder)
-                                _mainPageViewModel.ActiveFolderView.BrowseToFolder(node);
+                            if(node != null)
+                            {
+                                if (node.IsFolder)
+                                    _mainPageViewModel.ActiveFolderView.BrowseToFolder(node);
+                                else
+                                    node.Download(TransfersService.MegaTransfers);
+                            }
                             else
-                                node.Download(TransfersService.MegaTransfers);
+                            {
+                                new CustomMessageDialog(
+                                    AppMessages.AM_InternalNodeNotFound_Title,
+                                    AppMessages.AM_InternalNodeNotFound,
+                                    App.AppInformation,
+                                    MessageDialogButtons.Ok).ShowDialog();
+                            }
                         }
                         else
                         {
                             new CustomMessageDialog(
-                                AppMessages.AM_InternalNodeNotFound_Title,
-                                AppMessages.AM_InternalNodeNotFound,
+                                AppMessages.AM_InternalNodeFailed_Title,
+                                AppMessages.AM_InternalNodeFailed,
                                 App.AppInformation,
                                 MessageDialogButtons.Ok).ShowDialog();
                         }

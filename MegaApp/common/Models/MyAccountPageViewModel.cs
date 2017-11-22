@@ -68,12 +68,24 @@ namespace MegaApp.Models
 
         public void ClearCache()
         {
-            AppService.ClearAppCache(false);
-            new CustomMessageDialog(
-                    AppMessages.CacheCleared_Title,
-                    AppMessages.CacheCleared,
-                    App.AppInformation,
+            string title, message = string.Empty;
+            if (AppService.ClearAppCache(false))
+            {
+                title = AppMessages.CacheCleared_Title;
+                message = AppMessages.CacheCleared;
+            }
+            else
+            {
+                title = AppMessages.AM_ClearCacheFailed_Title;
+                message = AppMessages.AM_ClearCacheFailed;
+            }
+
+            OnUiThread(() =>
+            {
+                new CustomMessageDialog(title, message, App.AppInformation,
                     MessageDialogButtons.Ok).ShowDialog();
+            });
+            
             AccountDetails.CacheSize = AppService.GetAppCacheSize();
         }
 
