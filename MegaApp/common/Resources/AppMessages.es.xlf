@@ -865,7 +865,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_CancelSubscriptionConfirmation" translate="yes" space="preserve">
           <source>Thank you for your feedback! Are you sure you want to cancel your MEGA subscription?</source>
-          <target state="translated">¡Gracias por tu mensaje! ¿Estás seguro de que quieres cancelar la subscripción?</target>
+          <target state="translated">¡Gracias por tu mensaje! ¿Estás seguro de que quieres cancelar la suscripción?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user is trying to cancel a subscription. This sentence is for give thanks to the user for the feedback sent during the cancellation process and asking for confirmation to do it.</note>
         </trans-unit>
         <trans-unit id="Resx/CancelSubscriptionFailed" translate="yes" space="preserve">
@@ -890,7 +890,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/CancelSubscription_Title" translate="yes" space="preserve">
           <source>Cancel Subscription</source>
-          <target state="translated">Cancelar Subscripción</target>
+          <target state="translated">Cancelar Suscripción</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialogs displayed when a user is trying to cancel a subscription - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/RequiredFieldsCancelSubscription" translate="yes" space="preserve">
@@ -900,7 +900,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/UpgradeAccountFailed" translate="yes" space="preserve">
           <source>The operation failed. Your credit card has not been charged.</source>
-          <target state="translated">La operación no finalizó correctamente. No se realizará el pago.</target>
+          <target state="translated">La operación no ha finalizado correctamente. No se realizará el pago.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to upgrade an user account failed.</note>
         </trans-unit>
         <trans-unit id="Resx/UpgradeAccountFailed_Title" translate="yes" space="preserve">
@@ -1279,7 +1279,6 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - La URL no es válida – el enlace al que intentas acceder no existe.
 - El archivo ha sido eliminado por el usuario.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</note>
-          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_FolderLinkUnavailable" translate="yes" space="preserve">
           <source>This could be due to the following reasons:
@@ -1291,7 +1290,6 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - La URL no es válida – el enlace al que intentas acceder no existe.
 - El enlace de la carpeta ha sido eliminado por el usuario.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when a folder link doesn't exist. Keep "\n"</note>
-          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_LinkUnavailableTitle" translate="yes" space="preserve">
           <source>Unavailable link</source>
@@ -1605,7 +1603,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_InternalNodeFailed_Title" translate="yes" space="preserve">
           <source>Failed to open the internal file/folder</source>
-          <target state="translated">Failed to open the internal file/folder</target>
+          <target state="translated">No se ha podido abrir el archivo/carpeta.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fail trying to open a link of an internal node - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ClearCacheFailed" translate="yes" space="preserve">
