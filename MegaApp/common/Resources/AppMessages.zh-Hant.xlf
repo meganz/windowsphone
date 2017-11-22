@@ -1282,7 +1282,6 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - 無效的網址 – 您嘗試存取的連結並不存在。
 - 該使用者已將檔案連結刪除。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</note>
-          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_FolderLinkUnavailable" translate="yes" space="preserve">
           <source>This could be due to the following reasons:
@@ -1294,7 +1293,6 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - 無效的網址 – 您嘗試存取的連結並不存在。
 - 該使用者已將資料夾連結刪除。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when a folder link doesn't exist. Keep "\n"</note>
-          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_LinkUnavailableTitle" translate="yes" space="preserve">
           <source>Unavailable link</source>
