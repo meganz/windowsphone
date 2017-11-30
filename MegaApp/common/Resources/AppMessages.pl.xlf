@@ -1616,6 +1616,11 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="translated">Wyczyszczenie pamięci podręcznej nie powiodło się</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</note>
         </trans-unit>
+        <trans-unit id="Resx/AM_PrepareDownloadsFailed" translate="yes" xml:space="preserve">
+          <source>Error preparing downloads. Please try again.</source>
+          <target state="new">Error preparing downloads. Please try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to prepare files or folders for download failed.</note>
+        </trans-unit>
       </group>
     </body>
   </file>

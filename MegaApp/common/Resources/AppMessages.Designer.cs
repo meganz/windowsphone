@@ -670,6 +670,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Error preparing downloads. Please try again..
+        /// </summary>
+        public static string AM_PrepareDownloadsFailed {
+            get {
+                return ResourceManager.GetString("AM_PrepareDownloadsFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Failed to prepare file(s) for upload. Please try again..
         /// </summary>
         public static string AM_PrepareFilesForUploadFailed {

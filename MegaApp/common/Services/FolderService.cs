@@ -225,48 +225,58 @@ namespace MegaApp.Services
 
         public static void ContinueFolderOpenPicker(FolderPickerContinuationEventArgs args, FolderViewModel folderViewModel)
         {
-            if ((args.ContinuationData["Operation"] as string) != "SelectDownloadFolder" || args.Folder == null)
+            try
+            {
+                if (args == null || (args.ContinuationData["Operation"] as string) != "SelectDownloadFolder" || args.Folder == null)
+                {
+                    LogService.Log(MLogLevel.LOG_LEVEL_WARNING, "Error selecting the download destination folder");
+                    ResetFolderPicker();
+                    return;
+                }
+
+                if (!App.CloudDrive.IsUserOnline()) return;
+
+                if (args.ContinuationData["NodeData"] != null)
+                {
+                    String base64Handle = (String)args.ContinuationData["NodeData"];
+                    NodeViewModel node;
+                    if (App.LinkInformation.PublicNode != null && base64Handle.Equals(App.LinkInformation.PublicNode.getBase64Handle()))
+                    {
+                        node = NodeService.CreateNew(SdkService.MegaSdk, App.AppInformation, App.LinkInformation.PublicNode, ContainerType.PublicLink);
+                        App.LinkInformation.Reset();
+                    }
+                    else
+                    {
+                        node = NodeService.CreateNew(folderViewModel.MegaSdk, App.AppInformation,
+                            folderViewModel.MegaSdk.getNodeByBase64Handle(base64Handle), folderViewModel.Type);
+                    }
+
+                    if (node != null)
+                        node.Download(TransfersService.MegaTransfers, args.Folder.Path);
+
+                    ResetFolderPicker();
+                    return;
+                }
+
+                folderViewModel.MultipleDownload(args.Folder.Path);
+            }
+            catch (Exception e)
+            {
+                LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error preparing downloads", e);
+                new CustomMessageDialog(AppMessages.AM_DownloadFailed_Title, 
+                    AppMessages.AM_PrepareDownloadsFailed, App.AppInformation, 
+                    MessageDialogButtons.Ok).ShowDialog();
+            }
+            finally
             {
                 ResetFolderPicker();
-                return;
             }
-
-            if (!App.CloudDrive.IsUserOnline()) return;
-
-            if (args.ContinuationData["NodeData"] != null)
-            {
-                String base64Handle = (String)args.ContinuationData["NodeData"];
-                NodeViewModel node;
-                if (App.LinkInformation.PublicNode != null && base64Handle.Equals(App.LinkInformation.PublicNode.getBase64Handle()))
-                {
-                    node = NodeService.CreateNew(SdkService.MegaSdk, App.AppInformation, App.LinkInformation.PublicNode, ContainerType.PublicLink);
-                    App.LinkInformation.Reset();
-                }
-                else
-                {
-                    node = NodeService.CreateNew(folderViewModel.MegaSdk, App.AppInformation, 
-                        folderViewModel.MegaSdk.getNodeByBase64Handle(base64Handle), folderViewModel.Type);
-                }
-               
-                if(node != null)
-                {
-                    App.AppInformation.PickerOrAsyncDialogIsOpen = false;
-                    node.Download(TransfersService.MegaTransfers, args.Folder.Path);
-                }                    
-
-                ResetFolderPicker();
-                return;
-            }
-
-            App.AppInformation.PickerOrAsyncDialogIsOpen = false;
-
-            folderViewModel.MultipleDownload(args.Folder.Path);
-
-            ResetFolderPicker();
         }
 
         private static void ResetFolderPicker()
         {
+            App.AppInformation.PickerOrAsyncDialogIsOpen = false;
+
             // Reset the picker data
             var app = Application.Current as App;
             if (app != null) app.FolderPickerContinuationArgs = null;            
