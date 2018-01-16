@@ -1400,15 +1400,19 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when fail trying to open a link of an internal node.</comment>
   </data>
   <data name="AM_InternalNodeFailed_Title" xml:space="preserve">
-    <value>Failed to open the internal file/folder</value>
+    <value>Interne Datei/Ordner konnte nicht geöffnet werden</value>
     <comment>Title of the dialog displayed when fail trying to open a link of an internal node - (String as short as possible).</comment>
   </data>
   <data name="AM_ClearCacheFailed" xml:space="preserve">
-    <value>Failed to clear cache. Please try again.</value>
+    <value>Fehler beim Leeren des Zwischenspeichers. Bitte versuchen Sie es noch einmal.</value>
     <comment>Message of the dialog displayed when the process to clear cache failed.</comment>
   </data>
   <data name="AM_ClearCacheFailed_Title" xml:space="preserve">
-    <value>Clear cache failed</value>
+    <value>Zwischenspeicher konnte nicht geleert werden</value>
     <comment>Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_PrepareDownloadsFailed" xml:space="preserve">
+    <value>Error preparing downloads. Please try again.</value>
+    <comment>Message of the dialog displayed when the process to prepare files or folders for download failed.</comment>
   </data>
 </root>

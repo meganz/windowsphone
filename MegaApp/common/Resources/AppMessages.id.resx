@@ -245,7 +245,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the process/request to copy a MEGA link to the clipboard finished successfully.</comment>
   </data>
   <data name="LinkCopiedToClipboard_Title" xml:space="preserve">
-    <value>Telah tersalin ke papan</value>
+    <value>Tersalin ke papan klip</value>
     <comment>Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard finished successfully - (String as short as possible).</comment>
   </data>
   <data name="LoginFailed" xml:space="preserve">
@@ -582,7 +582,7 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
     <comment>Title of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type - (String as short as possible).</comment>
   </data>
   <data name="NoDownloadLocationSelected" xml:space="preserve">
-    <value>You have not selected a default download location for your files.To proceed with the download, please select a destination folder or go to settings in order to set up your default download location.</value>
+    <value>Anda belum memilih lokasi download default untuk file Anda. Untuk melanjutkan download, pilih folder tujuan atau pergi ke pengaturan untuk mengatur lokasi download default Anda.</value>
     <comment>Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</comment>
   </data>
   <data name="PrepareFileForUploadFailed" xml:space="preserve">
@@ -874,7 +874,7 @@ Preserve the {0} code because is for include email of the contact to be removed 
 Preserve the [{0}] code because is for include the contact email in runtime.</comment>
   </data>
   <data name="InviteContactAddSuccessfully_Title" xml:space="preserve">
-    <value>Kontak telah diundang</value>
+    <value>Kontak terundang</value>
     <comment>Title of the dialog displayed when the process/request to invite a contact finished successfully - (String as short as possible).</comment>
   </data>
   <data name="ResourceIntensiveTaskDescription" xml:space="preserve">
@@ -1294,7 +1294,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Message of the dialog displayed when fails the process/request to import a folder link.</comment>
   </data>
   <data name="AM_EmailAlreadyRegistered" xml:space="preserve">
-    <value>Alamat e-mail ini telah terhubung dengan akun MEGA yang lain.</value>
+    <value>Surel ini telah memiliki akun di MEGA.</value>
     <comment>Message of the dialog shown when the users tries to create an account with an email already in use.</comment>
   </data>
   <data name="AM_IncompleteConfirmationLink" xml:space="preserve">
@@ -1396,19 +1396,23 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when fails the process/request to share a file/folder link.</comment>
   </data>
   <data name="AM_InternalNodeFailed" xml:space="preserve">
-    <value>Failed to open the internal file/folder of the link. Please try again.</value>
+    <value>Gagal membuka file / folder internal link. Silahkan coba lagi</value>
     <comment>Title of the dialog displayed when fail trying to open a link of an internal node.</comment>
   </data>
   <data name="AM_InternalNodeFailed_Title" xml:space="preserve">
-    <value>Failed to open the internal file/folder</value>
+    <value>Gagal membuka file / folder internal</value>
     <comment>Title of the dialog displayed when fail trying to open a link of an internal node - (String as short as possible).</comment>
   </data>
   <data name="AM_ClearCacheFailed" xml:space="preserve">
-    <value>Failed to clear cache. Please try again.</value>
+    <value>Gagal menghapus cache. Harap coba lagi</value>
     <comment>Message of the dialog displayed when the process to clear cache failed.</comment>
   </data>
   <data name="AM_ClearCacheFailed_Title" xml:space="preserve">
-    <value>Clear cache failed</value>
+    <value>Hapus cache gagal</value>
     <comment>Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_PrepareDownloadsFailed" xml:space="preserve">
+    <value>Error preparing downloads. Please try again.</value>
+    <comment>Message of the dialog displayed when the process to prepare files or folders for download failed.</comment>
   </data>
 </root>

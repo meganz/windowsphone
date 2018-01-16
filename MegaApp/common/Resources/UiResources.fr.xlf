@@ -365,12 +365,12 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/AppVersionText" translate="yes" space="preserve">
           <source>App version</source>
-          <target state="translated">Version de l'appli</target>
+          <target state="translated">Version de l’appli</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text placed just before app version number into the 'about' page.</note>
         </trans-unit>
         <trans-unit id="Resx/AskDownloadLocationText" translate="yes" space="preserve">
           <source>Always ask for download location</source>
-          <target state="translated">Toujours demander l'emplacement de téléchargement</target>
+          <target state="translated">Toujours demander l’emplacement de téléchargement</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text placed just before a switch button (on/off) into the 'settings' page indicating if the app should ask always for a download location or use a default download location.</note>
         </trans-unit>
         <trans-unit id="Resx/Available" translate="yes" space="preserve">
@@ -536,7 +536,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/SortByMenuTitle" translate="yes" space="preserve">
           <source>Sort by</source>
-          <target state="translated">TRIER</target>
+          <target state="translated">Trier</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label used like title for the sort menu.</note>
         </trans-unit>
         <trans-unit id="Resx/StartResumeAll" translate="yes" space="preserve">
@@ -666,7 +666,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/InitTourSpace2" translate="yes" space="preserve">
           <source>50 GB of free space.</source>
-          <target state="translated">50 Go d'espace de stockage gratuits</target>
+          <target state="translated">50 Go d’espace de stockage gratuits</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label '50 GB of free space.' for the second part of the sentence 'register now and get 50 GB of free space.', to build this sentence in two colors into the init tour page. Don't forget to place '.' at the end of the string.</note>
         </trans-unit>
         <trans-unit id="Resx/InitTourSpace_Title" translate="yes" space="preserve">
@@ -831,7 +831,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/ExpiresOn" translate="yes" space="preserve">
           <source>Expires on</source>
-          <target state="translated">Expire le</target>
+          <target state="translated">Expire en </target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the 'Expires on' text into the my account page, indicating the expiration date of a PRO account without a valid subscription - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/FirstName" translate="yes" space="preserve">
@@ -899,7 +899,7 @@ Preserve the {0} code because is for include the name/type of the selected plan 
         </trans-unit>
         <trans-unit id="Resx/SettingsShort" translate="yes" space="preserve">
           <source>Settings</source>
-          <target state="translated">Réglages</target>
+          <target state="translated">Paramètres</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label abreviated for any 'Settings' button, link, text, title, etc. - (String as short as possible - MAX 10 characteres).</note>
         </trans-unit>
         <trans-unit id="Resx/State" translate="yes" space="preserve">
@@ -991,7 +991,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
         </trans-unit>
         <trans-unit id="Resx/UpgradeAccountQuestion" translate="yes" space="preserve">
           <source>Do you want to upgrade your account?</source>
-          <target state="translated">Voulez-vous surclasser votre compte?</target>
+          <target state="translated">Voulez-vous surclasser votre compte ?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the dialog shown randomly when a user logs into a free account, asking if the user wants to upgrade the account - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UpgradeNow" translate="yes" space="preserve">
@@ -1196,12 +1196,12 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/SetupCameraUploadsQuestion" translate="yes" space="preserve">
           <source>Do you want to enable the Auto Camera Uploads service?</source>
-          <target state="translated">Voulez-vous activer le service de téléversement automatique de la caméra?</target>
+          <target state="translated">Voulez-vous activer le service de téléversement automatique de la caméra ?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label asking user if wants to enable the auto camera uploads service.</note>
         </trans-unit>
         <trans-unit id="Resx/ShareFolder" translate="yes" space="preserve">
           <source>Share folder</source>
-          <target state="translated">Partager le dossier</target>
+          <target state="translated">Partager un dossier</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Share folder' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_NewPassword" translate="yes" space="preserve">
@@ -1349,7 +1349,7 @@ NOTE: Keep the capital letter if possible.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_Modified" translate="yes" space="preserve">
           <source>Modified</source>
-          <target state="translated">Modifiés</target>
+          <target state="translated">Modifié</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Modified' button, link, text, title, etc. - (String as short as possible).
 NOTE: Keep the capital letter if possible.</note>
         </trans-unit>

@@ -245,7 +245,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the process/request to copy a MEGA link to the clipboard finished successfully.</comment>
   </data>
   <data name="LinkCopiedToClipboard_Title" xml:space="preserve">
-    <value>คัดลอกไปยังคลิปบอร์ดเรียบร้อยแล้ว</value>
+    <value>คัดลอกไปยังคลิปบอร์ดแล้ว</value>
     <comment>Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard finished successfully - (String as short as possible).</comment>
   </data>
   <data name="LoginFailed" xml:space="preserve">
@@ -582,7 +582,7 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
     <comment>Title of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type - (String as short as possible).</comment>
   </data>
   <data name="NoDownloadLocationSelected" xml:space="preserve">
-    <value>You have not selected a default download location for your files.To proceed with the download, please select a destination folder or go to settings in order to set up your default download location.</value>
+    <value>คุณยังไม่ได้เลือกตำแหน่งดาวน์โหลดเริ่มต้นสำหรับไฟล์ของคุณ หากต้องการดาวน์โหลดต่อ กรุณาเลือกโฟลเดอร์ปลายทางหรือไปที่การตั้งค่าเพื่อตั้งค่าตำแหน่งดาวน์โหลดเริ่มต้นของคุณ</value>
     <comment>Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</comment>
   </data>
   <data name="PrepareFileForUploadFailed" xml:space="preserve">
@@ -927,7 +927,7 @@ Preserve the {0} code because is for include the number of contacts to be remove
     <comment>Message of the dialog displayed when the process/request to change the MEGA account password failed.</comment>
   </data>
   <data name="ChangePasswordSuccess" xml:space="preserve">
-    <value>รหัสผ่านของคุณถูกเปลี่ยนเรียบร้อยแล้ว</value>
+    <value>รหัสผ่านของคุณได้ถูกเปลี่ยนแล้ว.</value>
     <comment>Message of the dialog displayed when change a MEGA account password succesfully.</comment>
   </data>
   <data name="NewAndOldPasswordMatch" xml:space="preserve">
@@ -1409,5 +1409,9 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="AM_ClearCacheFailed_Title" xml:space="preserve">
     <value>Clear cache failed</value>
     <comment>Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_PrepareDownloadsFailed" xml:space="preserve">
+    <value>Error preparing downloads. Please try again.</value>
+    <comment>Message of the dialog displayed when the process to prepare files or folders for download failed.</comment>
   </data>
 </root>

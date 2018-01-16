@@ -630,7 +630,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException" translate="yes" space="preserve">
           <source>You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?
 Please try to save/copy the file to your device's internal memory instead.</source>
-          <target state="translated">You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?
+          <target state="needs-review-translation">You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?
 Please try to save/copy the file to your device's internal memory instead.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</note>
         </trans-unit>
@@ -1056,7 +1056,7 @@ Preserve the {0} code because is for include the number of contacts to be remove
         </trans-unit>
         <trans-unit id="Resx/ChangePasswordSuccess" translate="yes" space="preserve">
           <source>Your password has been changed.</source>
-          <target state="translated">Вашата парола беше променена.</target>
+          <target state="translated">Паролата Ви е сменена.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when change a MEGA account password succesfully.</note>
         </trans-unit>
         <trans-unit id="Resx/NewAndOldPasswordMatch" translate="yes" space="preserve">
@@ -1471,7 +1471,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_EmailAlreadyRegistered" translate="yes" space="preserve">
           <source>This e-mail address has already registered an account with MEGA.</source>
-          <target state="translated">Този имейл адрес е вече регистриран в MEGA.</target>
+          <target state="translated">Този e-mail адрес вече е регистрирал акаунт с MEGA.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the users tries to create an account with an email already in use.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_IncompleteConfirmationLink" translate="yes" space="preserve">
@@ -1616,9 +1616,9 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="translated">Clear cache failed</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_PrepareDownloadsFailed" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/AM_PrepareDownloadsFailed" translate="yes" space="preserve">
           <source>Error preparing downloads. Please try again.</source>
-          <target state="new">Error preparing downloads. Please try again.</target>
+          <target state="translated">Error preparing downloads. Please try again.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to prepare files or folders for download failed.</note>
         </trans-unit>
       </group>

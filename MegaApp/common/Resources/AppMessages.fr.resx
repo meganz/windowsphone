@@ -245,7 +245,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the process/request to copy a MEGA link to the clipboard finished successfully.</comment>
   </data>
   <data name="LinkCopiedToClipboard_Title" xml:space="preserve">
-    <value>Copié dans le presse-papier</value>
+    <value>Copié dans le presse-papiers</value>
     <comment>Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard finished successfully - (String as short as possible).</comment>
   </data>
   <data name="LoginFailed" xml:space="preserve">
@@ -286,12 +286,12 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when save successfully a single picture in the photo album - (String as short as possible).</comment>
   </data>
   <data name="RemoveItemQuestion" xml:space="preserve">
-    <value>Voulez-vous vraiment supprimer {0}?</value>
+    <value>Voulez-vous vraiment supprimer {0} ?</value>
     <comment>Message of the dialog displayed when a user want to remove definitely an itemfrom the rubbish bin, asking for confirmation to do it.
 Preserve the {0} code because is for include the name of the item to be removed in runtime.</comment>
   </data>
   <data name="RemoveItemQuestion_Title" xml:space="preserve">
-    <value>Supprimer?</value>
+    <value>Supprimer ?</value>
     <comment>Title of the dialog displayed when a user want to remove definitely an item from the rubbish bin failed, asking for confirmation to do it - (String as short as possible).</comment>
   </data>
   <data name="RemoveNodeFailed" xml:space="preserve">
@@ -335,7 +335,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
     <comment>Title of the dialog displayed when any required field is not filled in - (String as short as possible).</comment>
   </data>
   <data name="SaveImageQuestion" xml:space="preserve">
-    <value>Exporter l'image actuel dans l'album « images enregistrées »?</value>
+    <value>Exporter l'image actuel dans l'album « images enregistrées » ?</value>
     <comment>Message of the dialog displayed when a user want to save a image to the 'saved pictures' album, asking for confirmation to do it.</comment>
   </data>
   <data name="SaveImageQuestion_Title" xml:space="preserve">
@@ -386,12 +386,12 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the logout to the MEGA cloud service api fails - (String as short as possible).</comment>
   </data>
   <data name="MultiSelectRemoveQuestion" xml:space="preserve">
-    <value>Voulez-vous vraiment supprimer {0} éléments?</value>
+    <value>Voulez-vous vraiment supprimer {0} éléments ?</value>
     <comment>Message of the dialog displayed when a user want to remove multiple nodes definitely from the rubbish bin, asking for confirmation to make the movement.
 Preserve the {0} code because is for include the number of nodes to be removed in runtime.</comment>
   </data>
   <data name="MultiSelectRemoveQuestion_Title" xml:space="preserve">
-    <value>Supprimer les éléments?</value>
+    <value>Supprimer les éléments ?</value>
     <comment>Title of the dialog displayed when a user want to remove multiple nodes definitely from the rubbish bin, asking for confirmation to make the movement - (String as short as possible).</comment>
   </data>
   <data name="MultiRemoveSucces" xml:space="preserve">
@@ -412,12 +412,12 @@ Preserve the {0} code because is for include the number of nodes to be moved in 
     <comment>Title of the dialog displayed when the process/request to move nodes to the rubbish bin failed - (String as short as possible).</comment>
   </data>
   <data name="MoveToRubbishBinQuestion" xml:space="preserve">
-    <value>Voulez-vous vraiment déplacer {0} vers la corbeille?</value>
+    <value>Voulez-vous vraiment déplacer {0} vers la corbeille ?</value>
     <comment>Message of the dialog displayed when a user want to move a single node to the rubbish bin, asking for confirmation to make the movement.
 Preserve the {0} code because is for include the name of the node to be moved in runtime.</comment>
   </data>
   <data name="MoveToRubbishBinQuestion_Title" xml:space="preserve">
-    <value>Déplacer vers la corbeille?</value>
+    <value>Déplacer vers la corbeille ?</value>
     <comment>Title of the dialog displayed when a user want to move a single node to the rubbish bin, asking for confirmation to make the movement - (String as short as possible).</comment>
   </data>
   <data name="MoveToRubbishBinSuccess" xml:space="preserve">
@@ -429,12 +429,12 @@ Preserve the {0} code because is for include the name of the node to be moved in
     <comment>Title of the dialog displayed when move successfully one single node to the rubbish bin - (String as short as possible).</comment>
   </data>
   <data name="MultiMoveToRubbishBinQuestion" xml:space="preserve">
-    <value>Voulez-vous vraiment déplacer {0} éléments vers la corbeille?</value>
+    <value>Voulez-vous vraiment déplacer {0} éléments vers la corbeille ?</value>
     <comment>Message of the dialog displayed when a user want to move multiple nodes to the rubbish bin, asking for confirmation to make the movement.
 Preserve the {0} code because is for include the number of nodes to be moved in runtime.</comment>
   </data>
   <data name="MultiMoveToRubbishBinQuestion_Title" xml:space="preserve">
-    <value>Déplacer les éléments?</value>
+    <value>Déplacer les éléments ?</value>
     <comment>Title of the dialog displayed when a user want to move multiple nodes to the rubbish bin, asking for confirmation to make the movement - (String as short as possible).</comment>
   </data>
   <data name="MultiMoveToRubbishBinSucces" xml:space="preserve">
@@ -447,7 +447,7 @@ Preserve the {0} code because is for include the number of nodes to be moved in 
     <comment>Title of the dialog displayed when move successfully multiple nodes to the rubbish bin - (String as short as possible).</comment>
   </data>
   <data name="PendingTransfersLogout" xml:space="preserve">
-    <value>Vous avez {0} transferts en attente. Les transferts en attente seront annulés. Voulez-vous vraiment vous déconnecter?</value>
+    <value>Vous avez {0} transferts en attente. Les transferts en attente seront annulés. Voulez-vous vraiment vous déconnecter ?</value>
     <comment>Message of the dialog displayed when a user are trying to logout the application and has pending transfers. Asks for confirmation to logout.
 Preserve the {0} code because is for include the number of pending transfers in runtime.</comment>
   </data>
@@ -456,7 +456,7 @@ Preserve the {0} code because is for include the number of pending transfers in 
     <comment>Title of the dialog displayed when a user are trying to logout the application and has pending transfers. Asks for confirmation to logout - (String as short as possible).</comment>
   </data>
   <data name="PendingTransfersExit" xml:space="preserve">
-    <value>Vous avez {0} transferts en attente. Les transferts en attente seront annulés. Voulez-vous vraiment quitter?</value>
+    <value>Vous avez {0} transferts en attente. Les transferts en attente seront annulés. Voulez-vous vraiment quitter ?</value>
     <comment>Message of the dialog displayed when a user are trying to exit the application and has pending transfers. Asks for confirmation to exit.
 Preserve the {0} code because is for include the number of pending transfers in runtime.</comment>
   </data>
@@ -485,7 +485,7 @@ Preserve the {0} code because is for include the number of pending transfers in 
     <comment>Title of the dialog displayed when a user would try to download at the same time more nodes than the reliable number of simultaneous downloads for a good app performance. This dialog ask confirmation to start the download process - (String as short as possible).</comment>
   </data>
   <data name="QuestionAskedDownloadOption" xml:space="preserve">
-    <value>Voulez-vous automatiquement exporter les fichiers images vers votre album photos après téléchargement? Vous pourrez changer cette option ultérieurement dans la page des paramètres. Les autres types de fichier seront conservés dans le stockage local de l'appli.</value>
+    <value>Voulez-vous automatiquement exporter les fichiers images vers votre album photos après téléchargement ? Vous pourrez changer cette option ultérieurement dans la page des paramètres. Les autres types de fichier seront conservés dans le stockage local de l'appli.</value>
     <comment>Message of the dialog displayed the first time that a user want to download a image. Asks if wants to export image files to the photo album after download in future and informs that user can change this option afterwards.</comment>
   </data>
   <data name="PausingTransfersFailed" xml:space="preserve">
@@ -574,7 +574,7 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
     <comment>Message of the dialog displayed when the user is logged out from another location and is trying to do any operation that requires a valid session (API_ESID Error).</comment>
   </data>
   <data name="OverquotaAlert" xml:space="preserve">
-    <value>L'opération n'est pas autorisée. Vous dépasseriez la limite de stockage de votre compte. Souhaitez-vous surclasser votre compte?</value>
+    <value>L'opération n'est pas autorisée. Vous dépasseriez la limite de stockage de votre compte. Souhaitez-vous surclasser votre compte ?</value>
     <comment>Message of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type.</comment>
   </data>
   <data name="OverquotaAlert_Title" xml:space="preserve">
@@ -608,7 +608,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException" xml:space="preserve">
-    <value>Vous n'avez pas le droit de copier ce type de fichier dans le dossier de destination. Tentez-vous d'enregistrer ou de copier un fichier d'un type non pris en charge vers une carte SD?
+    <value>Vous n'avez pas le droit de copier ce type de fichier dans le dossier de destination. Tentez-vous d'enregistrer ou de copier un fichier d'un type non pris en charge vers une carte SD ?
 Veuillez plutôt essayer d'enregistrer ou de copier le fichier dans la mémoire interne de votre appareil.</value>
     <comment>Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</comment>
   </data>
@@ -696,7 +696,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when a user is trying to login with an e-mail that is not associated with a MEGA account or type a wrong password. Preserve the MEGA word in uppercase.</comment>
   </data>
   <data name="DeleteNodeQuestion" xml:space="preserve">
-    <value>Voulez-vous vraiment supprimer {0} définitivement?</value>
+    <value>Voulez-vous vraiment supprimer {0} définitivement ?</value>
     <comment>Message of the dialog displayed when a user want to delete permanently a node, asking for confirmation to make it.
 Preserve the {0} code because is for include name of the node to be removed in runtime.</comment>
   </data>
@@ -844,7 +844,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed in cases when the user has disabled background agents for this application</comment>
   </data>
   <data name="CameraUploadNeedsStayLoggedIn" xml:space="preserve">
-    <value>Afin que le téléversement automatique de la caméra fonctionne correctement, vous devez activer l'option « Rester connecté ». Souhaitez-vous activer cette option?</value>
+    <value>Afin que le téléversement automatique de la caméra fonctionne correctement, vous devez activer l’option « Rester connecté ». Souhaitez-vous activer cette option ?</value>
     <comment>Message of the dialog displayed when the user wants to enable auto camera uploads but Stay logged in is disabled.</comment>
   </data>
   <data name="CameraUploadNeedsStayLoggedIn_Title" xml:space="preserve">
@@ -852,12 +852,12 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the user wants to enable auto camera uploads but Stay logged in is disabled.</comment>
   </data>
   <data name="DeleteContactQuestion" xml:space="preserve">
-    <value>Souhaitez-vous supprimer le contact {0}?</value>
+    <value>Souhaitez-vous supprimer le contact {0} ?</value>
     <comment>Message of the dialog displayed when a user want to remove a contact, asking for confirmation to make it.
 Preserve the {0} code because is for include email of the contact to be removed in runtime.</comment>
   </data>
   <data name="DeleteContactQuestion_Title" xml:space="preserve">
-    <value>Supprimer le contact?</value>
+    <value>Supprimer le contact ?</value>
     <comment>Title of the dialog displayed when a user want to remove a contact asking for confirmation to make it - (String as short as possible).</comment>
   </data>
   <data name="InviteContactAddFailed" xml:space="preserve">
@@ -882,7 +882,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</co
     <comment>Descripton of the task that automatic uploads photos tot MEGA. Seen in the background services Settings screen</comment>
   </data>
   <data name="AccountUpdate" xml:space="preserve">
-    <value>Votre compte a été mis à jour. Souhaitez-vous vérifier les nouvelles informations de compte?</value>
+    <value>Votre compte a été mis à jour. Souhaitez-vous vérifier les nouvelles informations de compte ?</value>
     <comment>Message of the dialog displayed when the account is updated (upgraded or downgraded).</comment>
   </data>
   <data name="AccountUpdated_Title" xml:space="preserve">
@@ -915,12 +915,12 @@ Preserve the {0} code because is for include the contact email in runtime. Prese
     <comment>Message of the dialog displayed when the process/request to remove a contact failed - (String as short as possible).</comment>
   </data>
   <data name="DeleteMultipleContactsQuestion" xml:space="preserve">
-    <value>Souhaitez-vous supprimer {0} contacts?</value>
+    <value>Souhaitez-vous supprimer {0} contacts ?</value>
     <comment>Message of the dialog displayed when a user want to remove multiple contacts, asking for confirmation to make it.
 Preserve the {0} code because is for include the number of contacts to be removed in runtime.</comment>
   </data>
   <data name="DeleteMultipleContactsQuestion_Title" xml:space="preserve">
-    <value>Supprimer les contacts?</value>
+    <value>Supprimer les contacts ?</value>
     <comment>Title of the dialog displayed when a user want to remove multiple contacts asking for confirmation to make it - (String as short as possible).</comment>
   </data>
   <data name="ChangePasswordFailed" xml:space="preserve">
@@ -928,7 +928,7 @@ Preserve the {0} code because is for include the number of contacts to be remove
     <comment>Message of the dialog displayed when the process/request to change the MEGA account password failed.</comment>
   </data>
   <data name="ChangePasswordSuccess" xml:space="preserve">
-    <value>Votre mot de passe a été modifié.</value>
+    <value>Votre mot de passe a été changé.</value>
     <comment>Message of the dialog displayed when change a MEGA account password succesfully.</comment>
   </data>
   <data name="NewAndOldPasswordMatch" xml:space="preserve">
@@ -963,7 +963,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the process/request to empty the rubbish bin failed.</comment>
   </data>
   <data name="CleanRubbishBinQuestion" xml:space="preserve">
-    <value>Voulez-vous vraiment supprimer définitivement tous les fichiers de la corbeille?</value>
+    <value>Voulez-vous vraiment supprimer définitivement tous les fichiers de la corbeille ?</value>
     <comment>Message of the dialog displayed when a user want to empty the rubbish bin, asking for confirmation to do it.</comment>
   </data>
   <data name="CleanRubbishBinSuccess" xml:space="preserve">
@@ -1043,12 +1043,12 @@ Preserve the [{0}] code because is for include the error code or the error messa
 </comment>
   </data>
   <data name="DownloadLimitMessage" xml:space="preserve">
-    <value>Vous avez sélectionné plus de {0} éléments ({1}) à télécharger. Voulez-vous poursuivre?</value>
+    <value>Vous avez sélectionné plus de {0} éléments ({1}) à télécharger. Voulez-vous poursuivre ?</value>
     <comment>Message of the dialog displayed when a user would try to download at the same time more nodes than the reliable number of simultaneous downloads for a good app performance. This dialog ask confirmation to start the download process. 
 Preserve the {0} and ({1}) codes because is for include the maximum reliable download number and the precise number of nodes to be downloaded in runtime.</comment>
   </data>
   <data name="AM_CancelSubscriptionConfirmation" xml:space="preserve">
-    <value>Nous vous remercions de vos commentaires ! Voulez-vous vraiment annuler votre abonnement MEGA?</value>
+    <value>Nous vous remercions de vos commentaires ! Voulez-vous vraiment annuler votre abonnement MEGA ?</value>
     <comment>Message of the dialog displayed when a user is trying to cancel a subscription. This sentence is for give thanks to the user for the feedback sent during the cancellation process and asking for confirmation to do it.</comment>
   </data>
   <data name="AM_PrepareFilesForUploadFailed" xml:space="preserve">
@@ -1102,7 +1102,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard - (String as short as possible).</comment>
   </data>
   <data name="AM_AlreadyLoggedInAlert" xml:space="preserve">
-    <value>Si vous acceptez, le compte actuel sera déconnecté et toutes les données Hors ligne seront effacées. Voulez-vous poursuivre?</value>
+    <value>Si vous acceptez, le compte actuel sera déconnecté et toutes les données Hors ligne seront effacées. Voulez-vous poursuivre ?</value>
     <comment>Message of the warning dialog shown when you try to confirm an account but you are logged in with another one.</comment>
   </data>
   <data name="AM_AlreadyLoggedInAlert_Title" xml:space="preserve">
@@ -1199,7 +1199,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Alert title shown when the DEBUG mode is enabled - (String as short as possible).</comment>
   </data>
   <data name="AM_DebugModeEnabled_Message" xml:space="preserve">
-    <value>Le mode débogage est activé. Voulez-vous le désactiver?</value>
+    <value>Le mode débogage est activé. Voulez-vous le désactiver ?</value>
     <comment>Message of the alert dialog displayed when the app starts and the DEBUG mode is enable. This alert is to try to avoid that the user forget disable the DEBUG mode and the log file size grows a lot in the offline section.</comment>
   </data>
   <data name="AM_DebugModeEnabled_Title" xml:space="preserve">
@@ -1357,11 +1357,11 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when a user exceeds the transfer quota limits of the account (transfer overquota error) - (String as short as possible).</comment>
   </data>
   <data name="AM_CancelDownloadsQuestion" xml:space="preserve">
-    <value>Voulez-vous vraiment annuler les téléchargements en attente?</value>
+    <value>Voulez-vous vraiment annuler les téléchargements en attente ?</value>
     <comment>Message of the dialog displayed when a user wants to cancel all the pending downloads.</comment>
   </data>
   <data name="AM_CancelUploadsQuestion" xml:space="preserve">
-    <value>Voulez-vous vraiment annuler les téléversements en attente?</value>
+    <value>Voulez-vous vraiment annuler les téléversements en attente ?</value>
     <comment>Message of the dialog displayed when a user wants to cancel all the pending uploads.</comment>
   </data>
   <data name="AM_ViewContactDetailsFailed" xml:space="preserve">
@@ -1381,7 +1381,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to show the upload options failed - (String as short as possible).</comment>
   </data>
   <data name="AM_SaveLogFile" xml:space="preserve">
-    <value>Voulez-vous enregistrer le fichier journal dans un emplacement externe pour l'utiliser plus tard?</value>
+    <value>Voulez-vous enregistrer le fichier journal dans un emplacement externe pour l'utiliser plus tard ?</value>
     <comment>Message of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app.</comment>
   </data>
   <data name="AM_SaveLogFile_Title" xml:space="preserve">
@@ -1411,5 +1411,9 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="AM_ClearCacheFailed_Title" xml:space="preserve">
     <value>Échec de nettoyage du cache</value>
     <comment>Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_PrepareDownloadsFailed" xml:space="preserve">
+    <value>Error preparing downloads. Please try again.</value>
+    <comment>Message of the dialog displayed when the process to prepare files or folders for download failed.</comment>
   </data>
 </root>

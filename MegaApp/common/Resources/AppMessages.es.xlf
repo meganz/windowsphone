@@ -1274,7 +1274,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - The file has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The file has been deleted by the user.</source>
-          <target state="needs-review-translation">Esto podría deberse a los siguientes motivos:
+          <target state="translated">Esto podría deberse a los siguientes motivos:
 - El archivo ha sido eliminado debido a una violación de nuestros Términos de servicio.
 - La URL no es válida – el enlace al que intentas acceder no existe.
 - El archivo ha sido eliminado por el usuario.</target>
@@ -1285,7 +1285,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - The folder link has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The folder link has been deleted by the user.</source>
-          <target state="needs-review-translation">Esto podría deberse a los siguientes motivos:
+          <target state="translated">Esto podría deberse a los siguientes motivos:
 - El enlace de la carpeta ha sido eliminado debido a una violación de nuestros Términos de servicio.
 - La URL no es válida – el enlace al que intentas acceder no existe.
 - El enlace de la carpeta ha sido eliminado por el usuario.</target>
@@ -1616,9 +1616,9 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="translated">Error al borrar caché </target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_PrepareDownloadsFailed" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/AM_PrepareDownloadsFailed" translate="yes" space="preserve">
           <source>Error preparing downloads. Please try again.</source>
-          <target state="new">Error preparing downloads. Please try again.</target>
+          <target state="translated">Error preparing downloads. Please try again.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to prepare files or folders for download failed.</note>
         </trans-unit>
       </group>
