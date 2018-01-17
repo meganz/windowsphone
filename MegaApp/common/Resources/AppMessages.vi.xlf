@@ -988,7 +988,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</no
         </trans-unit>
         <trans-unit id="Resx/InviteContactAddSuccessfully_Title" translate="yes" space="preserve">
           <source>Contact invited</source>
-          <target state="translated">Liên lạc được mời</target>
+          <target state="translated">Liên hệ được mời:</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to invite a contact finished successfully - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ResourceIntensiveTaskDescription" translate="yes" space="preserve">
@@ -1055,7 +1055,7 @@ Preserve the {0} code because is for include the number of contacts to be remove
         </trans-unit>
         <trans-unit id="Resx/ChangePasswordSuccess" translate="yes" space="preserve">
           <source>Your password has been changed.</source>
-          <target state="translated">Mật khẩu của bạn đã được đổi.</target>
+          <target state="translated">Mật khẩu đã được thay đổi.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when change a MEGA account password succesfully.</note>
         </trans-unit>
         <trans-unit id="Resx/NewAndOldPasswordMatch" translate="yes" space="preserve">
@@ -1273,7 +1273,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - The file has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The file has been deleted by the user.</source>
-          <target state="needs-review-translation">Nguyên nhân có thể là do:
+          <target state="translated">Nguyên nhân có thể là do:
 - Tệp tin đã bị xóa bỏ do vi phạm Điều Khoản Sử Dụng Dịch Vụ.
 - Sai URL – Điều liên kết bị viết sai hoặc không tồn tại.
 - Tệp tin có thể bị dời đi chỗ khác hoặc bị xóa từ chính chủ.</target>
@@ -1284,7 +1284,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - The folder link has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The folder link has been deleted by the user.</source>
-          <target state="needs-review-translation">Nguyên nhân có thể là do:
+          <target state="translated">Nguyên nhân có thể là do:
 - Đường liên kết tới thư mục đã bị xóa bỏ do vi phạm Điều Khoản Sử Dụng Dịch Vụ.
 - URL viết sai hoặc thiếu – đường liên kết không tồn tại hoặc không đúng.
 - Đường liên kết tới thư mục bị xóa bởi chủ sở hữu.</target>
@@ -1471,7 +1471,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_EmailAlreadyRegistered" translate="yes" space="preserve">
           <source>This e-mail address has already registered an account with MEGA.</source>
-          <target state="translated">Địa chỉ email này đã đăng ký từ trước với MEGA.</target>
+          <target state="translated">Email này đã được đăng ký.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the users tries to create an account with an email already in use.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_IncompleteConfirmationLink" translate="yes" space="preserve">
@@ -1616,9 +1616,9 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="translated">Clear cache failed</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_PrepareDownloadsFailed" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/AM_PrepareDownloadsFailed" translate="yes" space="preserve">
           <source>Error preparing downloads. Please try again.</source>
-          <target state="new">Error preparing downloads. Please try again.</target>
+          <target state="translated">Error preparing downloads. Please try again.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to prepare files or folders for download failed.</note>
         </trans-unit>
       </group>

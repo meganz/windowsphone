@@ -185,7 +185,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="DownloadNodeFailed_Title" xml:space="preserve">
-    <value>Falha no descarregamento</value>
+    <value>Falha no download</value>
     <comment>Title of the dialog displayed when the process/request to download a node failed - (String as short as possible).</comment>
   </data>
   <data name="FetchingNodesFailed" xml:space="preserve">
@@ -245,7 +245,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the process/request to copy a MEGA link to the clipboard finished successfully.</comment>
   </data>
   <data name="LinkCopiedToClipboard_Title" xml:space="preserve">
-    <value>Copiado</value>
+    <value>Copiado para Área de transferência</value>
     <comment>Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard finished successfully - (String as short as possible).</comment>
   </data>
   <data name="LoginFailed" xml:space="preserve">
@@ -1279,7 +1279,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Error message shown when you open a file/folder link (or other shared resource) and it's no longer available because the the associated user account has been terminated due to multiple violations of our Terms of Service.</comment>
   </data>
   <data name="AM_DownloadFailed_Title" xml:space="preserve">
-    <value>Falha no descarregamento</value>
+    <value>Falha no download</value>
     <comment>Title of the dialog displayed when the process/request to download a node failed - (String as short as possible).</comment>
   </data>
   <data name="AM_DownloadFolderLinkFailed" xml:space="preserve">
@@ -1295,7 +1295,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Message of the dialog displayed when fails the process/request to import a folder link.</comment>
   </data>
   <data name="AM_EmailAlreadyRegistered" xml:space="preserve">
-    <value>Este endereço de e-mail já registrou uma conta no MEGA.</value>
+    <value>Este endereço de e-mail já está cadastrado com uma conta MEGA.</value>
     <comment>Message of the dialog shown when the users tries to create an account with an email already in use.</comment>
   </data>
   <data name="AM_IncompleteConfirmationLink" xml:space="preserve">
@@ -1411,5 +1411,9 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="AM_ClearCacheFailed_Title" xml:space="preserve">
     <value>Falha ao limpar o cache.</value>
     <comment>Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_PrepareDownloadsFailed" xml:space="preserve">
+    <value>Error preparing downloads. Please try again.</value>
+    <comment>Message of the dialog displayed when the process to prepare files or folders for download failed.</comment>
   </data>
 </root>

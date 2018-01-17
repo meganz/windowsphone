@@ -83,7 +83,7 @@
         </trans-unit>
         <trans-unit id="Resx/UI_GetLink" translate="yes" space="preserve">
           <source>Get link</source>
-          <target state="translated">Вземи линк</target>
+          <target state="translated">Вземете линк</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Get link' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/LoadingPreview" translate="yes" space="preserve">
@@ -93,7 +93,7 @@
         </trans-unit>
         <trans-unit id="Resx/UI_Login" translate="yes" space="preserve">
           <source>Login</source>
-          <target state="translated">Вход</target>
+          <target state="translated">Влез</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Login' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/MegaLinkTitle" translate="yes" space="preserve">
@@ -108,7 +108,7 @@
         </trans-unit>
         <trans-unit id="Resx/Move" translate="yes" space="preserve">
           <source>Move</source>
-          <target state="translated">Премести</target>
+          <target state="translated">Измести</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Move' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/MultipleFiles" translate="yes" space="preserve">
@@ -178,7 +178,7 @@
         </trans-unit>
         <trans-unit id="Resx/Rename" translate="yes" space="preserve">
           <source>Rename</source>
-          <target state="translated">Преименувай</target>
+          <target state="translated">Преименуване</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Rename' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/RenameItem" translate="yes" space="preserve">
@@ -310,7 +310,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/Import" translate="yes" space="preserve">
           <source>Import</source>
-          <target state="translated">Импортирай</target>
+          <target state="translated">Внеси</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Import' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/LinkOptions" translate="yes" space="preserve">
@@ -380,7 +380,8 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/Bandwidth" translate="yes" space="preserve">
           <source>Transfer quota</source>
-          <target state="translated">Трафик</target>
+          <target state="translated">Трафик
+                                </target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Bandwidth' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Cache" translate="yes" space="preserve">
@@ -691,7 +692,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_ChangePassword" translate="yes" space="preserve">
           <source>Change password</source>
-          <target state="translated">Промени парола</target>
+          <target state="translated">Смени парола</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Change password' button, menu, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Advanced" translate="yes" space="preserve">
@@ -711,7 +712,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/Contacts" translate="yes" space="preserve">
           <source>Contacts</source>
-          <target state="translated">Контакти</target>
+          <target state="translated">Абонати</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Contacts' button, link, text, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/SharedItems" translate="yes" space="preserve">
@@ -726,7 +727,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/ClearRubbishBin" translate="yes" space="preserve">
           <source>Empty rubbish bin</source>
-          <target state="translated">Изчисти Кошчето</target>
+          <target state="translated">Изчистете Кошчето</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Empty rubbish' button, link, text, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Ok" translate="yes" space="preserve">
@@ -1012,7 +1013,7 @@ Preserve the {0} code because is for include the name of the destination folder 
         </trans-unit>
         <trans-unit id="Resx/AddContact" translate="yes" space="preserve">
           <source>Add Contact</source>
-          <target state="translated">Добави контакт</target>
+          <target state="translated">Добави абонат</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Add contact' button, link, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CreateContact" translate="yes" space="preserve">
@@ -1251,7 +1252,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/EmptyRubbishBin" translate="yes" space="preserve">
           <source>Empty rubbish bin</source>
-          <target state="translated">Изчисти Кошчето</target>
+          <target state="translated">Изчистете Кошчето</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty rubbish bin page - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/EmptySharedFolders" translate="yes" space="preserve">
@@ -1355,7 +1356,7 @@ NOTE: Keep the capital letter if possible.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_Size" translate="yes" space="preserve">
           <source>Size</source>
-          <target state="translated">Размер</target>
+          <target state="translated">Големина</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Size' button, link, text, title, etc. - (String as short as possible).
 NOTE: Keep the capital letter if possible.</note>
         </trans-unit>

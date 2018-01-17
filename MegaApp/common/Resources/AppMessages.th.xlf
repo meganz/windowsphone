@@ -173,7 +173,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/LinkCopiedToClipboard_Title" translate="yes" space="preserve">
           <source>Copied to clipboard</source>
-          <target state="translated">คัดลอกไปยังคลิปบอร์ดเรียบร้อยแล้ว</target>
+          <target state="translated">คัดลอกไปยังคลิปบอร์ดแล้ว</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard finished successfully - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/LoginFailed" translate="yes" space="preserve">
@@ -597,7 +597,7 @@ Preserve the {0} code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/NoDownloadLocationSelected" translate="yes" space="preserve">
           <source>You have not selected a default download location for your files.To proceed with the download, please select a destination folder or go to settings in order to set up your default download location.</source>
-          <target state="translated">You have not selected a default download location for your files.To proceed with the download, please select a destination folder or go to settings in order to set up your default download location.</target>
+          <target state="translated">คุณยังไม่ได้เลือกตำแหน่งดาวน์โหลดเริ่มต้นสำหรับไฟล์ของคุณ หากต้องการดาวน์โหลดต่อ กรุณาเลือกโฟลเดอร์ปลายทางหรือไปที่การตั้งค่าเพื่อตั้งค่าตำแหน่งดาวน์โหลดเริ่มต้นของคุณ</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</note>
         </trans-unit>
         <trans-unit id="Resx/PrepareFileForUploadFailed" translate="yes" space="preserve">
@@ -1055,7 +1055,7 @@ Preserve the {0} code because is for include the number of contacts to be remove
         </trans-unit>
         <trans-unit id="Resx/ChangePasswordSuccess" translate="yes" space="preserve">
           <source>Your password has been changed.</source>
-          <target state="translated">รหัสผ่านของคุณถูกเปลี่ยนเรียบร้อยแล้ว</target>
+          <target state="translated">รหัสผ่านของคุณได้ถูกเปลี่ยนแล้ว.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when change a MEGA account password succesfully.</note>
         </trans-unit>
         <trans-unit id="Resx/NewAndOldPasswordMatch" translate="yes" space="preserve">
@@ -1273,7 +1273,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - The file has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The file has been deleted by the user.</source>
-          <target state="needs-review-translation">ซึ่งอาจเป็นเพราะสาเหตุต่อไปนี้:
+          <target state="translated">ซึ่งอาจเป็นเพราะสาเหตุต่อไปนี้:
 - ไฟล์ถูกลบเนื่องจากมีการละเมิด ToS/AUP
 - URL ไม่ถูกต้อง - ลิงก์ที่คุณพยายามเข้าถึงไม่มีอยู่
 - ไฟล์ถูกลบโดยผู้ใช้</target>
@@ -1284,7 +1284,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - The folder link has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The folder link has been deleted by the user.</source>
-          <target state="needs-review-translation">ซึ่งอาจเป็นเพราะสาเหตุต่อไปนี้:
+          <target state="translated">ซึ่งอาจเป็นเพราะสาเหตุต่อไปนี้:
 - โฟลเดอร์ถูกลบเนื่องจากมีการละเมิด ToS/AUP
 - URL ไม่ถูกต้อง - ลิงก์ที่คุณพยายามเข้าถึงไม่มีอยู่
 - โฟลเดอร์ถูกลบโดยผู้ใช้</target>
@@ -1615,9 +1615,9 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="translated">Clear cache failed</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_PrepareDownloadsFailed" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/AM_PrepareDownloadsFailed" translate="yes" space="preserve">
           <source>Error preparing downloads. Please try again.</source>
-          <target state="new">Error preparing downloads. Please try again.</target>
+          <target state="translated">Error preparing downloads. Please try again.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to prepare files or folders for download failed.</note>
         </trans-unit>
       </group>

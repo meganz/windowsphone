@@ -599,7 +599,7 @@ Preserve the {0} code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/NoDownloadLocationSelected" translate="yes" space="preserve">
           <source>You have not selected a default download location for your files.To proceed with the download, please select a destination folder or go to settings in order to set up your default download location.</source>
-          <target state="needs-review-translation">شما یک مکان دانلود پیش فرض برای فایل هایتان انتخاب نکرده اید.
+          <target state="translated">شما یک مکان دانلود پیش فرض برای فایل هایتان انتخاب نکرده اید.
 برای ادامه فرایند دانلود, لطفا یک پوشه ی مقصد انتخاب کنید و یا اینکه به preferences  بروید برای اینکه بتوانید مکان پیش فرض دانلود خودتان را انتخاب کنید.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</note>
         </trans-unit>
@@ -633,7 +633,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException" translate="yes" space="preserve">
           <source>You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?
 Please try to save/copy the file to your device's internal memory instead.</source>
-          <target state="needs-review-translation">شما اجازه ی  کپی کردن این نوع فایل را به روی پوشه ی مقصد ندارید. احتمالا شما دارید سعی می کنید که یک فایل ازنوعی پشتیبانی نشده را  بر روی کارد SD  ذخیره کنید یا کپی کنید.
+          <target state="translated">شما اجازه ی  کپی کردن این نوع فایل را به روی پوشه ی مقصد ندارید. احتمالا شما دارید سعی می کنید که یک فایل ازنوعی پشتیبانی نشده را  بر روی کارد SD  ذخیره کنید یا کپی کنید.
 لطفا سعی کنید فایل را در داخل حافظه ی داخلی دستگاه خودتان ذخیره یا کپی نمایید.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</note>
         </trans-unit>
@@ -1278,7 +1278,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - The file has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The file has been deleted by the user.</source>
-          <target state="needs-review-translation">می تواند به دلایل زیر باشد:
+          <target state="translated">می تواند به دلایل زیر باشد:
 - فایل به دلیل نقض قوانیت استفاده ی ما پاک گردیده است.
 - ادرس اشتباه - لینکی که دارید سعی می کنید باز کنید وجود ندارد.
 -فایل بوسیله ی خود کاربر حذف گردیده است.</target>
@@ -1289,7 +1289,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - The folder link has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The folder link has been deleted by the user.</source>
-          <target state="needs-review-translation">می تواند به دلایل زیر باشد:
+          <target state="translated">می تواند به دلایل زیر باشد:
 - لینک پوشه به دلیل نقض قوانین ما حذف گردیده است.
 - ادرس اشتباه - لینکی که سعی می کنید دسترسی پیدا کنید اشتباه است.
 - لینک پوشه بوسیله ی خود کاربر حذف گردیده است.
@@ -1495,27 +1495,27 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <source>Failed to open the internal file/folder</source>
           <target state="new">Failed to open the internal file/folder</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fail trying to open a link of an internal node - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/AM_ClearCacheFailed_Title" translate="yes" xml:space="preserve">
           <source>Clear cache failed</source>
           <target state="new">Clear cache failed</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/AM_PrepareDownloadsFailed" translate="yes" xml:space="preserve">
           <source>Error preparing downloads. Please try again.</source>
           <target state="new">Error preparing downloads. Please try again.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to prepare files or folders for download failed.</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/AM_ClearCacheFailed" translate="yes" xml:space="preserve">
           <source>Failed to clear cache. Please try again.</source>
           <target state="new">Failed to clear cache. Please try again.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to clear cache failed.</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/AM_InternalNodeFailed" translate="yes" xml:space="preserve">
           <source>Failed to open the internal file/folder of the link. Please try again.</source>
           <target state="new">Failed to open the internal file/folder of the link. Please try again.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fail trying to open a link of an internal node.</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/AM_ShareLinkFailed" translate="yes" xml:space="preserve">
           <source>Failed to share the file/folder link. Please try again.</source>
           <target state="new">Failed to share the file/folder link. Please try again.</target>

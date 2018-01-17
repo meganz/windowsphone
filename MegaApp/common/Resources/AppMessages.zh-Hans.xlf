@@ -1273,7 +1273,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - The file has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The file has been deleted by the user.</source>
-          <target state="needs-review-translation">文件链接不存在之可能原因： - 因ToS / AUP违规，故该文件链接已被删除。 - 无效的网址– 您尝试存取的链接并不存在。 - 该使用者已将文件链接删除。</target>
+          <target state="translated">文件链接不存在之可能原因： - 因ToS / AUP违规，故该文件链接已被删除。 - 无效的网址– 您尝试存取的链接并不存在。 - 该使用者已将文件链接删除。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</note>
         </trans-unit>
         <trans-unit id="Resx/AM_FolderLinkUnavailable" translate="yes" space="preserve">
@@ -1281,7 +1281,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - The folder link has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The folder link has been deleted by the user.</source>
-          <target state="needs-review-translation">文件夹链接不存在之可能原因： - 因ToS / AUP违规，故该文件夹链接已被删除。 - 无效的网址– 您尝试存取的链接并不存在。 - 该使用者已将文件夹链接删除。</target>
+          <target state="translated">文件夹链接不存在之可能原因： - 因ToS / AUP违规，故该文件夹链接已被删除。 - 无效的网址– 您尝试存取的链接并不存在。 - 该使用者已将文件夹链接删除。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when a folder link doesn't exist. Keep "\n"</note>
         </trans-unit>
         <trans-unit id="Resx/AM_LinkUnavailableTitle" translate="yes" space="preserve">
@@ -1609,9 +1609,9 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="translated">清除缓存失败</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_PrepareDownloadsFailed" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/AM_PrepareDownloadsFailed" translate="yes" space="preserve">
           <source>Error preparing downloads. Please try again.</source>
-          <target state="new">Error preparing downloads. Please try again.</target>
+          <target state="translated">Error preparing downloads. Please try again.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to prepare files or folders for download failed.</note>
         </trans-unit>
       </group>

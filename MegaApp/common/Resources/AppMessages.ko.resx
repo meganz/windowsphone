@@ -1411,4 +1411,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>캐시 비우기 실패</value>
     <comment>Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</comment>
   </data>
+  <data name="AM_PrepareDownloadsFailed" xml:space="preserve">
+    <value>Error preparing downloads. Please try again.</value>
+    <comment>Message of the dialog displayed when the process to prepare files or folders for download failed.</comment>
+  </data>
 </root>

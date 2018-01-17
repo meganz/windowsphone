@@ -609,8 +609,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException" xml:space="preserve">
-    <value>您沒有將此檔案類型複製到目標資料夾的權限。您是否要將不支援類型的檔案儲存/複製到SD卡中？
-請嘗試將檔案儲存/複製到您的設備的內部記憶體中。</value>
+    <value>您沒有將此檔案類型複製到目標資料夾的權限。您是否要將不支援的檔案類型儲存/ 複製到SD卡中？也請嘗試將檔案儲存/ 複製到您的設備內部記憶體中，以作為替代方案。</value>
     <comment>Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException_Title" xml:space="preserve">
@@ -1403,15 +1402,19 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when fail trying to open a link of an internal node.</comment>
   </data>
   <data name="AM_InternalNodeFailed_Title" xml:space="preserve">
-    <value>Failed to open the internal file/folder</value>
+    <value>無法開啟內部檔案/ 資料夾。</value>
     <comment>Title of the dialog displayed when fail trying to open a link of an internal node - (String as short as possible).</comment>
   </data>
   <data name="AM_ClearCacheFailed" xml:space="preserve">
-    <value>Failed to clear cache. Please try again.</value>
+    <value>清除快取失敗，請再試一次。</value>
     <comment>Message of the dialog displayed when the process to clear cache failed.</comment>
   </data>
   <data name="AM_ClearCacheFailed_Title" xml:space="preserve">
-    <value>Clear cache failed</value>
+    <value>清除快取失敗</value>
     <comment>Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_PrepareDownloadsFailed" xml:space="preserve">
+    <value>Error preparing downloads. Please try again.</value>
+    <comment>Message of the dialog displayed when the process to prepare files or folders for download failed.</comment>
   </data>
 </root>

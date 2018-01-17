@@ -91,7 +91,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/DownloadNodeFailed_Title" translate="yes" space="preserve">
           <source>Download failed</source>
-          <target state="translated">Falha no descarregamento</target>
+          <target state="translated">Falha no download</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to download a node failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/FetchingNodesFailed" translate="yes" space="preserve">
@@ -173,7 +173,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/LinkCopiedToClipboard_Title" translate="yes" space="preserve">
           <source>Copied to clipboard</source>
-          <target state="translated">Copiado</target>
+          <target state="translated">Copiado para Área de transferência</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard finished successfully - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/LoginFailed" translate="yes" space="preserve">
@@ -1275,7 +1275,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - The file has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The file has been deleted by the user.</source>
-          <target state="needs-review-translation">Isso pode acontecer devido às seguintes razões:
+          <target state="translated">Isso pode acontecer devido às seguintes razões:
 - O arquivo foi removido devido a uma violação de ToS / AUP.
 - URL inválido - o link que você está tentando acessar não existe.
 - O arquivo foi excluído pelo usuário.</target>
@@ -1286,7 +1286,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - The folder link has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The folder link has been deleted by the user.</source>
-          <target state="needs-review-translation">Isso pode acontecer devido às seguintes razões:
+          <target state="translated">Isso pode acontecer devido às seguintes razões:
 - O link da pasta foi removido devido a uma violação ToS / AUP.
 - URL inválido - o link que você está tentando acessar não existe.
 - O link da pasta foi excluído pelo usuário.</target>
@@ -1452,7 +1452,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DownloadFailed_Title" translate="yes" space="preserve">
           <source>Download failed</source>
-          <target state="translated">Falha no descarregamento</target>
+          <target state="translated">Falha no download</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to download a node failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DownloadFolderLinkFailed" translate="yes" space="preserve">
@@ -1472,7 +1472,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_EmailAlreadyRegistered" translate="yes" space="preserve">
           <source>This e-mail address has already registered an account with MEGA.</source>
-          <target state="translated">Este endereço de e-mail já registrou uma conta no MEGA.</target>
+          <target state="translated">Este endereço de e-mail já está cadastrado com uma conta MEGA.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the users tries to create an account with an email already in use.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_IncompleteConfirmationLink" translate="yes" space="preserve">
@@ -1617,9 +1617,9 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="translated">Falha ao limpar o cache.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_PrepareDownloadsFailed" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/AM_PrepareDownloadsFailed" translate="yes" space="preserve">
           <source>Error preparing downloads. Please try again.</source>
-          <target state="new">Error preparing downloads. Please try again.</target>
+          <target state="translated">Error preparing downloads. Please try again.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to prepare files or folders for download failed.</note>
         </trans-unit>
       </group>

@@ -346,11 +346,11 @@
     <comment>Label for any 'Annually' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="AppVersionText" xml:space="preserve">
-    <value>Version de l'appli</value>
+    <value>Version de l’appli</value>
     <comment>Text placed just before app version number into the 'about' page.</comment>
   </data>
   <data name="AskDownloadLocationText" xml:space="preserve">
-    <value>Toujours demander l'emplacement de téléchargement</value>
+    <value>Toujours demander l’emplacement de téléchargement</value>
     <comment>Text placed just before a switch button (on/off) into the 'settings' page indicating if the app should ask always for a download location or use a default download location.</comment>
   </data>
   <data name="Available" xml:space="preserve">
@@ -466,7 +466,7 @@
     <comment>Label for the menu option to sort the nodes of the cloud drive in ascending order by size (from smaller to bigger) - (String as short as possible).</comment>
   </data>
   <data name="SortByMenuTitle" xml:space="preserve">
-    <value>TRIER</value>
+    <value>Trier</value>
     <comment>Label used like title for the sort menu.</comment>
   </data>
   <data name="StartResumeAll" xml:space="preserve">
@@ -566,7 +566,7 @@
     <comment>Label 'register now and get' for the first part of the sentence 'register now and get 50 GB of free space.', to build this sentence in two colors into the init tour page. Don't place '.' at the end of the string. Keep all in lowercase.</comment>
   </data>
   <data name="InitTourSpace2" xml:space="preserve">
-    <value>50 Go d'espace de stockage gratuits</value>
+    <value>50 Go d’espace de stockage gratuits</value>
     <comment>Label '50 GB of free space.' for the second part of the sentence 'register now and get 50 GB of free space.', to build this sentence in two colors into the init tour page. Don't forget to place '.' at the end of the string.</comment>
   </data>
   <data name="InitTourSpace_Title" xml:space="preserve">
@@ -690,7 +690,7 @@
     <comment>Label to indicate the user that is needed to type his payment data details for upgrade his account.</comment>
   </data>
   <data name="ExpiresOn" xml:space="preserve">
-    <value>Expire le</value>
+    <value>Expire en </value>
     <comment>Label for the 'Expires on' text into the my account page, indicating the expiration date of a PRO account without a valid subscription - (String as short as possible).</comment>
   </data>
   <data name="FirstName" xml:space="preserve">
@@ -739,7 +739,7 @@ Preserve the {0} code because is for include the name/type of the selected plan 
     <comment>Label to indicate the user that is needed select a membership (monthly or annualy) for upgrade his account.</comment>
   </data>
   <data name="SettingsShort" xml:space="preserve">
-    <value>Réglages</value>
+    <value>Paramètres</value>
     <comment>Label abreviated for any 'Settings' button, link, text, title, etc. - (String as short as possible - MAX 10 characteres).</comment>
   </data>
   <data name="State" xml:space="preserve">
@@ -809,7 +809,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
     <comment>Label for the dialog shown randomly when a user logs into a free account, notifying the user the possibility of upgrade the account - (String as short as possible).</comment>
   </data>
   <data name="UpgradeAccountQuestion" xml:space="preserve">
-    <value>Voulez-vous surclasser votre compte?</value>
+    <value>Voulez-vous surclasser votre compte ?</value>
     <comment>Label for the dialog shown randomly when a user logs into a free account, asking if the user wants to upgrade the account - (String as short as possible).</comment>
   </data>
   <data name="UpgradeNow" xml:space="preserve">
@@ -969,11 +969,11 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Outgoing' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="SetupCameraUploadsQuestion" xml:space="preserve">
-    <value>Voulez-vous activer le service de téléversement automatique de la caméra?</value>
+    <value>Voulez-vous activer le service de téléversement automatique de la caméra ?</value>
     <comment>Label asking user if wants to enable the auto camera uploads service.</comment>
   </data>
   <data name="ShareFolder" xml:space="preserve">
-    <value>Partager le dossier</value>
+    <value>Partager un dossier</value>
     <comment>Label for any 'Share folder' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="ManageLink" xml:space="preserve">
@@ -1141,7 +1141,7 @@ NOTE: Keep the capital letter if possible.</comment>
 NOTE: Keep the capital letter if possible.</comment>
   </data>
   <data name="UI_Modified" xml:space="preserve">
-    <value>Modifiés</value>
+    <value>Modifié</value>
     <comment>Label for any 'Modified' button, link, text, title, etc. - (String as short as possible).
 NOTE: Keep the capital letter if possible.</comment>
   </data>

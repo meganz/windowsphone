@@ -18,7 +18,7 @@
         </trans-unit>
         <trans-unit id="Resx/UI_AgreeTermsOfService" translate="yes" space="preserve">
           <source>I agree with the Terms of Service</source>
-          <target state="translated">I agree with the Terms of Service</target>
+          <target state="translated">Saya setuju dengan Ketentuan Layanan</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text placed just after a checkbox to indicate that user is agree with the 'Terms of Service' into the 'create account' page.</note>
         </trans-unit>
         <trans-unit id="Resx/AppName" translate="yes" space="preserve">
@@ -33,7 +33,7 @@
         </trans-unit>
         <trans-unit id="Resx/CloudDriveName" translate="yes" space="preserve">
           <source>Cloud Drive</source>
-          <target state="translated">Cloud Drive</target>
+          <target state="translated">Cakram Penyimpanan Awan</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Cloud Drive' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Confirm" translate="yes" space="preserve">
@@ -84,7 +84,7 @@
         </trans-unit>
         <trans-unit id="Resx/UI_GetLink" translate="yes" space="preserve">
           <source>Get link</source>
-          <target state="translated">Dapatkan tautan</target>
+          <target state="translated">Dapatkan pranala</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Get link' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/LoadingPreview" translate="yes" space="preserve">
@@ -179,7 +179,7 @@
         </trans-unit>
         <trans-unit id="Resx/Rename" translate="yes" space="preserve">
           <source>Rename</source>
-          <target state="translated">Beri nama</target>
+          <target state="translated">Ubah nama</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Rename' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/RenameItem" translate="yes" space="preserve">
@@ -279,12 +279,12 @@
         </trans-unit>
         <trans-unit id="Resx/RubbishBinRoot" translate="yes" space="preserve">
           <source>Rubbish Bin</source>
-          <target state="translated">Sampah</target>
+          <target state="translated">Tempat Sampah</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the name of the Rubbish bin breadcum root node - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_ConfirmPinLock" translate="yes" space="preserve">
           <source>Confirm PIN lock</source>
-          <target state="translated">Confirm PIN lock</target>
+          <target state="translated">Konfirm kunci PIN</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Confirm PIN lock' button, link, text, title, etc. - (String as short as possible).
 Preserve the PIN uppercase word.</note>
         </trans-unit>
@@ -501,7 +501,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_NewPinLock" translate="yes" space="preserve">
           <source>New PIN lock</source>
-          <target state="translated">New PIN lock</target>
+          <target state="translated">Kunci PIN baru</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'New PIN lock' button, link, text, title, etc. - (String as short as possible).
 Preserve the PIN uppercase word.</note>
         </trans-unit>
@@ -712,7 +712,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/Contacts" translate="yes" space="preserve">
           <source>Contacts</source>
-          <target state="translated">Daftar Kontak</target>
+          <target state="translated">Kontak</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Contacts' button, link, text, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/SharedItems" translate="yes" space="preserve">
@@ -727,7 +727,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/ClearRubbishBin" translate="yes" space="preserve">
           <source>Empty rubbish bin</source>
-          <target state="translated">Hapus Sampah</target>
+          <target state="translated">Bersihkan Tempat Sampah</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Empty rubbish' button, link, text, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Ok" translate="yes" space="preserve">
@@ -1013,7 +1013,7 @@ Preserve the {0} code because is for include the name of the destination folder 
         </trans-unit>
         <trans-unit id="Resx/AddContact" translate="yes" space="preserve">
           <source>Add Contact</source>
-          <target state="translated">Tambah Kontak</target>
+          <target state="translated">Tambah kontak</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Add contact' button, link, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CreateContact" translate="yes" space="preserve">
@@ -1253,7 +1253,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/EmptyRubbishBin" translate="yes" space="preserve">
           <source>Empty rubbish bin</source>
-          <target state="translated">Hapus Sampah</target>
+          <target state="translated">Bersihkan Tempat Sampah</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty rubbish bin page - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/EmptySharedFolders" translate="yes" space="preserve">
@@ -1474,7 +1474,7 @@ NOTE: Keep the capital letter if possible.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_ViewTermsOfService" translate="yes" space="preserve">
           <source>View Terms of Service here</source>
-          <target state="translated">View Terms of Service here</target>
+          <target state="translated">Lihat Ketentuan Layanan di sini</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text used as a link to view the 'Terms of Service' into the 'create account' page.</note>
         </trans-unit>
       </group>
