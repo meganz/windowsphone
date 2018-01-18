@@ -134,7 +134,7 @@
     <comment>Label for any 'Cancel' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="CloudDriveName" xml:space="preserve">
-    <value>คลาวด์ไดรฟ์</value>
+    <value>คลาวด์ไดร์ฟ</value>
     <comment>Label for any 'Cloud Drive' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Confirm" xml:space="preserve">
@@ -290,7 +290,7 @@
     <comment>Label for the name of the Rubbish bin breadcum root node - (String as short as possible).</comment>
   </data>
   <data name="No" xml:space="preserve">
-    <value>ไม่</value>
+    <value>ไม่ใช่</value>
     <comment>Label for any 'No' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Yes" xml:space="preserve">
@@ -330,7 +330,7 @@
     <comment>Label for 'Image upload' option of the dialog shown to upload nodes - (String as short as possible).</comment>
   </data>
   <data name="Storage" xml:space="preserve">
-    <value>พื้นที่จัดเก็บ</value>
+    <value>พื้นที่จัดเก็บข้อมูล</value>
     <comment>Label for any 'Storage' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Accept" xml:space="preserve">
@@ -362,7 +362,7 @@
     <comment>Label for any 'Bandwidth' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Cache" xml:space="preserve">
-    <value>cache</value>
+    <value>แคช</value>
     <comment>Label for any 'Cache' (cache memory) button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="CancelAll" xml:space="preserve">
@@ -382,7 +382,7 @@
     <comment>Label for any 'Clean up transfers' button, link, text, title, etc. - (String as short as possible, MAX 15 characters).</comment>
   </data>
   <data name="ClearCache" xml:space="preserve">
-    <value>clear cache</value>
+    <value>เคลียร์แคช</value>
     <comment>Label for any 'Clean cache' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="ClearSelection" xml:space="preserve">
@@ -494,7 +494,7 @@
     <comment>Label for any 'Used' button, link, text, title, etc. (i.e. used space) - (String as short as possible).</comment>
   </data>
   <data name="UsedSpace" xml:space="preserve">
-    <value>พื้นที่ใช้งาน</value>
+    <value>พื้นที่ที่ใช้ไป</value>
     <comment>Text placed just before the amount used space into the 'my account' page - (String as short as possible).</comment>
   </data>
   <data name="Version" xml:space="preserve">
@@ -598,7 +598,7 @@
     <comment>Label for any 'Camera Uploads' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Contacts" xml:space="preserve">
-    <value>รายการติดต่อ</value>
+    <value>ผู้ติดต่อ</value>
     <comment>Label for any 'Contacts' button, link, text, etc. - (String as short as possible).</comment>
   </data>
   <data name="SharedItems" xml:space="preserve">
@@ -610,7 +610,7 @@
     <comment>Label for any 'Sort' button, link, text, etc. - (String as short as possible).</comment>
   </data>
   <data name="ClearRubbishBin" xml:space="preserve">
-    <value>เคลียร์ถังขยะ</value>
+    <value>ล้างถังขยะ</value>
     <comment>Label for any 'Empty rubbish' button, link, text, etc. - (String as short as possible).</comment>
   </data>
   <data name="Ok" xml:space="preserve">
@@ -666,7 +666,7 @@
     <comment>Label to indicate the user that is needed choose a renewal period for upgrade his account.</comment>
   </data>
   <data name="City" xml:space="preserve">
-    <value>เมือง/อำเภอ</value>
+    <value>นคร</value>
     <comment>Label for any 'City' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Country" xml:space="preserve">
@@ -747,7 +747,7 @@ Preserve the {0} code because is for include the name/type of the selected plan 
     <comment>Label for any 'State' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="StorageShort" xml:space="preserve">
-    <value>พื้นที่จัดเก็บ</value>
+    <value>พื้นที่จัดเก็บข้อมูล</value>
     <comment>Label abreviated for any 'Storage' button, link, text, title, etc. - (String as short as possible - MAX 10 characteres).</comment>
   </data>
   <data name="Year" xml:space="preserve">
@@ -821,7 +821,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
     <comment>Warning message in Cloud Drive when the user is running out of space</comment>
   </data>
   <data name="AddContact" xml:space="preserve">
-    <value>เพิ่มรายการติดต่อ</value>
+    <value>เพิ่มผู้ติดต่อ</value>
     <comment>Label for any 'Add contact' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="CreateContact" xml:space="preserve">
@@ -997,7 +997,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for the background of an empty transfers page - (String as short as possible).</comment>
   </data>
   <data name="EmptyRubbishBin" xml:space="preserve">
-    <value>เคลียร์ถังขยะ</value>
+    <value>ล้างถังขยะ</value>
     <comment>Label for the background of an empty rubbish bin page - (String as short as possible).</comment>
   </data>
   <data name="EmptySharedFolders" xml:space="preserve">
@@ -1049,7 +1049,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Upgrade account' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_ChangePassword" xml:space="preserve">
-    <value>เปลี่ยนรหัสผ่าน</value>
+    <value>เปลี่ยนรหัส</value>
     <comment>Label for any 'Change password' button, menu, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_CancelSubscription" xml:space="preserve">
@@ -1284,7 +1284,7 @@ Try to preserve the PIN uppercase word.</comment>
 Preserve the PIN uppercase word.</comment>
   </data>
   <data name="UI_NewPassword" xml:space="preserve">
-    <value>New password</value>
+    <value>รหัสผ่านใหม่</value>
     <comment>Label for any 'New password' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_LastName" xml:space="preserve">

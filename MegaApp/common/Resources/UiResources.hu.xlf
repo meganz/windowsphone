@@ -20,7 +20,7 @@
           <source>I agree with the Terms of Service</source>
           <target state="new">I agree with the Terms of Service</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text placed just after a checkbox to indicate that user is agree with the 'Terms of Service' into the 'create account' page.</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/AppName" translate="yes" space="preserve">
           <source>MEGA Privacy</source>
           <target state="translated">MEGA Privacy</target>
@@ -50,7 +50,7 @@
           <source>Confirm password</source>
           <target state="new">Confirm password</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Confirm password' button, link, text, title, etc. - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/Copy" translate="yes" space="preserve">
           <source>Copy</source>
           <target state="translated">Másolás</target>
@@ -70,7 +70,7 @@
           <source>Email</source>
           <target state="new">Email</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Email' button, link, text, title, etc. - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/EmptyFolder" translate="yes" space="preserve">
           <source>empty folder</source>
           <target state="translated">üres könyvtár</target>
@@ -130,7 +130,7 @@
           <source>First name</source>
           <target state="new">First name</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'First name' button, link, text, title, etc. - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/Next" translate="yes" space="preserve">
           <source>next</source>
           <target state="translated">tovább</target>
@@ -150,7 +150,7 @@
           <source>Password</source>
           <target state="new">Password</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Password' button, link, text, title, etc. - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/Preview" translate="yes" space="preserve">
           <source>Preview</source>
           <target state="translated">Előnézet</target>
@@ -188,7 +188,7 @@
         </trans-unit>
         <trans-unit id="Resx/Save" translate="yes" space="preserve">
           <source>Save</source>
-          <target state="needs-review-translation">mentés</target>
+          <target state="translated">mentés</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Save' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Share" translate="yes" space="preserve">
@@ -286,13 +286,13 @@
           <target state="new">PIN Lock</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'PIN Lock' button, link, text, title, etc. - (String as short as possible).
 Try to preserve the PIN uppercase word.</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/UI_ConfirmPinLock" translate="yes" xml:space="preserve">
           <source>Confirm PIN lock</source>
           <target state="new">Confirm PIN lock</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Confirm PIN lock' button, link, text, title, etc. - (String as short as possible).
 Preserve the PIN uppercase word.</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/No" translate="yes" space="preserve">
           <source>No</source>
           <target state="translated">Nem</target>
@@ -380,7 +380,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/Bandwidth" translate="yes" space="preserve">
           <source>Transfer quota</source>
-          <target state="needs-review-translation">Sávszélesség</target>
+          <target state="translated">Sávszélesség</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Bandwidth' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Cache" translate="yes" space="preserve">
@@ -477,7 +477,7 @@ Preserve the PIN uppercase word.</note>
           <source>MEGA SDK version</source>
           <target state="new">MEGA SDK version</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'MEGA SDK version' button, link, text, title, etc. Preserve the "MEGA SDK" in uppercase - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/Monthly" translate="yes" space="preserve">
           <source>Monthly</source>
           <target state="translated">Havonként</target>
@@ -503,7 +503,7 @@ Preserve the PIN uppercase word.</note>
           <target state="new">New PIN lock</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'New PIN lock' button, link, text, title, etc. - (String as short as possible).
 Preserve the PIN uppercase word.</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/NoDataToShow" translate="yes" space="preserve">
           <source>No data to show</source>
           <target state="translated">Nincs adat</target>
@@ -601,7 +601,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/About" translate="yes" space="preserve">
           <source>About</source>
-          <target state="needs-review-translation">névjegy</target>
+          <target state="translated">névjegy</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'About' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Pause" translate="yes" space="preserve">
@@ -845,10 +845,10 @@ Preserve the PIN uppercase word.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for indicate the base price of a product or plan, for example "From 9,99 €/month" - (String as short as possible).
 Keep the code {0:N} because is for include price of the product in runtime.
 Keep the code {1} because is for include currency in runtime.</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/Get2MonthsFree" translate="yes" space="preserve">
           <source>Get 2 months free if you subscribe to a one-year PRO plan</source>
-          <target state="needs-review-translation">Öné lehet 2 hónap ingyen, ha előfizet egy 1 éves PRO csomagra</target>
+          <target state="translated">Öné lehet 2 hónap ingyen, ha előfizet egy 1 éves PRO csomagra</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label to indicate the user that he obtains 2 free months with a one-year pro plan subscription.</note>
         </trans-unit>
         <trans-unit id="Resx/LastName" translate="yes" space="preserve">
@@ -986,7 +986,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
         </trans-unit>
         <trans-unit id="Resx/GetProAccount" translate="yes" space="preserve">
           <source>You can be a PRO user!</source>
-          <target state="needs-review-translation">Ön is lehet PRO felhasználó!</target>
+          <target state="translated">Ön is lehet PRO felhasználó!</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the dialog shown randomly when a user logs into a free account, notifying the user the possibility of upgrade the account - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UpgradeAccountQuestion" translate="yes" space="preserve">
@@ -1208,7 +1208,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
           <source>New password</source>
           <target state="new">New password</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'New password' button, link, text, title, etc. - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/UI_CloseAllSessions" translate="yes" space="preserve">
           <source>Close all sessions</source>
           <target state="translated">Munkamenetek Bezárása</target>
@@ -1236,7 +1236,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/SavedForOffline" translate="yes" space="preserve">
           <source>Saved for offline</source>
-          <target state="needs-review-translation">Mentve offline használatra</target>
+          <target state="translated">Mentve offline használatra</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Saved for offline' button, link, text, title, etc. - (String as short as possible, LESS THAN 22 CHARS).</note>
         </trans-unit>
         <trans-unit id="Resx/EmptyCloudDrive" translate="yes" space="preserve">
@@ -1283,7 +1283,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
           <source>Last name</source>
           <target state="new">Last name</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Last name' button, link, text, title, etc. - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/SelectAll" translate="yes" space="preserve">
           <source>Select all</source>
           <target state="translated">Select all</target>
@@ -1363,117 +1363,117 @@ NOTE: Keep the capital letter if possible.</note>
           <source>In app purchase</source>
           <target state="new">In app purchase</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'In app purchase' (IAP) button, link, text, title, etc. - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/UI_Free" translate="yes" xml:space="preserve">
           <source>Free</source>
           <target state="new">Free</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Free' button, link, text, title, etc. Is to indicate that is a product free of charges, no costs - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/UI_LinkWithoutKey" translate="yes" xml:space="preserve">
           <source>Link without key</source>
           <target state="new">Link without key</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Link without key' button, link, text, title, etc. - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/UI_SetExpirationDate" translate="yes" xml:space="preserve">
           <source>Set expiry date</source>
           <target state="new">Set expiry date</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Set expiry date' button, link, text, title, etc. - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/UI_TransferStateUploading" translate="yes" xml:space="preserve">
           <source>Uploading...</source>
           <target state="new">Uploading...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being uploading - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/UI_Completed" translate="yes" xml:space="preserve">
           <source>Completed</source>
           <target state="new">Completed</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Completed' button, link, text, title, etc. - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/UI_NoCompletedTransfers" translate="yes" xml:space="preserve">
           <source>No completed transfers</source>
           <target state="new">No completed transfers</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty completed transfers page - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/UI_ViewTermsOfService" translate="yes" xml:space="preserve">
           <source>View Terms of Service here</source>
           <target state="new">View Terms of Service here</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text used as a link to view the 'Terms of Service' into the 'create account' page.</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/UI_CancelUploads" translate="yes" xml:space="preserve">
           <source>Cancel uploads</source>
           <target state="new">Cancel uploads</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Cancel uploads' button, link, etc. - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/UI_CancelDownloads" translate="yes" xml:space="preserve">
           <source>Cancel downloads</source>
           <target state="new">Cancel downloads</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Cancel downloads' button, link, etc. - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/UI_TransferStateUploaded" translate="yes" xml:space="preserve">
           <source>Uploaded</source>
           <target state="new">Uploaded</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of an upload transfer when is finished - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/UI_TransferStateRetrying" translate="yes" xml:space="preserve">
           <source>Retrying...</source>
           <target state="new">Retrying...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being retrying - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/UI_TransferStateQueued" translate="yes" xml:space="preserve">
           <source>Queued</source>
           <target state="new">Queued</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is queued - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/UI_TransferStatePreparing" translate="yes" xml:space="preserve">
           <source>Preparing...</source>
           <target state="new">Preparing...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being preparing - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/UI_TransferStatePaused" translate="yes" xml:space="preserve">
           <source>Paused</source>
           <target state="new">Paused</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a paused transfer - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/UI_TransferStateNotStarted" translate="yes" xml:space="preserve">
           <source>Ready</source>
           <target state="new">Ready</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is ready but not started for some reason - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/UI_TransferStateError" translate="yes" xml:space="preserve">
           <source>Error on transfer</source>
           <target state="new">Error on transfer</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a failed  transfer - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/UI_TransferStateDownloading" translate="yes" xml:space="preserve">
           <source>Downloading...</source>
           <target state="new">Downloading...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being downloading - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/UI_TransferStateDownloaded" translate="yes" xml:space="preserve">
           <source>Downloaded</source>
           <target state="new">Downloaded</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a download transfer when is finished - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/UI_TransferStateCompleting" translate="yes" xml:space="preserve">
           <source>Completing...</source>
           <target state="new">Completing...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being completing - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/UI_TransferStateCanceled" translate="yes" xml:space="preserve">
           <source>Canceled</source>
           <target state="new">Canceled</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a canceled transfer - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/UI_ProOnly" translate="yes" xml:space="preserve">
           <source>(PRO ONLY)</source>
           <target state="new">(PRO ONLY)</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label to indicate that a feature is only available for PRO users. Keep between parentheses and capital letters  - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/UI_LinkWithKey" translate="yes" xml:space="preserve">
           <source>Link with key</source>
           <target state="new">Link with key</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Link with key' button, link, text, title, etc. - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
       </group>
     </body>
   </file>

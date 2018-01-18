@@ -173,7 +173,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/LinkCopiedToClipboard_Title" translate="yes" space="preserve">
           <source>Copied to clipboard</source>
-          <target state="translated">Скопирован в буфер</target>
+          <target state="translated">Скопировано</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard finished successfully - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/LoginFailed" translate="yes" space="preserve">
@@ -989,7 +989,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</no
         </trans-unit>
         <trans-unit id="Resx/InviteContactAddSuccessfully_Title" translate="yes" space="preserve">
           <source>Contact invited</source>
-          <target state="translated">Контакт пригласил</target>
+          <target state="translated">Контакт приглашен</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to invite a contact finished successfully - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ResourceIntensiveTaskDescription" translate="yes" space="preserve">
@@ -1274,7 +1274,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - The file has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The file has been deleted by the user.</source>
-          <target state="needs-review-translation">Это может быть вызвано следующими причинами:
+          <target state="translated">Это может быть вызвано следующими причинами:
 - Ссылка на файл была удалена из-за нарушения Условий обслуживания/Правил использования.
 - Недействительный адрес — ссылка, по которой вы пытаетесь перейти, не существует.
 - Ссылка на файл была удалена пользователем.</target>
@@ -1285,7 +1285,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - The folder link has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The folder link has been deleted by the user.</source>
-          <target state="needs-review-translation">Это может быть вызвано следующими причинами:
+          <target state="translated">Это может быть вызвано следующими причинами:
 - Ссылка на папку была удалена из-за нарушения Условий обслуживания/Правил использования.
 - Недействительный адрес — ссылка, по которой вы пытаетесь перейти, не существует.
 - Ссылка на папку была удалена пользователем.</target>
@@ -1471,7 +1471,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_EmailAlreadyRegistered" translate="yes" space="preserve">
           <source>This e-mail address has already registered an account with MEGA.</source>
-          <target state="translated">Этот адрес электронной почты уже зарегистрирован аккаунт с MEGA.</target>
+          <target state="translated">На введённый вами электронный адрес уже зарегистрирована учётная запись сервиса MEGA.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the users tries to create an account with an email already in use.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_IncompleteConfirmationLink" translate="yes" space="preserve">
@@ -1615,6 +1615,11 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <source>Clear cache failed</source>
           <target state="translated">Не удалось очистить кэш</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_PrepareDownloadsFailed" translate="yes" space="preserve">
+          <source>Error preparing downloads. Please try again.</source>
+          <target state="translated">Error preparing downloads. Please try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to prepare files or folders for download failed.</note>
         </trans-unit>
       </group>
     </body>

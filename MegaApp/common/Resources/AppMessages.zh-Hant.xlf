@@ -631,8 +631,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException" translate="yes" space="preserve">
           <source>You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?
 Please try to save/copy the file to your device's internal memory instead.</source>
-          <target state="translated">您沒有將此檔案類型複製到目標資料夾的權限。您是否要將不支援類型的檔案儲存/複製到SD卡中？
-請嘗試將檔案儲存/複製到您的設備的內部記憶體中。</target>
+          <target state="translated">您沒有將此檔案類型複製到目標資料夾的權限。您是否要將不支援的檔案類型儲存/ 複製到SD卡中？也請嘗試將檔案儲存/ 複製到您的設備內部記憶體中，以作為替代方案。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</note>
         </trans-unit>
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException_Title" translate="yes" space="preserve">
@@ -1277,7 +1276,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - The file has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The file has been deleted by the user.</source>
-          <target state="needs-review-translation">檔案連結不存在之可能原因：
+          <target state="translated">檔案連結不存在之可能原因：
 - 因ToS / AUP違規，故該檔案連結已被刪除。
 - 無效的網址 – 您嘗試存取的連結並不存在。
 - 該使用者已將檔案連結刪除。</target>
@@ -1288,7 +1287,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - The folder link has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The folder link has been deleted by the user.</source>
-          <target state="needs-review-translation">資料夾連結不存在之可能原因：
+          <target state="translated">資料夾連結不存在之可能原因：
 - 因ToS / AUP違規，故該資料夾連結已被刪除。
 - 無效的網址 – 您嘗試存取的連結並不存在。
 - 該使用者已將資料夾連結刪除。</target>
@@ -1606,18 +1605,23 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_InternalNodeFailed_Title" translate="yes" space="preserve">
           <source>Failed to open the internal file/folder</source>
-          <target state="translated">Failed to open the internal file/folder</target>
+          <target state="translated">無法開啟內部檔案/ 資料夾。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fail trying to open a link of an internal node - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ClearCacheFailed" translate="yes" space="preserve">
           <source>Failed to clear cache. Please try again.</source>
-          <target state="translated">Failed to clear cache. Please try again.</target>
+          <target state="translated">清除快取失敗，請再試一次。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to clear cache failed.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ClearCacheFailed_Title" translate="yes" space="preserve">
           <source>Clear cache failed</source>
-          <target state="translated">Clear cache failed</target>
+          <target state="translated">清除快取失敗</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_PrepareDownloadsFailed" translate="yes" space="preserve">
+          <source>Error preparing downloads. Please try again.</source>
+          <target state="translated">Error preparing downloads. Please try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to prepare files or folders for download failed.</note>
         </trans-unit>
       </group>
     </body>

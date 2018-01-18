@@ -173,7 +173,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/LinkCopiedToClipboard_Title" translate="yes" space="preserve">
           <source>Copied to clipboard</source>
-          <target state="translated">Telah tersalin ke papan</target>
+          <target state="translated">Tersalin ke papan klip</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard finished successfully - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/LoginFailed" translate="yes" space="preserve">
@@ -597,7 +597,7 @@ Preserve the {0} code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/NoDownloadLocationSelected" translate="yes" space="preserve">
           <source>You have not selected a default download location for your files.To proceed with the download, please select a destination folder or go to settings in order to set up your default download location.</source>
-          <target state="translated">You have not selected a default download location for your files.To proceed with the download, please select a destination folder or go to settings in order to set up your default download location.</target>
+          <target state="translated">Anda belum memilih lokasi download default untuk file Anda. Untuk melanjutkan download, pilih folder tujuan atau pergi ke pengaturan untuk mengatur lokasi download default Anda.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</note>
         </trans-unit>
         <trans-unit id="Resx/PrepareFileForUploadFailed" translate="yes" space="preserve">
@@ -989,7 +989,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</no
         </trans-unit>
         <trans-unit id="Resx/InviteContactAddSuccessfully_Title" translate="yes" space="preserve">
           <source>Contact invited</source>
-          <target state="translated">Kontak telah diundang</target>
+          <target state="translated">Kontak terundang</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to invite a contact finished successfully - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ResourceIntensiveTaskDescription" translate="yes" space="preserve">
@@ -1274,7 +1274,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - The file has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The file has been deleted by the user.</source>
-          <target state="needs-review-translation">Ini bisa jadi karena alasan berikut:
+          <target state="translated">Ini bisa jadi karena alasan berikut:
 - File telah dihapus karena pelanggaran ToS / AUP.
 - URL tidak valid - link yang Anda coba akses tidak ada.
 - File telah dihapus oleh pengguna.</target>
@@ -1285,7 +1285,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - The folder link has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The folder link has been deleted by the user.</source>
-          <target state="needs-review-translation">Ini bisa jadi karena alasan berikut:
+          <target state="translated">Ini bisa jadi karena alasan berikut:
 - Link folder telah dihapus karena pelanggaran ToS / AUP.
 - URL tidak valid - link yang Anda coba akses tidak ada.
 - Link folder telah dihapus oleh pengguna.</target>
@@ -1471,7 +1471,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_EmailAlreadyRegistered" translate="yes" space="preserve">
           <source>This e-mail address has already registered an account with MEGA.</source>
-          <target state="translated">Alamat e-mail ini telah terhubung dengan akun MEGA yang lain.</target>
+          <target state="translated">Surel ini telah memiliki akun di MEGA.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the users tries to create an account with an email already in use.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_IncompleteConfirmationLink" translate="yes" space="preserve">
@@ -1598,23 +1598,28 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_InternalNodeFailed" translate="yes" space="preserve">
           <source>Failed to open the internal file/folder of the link. Please try again.</source>
-          <target state="translated">Failed to open the internal file/folder of the link. Please try again.</target>
+          <target state="translated">Gagal membuka file / folder internal link. Silahkan coba lagi</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fail trying to open a link of an internal node.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_InternalNodeFailed_Title" translate="yes" space="preserve">
           <source>Failed to open the internal file/folder</source>
-          <target state="translated">Failed to open the internal file/folder</target>
+          <target state="translated">Gagal membuka file / folder internal</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fail trying to open a link of an internal node - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ClearCacheFailed" translate="yes" space="preserve">
           <source>Failed to clear cache. Please try again.</source>
-          <target state="translated">Failed to clear cache. Please try again.</target>
+          <target state="translated">Gagal menghapus cache. Harap coba lagi</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to clear cache failed.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ClearCacheFailed_Title" translate="yes" space="preserve">
           <source>Clear cache failed</source>
-          <target state="translated">Clear cache failed</target>
+          <target state="translated">Hapus cache gagal</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_PrepareDownloadsFailed" translate="yes" space="preserve">
+          <source>Error preparing downloads. Please try again.</source>
+          <target state="translated">Error preparing downloads. Please try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to prepare files or folders for download failed.</note>
         </trans-unit>
       </group>
     </body>

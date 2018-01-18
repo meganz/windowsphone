@@ -597,7 +597,7 @@ Preserve the {0} code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/NoDownloadLocationSelected" translate="yes" space="preserve">
           <source>You have not selected a default download location for your files.To proceed with the download, please select a destination folder or go to settings in order to set up your default download location.</source>
-          <target state="translated">You have not selected a default download location for your files.To proceed with the download, please select a destination folder or go to settings in order to set up your default download location.</target>
+          <target state="translated">لم تقم بتحديد موقع التحميل الافتراضي لملفاتك.للمضي قدما في التحميل ، يرجى تحديد مجلد الوجهة أو الانتقال إلى الإعدادات من أجل إعداد موقع التحميل الافتراضي.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</note>
         </trans-unit>
         <trans-unit id="Resx/PrepareFileForUploadFailed" translate="yes" space="preserve">
@@ -1274,7 +1274,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - The file has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The file has been deleted by the user.</source>
-          <target state="needs-review-translation">قد يرجع ذلك إلى الأسباب التالية:
+          <target state="translated">قد يرجع ذلك إلى الأسباب التالية:
 
 - تمت إزالة الملف بسبب انتهاك ToS/AUP.
 - رابط غير موجود - الرابط الذي تحاول الدخول إليه غير موجود.
@@ -1286,7 +1286,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - The folder link has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The folder link has been deleted by the user.</source>
-          <target state="needs-review-translation">قد يرجع ذلك إلى الأسباب التالية:
+          <target state="translated">قد يرجع ذلك إلى الأسباب التالية:
 
 - تمت إزالة رابط المجلد بسبب انتهاك ToS/AUP.
 - رابط غير موجود - الرابط الذي تحاول الدخول إليه غير موجود.
@@ -1601,23 +1601,28 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_InternalNodeFailed" translate="yes" space="preserve">
           <source>Failed to open the internal file/folder of the link. Please try again.</source>
-          <target state="translated">Failed to open the internal file/folder of the link. Please try again.</target>
+          <target state="translated">فشل في فتح الملف/المجلد الداخلي للرابط، الرجاء حاول ثانية.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fail trying to open a link of an internal node.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_InternalNodeFailed_Title" translate="yes" space="preserve">
           <source>Failed to open the internal file/folder</source>
-          <target state="translated">Failed to open the internal file/folder</target>
+          <target state="translated">فشل في فتح الملف/المجلد الداخلي</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fail trying to open a link of an internal node - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ClearCacheFailed" translate="yes" space="preserve">
           <source>Failed to clear cache. Please try again.</source>
-          <target state="translated">Failed to clear cache. Please try again.</target>
+          <target state="translated">فشل في تنظيف الملفات المؤقتة. الرجاء الماولة لاحقا</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to clear cache failed.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ClearCacheFailed_Title" translate="yes" space="preserve">
           <source>Clear cache failed</source>
-          <target state="translated">Clear cache failed</target>
+          <target state="translated">فشل في تنظيف الملفات المؤقتة</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_PrepareDownloadsFailed" translate="yes" space="preserve">
+          <source>Error preparing downloads. Please try again.</source>
+          <target state="translated">Error preparing downloads. Please try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to prepare files or folders for download failed.</note>
         </trans-unit>
       </group>
     </body>

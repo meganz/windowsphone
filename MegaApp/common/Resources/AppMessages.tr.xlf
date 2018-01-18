@@ -34,7 +34,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/ConfirmNeeded" translate="yes" space="preserve">
           <source>Check your e-mail and click the link to login and confirm your account</source>
-          <target state="translated">E-postanızı kontrol edin. Giriş yapmak ve hesabınızı onaylamak için bağlantıyı tıklayın</target>
+          <target state="translated">E-postanızı kontrol edin. Giriş yapmak ve hesabınızı onaylamak için bağlantıya tıklayın</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user create a new MEGA account successfully, informing that will receive an e-mail with a link to confirm account.</note>
         </trans-unit>
         <trans-unit id="Resx/ConfirmNeeded_Title" translate="yes" space="preserve">
@@ -1277,7 +1277,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - The file has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The file has been deleted by the user.</source>
-          <target state="needs-review-translation">Bunun nedeni aşağıdakilerden biri olabilir:
+          <target state="translated">Bunun nedeni aşağıdakilerden biri olabilir:
 - Dosya Hizmet Koşullarını ihlal ettiği için kaldırıldı.
 - Geçersiz URL – erişmeye çalıştığınız link yok
 - Dosya kullanıcı tarafından kaldırıldı.</target>
@@ -1288,7 +1288,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - The folder link has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The folder link has been deleted by the user.</source>
-          <target state="needs-review-translation">Bunun nedeni aşağıdakilerden biri olabilir:
+          <target state="translated">Bunun nedeni aşağıdakilerden biri olabilir:
 - Klasör linki Hizmet Koşullarını ihlal ettiği için kaldırıldı.
 - Geçersiz URL – erişmeye çalıştığınız link yok
 - Klasör linki kullanıcı tarafından kaldırıldı.</target>
@@ -1618,6 +1618,11 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <source>Clear cache failed</source>
           <target state="translated">Önbellek temizle başarısız</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_PrepareDownloadsFailed" translate="yes" space="preserve">
+          <source>Error preparing downloads. Please try again.</source>
+          <target state="translated">Error preparing downloads. Please try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to prepare files or folders for download failed.</note>
         </trans-unit>
       </group>
     </body>

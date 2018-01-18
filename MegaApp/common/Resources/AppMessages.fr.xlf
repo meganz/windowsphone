@@ -173,7 +173,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/LinkCopiedToClipboard_Title" translate="yes" space="preserve">
           <source>Copied to clipboard</source>
-          <target state="translated">Copié dans le presse-papier</target>
+          <target state="translated">Copié dans le presse-papiers</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard finished successfully - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/LoginFailed" translate="yes" space="preserve">
@@ -224,13 +224,13 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/RemoveItemQuestion" translate="yes" space="preserve">
           <source>Are you sure you want to remove {0}?</source>
-          <target state="translated">Voulez-vous vraiment supprimer {0}?</target>
+          <target state="translated">Voulez-vous vraiment supprimer {0} ?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to remove definitely an itemfrom the rubbish bin, asking for confirmation to do it.
 Preserve the {0} code because is for include the name of the item to be removed in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/RemoveItemQuestion_Title" translate="yes" space="preserve">
           <source>Remove?</source>
-          <target state="translated">Supprimer?</target>
+          <target state="translated">Supprimer ?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to remove definitely an item from the rubbish bin failed, asking for confirmation to do it - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/RemoveNodeFailed" translate="yes" space="preserve">
@@ -285,7 +285,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
         </trans-unit>
         <trans-unit id="Resx/SaveImageQuestion" translate="yes" space="preserve">
           <source>Export current image to 'saved pictures' album?</source>
-          <target state="translated">Exporter l'image actuel dans l'album « images enregistrées »?</target>
+          <target state="translated">Exporter l'image actuel dans l'album « images enregistrées » ?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to save a image to the 'saved pictures' album, asking for confirmation to do it.</note>
         </trans-unit>
         <trans-unit id="Resx/SaveImageQuestion_Title" translate="yes" space="preserve">
@@ -348,13 +348,13 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/MultiSelectRemoveQuestion" translate="yes" space="preserve">
           <source>Are you sure you want to remove {0} items?</source>
-          <target state="translated">Voulez-vous vraiment supprimer {0} éléments?</target>
+          <target state="translated">Voulez-vous vraiment supprimer {0} éléments ?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to remove multiple nodes definitely from the rubbish bin, asking for confirmation to make the movement.
 Preserve the {0} code because is for include the number of nodes to be removed in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/MultiSelectRemoveQuestion_Title" translate="yes" space="preserve">
           <source>Remove items?</source>
-          <target state="translated">Supprimer les éléments?</target>
+          <target state="translated">Supprimer les éléments ?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to remove multiple nodes definitely from the rubbish bin, asking for confirmation to make the movement - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/MultiRemoveSucces" translate="yes" space="preserve">
@@ -380,13 +380,13 @@ Preserve the {0} code because is for include the number of nodes to be moved in 
         </trans-unit>
         <trans-unit id="Resx/MoveToRubbishBinQuestion" translate="yes" space="preserve">
           <source>Are you sure you want to move {0} to the rubbish bin?</source>
-          <target state="translated">Voulez-vous vraiment déplacer {0} vers la corbeille?</target>
+          <target state="translated">Voulez-vous vraiment déplacer {0} vers la corbeille ?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to move a single node to the rubbish bin, asking for confirmation to make the movement.
 Preserve the {0} code because is for include the name of the node to be moved in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/MoveToRubbishBinQuestion_Title" translate="yes" space="preserve">
           <source>Move to rubbish bin?</source>
-          <target state="translated">Déplacer vers la corbeille?</target>
+          <target state="translated">Déplacer vers la corbeille ?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to move a single node to the rubbish bin, asking for confirmation to make the movement - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/MoveToRubbishBinSuccess" translate="yes" space="preserve">
@@ -401,13 +401,13 @@ Preserve the {0} code because is for include the name of the node to be moved in
         </trans-unit>
         <trans-unit id="Resx/MultiMoveToRubbishBinQuestion" translate="yes" space="preserve">
           <source>Are you sure you want to move {0} items to the rubbish bin?</source>
-          <target state="translated">Voulez-vous vraiment déplacer {0} éléments vers la corbeille?</target>
+          <target state="translated">Voulez-vous vraiment déplacer {0} éléments vers la corbeille ?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to move multiple nodes to the rubbish bin, asking for confirmation to make the movement.
 Preserve the {0} code because is for include the number of nodes to be moved in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/MultiMoveToRubbishBinQuestion_Title" translate="yes" space="preserve">
           <source>Move items?</source>
-          <target state="translated">Déplacer les éléments?</target>
+          <target state="translated">Déplacer les éléments ?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to move multiple nodes to the rubbish bin, asking for confirmation to make the movement - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/MultiMoveToRubbishBinSucces" translate="yes" space="preserve">
@@ -423,7 +423,7 @@ Preserve the {0} code because is for include the number of nodes to be moved in 
         </trans-unit>
         <trans-unit id="Resx/PendingTransfersLogout" translate="yes" space="preserve">
           <source>You have {0} pending transfers. Pending transfers will be canceled. Are you sure you want to logout?</source>
-          <target state="translated">Vous avez {0} transferts en attente. Les transferts en attente seront annulés. Voulez-vous vraiment vous déconnecter?</target>
+          <target state="translated">Vous avez {0} transferts en attente. Les transferts en attente seront annulés. Voulez-vous vraiment vous déconnecter ?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user are trying to logout the application and has pending transfers. Asks for confirmation to logout.
 Preserve the {0} code because is for include the number of pending transfers in runtime.</note>
         </trans-unit>
@@ -434,7 +434,7 @@ Preserve the {0} code because is for include the number of pending transfers in 
         </trans-unit>
         <trans-unit id="Resx/PendingTransfersExit" translate="yes" space="preserve">
           <source>You have {0} pending transfers. Pending transfers will be canceled. Are you sure you want to exit?</source>
-          <target state="translated">Vous avez {0} transferts en attente. Les transferts en attente seront annulés. Voulez-vous vraiment quitter?</target>
+          <target state="translated">Vous avez {0} transferts en attente. Les transferts en attente seront annulés. Voulez-vous vraiment quitter ?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user are trying to exit the application and has pending transfers. Asks for confirmation to exit.
 Preserve the {0} code because is for include the number of pending transfers in runtime.</note>
         </trans-unit>
@@ -465,7 +465,7 @@ Preserve the {0} code because is for include the number of pending transfers in 
         </trans-unit>
         <trans-unit id="Resx/DownloadLimitMessage" translate="yes" space="preserve">
           <source>You have selected over {0} items ({1}) to download. Do you want to proceed?</source>
-          <target state="translated">Vous avez sélectionné plus de {0} éléments ({1}) à télécharger. Voulez-vous poursuivre?</target>
+          <target state="translated">Vous avez sélectionné plus de {0} éléments ({1}) à télécharger. Voulez-vous poursuivre ?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user would try to download at the same time more nodes than the reliable number of simultaneous downloads for a good app performance. This dialog ask confirmation to start the download process. 
 Preserve the {0} and ({1}) codes because is for include the maximum reliable download number and the precise number of nodes to be downloaded in runtime.</note>
         </trans-unit>
@@ -476,7 +476,7 @@ Preserve the {0} and ({1}) codes because is for include the maximum reliable dow
         </trans-unit>
         <trans-unit id="Resx/QuestionAskedDownloadOption" translate="yes" space="preserve">
           <source>Do you want to automatically export image files to your photo album after download? You can change this setting on the settings page afterwards. Other file types will only be stored in the local storage of the app.</source>
-          <target state="translated">Voulez-vous automatiquement exporter les fichiers images vers votre album photos après téléchargement? Vous pourrez changer cette option ultérieurement dans la page des paramètres. Les autres types de fichier seront conservés dans le stockage local de l'appli.</target>
+          <target state="translated">Voulez-vous automatiquement exporter les fichiers images vers votre album photos après téléchargement ? Vous pourrez changer cette option ultérieurement dans la page des paramètres. Les autres types de fichier seront conservés dans le stockage local de l'appli.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed the first time that a user want to download a image. Asks if wants to export image files to the photo album after download in future and informs that user can change this option afterwards.</note>
         </trans-unit>
         <trans-unit id="Resx/PausingTransfersFailed" translate="yes" space="preserve">
@@ -587,7 +587,7 @@ Preserve the {0} code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/OverquotaAlert" translate="yes" space="preserve">
           <source>Operation not allowed, you will exceed the storage limit of your account. Do you want to upgrade your account?</source>
-          <target state="translated">L'opération n'est pas autorisée. Vous dépasseriez la limite de stockage de votre compte. Souhaitez-vous surclasser votre compte?</target>
+          <target state="translated">L'opération n'est pas autorisée. Vous dépasseriez la limite de stockage de votre compte. Souhaitez-vous surclasser votre compte ?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type.</note>
         </trans-unit>
         <trans-unit id="Resx/OverquotaAlert_Title" translate="yes" space="preserve">
@@ -630,7 +630,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException" translate="yes" space="preserve">
           <source>You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?
 Please try to save/copy the file to your device's internal memory instead.</source>
-          <target state="translated">Vous n'avez pas le droit de copier ce type de fichier dans le dossier de destination. Tentez-vous d'enregistrer ou de copier un fichier d'un type non pris en charge vers une carte SD?
+          <target state="translated">Vous n'avez pas le droit de copier ce type de fichier dans le dossier de destination. Tentez-vous d'enregistrer ou de copier un fichier d'un type non pris en charge vers une carte SD ?
 Veuillez plutôt essayer d'enregistrer ou de copier le fichier dans la mémoire interne de votre appareil.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</note>
         </trans-unit>
@@ -759,7 +759,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/DeleteNodeQuestion" translate="yes" space="preserve">
           <source>Are you sure you want to permanently delete {0}?</source>
-          <target state="translated">Voulez-vous vraiment supprimer {0} définitivement?</target>
+          <target state="translated">Voulez-vous vraiment supprimer {0} définitivement ?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to delete permanently a node, asking for confirmation to make it.
 Preserve the {0} code because is for include name of the node to be removed in runtime.</note>
         </trans-unit>
@@ -865,7 +865,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_CancelSubscriptionConfirmation" translate="yes" space="preserve">
           <source>Thank you for your feedback! Are you sure you want to cancel your MEGA subscription?</source>
-          <target state="translated">Nous vous remercions de vos commentaires ! Voulez-vous vraiment annuler votre abonnement MEGA?</target>
+          <target state="translated">Nous vous remercions de vos commentaires ! Voulez-vous vraiment annuler votre abonnement MEGA ?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user is trying to cancel a subscription. This sentence is for give thanks to the user for the feedback sent during the cancellation process and asking for confirmation to do it.</note>
         </trans-unit>
         <trans-unit id="Resx/CancelSubscriptionFailed" translate="yes" space="preserve">
@@ -952,7 +952,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/CameraUploadNeedsStayLoggedIn" translate="yes" space="preserve">
           <source>In order for the automatic Camera Uploads to work correctly, you need to enable the option "Stay logged in". Do you want to enable this option?</source>
-          <target state="translated">Afin que le téléversement automatique de la caméra fonctionne correctement, vous devez activer l'option « Rester connecté ». Souhaitez-vous activer cette option?</target>
+          <target state="translated">Afin que le téléversement automatique de la caméra fonctionne correctement, vous devez activer l’option « Rester connecté ». Souhaitez-vous activer cette option ?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user wants to enable auto camera uploads but Stay logged in is disabled.</note>
         </trans-unit>
         <trans-unit id="Resx/CameraUploadNeedsStayLoggedIn_Title" translate="yes" space="preserve">
@@ -962,13 +962,13 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/DeleteContactQuestion" translate="yes" space="preserve">
           <source>Do you want to remove the contact {0}?</source>
-          <target state="translated">Souhaitez-vous supprimer le contact {0}?</target>
+          <target state="translated">Souhaitez-vous supprimer le contact {0} ?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to remove a contact, asking for confirmation to make it.
 Preserve the {0} code because is for include email of the contact to be removed in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/DeleteContactQuestion_Title" translate="yes" space="preserve">
           <source>Remove contact?</source>
-          <target state="translated">Supprimer le contact?</target>
+          <target state="translated">Supprimer le contact ?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to remove a contact asking for confirmation to make it - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/InviteContactAddFailed" translate="yes" space="preserve">
@@ -999,7 +999,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</no
         </trans-unit>
         <trans-unit id="Resx/AccountUpdate" translate="yes" space="preserve">
           <source>Your account has been updated. Do you want to check the new account details?</source>
-          <target state="translated">Votre compte a été mis à jour. Souhaitez-vous vérifier les nouvelles informations de compte?</target>
+          <target state="translated">Votre compte a été mis à jour. Souhaitez-vous vérifier les nouvelles informations de compte ?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the account is updated (upgraded or downgraded).</note>
         </trans-unit>
         <trans-unit id="Resx/AccountUpdated_Title" translate="yes" space="preserve">
@@ -1040,13 +1040,13 @@ Preserve the {0} code because is for include the contact email in runtime. Prese
         </trans-unit>
         <trans-unit id="Resx/DeleteMultipleContactsQuestion" translate="yes" space="preserve">
           <source>Do you want to remove {0} contacts?</source>
-          <target state="translated">Souhaitez-vous supprimer {0} contacts?</target>
+          <target state="translated">Souhaitez-vous supprimer {0} contacts ?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to remove multiple contacts, asking for confirmation to make it.
 Preserve the {0} code because is for include the number of contacts to be removed in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/DeleteMultipleContactsQuestion_Title" translate="yes" space="preserve">
           <source>Remove contacts?</source>
-          <target state="translated">Supprimer les contacts?</target>
+          <target state="translated">Supprimer les contacts ?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to remove multiple contacts asking for confirmation to make it - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ChangePasswordFailed" translate="yes" space="preserve">
@@ -1056,7 +1056,7 @@ Preserve the {0} code because is for include the number of contacts to be remove
         </trans-unit>
         <trans-unit id="Resx/ChangePasswordSuccess" translate="yes" space="preserve">
           <source>Your password has been changed.</source>
-          <target state="translated">Votre mot de passe a été modifié.</target>
+          <target state="translated">Votre mot de passe a été changé.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when change a MEGA account password succesfully.</note>
         </trans-unit>
         <trans-unit id="Resx/NewAndOldPasswordMatch" translate="yes" space="preserve">
@@ -1099,7 +1099,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/CleanRubbishBinQuestion" translate="yes" space="preserve">
           <source>Are you sure you want to permanently delete all files from the rubbish bin?</source>
-          <target state="translated">Voulez-vous vraiment supprimer définitivement tous les fichiers de la corbeille?</target>
+          <target state="translated">Voulez-vous vraiment supprimer définitivement tous les fichiers de la corbeille ?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to empty the rubbish bin, asking for confirmation to do it.</note>
         </trans-unit>
         <trans-unit id="Resx/CleanRubbishBinSuccess" translate="yes" space="preserve">
@@ -1247,7 +1247,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_AlreadyLoggedInAlert" translate="yes" space="preserve">
           <source>If you agree, the current account will be logged out and all Offline data will be erased. Do you want to continue?</source>
-          <target state="translated">Si vous acceptez, le compte actuel sera déconnecté et toutes les données Hors ligne seront effacées. Voulez-vous poursuivre?</target>
+          <target state="translated">Si vous acceptez, le compte actuel sera déconnecté et toutes les données Hors ligne seront effacées. Voulez-vous poursuivre ?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the warning dialog shown when you try to confirm an account but you are logged in with another one.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AlreadyLoggedInAlert_Title" translate="yes" space="preserve">
@@ -1275,7 +1275,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - The file has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The file has been deleted by the user.</source>
-          <target state="needs-review-translation">Cela pourrait être causé par les raisons suivantes :
+          <target state="translated">Cela pourrait être causé par les raisons suivantes :
 - Le fichier a été retiré en raison du non-respect des conditions générales d'utilisation ou de la politique d'utilisation acceptable.
 - L'URL est invalide. Le lien auquel vous essayez d'accéder n'existe pas.
 - Le fichier a été supprimé par l'utilisateur.</target>
@@ -1286,7 +1286,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - The folder link has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The folder link has been deleted by the user.</source>
-          <target state="needs-review-translation">Cela pourrait être causé par les raisons suivantes :
+          <target state="translated">Cela pourrait être causé par les raisons suivantes :
 - Le lien de dossier a été retiré en raison du non-respect des conditions générales d'utilisation ou de la politique d'utilisation acceptable.
 - L'URL est invalide. Le lien auquel vous essayez d'accéder n'existe pas.
 - Le lien de dossier a été supprimé par l'utilisateur.</target>
@@ -1352,7 +1352,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DebugModeEnabled_Message" translate="yes" space="preserve">
           <source>Debug mode is enabled. Do you want to disable it?</source>
-          <target state="translated">Le mode débogage est activé. Voulez-vous le désactiver?</target>
+          <target state="translated">Le mode débogage est activé. Voulez-vous le désactiver ?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the alert dialog displayed when the app starts and the DEBUG mode is enable. This alert is to try to avoid that the user forget disable the DEBUG mode and the log file size grows a lot in the offline section.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DebugModeEnabled_Title" translate="yes" space="preserve">
@@ -1549,12 +1549,12 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_CancelDownloadsQuestion" translate="yes" space="preserve">
           <source>Are you sure you want to cancel all the pending downloads?</source>
-          <target state="translated">Voulez-vous vraiment annuler les téléchargements en attente?</target>
+          <target state="translated">Voulez-vous vraiment annuler les téléchargements en attente ?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user wants to cancel all the pending downloads.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_CancelUploadsQuestion" translate="yes" space="preserve">
           <source>Are you sure you want to cancel all the pending uploads?</source>
-          <target state="translated">Voulez-vous vraiment annuler les téléversements en attente?</target>
+          <target state="translated">Voulez-vous vraiment annuler les téléversements en attente ?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user wants to cancel all the pending uploads.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ViewContactDetailsFailed" translate="yes" space="preserve">
@@ -1579,7 +1579,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_SaveLogFile" translate="yes" space="preserve">
           <source>Do you want to save the log file in an external location to use it later?</source>
-          <target state="translated">Voulez-vous enregistrer le fichier journal dans un emplacement externe pour l'utiliser plus tard?</target>
+          <target state="translated">Voulez-vous enregistrer le fichier journal dans un emplacement externe pour l'utiliser plus tard ?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_SaveLogFile_Title" translate="yes" space="preserve">
@@ -1616,6 +1616,11 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <source>Clear cache failed</source>
           <target state="translated">Échec de nettoyage du cache</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_PrepareDownloadsFailed" translate="yes" space="preserve">
+          <source>Error preparing downloads. Please try again.</source>
+          <target state="translated">Error preparing downloads. Please try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to prepare files or folders for download failed.</note>
         </trans-unit>
       </group>
     </body>

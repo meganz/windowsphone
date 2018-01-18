@@ -1277,7 +1277,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - The file has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The file has been deleted by the user.</source>
-          <target state="needs-review-translation">זה עלול לקרות מכמה סיבות:
+          <target state="translated">זה עלול לקרות מכמה סיבות:
 - הקישור לקובץ נמחק עקב הפרת זכויות יוצרים.
 - כתובת לא נכונה - הקישור אליו אתה מנסה לגשת לא קיים.
 - הקישור לקובץ נמחק על ידי המשתמש.</target>
@@ -1288,7 +1288,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - The folder link has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The folder link has been deleted by the user.</source>
-          <target state="needs-review-translation">זה עלול לקרות מכמה סיבות:
+          <target state="translated">זה עלול לקרות מכמה סיבות:
 - הקישור לתיקייה נמחק עקב הפרת זכויות יוצרים.
 - כתובת לא נכונה - הקישור אליו אתה מנסה לגשת לא קיים.
 - הקישור לתיקייה נמחק על ידי המשתמש.</target>
@@ -1474,7 +1474,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_EmailAlreadyRegistered" translate="yes" space="preserve">
           <source>This e-mail address has already registered an account with MEGA.</source>
-          <target state="translated">כבר קיים חשבון בעל אותו דואר אלקטרני בMEGA</target>
+          <target state="translated">לאימייל הזה יש כבר חשבון בMEGA.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the users tries to create an account with an email already in use.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_IncompleteConfirmationLink" translate="yes" space="preserve">
@@ -1618,6 +1618,11 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <source>Clear cache failed</source>
           <target state="translated">Clear cache failed</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_PrepareDownloadsFailed" translate="yes" space="preserve">
+          <source>Error preparing downloads. Please try again.</source>
+          <target state="translated">Error preparing downloads. Please try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to prepare files or folders for download failed.</note>
         </trans-unit>
       </group>
     </body>

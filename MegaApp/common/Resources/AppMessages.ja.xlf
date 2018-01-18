@@ -1273,7 +1273,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - The file has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The file has been deleted by the user.</source>
-          <target state="needs-review-translation">これは、以下の理由による可能性があります：
+          <target state="translated">これは、以下の理由による可能性があります：
 －ファイルがToS/AUP違反により削除されました。
 －URLが無効－アクセスしようとしているリンクが存在しません。
 －ファイルがユーザーによって削除されました。</target>
@@ -1284,7 +1284,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - The folder link has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The folder link has been deleted by the user.</source>
-          <target state="needs-review-translation">これは、以下の理由による可能性があります：
+          <target state="translated">これは、以下の理由による可能性があります：
 －フォルダがToS/AUP違反により削除されました。
 －URLが無効－アクセスしようとしているリンクが存在しません。
 －フォルダリンクがユーザーによって削除されました。</target>
@@ -1614,6 +1614,11 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <source>Clear cache failed</source>
           <target state="translated">キャッシュのクリアに失敗しました</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_PrepareDownloadsFailed" translate="yes" space="preserve">
+          <source>Error preparing downloads. Please try again.</source>
+          <target state="translated">Error preparing downloads. Please try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to prepare files or folders for download failed.</note>
         </trans-unit>
       </group>
     </body>

@@ -597,7 +597,7 @@ Preserve the {0} code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/NoDownloadLocationSelected" translate="yes" space="preserve">
           <source>You have not selected a default download location for your files.To proceed with the download, please select a destination folder or go to settings in order to set up your default download location.</source>
-          <target state="needs-review-translation">Nem választottál ki alapértelmezett letöltési helyet a fájljaidnak.
+          <target state="translated">Nem választottál ki alapértelmezett letöltési helyet a fájljaidnak.
 
 A letöltés folytatásához kérlek válassz ki egy célkönyvtárt vagy menj a beállításokba és válaszd ki az alapértelmezett letöltési könyvtárat.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</note>
@@ -632,7 +632,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException" translate="yes" space="preserve">
           <source>You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?
 Please try to save/copy the file to your device's internal memory instead.</source>
-          <target state="needs-review-translation">Nincs jogosultságod a fájl másolásához. Valószínűleg egy nem támogatott típusú fájlt próbálsz menteni/másolni az SD kártyára. Kérlek próbáld az eszköz belső memóriájára menteni/másolni.</target>
+          <target state="translated">Nincs jogosultságod a fájl másolásához. Valószínűleg egy nem támogatott típusú fájlt próbálsz menteni/másolni az SD kártyára. Kérlek próbáld az eszköz belső memóriájára menteni/másolni.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</note>
         </trans-unit>
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException_Title" translate="yes" space="preserve">
@@ -1275,7 +1275,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - The file has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The file has been deleted by the user.</source>
-          <target state="needs-review-translation">Ez a következő okok miatt lehetséges:
+          <target state="translated">Ez a következő okok miatt lehetséges:
 - A fájl törlésre került az ÁSZF/EFI (Elfogadható Felhasználási Irányelv, angolul AUP) megsértése miatt.
 - Érvénytelen URL – a link, amelyhez próbál hozzáférni, nem létezik.
 - A fájl törlésre került a felhasználó által.</target>
@@ -1286,7 +1286,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - The folder link has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The folder link has been deleted by the user.</source>
-          <target state="needs-review-translation">Ez a következő okok miatt lehetséges:
+          <target state="translated">Ez a következő okok miatt lehetséges:
 - A mappalink törlésre került az ÁSZF/EFI (Elfogadható Felhasználási Irányelv, angolul AUP) megsértése miatt.
 - Érvénytelen URL – a link, amelyhez próbál hozzáférni, nem létezik.
 - A mappalink törlésre került a felhasználó által.</target>
@@ -1491,22 +1491,27 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <source>Failed to open the internal file/folder</source>
           <target state="new">Failed to open the internal file/folder</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fail trying to open a link of an internal node - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/AM_ClearCacheFailed_Title" translate="yes" xml:space="preserve">
           <source>Clear cache failed</source>
           <target state="new">Clear cache failed</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
+        <trans-unit id="Resx/AM_PrepareDownloadsFailed" translate="yes" xml:space="preserve">
+          <source>Error preparing downloads. Please try again.</source>
+          <target state="new">Error preparing downloads. Please try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to prepare files or folders for download failed.</note>
+          </trans-unit>
         <trans-unit id="Resx/AM_ClearCacheFailed" translate="yes" xml:space="preserve">
           <source>Failed to clear cache. Please try again.</source>
           <target state="new">Failed to clear cache. Please try again.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to clear cache failed.</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/AM_InternalNodeFailed" translate="yes" xml:space="preserve">
           <source>Failed to open the internal file/folder of the link. Please try again.</source>
           <target state="new">Failed to open the internal file/folder of the link. Please try again.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fail trying to open a link of an internal node.</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/AM_ShareLinkFailed" translate="yes" xml:space="preserve">
           <source>Failed to share the file/folder link. Please try again.</source>
           <target state="new">Failed to share the file/folder link. Please try again.</target>
