@@ -45,6 +45,11 @@ namespace ScheduledCameraUploadTaskAgent.MegaApi
             // Do nothing
         }
 
+        public void onEvent(MegaSDK api, MEvent ev)
+        {
+            // Event received
+        }
+
         #endregion
     }
 }

@@ -1427,8 +1427,8 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
 Preserve the {0} code because is for include the exact time until the user has to wait.</note>
           </trans-unit>
         <trans-unit id="Resx/AM_AccountBlocked_Title" translate="yes" xml:space="preserve">
-          <source>Account blocked</source>
-          <target state="new">Account blocked</target>
+          <source>Suspended account</source>
+          <target state="new">Suspended account</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog shown when the user is trying to login and the account has been blocked.</note>
           </trans-unit>
         <trans-unit id="Resx/AM_ShareFromMegaAppBusy_Message" translate="yes" xml:space="preserve">
@@ -1502,6 +1502,11 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="new">Error preparing downloads. Please try again.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to prepare files or folders for download failed.</note>
           </trans-unit>
+        <trans-unit id="Resx/AM_AccountBlockedCopyright" translate="yes" xml:space="preserve">
+          <source>Your account has been suspended due to multiple breaches of Mega's Terms of Service. Please check your email inbox.</source>
+          <target state="new">Your account has been suspended due to multiple breaches of Mega's Terms of Service. Please check your email inbox.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the user is trying to login and the account has been blocked for multiple copyright violation.</note>
+        </trans-unit>
         <trans-unit id="Resx/AM_ClearCacheFailed" translate="yes" xml:space="preserve">
           <source>Failed to clear cache. Please try again.</source>
           <target state="new">Failed to clear cache. Please try again.</target>
@@ -1553,8 +1558,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the user is trying to login and the account has not been confirmed yet.</note>
           </trans-unit>
         <trans-unit id="Resx/AM_AccountBlocked" translate="yes" xml:space="preserve">
-          <source>Your account has been blocked. Please contact support@mega.co.nz</source>
-          <target state="new">Your account has been blocked. Please contact support@mega.co.nz</target>
+          <source>Your account was terminated due to breach of Mega's Terms of Service, such as abuse of rights of others; sharing and/or importing illegal data; or system abuse.</source>
+          <target state="new">Your account was terminated due to breach of Mega's Terms of Service, such as abuse of rights of others; sharing and/or importing illegal data; or system abuse.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the user is trying to login and the account has been blocked.</note>
           </trans-unit>
         <trans-unit id="Resx/AM_ImportFailed_Title" translate="yes" xml:space="preserve">
