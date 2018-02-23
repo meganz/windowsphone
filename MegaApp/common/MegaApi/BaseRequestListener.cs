@@ -68,13 +68,6 @@ namespace MegaApp.MegaApi
                         Deployment.Current.Dispatcher.BeginInvoke(() => NavigateService.NavigateTo(NavigateToPage, NavigationParameter));
                     break;
 
-                case MErrorType.API_EBLOCKED: // If the account has been blocked
-                    api.logout(new LogOutRequestListener(false));
-
-                    Deployment.Current.Dispatcher.BeginInvoke(() =>
-                        NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.API_EBLOCKED));
-                    break;
-
                 case MErrorType.API_EGOINGOVERQUOTA: // Not enough quota
                 case MErrorType.API_EOVERQUOTA: //Storage overquota error
                     // Stop all upload transfers

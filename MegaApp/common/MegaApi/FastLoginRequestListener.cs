@@ -139,10 +139,6 @@ namespace MegaApp.MegaApi
                             new CustomMessageDialog(ErrorMessageTitle, AppMessages.AM_AccountNotConfirmed,
                                 App.AppInformation, MessageDialogButtons.Ok).ShowDialog());
                         return;
-
-                    case MErrorType.API_EBLOCKED: // Account blocked
-                        base.onRequestFinish(api, request, e);
-                        return;
                 }
             }            
 

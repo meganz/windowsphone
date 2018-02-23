@@ -228,6 +228,9 @@
     <Compile Include="..\common\Database\SQLiteAsync.cs">
       <Link>Database\SQLiteAsync.cs</Link>
     </Compile>
+    <Compile Include="..\common\Enums\AccountBlockedReason.cs">
+      <Link>Enums\AccountBlockedReason.cs</Link>
+    </Compile>
     <Compile Include="..\common\Enums\CameraUploadsConnectionType.cs">
       <Link>Enums\CameraUploadsConnectionType.cs</Link>
     </Compile>

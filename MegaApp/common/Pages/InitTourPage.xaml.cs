@@ -76,10 +76,22 @@ namespace MegaApp.Pages
                     break;
 
                 case NavigationParameter.API_EBLOCKED:
+                    string message;
+                    switch ((AccountBlockedReason)Convert.ToInt32(NavigationContext.QueryString["Number"]))
+                    {
+                        case AccountBlockedReason.Copyright:
+                            message = AppMessages.AM_AccountBlockedCopyright;
+                            break;
+                        case AccountBlockedReason.OtherReason:
+                        default:
+                            message = AppMessages.AM_AccountBlocked;
+                        break;
+                    }
+                
                     // Show a message notifying the error
                     new CustomMessageDialog(
                         AppMessages.AM_AccountBlocked_Title,
-                        AppMessages.AM_AccountBlocked, 
+                        message, 
                         App.AppInformation, 
                         MessageDialogButtons.Ok).ShowDialog();
                     break;
