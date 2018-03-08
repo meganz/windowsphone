@@ -1485,8 +1485,8 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the warning dialog shown when the user tries to make a new sign up using an invalid link (#newsignup).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AccountBlocked" translate="yes" space="preserve">
-          <source>Your account has been blocked. Please contact support@mega.co.nz</source>
-          <target state="translated">Váš účet bol zablokovaný. Prosím kontaktujte support@mega.co.nz</target>
+          <source>Your account was terminated due to breach of Mega's Terms of Service, such as abuse of rights of others; sharing and/or importing illegal data; or system abuse.</source>
+          <target state="needs-review-translation">Váš účet bol zablokovaný. Prosím kontaktujte support@mega.co.nz</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the user is trying to login and the account has been blocked.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AccountNotConfirmed" translate="yes" space="preserve">
@@ -1501,8 +1501,8 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
 Preserve the {0} code because is for include the exact time until the user has to wait.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AccountBlocked_Title" translate="yes" space="preserve">
-          <source>Account blocked</source>
-          <target state="translated">Účet zablokovaný</target>
+          <source>Suspended account</source>
+          <target state="needs-review-translation">Účet zablokovaný</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog shown when the user is trying to login and the account has been blocked.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShareFromMegaAppBusy_Message" translate="yes" space="preserve">
@@ -1620,6 +1620,11 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <source>Error preparing downloads. Please try again.</source>
           <target state="translated">Error preparing downloads. Please try again.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to prepare files or folders for download failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_AccountBlockedCopyright" translate="yes" xml:space="preserve">
+          <source>Your account has been suspended due to multiple breaches of Mega's Terms of Service. Please check your email inbox.</source>
+          <target state="new">Your account has been suspended due to multiple breaches of Mega's Terms of Service. Please check your email inbox.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the user is trying to login and the account has been blocked for multiple copyright violation.</note>
         </trans-unit>
       </group>
     </body>

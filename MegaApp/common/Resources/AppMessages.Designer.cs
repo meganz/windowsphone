@@ -106,7 +106,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Your account has been blocked. Please contact support@mega.co.nz.
+        ///   Busca una cadena traducida similar a Your account was terminated due to breach of Mega&apos;s Terms of Service, such as abuse of rights of others; sharing and/or importing illegal data; or system abuse..
         /// </summary>
         public static string AM_AccountBlocked {
             get {
@@ -115,11 +115,20 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Account blocked.
+        ///   Busca una cadena traducida similar a Suspended account.
         /// </summary>
         public static string AM_AccountBlocked_Title {
             get {
                 return ResourceManager.GetString("AM_AccountBlocked_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Your account has been suspended due to multiple breaches of Mega&apos;s Terms of Service. Please check your email inbox..
+        /// </summary>
+        public static string AM_AccountBlockedCopyright {
+            get {
+                return ResourceManager.GetString("AM_AccountBlockedCopyright", resourceCulture);
             }
         }
         

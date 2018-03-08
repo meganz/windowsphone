@@ -304,6 +304,9 @@
     <Compile Include="..\common\Database\SQLiteAsync.cs">
       <Link>Database\SQLiteAsync.cs</Link>
     </Compile>
+    <Compile Include="..\common\Enums\AccountBlockedReason.cs">
+      <Link>Enums\AccountBlockedReason.cs</Link>
+    </Compile>
     <Compile Include="..\common\Enums\CameraUploadsConnectionType.cs">
       <Link>Enums\CameraUploadsConnectionType.cs</Link>
     </Compile>
@@ -3779,7 +3782,7 @@
     </XliffResource>
   </ItemGroup>
   <ItemGroup>
-    <SDKReference Include="SQLite.WP80, Version=3.21.0">
+    <SDKReference Include="SQLite.WP80, Version=3.22.0">
       <Name>SQLite for Windows Phone</Name>
     </SDKReference>
   </ItemGroup>
