@@ -1306,7 +1306,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Message of the warning dialog shown when the user tries to make a new sign up using an invalid link (#newsignup).</comment>
   </data>
   <data name="AM_AccountBlocked" xml:space="preserve">
-    <value>Vaš račun je bil blokiran. Prosim, stopite v stik s support@mega.co.nz</value>
+    <value>Your account was terminated due to a breach of MEGA's Terms of Service, such as abuse of rights of others; sharing and/or importing illegal data; or system abuse.</value>
     <comment>Message of the dialog shown when the user is trying to login and the account has been blocked.</comment>
   </data>
   <data name="AM_AccountNotConfirmed" xml:space="preserve">
@@ -1319,7 +1319,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
 Preserve the {0} code because is for include the exact time until the user has to wait.</comment>
   </data>
   <data name="AM_AccountBlocked_Title" xml:space="preserve">
-    <value>Račun blokiran</value>
+    <value>Suspendiran račun</value>
     <comment>Title of the dialog shown when the user is trying to login and the account has been blocked.</comment>
   </data>
   <data name="AM_ShareFromMegaAppBusy_Message" xml:space="preserve">
@@ -1414,5 +1414,9 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="AM_PrepareDownloadsFailed" xml:space="preserve">
     <value>Error preparing downloads. Please try again.</value>
     <comment>Message of the dialog displayed when the process to prepare files or folders for download failed.</comment>
+  </data>
+  <data name="AM_AccountBlockedCopyright" xml:space="preserve">
+    <value>Your account has been suspended due to multiple breaches of MEGA's Terms of Service. Please check your email inbox.</value>
+    <comment>Message of the dialog shown when the user is trying to login and the account has been blocked for multiple copyright violation.</comment>
   </data>
 </root>

@@ -447,21 +447,21 @@ Preserve the {0} code because is for include the number of nodes to be moved in 
     <comment>Title of the dialog displayed when move successfully multiple nodes to the rubbish bin - (String as short as possible).</comment>
   </data>
   <data name="PendingTransfersLogout" xml:space="preserve">
-    <value>คุณมีการโอนย้ายที่ค้างอยู่ {0} รายการ และจะถูกยกเลิกทันที คุณแน่ใจหรือว่าต้องการที่จะออกจากระบบตอนนี้</value>
+    <value>คุณมีการถ่ายโอนที่ค้างอยู่ {0} รายการ และจะถูกยกเลิกทันที คุณแน่ใจหรือว่าต้องการที่จะออกจากระบบตอนนี้</value>
     <comment>Message of the dialog displayed when a user are trying to logout the application and has pending transfers. Asks for confirmation to logout.
 Preserve the {0} code because is for include the number of pending transfers in runtime.</comment>
   </data>
   <data name="PendingTransfersLogout_Title" xml:space="preserve">
-    <value>การโอนย้ายที่ค้างอยู่</value>
+    <value>การถ่ายโอนที่ค้างอยู่</value>
     <comment>Title of the dialog displayed when a user are trying to logout the application and has pending transfers. Asks for confirmation to logout - (String as short as possible).</comment>
   </data>
   <data name="PendingTransfersExit" xml:space="preserve">
-    <value>คุณมีการโอนย้ายที่ค้างอยู่ {0} รายการ และจะถูกยกเลิกทันที คุณแน่ใจหรือว่าต้องการที่จะจบการทำงานตอนนี้</value>
+    <value>คุณมีการถ่ายโอนที่ค้างอยู่ {0} รายการ และจะถูกยกเลิกทันที คุณแน่ใจหรือว่าต้องการที่จะจบการทำงานตอนนี้</value>
     <comment>Message of the dialog displayed when a user are trying to exit the application and has pending transfers. Asks for confirmation to exit.
 Preserve the {0} code because is for include the number of pending transfers in runtime.</comment>
   </data>
   <data name="PendingTransfersExit_Title" xml:space="preserve">
-    <value>การโอนย้ายที่ค้างอยู่</value>
+    <value>การถ่ายโอนที่ค้างอยู่</value>
     <comment>Title of the dialog displayed when a user are trying to exit the application and has pending transfers. Asks for confirmation to exit - (String as short as possible).</comment>
   </data>
   <data name="AlreadyConfirmedAccount" xml:space="preserve">
@@ -489,7 +489,7 @@ Preserve the {0} code because is for include the number of pending transfers in 
     <comment>Message of the dialog displayed the first time that a user want to download a image. Asks if wants to export image files to the photo album after download in future and informs that user can change this option afterwards.</comment>
   </data>
   <data name="PausingTransfersFailed" xml:space="preserve">
-    <value>ไม่สามารถหยุดการโอนย้ายชั่วคราวได้</value>
+    <value>ไม่สามารถหยุดการถ่ายโอนชั่วคราวได้</value>
     <comment>Message of the dialog displayed when the process/request to pause transfers failed.</comment>
   </data>
   <data name="PausingTransfersFailed_Title" xml:space="preserve">
@@ -497,7 +497,7 @@ Preserve the {0} code because is for include the number of pending transfers in 
     <comment>Title of the dialog displayed when the process/request to pause transfers failed - (String as short as possible).</comment>
   </data>
   <data name="ResumingTransfersFailed" xml:space="preserve">
-    <value>ไม่สามารถดำเนินการโอนย้ายต่อได้</value>
+    <value>ไม่สามารถดำเนินการถ่ายโอนต่อได้</value>
     <comment>Message of the dialog displayed when the process/request to resume transfers failed.</comment>
   </data>
   <data name="ResumingTransfersFailed_Title" xml:space="preserve">
@@ -777,7 +777,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed in cases that the user types some data with a wrong format - (String as short as possible).</comment>
   </data>
   <data name="CancelSubscriptionFailed" xml:space="preserve">
-    <value>การยกเลิกสมัครใช้งานไม่ถูกต้อง กรุณาติดต่อ support@mega.nz เพื่อยกเลิกการสมัครใช้งานนี้</value>
+    <value>ยังไม่ได้ยกเลิกการสมัครสมาชิก กรุณาติดต่อ support@mega.nz เพื่อยกเลิกการสมัครรับข้อมูลของคุณ</value>
     <comment>Message of the dialog displayed when the process/request to cancel a subscription failed.</comment>
   </data>
   <data name="CancelSubscriptionFailed_Title" xml:space="preserve">
@@ -797,7 +797,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialogs displayed when a user is trying to cancel a subscription - (String as short as possible).</comment>
   </data>
   <data name="RequiredFieldsCancelSubscription" xml:space="preserve">
-    <value>กรุณาให้ความคิดเห็นของคุณ ขอขอบคุณ</value>
+    <value>กรุณาให้คำติชมของคุณ ขอขอบคุณ</value>
     <comment>Message of the dialog displayed when required fields for cancel subscription are not filled in.</comment>
   </data>
   <data name="UpgradeAccountFailed" xml:space="preserve">
@@ -1305,7 +1305,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Message of the warning dialog shown when the user tries to make a new sign up using an invalid link (#newsignup).</comment>
   </data>
   <data name="AM_AccountBlocked" xml:space="preserve">
-    <value>บัญชีของคุณถูกบล็อก กรุณาติดต่อ support@mega.co.nz</value>
+    <value>บัญชีของคุณถูกยุติการใช้งานเนื่องจากละเมิดข้อกำหนดในการให้บริการของ MEGA เช่น การสวมสิทธิผู้อื่น การแชร์และ/หรือการนำเข้าข้อมูลที่ผิดกฎหมาย หรือการละเมิดระบบ</value>
     <comment>Message of the dialog shown when the user is trying to login and the account has been blocked.</comment>
   </data>
   <data name="AM_AccountNotConfirmed" xml:space="preserve">
@@ -1318,7 +1318,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
 Preserve the {0} code because is for include the exact time until the user has to wait.</comment>
   </data>
   <data name="AM_AccountBlocked_Title" xml:space="preserve">
-    <value>บัญชีถูกบล็อกแล้ว</value>
+    <value>บัญชีถูกระงับ</value>
     <comment>Title of the dialog shown when the user is trying to login and the account has been blocked.</comment>
   </data>
   <data name="AM_ShareFromMegaAppBusy_Message" xml:space="preserve">
@@ -1347,11 +1347,11 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when trying to open a link of an internal node and this node is not found in the account in which the user is logged in - (String as short as possible).</comment>
   </data>
   <data name="AM_TransferOverquotaWarning" xml:space="preserve">
-    <value>การโอนถ่ายที่รออยู่ของคุณเกินโควต้าการโอนปัจจุบันที่มีให้สำหรับบัญชีของคุณและอาจถูกขัดจังหวะได้</value>
+    <value>การถ่ายโอนข้อมูลที่รออยู่ของคุณเกินโควต้าการถ่ายโอนปัจจุบันที่มีให้สำหรับบัญชีของคุณและอาจถูกขัดจังหวะได้</value>
     <comment>Message of the dialog displayed when a user exceeds the transfer quota limits of the account (transfer overquota error).</comment>
   </data>
   <data name="AM_TransferOverquotaWarning_Title" xml:space="preserve">
-    <value>โควตาการโอนถ่ายหมดแล้ว</value>
+    <value>โควตาการถ่ายโอนหมดแล้ว</value>
     <comment>Message of the dialog displayed when a user exceeds the transfer quota limits of the account (transfer overquota error) - (String as short as possible).</comment>
   </data>
   <data name="AM_CancelDownloadsQuestion" xml:space="preserve">
@@ -1395,23 +1395,27 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when fails the process/request to share a file/folder link.</comment>
   </data>
   <data name="AM_InternalNodeFailed" xml:space="preserve">
-    <value>Failed to open the internal file/folder of the link. Please try again.</value>
+    <value>ไม่สามารถเปิดไฟล์/โฟลเดอร์ภายในของลิงก์ได้ กรุณาลองอีกครั้ง</value>
     <comment>Title of the dialog displayed when fail trying to open a link of an internal node.</comment>
   </data>
   <data name="AM_InternalNodeFailed_Title" xml:space="preserve">
-    <value>Failed to open the internal file/folder</value>
+    <value>ไม่สามารถเปิดไฟล์/โฟลเดอร์ภายในได้</value>
     <comment>Title of the dialog displayed when fail trying to open a link of an internal node - (String as short as possible).</comment>
   </data>
   <data name="AM_ClearCacheFailed" xml:space="preserve">
-    <value>Failed to clear cache. Please try again.</value>
+    <value>ไม่สามารถล้างแคชได้ กรุณาลองอีกครั้ง</value>
     <comment>Message of the dialog displayed when the process to clear cache failed.</comment>
   </data>
   <data name="AM_ClearCacheFailed_Title" xml:space="preserve">
-    <value>Clear cache failed</value>
+    <value>ล้างแคชไม่สำเร็จ</value>
     <comment>Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</comment>
   </data>
   <data name="AM_PrepareDownloadsFailed" xml:space="preserve">
-    <value>Error preparing downloads. Please try again.</value>
+    <value>เกิดข้อผิดพลาดในการจัดเตรียมการดาวน์โหลด กรุณาลองอีกครั้ง</value>
     <comment>Message of the dialog displayed when the process to prepare files or folders for download failed.</comment>
+  </data>
+  <data name="AM_AccountBlockedCopyright" xml:space="preserve">
+    <value>บัญชีของคุณถูกระงับเนื่องจากมีการละเมิดข้อกำหนดในการให้บริการของ MEGA หลายครั้ง กรุณาตรวจสอบกล่องจดหมายอีเมลของคุณ</value>
+    <comment>Message of the dialog shown when the user is trying to login and the account has been blocked for multiple copyright violation.</comment>
   </data>
 </root>

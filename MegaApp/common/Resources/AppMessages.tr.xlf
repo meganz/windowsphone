@@ -872,8 +872,8 @@ Fikrinizi değiştirmek için yapabileceğimiz birşey varsa bizi bilgilendirin.
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user is trying to cancel a subscription. This sentence is for give thanks to the user for the feedback sent during the cancellation process and asking for confirmation to do it.</note>
         </trans-unit>
         <trans-unit id="Resx/CancelSubscriptionFailed" translate="yes" space="preserve">
-          <source>The subscription has not been canceled correctly. Please contact support@mega.nz to cancel your subscription.</source>
-          <target state="translated">Abonelik doğru bir şekilde iptal edilmemiştir. Aboneliğinizi iptal etmek için support@mega.nz ile irtibata geçiniz.</target>
+          <source>The subscription has not been canceled successfully. Please contact support@mega.nz to cancel your subscription.</source>
+          <target state="translated">Abonelik iptal edilememiştir. Aboneliğinizi iptal etmek için lütfen support@mega.nz ile iletişime geçin.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to cancel a subscription failed.</note>
         </trans-unit>
         <trans-unit id="Resx/CancelSubscriptionFailed_Title" translate="yes" space="preserve">
@@ -1488,8 +1488,8 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the warning dialog shown when the user tries to make a new sign up using an invalid link (#newsignup).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AccountBlocked" translate="yes" space="preserve">
-          <source>Your account was terminated due to breach of Mega's Terms of Service, such as abuse of rights of others; sharing and/or importing illegal data; or system abuse.</source>
-          <target state="needs-review-translation">Hesabınız bloke edilmiştir. support@mega.co.nz ile irtibata geçiniz.</target>
+          <source>Your account was terminated due to a breach of MEGA's Terms of Service, such as abuse of rights of others; sharing and/or importing illegal data; or system abuse.</source>
+          <target state="translated">Hesabınız, başkalarının haklarını kötüye kullanma, yasadışı verileri paylaşma ve/veya içe aktarma veya sistem kötüye kullanımı gibi MEGA Hizmet Şartları'nı ihlal ettiği için sona erdirildi.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the user is trying to login and the account has been blocked.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AccountNotConfirmed" translate="yes" space="preserve">
@@ -1505,7 +1505,7 @@ Preserve the {0} code because is for include the exact time until the user has t
         </trans-unit>
         <trans-unit id="Resx/AM_AccountBlocked_Title" translate="yes" space="preserve">
           <source>Suspended account</source>
-          <target state="needs-review-translation">Hesap engellendi</target>
+          <target state="translated">Askıya alınan hesap</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog shown when the user is trying to login and the account has been blocked.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShareFromMegaAppBusy_Message" translate="yes" space="preserve">
@@ -1621,12 +1621,12 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_PrepareDownloadsFailed" translate="yes" space="preserve">
           <source>Error preparing downloads. Please try again.</source>
-          <target state="translated">Error preparing downloads. Please try again.</target>
+          <target state="translated">İndirmeler hazırlanırken hata oluştu. Lütfen tekrar deneyin.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to prepare files or folders for download failed.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_AccountBlockedCopyright" translate="yes" xml:space="preserve">
-          <source>Your account has been suspended due to multiple breaches of Mega's Terms of Service. Please check your email inbox.</source>
-          <target state="new">Your account has been suspended due to multiple breaches of Mega's Terms of Service. Please check your email inbox.</target>
+        <trans-unit id="Resx/AM_AccountBlockedCopyright" translate="yes" space="preserve">
+          <source>Your account has been suspended due to multiple breaches of MEGA's Terms of Service. Please check your email inbox.</source>
+          <target state="translated">Hesabınız, MEGA Hizmet Şartları'nın birden fazla ihlalinden dolayı askıya alındı. Lütfen e-posta gelen kutunuzu kontrol edin.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the user is trying to login and the account has been blocked for multiple copyright violation.</note>
         </trans-unit>
       </group>

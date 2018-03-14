@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CancelTransfer" xml:space="preserve">
-    <value>กำลังยกเลิกการโอนย้าย...</value>
+    <value>กำลังยกเลิกการถ่ายโอน...</value>
     <comment>Progress indicator message when canceling a transfer - (String as short as possible).</comment>
   </data>
   <data name="CleanRubbishBin" xml:space="preserve">
@@ -200,7 +200,7 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when moving a node to the rubbish bin (trash) - (String as short as possible).</comment>
   </data>
   <data name="PauseTransfers" xml:space="preserve">
-    <value>กำลังหยุดการโอนย้ายชั่วคราว...</value>
+    <value>กำลังหยุดการถ่ายโอนชั่วคราว...</value>
     <comment>Progress indicator message when pausing transfers - (String as short as possible).</comment>
   </data>
   <data name="PrepareDownloads" xml:space="preserve">
@@ -240,7 +240,7 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when ignoring a contact request - (String as short as possible).</comment>
   </data>
   <data name="ResumeTransfers" xml:space="preserve">
-    <value>กำลังดำเนินการโอนย้ายต่อ...</value>
+    <value>กำลังดำเนินการถ่ายโอนต่อ...</value>
     <comment>Progress indicator message when resuming transfers - (String as short as possible).</comment>
   </data>
   <data name="SaveForOffline" xml:space="preserve">

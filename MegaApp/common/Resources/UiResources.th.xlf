@@ -18,7 +18,7 @@
         </trans-unit>
         <trans-unit id="Resx/UI_AgreeTermsOfService" translate="yes" space="preserve">
           <source>I agree with the Terms of Service</source>
-          <target state="translated">I agree with the Terms of Service</target>
+          <target state="translated">ฉันเห็นด้วยกับข้อกำหนดในการบริการ</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text placed just after a checkbox to indicate that user is agree with the 'Terms of Service' into the 'create account' page.</note>
         </trans-unit>
         <trans-unit id="Resx/AppName" translate="yes" space="preserve">
@@ -78,7 +78,7 @@
         </trans-unit>
         <trans-unit id="Resx/EmptyTransfers" translate="yes" space="preserve">
           <source>No transfers</source>
-          <target state="translated">ยังไม่มีการโอนย้าย</target>
+          <target state="translated">ยังไม่มีการถ่ายโอน</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty transfers page - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_GetLink" translate="yes" space="preserve">
@@ -208,7 +208,7 @@
         </trans-unit>
         <trans-unit id="Resx/NoTransfers" translate="yes" space="preserve">
           <source>No transfers</source>
-          <target state="translated">ยังไม่มีการโอนย้าย</target>
+          <target state="translated">ยังไม่มีการถ่ายโอน</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label shown when the app has no information about the transfers to show into 'transfers' page - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Upload" translate="yes" space="preserve">
@@ -218,7 +218,7 @@
         </trans-unit>
         <trans-unit id="Resx/Transfers" translate="yes" space="preserve">
           <source>transfers</source>
-          <target state="translated">โอนย้าย</target>
+          <target state="translated">ถ่ายโอน</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Transfers' button, link, text, title, etc. (i.e. total space) - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Download" translate="yes" space="preserve">
@@ -283,7 +283,7 @@
         </trans-unit>
         <trans-unit id="Resx/UI_ConfirmPinLock" translate="yes" space="preserve">
           <source>Confirm PIN lock</source>
-          <target state="translated">Confirm PIN lock</target>
+          <target state="translated">ยืนยันการล็อก PIN</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Confirm PIN lock' button, link, text, title, etc. - (String as short as possible).
 Preserve the PIN uppercase word.</note>
         </trans-unit>
@@ -380,7 +380,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/Bandwidth" translate="yes" space="preserve">
           <source>Transfer quota</source>
-          <target state="translated">โควต้าการโอนย้าย</target>
+          <target state="translated">โควต้าการถ่ายโอน</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Bandwidth' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Cache" translate="yes" space="preserve">
@@ -405,7 +405,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/CleanUpTransfers" translate="yes" space="preserve">
           <source>clean up transfers</source>
-          <target state="translated">เคลียร์การโอนย้าย</target>
+          <target state="translated">เคลียร์การถ่ายโอน</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Clean up transfers' button, link, text, title, etc. - (String as short as possible, MAX 15 characters).</note>
         </trans-unit>
         <trans-unit id="Resx/ClearCache" translate="yes" space="preserve">
@@ -500,7 +500,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_NewPinLock" translate="yes" space="preserve">
           <source>New PIN lock</source>
-          <target state="translated">New PIN lock</target>
+          <target state="translated">ล็อก PIN ใหม่</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'New PIN lock' button, link, text, title, etc. - (String as short as possible).
 Preserve the PIN uppercase word.</note>
         </trans-unit>
@@ -621,7 +621,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/CancelAllTransfers" translate="yes" space="preserve">
           <source>Cancel all transfers</source>
-          <target state="translated">ยกเลิกการโอนย้ายทั้งหมด</target>
+          <target state="translated">ยกเลิกการถ่ายโอนทั้งหมด</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Cancel all transfers' button or menu option - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/InitTourAccess1" translate="yes" space="preserve">
@@ -676,7 +676,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/InitTourSpeed1" translate="yes" space="preserve">
           <source>transfers are fast.</source>
-          <target state="translated">โอนย้ายได้รวดเร็ว</target>
+          <target state="translated">ถ่ายโอนได้รวดเร็ว</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label 'transfers are fast.' for the first part of the sentence 'transfers are fast. quickly share files with everyone.', to build this sentence in two colors into the init tour page. Don't forget to place '.' at the end of the string. Keep all in lowercase.</note>
         </trans-unit>
         <trans-unit id="Resx/InitTourSpeed2" translate="yes" space="preserve">
@@ -1411,7 +1411,7 @@ NOTE: Keep the capital letter if possible.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateError" translate="yes" space="preserve">
           <source>Error on transfer</source>
-          <target state="translated">มีข้อผิดพลาดในการโอนถ่าย</target>
+          <target state="translated">มีข้อผิดพลาดในการถ่ายโอน</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a failed  transfer - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateNotStarted" translate="yes" space="preserve">
@@ -1466,12 +1466,12 @@ NOTE: Keep the capital letter if possible.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_NoCompletedTransfers" translate="yes" space="preserve">
           <source>No completed transfers</source>
-          <target state="translated">ไม่มีรายการโอนถ่าย</target>
+          <target state="translated">ไม่มีรายการถ่ายโอน</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty completed transfers page - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_ViewTermsOfService" translate="yes" space="preserve">
           <source>View Terms of Service here</source>
-          <target state="translated">View Terms of Service here</target>
+          <target state="translated">ดูข้อกำหนดในการบริการที่นี่</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text used as a link to view the 'Terms of Service' into the 'create account' page.</note>
         </trans-unit>
       </group>

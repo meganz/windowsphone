@@ -423,24 +423,24 @@ Preserve the {0} code because is for include the number of nodes to be moved in 
         </trans-unit>
         <trans-unit id="Resx/PendingTransfersLogout" translate="yes" space="preserve">
           <source>You have {0} pending transfers. Pending transfers will be canceled. Are you sure you want to logout?</source>
-          <target state="translated">คุณมีการโอนย้ายที่ค้างอยู่ {0} รายการ และจะถูกยกเลิกทันที คุณแน่ใจหรือว่าต้องการที่จะออกจากระบบตอนนี้</target>
+          <target state="translated">คุณมีการถ่ายโอนที่ค้างอยู่ {0} รายการ และจะถูกยกเลิกทันที คุณแน่ใจหรือว่าต้องการที่จะออกจากระบบตอนนี้</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user are trying to logout the application and has pending transfers. Asks for confirmation to logout.
 Preserve the {0} code because is for include the number of pending transfers in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/PendingTransfersLogout_Title" translate="yes" space="preserve">
           <source>Pending Transfers</source>
-          <target state="translated">การโอนย้ายที่ค้างอยู่</target>
+          <target state="translated">การถ่ายโอนที่ค้างอยู่</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user are trying to logout the application and has pending transfers. Asks for confirmation to logout - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PendingTransfersExit" translate="yes" space="preserve">
           <source>You have {0} pending transfers. Pending transfers will be canceled. Are you sure you want to exit?</source>
-          <target state="translated">คุณมีการโอนย้ายที่ค้างอยู่ {0} รายการ และจะถูกยกเลิกทันที คุณแน่ใจหรือว่าต้องการที่จะจบการทำงานตอนนี้</target>
+          <target state="translated">คุณมีการถ่ายโอนที่ค้างอยู่ {0} รายการ และจะถูกยกเลิกทันที คุณแน่ใจหรือว่าต้องการที่จะจบการทำงานตอนนี้</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user are trying to exit the application and has pending transfers. Asks for confirmation to exit.
 Preserve the {0} code because is for include the number of pending transfers in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/PendingTransfersExit_Title" translate="yes" space="preserve">
           <source>Pending Transfers</source>
-          <target state="translated">การโอนย้ายที่ค้างอยู่</target>
+          <target state="translated">การถ่ายโอนที่ค้างอยู่</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user are trying to exit the application and has pending transfers. Asks for confirmation to exit - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AlreadyConfirmedAccount" translate="yes" space="preserve">
@@ -481,7 +481,7 @@ Preserve the {0} and ({1}) codes because is for include the maximum reliable dow
         </trans-unit>
         <trans-unit id="Resx/PausingTransfersFailed" translate="yes" space="preserve">
           <source>Failed to pause transfers</source>
-          <target state="translated">ไม่สามารถหยุดการโอนย้ายชั่วคราวได้</target>
+          <target state="translated">ไม่สามารถหยุดการถ่ายโอนชั่วคราวได้</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to pause transfers failed.</note>
         </trans-unit>
         <trans-unit id="Resx/PausingTransfersFailed_Title" translate="yes" space="preserve">
@@ -491,7 +491,7 @@ Preserve the {0} and ({1}) codes because is for include the maximum reliable dow
         </trans-unit>
         <trans-unit id="Resx/ResumingTransfersFailed" translate="yes" space="preserve">
           <source>Failed to resume transfers</source>
-          <target state="translated">ไม่สามารถดำเนินการโอนย้ายต่อได้</target>
+          <target state="translated">ไม่สามารถดำเนินการถ่ายโอนต่อได้</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to resume transfers failed.</note>
         </trans-unit>
         <trans-unit id="Resx/ResumingTransfersFailed_Title" translate="yes" space="preserve">
@@ -868,8 +868,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user is trying to cancel a subscription. This sentence is for give thanks to the user for the feedback sent during the cancellation process and asking for confirmation to do it.</note>
         </trans-unit>
         <trans-unit id="Resx/CancelSubscriptionFailed" translate="yes" space="preserve">
-          <source>The subscription has not been canceled correctly. Please contact support@mega.nz to cancel your subscription.</source>
-          <target state="translated">การยกเลิกสมัครใช้งานไม่ถูกต้อง กรุณาติดต่อ support@mega.nz เพื่อยกเลิกการสมัครใช้งานนี้</target>
+          <source>The subscription has not been canceled successfully. Please contact support@mega.nz to cancel your subscription.</source>
+          <target state="translated">ยังไม่ได้ยกเลิกการสมัครสมาชิก กรุณาติดต่อ support@mega.nz เพื่อยกเลิกการสมัครรับข้อมูลของคุณ</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to cancel a subscription failed.</note>
         </trans-unit>
         <trans-unit id="Resx/CancelSubscriptionFailed_Title" translate="yes" space="preserve">
@@ -894,7 +894,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/RequiredFieldsCancelSubscription" translate="yes" space="preserve">
           <source>Please give us your feedback. Thanks.</source>
-          <target state="translated">กรุณาให้ความคิดเห็นของคุณ ขอขอบคุณ</target>
+          <target state="translated">กรุณาให้คำติชมของคุณ ขอขอบคุณ</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when required fields for cancel subscription are not filled in.</note>
         </trans-unit>
         <trans-unit id="Resx/UpgradeAccountFailed" translate="yes" space="preserve">
@@ -1484,8 +1484,8 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the warning dialog shown when the user tries to make a new sign up using an invalid link (#newsignup).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AccountBlocked" translate="yes" space="preserve">
-          <source>Your account was terminated due to breach of Mega's Terms of Service, such as abuse of rights of others; sharing and/or importing illegal data; or system abuse.</source>
-          <target state="needs-review-translation">บัญชีของคุณถูกบล็อก กรุณาติดต่อ support@mega.co.nz</target>
+          <source>Your account was terminated due to a breach of MEGA's Terms of Service, such as abuse of rights of others; sharing and/or importing illegal data; or system abuse.</source>
+          <target state="translated">บัญชีของคุณถูกยุติการใช้งานเนื่องจากละเมิดข้อกำหนดในการให้บริการของ MEGA เช่น การสวมสิทธิผู้อื่น การแชร์และ/หรือการนำเข้าข้อมูลที่ผิดกฎหมาย หรือการละเมิดระบบ</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the user is trying to login and the account has been blocked.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AccountNotConfirmed" translate="yes" space="preserve">
@@ -1501,7 +1501,7 @@ Preserve the {0} code because is for include the exact time until the user has t
         </trans-unit>
         <trans-unit id="Resx/AM_AccountBlocked_Title" translate="yes" space="preserve">
           <source>Suspended account</source>
-          <target state="needs-review-translation">บัญชีถูกบล็อกแล้ว</target>
+          <target state="translated">บัญชีถูกระงับ</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog shown when the user is trying to login and the account has been blocked.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShareFromMegaAppBusy_Message" translate="yes" space="preserve">
@@ -1537,12 +1537,12 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_TransferOverquotaWarning" translate="yes" space="preserve">
           <source>Your queued transfer exceeds the current transfer quota available for your account and may therefore be interrupted.</source>
-          <target state="translated">การโอนถ่ายที่รออยู่ของคุณเกินโควต้าการโอนปัจจุบันที่มีให้สำหรับบัญชีของคุณและอาจถูกขัดจังหวะได้</target>
+          <target state="translated">การถ่ายโอนข้อมูลที่รออยู่ของคุณเกินโควต้าการถ่ายโอนปัจจุบันที่มีให้สำหรับบัญชีของคุณและอาจถูกขัดจังหวะได้</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user exceeds the transfer quota limits of the account (transfer overquota error).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_TransferOverquotaWarning_Title" translate="yes" space="preserve">
           <source>Depleted transfer quota</source>
-          <target state="translated">โควตาการโอนถ่ายหมดแล้ว</target>
+          <target state="translated">โควตาการถ่ายโอนหมดแล้ว</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user exceeds the transfer quota limits of the account (transfer overquota error) - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_CancelDownloadsQuestion" translate="yes" space="preserve">
@@ -1597,32 +1597,32 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_InternalNodeFailed" translate="yes" space="preserve">
           <source>Failed to open the internal file/folder of the link. Please try again.</source>
-          <target state="translated">Failed to open the internal file/folder of the link. Please try again.</target>
+          <target state="translated">ไม่สามารถเปิดไฟล์/โฟลเดอร์ภายในของลิงก์ได้ กรุณาลองอีกครั้ง</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fail trying to open a link of an internal node.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_InternalNodeFailed_Title" translate="yes" space="preserve">
           <source>Failed to open the internal file/folder</source>
-          <target state="translated">Failed to open the internal file/folder</target>
+          <target state="translated">ไม่สามารถเปิดไฟล์/โฟลเดอร์ภายในได้</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fail trying to open a link of an internal node - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ClearCacheFailed" translate="yes" space="preserve">
           <source>Failed to clear cache. Please try again.</source>
-          <target state="translated">Failed to clear cache. Please try again.</target>
+          <target state="translated">ไม่สามารถล้างแคชได้ กรุณาลองอีกครั้ง</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to clear cache failed.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ClearCacheFailed_Title" translate="yes" space="preserve">
           <source>Clear cache failed</source>
-          <target state="translated">Clear cache failed</target>
+          <target state="translated">ล้างแคชไม่สำเร็จ</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PrepareDownloadsFailed" translate="yes" space="preserve">
           <source>Error preparing downloads. Please try again.</source>
-          <target state="translated">Error preparing downloads. Please try again.</target>
+          <target state="translated">เกิดข้อผิดพลาดในการจัดเตรียมการดาวน์โหลด กรุณาลองอีกครั้ง</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to prepare files or folders for download failed.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_AccountBlockedCopyright" translate="yes" xml:space="preserve">
-          <source>Your account has been suspended due to multiple breaches of Mega's Terms of Service. Please check your email inbox.</source>
-          <target state="new">Your account has been suspended due to multiple breaches of Mega's Terms of Service. Please check your email inbox.</target>
+        <trans-unit id="Resx/AM_AccountBlockedCopyright" translate="yes" space="preserve">
+          <source>Your account has been suspended due to multiple breaches of MEGA's Terms of Service. Please check your email inbox.</source>
+          <target state="translated">บัญชีของคุณถูกระงับเนื่องจากมีการละเมิดข้อกำหนดในการให้บริการของ MEGA หลายครั้ง กรุณาตรวจสอบกล่องจดหมายอีเมลของคุณ</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the user is trying to login and the account has been blocked for multiple copyright violation.</note>
         </trans-unit>
       </group>
