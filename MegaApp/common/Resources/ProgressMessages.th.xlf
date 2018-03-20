@@ -13,7 +13,7 @@
         </trans-unit>
         <trans-unit id="Resx/CancelTransfer" translate="yes" space="preserve">
           <source>Cancelling transfer...</source>
-          <target state="translated">กำลังยกเลิกการโอนย้าย...</target>
+          <target state="translated">กำลังยกเลิกการถ่ายโอน...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when canceling a transfer - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PM_ChangePassword" translate="yes" space="preserve">
@@ -160,7 +160,7 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
         </trans-unit>
         <trans-unit id="Resx/PauseTransfers" translate="yes" space="preserve">
           <source>Pausing transfers...</source>
-          <target state="translated">กำลังหยุดการโอนย้ายชั่วคราว...</target>
+          <target state="translated">กำลังหยุดการถ่ายโอนชั่วคราว...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when pausing transfers - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PrepareDownloads" translate="yes" space="preserve">
@@ -215,7 +215,7 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
         </trans-unit>
         <trans-unit id="Resx/ResumeTransfers" translate="yes" space="preserve">
           <source>Resuming transfers...</source>
-          <target state="translated">กำลังดำเนินการโอนย้ายต่อ...</target>
+          <target state="translated">กำลังดำเนินการถ่ายโอนต่อ...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when resuming transfers - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/SaveForOffline" translate="yes" space="preserve">
