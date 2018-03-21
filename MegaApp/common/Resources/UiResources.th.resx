@@ -150,7 +150,7 @@
     <comment>Label for the background of an empty forder page - (String as short as possible).</comment>
   </data>
   <data name="EmptyTransfers" xml:space="preserve">
-    <value>ยังไม่มีการโอนย้าย</value>
+    <value>ยังไม่มีการถ่ายโอน</value>
     <comment>Label for the background of an empty transfers page - (String as short as possible).</comment>
   </data>
   <data name="LoadingPreview" xml:space="preserve">
@@ -234,7 +234,7 @@
     <comment>Label for any 'Folder' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="NoTransfers" xml:space="preserve">
-    <value>ยังไม่มีการโอนย้าย</value>
+    <value>ยังไม่มีการถ่ายโอน</value>
     <comment>Label shown when the app has no information about the transfers to show into 'transfers' page - (String as short as possible).</comment>
   </data>
   <data name="Upload" xml:space="preserve">
@@ -242,7 +242,7 @@
     <comment>Label for any 'Upload' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Transfers" xml:space="preserve">
-    <value>โอนย้าย</value>
+    <value>ถ่ายโอน</value>
     <comment>Label for any 'Transfers' button, link, text, title, etc. (i.e. total space) - (String as short as possible).</comment>
   </data>
   <data name="Download" xml:space="preserve">
@@ -358,7 +358,7 @@
     <comment>Label for available space into the 'my account' page - (String as short as possible, MAX 10 characters).</comment>
   </data>
   <data name="Bandwidth" xml:space="preserve">
-    <value>โควต้าการโอนย้าย</value>
+    <value>โควต้าการถ่ายโอน</value>
     <comment>Label for any 'Bandwidth' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Cache" xml:space="preserve">
@@ -378,7 +378,7 @@
     <comment>Label for any 'Change PIN Lock' button, link, text, title, etc. Try to preserve the PIN uppercase word. - (String as short as possible).</comment>
   </data>
   <data name="CleanUpTransfers" xml:space="preserve">
-    <value>เคลียร์การโอนย้าย</value>
+    <value>เคลียร์การถ่ายโอน</value>
     <comment>Label for any 'Clean up transfers' button, link, text, title, etc. - (String as short as possible, MAX 15 characters).</comment>
   </data>
   <data name="ClearCache" xml:space="preserve">
@@ -530,7 +530,7 @@
     <comment>Label for any 'Start' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="CancelAllTransfers" xml:space="preserve">
-    <value>ยกเลิกการโอนย้ายทั้งหมด</value>
+    <value>ยกเลิกการถ่ายโอนทั้งหมด</value>
     <comment>Label for any 'Cancel all transfers' button or menu option - (String as short as possible).</comment>
   </data>
   <data name="InitTourAccess1" xml:space="preserve">
@@ -574,7 +574,7 @@
     <comment>Label for the title of the init tour page dedicated to the space. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</comment>
   </data>
   <data name="InitTourSpeed1" xml:space="preserve">
-    <value>โอนย้ายได้รวดเร็ว</value>
+    <value>ถ่ายโอนได้รวดเร็ว</value>
     <comment>Label 'transfers are fast.' for the first part of the sentence 'transfers are fast. quickly share files with everyone.', to build this sentence in two colors into the init tour page. Don't forget to place '.' at the end of the string. Keep all in lowercase.</comment>
   </data>
   <data name="InitTourSpeed2" xml:space="preserve">
@@ -1197,7 +1197,7 @@ Keep the code {1} because is for include currency in runtime.</comment>
     <comment>Label for the state of a transfer when is being downloading - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStateError" xml:space="preserve">
-    <value>มีข้อผิดพลาดในการโอนถ่าย</value>
+    <value>มีข้อผิดพลาดในการถ่ายโอน</value>
     <comment>Label for the state of a failed  transfer - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStateNotStarted" xml:space="preserve">
@@ -1241,11 +1241,11 @@ Keep the code {1} because is for include currency in runtime.</comment>
     <comment>Label for any 'Completed' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_NoCompletedTransfers" xml:space="preserve">
-    <value>ไม่มีรายการโอนถ่าย</value>
+    <value>ไม่มีรายการถ่ายโอน</value>
     <comment>Label for the background of an empty completed transfers page - (String as short as possible).</comment>
   </data>
   <data name="UI_AgreeTermsOfService" xml:space="preserve">
-    <value>I agree with the Terms of Service</value>
+    <value>ฉันเห็นด้วยกับข้อกำหนดในการบริการ</value>
     <comment>Text placed just after a checkbox to indicate that user is agree with the 'Terms of Service' into the 'create account' page.</comment>
   </data>
   <data name="UI_ConfirmPassword" xml:space="preserve">
@@ -1265,7 +1265,7 @@ Keep the code {1} because is for include currency in runtime.</comment>
     <comment>Label for any 'Password' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_ConfirmPinLock" xml:space="preserve">
-    <value>Confirm PIN lock</value>
+    <value>ยืนยันการล็อก PIN</value>
     <comment>Label for any 'Confirm PIN lock' button, link, text, title, etc. - (String as short as possible).
 Preserve the PIN uppercase word.</comment>
   </data>
@@ -1279,7 +1279,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for any 'MEGA SDK version' button, link, text, title, etc. Preserve the "MEGA SDK" in uppercase - (String as short as possible).</comment>
   </data>
   <data name="UI_NewPinLock" xml:space="preserve">
-    <value>New PIN lock</value>
+    <value>ล็อก PIN ใหม่</value>
     <comment>Label for any 'New PIN lock' button, link, text, title, etc. - (String as short as possible).
 Preserve the PIN uppercase word.</comment>
   </data>
@@ -1292,7 +1292,7 @@ Preserve the PIN uppercase word.</comment>
     <comment>Label for any 'Last name' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_ViewTermsOfService" xml:space="preserve">
-    <value>View Terms of Service here</value>
+    <value>ดูข้อกำหนดในการบริการที่นี่</value>
     <comment>Text used as a link to view the 'Terms of Service' into the 'create account' page.</comment>
   </data>
 </root>

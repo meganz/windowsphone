@@ -780,7 +780,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed in cases that the user types some data with a wrong format - (String as short as possible).</comment>
   </data>
   <data name="CancelSubscriptionFailed" xml:space="preserve">
-    <value>Abonelik doğru bir şekilde iptal edilmemiştir. Aboneliğinizi iptal etmek için support@mega.nz ile irtibata geçiniz.</value>
+    <value>Abonelik iptal edilememiştir. Aboneliğinizi iptal etmek için lütfen support@mega.nz ile iletişime geçin.</value>
     <comment>Message of the dialog displayed when the process/request to cancel a subscription failed.</comment>
   </data>
   <data name="CancelSubscriptionFailed_Title" xml:space="preserve">
@@ -1309,7 +1309,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Message of the warning dialog shown when the user tries to make a new sign up using an invalid link (#newsignup).</comment>
   </data>
   <data name="AM_AccountBlocked" xml:space="preserve">
-    <value>Hesabınız bloke edilmiştir. support@mega.co.nz ile irtibata geçiniz.</value>
+    <value>Hesabınız, başkalarının haklarını kötüye kullanma, yasadışı verileri paylaşma ve/veya içe aktarma veya sistem kötüye kullanımı gibi MEGA Hizmet Şartları'nı ihlal ettiği için sona erdirildi.</value>
     <comment>Message of the dialog shown when the user is trying to login and the account has been blocked.</comment>
   </data>
   <data name="AM_AccountNotConfirmed" xml:space="preserve">
@@ -1322,7 +1322,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
 Preserve the {0} code because is for include the exact time until the user has to wait.</comment>
   </data>
   <data name="AM_AccountBlocked_Title" xml:space="preserve">
-    <value>Hesap engellendi</value>
+    <value>Askıya alınan hesap</value>
     <comment>Title of the dialog shown when the user is trying to login and the account has been blocked.</comment>
   </data>
   <data name="AM_ShareFromMegaAppBusy_Message" xml:space="preserve">
@@ -1415,7 +1415,11 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</comment>
   </data>
   <data name="AM_PrepareDownloadsFailed" xml:space="preserve">
-    <value>Error preparing downloads. Please try again.</value>
+    <value>İndirmeler hazırlanırken hata oluştu. Lütfen tekrar deneyin.</value>
     <comment>Message of the dialog displayed when the process to prepare files or folders for download failed.</comment>
+  </data>
+  <data name="AM_AccountBlockedCopyright" xml:space="preserve">
+    <value>Hesabınız, MEGA Hizmet Şartları'nın birden fazla ihlalinden dolayı askıya alındı. Lütfen e-posta gelen kutunuzu kontrol edin.</value>
+    <comment>Message of the dialog shown when the user is trying to login and the account has been blocked for multiple copyright violation.</comment>
   </data>
 </root>
