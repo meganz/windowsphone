@@ -58,7 +58,7 @@ namespace MegaApp.Models
         {
             this.UpgradeAccount.InAppPaymentMethodAvailable = await LicenseService.IsAvailable();
             MegaSdk.getPaymentMethods(new GetPaymentMethodsRequestListener(UpgradeAccount));
-            MegaSdk.getPricing(new GetPricingRequestListener(AccountDetails, UpgradeAccount));            
+            MegaSdk.getPricing(new GetPricingRequestListener());            
         }
 
         public void Logout()

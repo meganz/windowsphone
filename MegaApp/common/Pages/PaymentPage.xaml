@@ -95,7 +95,7 @@
                     </RichTextBox>
                     <RichTextBox x:Name="SelectedOptionPrice" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" Margin="20,0,0,0" FontSize="{StaticResource PhoneFontSizeMedium}" Visibility="{Binding ProductSelectionIsEnabled, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=false}">
                         <Paragraph>
-                            <Run x:Name="TxtSelectedOptionPrice" Text="{Binding SelectedProduct.Price}"/>
+                            <Run x:Name="TxtSelectedOptionPrice" Text="{Binding SelectedProduct.FormattedPrice}"/>
                             <Run Text="/">
                                 <Run.Foreground>
                                     <SolidColorBrush Color="{StaticResource PhoneForegroundColor}" Opacity="0.3"/>
@@ -126,7 +126,7 @@
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 <TextBlock Text="{Binding LocalizedUiResources.Monthly, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToUpperCaseConverter}}" Grid.Column="0" VerticalAlignment="Bottom" Margin="12,0,0,12"/>
-                                <TextBlock x:Name="TxtMonthlyPrice" Text="{Binding ProductMonthly.Price}" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,12,12" FontSize="{StaticResource PhoneFontSizeExtraLarge}"/>
+                                <TextBlock x:Name="TxtMonthlyPrice" Text="{Binding ProductMonthly.FormattedPrice}" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,12,12" FontSize="{StaticResource PhoneFontSizeExtraLarge}"/>
                             </Grid>
                         </Border>
                         <Border HorizontalAlignment="Center" Height="90" VerticalAlignment="Center" Margin="0,12,12,0" Width="432" Tap="OnAnnualyTap">
@@ -146,7 +146,7 @@
                                     <selectors:CustomMultiResolutionImage HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="None" Source="/Assets/Images/save_17_percent_WP.png"/>
                                 </Border>
                                 <TextBlock Text="{Binding LocalizedUiResources.Annually, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToUpperCaseConverter}}" Grid.Column="0" Grid.Row="1" VerticalAlignment="Bottom" Margin="12,0,0,12"/>
-                                <TextBlock x:Name="TxtAnnualyPrice" Text="{Binding ProductAnnualy.Price}" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,12,12" FontSize="{StaticResource PhoneFontSizeExtraLarge}"/>
+                                <TextBlock x:Name="TxtAnnualyPrice" Text="{Binding ProductAnnualy.FormattedPrice}" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,12,12" FontSize="{StaticResource PhoneFontSizeExtraLarge}"/>
                             </Grid>
                         </Border>
                         <StackPanel Margin="0,17,0,28">
