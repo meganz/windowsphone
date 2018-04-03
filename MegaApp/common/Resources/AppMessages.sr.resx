@@ -662,8 +662,7 @@ Please try to save/copy the file to your device's internal memory instead.</valu
   </data>
   <data name="SelectFolderFailed" xml:space="preserve">
     <value>Бирање фолдера неуспешно. Молимо, покушајте поново или изаберите други фолдер: [{0}]</value>
-    <comment>Message of the dialog displayed when the process to select a folder failed.
-Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+    <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="SelectFolderFailed_Title" xml:space="preserve">
     <value>Бирање фолдера неуспешно</value>
@@ -987,8 +986,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
   </data>
   <data name="FolderUnauthorizedAccess" xml:space="preserve">
     <value>Немате приступ путањи '{0}'. Молимо изаберите другу и покушајте поново.</value>
-    <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.
-Preserve the '{0}' code because is for include the file/folder path in runtime.</comment>
+    <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder in the device memory. For example to download a file/folder, create a new folder, etc.
+Preserve the '{0}' code because is for include the folder name in runtime.</comment>
   </data>
   <data name="FolderUnauthorizedAccess_Title" xml:space="preserve">
     <value>Приступ прекинут</value>
@@ -1024,10 +1023,6 @@ Preserve the '{0}' code because is for include the file name in runtime.</commen
   <data name="AM_InvalidLink" xml:space="preserve">
     <value>Неисправан линк</value>
     <comment>Message of the dialog displayed when the user is trying to open an invliad lick (NO KEY).</comment>
-  </data>
-  <data name="SelectFolderFailedNoErrorCode" xml:space="preserve">
-    <value>Неуспешно одабирање фолдера. Молимо покушајте поново или изаберите други фолдер.</value>
-    <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="AM_ImportFileFailed" xml:space="preserve">
     <value>Увоз фајла неуспешан [{0}]</value>

@@ -661,8 +661,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
   </data>
   <data name="SelectFolderFailed" xml:space="preserve">
     <value>Chọn thư mục thất bại. Xin thử lại hoặc chọn một thư mục khác: [{0}]</value>
-    <comment>Message of the dialog displayed when the process to select a folder failed.
-Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+    <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="SelectFolderFailed_Title" xml:space="preserve">
     <value>Không chọn được thư mục</value>
@@ -986,8 +985,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
   </data>
   <data name="FolderUnauthorizedAccess" xml:space="preserve">
     <value>Bạn không có quyền hạn để truy cập tới vùng '{0}'. Xin thử cái khác hoặc thử lại.</value>
-    <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.
-Preserve the '{0}' code because is for include the file/folder path in runtime.</comment>
+    <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder in the device memory. For example to download a file/folder, create a new folder, etc.
+Preserve the '{0}' code because is for include the folder name in runtime.</comment>
   </data>
   <data name="FolderUnauthorizedAccess_Title" xml:space="preserve">
     <value>Truy cập bị từ chối</value>
@@ -1023,10 +1022,6 @@ Preserve the '{0}' code because is for include the file name in runtime.</commen
   <data name="AM_InvalidLink" xml:space="preserve">
     <value>Đường dẫn liên kết không hợp lệ</value>
     <comment>Message of the dialog displayed when the user is trying to open an invliad lick (NO KEY).</comment>
-  </data>
-  <data name="SelectFolderFailedNoErrorCode" xml:space="preserve">
-    <value>Lựa chọn thư mục không thành công. Xin thử lại hoặc chọn một thư mục khác.</value>
-    <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="AM_ImportFileFailed" xml:space="preserve">
     <value>Chuyển nhập tệp tin thất bại [{0}]</value>

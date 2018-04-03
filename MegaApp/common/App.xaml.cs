@@ -337,8 +337,25 @@ namespace MegaApp
                 // If folder selected
                 if(folderPickerContinuationArgs.Folder != null)
                 {
-                    if(!StorageApplicationPermissions.FutureAccessList.CheckAccess(folderPickerContinuationArgs.Folder))
-                        StorageApplicationPermissions.FutureAccessList.Add(folderPickerContinuationArgs.Folder);
+                    try
+                    {
+                        if (!StorageApplicationPermissions.FutureAccessList.CheckAccess(folderPickerContinuationArgs.Folder))
+                            StorageApplicationPermissions.FutureAccessList.Add(folderPickerContinuationArgs.Folder);
+                    }
+                    catch (Exception e)
+                    {
+                        LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error selecting external folder", e);
+
+                        string title = e is UnauthorizedAccessException ? 
+                            AppMessages.FolderUnauthorizedAccess_Title : AppMessages.SelectFolderFailed_Title;
+
+                        string message = e is UnauthorizedAccessException ?
+                            String.Format(AppMessages.FolderUnauthorizedAccess, folderPickerContinuationArgs.Folder.Name) :
+                            AppMessages.SelectFolderFailed;
+
+                        new CustomMessageDialog(title, message,App.AppInformation).ShowDialog();
+                        return;
+                    }
 
                     if (folderPickerContinuationArgs.ContinuationData["Operation"].ToString() ==
                         "SelectDefaultDownloadFolder")

@@ -662,8 +662,7 @@ Per favore, prova a salvare/copiare il file all'interno della memoria interna de
   </data>
   <data name="SelectFolderFailed" xml:space="preserve">
     <value>Impossibile selezionare la cartella. Per favore, prova di nuovo o scegliere un'altra cartella: [{0}]</value>
-    <comment>Message of the dialog displayed when the process to select a folder failed.
-Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+    <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="SelectFolderFailed_Title" xml:space="preserve">
     <value>Selezione della cartella non riuscita</value>
@@ -987,8 +986,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
   </data>
   <data name="FolderUnauthorizedAccess" xml:space="preserve">
     <value>Non hai accesso al percorso '{0}'. Per favore, selezionane un altro e riprova.</value>
-    <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.
-Preserve the '{0}' code because is for include the file/folder path in runtime.</comment>
+    <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder in the device memory. For example to download a file/folder, create a new folder, etc.
+Preserve the '{0}' code because is for include the folder name in runtime.</comment>
   </data>
   <data name="FolderUnauthorizedAccess_Title" xml:space="preserve">
     <value>Accesso negato</value>
@@ -1024,10 +1023,6 @@ Preserve the '{0}' code because is for include the file name in runtime.</commen
   <data name="AM_InvalidLink" xml:space="preserve">
     <value>Link non valido</value>
     <comment>Message of the dialog displayed when the user is trying to open an invliad lick (NO KEY).</comment>
-  </data>
-  <data name="SelectFolderFailedNoErrorCode" xml:space="preserve">
-    <value>Selezione della cartella fallita. Per favore, prova di nuovo o seleziona un'altra cartella.</value>
-    <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="AM_ImportFileFailed" xml:space="preserve">
     <value>Importazione del file fallita [{0}]</value>

@@ -106,7 +106,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Your account was terminated due to breach of Mega&apos;s Terms of Service, such as abuse of rights of others; sharing and/or importing illegal data; or system abuse..
+        ///   Busca una cadena traducida similar a Your account was terminated due to a breach of MEGA&apos;s Terms of Service, such as abuse of rights of others; sharing and/or importing illegal data; or system abuse..
         /// </summary>
         public static string AM_AccountBlocked {
             get {
@@ -124,7 +124,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Your account has been suspended due to multiple breaches of Mega&apos;s Terms of Service. Please check your email inbox..
+        ///   Busca una cadena traducida similar a Your account has been suspended due to multiple breaches of MEGA&apos;s Terms of Service. Please check your email inbox..
         /// </summary>
         public static string AM_AccountBlockedCopyright {
             get {
@@ -1039,7 +1039,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a The subscription has not been canceled correctly. Please contact support@mega.nz to cancel your subscription..
+        ///   Busca una cadena traducida similar a The subscription has not been canceled successfully. Please contact support@mega.nz to cancel your subscription..
         /// </summary>
         public static string CancelSubscriptionFailed {
             get {
@@ -1571,7 +1571,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a You don&apos;t have access to the path &apos;{0}&apos;. Please select another one and try again..
+        ///   Busca una cadena traducida similar a You don&apos;t have access to the folder &apos;{0}&apos;. Please select another one and try again..
         /// </summary>
         public static string FolderUnauthorizedAccess {
             get {
@@ -2651,7 +2651,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Failed to select folder. Please, try again or select another folder: [{0}].
+        ///   Busca una cadena traducida similar a Failed to select folder. Please, try again or select another one..
         /// </summary>
         public static string SelectFolderFailed {
             get {
@@ -2665,15 +2665,6 @@ namespace MegaApp.Resources {
         public static string SelectFolderFailed_Title {
             get {
                 return ResourceManager.GetString("SelectFolderFailed_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Failed to select the folder. Please try again or select another folder..
-        /// </summary>
-        public static string SelectFolderFailedNoErrorCode {
-            get {
-                return ResourceManager.GetString("SelectFolderFailedNoErrorCode", resourceCulture);
             }
         }
         

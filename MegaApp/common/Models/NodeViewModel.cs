@@ -281,7 +281,7 @@ namespace MegaApp.Models
             {
                 OnUiThread(() => ProgressService.SetProgressIndicator(false));
                 await new CustomMessageDialog(AppMessages.SelectFolderFailed_Title,
-                    AppMessages.SelectFolderFailedNoErrorCode, App.AppInformation, 
+                    AppMessages.SelectFolderFailed, App.AppInformation, 
                     MessageDialogButtons.Ok).ShowDialogAsync();
                 return;
             }
