@@ -109,7 +109,6 @@ namespace MegaApp.Services
                             product.Name = AppResources.AccountTypeLite;
                             product.ProductColor = Color.FromArgb(255, 255, 165, 0);
                             product.ProductPathData = VisualResources.CrestLiteAccountPathData;
-                            product.IsNewOffer = true;
 
                             // If Centili payment method is active, and product is LITE monthly include it into the product
                             if (AccountService.UpgradeAccount.CentiliPaymentMethodAvailable && product.Months == 1)
