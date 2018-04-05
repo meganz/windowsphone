@@ -664,8 +664,7 @@ Lütfen cihazınızın kendi depolama alanına kaydetmeyi deneyin.</value>
   </data>
   <data name="SelectFolderFailed" xml:space="preserve">
     <value>Klasör seçilemedi. Lütfen tekrar deneyin veya başka bir klasör seçin: [{0}]</value>
-    <comment>Message of the dialog displayed when the process to select a folder failed.
-Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+    <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="SelectFolderFailed_Title" xml:space="preserve">
     <value>Klasör seç başarısız oldu</value>
@@ -990,8 +989,8 @@ Fikrinizi değiştirmek için yapabileceğimiz birşey varsa bizi bilgilendirin.
   </data>
   <data name="FolderUnauthorizedAccess" xml:space="preserve">
     <value>Bu yola erişiminiz yok '{0}'. Lütfen başka bir tane seçip tekrar deneyin.</value>
-    <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.
-Preserve the '{0}' code because is for include the file/folder path in runtime.</comment>
+    <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder in the device memory. For example to download a file/folder, create a new folder, etc.
+Preserve the '{0}' code because is for include the folder name in runtime.</comment>
   </data>
   <data name="FolderUnauthorizedAccess_Title" xml:space="preserve">
     <value>Erişim reddedildi</value>
@@ -1027,10 +1026,6 @@ Preserve the '{0}' code because is for include the file name in runtime.</commen
   <data name="AM_InvalidLink" xml:space="preserve">
     <value>Geçersiz bağlantı</value>
     <comment>Message of the dialog displayed when the user is trying to open an invliad lick (NO KEY).</comment>
-  </data>
-  <data name="SelectFolderFailedNoErrorCode" xml:space="preserve">
-    <value>Klasör seçilemedi. Tekrar deneyin ya da başka bir klasör seçin.</value>
-    <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="AM_ImportFileFailed" xml:space="preserve">
     <value>Dosya alımı başarısız [{0}]</value>
