@@ -62,6 +62,33 @@ namespace MegaApp.Services
         }
 
         /// <summary>
+        /// Get Windows Store product matching a MEGA product
+        /// </summary>
+        /// <param name="megaProductId">MEGA product identifier to match</param>
+        /// <returns>Windows Store product or NULL if none available</returns>
+        public static async Task<ProductListing> GetProductAsync(string megaProductId)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(megaProductId)) return null;
+
+                var listing = await CurrentApp.LoadListingInformationAsync();
+                if (listing == null || !listing.ProductListings.Any()) return null;
+
+                var result = listing.ProductListings.First(
+                    p => p.Key.ToLower().Equals(megaProductId.ToLower()));
+
+                return result.Value;
+            }
+            catch (Exception e)
+            {
+                LogService.Log(MLogLevel.LOG_LEVEL_ERROR,
+                    string.Format("Failure retrieving store product for {0}", megaProductId), e);
+                return null;
+            }
+        }
+
+        /// <summary>
         /// Purchase a product by product id
         /// </summary>
         /// <param name="productId">The id of the product the user want to purchase</param>
@@ -267,58 +294,10 @@ namespace MegaApp.Services
         /// <param name="product">MEGA product to add to Mock Iap</param>
         public static void AddProductToMockIap(Product product)
         {
+            if (product == null) return;
 
-            string productId = string.Empty;
-            switch (product.AccountType)
-            {
-                case MAccountType.ACCOUNT_TYPE_PROI:
-                    switch (product.Months)
-                    {
-                        case 1:
-                            productId = "mega.microsoftstore.pro1.oneMonth";
-                            break;
-                        case 12:
-                            productId = "mega.microsoftstore.pro1.oneYear";
-                            break;
-                    }
-                    break;
-                case MAccountType.ACCOUNT_TYPE_PROII:
-                    switch (product.Months)
-                    {
-                        case 1:
-                            productId = "mega.microsoftstore.pro2.oneMonth";
-                            break;
-                        case 12:
-                            productId = "mega.microsoftstore.pro2.oneYear";
-                            break;
-                    }
-                    break;
-                case MAccountType.ACCOUNT_TYPE_PROIII:
-                    switch (product.Months)
-                    {
-                        case 1:
-                            productId = "mega.microsoftstore.pro3.oneMonth";
-                            break;
-                        case 12:
-                            productId = "mega.microsoftstore.pro3.oneYear";
-                            break;
-                    }
-                    break;
-                case MAccountType.ACCOUNT_TYPE_LITE:
-                    switch (product.Months)
-                    {
-                        case 1:
-                            productId = "mega.microsoftstore.prolite.oneMonth";
-                            break;
-                        case 12:
-                            productId = "mega.microsoftstore.prolite.oneYear`";
-                            break;
-                    }
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
-
+            string productId = product.MicrosoftStoreId;
+            
             // Only add the products once
             if (!MockIAP.allProducts.ContainsKey(productId))
             {
@@ -330,7 +309,7 @@ namespace MegaApp.Services
                     ProductType = Windows.ApplicationModel.Store.ProductType.Durable,
                     Keywords = new[] { productId },
                     Description = product.Name,
-                    FormattedPrice = product.Price,
+                    FormattedPrice = product.FormattedPrice,
                     Tag = string.Empty
                 };
 

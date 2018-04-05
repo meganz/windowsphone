@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
+using mega;
 using MegaApp.Resources;
 
 namespace MegaApp.Classes
@@ -25,25 +26,68 @@ namespace MegaApp.Classes
 
         public string Period
         {
-            get 
-            {
-                return Months == 1 ? UiResources.Monthly : UiResources.Annually;
-            }
-        }
-
-        public string Price
-        {
-            get
-            {
-                return String.Format("{0:N} {1}", (double)Amount/100, Currency);
-            }
+            get { return Months == 1 ? UiResources.Monthly : UiResources.Annually; }
         }
 
         public string PricePeriod
         {
+            get { return Months == 1 ? UiResources.Month : UiResources.Year; }
+        }
+
+        public string MicrosoftStoreId
+        {
             get
             {
-                return Months == 1 ? UiResources.Month : UiResources.Year;
+                switch (this.AccountType)
+                {
+                    case MAccountType.ACCOUNT_TYPE_FREE:
+                        return null;
+
+                    case MAccountType.ACCOUNT_TYPE_LITE:
+                        switch (this.Months)
+                        {
+                            case 1:
+                                return AppResources.ProLiteMonth;
+                            case 12:
+                                return AppResources.ProLiteYear;
+                        }
+                        break;
+
+                    case MAccountType.ACCOUNT_TYPE_PROI:
+                        switch (this.Months)
+                        {
+                            case 1:
+                                return AppResources.Pro1Month;
+                            case 12:
+                                return AppResources.Pro1Year;
+                        }
+                        break;
+
+                    case MAccountType.ACCOUNT_TYPE_PROII:
+                        switch (this.Months)
+                        {
+                            case 1:
+                                return AppResources.Pro2Month;
+                            case 12:
+                                return AppResources.Pro2Year;
+                        }
+                        break;
+
+                    case MAccountType.ACCOUNT_TYPE_PROIII:
+                        switch (this.Months)
+                        {
+                            case 1:
+                                return AppResources.Pro3Month;
+                            case 12:
+                                return AppResources.Pro3Year;
+                        }
+                        break;
+
+                    default:
+                        throw new ArgumentOutOfRangeException("AccountType");
+                }
+
+                return null;
             }
         }
     }
