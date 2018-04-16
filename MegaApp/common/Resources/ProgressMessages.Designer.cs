@@ -250,6 +250,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a This process is taking longer than expected. Please wait..
+        /// </summary>
+        public static string PM_ApiLocked {
+            get {
+                return ResourceManager.GetString("PM_ApiLocked", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Too many requests. Please wait..
+        /// </summary>
+        public static string PM_ApiRateLimit {
+            get {
+                return ResourceManager.GetString("PM_ApiRateLimit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Canceling subscription....
         /// </summary>
         public static string PM_CancelSubscription {
@@ -291,6 +309,15 @@ namespace MegaApp.Resources {
         public static string PM_ConfirmAccount {
             get {
                 return ResourceManager.GetString("PM_ConfirmAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Unable to reach MEGA. Please check your connectivity or try again later..
+        /// </summary>
+        public static string PM_ConnectivityIssue {
+            get {
+                return ResourceManager.GetString("PM_ConnectivityIssue", resourceCulture);
             }
         }
         
@@ -381,6 +408,15 @@ namespace MegaApp.Resources {
         public static string PM_RemoveLink {
             get {
                 return ResourceManager.GetString("PM_RemoveLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Servers too busy. Please wait..
+        /// </summary>
+        public static string PM_ServersBusy {
+            get {
+                return ResourceManager.GetString("PM_ServersBusy", resourceCulture);
             }
         }
         
@@ -498,15 +534,6 @@ namespace MegaApp.Resources {
         public static string SaveForOffline {
             get {
                 return ResourceManager.GetString("SaveForOffline", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Servers too busy. Please wait….
-        /// </summary>
-        public static string ServersTooBusy {
-            get {
-                return ResourceManager.GetString("ServersTooBusy", resourceCulture);
             }
         }
     }
