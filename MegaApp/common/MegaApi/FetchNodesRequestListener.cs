@@ -24,54 +24,27 @@ namespace MegaApp.MegaApi
         private readonly MainPageViewModel _mainPageViewModel;
         private readonly CameraUploadsPageViewModel _cameraUploadsPageViewModel;        
 
-        // Timer for ignore the received API_EAGAIN (-3) during login
-        private DispatcherTimer timerAPI_EAGAIN;
-        private bool isFirstAPI_EAGAIN;
-
         public FetchNodesRequestListener(MainPageViewModel mainPageViewModel,
             CameraUploadsPageViewModel cameraUploadsPageViewModel = null)
             : base()
         {
             this._mainPageViewModel = mainPageViewModel;
-            this._cameraUploadsPageViewModel = cameraUploadsPageViewModel;            
-
-            createTimer();
+            this._cameraUploadsPageViewModel = cameraUploadsPageViewModel;
         }
 
         public FetchNodesRequestListener(CameraUploadsPageViewModel cameraUploadsPageViewModel)
             : base()
         {
             this._mainPageViewModel = null;
-            this._cameraUploadsPageViewModel = cameraUploadsPageViewModel;            
-
-            createTimer();
+            this._cameraUploadsPageViewModel = cameraUploadsPageViewModel;
         }
 
         public FetchNodesRequestListener(FolderLinkViewModel folderLinkViewModel)
             : base(folderLinkViewModel)
         {
             this._mainPageViewModel = null;
-            this._cameraUploadsPageViewModel = null;            
-
-            createTimer();
-        }
-
-        private void createTimer()
-        {
-            timerAPI_EAGAIN = new DispatcherTimer();
-            timerAPI_EAGAIN.Tick += timerTickAPI_EAGAIN;
-            timerAPI_EAGAIN.Interval = new TimeSpan(0, 0, 10);
-        }
-
-        // Method which is call when the timer event is triggered
-        private void timerTickAPI_EAGAIN(object sender, object e)
-        {
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
-            {
-                timerAPI_EAGAIN.Stop();
-                ProgressService.SetProgressIndicator(true, ProgressMessages.ServersTooBusy);                
-            });
-        }
+            this._cameraUploadsPageViewModel = null;
+        }               
 
         #region Base Properties
 
@@ -339,7 +312,7 @@ namespace MegaApp.MegaApi
 
         public override void onRequestFinish(MegaSDK api, MRequest request, MError e)
         {
-            Deployment.Current.Dispatcher.BeginInvoke(() => timerAPI_EAGAIN.Stop());
+            Deployment.Current.Dispatcher.BeginInvoke(() => apiErrorTimer.Stop());
 
             // If is a folder link fetch nodes
             if (_folderLinkViewModel != null)
@@ -354,6 +327,9 @@ namespace MegaApp.MegaApi
             {
                 ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["PhoneChromeColor"]);
                 ProgressService.SetProgressIndicator(false);
+
+                if (apiErrorTimer != null)
+                    apiErrorTimer.Stop();
             });
 
             if (e.getErrorCode() == MErrorType.API_OK)
@@ -410,8 +386,6 @@ namespace MegaApp.MegaApi
 
         public override void onRequestStart(MegaSDK api, MRequest request)
         {
-            this.isFirstAPI_EAGAIN = true;
-
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
                 // Disable MainPage appbar buttons
@@ -424,12 +398,12 @@ namespace MegaApp.MegaApi
 
         public override void onRequestTemporaryError(MegaSDK api, MRequest request, MError e)
         {
-            // Starts the timer when receives the first API_EAGAIN (-3)
-            if (e.getErrorCode() == MErrorType.API_EAGAIN && this.isFirstAPI_EAGAIN)
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
-                this.isFirstAPI_EAGAIN = false;
-                Deployment.Current.Dispatcher.BeginInvoke(() => timerAPI_EAGAIN.Start());
-            }
+                // If is the first error/retry (timer is not running) start the timer
+                if (apiErrorTimer != null && !apiErrorTimer.IsEnabled)
+                    apiErrorTimer.Start();
+            });
 
             base.onRequestTemporaryError(api, request, e);
         }
