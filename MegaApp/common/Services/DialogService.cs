@@ -1382,7 +1382,7 @@ namespace MegaApp.Services
                     changePasswordRadWindow.IsOpen = false;
                     new CustomMessageDialog(
                         AppMessages.RequiredFields_Title.ToUpper(),
-                        AppMessages.RequiredFieldsChangePassword,
+                        AppMessages.AM_EmptyRequiredFields,
                         App.AppInformation,
                         MessageDialogButtons.Ok).ShowDialog();
                     return;

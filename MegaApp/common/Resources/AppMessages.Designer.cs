@@ -421,6 +421,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Fill the required fields and try again..
+        /// </summary>
+        public static string AM_EmptyRequiredFields {
+            get {
+                return ResourceManager.GetString("AM_EmptyRequiredFields", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a A log will be created in the Offline section ({0})..
         /// </summary>
         public static string AM_EnableDebugMode_Message {
@@ -675,6 +684,42 @@ namespace MegaApp.Resources {
         public static string AM_OpenLinkFailed_Title {
             get {
                 return ResourceManager.GetString("AM_OpenLinkFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a We have sent you an email confirming your password change..
+        /// </summary>
+        public static string AM_PasswordChanged {
+            get {
+                return ResourceManager.GetString("AM_PasswordChanged", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Password changed.
+        /// </summary>
+        public static string AM_PasswordChanged_Title {
+            get {
+                return ResourceManager.GetString("AM_PasswordChanged_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Failed to change your password. Please try again..
+        /// </summary>
+        public static string AM_PasswordChangeFailed {
+            get {
+                return ResourceManager.GetString("AM_PasswordChangeFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error change password.
+        /// </summary>
+        public static string AM_PasswordChangeFailed_Title {
+            get {
+                return ResourceManager.GetString("AM_PasswordChangeFailed_Title", resourceCulture);
             }
         }
         
@@ -1125,24 +1170,6 @@ namespace MegaApp.Resources {
         public static string CaptureVideoFailed_Title {
             get {
                 return ResourceManager.GetString("CaptureVideoFailed_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Failed to change password. Please try again..
-        /// </summary>
-        public static string ChangePasswordFailed {
-            get {
-                return ResourceManager.GetString("ChangePasswordFailed", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Your password has been changed..
-        /// </summary>
-        public static string ChangePasswordSuccess {
-            get {
-                return ResourceManager.GetString("ChangePasswordSuccess", resourceCulture);
             }
         }
         
@@ -2521,15 +2548,6 @@ namespace MegaApp.Resources {
         public static string RequiredFieldsCancelSubscription {
             get {
                 return ResourceManager.GetString("RequiredFieldsCancelSubscription", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Please fill in your old MEGA password and your new MEGA password..
-        /// </summary>
-        public static string RequiredFieldsChangePassword {
-            get {
-                return ResourceManager.GetString("RequiredFieldsChangePassword", resourceCulture);
             }
         }
         
