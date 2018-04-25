@@ -686,10 +686,6 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>Не вдалося вибрати</value>
     <comment>Title of the dialog displayed when the process to select files failed - (String as short as possible).</comment>
   </data>
-  <data name="MalformedEmail" xml:space="preserve">
-    <value>Невірний формат е-пошти. Будь ласка, спробуйте ще раз.</value>
-    <comment>Message of the dialog displayed when the user types a malformed email address.</comment>
-  </data>
   <data name="WrongEmailPasswordLogin" xml:space="preserve">
     <value>Е-пошту не пов'язано з акаунтом MEGA або невірний пароль. Будь ласка, спробуйте ще раз.</value>
     <comment>Message of the dialog displayed when a user is trying to login with an e-mail that is not associated with a MEGA account or type a wrong password. Preserve the MEGA word in uppercase.</comment>

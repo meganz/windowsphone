@@ -562,6 +562,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Incorrect email format. Please try again..
+        /// </summary>
+        public static string AM_IncorrectEmailFormat {
+            get {
+                return ResourceManager.GetString("AM_IncorrectEmailFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Failed to open the internal file/folder of the link. Please try again..
         /// </summary>
         public static string AM_InternalNodeFailed {
@@ -981,6 +990,15 @@ namespace MegaApp.Resources {
         public static string AM_TransferOverquotaWarning_Title {
             get {
                 return ResourceManager.GetString("AM_TransferOverquotaWarning_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Please strengthen your password..
+        /// </summary>
+        public static string AM_VeryWeakPassword {
+            get {
+                return ResourceManager.GetString("AM_VeryWeakPassword", resourceCulture);
             }
         }
         
@@ -1954,15 +1972,6 @@ namespace MegaApp.Resources {
         public static string LogoutFailed_Title {
             get {
                 return ResourceManager.GetString("LogoutFailed_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Malformed e-mail. Please try again..
-        /// </summary>
-        public static string MalformedEmail {
-            get {
-                return ResourceManager.GetString("MalformedEmail", resourceCulture);
             }
         }
         

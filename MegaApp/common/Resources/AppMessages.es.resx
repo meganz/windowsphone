@@ -141,10 +141,6 @@
     <value>Error al seleccionar fichero(s)</value>
     <comment>Title of the dialog displayed when the process to select files failed - (String as short as possible).</comment>
   </data>
-  <data name="MalformedEmail" xml:space="preserve">
-    <value>E-mail con formato incorrecto. Por favor, vuelve a intentarlo.</value>
-    <comment>Message of the dialog displayed when the user types a malformed email address.</comment>
-  </data>
   <data name="WrongEmailPasswordLogin" xml:space="preserve">
     <value>Email o contraseña incorrectos. Por favor, inténtalo de nuevo.</value>
     <comment>Message of the dialog displayed when a user is trying to login with an e-mail that is not associated with a MEGA account or type a wrong password. Preserve the MEGA word in uppercase.</comment>

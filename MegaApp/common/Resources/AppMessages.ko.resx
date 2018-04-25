@@ -686,10 +686,6 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>파일 선택 실패</value>
     <comment>Title of the dialog displayed when the process to select files failed - (String as short as possible).</comment>
   </data>
-  <data name="MalformedEmail" xml:space="preserve">
-    <value>잘못된 형태의 이메일입니다. 다시 시도하세요.</value>
-    <comment>Message of the dialog displayed when the user types a malformed email address.</comment>
-  </data>
   <data name="WrongEmailPasswordLogin" xml:space="preserve">
     <value>올바르지 않은 이메일 주소 또는 비밀번호입니다. 다시 시도하세요.</value>
     <comment>Message of the dialog displayed when a user is trying to login with an e-mail that is not associated with a MEGA account or type a wrong password. Preserve the MEGA word in uppercase.</comment>
