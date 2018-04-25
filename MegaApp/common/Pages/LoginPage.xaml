@@ -61,7 +61,7 @@
                         <userControls:PasswordStrengthIndicator
                             Height="4"
                             Margin="12,0,12,-12"
-                            IndicatorBackground="{StaticResource MegaPasswordStrengthIndicatorBackgroundBrush}"
+                            IndicatorBackground="{StaticResource PhoneInactiveBrush}"
                             IndicatorForeground="{StaticResource MegaRedSolidColorBrush}"
                             Value="{Binding CreateAccountViewModel.PasswordStrength}">
                             <userControls:PasswordStrengthIndicator.IndicatorsOpacity>
