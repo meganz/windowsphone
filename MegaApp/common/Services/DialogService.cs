@@ -1327,13 +1327,6 @@ namespace MegaApp.Services
             };
             passwordStackPanel.Children.Add(titleLabel);
                         
-            var currentPassword = new RadPasswordBox()
-            {
-                Watermark = UiResources.UI_Password.ToLower(),
-                ClearButtonVisibility = Visibility.Visible
-            };
-            passwordStackPanel.Children.Add(currentPassword);
-
             var newPassword = new RadPasswordBox()
             {
                 Watermark = UiResources.UI_NewPassword.ToLower(),
@@ -1356,21 +1349,12 @@ namespace MegaApp.Services
             };
             confirmButton.Tap += (sender, args) =>
             {
-                if (!String.IsNullOrWhiteSpace(currentPassword.Password) && 
-                    !String.IsNullOrWhiteSpace(newPassword.Password) && !String.IsNullOrWhiteSpace(confirmPassword.Password))
+                if (!String.IsNullOrWhiteSpace(newPassword.Password) && !String.IsNullOrWhiteSpace(confirmPassword.Password))
                 {
-                    if(!newPassword.Password.Equals(confirmPassword.Password))
+                    // If the new password and the old password are the same
+                    if(SdkService.MegaSdk.checkPassword(newPassword.Password))
                     {
-                        new CustomMessageDialog(
-                            UiResources.UI_ChangePassword.ToUpper(),
-                            AppMessages.PasswordsDoNotMatch,
-                            App.AppInformation,
-                            MessageDialogButtons.Ok).ShowDialog();
-                        return;
-                    }
-
-                    if(newPassword.Password.Equals(currentPassword.Password))
-                    {
+                        changePasswordRadWindow.IsOpen = false;
                         new CustomMessageDialog(
                             UiResources.UI_ChangePassword.ToUpper(),
                             AppMessages.NewAndOldPasswordMatch,
@@ -1379,10 +1363,23 @@ namespace MegaApp.Services
                         return;
                     }
 
-                    SdkService.MegaSdk.changePassword(currentPassword.Password, newPassword.Password, new ChangePasswordRequestListener());
+                    // If the new password and the confirmation password don't match
+                    if (!newPassword.Password.Equals(confirmPassword.Password))
+                    {
+                        changePasswordRadWindow.IsOpen = false;
+                        new CustomMessageDialog(
+                            UiResources.UI_ChangePassword.ToUpper(),
+                            AppMessages.PasswordsDoNotMatch,
+                            App.AppInformation,
+                            MessageDialogButtons.Ok).ShowDialog();
+                        return;
+                    }
+
+                    SdkService.MegaSdk.changePasswordWithoutOld(newPassword.Password, new ChangePasswordRequestListener());
                 }
                 else
                 {
+                    changePasswordRadWindow.IsOpen = false;
                     new CustomMessageDialog(
                         AppMessages.RequiredFields_Title.ToUpper(),
                         AppMessages.RequiredFieldsChangePassword,
