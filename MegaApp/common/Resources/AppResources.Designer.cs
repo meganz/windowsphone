@@ -117,9 +117,9 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a MEGA Privacy.
         /// </summary>
-        public static string ApplicationTitle {
+        public static string ApplicationName {
             get {
-                return ResourceManager.GetString("ApplicationTitle", resourceCulture);
+                return ResourceManager.GetString("ApplicationName", resourceCulture);
             }
         }
         

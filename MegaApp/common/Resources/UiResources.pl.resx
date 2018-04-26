@@ -125,12 +125,8 @@
     <value>dodaj folder</value>
     <comment>Label for any 'Add folder' button, link, etc. - (String as short as possible).</comment>
   </data>
-  <data name="AppName" xml:space="preserve">
-    <value>MEGA Privacy</value>
-    <comment>Label with the application name. Try to preserve uppercase - (NO-TRANSLATION).</comment>
-  </data>
   <data name="Cancel" xml:space="preserve">
-    <value>Odwołaj</value>
+    <value>Anuluj</value>
     <comment>Label for any 'Cancel' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="CloudDriveName" xml:space="preserve">
@@ -350,7 +346,7 @@
     <comment>Text placed just before app version number into the 'about' page.</comment>
   </data>
   <data name="AskDownloadLocationText" xml:space="preserve">
-    <value>Zawsze pytaj o miejsce do zapisania</value>
+    <value>Zawsze pytaj o lokalizację do zapisania pliku</value>
     <comment>Text placed just before a switch button (on/off) into the 'settings' page indicating if the app should ask always for a download location or use a default download location.</comment>
   </data>
   <data name="Available" xml:space="preserve">
@@ -494,7 +490,7 @@
     <comment>Label for any 'Used' button, link, text, title, etc. (i.e. used space) - (String as short as possible).</comment>
   </data>
   <data name="UsedSpace" xml:space="preserve">
-    <value>Zajęta przestrzeń</value>
+    <value>Użyta pamięć</value>
     <comment>Text placed just before the amount used space into the 'my account' page - (String as short as possible).</comment>
   </data>
   <data name="Version" xml:space="preserve">
@@ -514,7 +510,7 @@
     <comment>Label for any 'Select folder' button, link, text, title, etc. - (String as short as possible, MAX 14 characters).</comment>
   </data>
   <data name="About" xml:space="preserve">
-    <value>O nas</value>
+    <value>O Nas</value>
     <comment>Label for any 'About' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Pause" xml:space="preserve">
@@ -634,7 +630,7 @@
     <comment>Label for the 'Wifi only' option in the 'set up camera uploads' page - (String as short as possible).</comment>
   </data>
   <data name="EnableCameraUploads" xml:space="preserve">
-    <value>Odblokuj wgrywnie zdjęć</value>
+    <value>Włącz wgrwyanie plików z kamery</value>
     <comment>Label for the switch button to enable or disable the Camera Uploads service - (String as short as possible).</comment>
   </data>
   <data name="Security" xml:space="preserve">
@@ -1037,7 +1033,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Get link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_Login" xml:space="preserve">
-    <value>Zaloguj się</value>
+    <value>Login</value>
     <comment>Label for any 'Login' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_Logout" xml:space="preserve">
@@ -1110,7 +1106,7 @@ Preserve the {0} code because is for include the name of the destination folder 
     <comment>Label for any 'Open link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_ExportRecoveryKeyText" xml:space="preserve">
-    <value>Eksportuj klucz zapasowy</value>
+    <value>Eksportowanie klucza</value>
     <comment>Text 'Export Recovery Key' placed just before two buttons into the 'settings' page to allow see (copy/paste) and export the Recovery Key.</comment>
   </data>
   <data name="UI_RecoveryKey" xml:space="preserve">

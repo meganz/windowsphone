@@ -118,19 +118,15 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Add" xml:space="preserve">
-    <value>إضافة</value>
+    <value>اضافة</value>
     <comment>Label for any 'Add' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="AddFolder" xml:space="preserve">
     <value>إضافة مجلد</value>
     <comment>Label for any 'Add folder' button, link, etc. - (String as short as possible).</comment>
   </data>
-  <data name="AppName" xml:space="preserve">
-    <value>MEGA Privacy</value>
-    <comment>Label with the application name. Try to preserve uppercase - (NO-TRANSLATION).</comment>
-  </data>
   <data name="Cancel" xml:space="preserve">
-    <value>إلغاء</value>
+    <value>الغاء</value>
     <comment>Label for any 'Cancel' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="CloudDriveName" xml:space="preserve">
@@ -350,7 +346,7 @@
     <comment>Text placed just before app version number into the 'about' page.</comment>
   </data>
   <data name="AskDownloadLocationText" xml:space="preserve">
-    <value>أسأل دائما عن موقع التحميل</value>
+    <value>أسأل دائما عن مكان التحميل</value>
     <comment>Text placed just before a switch button (on/off) into the 'settings' page indicating if the app should ask always for a download location or use a default download location.</comment>
   </data>
   <data name="Available" xml:space="preserve">
@@ -358,8 +354,7 @@
     <comment>Label for available space into the 'my account' page - (String as short as possible, MAX 10 characters).</comment>
   </data>
   <data name="Bandwidth" xml:space="preserve">
-    <value>نقل البيانات
-                </value>
+    <value>نقل البيانات                </value>
     <comment>Label for any 'Bandwidth' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Cache" xml:space="preserve">
@@ -427,7 +422,7 @@
     <comment>Text placed just before the form to 'Make a PIN Lock'. Try to preserve the PIN uppercase word. - (String as short as possible).</comment>
   </data>
   <data name="Monthly" xml:space="preserve">
-    <value>شهريًا</value>
+    <value>شهريا</value>
     <comment>Label for any 'Monthly' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="NameAscendingSortOption" xml:space="preserve">
@@ -515,7 +510,7 @@
     <comment>Label for any 'Select folder' button, link, text, title, etc. - (String as short as possible, MAX 14 characters).</comment>
   </data>
   <data name="About" xml:space="preserve">
-    <value>معلومات عن</value>
+    <value>حول</value>
     <comment>Label for any 'About' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Pause" xml:space="preserve">
@@ -591,7 +586,7 @@
     <comment>Label for any 'Advanced' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Help" xml:space="preserve">
-    <value>مساعدة</value>
+    <value>المساعدة</value>
     <comment>Label for any 'Help' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="CameraUploads" xml:space="preserve">
@@ -611,7 +606,7 @@
     <comment>Label for any 'Sort' button, link, text, etc. - (String as short as possible).</comment>
   </data>
   <data name="ClearRubbishBin" xml:space="preserve">
-    <value>مسح سلة المهملات</value>
+    <value>سلة المهملات فارغة</value>
     <comment>Label for any 'Empty rubbish' button, link, text, etc. - (String as short as possible).</comment>
   </data>
   <data name="Ok" xml:space="preserve">
@@ -635,7 +630,7 @@
     <comment>Label for the 'Wifi only' option in the 'set up camera uploads' page - (String as short as possible).</comment>
   </data>
   <data name="EnableCameraUploads" xml:space="preserve">
-    <value>تفعيل رفع البوم الكاميرا</value>
+    <value>تفعيل تحميلات الكاميرا</value>
     <comment>Label for the switch button to enable or disable the Camera Uploads service - (String as short as possible).</comment>
   </data>
   <data name="Security" xml:space="preserve">
@@ -740,7 +735,7 @@ Preserve the {0} code because is for include the name/type of the selected plan 
     <comment>Label to indicate the user that is needed select a membership (monthly or annualy) for upgrade his account.</comment>
   </data>
   <data name="SettingsShort" xml:space="preserve">
-    <value>الإعدادات</value>
+    <value>الاعدادات</value>
     <comment>Label abreviated for any 'Settings' button, link, text, title, etc. - (String as short as possible - MAX 10 characteres).</comment>
   </data>
   <data name="State" xml:space="preserve">
@@ -974,7 +969,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label asking user if wants to enable the auto camera uploads service.</comment>
   </data>
   <data name="ShareFolder" xml:space="preserve">
-    <value>شارك مجلد</value>
+    <value>مجلد المشاركة</value>
     <comment>Label for any 'Share folder' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="ManageLink" xml:space="preserve">
@@ -998,7 +993,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for the background of an empty transfers page - (String as short as possible).</comment>
   </data>
   <data name="EmptyRubbishBin" xml:space="preserve">
-    <value>مسح سلة المهملات</value>
+    <value>سلة المهملات فارغة</value>
     <comment>Label for the background of an empty rubbish bin page - (String as short as possible).</comment>
   </data>
   <data name="EmptySharedFolders" xml:space="preserve">
@@ -1042,7 +1037,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Login' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_Logout" xml:space="preserve">
-    <value>تسجيل الخروج</value>
+    <value>الخروج</value>
     <comment>Label for any 'Logout' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_UpgradeAccount" xml:space="preserve">
@@ -1111,7 +1106,7 @@ Preserve the {0} code because is for include the name of the destination folder 
     <comment>Label for any 'Open link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_ExportRecoveryKeyText" xml:space="preserve">
-    <value>تصدير مفتاح الاستعادة </value>
+    <value>تصدير مفتاح الاستعادة</value>
     <comment>Text 'Export Recovery Key' placed just before two buttons into the 'settings' page to allow see (copy/paste) and export the Recovery Key.</comment>
   </data>
   <data name="UI_RecoveryKey" xml:space="preserve">

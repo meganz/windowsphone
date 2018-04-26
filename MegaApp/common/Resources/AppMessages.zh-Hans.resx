@@ -209,7 +209,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the process/request to get a link to a node failed.</comment>
   </data>
   <data name="GetLinkFailed_Title" xml:space="preserve">
-    <value>如法获得连接</value>
+    <value>生成连接失败</value>
     <comment>Title of the dialog displayed when the process/request to get a link to a node failed - (String as short as possible).</comment>
   </data>
   <data name="GetPreviewFailed" xml:space="preserve">
@@ -303,7 +303,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
     <comment>Title of the dialog displayed when the process/request remove definitely an item from the rubbish bin failed - (String as short as possible).</comment>
   </data>
   <data name="RemoveNodeSuccess" xml:space="preserve">
-    <value>项目已删除</value>
+    <value>成功删除文件</value>
     <comment>Message of the dialog displayed when remove successfully a node definitely from the rubbish bin.</comment>
   </data>
   <data name="RemoveNodeSuccess_Title" xml:space="preserve">
@@ -608,7 +608,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException" xml:space="preserve">
-    <value>您没有将此文件类型复制到目标文件夹的权限。您是否要将不支持类型的文件储存/复制到SD卡中？请尝试将文件储存/复制到您的设备的内部记忆体中。</value>
+    <value>您没有将此文件类型复制到目标文件夹的权限。您是否要将不支持类型的文件储存/复制到SD卡中？
+请尝试将文件储存/复制到您的设备的内部记忆体中。</value>
     <comment>Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException_Title" xml:space="preserve">
@@ -660,7 +661,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Button of the dialog displayed the first time that a user want to download a image. Option automatically download to the photo album after downloads - (String as short as possible).</comment>
   </data>
   <data name="SelectFolderFailed" xml:space="preserve">
-    <value>选择文件夹失败，请重试或者选择另外一个文件夹：[{0}]</value>
+    <value>选择文件夹失败，请重试或者选择另外一个文件夹</value>
     <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="SelectFolderFailed_Title" xml:space="preserve">
@@ -926,7 +927,7 @@ Preserve the {0} code because is for include the number of contacts to be remove
     <comment>Message of the dialog displayed when the process/request to change the MEGA account password failed.</comment>
   </data>
   <data name="ChangePasswordSuccess" xml:space="preserve">
-    <value>您的密码已变更。</value>
+    <value>您的密码已被更改。</value>
     <comment>Message of the dialog displayed when change a MEGA account password succesfully.</comment>
   </data>
   <data name="NewAndOldPasswordMatch" xml:space="preserve">
@@ -1115,11 +1116,17 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Alert title shown when you have written a decryption key not valid - (String as short as possible).</comment>
   </data>
   <data name="AM_FileLinkUnavailable" xml:space="preserve">
-    <value>文件链接不存在之可能原因： - 因ToS / AUP违规，故该文件链接已被删除。 - 无效的网址– 您尝试存取的链接并不存在。 - 该使用者已将文件链接删除。</value>
+    <value>文件链接不存在之可能原因：
+ - 因ToS / AUP违规，故该文件链接已被删除。
+ - 无效的网址– 您尝试存取的链接并不存在。
+ - 该使用者已将文件链接删除。</value>
     <comment>Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</comment>
   </data>
   <data name="AM_FolderLinkUnavailable" xml:space="preserve">
-    <value>文件夹链接不存在之可能原因： - 因ToS / AUP违规，故该文件夹链接已被删除。 - 无效的网址– 您尝试存取的链接并不存在。 - 该使用者已将文件夹链接删除。</value>
+    <value>文件夹链接不存在之可能原因：
+ - 因ToS / AUP违规，故该文件夹链接已被删除。
+ - 无效的网址– 您尝试存取的链接并不存在。
+ - 该使用者已将文件夹链接删除。</value>
     <comment>Error message shown when a folder link doesn't exist. Keep "\n"</comment>
   </data>
   <data name="AM_LinkUnavailableTitle" xml:space="preserve">
@@ -1294,7 +1301,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Message of the warning dialog shown when the user tries to make a new sign up using an invalid link (#newsignup).</comment>
   </data>
   <data name="AM_AccountBlocked" xml:space="preserve">
-    <value>Your account was terminated due to a breach of MEGA's Terms of Service, such as abuse of rights of others; sharing and/or importing illegal data; or system abuse.</value>
+    <value>您的帐户因违反MEGA的服务条款而被终止，如侵害他人权利;共享和/或导入非法数据;或侵害系统。</value>
     <comment>Message of the dialog shown when the user is trying to login and the account has been blocked.</comment>
   </data>
   <data name="AM_AccountNotConfirmed" xml:space="preserve">
@@ -1404,7 +1411,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the process to prepare files or folders for download failed.</comment>
   </data>
   <data name="AM_AccountBlockedCopyright" xml:space="preserve">
-    <value>Your account has been suspended due to multiple breaches of MEGA's Terms of Service. Please check your email inbox.</value>
+    <value>由于多次违反MEGA的服务条款，您的帐户已被暂停。请检查您的电子邮件收件箱。</value>
     <comment>Message of the dialog shown when the user is trying to login and the account has been blocked for multiple copyright violation.</comment>
   </data>
 </root>

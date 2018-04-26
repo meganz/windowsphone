@@ -209,7 +209,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the process/request to get a link to a node failed.</comment>
   </data>
   <data name="GetLinkFailed_Title" xml:space="preserve">
-    <value>Impossibile generare il link</value>
+    <value>Creazione link fallita</value>
     <comment>Title of the dialog displayed when the process/request to get a link to a node failed - (String as short as possible).</comment>
   </data>
   <data name="GetPreviewFailed" xml:space="preserve">
@@ -303,7 +303,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
     <comment>Title of the dialog displayed when the process/request remove definitely an item from the rubbish bin failed - (String as short as possible).</comment>
   </data>
   <data name="RemoveNodeSuccess" xml:space="preserve">
-    <value>Item rimosso con successo</value>
+    <value>Oggetto rimosso con successo</value>
     <comment>Message of the dialog displayed when remove successfully a node definitely from the rubbish bin.</comment>
   </data>
   <data name="RemoveNodeSuccess_Title" xml:space="preserve">
@@ -608,8 +608,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException" xml:space="preserve">
-    <value>Non hai il permesso di copiare questo formato di file all'interno della cartella di destinazione. Stai provando a salvare/copiare un file di un formato non supportato all'interno di una scheda SD?
-Per favore, prova a salvare/copiare il file all'interno della memoria interna del dispositivo invece.</value>
+    <value>Non hai il permesso di copiare questo formato di file all'interno della cartella di destinazione. Stai tentando di salvate/copiare un file di un formato non supportato su una scheda SD?
+Per favore, prova a salvare/copiare il file sulla memoria interna del dispositivo invece.</value>
     <comment>Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException_Title" xml:space="preserve">
@@ -661,7 +661,7 @@ Per favore, prova a salvare/copiare il file all'interno della memoria interna de
     <comment>Button of the dialog displayed the first time that a user want to download a image. Option automatically download to the photo album after downloads - (String as short as possible).</comment>
   </data>
   <data name="SelectFolderFailed" xml:space="preserve">
-    <value>Impossibile selezionare la cartella. Per favore, prova di nuovo o scegliere un'altra cartella: [{0}]</value>
+    <value>Impossibile selezionare la cartella. Per favore, prova di nuovo o scegline un'altra.                                </value>
     <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="SelectFolderFailed_Title" xml:space="preserve">
@@ -985,7 +985,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</comment>
   </data>
   <data name="FolderUnauthorizedAccess" xml:space="preserve">
-    <value>Non hai accesso al percorso '{0}'. Per favore, selezionane un altro e riprova.</value>
+    <value>Non hai accesso alla cartella '{0}'. Per favore, selezionane un'altra e riprova.                                </value>
     <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder in the device memory. For example to download a file/folder, create a new folder, etc.
 Preserve the '{0}' code because is for include the folder name in runtime.</comment>
   </data>
@@ -1116,17 +1116,17 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Alert title shown when you have written a decryption key not valid - (String as short as possible).</comment>
   </data>
   <data name="AM_FileLinkUnavailable" xml:space="preserve">
-    <value>Questo potrebbe essere causato da una delle seguenti motivazioni:
-- Il link del file è stato rimosso a causa di una violazione dei nostri Termini di Servizio.
+    <value>Questo potrebbe essere avvenuto a causa delle seguenti ragioni:
+- Il file è stato rimosso a causa di una violazione dei TdS.
 - URL non valido – il link a cui stai tentando di accedere non esiste.
-- Il link del file è stato eliminato dall'utente proprietario del link.</value>
+- Il file è stato eliminato dal proprietario.</value>
     <comment>Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</comment>
   </data>
   <data name="AM_FolderLinkUnavailable" xml:space="preserve">
-    <value>Questo potrebbe essere causato da una delle seguenti motivazioni:
-- Il link della cartella è stato rimosso a causa di una violazione dei nostri Termini di Servizio.
+    <value>Questo potrebbe essere avvenuto a causa delle seguenti ragioni:
+- La cartella è stata rimossa a causa di una violazione dei TdS.
 - URL non valido – il link a cui stai tentando di accedere non esiste.
-- Il link della cartella è stato eliminato dall'utente proprietario del link.</value>
+- La cartella è stata eliminata dal proprietario.</value>
     <comment>Error message shown when a folder link doesn't exist. Keep "\n"</comment>
   </data>
   <data name="AM_LinkUnavailableTitle" xml:space="preserve">
@@ -1151,7 +1151,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder</comment>
   </data>
   <data name="AM_RecoveryKeyClipboardFailed" xml:space="preserve">
-    <value>Copia della chiave di recupero negli appunti fallita. Per favore, riprova.</value>
+    <value>Copia della Chiave di Recupero nei tuoi appunti fallita. Per favore, riprova.                                </value>
     <comment>Message of the dialog displayed when fails to copy the user's Recovery Key to the clipboard to be saved or exported.</comment>
   </data>
   <data name="AM_RecoveryKeyClipboardFailed_Title" xml:space="preserve">
@@ -1163,7 +1163,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported.</comment>
   </data>
   <data name="AM_RecoveryKeyCopied_Title" xml:space="preserve">
-    <value>Chiave di recupero copiata</value>
+    <value>Chiave di Recupero copiata                                </value>
     <comment>Title of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported - (String as short as possible).</comment>
   </data>
   <data name="AM_CopyFailed" xml:space="preserve">
@@ -1391,7 +1391,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when fails the process/request to share a file/folder link.</comment>
   </data>
   <data name="AM_InternalNodeFailed" xml:space="preserve">
-    <value>Apertura del file/cartella del link fallita. Per favore, ritenta.</value>
+    <value>Apertura del file o della cartella appartenente al link fallita. Per favore, riprova.</value>
     <comment>Title of the dialog displayed when fail trying to open a link of an internal node.</comment>
   </data>
   <data name="AM_InternalNodeFailed_Title" xml:space="preserve">

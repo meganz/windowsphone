@@ -125,10 +125,6 @@
     <value>tambah folder</value>
     <comment>Label for any 'Add folder' button, link, etc. - (String as short as possible).</comment>
   </data>
-  <data name="AppName" xml:space="preserve">
-    <value>MEGA Privacy</value>
-    <comment>Label with the application name. Try to preserve uppercase - (NO-TRANSLATION).</comment>
-  </data>
   <data name="Cancel" xml:space="preserve">
     <value>Batal</value>
     <comment>Label for any 'Cancel' button, link, etc. - (String as short as possible).</comment>
@@ -186,7 +182,7 @@
     <comment>Label for any 'Next' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Open" xml:space="preserve">
-    <value>Buka</value>
+    <value>Bukan</value>
     <comment>Label for any 'Open' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Preview" xml:space="preserve">
@@ -350,7 +346,7 @@
     <comment>Text placed just before app version number into the 'about' page.</comment>
   </data>
   <data name="AskDownloadLocationText" xml:space="preserve">
-    <value>Selalu tanya lokasi download</value>
+    <value>Selalu tanya untuk download lokasi</value>
     <comment>Text placed just before a switch button (on/off) into the 'settings' page indicating if the app should ask always for a download location or use a default download location.</comment>
   </data>
   <data name="Available" xml:space="preserve">
@@ -494,7 +490,7 @@
     <comment>Label for any 'Used' button, link, text, title, etc. (i.e. used space) - (String as short as possible).</comment>
   </data>
   <data name="UsedSpace" xml:space="preserve">
-    <value>Ruang Terpakai</value>
+    <value>Space Terpakai</value>
     <comment>Text placed just before the amount used space into the 'my account' page - (String as short as possible).</comment>
   </data>
   <data name="Version" xml:space="preserve">
@@ -514,7 +510,7 @@
     <comment>Label for any 'Select folder' button, link, text, title, etc. - (String as short as possible, MAX 14 characters).</comment>
   </data>
   <data name="About" xml:space="preserve">
-    <value>Perihal</value>
+    <value>Tentang</value>
     <comment>Label for any 'About' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Pause" xml:space="preserve">
@@ -634,7 +630,7 @@
     <comment>Label for the 'Wifi only' option in the 'set up camera uploads' page - (String as short as possible).</comment>
   </data>
   <data name="EnableCameraUploads" xml:space="preserve">
-    <value>Aktifkan Camera Uploads</value>
+    <value>Aktifkan Upload Kamera</value>
     <comment>Label for the switch button to enable or disable the Camera Uploads service - (String as short as possible).</comment>
   </data>
   <data name="Security" xml:space="preserve">
@@ -1110,7 +1106,7 @@ Preserve the {0} code because is for include the name of the destination folder 
     <comment>Label for any 'Open link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_ExportRecoveryKeyText" xml:space="preserve">
-    <value>Export recovery key</value>
+    <value>Export Recovery Key</value>
     <comment>Text 'Export Recovery Key' placed just before two buttons into the 'settings' page to allow see (copy/paste) and export the Recovery Key.</comment>
   </data>
   <data name="UI_RecoveryKey" xml:space="preserve">
@@ -1209,8 +1205,7 @@ Keep the code {1} because is for include currency in runtime.</comment>
     <comment>Label for the state of a paused transfer - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStatePreparing" xml:space="preserve">
-    <value>Mempersiapkan...
-</value>
+    <value>Mempersiapkan...</value>
     <comment>Label for the state of a transfer when is being preparing - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStateQueued" xml:space="preserve">
@@ -1250,8 +1245,7 @@ Keep the code {1} because is for include currency in runtime.</comment>
     <comment>Text placed just after a checkbox to indicate that user is agree with the 'Terms of Service' into the 'create account' page.</comment>
   </data>
   <data name="UI_ConfirmPassword" xml:space="preserve">
-    <value>Konfirmasi sandi
-</value>
+    <value>Konfirmasi sandi</value>
     <comment>Label for any 'Confirm password' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_Email" xml:space="preserve">
@@ -1286,8 +1280,7 @@ Try to preserve the PIN uppercase word.</comment>
 Preserve the PIN uppercase word.</comment>
   </data>
   <data name="UI_NewPassword" xml:space="preserve">
-    <value>Kata sandi baru
-</value>
+    <value>Kata sandi baru</value>
     <comment>Label for any 'New password' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_LastName" xml:space="preserve">

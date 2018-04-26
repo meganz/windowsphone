@@ -303,7 +303,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
     <comment>Title of the dialog displayed when the process/request remove definitely an item from the rubbish bin failed - (String as short as possible).</comment>
   </data>
   <data name="RemoveNodeSuccess" xml:space="preserve">
-    <value>Элемент удалён успешно</value>
+    <value>Элемент успешно удалён</value>
     <comment>Message of the dialog displayed when remove successfully a node definitely from the rubbish bin.</comment>
   </data>
   <data name="RemoveNodeSuccess_Title" xml:space="preserve">
@@ -608,8 +608,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException" xml:space="preserve">
-    <value>У вас нет разрешений на копирование файлов такого типа в папку назначения. Похоже, вы пытаетесь сохранить/скопировать файл неподдерживаемого типа на SD-карту.
-Попробуйте вместо этого сохранить/скопировать файл во внутреннюю память устройства.</value>
+    <value>У вас нет разрешения на копирование этого типа файлов в папку назначения. Вы пытаетесь сохранить/скопировать файл неподдерживаемого типа на SD-карту?
+Попробуйте сохранить/скопировать файл во внутреннюю память устройства.</value>
     <comment>Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException_Title" xml:space="preserve">
@@ -661,7 +661,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Button of the dialog displayed the first time that a user want to download a image. Option automatically download to the photo album after downloads - (String as short as possible).</comment>
   </data>
   <data name="SelectFolderFailed" xml:space="preserve">
-    <value>Не удалось выбрать папку. Пожалуйста, попробуйте ещё раз или выберите другую папку: [{0}]</value>
+    <value>Не удалось выбрать папку. Пожалуйста, попробуйте ещё раз или выберите другую.                                                                </value>
     <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="SelectFolderFailed_Title" xml:space="preserve">
@@ -985,7 +985,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</comment>
   </data>
   <data name="FolderUnauthorizedAccess" xml:space="preserve">
-    <value>У вас нет доступа к пути '{0}'. Пожалуйста, выберите другой и попробуйте снова.</value>
+    <value>У вас нет доступа к папке '{0}'. Пожалуйста, выберите другую и попробуйте снова.                                </value>
     <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder in the device memory. For example to download a file/folder, create a new folder, etc.
 Preserve the '{0}' code because is for include the folder name in runtime.</comment>
   </data>
@@ -1117,16 +1117,16 @@ Preserve the [{0}] code because is for include the error code or the error messa
   </data>
   <data name="AM_FileLinkUnavailable" xml:space="preserve">
     <value>Это может быть вызвано следующими причинами:
-- Ссылка на файл была удалена из-за нарушения Условий обслуживания/Правил использования.
+- Файл был удалён из-за нарушения Условий обслуживания/Правил использования.
 - Недействительный адрес — ссылка, по которой вы пытаетесь перейти, не существует.
-- Ссылка на файл была удалена пользователем.</value>
+- Файл был удалён пользователем.                                </value>
     <comment>Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</comment>
   </data>
   <data name="AM_FolderLinkUnavailable" xml:space="preserve">
     <value>Это может быть вызвано следующими причинами:
 - Ссылка на папку была удалена из-за нарушения Условий обслуживания/Правил использования.
 - Недействительный адрес — ссылка, по которой вы пытаетесь перейти, не существует.
-- Ссылка на папку была удалена пользователем.</value>
+- Ссылка на папку была удалена пользователем.                                </value>
     <comment>Error message shown when a folder link doesn't exist. Keep "\n"</comment>
   </data>
   <data name="AM_LinkUnavailableTitle" xml:space="preserve">
@@ -1391,7 +1391,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when fails the process/request to share a file/folder link.</comment>
   </data>
   <data name="AM_InternalNodeFailed" xml:space="preserve">
-    <value>Не удалось открыть внутренний файл/папку по ссылке. Попробуйте снова.</value>
+    <value>Не удалось открыть внутренний файл/папку по ссылке. Попробуйте ещё раз.</value>
     <comment>Title of the dialog displayed when fail trying to open a link of an internal node.</comment>
   </data>
   <data name="AM_InternalNodeFailed_Title" xml:space="preserve">

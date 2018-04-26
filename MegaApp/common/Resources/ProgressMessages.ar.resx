@@ -272,7 +272,7 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when creating a MEGA account - (String as short as possible).</comment>
   </data>
   <data name="PM_CreateFolder" xml:space="preserve">
-    <value>جاري إنشاء مجلد...</value>
+    <value>إنشاء مجلد...</value>
     <comment>Progress indicator message when creating a folder - (String as short as possible).</comment>
   </data>
   <data name="PM_GetLink" xml:space="preserve">
@@ -314,5 +314,21 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
   <data name="PM_ValidatePurchase" xml:space="preserve">
     <value>التحقق من الإجراءات...</value>
     <comment>Progress indicator message when validating purchase receipt - (String as short as possible).</comment>
+  </data>
+  <data name="PM_ApiLocked" xml:space="preserve">
+    <value>هذه العملية تستغرق وقتا أطول من المتوقع. أرجو الإنتظار.</value>
+    <comment>Progress indicator message when the SDK is waiting for the server to complete a request due to an API lock (API error -3) - (String as short as possible).</comment>
+  </data>
+  <data name="PM_ApiRateLimit" xml:space="preserve">
+    <value>تجاوز الحد الاعظمي للطلبات. من فضلك انتظر.</value>
+    <comment>Progress indicator message when the SDK is waiting for the server to complete a request due to a rate limit (API error -4) - (String as short as possible).</comment>
+  </data>
+  <data name="PM_ConnectivityIssue" xml:space="preserve">
+    <value>لم ينجح الاتصال مع MEGA. يرجى التأكد من الاتصال الشبكي أو إعادة المحاولة بعد قليل.</value>
+    <comment>Progress indicator message when the SDK is waiting for the server to complete a request due to connectivity issue - (String as short as possible).</comment>
+  </data>
+  <data name="PM_ServersBusy" xml:space="preserve">
+    <value>الخوادم مشغولة جدا. الرجاء الانتظار.</value>
+    <comment>Progress indicator message when servers are too busy. SDK is waiting for the server to complete a request due to a HTTP error 500  - (String as short as possible).</comment>
   </data>
 </root>

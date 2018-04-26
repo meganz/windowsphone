@@ -608,8 +608,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException" xml:space="preserve">
-    <value>Vous n'avez pas le droit de copier ce type de fichier dans le dossier de destination. Tentez-vous d'enregistrer ou de copier un fichier d'un type non pris en charge vers une carte SD ?
-Veuillez plutôt essayer d'enregistrer ou de copier le fichier dans la mémoire interne de votre appareil.</value>
+    <value>Vous n’avez pas l’autorisation de copier ce type de fichier sur le dossier de destination. Essayez-vous d’enregistrer ou de copier un fichier d’un type non pris en charge sur une carte SD ?
+Veuillez plutôt essayer d’enregistrer ou de copier le fichier sur la mémoire interne de votre appareil.                                </value>
     <comment>Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException_Title" xml:space="preserve">
@@ -661,7 +661,7 @@ Veuillez plutôt essayer d'enregistrer ou de copier le fichier dans la mémoire 
     <comment>Button of the dialog displayed the first time that a user want to download a image. Option automatically download to the photo album after downloads - (String as short as possible).</comment>
   </data>
   <data name="SelectFolderFailed" xml:space="preserve">
-    <value>Échec de sélection du dossier. Veuillez ressayer ou sélectionner un autre dossier : [{0}]</value>
+    <value>Échec de sélection du dossier. Veuillez ressayer ou en sélectionner un autre.                                </value>
     <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="SelectFolderFailed_Title" xml:space="preserve">
@@ -695,7 +695,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when a user is trying to login with an e-mail that is not associated with a MEGA account or type a wrong password. Preserve the MEGA word in uppercase.</comment>
   </data>
   <data name="DeleteNodeQuestion" xml:space="preserve">
-    <value>Voulez-vous vraiment supprimer {0} définitivement ?</value>
+    <value>Voulez-vous vraiment supprimer {0} définitivement ?</value>
     <comment>Message of the dialog displayed when a user want to delete permanently a node, asking for confirmation to make it.
 Preserve the {0} code because is for include name of the node to be removed in runtime.</comment>
   </data>
@@ -931,8 +931,7 @@ Preserve the {0} code because is for include the number of contacts to be remove
     <comment>Message of the dialog displayed when change a MEGA account password succesfully.</comment>
   </data>
   <data name="NewAndOldPasswordMatch" xml:space="preserve">
-    <value>Le nouveau mot de passe et l'ancien
-doivent être différent.</value>
+    <value>Le nouveau mot de passe et l'anciendoivent être différent.</value>
     <comment>Message of the dialog displayed when a user are trying to change his/her MEGA account password and the new password is equal to the old password.</comment>
   </data>
   <data name="RequiredFieldsChangePassword" xml:space="preserve">
@@ -986,7 +985,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</comment>
   </data>
   <data name="FolderUnauthorizedAccess" xml:space="preserve">
-    <value>Vous n'avez pas accès au chemin '{0}'. Veuillez en choisir un autre et ressayer.</value>
+    <value>Vous n'avez pas accès au dossier '{0}'. Veuillez en choisir un autre et ressayer.</value>
     <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder in the device memory. For example to download a file/folder, create a new folder, etc.
 Preserve the '{0}' code because is for include the folder name in runtime.</comment>
   </data>
@@ -1043,7 +1042,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 Preserve the {0} and ({1}) codes because is for include the maximum reliable download number and the precise number of nodes to be downloaded in runtime.</comment>
   </data>
   <data name="AM_CancelSubscriptionConfirmation" xml:space="preserve">
-    <value>Nous vous remercions de vos commentaires ! Voulez-vous vraiment annuler votre abonnement MEGA ?</value>
+    <value>Nous vous remercions de votre rétroaction ! Voulez-vous vraiment annuler votre abonnement MEGA ?</value>
     <comment>Message of the dialog displayed when a user is trying to cancel a subscription. This sentence is for give thanks to the user for the feedback sent during the cancellation process and asking for confirmation to do it.</comment>
   </data>
   <data name="AM_PrepareFilesForUploadFailed" xml:space="preserve">
@@ -1117,17 +1116,17 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Alert title shown when you have written a decryption key not valid - (String as short as possible).</comment>
   </data>
   <data name="AM_FileLinkUnavailable" xml:space="preserve">
-    <value>Cela pourrait être causé par les raisons suivantes :
-- Le fichier a été retiré en raison du non-respect des conditions générales d'utilisation ou de la politique d'utilisation acceptable.
-- L'URL est invalide. Le lien auquel vous essayez d'accéder n'existe pas.
-- Le fichier a été supprimé par l'utilisateur.</value>
+    <value>Cela pourrait être causé par les raisons suivantes :
+- Le fichier a été retiré en raison du non-respect des conditions générales d’utilisation ou de la politique d’utilisation acceptable.
+- L’URL est invalide. Le lien auquel vous essayez d’accéder n’existe pas.
+- Le fichier a été supprimé par l’utilisateur.</value>
     <comment>Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</comment>
   </data>
   <data name="AM_FolderLinkUnavailable" xml:space="preserve">
-    <value>Cela pourrait être causé par les raisons suivantes :
-- Le lien de dossier a été retiré en raison du non-respect des conditions générales d'utilisation ou de la politique d'utilisation acceptable.
-- L'URL est invalide. Le lien auquel vous essayez d'accéder n'existe pas.
-- Le lien de dossier a été supprimé par l'utilisateur.</value>
+    <value>Cela pourrait être causé par les raisons suivantes :
+- Le lien du dossier a été retiré en raison du non-respect des conditions générales d’utilisation ou de la politique d’utilisation acceptable.
+- L’URL est invalide. Le lien auquel vous essayez d’accéder n’existe pas.
+- Le lien du dossier a été supprimé par l’utilisateur.</value>
     <comment>Error message shown when a folder link doesn't exist. Keep "\n"</comment>
   </data>
   <data name="AM_LinkUnavailableTitle" xml:space="preserve">
@@ -1152,7 +1151,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder</comment>
   </data>
   <data name="AM_RecoveryKeyClipboardFailed" xml:space="preserve">
-    <value>Échec de copie de la clé de récupération dans le presse-papiers. Veuillez ressayer.</value>
+    <value>Échec de copie de la clé de récupération dans votre presse-papiers. Veuillez ressayer.                                </value>
     <comment>Message of the dialog displayed when fails to copy the user's Recovery Key to the clipboard to be saved or exported.</comment>
   </data>
   <data name="AM_RecoveryKeyClipboardFailed_Title" xml:space="preserve">
@@ -1164,7 +1163,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported.</comment>
   </data>
   <data name="AM_RecoveryKeyCopied_Title" xml:space="preserve">
-    <value>Clé de récupération copiée</value>
+    <value>La clé de récupération a été copiée</value>
     <comment>Title of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported - (String as short as possible).</comment>
   </data>
   <data name="AM_CopyFailed" xml:space="preserve">
@@ -1412,7 +1411,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the process to prepare files or folders for download failed.</comment>
   </data>
   <data name="AM_AccountBlockedCopyright" xml:space="preserve">
-    <value>Votre compté a été désactivé en raison de non-respects répétés des conditions générales de service de MEGA. Veuillez vérifier votre boîte de réception de courriels.</value>
+    <value>Votre compte a été désactivé en raison de non-respects répétés des conditions générales d’utilisation de MEGA. Veuillez vérifier votre boîte de réception de courriels.</value>
     <comment>Message of the dialog shown when the user is trying to login and the account has been blocked for multiple copyright violation.</comment>
   </data>
 </root>

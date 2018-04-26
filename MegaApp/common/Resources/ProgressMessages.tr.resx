@@ -272,7 +272,7 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when creating a MEGA account - (String as short as possible).</comment>
   </data>
   <data name="PM_CreateFolder" xml:space="preserve">
-    <value>Klasör oluşturuluyor…</value>
+    <value>Klasör oluşturuluyor...</value>
     <comment>Progress indicator message when creating a folder - (String as short as possible).</comment>
   </data>
   <data name="PM_GetLink" xml:space="preserve">
@@ -314,5 +314,21 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
   <data name="PM_ValidatePurchase" xml:space="preserve">
     <value>Doğrulanıyor...</value>
     <comment>Progress indicator message when validating purchase receipt - (String as short as possible).</comment>
+  </data>
+  <data name="PM_ApiLocked" xml:space="preserve">
+    <value>Bu işlem beklenenden uzun sürüyor. Lütfen bekleyin.</value>
+    <comment>Progress indicator message when the SDK is waiting for the server to complete a request due to an API lock (API error -3) - (String as short as possible).</comment>
+  </data>
+  <data name="PM_ApiRateLimit" xml:space="preserve">
+    <value>Çok fazla istek. Lütfen bekleyin.</value>
+    <comment>Progress indicator message when the SDK is waiting for the server to complete a request due to a rate limit (API error -4) - (String as short as possible).</comment>
+  </data>
+  <data name="PM_ConnectivityIssue" xml:space="preserve">
+    <value>MEGA'ya erişim başarısız. Lütfen bağlantınızı kontrol edin veya tekrar deneyin. </value>
+    <comment>Progress indicator message when the SDK is waiting for the server to complete a request due to connectivity issue - (String as short as possible).</comment>
+  </data>
+  <data name="PM_ServersBusy" xml:space="preserve">
+    <value>Sunucular meşgul. Lütfen bekleyin.</value>
+    <comment>Progress indicator message when servers are too busy. SDK is waiting for the server to complete a request due to a HTTP error 500  - (String as short as possible).</comment>
   </data>
 </root>
