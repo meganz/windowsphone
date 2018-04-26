@@ -1382,13 +1382,6 @@ namespace MegaApp.Services
                     return;
                 }
                 
-                // If the new password and the old password are the same
-                if(SdkService.MegaSdk.checkPassword(newPassword.Password))
-                {
-                    warningMessage.Text = AppMessages.NewAndOldPasswordMatch;
-                    return;
-                }
-                
                 // If the new password and the confirmation password don't match
                 if (!newPassword.Password.Equals(confirmPassword.Password))
                 {
