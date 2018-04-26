@@ -18,32 +18,10 @@ namespace MegaApp.MegaApi
         private readonly LoginViewModel _loginViewModel;
         private readonly LoginPage _loginPage;
 
-        // Timer for ignore the received API_EAGAIN (-3) during login
-        private DispatcherTimer timerAPI_EAGAIN;
-        private bool isFirstAPI_EAGAIN;
-
         public LoginRequestListener(LoginViewModel loginViewModel, LoginPage loginPage = null)
         {
             _loginViewModel = loginViewModel;
             _loginPage = loginPage;
-
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
-            {
-                timerAPI_EAGAIN = new DispatcherTimer();
-                timerAPI_EAGAIN.Tick += timerTickAPI_EAGAIN;
-                timerAPI_EAGAIN.Interval = new TimeSpan(0, 0, 10);
-            });
-        }
-
-        // Method which is call when the timer event is triggered
-        private void timerTickAPI_EAGAIN(object sender, object e)
-        {
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
-            {
-                if (timerAPI_EAGAIN != null)
-                    timerAPI_EAGAIN.Stop();
-                ProgressService.SetProgressIndicator(true, ProgressMessages.ServersTooBusy);
-            });
         }
 
         #region  Base Properties
@@ -121,8 +99,8 @@ namespace MegaApp.MegaApi
 
                 _loginViewModel.ControlState = true;
 
-                if (timerAPI_EAGAIN != null)
-                    timerAPI_EAGAIN.Stop();                
+                if (apiErrorTimer != null)
+                    apiErrorTimer.Stop();                
             });            
 
             if (e.getErrorCode() == MErrorType.API_OK)
@@ -160,24 +138,14 @@ namespace MegaApp.MegaApi
             base.onRequestFinish(api, request, e);
         }
 
-        public override void onRequestStart(MegaSDK api, MRequest request)
-        {
-            this.isFirstAPI_EAGAIN = true;
-            base.onRequestStart(api, request);
-        }
-
         public override void onRequestTemporaryError(MegaSDK api, MRequest request, MError e)
         {
-            // Starts the timer when receives the first API_EAGAIN (-3)
-            if (e.getErrorCode() == MErrorType.API_EAGAIN && this.isFirstAPI_EAGAIN)
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
-                this.isFirstAPI_EAGAIN = false;
-                Deployment.Current.Dispatcher.BeginInvoke(() =>
-                {
-                    if (timerAPI_EAGAIN != null)
-                        timerAPI_EAGAIN.Start();
-                });
-            }
+                // If is the first error/retry (timer is not running) start the timer
+                if (apiErrorTimer != null && !apiErrorTimer.IsEnabled)
+                    apiErrorTimer.Start();
+            });
 
             base.onRequestTemporaryError(api, request, e);
         }

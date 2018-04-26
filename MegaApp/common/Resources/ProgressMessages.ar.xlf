@@ -223,11 +223,6 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
           <target state="translated">يتم الحفظ من دون اتصال</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when saving folders/files for offline - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/ServersTooBusy" translate="yes" space="preserve">
-          <source>Servers too busy. Please wait…</source>
-          <target state="translated">الخوادم مشغولة. الرجاء الانتظار...</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when servers are too busy - (String as short as possible).</note>
-        </trans-unit>
         <trans-unit id="Resx/PM_UpgradeAccount" translate="yes" space="preserve">
           <source>Upgrading account...</source>
           <target state="translated">ترقية الحساب</target>
@@ -257,6 +252,26 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
           <source>Validating...</source>
           <target state="translated">التحقق من الإجراءات...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when validating purchase receipt - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/PM_ConnectivityIssue" translate="yes" xml:space="preserve">
+          <source>Unable to reach MEGA. Please check your connectivity or try again later.</source>
+          <target state="new">Unable to reach MEGA. Please check your connectivity or try again later.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when the SDK is waiting for the server to complete a request due to connectivity issue - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/PM_ServersBusy" translate="yes" xml:space="preserve">
+          <source>Servers too busy. Please wait.</source>
+          <target state="new">Servers too busy. Please wait.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when servers are too busy. SDK is waiting for the server to complete a request due to a HTTP error 500  - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/PM_ApiRateLimit" translate="yes" xml:space="preserve">
+          <source>Too many requests. Please wait.</source>
+          <target state="new">Too many requests. Please wait.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when the SDK is waiting for the server to complete a request due to a rate limit (API error -4) - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/PM_ApiLocked" translate="yes" xml:space="preserve">
+          <source>This process is taking longer than expected. Please wait.</source>
+          <target state="new">This process is taking longer than expected. Please wait.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when the SDK is waiting for the server to complete a request due to an API lock (API error -3) - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>

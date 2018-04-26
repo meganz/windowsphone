@@ -7,6 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
+using System.Windows.Threading;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
@@ -19,7 +20,28 @@ namespace MegaApp.MegaApi
 {
     abstract class BaseRequestListener: MRequestListenerInterface
     {
+        public BaseRequestListener()
+        {
+            // Set the timer to trigger the event after 10 seconds
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                apiErrorTimer = new DispatcherTimer();
+                apiErrorTimer.Tick += ApiErrorTimerOnTick;
+                apiErrorTimer.Interval = new TimeSpan(0, 0, 10);
+            });
+        }
+
         #region Properties
+
+        /// <summary>
+        /// Timer to count the time during which the request is waiting/retrying
+        /// </summary>
+        protected DispatcherTimer apiErrorTimer;
+
+        /// <summary>
+        /// Store the current API instance
+        /// </summary>
+        private MegaSDK api;
 
         abstract protected string ProgressMessage { get; }
         abstract protected bool ShowProgressMessage { get; }
@@ -34,6 +56,44 @@ namespace MegaApp.MegaApi
         abstract protected Type NavigateToPage { get; }
         abstract protected NavigationParameter NavigationParameter { get; }
         
+        #endregion
+
+        #region Methods
+
+        // Method which is called when the timer event is triggered
+        private void ApiErrorTimerOnTick(object sender, object e)
+        {
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                if (apiErrorTimer != null)
+                    apiErrorTimer.Stop();
+            });
+
+            string message = string.Empty;
+            switch ((MRetryReason)api.isWaiting())
+            {
+                case MRetryReason.RETRY_CONNECTIVITY:
+                    message = ProgressMessages.PM_ConnectivityIssue;
+                    break;
+
+                case MRetryReason.RETRY_SERVERS_BUSY:
+                    message = ProgressMessages.PM_ServersBusy;
+                    break;
+
+                case MRetryReason.RETRY_API_LOCK:
+                    message = ProgressMessages.PM_ApiLocked;
+                    break;
+
+                case MRetryReason.RETRY_RATE_LIMIT:
+                    message = ProgressMessages.PM_ApiRateLimit;
+                    break;
+
+                default: return;
+            }
+
+            Deployment.Current.Dispatcher.BeginInvoke(() => ProgressService.SetProgressIndicator(true, message));
+        }
+
         #endregion
 
         #region MRequestListenerInterface
@@ -108,6 +168,8 @@ namespace MegaApp.MegaApi
 
         public virtual void onRequestStart(MegaSDK api, MRequest request)
         {
+            this.api = api;
+
             if (!ShowProgressMessage) return;
             var autoReset = new AutoResetEvent(true);
             Deployment.Current.Dispatcher.BeginInvoke(() =>
