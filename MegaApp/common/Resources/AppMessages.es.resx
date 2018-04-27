@@ -141,10 +141,6 @@
     <value>Error al seleccionar fichero(s)</value>
     <comment>Title of the dialog displayed when the process to select files failed - (String as short as possible).</comment>
   </data>
-  <data name="MalformedEmail" xml:space="preserve">
-    <value>E-mail con formato incorrecto. Por favor, vuelve a intentarlo.</value>
-    <comment>Message of the dialog displayed when the user types a malformed email address.</comment>
-  </data>
   <data name="WrongEmailPasswordLogin" xml:space="preserve">
     <value>Email o contraseña incorrectos. Por favor, inténtalo de nuevo.</value>
     <comment>Message of the dialog displayed when a user is trying to login with an e-mail that is not associated with a MEGA account or type a wrong password. Preserve the MEGA word in uppercase.</comment>
@@ -205,18 +201,6 @@ Preserve the {0} code because is for include the contact email in runtime. Prese
   <data name="DeleteMultipleContactsQuestion_Title" xml:space="preserve">
     <value>¿Eliminar contactos?</value>
     <comment>Title of the dialog displayed when a user want to remove multiple contacts asking for confirmation to make it - (String as short as possible).</comment>
-  </data>
-  <data name="ChangePasswordFailed" xml:space="preserve">
-    <value>Error al cambiar la contraseña. Por favor, vuelve a intentarlo.</value>
-    <comment>Message of the dialog displayed when the process/request to change the MEGA account password failed.</comment>
-  </data>
-  <data name="ChangePasswordSuccess" xml:space="preserve">
-    <value>Tu contraseña ha sido cambiada.</value>
-    <comment>Message of the dialog displayed when change a MEGA account password succesfully.</comment>
-  </data>
-  <data name="RequiredFieldsChangePassword" xml:space="preserve">
-    <value>Por favor, introduce tu contraseña antigua y tu nueva contraseña de MEGA.</value>
-    <comment>Message of the dialog displayed when required fields for change password are not filled in.</comment>
   </data>
   <data name="CloseSessionSucces" xml:space="preserve">
     <value>La sesión se ha cerrado correctamente.</value>

@@ -875,6 +875,9 @@
       <Link>UserControls\MemoryControl.xaml.cs</Link>
       <DependentUpon>MemoryControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="..\common\UserControls\PasswordStrengthIndicator.cs">
+      <Link>UserControls\PasswordStrengthIndicator.cs</Link>
+    </Compile>
     <Compile Include="..\common\UserControls\PhoneDrawerLayoutPage.cs">
       <Link>UserControls\PhoneDrawerLayoutPage.cs</Link>
     </Compile>

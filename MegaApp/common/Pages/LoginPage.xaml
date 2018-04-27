@@ -9,6 +9,7 @@
     xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
     xmlns:classes="clr-namespace:MegaApp.Classes"
     xmlns:userControls="clr-namespace:MegaApp.UserControls"
+    xmlns:system="clr-namespace:System;assembly=mscorlib"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
@@ -46,7 +47,30 @@
                         <telerikPrimitives:RadTextBox x:Name="txtFirstName" TextWrapping="Wrap" Watermark="{Binding LocalizedUiResources.UI_FirstName, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeMediumLarge}" HideWatermarkOnFocus="True" Text="{Binding CreateAccountViewModel.FirstName, Mode=TwoWay}" IsEnabled="{Binding CreateAccountViewModel.ControlState}" KeyDown="OnKeyDown" TabIndex="0" Margin="0,0,0,-12"/>
                         <telerikPrimitives:RadTextBox x:Name="txtLastName" TextWrapping="Wrap" Watermark="{Binding LocalizedUiResources.UI_LastName, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeMediumLarge}" HideWatermarkOnFocus="True" Text="{Binding CreateAccountViewModel.LastName, Mode=TwoWay}" IsEnabled="{Binding CreateAccountViewModel.ControlState}" KeyDown="OnKeyDown" TabIndex="0" Margin="0,0,0,-12"/>
                         <telerikPrimitives:RadTextBox x:Name="txtEmail_CreateAccount" TextWrapping="Wrap" Watermark="{Binding LocalizedUiResources.UI_Email, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeMediumLarge}" HideWatermarkOnFocus="True" Text="{Binding CreateAccountViewModel.Email, Mode=TwoWay}" IsEnabled="{Binding CreateAccountViewModel.ControlState}" KeyDown="OnKeyDown" TabIndex="1" InputScope="EmailUserName" Margin="0,0,0,-12"/>
-                        <telerikPrimitives:RadPasswordBox x:Name="txtPassword_CreateAccount" Watermark="{Binding LocalizedUiResources.UI_Password, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" ClearButtonVisibility="Visible" FontSize="{StaticResource PhoneFontSizeMediumLarge}" Password="{Binding CreateAccountViewModel.Password, Mode=TwoWay}" IsEnabled="{Binding CreateAccountViewModel.ControlState}" KeyDown="OnKeyDown" TabIndex="2" HideWatermarkOnFocus="True" Margin="0,0,0,-12"/>
+                        <telerikPrimitives:RadPasswordBox
+                            x:Name="txtPassword_CreateAccount"
+                            Margin="0,0,0,-8"
+                            ClearButtonVisibility="Visible"
+                            FontSize="{StaticResource PhoneFontSizeMediumLarge}"
+                            HideWatermarkOnFocus="True"
+                            IsEnabled="{Binding CreateAccountViewModel.ControlState}"
+                            KeyDown="OnKeyDown"
+                            Password="{Binding CreateAccountViewModel.Password, Mode=TwoWay, UpdateSourceTrigger=Default}"
+                            TabIndex="2"
+                            Watermark="{Binding LocalizedUiResources.UI_Password, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}"/>
+                        <userControls:PasswordStrengthIndicator
+                            Height="4"
+                            Margin="12,0,12,-12"
+                            IndicatorBackground="{StaticResource PhoneInactiveBrush}"
+                            IndicatorForeground="{StaticResource MegaRedSolidColorBrush}"
+                            Value="{Binding CreateAccountViewModel.PasswordStrength}">
+                            <userControls:PasswordStrengthIndicator.IndicatorsOpacity>
+                                <system:Double>0.4</system:Double>
+                                <system:Double>0.6</system:Double>
+                                <system:Double>0.8</system:Double>
+                                <system:Double>1.0</system:Double>
+                            </userControls:PasswordStrengthIndicator.IndicatorsOpacity>
+                        </userControls:PasswordStrengthIndicator>
                         <telerikPrimitives:RadPasswordBox x:Name="txtPasswordReType_CreateAccount" Watermark="{Binding LocalizedUiResources.UI_ConfirmPassword, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" ClearButtonVisibility="Visible" FontSize="{StaticResource PhoneFontSizeMediumLarge}" HideWatermarkOnFocus="True" Password="{Binding CreateAccountViewModel.ConfirmPassword, Mode=TwoWay}" IsEnabled="{Binding CreateAccountViewModel.ControlState}" KeyDown="OnKeyDown" TabIndex="3" Margin="0,0,0,-12"/>
                         <StackPanel x:Name="stackTermOfUse" Orientation="Horizontal">
                             <CheckBox 
