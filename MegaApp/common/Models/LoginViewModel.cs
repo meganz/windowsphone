@@ -48,7 +48,7 @@ namespace MegaApp.Models
             {
                 new CustomMessageDialog(
                         AppMessages.LoginFailed_Title,
-                        AppMessages.MalformedEmail,
+                        AppMessages.AM_IncorrectEmailFormat,
                         App.AppInformation,
                         MessageDialogButtons.Ok).ShowDialog();
                return false;

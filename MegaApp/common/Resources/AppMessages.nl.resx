@@ -686,10 +686,6 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>Bestand selecteren is mislukt</value>
     <comment>Title of the dialog displayed when the process to select files failed - (String as short as possible).</comment>
   </data>
-  <data name="MalformedEmail" xml:space="preserve">
-    <value>Onjuiste e-mail. Probeer alstublieft opnieuw.</value>
-    <comment>Message of the dialog displayed when the user types a malformed email address.</comment>
-  </data>
   <data name="WrongEmailPasswordLogin" xml:space="preserve">
     <value>Onjuist e-mailadres of wachtwoord. Probeer alstublieft opnieuw.</value>
     <comment>Message of the dialog displayed when a user is trying to login with an e-mail that is not associated with a MEGA account or type a wrong password. Preserve the MEGA word in uppercase.</comment>
@@ -922,21 +918,9 @@ Preserve the {0} code because is for include the number of contacts to be remove
     <value>Contacten verwijderen?</value>
     <comment>Title of the dialog displayed when a user want to remove multiple contacts asking for confirmation to make it - (String as short as possible).</comment>
   </data>
-  <data name="ChangePasswordFailed" xml:space="preserve">
-    <value>Wijzigen wachtwoord is mislukt. Probeer alstublieft opnieuw.</value>
-    <comment>Message of the dialog displayed when the process/request to change the MEGA account password failed.</comment>
-  </data>
-  <data name="ChangePasswordSuccess" xml:space="preserve">
-    <value>Uw wachtwoord is gewijzigd.</value>
-    <comment>Message of the dialog displayed when change a MEGA account password succesfully.</comment>
-  </data>
   <data name="NewAndOldPasswordMatch" xml:space="preserve">
     <value>Het nieuwe en oude wachtwoord kunnen niet overeen komen.</value>
     <comment>Message of the dialog displayed when a user are trying to change his/her MEGA account password and the new password is equal to the old password.</comment>
-  </data>
-  <data name="RequiredFieldsChangePassword" xml:space="preserve">
-    <value>Vul alstublieft uw oude MEGA wachtwoord en uw nieuwe MEGA wachtwoord in.</value>
-    <comment>Message of the dialog displayed when required fields for change password are not filled in.</comment>
   </data>
   <data name="CloseAllSessionsFailed" xml:space="preserve">
     <value>Sluiten van de sessie is mislukt. Probeer alstublieft opnieuw. [{0}]</value>

@@ -686,10 +686,6 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>เลือกไฟล์ไม่สำเร็จ</value>
     <comment>Title of the dialog displayed when the process to select files failed - (String as short as possible).</comment>
   </data>
-  <data name="MalformedEmail" xml:space="preserve">
-    <value>อีเมลไม่ถูกต้อง กรุณาลองใหม่อีกครั้ง</value>
-    <comment>Message of the dialog displayed when the user types a malformed email address.</comment>
-  </data>
   <data name="WrongEmailPasswordLogin" xml:space="preserve">
     <value>อีเมลหรือรหัสผ่านไม่ถูกต้อง กรุณาลองใหม่อีกครั้ง</value>
     <comment>Message of the dialog displayed when a user is trying to login with an e-mail that is not associated with a MEGA account or type a wrong password. Preserve the MEGA word in uppercase.</comment>
@@ -922,21 +918,9 @@ Preserve the {0} code because is for include the number of contacts to be remove
     <value>ลบรายการผู้ติดต่อใช่หรือไม่</value>
     <comment>Title of the dialog displayed when a user want to remove multiple contacts asking for confirmation to make it - (String as short as possible).</comment>
   </data>
-  <data name="ChangePasswordFailed" xml:space="preserve">
-    <value>ไม่สามารถเปลี่ยนรหัสผ่านได้ กรุณาลองใหม่อีกครั้ง</value>
-    <comment>Message of the dialog displayed when the process/request to change the MEGA account password failed.</comment>
-  </data>
-  <data name="ChangePasswordSuccess" xml:space="preserve">
-    <value>รหัสผ่านของคุณได้ถูกเปลี่ยนแล้ว</value>
-    <comment>Message of the dialog displayed when change a MEGA account password succesfully.</comment>
-  </data>
   <data name="NewAndOldPasswordMatch" xml:space="preserve">
     <value>รหัสผ่านใหม่และเก่าจะต้องไม่เหมือนกัน</value>
     <comment>Message of the dialog displayed when a user are trying to change his/her MEGA account password and the new password is equal to the old password.</comment>
-  </data>
-  <data name="RequiredFieldsChangePassword" xml:space="preserve">
-    <value>กรุณากรอกรหัสผ่านเก่าและรหัสผ่านใหม่ของ MEGA</value>
-    <comment>Message of the dialog displayed when required fields for change password are not filled in.</comment>
   </data>
   <data name="CloseAllSessionsFailed" xml:space="preserve">
     <value>ไม่สามารถปิดเซสชั่นได้ กรุณาลองใหม่อีกครั้ง [{0}]</value>

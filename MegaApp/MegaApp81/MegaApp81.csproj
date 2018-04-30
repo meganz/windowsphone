@@ -875,6 +875,9 @@
       <Link>UserControls\MemoryControl.xaml.cs</Link>
       <DependentUpon>MemoryControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="..\common\UserControls\PasswordStrengthIndicator.cs">
+      <Link>UserControls\PasswordStrengthIndicator.cs</Link>
+    </Compile>
     <Compile Include="..\common\UserControls\PhoneDrawerLayoutPage.cs">
       <Link>UserControls\PhoneDrawerLayoutPage.cs</Link>
     </Compile>
@@ -1591,6 +1594,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppMessages.ar.xlf</DependentUpon>
       <culture>ar</culture>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\AppMessages.de.resx">
       <Link>Resources\AppMessages.de.resx</Link>

@@ -5,6 +5,13 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using Microsoft.Phone.Controls;
+using Microsoft.Phone.Tasks;
+using Windows.ApplicationModel.DataTransfer;
+using Windows.Foundation;
+using Windows.Storage;
+using Telerik.Windows.Controls;
+using Telerik.Windows.Data;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
@@ -12,16 +19,7 @@ using MegaApp.MegaApi;
 using MegaApp.Models;
 using MegaApp.Pages;
 using MegaApp.Resources;
-using Microsoft.Phone.Controls;
-using Microsoft.Phone.Tasks;
-using Telerik.Windows.Controls;
-using Telerik.Windows.Data;
-using Windows.ApplicationModel.DataTransfer;
-using Windows.Foundation;
-using Windows.Storage;
-#if WINDOWS_PHONE_81
-
-#endif
+using MegaApp.UserControls;
 
 namespace MegaApp.Services
 {
@@ -1326,20 +1324,32 @@ namespace MegaApp.Services
                 FontSize = Convert.ToDouble(Application.Current.Resources["PhoneFontSizeLarge"])                
             };
             passwordStackPanel.Children.Add(titleLabel);
-                        
-            var currentPassword = new RadPasswordBox()
-            {
-                Watermark = UiResources.UI_Password.ToLower(),
-                ClearButtonVisibility = Visibility.Visible
-            };
-            passwordStackPanel.Children.Add(currentPassword);
 
+            var passwordStrengthIndicator = new PasswordStrengthIndicator()
+            {
+                Height = 4,
+                Margin = new Thickness(12, 0, 12, 0),
+                IndicatorBackground = (Brush)Application.Current.Resources["PhoneInactiveBrush"],
+                IndicatorForeground = (Brush)Application.Current.Resources["MegaRedSolidColorBrush"]
+            };
+            passwordStrengthIndicator.IndicatorsOpacity.Add(0.4);
+            passwordStrengthIndicator.IndicatorsOpacity.Add(0.6);
+            passwordStrengthIndicator.IndicatorsOpacity.Add(0.8);
+            passwordStrengthIndicator.IndicatorsOpacity.Add(1.0);
+            
             var newPassword = new RadPasswordBox()
             {
                 Watermark = UiResources.UI_NewPassword.ToLower(),
-                ClearButtonVisibility = Visibility.Visible                
+                ClearButtonVisibility = Visibility.Visible
+            };
+            newPassword.PasswordChanged += (sender, args) =>
+            {
+                passwordStrengthIndicator.Value =
+                    ValidationService.CalculatePasswordStrength(newPassword.Password);
             };
             passwordStackPanel.Children.Add(newPassword);
+
+            passwordStackPanel.Children.Add(passwordStrengthIndicator);
 
             var confirmPassword = new RadPasswordBox()
             {
@@ -1348,6 +1358,14 @@ namespace MegaApp.Services
             };
             passwordStackPanel.Children.Add(confirmPassword);
 
+            var warningMessage = new TextBlock()
+            {
+                Margin = new Thickness(12,0,12,0),
+                Foreground = (Brush)Application.Current.Resources["MegaRedSolidColorBrush"],
+                Text = string.Empty,
+                TextWrapping = TextWrapping.Wrap
+            };
+            passwordStackPanel.Children.Add(warningMessage);
 
             var confirmButton = new Button()
             {
@@ -1356,40 +1374,30 @@ namespace MegaApp.Services
             };
             confirmButton.Tap += (sender, args) =>
             {
-                if (!String.IsNullOrWhiteSpace(currentPassword.Password) && 
-                    !String.IsNullOrWhiteSpace(newPassword.Password) && !String.IsNullOrWhiteSpace(confirmPassword.Password))
-                {
-                    if(!newPassword.Password.Equals(confirmPassword.Password))
-                    {
-                        new CustomMessageDialog(
-                            UiResources.UI_ChangePassword.ToUpper(),
-                            AppMessages.PasswordsDoNotMatch,
-                            App.AppInformation,
-                            MessageDialogButtons.Ok).ShowDialog();
-                        return;
-                    }
+                warningMessage.Text = string.Empty;
 
-                    if(newPassword.Password.Equals(currentPassword.Password))
-                    {
-                        new CustomMessageDialog(
-                            UiResources.UI_ChangePassword.ToUpper(),
-                            AppMessages.NewAndOldPasswordMatch,
-                            App.AppInformation,
-                            MessageDialogButtons.Ok).ShowDialog();
-                        return;
-                    }
-
-                    SdkService.MegaSdk.changePassword(currentPassword.Password, newPassword.Password, new ChangePasswordRequestListener());
-                }
-                else
+                if (string.IsNullOrWhiteSpace(newPassword.Password) || string.IsNullOrWhiteSpace(confirmPassword.Password))
                 {
-                    new CustomMessageDialog(
-                        AppMessages.RequiredFields_Title.ToUpper(),
-                        AppMessages.RequiredFieldsChangePassword,
-                        App.AppInformation,
-                        MessageDialogButtons.Ok).ShowDialog();
+                    warningMessage.Text = AppMessages.AM_EmptyRequiredFields;
                     return;
                 }
+                
+                // If the new password and the confirmation password don't match
+                if (!newPassword.Password.Equals(confirmPassword.Password))
+                {
+                    warningMessage.Text = AppMessages.PasswordsDoNotMatch;
+                    return;
+                }
+
+                // If the password strength is very weak
+                if (passwordStrengthIndicator.Value == MPasswordStrength.PASSWORD_STRENGTH_VERYWEAK)
+                {
+                    warningMessage.Text = AppMessages.AM_VeryWeakPassword;
+                    return;
+                }
+                
+                SdkService.MegaSdk.changePasswordWithoutOld(
+                    newPassword.Password, new ChangePasswordRequestListener());
 
                 changePasswordRadWindow.IsOpen = false;
             };

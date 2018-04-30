@@ -809,6 +809,9 @@
       <Link>UserControls\MemoryControl.xaml.cs</Link>
       <DependentUpon>MemoryControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="..\common\UserControls\PasswordStrengthIndicator.cs">
+      <Link>UserControls\PasswordStrengthIndicator.cs</Link>
+    </Compile>
     <Compile Include="..\common\UserControls\PhoneDrawerLayoutPage.cs">
       <Link>UserControls\PhoneDrawerLayoutPage.cs</Link>
     </Compile>
@@ -2342,6 +2345,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppMessages.ar.xlf</DependentUpon>
       <culture>ar</culture>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\AppMessages.de.resx">
       <Link>Resources\AppMessages.de.resx</Link>
@@ -2370,6 +2374,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppMessages.he.xlf</DependentUpon>
       <culture>he</culture>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\AppMessages.id.resx">
       <Link>Resources\AppMessages.id.resx</Link>
@@ -2412,6 +2417,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppMessages.pl.xlf</DependentUpon>
       <culture>pl</culture>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\AppMessages.pt-BR.resx">
       <Link>Resources\AppMessages.pt-BR.resx</Link>
@@ -2424,6 +2430,7 @@
       <Link>Resources\AppMessages.resx</Link>
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AppMessages.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\AppMessages.ro.resx">
       <Link>Resources\AppMessages.ro.resx</Link>
@@ -2445,6 +2452,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppMessages.th.xlf</DependentUpon>
       <culture>th</culture>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\AppMessages.tr.resx">
       <Link>Resources\AppMessages.tr.resx</Link>
@@ -2466,6 +2474,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppMessages.vi.xlf</DependentUpon>
       <culture>vi</culture>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\AppMessages.zh-Hans.resx">
       <Link>Resources\AppMessages.zh-Hans.resx</Link>
@@ -2473,6 +2482,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppMessages.zh-Hans.xlf</DependentUpon>
       <culture>zh-Hans</culture>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\AppMessages.zh-Hant.resx">
       <Link>Resources\AppMessages.zh-Hant.resx</Link>

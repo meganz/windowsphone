@@ -106,7 +106,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Your account was terminated due to a breach of MEGA&apos;s Terms of Service, such as abuse of rights of others; sharing and/or importing illegal data; or system abuse..
+        ///   Busca una cadena traducida similar a Your account was terminated due to a breach of MEGA’s Terms of Service, such as abuse of rights of others; sharing and/or importing illegal data; or system abuse..
         /// </summary>
         public static string AM_AccountBlocked {
             get {
@@ -124,7 +124,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Your account has been suspended due to multiple breaches of MEGA&apos;s Terms of Service. Please check your email inbox..
+        ///   Busca una cadena traducida similar a Your account has been suspended due to multiple breaches of MEGA’s Terms of Service. Please check your email inbox..
         /// </summary>
         public static string AM_AccountBlockedCopyright {
             get {
@@ -421,6 +421,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Fill the required fields and try again..
+        /// </summary>
+        public static string AM_EmptyRequiredFields {
+            get {
+                return ResourceManager.GetString("AM_EmptyRequiredFields", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a A log will be created in the Offline section ({0})..
         /// </summary>
         public static string AM_EnableDebugMode_Message {
@@ -553,6 +562,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Incorrect email format. Please try again..
+        /// </summary>
+        public static string AM_IncorrectEmailFormat {
+            get {
+                return ResourceManager.GetString("AM_IncorrectEmailFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Failed to open the internal file/folder of the link. Please try again..
         /// </summary>
         public static string AM_InternalNodeFailed {
@@ -675,6 +693,42 @@ namespace MegaApp.Resources {
         public static string AM_OpenLinkFailed_Title {
             get {
                 return ResourceManager.GetString("AM_OpenLinkFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a We have sent you an email confirming your password change..
+        /// </summary>
+        public static string AM_PasswordChanged {
+            get {
+                return ResourceManager.GetString("AM_PasswordChanged", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Password changed.
+        /// </summary>
+        public static string AM_PasswordChanged_Title {
+            get {
+                return ResourceManager.GetString("AM_PasswordChanged_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Failed to change your password. Please try again..
+        /// </summary>
+        public static string AM_PasswordChangeFailed {
+            get {
+                return ResourceManager.GetString("AM_PasswordChangeFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error change password.
+        /// </summary>
+        public static string AM_PasswordChangeFailed_Title {
+            get {
+                return ResourceManager.GetString("AM_PasswordChangeFailed_Title", resourceCulture);
             }
         }
         
@@ -940,6 +994,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Please strengthen your password..
+        /// </summary>
+        public static string AM_VeryWeakPassword {
+            get {
+                return ResourceManager.GetString("AM_VeryWeakPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Failed to view the contact details. Please try again later..
         /// </summary>
         public static string AM_ViewContactDetailsFailed {
@@ -1129,24 +1192,6 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Failed to change password. Please try again..
-        /// </summary>
-        public static string ChangePasswordFailed {
-            get {
-                return ResourceManager.GetString("ChangePasswordFailed", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Your password has been changed..
-        /// </summary>
-        public static string ChangePasswordSuccess {
-            get {
-                return ResourceManager.GetString("ChangePasswordSuccess", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a Failed to clear the rubbish bin. Please try again..
         /// </summary>
         public static string CleanRubbishBinFailed {
@@ -1283,7 +1328,7 @@ namespace MegaApp.Resources {
         
         /// <summary>
         ///   Busca una cadena traducida similar a You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?
-        ///Please try to save/copy the file to your device&apos;s internal memory instead..
+        ///Please try to save/copy the file to your device’s internal memory instead..
         /// </summary>
         public static string CopyFileUnauthorizedAccessException {
             get {
@@ -1931,15 +1976,6 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Malformed e-mail. Please try again..
-        /// </summary>
-        public static string MalformedEmail {
-            get {
-                return ResourceManager.GetString("MalformedEmail", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a Not enough free memory space to complete this operation. The app will shut down now.
         /// </summary>
         public static string MemoryLimitError {
@@ -2521,15 +2557,6 @@ namespace MegaApp.Resources {
         public static string RequiredFieldsCancelSubscription {
             get {
                 return ResourceManager.GetString("RequiredFieldsCancelSubscription", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Please fill in your old MEGA password and your new MEGA password..
-        /// </summary>
-        public static string RequiredFieldsChangePassword {
-            get {
-                return ResourceManager.GetString("RequiredFieldsChangePassword", resourceCulture);
             }
         }
         

@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Input;
+using Microsoft.Phone.Tasks;
 using mega;
 using MegaApp.Classes;
 using MegaApp.MegaApi;
 using MegaApp.Pages;
 using MegaApp.Resources;
 using MegaApp.Services;
-using Microsoft.Phone.Tasks;
 
 namespace MegaApp.Models
 {    
@@ -29,56 +29,40 @@ namespace MegaApp.Models
 
         public void CreateAccount()
         {
-            if (CheckInputParameters())
+            if (!CheckInputParameters()) return;
+
+            string errorMessage = string.Empty;
+            if (CheckPassword())
             {
-                if (ValidationService.IsValidEmail(Email))
+                if (CheckPasswordStrenght())
                 {
-                    if (CheckPassword())
+                    if (TermOfService)
                     {
-                        if (TermOfService)
-                        {
-                            this._megaSdk.createAccount(Email, Password, FirstName, LastName,
-                                new CreateAccountRequestListener(this, _loginPage));
-                        }
-                        else
-                        {
-                            Deployment.Current.Dispatcher.BeginInvoke(() => _loginPage.SetApplicationBar(true));
-                            new CustomMessageDialog(
-                                    AppMessages.CreateAccountFailed_Title,
-                                    AppMessages.AgreeTermsOfService,
-                                    App.AppInformation,
-                                    MessageDialogButtons.Ok).ShowDialog();
-                        }
+                        this._megaSdk.createAccount(Email, Password, FirstName, LastName,
+                            new CreateAccountRequestListener(this, _loginPage));
+                        return;
                     }
                     else
                     {
-                        Deployment.Current.Dispatcher.BeginInvoke(() => _loginPage.SetApplicationBar(true));
-                        new CustomMessageDialog(
-                                AppMessages.CreateAccountFailed_Title,
-                                AppMessages.PasswordsDoNotMatch,
-                                App.AppInformation,
-                                MessageDialogButtons.Ok).ShowDialog();
+                        errorMessage = AppMessages.AgreeTermsOfService;
                     }
                 }
-                else 
+                else
                 {
-                    Deployment.Current.Dispatcher.BeginInvoke(() => _loginPage.SetApplicationBar(true));
-                    new CustomMessageDialog(
-                            AppMessages.CreateAccountFailed_Title,
-                            AppMessages.MalformedEmail,
-                            App.AppInformation,
-                            MessageDialogButtons.Ok).ShowDialog();
+                    errorMessage = AppMessages.AM_VeryWeakPassword;
                 }
             }
             else
             {
-                Deployment.Current.Dispatcher.BeginInvoke(() => _loginPage.SetApplicationBar(true));
-                new CustomMessageDialog(
-                        AppMessages.CreateAccountFailed_Title,
-                        AppMessages.RequiredFieldsCreateAccount,
-                        App.AppInformation,
-                        MessageDialogButtons.Ok).ShowDialog();
-            }            
+                errorMessage = AppMessages.PasswordsDoNotMatch;
+            }
+
+            Deployment.Current.Dispatcher.BeginInvoke(() => _loginPage.SetApplicationBar(true));
+            new CustomMessageDialog(
+                AppMessages.CreateAccountFailed_Title,
+                errorMessage,
+                App.AppInformation,
+                MessageDialogButtons.Ok).ShowDialog();
         }
 
         private static void NavigateTermsOfService(object obj)
@@ -91,16 +75,55 @@ namespace MegaApp.Models
         {
             //Because lastname is not an obligatory parameter, if the lastname field is null or empty,
             //force it to be an empty string to avoid "ArgumentNullException" when call the createAccount method.
-            if (String.IsNullOrWhiteSpace(LastName))
-                LastName = String.Empty;
+            if (string.IsNullOrWhiteSpace(LastName))
+                LastName = string.Empty;
 
-            return !String.IsNullOrEmpty(Email) && !String.IsNullOrEmpty(FirstName) && 
-                !String.IsNullOrEmpty(Password) && !String.IsNullOrEmpty(ConfirmPassword);
+            if (string.IsNullOrWhiteSpace(this.Email) ||
+                string.IsNullOrWhiteSpace(this.Password) ||
+                string.IsNullOrWhiteSpace(this.FirstName) ||
+                string.IsNullOrWhiteSpace(this.ConfirmPassword))
+            {
+                Deployment.Current.Dispatcher.BeginInvoke(() => _loginPage.SetApplicationBar(true));
+                new CustomMessageDialog(
+                    AppMessages.CreateAccountFailed_Title,
+                    AppMessages.RequiredFieldsCreateAccount,
+                    App.AppInformation,
+                    MessageDialogButtons.Ok).ShowDialog();
+                return false;
+            }
+
+            if (ValidationService.IsValidEmail(this.Email)) return true;
+
+            Deployment.Current.Dispatcher.BeginInvoke(() => _loginPage.SetApplicationBar(true));
+            new CustomMessageDialog(
+                AppMessages.CreateAccountFailed_Title,
+                AppMessages.AM_IncorrectEmailFormat,
+                App.AppInformation,
+                MessageDialogButtons.Ok).ShowDialog();
+            return false;
         }
 
         private bool CheckPassword()
         {
             return Password.Equals(ConfirmPassword, StringComparison.InvariantCulture);
+        }
+
+        /// <summary>
+        /// Calculate the password strenght.
+        /// </summary>
+        /// <param name="value">Password string</param>
+        private void CalculatePasswordStrength(string value)
+        {
+            this.PasswordStrength = ValidationService.CalculatePasswordStrength(value);
+        }
+
+        /// <summary>
+        /// Checks the new password strenght.
+        /// </summary>
+        /// <returns>TRUE if is all right or FALSE in other case.</returns>
+        private bool CheckPasswordStrenght()
+        {
+            return this.PasswordStrength != MPasswordStrength.PASSWORD_STRENGTH_VERYWEAK;
         }
 
         #endregion
@@ -121,12 +144,52 @@ namespace MegaApp.Models
             get { return _email; }
             set { SetField(ref _email, value); }
         }
-        
-        public string Password { get; set; }
-        public string ConfirmPassword { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public bool TermOfService { get; set; }
+
+        private string _password;
+        public string Password
+        {
+            get { return _password; }
+            set 
+            { 
+                if(SetField(ref _password, value))
+                    CalculatePasswordStrength(value);
+            }
+        }
+
+        private string _confirmPassword;
+        public string ConfirmPassword
+        {
+            get { return _confirmPassword; }
+            set { SetField(ref _confirmPassword, value); }
+        }
+
+        private MPasswordStrength _passwordStrength;
+        public MPasswordStrength PasswordStrength
+        {
+            get { return _passwordStrength; }
+            set { SetField(ref _passwordStrength, value); }
+        }
+
+        private string _firstName;
+        public string FirstName
+        {
+            get { return _firstName; }
+            set { SetField(ref _firstName, value); } 
+        }
+
+        private string _lastName;
+        public string LastName
+        {
+            get { return _lastName; }
+            set { SetField(ref _lastName, value); }
+        }
+
+        private bool _termOfService;
+        public bool TermOfService
+        {
+            get { return _termOfService; }
+            set { SetField(ref _termOfService, value); }
+        }
         
         #endregion        
     }
