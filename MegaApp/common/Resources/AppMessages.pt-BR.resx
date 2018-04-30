@@ -131,7 +131,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the confirmation of a MEGA account failed - (String as short as possible).</comment>
   </data>
   <data name="ConfirmAccountSucces" xml:space="preserve">
-    <value>Sua conta foi criada, confirmada e ativada. Você será conectado automaticamente.</value>
+    <value>A sua conta foi criada, confirmada e ativada. Você será conectado automaticamente.</value>
     <comment>Message of the dialog displayed when confirm a MEGA account succesfully.</comment>
   </data>
   <data name="ConfirmAccountSucces_Title" xml:space="preserve">
@@ -147,20 +147,20 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when a user create a new MEGA account successfully, informing that will receive an e-mail with a link to confirm account - (String as short as possible).</comment>
   </data>
   <data name="CreateAccountFailed" xml:space="preserve">
-    <value>Criação da conta no MEGA falhou. Por favor tente novamente [{0}]</value>
+    <value>A criação da conta no MEGA falhou. Por favor, tente novamente [{0}]</value>
     <comment>Message of the dialog displayed when the creation of a MEGA account failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="CreateAccountFailed_Title" xml:space="preserve">
-    <value>Falha ao criar conta</value>
+    <value>Erro ao criar conta</value>
     <comment>Title of the dialog displayed when the creation of a MEGA account failed - (String as short as possible).</comment>
   </data>
   <data name="CreateFolderFailed" xml:space="preserve">
-    <value>Falha ao criar pasta</value>
+    <value>Não foi possível criar a pasta</value>
     <comment>Message of the dialog displayed when the creation of a folder failed.</comment>
   </data>
   <data name="CreateFolderFailed_Title" xml:space="preserve">
-    <value>Falha ao criar pasta</value>
+    <value>Erro na criação da pasta</value>
     <comment>Title of the dialog displayed when the creation of a folder failed - (String as short as possible).</comment>
   </data>
   <data name="CreateFolderSuccess" xml:space="preserve">
@@ -185,7 +185,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="DownloadNodeFailed_Title" xml:space="preserve">
-    <value>Falha no download</value>
+    <value>Erro no download</value>
     <comment>Title of the dialog displayed when the process/request to download a node failed - (String as short as possible).</comment>
   </data>
   <data name="FetchingNodesFailed" xml:space="preserve">
@@ -201,7 +201,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the process/request to create a folder failed.</comment>
   </data>
   <data name="FolderCreateFailed_Title" xml:space="preserve">
-    <value>Falha ao criar pasta</value>
+    <value>Erro na criação da pasta</value>
     <comment>Title of the dialog displayed when the process/request to create a folder failed - (String as short as possible).</comment>
   </data>
   <data name="GetLinkFailed" xml:space="preserve">
@@ -299,7 +299,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
     <comment>Message of the dialog displayed when the process/request remove definitely an item from the rubbish bin failed.</comment>
   </data>
   <data name="RemoveNodeFailed_Title" xml:space="preserve">
-    <value>Falha ao remover</value>
+    <value>Erro ao remover</value>
     <comment>Title of the dialog displayed when the process/request remove definitely an item from the rubbish bin failed - (String as short as possible).</comment>
   </data>
   <data name="RemoveNodeSuccess" xml:space="preserve">
@@ -311,11 +311,11 @@ Preserve the {0} code because is for include the name of the item to be removed 
     <comment>Title of the dialog displayed when remove successfully a node definitely from the rubbish bin - (String as short as possible).</comment>
   </data>
   <data name="RenameNodeFailed" xml:space="preserve">
-    <value>Falha ao renomear item</value>
+    <value>Erro ao renomear o item</value>
     <comment>Message of the dialog displayed when the process/request to remove definitely an item node from the rubbish bin failed.</comment>
   </data>
   <data name="RenameNodeFailed_Title" xml:space="preserve">
-    <value>Falha ao renomear</value>
+    <value>Erro ao renomear</value>
     <comment>Title of the dialog displayed when the process/request to remove definitely an item node from the rubbish bin failed - (String as short as possible).</comment>
   </data>
   <data name="RequiredFieldsConfirmAccount" xml:space="preserve">
@@ -343,7 +343,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
     <comment>Title of the dialog displayed when a user want to save a image to the 'saved pictures' album, asking for confirmation to do it - (String as short as possible).</comment>
   </data>
   <data name="UserNotOnline" xml:space="preserve">
-    <value>Você não está logado em MEGA. Por favor, re-login.</value>
+    <value>Você não está logado no MEGA. Por favor, faça o login novamente.</value>
     <comment>Message of the dialog displayed when the user is online and is trying to do any operation that requires connection.</comment>
   </data>
   <data name="UserNotOnline_Title" xml:space="preserve">
@@ -351,7 +351,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
     <comment>Title of the dialog displayed when the user is online and is trying to do any operation that requires connection - (String as short as possible).</comment>
   </data>
   <data name="GetThumbnailFailed" xml:space="preserve">
-    <value>Falha ao resgatar a miniatura [{0}]</value>
+    <value>Erro ao obter a miniatura [{0}]</value>
     <comment>Message of the dialog displayed when the process/request to get a image thumbnail failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
@@ -377,12 +377,12 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when a user logged out successfully - (String as short as possible).</comment>
   </data>
   <data name="LogoutFailed" xml:space="preserve">
-    <value>Falha ao desconectar. Por favor tente novamente. [{0}]</value>
+    <value>Erro ao fazer logout. Por favor tente novamente. [{0}]</value>
     <comment>Message of the dialog displayed when the logout to the MEGA cloud service api fails. 
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="LogoutFailed_Title" xml:space="preserve">
-    <value>Falha ao desconectar</value>
+    <value>Erro ao fazer logout</value>
     <comment>Title of the dialog displayed when the logout to the MEGA cloud service api fails - (String as short as possible).</comment>
   </data>
   <data name="MultiSelectRemoveQuestion" xml:space="preserve">
@@ -465,7 +465,7 @@ Preserve the {0} code because is for include the number of pending transfers in 
     <comment>Title of the dialog displayed when a user are trying to exit the application and has pending transfers. Asks for confirmation to exit - (String as short as possible).</comment>
   </data>
   <data name="AlreadyConfirmedAccount" xml:space="preserve">
-    <value>Esta conta ja está confirmada. Você pode entrar agora.</value>
+    <value>Esta conta já está confirmada. Você pode fazer o login.</value>
     <comment>Message of the dialog displayed when a user try to confirm a MEGA account that has been already confirmed previously.</comment>
   </data>
   <data name="AlreadyConfirmedAccount_Title" xml:space="preserve">
@@ -538,11 +538,11 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
     <comment>Title of the dialog displayed when a user try to open a file that can't be found and the process failed - (String as short as possible).</comment>
   </data>
   <data name="OpenFileFailed" xml:space="preserve">
-    <value>Falha ao abrir o arquivo selecionado</value>
+    <value>Erro ao abrir o arquivo selecionado</value>
     <comment>Message of the dialog displayed when the process to open a file failed.</comment>
   </data>
   <data name="OpenFileFailed_Title" xml:space="preserve">
-    <value>Falha ao abrir arquivo</value>
+    <value>Erro ao abrir arquivo</value>
     <comment>Title of the dialog displayed when the process to open a file failed - (String as short as possible).</comment>
   </data>
   <data name="UploadSelfieFailed" xml:space="preserve">
@@ -558,7 +558,7 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
     <comment>Message of the dialog displayed when fails the process/request to load the nodes of the MEGA cloud service.</comment>
   </data>
   <data name="LoadNodesFailed_Title" xml:space="preserve">
-    <value>Falha ao carregar</value>
+    <value>Erro ao carregar</value>
     <comment>Title of the dialog displayed when fails the process/request to load the nodes of the MEGA cloud service - (String as short as possible).</comment>
   </data>
   <data name="PinLockCodesDoNotMatch" xml:space="preserve">
@@ -591,7 +591,7 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
 Preserve the {0} code because is for include the file name in runtime.</comment>
   </data>
   <data name="PrepareFileForUploadFailed_Title" xml:space="preserve">
-    <value>Falha ao preparar arquivo</value>
+    <value>Erro ao preparar o arquivo</value>
     <comment>Title of the dialog displayed when the process to prepare a file for upload failed - (String as short as possible).</comment>
   </data>
   <data name="SessionIDError_Title" xml:space="preserve">
@@ -599,17 +599,17 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
     <comment>Title of the dialog displayed when the user is logged out from another location and is trying to do any operation that requires a valid session (API_ESID Error) - (String as short as possible).</comment>
   </data>
   <data name="CopyFileFailed" xml:space="preserve">
-    <value>Falha ao copiar o arquivo selecionado: [{0}]</value>
+    <value>Erro ao copiar o arquivo selecionado: [{0}]</value>
     <comment>Message of the dialog displayed when the process/request to copy a file failed by a non specific cause.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="CopyFileFailed_Title" xml:space="preserve">
-    <value>Falha ao copiar arquivo</value>
+    <value>Erro ao copiar arquivo</value>
     <comment>Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException" xml:space="preserve">
-    <value>Você não tem permissão para copiar este tipo de arquivo na pasta de destino. Você está tentando salvar/copiar um arquivo com um formato não suportado para um cartão SD?
-Por favor, tente salvar/copiar o arquivo para a memória interna do seu dispositivo.</value>
+    <value>Você não tem permissão para copiar este tipo de arquivo para a pasta de destino. Você está tentando salvar/copiar um arquivo de um tipo não suportado em um cartão SD?
+Tente salvar/copiar o arquivo na memória interna do seu dispositivo.</value>
     <comment>Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException_Title" xml:space="preserve">
@@ -661,7 +661,7 @@ Por favor, tente salvar/copiar o arquivo para a memória interna do seu disposit
     <comment>Button of the dialog displayed the first time that a user want to download a image. Option automatically download to the photo album after downloads - (String as short as possible).</comment>
   </data>
   <data name="SelectFolderFailed" xml:space="preserve">
-    <value>Falha na seleção de pastas. Por favor, tente novamente ou selecione outra pasta. [{0}]</value>
+    <value>Falha na seleção da pasta. Por favor, tente novamente ou selecione outra pasta.</value>
     <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="SelectFolderFailed_Title" xml:space="preserve">
@@ -674,16 +674,16 @@ Por favor, tente salvar/copiar o arquivo para a memória interna do seu disposit
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="UploadNodeFailed_Title" xml:space="preserve">
-    <value>Falha no carregamento</value>
+    <value>Erro no upload</value>
     <comment>Title of the dialog displayed when the process/request to upload a node failed - (String as short as possible).</comment>
   </data>
   <data name="SelectFileFailed" xml:space="preserve">
-    <value>Falha ao selecionar arquivos. Por favor, tente novamente. [{0}]</value>
+    <value>Erro ao selecionar o(s) arquivo(s). Por favor, tente novamente. [{0}]</value>
     <comment>Message of the dialog displayed when the process to select files failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="SelectFileFailed_Title" xml:space="preserve">
-    <value>Seleção de arquivo falhou</value>
+    <value>Erro ao selecionar o arquivo</value>
     <comment>Title of the dialog displayed when the process to select files failed - (String as short as possible).</comment>
   </data>
   <data name="WrongEmailPasswordLogin" xml:space="preserve">
@@ -736,7 +736,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process to capture video failed - (String as short as possible).</comment>
   </data>
   <data name="SaveSettingsFailed" xml:space="preserve">
-    <value>Falha ao salvar configurações. Por favor, tente novamente. [{0}]</value>
+    <value>Erro ao salvar as configurações. Por favor, tente novamente. [{0}]</value>
     <comment>Message of the dialog displayed when the process to save settings failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
@@ -969,7 +969,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</comment>
   </data>
   <data name="FolderUnauthorizedAccess" xml:space="preserve">
-    <value>Você não tem acesso ao caminho '{0}'. Selecione outro e tente novamente.</value>
+    <value>Você não tem acesso à pasta '{0}'. Por favor, selecione outra e tente novamente.</value>
     <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder in the device memory. For example to download a file/folder, create a new folder, etc.
 Preserve the '{0}' code because is for include the folder name in runtime.</comment>
   </data>
@@ -987,8 +987,7 @@ Preserve the '{0}' code because is for include the file name in runtime.</commen
     <comment>Title of the dialog displayed in cases that the file name is not valid or has illegal characters - (String as short as possible).</comment>
   </data>
   <data name="PathTooLong" xml:space="preserve">
-    <value>The path of the file/folder '{0}' is too long. Please change it and try again.
-O caminho do arquivo/pasta '{0}' é muito longo. Por favor, altere-o e tente novamente.</value>
+    <value>O caminho do arquivo/pasta '{0}' é muito longo. Por favor, altere-o e tente novamente.</value>
     <comment>Message of the dialog displayed in cases that the file/folder path is too long.
 Preserve the '{0}' code because is for include the file/folder name in runtime.</comment>
   </data>
@@ -997,7 +996,7 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
     <comment>Title of the dialog displayed in cases that the file/folder path is too long - (String as short as possible).</comment>
   </data>
   <data name="InvalidFolderNameOrPath" xml:space="preserve">
-    <value>O nome ou o caminho da pasta '{0}' não é válido ou que tenha caracteres ilegais. Por favor, altere-o e tente novamente.</value>
+    <value>O nome ou o caminho da pasta '{0}' não é válido ou inclui caracteres ilegais. Por favor, altere-o e tente novamente.</value>
     <comment>Message of the dialog displayed in cases that a folder name or path is not valid or has illegal characters.
 Preserve the '{0}' code because is for include the file name in runtime.</comment>
   </data>
@@ -1031,7 +1030,7 @@ Preserve the {0} and ({1}) codes because is for include the maximum reliable dow
 </comment>
   </data>
   <data name="AM_PrepareFilesForUploadFailed" xml:space="preserve">
-    <value>Falha ao preparar os arquivo para upload. Por favor, tente novamente.</value>
+    <value>Erro ao preparar o upload dos arquivos. Por favor, tente novamente.</value>
     <comment>Message of the dialog displayed when the process to prepare a file(s) for upload failed.</comment>
   </data>
   <data name="AM_PrepareFilesForUploadFailed_Title" xml:space="preserve">
@@ -1043,7 +1042,7 @@ Preserve the {0} and ({1}) codes because is for include the maximum reliable dow
     <comment>Message of the dialog displayed when the process/request to download a node failed.</comment>
   </data>
   <data name="AM_LoadFailed_Title" xml:space="preserve">
-    <value>Falha ao carregar</value>
+    <value>Erro ao carregar</value>
     <comment>Title of the dialog displayed when fails the process/request to load something (nodes, out shares, in shares, etc.) - (String as short as possible).</comment>
   </data>
   <data name="AM_LoadInSharesFailed" xml:space="preserve">
@@ -1055,7 +1054,7 @@ Preserve the {0} and ({1}) codes because is for include the maximum reliable dow
     <comment>Message of the dialog displayed when fails the process/request to load the outgoing shared items.</comment>
   </data>
   <data name="AM_DeleteSettingsFailed" xml:space="preserve">
-    <value>Falha ao deletar configurações. Por favor, tente novamente. [{0}]</value>
+    <value>Erro ao deletar as configurações. Por favor, tente novamente. [{0}]</value>
     <comment>Message of the dialog displayed when the process to delete settings failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
@@ -1064,7 +1063,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process to delete settings failed - (String as short as possible).</comment>
   </data>
   <data name="AM_LoadSettingsFailed" xml:space="preserve">
-    <value>Falha ao carregar as configurações. Por favor, tente novamente. [{0}]</value>
+    <value>Erro ao carregar as configurações. Por favor, tente novamente. [{0}]</value>
     <comment>Message of the dialog displayed when the process to load settings failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
@@ -1073,7 +1072,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process to load settings failed - (String as short as possible).</comment>
   </data>
   <data name="AM_CopyLinkToClipboardFailed" xml:space="preserve">
-    <value>Falha na cópia do link MEGA para a sua área de transferência.</value>
+    <value>Erro ao copiar o link do MEGA para a sua área de transferência.</value>
     <comment>Message of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard.</comment>
   </data>
   <data name="AM_CopyLinkToClipboardFailed_Title" xml:space="preserve">
@@ -1101,17 +1100,17 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Alert title shown when you have written a decryption key not valid - (String as short as possible).</comment>
   </data>
   <data name="AM_FileLinkUnavailable" xml:space="preserve">
-    <value>Isso pode acontecer devido às seguintes razões:
-- O arquivo foi removido devido a uma violação de ToS / AUP.
-- URL inválido - o link que você está tentando acessar não existe.
+    <value>Isso pode acontecer por um dos motivos abaixo:
+- O arquivo foi removidopor não respeitar os nossos Termos de serviço.
+- URL inválida - o link que você está tentando acessar não existe.
 - O arquivo foi excluído pelo usuário.</value>
     <comment>Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</comment>
   </data>
   <data name="AM_FolderLinkUnavailable" xml:space="preserve">
-    <value>Isso pode acontecer devido às seguintes razões:
-- O link da pasta foi removido devido a uma violação ToS / AUP.
-- URL inválido - o link que você está tentando acessar não existe.
-- O link da pasta foi excluído pelo usuário.</value>
+    <value>Isso pode acontecer por um dos motivos abaixo:
+- O link da pasta foi removido por não respeitar os nossos Termos de serviço.
+- URL inválida - o link que você está tentando acessar não existe.
+- O link da pasta foi deletado pelo usuário.</value>
     <comment>Error message shown when a folder link doesn't exist. Keep "\n"</comment>
   </data>
   <data name="AM_LinkUnavailableTitle" xml:space="preserve">
@@ -1128,7 +1127,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process to open a link failed - (String as short as possible).</comment>
   </data>
   <data name="AM_DowloadPathUnauthorizedAccess" xml:space="preserve">
-    <value>Você não possui acesso ao caminho de download selecionado. Por favor, selecione outro caminho ou tente novamente.</value>
+    <value>Você não possui acesso ao destino de download selecionado. Por favor, selecione outro destino de download ou tente novamente.</value>
     <comment>Message of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder.</comment>
   </data>
   <data name="AM_DowloadPathUnauthorizedAccess_Title" xml:space="preserve">
@@ -1136,7 +1135,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder</comment>
   </data>
   <data name="AM_RecoveryKeyClipboardFailed" xml:space="preserve">
-    <value>Falha ao copiar a chave de recuperação para o clipboard. Por favor, tente novamente.</value>
+    <value>Erro ao copiar a chave de recuperação para a área de transferência. Por favor, tente novamente.</value>
     <comment>Message of the dialog displayed when fails to copy the user's Recovery Key to the clipboard to be saved or exported.</comment>
   </data>
   <data name="AM_RecoveryKeyClipboardFailed_Title" xml:space="preserve">
@@ -1258,7 +1257,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Error message shown when you open a file/folder link (or other shared resource) and it's no longer available because the the associated user account has been terminated due to multiple violations of our Terms of Service.</comment>
   </data>
   <data name="AM_DownloadFailed_Title" xml:space="preserve">
-    <value>Falha no download</value>
+    <value>Erro no download</value>
     <comment>Title of the dialog displayed when the process/request to download a node failed - (String as short as possible).</comment>
   </data>
   <data name="AM_DownloadFolderLinkFailed" xml:space="preserve">

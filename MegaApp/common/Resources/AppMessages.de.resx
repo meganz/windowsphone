@@ -209,7 +209,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the process/request to get a link to a node failed.</comment>
   </data>
   <data name="GetLinkFailed_Title" xml:space="preserve">
-    <value>Link kann nicht erstellt werden</value>
+    <value>Link-Export fehlgeschlagen</value>
     <comment>Title of the dialog displayed when the process/request to get a link to a node failed - (String as short as possible).</comment>
   </data>
   <data name="GetPreviewFailed" xml:space="preserve">
@@ -303,7 +303,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
     <comment>Title of the dialog displayed when the process/request remove definitely an item from the rubbish bin failed - (String as short as possible).</comment>
   </data>
   <data name="RemoveNodeSuccess" xml:space="preserve">
-    <value>Datei/Ordner erfolgreich entfernt</value>
+    <value>Datei/Ordner aus dem Papierkorb entfernt</value>
     <comment>Message of the dialog displayed when remove successfully a node definitely from the rubbish bin.</comment>
   </data>
   <data name="RemoveNodeSuccess_Title" xml:space="preserve">
@@ -608,8 +608,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException" xml:space="preserve">
-    <value>You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?
-Please try to save/copy the file to your device's internal memory instead.</value>
+    <value>Sie können diesen Dateityp nicht in den gewählten Zielordner kopieren. Dies ist z.B. bei nicht unterstützten Dateitypen und SD-Cards der Fall.
+Bitte speichern/kopieren Sie die Datei stattdessen in den internen Gerätespeicher.</value>
     <comment>Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException_Title" xml:space="preserve">
@@ -661,7 +661,7 @@ Please try to save/copy the file to your device's internal memory instead.</valu
     <comment>Button of the dialog displayed the first time that a user want to download a image. Option automatically download to the photo album after downloads - (String as short as possible).</comment>
   </data>
   <data name="SelectFolderFailed" xml:space="preserve">
-    <value>Folderauswahl fehlgeschlagen. Bitte versuchen Sie es erneut oder wählen Sie einen anderen Ordner aus: [{0}]</value>
+    <value>Failed to select folder. Please, try again or select another one.</value>
     <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="SelectFolderFailed_Title" xml:space="preserve">
@@ -773,7 +773,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed in cases that the user types some data with a wrong format - (String as short as possible).</comment>
   </data>
   <data name="CancelSubscriptionFailed" xml:space="preserve">
-    <value>Das Abonnement konnte nicht storniert werden. Bitte setzen Sie sich mit support@mega.nz in Verbindung.</value>
+    <value>Das Abonnement konnte nicht storniert werden. Bitte setzen Sie sich mit support@mega.nz in Verbindung.                                </value>
     <comment>Message of the dialog displayed when the process/request to cancel a subscription failed.</comment>
   </data>
   <data name="CancelSubscriptionFailed_Title" xml:space="preserve">
@@ -1143,7 +1143,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when fails to copy the user's Recovery Key to the clipboard to be saved or exported - (String as short as possible).</comment>
   </data>
   <data name="AM_RecoveryKeyCopied" xml:space="preserve">
-    <value>Rettungsschlüssel in die Zwischenablage kopiert</value>
+    <value>Der Rettungsschlüssel wurde in die Zwischenablage kopiert</value>
     <comment>Message of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported.</comment>
   </data>
   <data name="AM_RecoveryKeyCopied_Title" xml:space="preserve">
@@ -1245,7 +1245,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Title of the dialog displayed when a user has purchased an item from the store</comment>
   </data>
   <data name="AM_PurchaseValidationFailed" xml:space="preserve">
-    <value>Your purchase of a MEGA subscription has not passed validation at our licence server. On restart of this app we will retry to validate your subscription licences. Please contact MEGA support if the error continues.</value>
+    <value>Der Kauf Ihres MEGA-Pakets konnte von uns nicht validiert werden. Beim nächsten Neustart der App werden wir die Validierung erneut vornehmen. Bitte setzen Sie sich mit unserem Kundendienst in Verbindung, sollte der Fehler fortbestehen.</value>
     <comment>Message of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</comment>
   </data>
   <data name="AM_PurchaseValidationFailed_Title" xml:space="preserve">

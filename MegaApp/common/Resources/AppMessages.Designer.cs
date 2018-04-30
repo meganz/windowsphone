@@ -106,7 +106,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Your account was terminated due to a breach of MEGA&apos;s Terms of Service, such as abuse of rights of others; sharing and/or importing illegal data; or system abuse..
+        ///   Busca una cadena traducida similar a Your account was terminated due to a breach of MEGA’s Terms of Service, such as abuse of rights of others; sharing and/or importing illegal data; or system abuse..
         /// </summary>
         public static string AM_AccountBlocked {
             get {
@@ -124,7 +124,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Your account has been suspended due to multiple breaches of MEGA&apos;s Terms of Service. Please check your email inbox..
+        ///   Busca una cadena traducida similar a Your account has been suspended due to multiple breaches of MEGA’s Terms of Service. Please check your email inbox..
         /// </summary>
         public static string AM_AccountBlockedCopyright {
             get {
@@ -1328,7 +1328,7 @@ namespace MegaApp.Resources {
         
         /// <summary>
         ///   Busca una cadena traducida similar a You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?
-        ///Please try to save/copy the file to your device&apos;s internal memory instead..
+        ///Please try to save/copy the file to your device’s internal memory instead..
         /// </summary>
         public static string CopyFileUnauthorizedAccessException {
             get {

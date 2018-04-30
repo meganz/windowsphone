@@ -125,10 +125,6 @@
     <value>新增文件夹</value>
     <comment>Label for any 'Add folder' button, link, etc. - (String as short as possible).</comment>
   </data>
-  <data name="AppName" xml:space="preserve">
-    <value>MEGA Privacy</value>
-    <comment>Label with the application name. Try to preserve uppercase - (NO-TRANSLATION).</comment>
-  </data>
   <data name="Cancel" xml:space="preserve">
     <value>取消</value>
     <comment>Label for any 'Cancel' button, link, etc. - (String as short as possible).</comment>
@@ -186,7 +182,7 @@
     <comment>Label for any 'Next' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Open" xml:space="preserve">
-    <value>开启</value>
+    <value>打开</value>
     <comment>Label for any 'Open' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Preview" xml:space="preserve">
@@ -218,7 +214,7 @@
     <comment>Text placed into the dialog to type the new name when the user wants to rename a file or folder.</comment>
   </data>
   <data name="Save" xml:space="preserve">
-    <value>储存</value>
+    <value>保存</value>
     <comment>Label for any 'Save' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Share" xml:space="preserve">
@@ -290,7 +286,7 @@
     <comment>Label for the name of the Rubbish bin breadcum root node - (String as short as possible).</comment>
   </data>
   <data name="No" xml:space="preserve">
-    <value>不是</value>
+    <value>否</value>
     <comment>Label for any 'No' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Yes" xml:space="preserve">
@@ -350,7 +346,7 @@
     <comment>Text placed just before app version number into the 'about' page.</comment>
   </data>
   <data name="AskDownloadLocationText" xml:space="preserve">
-    <value>每次都询问下载位置</value>
+    <value>总是询问下载地址</value>
     <comment>Text placed just before a switch button (on/off) into the 'settings' page indicating if the app should ask always for a download location or use a default download location.</comment>
   </data>
   <data name="Available" xml:space="preserve">
@@ -590,7 +586,7 @@
     <comment>Label for any 'Advanced' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Help" xml:space="preserve">
-    <value>帮助</value>
+    <value>支持</value>
     <comment>Label for any 'Help' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="CameraUploads" xml:space="preserve">
@@ -610,7 +606,7 @@
     <comment>Label for any 'Sort' button, link, text, etc. - (String as short as possible).</comment>
   </data>
   <data name="ClearRubbishBin" xml:space="preserve">
-    <value>空的垃圾桶</value>
+    <value>清空垃圾桶</value>
     <comment>Label for any 'Empty rubbish' button, link, text, etc. - (String as short as possible).</comment>
   </data>
   <data name="Ok" xml:space="preserve">
@@ -634,7 +630,7 @@
     <comment>Label for the 'Wifi only' option in the 'set up camera uploads' page - (String as short as possible).</comment>
   </data>
   <data name="EnableCameraUploads" xml:space="preserve">
-    <value>激活相机上传</value>
+    <value>允许从相机上传</value>
     <comment>Label for the switch button to enable or disable the Camera Uploads service - (String as short as possible).</comment>
   </data>
   <data name="Security" xml:space="preserve">
@@ -973,7 +969,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label asking user if wants to enable the auto camera uploads service.</comment>
   </data>
   <data name="ShareFolder" xml:space="preserve">
-    <value>分享文件夹</value>
+    <value>共享文件夹</value>
     <comment>Label for any 'Share folder' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="ManageLink" xml:space="preserve">
@@ -997,7 +993,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for the background of an empty transfers page - (String as short as possible).</comment>
   </data>
   <data name="EmptyRubbishBin" xml:space="preserve">
-    <value>空的垃圾桶</value>
+    <value>清空垃圾桶</value>
     <comment>Label for the background of an empty rubbish bin page - (String as short as possible).</comment>
   </data>
   <data name="EmptySharedFolders" xml:space="preserve">
@@ -1037,7 +1033,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Get link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_Login" xml:space="preserve">
-    <value>登入</value>
+    <value>登录</value>
     <comment>Label for any 'Login' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_Logout" xml:space="preserve">
@@ -1110,7 +1106,7 @@ Preserve the {0} code because is for include the name of the destination folder 
     <comment>Label for any 'Open link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_ExportRecoveryKeyText" xml:space="preserve">
-    <value>汇出还原金钥</value>
+    <value>导出恢复金匙</value>
     <comment>Text 'Export Recovery Key' placed just before two buttons into the 'settings' page to allow see (copy/paste) and export the Recovery Key.</comment>
   </data>
   <data name="UI_RecoveryKey" xml:space="preserve">
@@ -1169,7 +1165,7 @@ Keep the code {1} because is for include currency in runtime.</comment>
     <comment>Label for any 'Link with key' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_LinkWithoutKey" xml:space="preserve">
-    <value>链接不包含密钥</value>
+    <value>使用无密钥方式进入(公开文件)</value>
     <comment>Label for any 'Link without key' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_ProOnly" xml:space="preserve">

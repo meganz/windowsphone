@@ -125,12 +125,8 @@
     <value>aggiungi cartella</value>
     <comment>Label for any 'Add folder' button, link, etc. - (String as short as possible).</comment>
   </data>
-  <data name="AppName" xml:space="preserve">
-    <value>MEGA Privacy</value>
-    <comment>Label with the application name. Try to preserve uppercase - (NO-TRANSLATION).</comment>
-  </data>
   <data name="Cancel" xml:space="preserve">
-    <value>Annulla</value>
+    <value>Cancella</value>
     <comment>Label for any 'Cancel' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="CloudDriveName" xml:space="preserve">
@@ -350,7 +346,7 @@
     <comment>Text placed just before app version number into the 'about' page.</comment>
   </data>
   <data name="AskDownloadLocationText" xml:space="preserve">
-    <value>Chiedi sempre dove scaricare</value>
+    <value>Chiedi sempre per la posizione del download</value>
     <comment>Text placed just before a switch button (on/off) into the 'settings' page indicating if the app should ask always for a download location or use a default download location.</comment>
   </data>
   <data name="Available" xml:space="preserve">
@@ -426,7 +422,7 @@
     <comment>Text placed just before the form to 'Make a PIN Lock'. Try to preserve the PIN uppercase word. - (String as short as possible).</comment>
   </data>
   <data name="Monthly" xml:space="preserve">
-    <value>Mensile</value>
+    <value>Mensilmente</value>
     <comment>Label for any 'Monthly' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="NameAscendingSortOption" xml:space="preserve">
@@ -494,7 +490,7 @@
     <comment>Label for any 'Used' button, link, text, title, etc. (i.e. used space) - (String as short as possible).</comment>
   </data>
   <data name="UsedSpace" xml:space="preserve">
-    <value>Spazio usato</value>
+    <value>Spazio Usato</value>
     <comment>Text placed just before the amount used space into the 'my account' page - (String as short as possible).</comment>
   </data>
   <data name="Version" xml:space="preserve">
@@ -514,7 +510,7 @@
     <comment>Label for any 'Select folder' button, link, text, title, etc. - (String as short as possible, MAX 14 characters).</comment>
   </data>
   <data name="About" xml:space="preserve">
-    <value>Riguardo</value>
+    <value>Info</value>
     <comment>Label for any 'About' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Pause" xml:space="preserve">
@@ -634,7 +630,7 @@
     <comment>Label for the 'Wifi only' option in the 'set up camera uploads' page - (String as short as possible).</comment>
   </data>
   <data name="EnableCameraUploads" xml:space="preserve">
-    <value>Attiva Camera Uploads</value>
+    <value>Attiva i caricamenti dalla fotocamera</value>
     <comment>Label for the switch button to enable or disable the Camera Uploads service - (String as short as possible).</comment>
   </data>
   <data name="Security" xml:space="preserve">
@@ -905,7 +901,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
     <comment>Label for any 'Decline' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Delete" xml:space="preserve">
-    <value>Elimina</value>
+    <value>Cancella</value>
     <comment>Label for any 'Delete' button, link, text, label, etc. - (String as short as possible).</comment>
   </data>
   <data name="Ignore" xml:space="preserve">
@@ -1110,11 +1106,11 @@ Preserve the {0} code because is for include the name of the destination folder 
     <comment>Label for any 'Open link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_ExportRecoveryKeyText" xml:space="preserve">
-    <value>Esporta la chiave di recupero</value>
+    <value>Esporta Chiave di Recupero</value>
     <comment>Text 'Export Recovery Key' placed just before two buttons into the 'settings' page to allow see (copy/paste) and export the Recovery Key.</comment>
   </data>
   <data name="UI_RecoveryKey" xml:space="preserve">
-    <value>Chiave di recupero</value>
+    <value>Chiave di Recupero</value>
     <comment>Label for any 'Recovery Key' button, link, text, title, etc. Preserve uppercase - (String as short as possible).</comment>
   </data>
   <data name="UI_DebugMode" xml:space="preserve">
@@ -1169,7 +1165,7 @@ Keep the code {1} because is for include currency in runtime.</comment>
     <comment>Label for any 'Link with key' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_LinkWithoutKey" xml:space="preserve">
-    <value>Link senza chiave</value>
+    <value>Link senza key</value>
     <comment>Label for any 'Link without key' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_ProOnly" xml:space="preserve">

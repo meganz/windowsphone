@@ -608,7 +608,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException" xml:space="preserve">
-    <value>คุณไม่มีสิทธิ์คัดลอกไฟล์ประเภทนี้ไปยังโฟลเดอร์ปลายทาง คุณกำลังลองบันทึก/คัดลอกไฟล์ประเภทที่ไม่สนับสนุนไปยังการ์ด SD หรือไม่ กรุณาลองบันทึก/คัดลอกไฟล์ไปยังหน่วยความจำภายในของอุปกรณ์แทน</value>
+    <value>คุณไม่มีสิทธิ์คัดลอกไฟล์ประเภทนี้ไปยังโฟลเดอร์ปลายทาง คุณกำลังพยายามบันทึก/คัดลอกไฟล์ประเภทที่ไม่สนับสนุนไปยังการ์ด SD
+หรือไม่ กรุณาลองบันทึก/คัดลอกไฟล์ไปยังหน่วยความจำภายในของอุปกรณ์แทน</value>
     <comment>Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException_Title" xml:space="preserve">
@@ -660,7 +661,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Button of the dialog displayed the first time that a user want to download a image. Option automatically download to the photo album after downloads - (String as short as possible).</comment>
   </data>
   <data name="SelectFolderFailed" xml:space="preserve">
-    <value>ไม่สามารถเลือกโฟลเดอร์ได้ กรุณาลองใหม่อีกครั้งหรือลองเลือกโฟลเดอร์อื่น: [{0}]</value>
+    <value>ไม่สามารถเลือกโฟลเดอร์ กรุณาลองอีกครั้งหรือเลือกรายการอื่น</value>
     <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="SelectFolderFailed_Title" xml:space="preserve">
@@ -968,7 +969,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</comment>
   </data>
   <data name="FolderUnauthorizedAccess" xml:space="preserve">
-    <value>คุณไม่ได้เข้าถึงเส้นทาง '{0}' นี้ กรุณาเลือกเส้นทางและลองใหม่อีกครั้ง</value>
+    <value>คุณไม่มีสิทธิ์เข้าถึงโฟลเดอร์ '{0}' กรุณาเลือกอื่นและลองอีกครั้ง</value>
     <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder in the device memory. For example to download a file/folder, create a new folder, etc.
 Preserve the '{0}' code because is for include the folder name in runtime.</comment>
   </data>

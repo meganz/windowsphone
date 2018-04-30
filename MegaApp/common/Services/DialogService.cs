@@ -1491,7 +1491,7 @@ namespace MegaApp.Services
                 dataTransferManager.DataRequested += (sender, args) =>
                 {
                     DataPackage requestData = args.Request.Data;
-                    requestData.Properties.ApplicationName = AppResources.ApplicationTitle;
+                    requestData.Properties.ApplicationName = AppResources.ApplicationName;
 
                     if (storageItems.Count > 1)
                     {

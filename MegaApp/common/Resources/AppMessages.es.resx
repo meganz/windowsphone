@@ -434,7 +434,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process to select a folder failed - (String as short as possible).</comment>
   </data>
   <data name="SelectFolderFailed" xml:space="preserve">
-    <value>Error al seleccionar la carpeta. Por favor, inténtalo de nuevo o selecciona otra carpeta: [{0}]</value>
+    <value>Error al seleccionar la carpeta. Por favor, inténtalo de nuevo o selecciona otra:</value>
     <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="QuestionAskedDownloadOption_YesButton" xml:space="preserve">
@@ -474,7 +474,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when a user is trying to change the PIN lock code and introduces an incorrect code into the field for the current PIN lock code. Try to preserve the PIN uppercase word.</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException" xml:space="preserve">
-    <value>No tienes permiso para copiar este tipo de archivo en la carpeta de destino. ¿Está intentando guardar/copiar un archivo no soportado en una tarjeta SD?
+    <value>No tienes permisos para copiar este tipo de archivo en la carpeta de destino. ¿Está intentando guardar/copiar un archivo no soportado en una tarjeta SD?
 Intenta guardar/copiar el archivo en la memoria interna de tu dispositivo.</value>
     <comment>Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</comment>
   </data>
@@ -784,7 +784,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request remove definitely an item from the rubbish bin failed - (String as short as possible).</comment>
   </data>
   <data name="RemoveNodeSuccess" xml:space="preserve">
-    <value>Elemento eliminado correctamente</value>
+    <value>Elemento eliminado correctamente.</value>
     <comment>Message of the dialog displayed when remove successfully a node definitely from the rubbish bin.</comment>
   </data>
   <data name="RemoveNodeFailed" xml:space="preserve">
@@ -846,7 +846,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the process/request to copy a MEGA link to the clipboard finished successfully.</comment>
   </data>
   <data name="ImportFileFailed_Title" xml:space="preserve">
-    <value>No se pudo importar el archivo</value>
+    <value>Error importando archivo</value>
     <comment>Title of the dialog displayed when fails the process/request to import an image - (String as short as possible).</comment>
   </data>
   <data name="ImageSaveError_Title" xml:space="preserve">
@@ -996,7 +996,7 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
 Preserve the '{0}' code because is for include the file name in runtime.</comment>
   </data>
   <data name="FolderUnauthorizedAccess" xml:space="preserve">
-    <value>No tienes acceso a la ruta '{0}'. Por favor selecciona otra e inténtalo de nuevo.</value>
+    <value>No tienes acceso a la carpeta '{0}'. Por favor selecciona otra e inténtalo de nuevo.</value>
     <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder in the device memory. For example to download a file/folder, create a new folder, etc.
 Preserve the '{0}' code because is for include the folder name in runtime.</comment>
   </data>
@@ -1015,7 +1015,7 @@ Preserve the '{0}' code because is for include the folder name in runtime.</comm
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="AM_ImportFileFailedNoErrorCode" xml:space="preserve">
-    <value>No se pudo importar el archivo</value>
+    <value>Error importando archivo</value>
     <comment>Message of the dialog displayed when fails the process/request to import an image.
 
 </comment>

@@ -125,9 +125,9 @@
     <value>en</value>
     <comment>Controls the Language and ensures that the font for all elements in the RootFrame aligns with the app's language. Set to the language code of this resource file's language - (NO-TRANSLATION)</comment>
   </data>
-  <data name="ApplicationTitle" xml:space="preserve">
+  <data name="ApplicationName" xml:space="preserve">
     <value>MEGA Privacy</value>
-    <comment>Title of the application. Try to preserve uppercase. - (NO-TRANSLATION).</comment>
+    <comment>Name of the application. Try to preserve uppercase. - (NO-TRANSLATION).</comment>
   </data>
   <data name="PagesLocation" xml:space="preserve">
     <value>/Pages/</value>
@@ -234,11 +234,11 @@
     <comment>Label for the name of the 'PRO III' account type. Try to preserve uppercase - (NO-TRANSLATION).</comment>
   </data>
   <data name="AR_SdkLink" xml:space="preserve">
-    <value>https://github.com/meganz/sdk/tree/3c582047ab3531abe3a0e4b8452c2cef344c500c</value>
+    <value>https://github.com/meganz/sdk/tree/3257bba306cc7567e915e23daadd406ae856a1e3</value>
     <comment>Link to respository of the current SDK used in the app - (NO-TRANSLATION).</comment>
   </data>
   <data name="AR_SdkVersion" xml:space="preserve">
-    <value>3c58204</value>
+    <value>3257bba</value>
     <comment>Current SDK version used in the app - (NO-TRANSLATION).</comment>
   </data>
 </root>

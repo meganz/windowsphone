@@ -117,14 +117,14 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a MEGA Privacy.
         /// </summary>
-        public static string ApplicationTitle {
+        public static string ApplicationName {
             get {
-                return ResourceManager.GetString("ApplicationTitle", resourceCulture);
+                return ResourceManager.GetString("ApplicationName", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a https://github.com/meganz/sdk/tree/3c582047ab3531abe3a0e4b8452c2cef344c500c.
+        ///   Busca una cadena traducida similar a https://github.com/meganz/sdk/tree/3257bba306cc7567e915e23daadd406ae856a1e3.
         /// </summary>
         public static string AR_SdkLink {
             get {
@@ -133,7 +133,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a 3c58204.
+        ///   Busca una cadena traducida similar a 3257bba.
         /// </summary>
         public static string AR_SdkVersion {
             get {

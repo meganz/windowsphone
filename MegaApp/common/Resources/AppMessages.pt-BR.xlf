@@ -24,7 +24,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/ConfirmAccountSucces" translate="yes" space="preserve">
           <source>Your account has been created, confirmed and activated. You will be logged in automatically.</source>
-          <target state="translated">Sua conta foi criada, confirmada e ativada. Você será conectado automaticamente.</target>
+          <target state="translated">A sua conta foi criada, confirmada e ativada. Você será conectado automaticamente.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when confirm a MEGA account succesfully.</note>
         </trans-unit>
         <trans-unit id="Resx/ConfirmAccountSucces_Title" translate="yes" space="preserve">
@@ -44,23 +44,23 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/CreateAccountFailed" translate="yes" space="preserve">
           <source>MEGA Cloud Drive account creation failed. Please try again. [{0}]</source>
-          <target state="translated">Criação da conta no MEGA falhou. Por favor tente novamente [{0}]</target>
+          <target state="translated">A criação da conta no MEGA falhou. Por favor, tente novamente [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the creation of a MEGA account failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/CreateAccountFailed_Title" translate="yes" space="preserve">
           <source>Account creation failed</source>
-          <target state="translated">Falha ao criar conta</target>
+          <target state="translated">Erro ao criar conta</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the creation of a MEGA account failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CreateFolderFailed" translate="yes" space="preserve">
           <source>Failed to create folder</source>
-          <target state="translated">Falha ao criar pasta</target>
+          <target state="translated">Não foi possível criar a pasta</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the creation of a folder failed.</note>
         </trans-unit>
         <trans-unit id="Resx/CreateFolderFailed_Title" translate="yes" space="preserve">
           <source>Folder creation failed</source>
-          <target state="translated">Falha ao criar pasta</target>
+          <target state="translated">Erro na criação da pasta</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the creation of a folder failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CreateFolderSuccess" translate="yes" space="preserve">
@@ -91,7 +91,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/DownloadNodeFailed_Title" translate="yes" space="preserve">
           <source>Download failed</source>
-          <target state="translated">Falha no download</target>
+          <target state="translated">Erro no download</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to download a node failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/FetchingNodesFailed" translate="yes" space="preserve">
@@ -111,7 +111,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/FolderCreateFailed_Title" translate="yes" space="preserve">
           <source>Folder creation failed</source>
-          <target state="translated">Falha ao criar pasta</target>
+          <target state="translated">Erro na criação da pasta</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to create a folder failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/GetLinkFailed" translate="yes" space="preserve">
@@ -240,7 +240,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
         </trans-unit>
         <trans-unit id="Resx/RemoveNodeFailed_Title" translate="yes" space="preserve">
           <source>Remove failed</source>
-          <target state="translated">Falha ao remover</target>
+          <target state="translated">Erro ao remover</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request remove definitely an item from the rubbish bin failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/RemoveNodeSuccess" translate="yes" space="preserve">
@@ -255,12 +255,12 @@ Preserve the {0} code because is for include the name of the item to be removed 
         </trans-unit>
         <trans-unit id="Resx/RenameNodeFailed" translate="yes" space="preserve">
           <source>Renaming item failed</source>
-          <target state="translated">Falha ao renomear item</target>
+          <target state="translated">Erro ao renomear o item</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to remove definitely an item node from the rubbish bin failed.</note>
         </trans-unit>
         <trans-unit id="Resx/RenameNodeFailed_Title" translate="yes" space="preserve">
           <source>Rename failed</source>
-          <target state="translated">Falha ao renomear</target>
+          <target state="translated">Erro ao renomear</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to remove definitely an item node from the rubbish bin failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/RequiredFieldsConfirmAccount" translate="yes" space="preserve">
@@ -295,7 +295,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
         </trans-unit>
         <trans-unit id="Resx/UserNotOnline" translate="yes" space="preserve">
           <source>You are not logged into MEGA. Please re-login.</source>
-          <target state="translated">Você não está logado em MEGA. Por favor, re-login.</target>
+          <target state="translated">Você não está logado no MEGA. Por favor, faça o login novamente.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user is online and is trying to do any operation that requires connection.</note>
         </trans-unit>
         <trans-unit id="Resx/UserNotOnline_Title" translate="yes" space="preserve">
@@ -305,7 +305,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
         </trans-unit>
         <trans-unit id="Resx/GetThumbnailFailed" translate="yes" space="preserve">
           <source>Failed to retrieve thumbnail [{0}]</source>
-          <target state="translated">Falha ao resgatar a miniatura [{0}]</target>
+          <target state="translated">Erro ao obter a miniatura [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to get a image thumbnail failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
@@ -337,13 +337,13 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/LogoutFailed" translate="yes" space="preserve">
           <source>Failed to logout. Please try again. [{0}]</source>
-          <target state="translated">Falha ao desconectar. Por favor tente novamente. [{0}]</target>
+          <target state="translated">Erro ao fazer logout. Por favor tente novamente. [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the logout to the MEGA cloud service api fails. 
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/LogoutFailed_Title" translate="yes" space="preserve">
           <source>Logout failed</source>
-          <target state="translated">Falha ao desconectar</target>
+          <target state="translated">Erro ao fazer logout</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the logout to the MEGA cloud service api fails - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/MultiSelectRemoveQuestion" translate="yes" space="preserve">
@@ -445,7 +445,7 @@ Preserve the {0} code because is for include the number of pending transfers in 
         </trans-unit>
         <trans-unit id="Resx/AlreadyConfirmedAccount" translate="yes" space="preserve">
           <source>The account is already confirmed. You can now login.</source>
-          <target state="translated">Esta conta ja está confirmada. Você pode entrar agora.</target>
+          <target state="translated">Esta conta já está confirmada. Você pode fazer o login.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user try to confirm a MEGA account that has been already confirmed previously.</note>
         </trans-unit>
         <trans-unit id="Resx/AlreadyConfirmedAccount_Title" translate="yes" space="preserve">
@@ -542,12 +542,12 @@ Preserve the {0} code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/OpenFileFailed" translate="yes" space="preserve">
           <source>Failed to open the selected file</source>
-          <target state="translated">Falha ao abrir o arquivo selecionado</target>
+          <target state="translated">Erro ao abrir o arquivo selecionado</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to open a file failed.</note>
         </trans-unit>
         <trans-unit id="Resx/OpenFileFailed_Title" translate="yes" space="preserve">
           <source>File failed to open</source>
-          <target state="translated">Falha ao abrir arquivo</target>
+          <target state="translated">Erro ao abrir arquivo</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to open a file failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UploadSelfieFailed" translate="yes" space="preserve">
@@ -567,7 +567,7 @@ Preserve the {0} code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/LoadNodesFailed_Title" translate="yes" space="preserve">
           <source>Failed to load</source>
-          <target state="translated">Falha ao carregar</target>
+          <target state="translated">Erro ao carregar</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to load the nodes of the MEGA cloud service - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PinLockCodesDoNotMatch" translate="yes" space="preserve">
@@ -608,7 +608,7 @@ Preserve the {0} code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/PrepareFileForUploadFailed_Title" translate="yes" space="preserve">
           <source>Error preparing file</source>
-          <target state="translated">Falha ao preparar arquivo</target>
+          <target state="translated">Erro ao preparar o arquivo</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to prepare a file for upload failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/SessionIDError_Title" translate="yes" space="preserve">
@@ -618,20 +618,20 @@ Preserve the {0} code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/CopyFileFailed" translate="yes" space="preserve">
           <source>Failed to copy the selected file: [{0}]</source>
-          <target state="translated">Falha ao copiar o arquivo selecionado: [{0}]</target>
+          <target state="translated">Erro ao copiar o arquivo selecionado: [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to copy a file failed by a non specific cause.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/CopyFileFailed_Title" translate="yes" space="preserve">
           <source>Error copying file</source>
-          <target state="translated">Falha ao copiar arquivo</target>
+          <target state="translated">Erro ao copiar arquivo</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException" translate="yes" space="preserve">
           <source>You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?
-Please try to save/copy the file to your device's internal memory instead.</source>
-          <target state="translated">Você não tem permissão para copiar este tipo de arquivo na pasta de destino. Você está tentando salvar/copiar um arquivo com um formato não suportado para um cartão SD?
-Por favor, tente salvar/copiar o arquivo para a memória interna do seu dispositivo.</target>
+Please try to save/copy the file to your device’s internal memory instead.</source>
+          <target state="needs-review-translation">Você não tem permissão para copiar este tipo de arquivo para a pasta de destino. Você está tentando salvar/copiar um arquivo de um tipo não suportado em um cartão SD?
+Tente salvar/copiar o arquivo na memória interna do seu dispositivo.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</note>
         </trans-unit>
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException_Title" translate="yes" space="preserve">
@@ -641,7 +641,7 @@ Por favor, tente salvar/copiar o arquivo para a memória interna do seu disposit
         </trans-unit>
         <trans-unit id="Resx/AM_RecoveryKeyClipboardFailed" translate="yes" space="preserve">
           <source>Failed to copy the Recovery Key to your clipboard. Please try again.</source>
-          <target state="translated">Falha ao copiar a chave de recuperação para o clipboard. Por favor, tente novamente.</target>
+          <target state="translated">Erro ao copiar a chave de recuperação para a área de transferência. Por favor, tente novamente.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails to copy the user's Recovery Key to the clipboard to be saved or exported.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_RecoveryKeyClipboardFailed_Title" translate="yes" space="preserve">
@@ -716,9 +716,8 @@ Por favor, tente salvar/copiar o arquivo para a memória interna do seu disposit
         </trans-unit>
         <trans-unit id="Resx/SelectFolderFailed" translate="yes" space="preserve">
           <source>Failed to select folder. Please, try again or select another one.</source>
-          <target state="needs-review-translation">Falha na seleção de pastas. Por favor, tente novamente ou selecione outra pasta. [{0}]</target>
+          <target state="translated">Falha na seleção da pasta. Por favor, tente novamente ou selecione outra pasta.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to select a folder failed.</note>
-          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/SelectFolderFailed_Title" translate="yes" space="preserve">
           <source>Select folder failed</source>
@@ -733,18 +732,18 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/UploadNodeFailed_Title" translate="yes" space="preserve">
           <source>Upload failed</source>
-          <target state="translated">Falha no carregamento</target>
+          <target state="translated">Erro no upload</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to upload a node failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/SelectFileFailed" translate="yes" space="preserve">
           <source>Failed to select file(s). Please, try again [{0}]</source>
-          <target state="translated">Falha ao selecionar arquivos. Por favor, tente novamente. [{0}]</target>
+          <target state="translated">Erro ao selecionar o(s) arquivo(s). Por favor, tente novamente. [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to select files failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/SelectFileFailed_Title" translate="yes" space="preserve">
           <source>File selection failed</source>
-          <target state="translated">Seleção de arquivo falhou</target>
+          <target state="translated">Erro ao selecionar o arquivo</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to select files failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/WrongEmailPasswordLogin" translate="yes" space="preserve">
@@ -809,7 +808,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/SaveSettingsFailed" translate="yes" space="preserve">
           <source>Failed to save settings. Please, try again [{0}]</source>
-          <target state="translated">Falha ao salvar configurações. Por favor, tente novamente. [{0}]</target>
+          <target state="translated">Erro ao salvar as configurações. Por favor, tente novamente. [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to save settings failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
@@ -1103,10 +1102,9 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/FolderUnauthorizedAccess" translate="yes" space="preserve">
           <source>You don't have access to the folder '{0}'. Please select another one and try again.</source>
-          <target state="needs-review-translation">Você não tem acesso ao caminho '{0}'. Selecione outro e tente novamente.</target>
+          <target state="translated">Você não tem acesso à pasta '{0}'. Por favor, selecione outra e tente novamente.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that the app or the user doesn't have access to a folder in the device memory. For example to download a file/folder, create a new folder, etc.
 Preserve the '{0}' code because is for include the folder name in runtime.</note>
-          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/FolderUnauthorizedAccess_Title" translate="yes" space="preserve">
           <source>Access denied</source>
@@ -1126,8 +1124,7 @@ Preserve the '{0}' code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/PathTooLong" translate="yes" space="preserve">
           <source>The path of the file/folder '{0}' is too long. Please change it and try again.</source>
-          <target state="translated">The path of the file/folder '{0}' is too long. Please change it and try again.
-O caminho do arquivo/pasta '{0}' é muito longo. Por favor, altere-o e tente novamente.</target>
+          <target state="translated">O caminho do arquivo/pasta '{0}' é muito longo. Por favor, altere-o e tente novamente.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that the file/folder path is too long.
 Preserve the '{0}' code because is for include the file/folder name in runtime.</note>
         </trans-unit>
@@ -1138,7 +1135,7 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
         </trans-unit>
         <trans-unit id="Resx/InvalidFolderNameOrPath" translate="yes" space="preserve">
           <source>The name or path of the folder '{0}' is not valid or has illegal characters. Please change it and try again.</source>
-          <target state="translated">O nome ou o caminho da pasta '{0}' não é válido ou que tenha caracteres ilegais. Por favor, altere-o e tente novamente.</target>
+          <target state="translated">O nome ou o caminho da pasta '{0}' não é válido ou inclui caracteres ilegais. Por favor, altere-o e tente novamente.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that a folder name or path is not valid or has illegal characters.
 Preserve the '{0}' code because is for include the file name in runtime.</note>
         </trans-unit>
@@ -1161,7 +1158,7 @@ Preserve the '{0}' code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PrepareFilesForUploadFailed" translate="yes" space="preserve">
           <source>Failed to prepare file(s) for upload. Please try again.</source>
-          <target state="translated">Falha ao preparar os arquivo para upload. Por favor, tente novamente.</target>
+          <target state="translated">Erro ao preparar o upload dos arquivos. Por favor, tente novamente.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to prepare a file(s) for upload failed.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PrepareFilesForUploadFailed_Title" translate="yes" space="preserve">
@@ -1176,7 +1173,7 @@ Preserve the '{0}' code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_LoadFailed_Title" translate="yes" space="preserve">
           <source>Failed to load</source>
-          <target state="translated">Falha ao carregar</target>
+          <target state="translated">Erro ao carregar</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to load something (nodes, out shares, in shares, etc.) - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_LoadInSharesFailed" translate="yes" space="preserve">
@@ -1191,7 +1188,7 @@ Preserve the '{0}' code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DeleteSettingsFailed" translate="yes" space="preserve">
           <source>Failed to delete settings. Please try again. [{0}]</source>
-          <target state="translated">Falha ao deletar configurações. Por favor, tente novamente. [{0}]</target>
+          <target state="translated">Erro ao deletar as configurações. Por favor, tente novamente. [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to delete settings failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
@@ -1202,7 +1199,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_LoadSettingsFailed" translate="yes" space="preserve">
           <source>Failed to load settings. Please try again. [{0}]</source>
-          <target state="translated">Falha ao carregar as configurações. Por favor, tente novamente. [{0}]</target>
+          <target state="translated">Erro ao carregar as configurações. Por favor, tente novamente. [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to load settings failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
@@ -1213,7 +1210,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_CopyLinkToClipboardFailed" translate="yes" space="preserve">
           <source>Failed to copy the MEGA link to your clipboard.</source>
-          <target state="translated">Falha na cópia do link MEGA para a sua área de transferência.</target>
+          <target state="translated">Erro ao copiar o link do MEGA para a sua área de transferência.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_CopyLinkToClipboardFailed_Title" translate="yes" space="preserve">
@@ -1251,9 +1248,9 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - The file has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The file has been deleted by the user.</source>
-          <target state="translated">Isso pode acontecer devido às seguintes razões:
-- O arquivo foi removido devido a uma violação de ToS / AUP.
-- URL inválido - o link que você está tentando acessar não existe.
+          <target state="translated">Isso pode acontecer por um dos motivos abaixo:
+- O arquivo foi removidopor não respeitar os nossos Termos de serviço.
+- URL inválida - o link que você está tentando acessar não existe.
 - O arquivo foi excluído pelo usuário.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</note>
         </trans-unit>
@@ -1262,10 +1259,10 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - The folder link has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The folder link has been deleted by the user.</source>
-          <target state="translated">Isso pode acontecer devido às seguintes razões:
-- O link da pasta foi removido devido a uma violação ToS / AUP.
-- URL inválido - o link que você está tentando acessar não existe.
-- O link da pasta foi excluído pelo usuário.</target>
+          <target state="translated">Isso pode acontecer por um dos motivos abaixo:
+- O link da pasta foi removido por não respeitar os nossos Termos de serviço.
+- URL inválida - o link que você está tentando acessar não existe.
+- O link da pasta foi deletado pelo usuário.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when a folder link doesn't exist. Keep "\n"</note>
         </trans-unit>
         <trans-unit id="Resx/AM_LinkUnavailableTitle" translate="yes" space="preserve">
@@ -1286,7 +1283,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_DowloadPathUnauthorizedAccess" translate="yes" space="preserve">
           <source>You don't have access to the selected download path. Please select a different download path and try again.</source>
-          <target state="translated">Você não possui acesso ao caminho de download selecionado. Por favor, selecione outro caminho ou tente novamente.</target>
+          <target state="translated">Você não possui acesso ao destino de download selecionado. Por favor, selecione outro destino de download ou tente novamente.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DowloadPathUnauthorizedAccess_Title" translate="yes" space="preserve">
@@ -1428,7 +1425,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DownloadFailed_Title" translate="yes" space="preserve">
           <source>Download failed</source>
-          <target state="translated">Falha no download</target>
+          <target state="translated">Erro no download</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to download a node failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DownloadFolderLinkFailed" translate="yes" space="preserve">
@@ -1462,8 +1459,8 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the warning dialog shown when the user tries to make a new sign up using an invalid link (#newsignup).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AccountBlocked" translate="yes" space="preserve">
-          <source>Your account was terminated due to a breach of MEGA's Terms of Service, such as abuse of rights of others; sharing and/or importing illegal data; or system abuse.</source>
-          <target state="translated">A sua conta foi encerrada por infringir os Termos de serviço do MEGA, como o desrespeito aos direitos de terceiros, compartilhamento e/ou importação de dados ilegais ou abusos do sistema.</target>
+          <source>Your account was terminated due to a breach of MEGA’s Terms of Service, such as abuse of rights of others; sharing and/or importing illegal data; or system abuse.</source>
+          <target state="needs-review-translation">A sua conta foi encerrada por infringir os Termos de serviço do MEGA, como o desrespeito aos direitos de terceiros, compartilhamento e/ou importação de dados ilegais ou abusos do sistema.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the user is trying to login and the account has been blocked.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AccountNotConfirmed" translate="yes" space="preserve">
@@ -1599,8 +1596,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to prepare files or folders for download failed.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AccountBlockedCopyright" translate="yes" space="preserve">
-          <source>Your account has been suspended due to multiple breaches of MEGA's Terms of Service. Please check your email inbox.</source>
-          <target state="translated">A sua conta foi suspensa devido a múltiplas infrações dos Termos de serviço do MEGA. Verifique a caixa de entrada do seu email para mais detalhes.</target>
+          <source>Your account has been suspended due to multiple breaches of MEGA’s Terms of Service. Please check your email inbox.</source>
+          <target state="needs-review-translation">A sua conta foi suspensa devido a múltiplas infrações dos Termos de serviço do MEGA. Verifique a caixa de entrada do seu email para mais detalhes.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the user is trying to login and the account has been blocked for multiple copyright violation.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_EmptyRequiredFields" translate="yes" xml:space="preserve">

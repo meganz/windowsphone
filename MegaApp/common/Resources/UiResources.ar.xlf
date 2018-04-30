@@ -8,7 +8,7 @@
       <group id="Resx">
         <trans-unit id="Resx/Add" translate="yes" space="preserve">
           <source>Add</source>
-          <target state="translated">إضافة</target>
+          <target state="translated">اضافة</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Add' button, link, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AddFolder" translate="yes" space="preserve">
@@ -21,14 +21,9 @@
           <target state="translated">أوافق على شروط الخدمة</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text placed just after a checkbox to indicate that user is agree with the 'Terms of Service' into the 'create account' page.</note>
         </trans-unit>
-        <trans-unit id="Resx/AppName" translate="yes" space="preserve">
-          <source>MEGA Privacy</source>
-          <target state="translated">MEGA Privacy</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label with the application name. Try to preserve uppercase - (NO-TRANSLATION).</note>
-        </trans-unit>
         <trans-unit id="Resx/Cancel" translate="yes" space="preserve">
           <source>Cancel</source>
-          <target state="translated">إلغاء</target>
+          <target state="translated">الغاء</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Cancel' button, link, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CloudDriveName" translate="yes" space="preserve">
@@ -87,8 +82,8 @@
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Get link' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/LoadingPreview" translate="yes" space="preserve">
-          <source>Loading preview...</source>
-          <target state="translated">تحميل المعاينة...</target>
+          <source>Loading preview…</source>
+          <target state="needs-review-translation">تحميل المعاينة...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label shown with an animation when the app is loading a preview - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_Login" translate="yes" space="preserve">
@@ -268,7 +263,7 @@
         </trans-unit>
         <trans-unit id="Resx/UI_Logout" translate="yes" space="preserve">
           <source>Logout</source>
-          <target state="translated">تسجيل الخروج</target>
+          <target state="translated">الخروج</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Logout' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/HomeRoot" translate="yes" space="preserve">
@@ -370,7 +365,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/AskDownloadLocationText" translate="yes" space="preserve">
           <source>Always ask for download location</source>
-          <target state="translated">أسأل دائما عن موقع التحميل</target>
+          <target state="translated">أسأل دائما عن مكان التحميل</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text placed just before a switch button (on/off) into the 'settings' page indicating if the app should ask always for a download location or use a default download location.</note>
         </trans-unit>
         <trans-unit id="Resx/Available" translate="yes" space="preserve">
@@ -380,8 +375,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/Bandwidth" translate="yes" space="preserve">
           <source>Transfer quota</source>
-          <target state="translated">نقل البيانات
-                </target>
+          <target state="translated">نقل البيانات                </target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Bandwidth' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Cache" translate="yes" space="preserve">
@@ -436,7 +430,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_ExportRecoveryKeyText" translate="yes" space="preserve">
           <source>Export Recovery Key</source>
-          <target state="translated">تصدير مفتاح الاستعادة </target>
+          <target state="translated">تصدير مفتاح الاستعادة</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text 'Export Recovery Key' placed just before two buttons into the 'settings' page to allow see (copy/paste) and export the Recovery Key.</note>
         </trans-unit>
         <trans-unit id="Resx/ExportPhotoAlbumText" translate="yes" space="preserve">
@@ -481,7 +475,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/Monthly" translate="yes" space="preserve">
           <source>Monthly</source>
-          <target state="translated">شهريًا</target>
+          <target state="translated">شهريا</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Monthly' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/NameAscendingSortOption" translate="yes" space="preserve">
@@ -602,7 +596,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/About" translate="yes" space="preserve">
           <source>About</source>
-          <target state="translated">معلومات عن</target>
+          <target state="translated">حول</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'About' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Pause" translate="yes" space="preserve">
@@ -646,8 +640,8 @@ Preserve the PIN uppercase word.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the title of the init tour page dedicated to the easy access. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/InitTourPrivacy1" translate="yes" space="preserve">
-          <source>keep your files safe with MEGA's</source>
-          <target state="translated">ابق ملفاتك آمنة مع خدمة MEGA السحابية</target>
+          <source>keep your files safe with MEGA’s</source>
+          <target state="needs-review-translation">ابق ملفاتك آمنة مع خدمة MEGA السحابية</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label 'keep your files safe with MEGA's' for the first part of the sentence 'keep your files safe with MEGA's end-to-end encryption.', to build this sentence in two colors into the init tour page. Don't place '.' at the end of the string.  Keep all in lowercase less the word MEGA in uppercase.</note>
         </trans-unit>
         <trans-unit id="Resx/InitTourPrivacy2" translate="yes" space="preserve">
@@ -702,7 +696,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/Help" translate="yes" space="preserve">
           <source>Help</source>
-          <target state="translated">مساعدة</target>
+          <target state="translated">المساعدة</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Help' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CameraUploads" translate="yes" space="preserve">
@@ -727,7 +721,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/ClearRubbishBin" translate="yes" space="preserve">
           <source>Empty rubbish bin</source>
-          <target state="translated">مسح سلة المهملات</target>
+          <target state="translated">سلة المهملات فارغة</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Empty rubbish' button, link, text, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Ok" translate="yes" space="preserve">
@@ -757,7 +751,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/EnableCameraUploads" translate="yes" space="preserve">
           <source>Enable Camera Uploads</source>
-          <target state="translated">تفعيل رفع البوم الكاميرا</target>
+          <target state="translated">تفعيل تحميلات الكاميرا</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the switch button to enable or disable the Camera Uploads service - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Security" translate="yes" space="preserve">
@@ -900,7 +894,7 @@ Preserve the {0} code because is for include the name/type of the selected plan 
         </trans-unit>
         <trans-unit id="Resx/SettingsShort" translate="yes" space="preserve">
           <source>Settings</source>
-          <target state="translated">الإعدادات</target>
+          <target state="translated">الاعدادات</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label abreviated for any 'Settings' button, link, text, title, etc. - (String as short as possible - MAX 10 characteres).</note>
         </trans-unit>
         <trans-unit id="Resx/State" translate="yes" space="preserve">
@@ -1202,7 +1196,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/ShareFolder" translate="yes" space="preserve">
           <source>Share folder</source>
-          <target state="translated">شارك مجلد</target>
+          <target state="translated">مجلد المشاركة</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Share folder' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_NewPassword" translate="yes" space="preserve">
@@ -1252,7 +1246,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/EmptyRubbishBin" translate="yes" space="preserve">
           <source>Empty rubbish bin</source>
-          <target state="translated">مسح سلة المهملات</target>
+          <target state="translated">سلة المهملات فارغة</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty rubbish bin page - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/EmptySharedFolders" translate="yes" space="preserve">
@@ -1396,8 +1390,8 @@ NOTE: Keep the capital letter if possible.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a canceled transfer - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateCompleting" translate="yes" space="preserve">
-          <source>Completing...</source>
-          <target state="translated">الاستكمال...</target>
+          <source>Completing…</source>
+          <target state="needs-review-translation">الاستكمال...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being completing - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateDownloaded" translate="yes" space="preserve">
@@ -1406,8 +1400,8 @@ NOTE: Keep the capital letter if possible.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a download transfer when is finished - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateDownloading" translate="yes" space="preserve">
-          <source>Downloading...</source>
-          <target state="translated">جار التحميل...</target>
+          <source>Downloading…</source>
+          <target state="needs-review-translation">جار التحميل...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being downloading - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateError" translate="yes" space="preserve">
@@ -1426,8 +1420,8 @@ NOTE: Keep the capital letter if possible.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a paused transfer - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStatePreparing" translate="yes" space="preserve">
-          <source>Preparing...</source>
-          <target state="translated">الاستعداد...</target>
+          <source>Preparing…</source>
+          <target state="needs-review-translation">الاستعداد...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being preparing - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateQueued" translate="yes" space="preserve">
@@ -1436,8 +1430,8 @@ NOTE: Keep the capital letter if possible.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is queued - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateRetrying" translate="yes" space="preserve">
-          <source>Retrying...</source>
-          <target state="translated">إعادة المحاولة...</target>
+          <source>Retrying…</source>
+          <target state="needs-review-translation">إعادة المحاولة...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being retrying - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateUploaded" translate="yes" space="preserve">
@@ -1446,8 +1440,8 @@ NOTE: Keep the capital letter if possible.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of an upload transfer when is finished - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateUploading" translate="yes" space="preserve">
-          <source>Uploading...</source>
-          <target state="translated">جاري الرفع...</target>
+          <source>Uploading…</source>
+          <target state="needs-review-translation">جاري الرفع...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being uploading - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_CancelDownloads" translate="yes" space="preserve">

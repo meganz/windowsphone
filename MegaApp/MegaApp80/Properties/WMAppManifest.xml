@@ -3,15 +3,10 @@
   <DefaultLanguage xmlns="" code="en" />
   <Languages xmlns="">
     <Language code="ar" />
-    <Language code="bg" />
-    <Language code="cs" />
     <Language code="de" />
     <Language code="es" />
-    <Language code="fa" />
-    <Language code="fi" />
     <Language code="fr" />
     <Language code="he" />
-    <Language code="hu" />
     <Language code="id" />
     <Language code="it" />
     <Language code="ja" />
@@ -19,13 +14,8 @@
     <Language code="nl" />
     <Language code="pl" />
     <Language code="pt-BR" />
-    <Language code="pt" />
     <Language code="ro" />
     <Language code="ru" />
-    <Language code="sk" />
-    <Language code="sl" />
-    <Language code="sr" />
-    <Language code="sv" />
     <Language code="th" />
     <Language code="tr" />
     <Language code="uk" />
@@ -55,19 +45,13 @@
           <Count>0</Count>
           <IconImageURI IsRelative="true" IsResource="false">Assets\Tiles\IconImage.png</IconImageURI>
           <Title>MEGA</Title>
-          <Message>
-          </Message>
-          <BackgroundColor>
-          </BackgroundColor>
+          <Message></Message>
+          <BackgroundColor></BackgroundColor>
           <HasLarge>False</HasLarge>
-          <LargeContent1>
-          </LargeContent1>
-          <LargeContent2>
-          </LargeContent2>
-          <LargeContent3>
-          </LargeContent3>
-          <DeviceLockImageURI IsRelative="true" IsResource="false">
-          </DeviceLockImageURI>
+          <LargeContent1></LargeContent1>
+          <LargeContent2></LargeContent2>
+          <LargeContent3></LargeContent3>
+          <DeviceLockImageURI IsRelative="true" IsResource="false"></DeviceLockImageURI>
         </TemplateIconic>
       </PrimaryToken>
     </Tokens>
