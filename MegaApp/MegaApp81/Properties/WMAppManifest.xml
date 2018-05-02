@@ -23,7 +23,7 @@
     <Language code="zh-Hans" />
     <Language code="zh-Hant" />
   </Languages>
-  <App xmlns="" ProductID="{7d8d3817-2eb5-416a-9147-ed5e83dee03e}" Title="MEGA Privacy" RuntimeType="Silverlight" Version="3.3.2.81" Genre="apps.normal" Author="Mega Limited (GoedWare)" Description="MEGA Cloud Service Application" Publisher="Mega Limited" PublisherID="{78b72e51-6188-4f93-9245-24d5c79f8840}">
+  <App xmlns="" ProductID="{7d8d3817-2eb5-416a-9147-ed5e83dee03e}" Title="MEGA Privacy" RuntimeType="Silverlight" Version="3.3.3.81" Genre="apps.normal" Author="Mega Limited (GoedWare)" Description="MEGA Cloud Service Application" Publisher="Mega Limited" PublisherID="{78b72e51-6188-4f93-9245-24d5c79f8840}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
@@ -49,13 +49,19 @@
           <Count>0</Count>
           <IconImageURI IsRelative="true" IsResource="false">Assets\Tiles\IconImage.png</IconImageURI>
           <Title>MEGA</Title>
-          <Message></Message>
-          <BackgroundColor></BackgroundColor>
+          <Message>
+          </Message>
+          <BackgroundColor>
+          </BackgroundColor>
           <HasLarge>False</HasLarge>
-          <LargeContent1></LargeContent1>
-          <LargeContent2></LargeContent2>
-          <LargeContent3></LargeContent3>
-          <DeviceLockImageURI IsRelative="true" IsResource="false"></DeviceLockImageURI>
+          <LargeContent1>
+          </LargeContent1>
+          <LargeContent2>
+          </LargeContent2>
+          <LargeContent3>
+          </LargeContent3>
+          <DeviceLockImageURI IsRelative="true" IsResource="false">
+          </DeviceLockImageURI>
         </TemplateIconic>
       </PrimaryToken>
     </Tokens>
