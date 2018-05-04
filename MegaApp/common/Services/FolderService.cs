@@ -181,11 +181,12 @@ namespace MegaApp.Services
             }
             catch (Exception e)
             {
+                LogService.Log(MLogLevel.LOG_LEVEL_WARNING, "Error selecting external folder", e);
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
                     new CustomMessageDialog(
                         AppMessages.SelectFolderFailed_Title,
-                        String.Format(AppMessages.SelectFolderFailed, e.Message),
+                        AppMessages.SelectFolderFailed,
                         App.AppInformation,
                         MessageDialogButtons.Ok).ShowDialog();
                 });

@@ -24,12 +24,12 @@ namespace MegaApp.MegaApi
 
         protected override string ErrorMessage
         {
-            get { return AppMessages.ChangePasswordFailed; }
+            get { return AppMessages.AM_PasswordChangeFailed; }
         }
 
         protected override string ErrorMessageTitle
         {
-            get { return UiResources.UI_ChangePassword.ToUpper(); }
+            get { return AppMessages.AM_PasswordChangeFailed_Title.ToUpper(); }
         }
 
         protected override bool ShowErrorMessage
@@ -39,12 +39,12 @@ namespace MegaApp.MegaApi
 
         protected override string SuccessMessage
         {
-            get { return AppMessages.ChangePasswordSuccess; }
+            get { return AppMessages.AM_PasswordChanged; }
         }
 
         protected override string SuccessMessageTitle
         {
-            get { return UiResources.UI_ChangePassword.ToUpper(); }
+            get { return AppMessages.AM_PasswordChanged_Title.ToUpper(); }
         }
 
         protected override bool ShowSuccesMessage

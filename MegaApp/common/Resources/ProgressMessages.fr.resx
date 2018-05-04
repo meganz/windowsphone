@@ -247,10 +247,6 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <value>Enregistrement hors ligne...</value>
     <comment>Progress indicator message when saving folders/files for offline - (String as short as possible).</comment>
   </data>
-  <data name="ServersTooBusy" xml:space="preserve">
-    <value>Les serveurs sont trop occupés. Veuillez patienter...</value>
-    <comment>Progress indicator message when servers are too busy - (String as short as possible).</comment>
-  </data>
   <data name="PM_CancelSubscription" xml:space="preserve">
     <value>Annulation de l'abonnement...</value>
     <comment>Progress indicator message when canceling a subscription - (String as short as possible).</comment>
@@ -318,5 +314,21 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
   <data name="PM_ValidatePurchase" xml:space="preserve">
     <value>Validation...</value>
     <comment>Progress indicator message when validating purchase receipt - (String as short as possible).</comment>
+  </data>
+  <data name="PM_ApiLocked" xml:space="preserve">
+    <value>Ce processus prend plus de temps que prévu. Veuillez patienter.</value>
+    <comment>Progress indicator message when the SDK is waiting for the server to complete a request due to an API lock (API error -3) - (String as short as possible).</comment>
+  </data>
+  <data name="PM_ApiRateLimit" xml:space="preserve">
+    <value>Trop de requêtes. Veuillez patienter.</value>
+    <comment>Progress indicator message when the SDK is waiting for the server to complete a request due to a rate limit (API error -4) - (String as short as possible).</comment>
+  </data>
+  <data name="PM_ConnectivityIssue" xml:space="preserve">
+    <value>Impossible d’atteindre MEGA. Veuillez vérifier votre connectivité ou ressayer plus tard.</value>
+    <comment>Progress indicator message when the SDK is waiting for the server to complete a request due to connectivity issue - (String as short as possible).</comment>
+  </data>
+  <data name="PM_ServersBusy" xml:space="preserve">
+    <value>Les serveurs sont trop occupés. Veuillez patienter.</value>
+    <comment>Progress indicator message when servers are too busy. SDK is waiting for the server to complete a request due to a HTTP error 500  - (String as short as possible).</comment>
   </data>
 </root>

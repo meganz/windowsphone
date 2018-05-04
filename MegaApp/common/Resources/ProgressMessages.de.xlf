@@ -7,256 +7,271 @@
     <body>
       <group id="Resx">
         <trans-unit id="Resx/PM_CancelSubscription" translate="yes" space="preserve">
-          <source>Canceling subscription...</source>
-          <target state="translated">Kauf wird storniert...</target>
+          <source>Canceling subscription…</source>
+          <target state="needs-review-translation">Kauf wird storniert...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when canceling a subscription - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CancelTransfer" translate="yes" space="preserve">
-          <source>Cancelling transfer...</source>
-          <target state="translated">Transfer wird abgebrochen</target>
+          <source>Cancelling transfer…</source>
+          <target state="needs-review-translation">Transfer wird abgebrochen</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when canceling a transfer - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PM_ChangePassword" translate="yes" space="preserve">
-          <source>Changing password...</source>
-          <target state="translated">Passwort wird geändert...</target>
+          <source>Changing password…</source>
+          <target state="needs-review-translation">Passwort wird geändert...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when changing the MEGA account password - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CleanRubbishBin" translate="yes" space="preserve">
-          <source>Clearing the rubbish bin...</source>
-          <target state="translated">Papierkorb wird geleert...</target>
+          <source>Clearing the rubbish bin…</source>
+          <target state="needs-review-translation">Papierkorb wird geleert...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when emptying the rubbish bin - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PM_CloseAllSessions" translate="yes" space="preserve">
-          <source>Closing all sessions...</source>
-          <target state="translated">Alle Sitzungen werden geschlossen...</target>
+          <source>Closing all sessions…</source>
+          <target state="needs-review-translation">Alle Sitzungen werden geschlossen...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when clossing all sessions - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PM_CloseSession" translate="yes" space="preserve">
-          <source>Closing session...</source>
-          <target state="translated">Sitzung wird geschlossen...</target>
+          <source>Closing session…</source>
+          <target state="needs-review-translation">Sitzung wird geschlossen...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when clossing a session - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PM_ConfirmAccount" translate="yes" space="preserve">
-          <source>Confirming account...</source>
-          <target state="translated">Account wird bestätigt...</target>
+          <source>Confirming account…</source>
+          <target state="needs-review-translation">Account wird bestätigt...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when confirming a MEGA account - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PM_CreateAccount" translate="yes" space="preserve">
-          <source>Creating account...</source>
-          <target state="translated">Account wird erstellt...</target>
+          <source>Creating account…</source>
+          <target state="needs-review-translation">Account wird erstellt...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when creating a MEGA account - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PM_CreateFolder" translate="yes" space="preserve">
-          <source>Creating folder...</source>
-          <target state="translated">Erstelle Ordner...</target>
+          <source>Creating folder…</source>
+          <target state="needs-review-translation">Ordner wird erstellt...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when creating a folder - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CreditCardStore" translate="yes" space="preserve">
-          <source>Storing credit card...</source>
-          <target state="translated">Kreditkarte wird gespeichert...</target>
+          <source>Storing credit card…</source>
+          <target state="needs-review-translation">Kreditkarte wird gespeichert...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when storing a credit card - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/DeleteNode" translate="yes" space="preserve">
-          <source>Deleting '{0}'...</source>
-          <target state="translated">'{0}' wird gelöscht...</target>
+          <source>Deleting '{0}'…</source>
+          <target state="needs-review-translation">'{0}' wird gelöscht...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when deleting a node (folder or file) indicating the name - (String as short as possible).
 Preserve the '{0}' code because is for include node name.</note>
         </trans-unit>
         <trans-unit id="Resx/DownloadLink" translate="yes" space="preserve">
-          <source>Retrieving download link...</source>
-          <target state="translated">Downloadlink wurde angefordert...</target>
+          <source>Retrieving download link…</source>
+          <target state="needs-review-translation">Downloadlink wurde angefordert...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when retieving a download link - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/FastLogin" translate="yes" space="preserve">
-          <source>Resuming session...</source>
-          <target state="translated">Sitzung wird fortgesetzt...</target>
+          <source>Resuming session…</source>
+          <target state="needs-review-translation">Sitzung wird fortgesetzt...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when resuming a session - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/FetchingNodes" translate="yes" space="preserve">
-          <source>Fetching files and folders... [{0}]</source>
-          <target state="translated">Dateien und Ordner werden geladen... [{0}]</target>
+          <source>Fetching files and folders… [{0}]</source>
+          <target state="needs-review-translation">Dateien und Ordner werden geladen... [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when loading nodes from MEGA web service - (String as short as possible).
 Preserve the [{0}] code because is for include current number of fetched nodes.</note>
         </trans-unit>
         <trans-unit id="Resx/GetAccountDetails" translate="yes" space="preserve">
-          <source>Getting account details...</source>
-          <target state="translated">Accountdetails wurden angefordert...</target>
+          <source>Getting account details…</source>
+          <target state="needs-review-translation">Accountdetails wurden angefordert...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when getting account details - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/GetContactData" translate="yes" space="preserve">
-          <source>Getting contact data...</source>
-          <target state="translated">Kontaktdaten werden angefordert</target>
+          <source>Getting contact data…</source>
+          <target state="needs-review-translation">Kontaktdaten werden angefordert</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when getting contact details - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PM_GetLink" translate="yes" space="preserve">
-          <source>Getting link...</source>
-          <target state="translated">Link wird erstellt...</target>
+          <source>Getting link…</source>
+          <target state="needs-review-translation">Link wird erstellt...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when getting a link to export a node - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/GetPaymentMethods" translate="yes" space="preserve">
-          <source>Getting payment methods...</source>
-          <target state="translated">Hole verfügbare Zahlungsmethoden</target>
+          <source>Getting payment methods…</source>
+          <target state="needs-review-translation">Hole verfügbare Zahlungsmethoden</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when getting payment methods - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/GetPaymentUrl" translate="yes" space="preserve">
-          <source>Getting payment URL...</source>
-          <target state="translated">Zahlungs-URL angefordert...</target>
+          <source>Getting payment URL…</source>
+          <target state="needs-review-translation">Zahlungs-URL angefordert...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when getting a payment Url - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/GetPreview" translate="yes" space="preserve">
-          <source>Getting preview...</source>
-          <target state="translated">Preview wird geladen...</target>
+          <source>Getting preview…</source>
+          <target state="needs-review-translation">Preview wird geladen...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when getting a preview - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/GetUserData" translate="yes" space="preserve">
-          <source>Getting user data...</source>
-          <target state="translated">Benutzerdaten werden übertragen...</target>
+          <source>Getting user data…</source>
+          <target state="needs-review-translation">Benutzerdaten werden übertragen...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when getting account details - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ImportFile" translate="yes" space="preserve">
-          <source>Importing file...</source>
-          <target state="translated">Fileimport...</target>
+          <source>Importing file…</source>
+          <target state="needs-review-translation">Fileimport...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when importing a file - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/InviteContactAdd" translate="yes" space="preserve">
-          <source>Sending contact request...</source>
-          <target state="translated">Kontakanfrage wird gestellt...</target>
+          <source>Sending contact request…</source>
+          <target state="needs-review-translation">Kontakanfrage wird gestellt...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when sending a contact request - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/InviteContactDelete" translate="yes" space="preserve">
-          <source>Deleting contact request...</source>
-          <target state="translated">Kontaktanfrage wird gelöscht...</target>
+          <source>Deleting contact request…</source>
+          <target state="needs-review-translation">Kontaktanfrage wird gelöscht...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when deleting a contact request - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/InviteContactRemind" translate="yes" space="preserve">
-          <source>Reminding contact about the request...</source>
-          <target state="translated">Wiederhole Kontaktanfrage...</target>
+          <source>Reminding contact about the request…</source>
+          <target state="needs-review-translation">Wiederhole Kontaktanfrage...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when reminding a contact request - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/LoadNodes" translate="yes" space="preserve">
-          <source>Building view...</source>
-          <target state="translated">Ansicht wird aufgebaut...</target>
+          <source>Building view…</source>
+          <target state="needs-review-translation">Ansicht wird aufgebaut...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when building a nodes view - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PM_Login" translate="yes" space="preserve">
-          <source>Logging in...</source>
-          <target state="translated">Anmeldung...</target>
+          <source>Logging in…</source>
+          <target state="needs-review-translation">Anmeldung...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when logging in - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PM_Logout" translate="yes" space="preserve">
-          <source>Logging out...</source>
-          <target state="translated">Abmeldung...</target>
+          <source>Logging out…</source>
+          <target state="needs-review-translation">Abmeldung...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when logging out - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/MoveNode" translate="yes" space="preserve">
-          <source>Moving...</source>
-          <target state="translated">Verschiebe...</target>
+          <source>Moving…</source>
+          <target state="needs-review-translation">Verschiebe...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when moving a node to a different parent - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/NodeToTrash" translate="yes" space="preserve">
-          <source>Moving to Rubbish bin...</source>
-          <target state="translated">Verschieben in den Papierkorb...</target>
+          <source>Moving to Rubbish bin…</source>
+          <target state="needs-review-translation">Verschieben in den Papierkorb...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when moving a node to the rubbish bin (trash) - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PauseTransfers" translate="yes" space="preserve">
-          <source>Pausing transfers...</source>
-          <target state="translated">Downloads werden angehalten...</target>
+          <source>Pausing transfers…</source>
+          <target state="needs-review-translation">Downloads werden angehalten...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when pausing transfers - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PrepareDownloads" translate="yes" space="preserve">
-          <source>Preparing downloads...</source>
-          <target state="translated">Downloads werden vorbereitet...</target>
+          <source>Preparing downloads…</source>
+          <target state="needs-review-translation">Downloads werden vorbereitet...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when preparing downloads - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PrepareUploads" translate="yes" space="preserve">
-          <source>Preparing uploads...</source>
-          <target state="translated">Uploads werden vorbereitet...</target>
+          <source>Preparing uploads…</source>
+          <target state="needs-review-translation">Uploads werden vorbereitet...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when preparing uploads - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/RemoveContact" translate="yes" space="preserve">
-          <source>Removing contact...</source>
-          <target state="translated">Kontakt wird entfernt...</target>
+          <source>Removing contact…</source>
+          <target state="needs-review-translation">Kontakt wird entfernt...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when removing a contact - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/RemoveFromOffline" translate="yes" space="preserve">
-          <source>Removing from offline...</source>
-          <target state="translated">Lösche Offline-Daten...</target>
+          <source>Removing from offline…</source>
+          <target state="needs-review-translation">Lösche Offline-Daten...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when removing folders/files from offline - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PM_RemoveLink" translate="yes" space="preserve">
-          <source>Removing link...</source>
-          <target state="translated">Link wird entfernt...</target>
+          <source>Removing link…</source>
+          <target state="needs-review-translation">Link wird entfernt...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when removing a link to export a node - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/RemoveNode" translate="yes" space="preserve">
-          <source>Removing...</source>
-          <target state="translated">Entferne...</target>
+          <source>Removing…</source>
+          <target state="needs-review-translation">Entferne...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when removing a node (file or folder) - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/RenameNode" translate="yes" space="preserve">
-          <source>Renaming...</source>
-          <target state="translated">Umbenennung...</target>
+          <source>Renaming…</source>
+          <target state="needs-review-translation">Umbenennung...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when renaming a node - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ReplyContactRequestAccept" translate="yes" space="preserve">
-          <source>Accepting contact request...</source>
-          <target state="translated">Kontaktanfrage wird bestätigt...</target>
+          <source>Accepting contact request…</source>
+          <target state="needs-review-translation">Kontaktanfrage wird bestätigt...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when accepting a contact request - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ReplyContactRequestDeny" translate="yes" space="preserve">
-          <source>Denying contact request...</source>
-          <target state="translated">Kontaktanfrage wird zurückgewiesen...</target>
+          <source>Denying contact request…</source>
+          <target state="needs-review-translation">Kontaktanfrage wird zurückgewiesen...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when denying a contact request - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ReplyContactRequestIgnore" translate="yes" space="preserve">
-          <source>Ignoring contact request...</source>
-          <target state="translated">Kontaktanfrage wird ignoriert...</target>
+          <source>Ignoring contact request…</source>
+          <target state="needs-review-translation">Kontaktanfrage wird ignoriert...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when ignoring a contact request - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ResumeTransfers" translate="yes" space="preserve">
-          <source>Resuming transfers...</source>
-          <target state="translated">Transfers werden fortgesetzt...</target>
+          <source>Resuming transfers…</source>
+          <target state="needs-review-translation">Transfers werden fortgesetzt...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when resuming transfers - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/SaveForOffline" translate="yes" space="preserve">
-          <source>Saving for offline...</source>
-          <target state="translated">Speichere für Offline-Nutzung...</target>
+          <source>Saving for offline…</source>
+          <target state="needs-review-translation">Speichere für Offline-Nutzung...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when saving folders/files for offline - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/ServersTooBusy" translate="yes" space="preserve">
-          <source>Servers too busy. Please wait…</source>
-          <target state="translated">Server überlastet. Bitte warten...</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when servers are too busy - (String as short as possible).</note>
-        </trans-unit>
         <trans-unit id="Resx/PM_UpgradeAccount" translate="yes" space="preserve">
-          <source>Upgrading account...</source>
-          <target state="translated">Account-Upgrade...</target>
+          <source>Upgrading account…</source>
+          <target state="needs-review-translation">Account-Upgrade...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when upgrading an account - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PM_OpenFileLink" translate="yes" space="preserve">
-          <source>Opening file link...</source>
-          <target state="translated">Dateilink wird geöffnet...</target>
+          <source>Opening file link…</source>
+          <target state="needs-review-translation">Dateilink wird geöffnet...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when opening a file link to import/download - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PM_OpenFolderLink" translate="yes" space="preserve">
-          <source>Opening folder link...</source>
-          <target state="translated">Ordnerlink wird geöffnet...</target>
+          <source>Opening folder link…</source>
+          <target state="needs-review-translation">Ordnerlink wird geöffnet...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when opening a folder link to import/download - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PM_CopyNode" translate="yes" space="preserve">
-          <source>Copying...</source>
-          <target state="translated">Kopiere...</target>
+          <source>Copying…</source>
+          <target state="needs-review-translation">Kopiere...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when copying a node to a different parent - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PM_ImportFolder" translate="yes" space="preserve">
-          <source>Importing folder...</source>
-          <target state="translated">Ordner wird importiert...</target>
+          <source>Importing folder…</source>
+          <target state="needs-review-translation">Ordner wird importiert...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when importing a folder - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PM_ValidatePurchase" translate="yes" space="preserve">
-          <source>Validating...</source>
-          <target state="translated">Überprüfung läuft...</target>
+          <source>Validating…</source>
+          <target state="needs-review-translation">Überprüfung läuft...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when validating purchase receipt - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/PM_ApiLocked" translate="yes" space="preserve">
+          <source>This process is taking longer than expected. Please wait.</source>
+          <target state="translated">This process is taking longer than expected. Please wait.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when the SDK is waiting for the server to complete a request due to an API lock (API error -3) - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/PM_ApiRateLimit" translate="yes" space="preserve">
+          <source>Too many requests. Please wait.</source>
+          <target state="translated">Too many requests. Please wait.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when the SDK is waiting for the server to complete a request due to a rate limit (API error -4) - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/PM_ConnectivityIssue" translate="yes" space="preserve">
+          <source>Unable to reach MEGA. Please check your connectivity or try again later.</source>
+          <target state="translated">Unable to reach MEGA. Please check your connectivity or try again later.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when the SDK is waiting for the server to complete a request due to connectivity issue - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/PM_ServersBusy" translate="yes" space="preserve">
+          <source>Servers are too busy. Please wait…</source>
+          <target state="needs-review-translation">Unsere Server sind kurzzeitig überlastet. Es geht gleich weiter.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when servers are too busy. SDK is waiting for the server to complete a request due to a HTTP error 500  - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>

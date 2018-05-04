@@ -209,7 +209,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the process/request to get a link to a node failed.</comment>
   </data>
   <data name="GetLinkFailed_Title" xml:space="preserve">
-    <value>Tidak dapat mengambil link</value>
+    <value>Gagal mendapatkan link</value>
     <comment>Title of the dialog displayed when the process/request to get a link to a node failed - (String as short as possible).</comment>
   </data>
   <data name="GetPreviewFailed" xml:space="preserve">
@@ -303,7 +303,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
     <comment>Title of the dialog displayed when the process/request remove definitely an item from the rubbish bin failed - (String as short as possible).</comment>
   </data>
   <data name="RemoveNodeSuccess" xml:space="preserve">
-    <value>Item telah berhasil dihapus</value>
+    <value>Item berhasil dihapus</value>
     <comment>Message of the dialog displayed when remove successfully a node definitely from the rubbish bin.</comment>
   </data>
   <data name="RemoveNodeSuccess_Title" xml:space="preserve">
@@ -661,9 +661,8 @@ Cobalah menyimpan / menyalin file ke memori internal perangkat Anda.</value>
     <comment>Button of the dialog displayed the first time that a user want to download a image. Option automatically download to the photo album after downloads - (String as short as possible).</comment>
   </data>
   <data name="SelectFolderFailed" xml:space="preserve">
-    <value>Gagal memilih folder. Harap, coba kembali atau pilih folder lain: [{0}]</value>
-    <comment>Message of the dialog displayed when the process to select a folder failed.
-Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+    <value>Failed to select folder. Please, try again or select another one.</value>
+    <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="SelectFolderFailed_Title" xml:space="preserve">
     <value>Pilih folder gagal</value>
@@ -686,10 +685,6 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="SelectFileFailed_Title" xml:space="preserve">
     <value>Pemilihan file gagal</value>
     <comment>Title of the dialog displayed when the process to select files failed - (String as short as possible).</comment>
-  </data>
-  <data name="MalformedEmail" xml:space="preserve">
-    <value>E-mail salah. Harap coba kembali.</value>
-    <comment>Message of the dialog displayed when the user types a malformed email address.</comment>
   </data>
   <data name="WrongEmailPasswordLogin" xml:space="preserve">
     <value>Alamat email atau password salah. Harap coba kembali.</value>
@@ -923,21 +918,9 @@ Preserve the {0} code because is for include the number of contacts to be remove
     <value>Hapus kontak?</value>
     <comment>Title of the dialog displayed when a user want to remove multiple contacts asking for confirmation to make it - (String as short as possible).</comment>
   </data>
-  <data name="ChangePasswordFailed" xml:space="preserve">
-    <value>Gagal mengganti password. Harap coba kembali.</value>
-    <comment>Message of the dialog displayed when the process/request to change the MEGA account password failed.</comment>
-  </data>
-  <data name="ChangePasswordSuccess" xml:space="preserve">
-    <value>Kata sandi anda telah dirubah.</value>
-    <comment>Message of the dialog displayed when change a MEGA account password succesfully.</comment>
-  </data>
   <data name="NewAndOldPasswordMatch" xml:space="preserve">
     <value>Password baru dan lama tidak sama.</value>
     <comment>Message of the dialog displayed when a user are trying to change his/her MEGA account password and the new password is equal to the old password.</comment>
-  </data>
-  <data name="RequiredFieldsChangePassword" xml:space="preserve">
-    <value>Harap isi password lama akun MEGA anda dan password baru akun MEGA anda.</value>
-    <comment>Message of the dialog displayed when required fields for change password are not filled in.</comment>
   </data>
   <data name="CloseAllSessionsFailed" xml:space="preserve">
     <value>Gagal menutup sesi. Harap coba kembali. [{0}]</value>
@@ -987,8 +970,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
   </data>
   <data name="FolderUnauthorizedAccess" xml:space="preserve">
     <value>Anda tidak memiliki akses ke path '{0}'. Harap pilih path yang lain dan coba kembali.</value>
-    <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.
-Preserve the '{0}' code because is for include the file/folder path in runtime.</comment>
+    <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder in the device memory. For example to download a file/folder, create a new folder, etc.
+Preserve the '{0}' code because is for include the folder name in runtime.</comment>
   </data>
   <data name="FolderUnauthorizedAccess_Title" xml:space="preserve">
     <value>Akses ditolak</value>
@@ -1024,10 +1007,6 @@ Preserve the '{0}' code because is for include the file name in runtime.</commen
   <data name="AM_InvalidLink" xml:space="preserve">
     <value>Link salah</value>
     <comment>Message of the dialog displayed when the user is trying to open an invliad lick (NO KEY).</comment>
-  </data>
-  <data name="SelectFolderFailedNoErrorCode" xml:space="preserve">
-    <value>Gagal memilih folder. Harap coba kembali dan pilih folder lain.</value>
-    <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="AM_ImportFileFailed" xml:space="preserve">
     <value>File import gagal [{0}]</value>
@@ -1124,14 +1103,14 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>Ini bisa jadi karena alasan berikut:
 - File telah dihapus karena pelanggaran ToS / AUP.
 - URL tidak valid - link yang Anda coba akses tidak ada.
-- File telah dihapus oleh pengguna.</value>
+- File telah dihapus oleh pengguna.                                </value>
     <comment>Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</comment>
   </data>
   <data name="AM_FolderLinkUnavailable" xml:space="preserve">
     <value>Ini bisa jadi karena alasan berikut:
 - Link folder telah dihapus karena pelanggaran ToS / AUP.
 - URL tidak valid - link yang Anda coba akses tidak ada.
-- Link folder telah dihapus oleh pengguna.</value>
+- Link folder telah dihapus oleh pengguna.                                </value>
     <comment>Error message shown when a folder link doesn't exist. Keep "\n"</comment>
   </data>
   <data name="AM_LinkUnavailableTitle" xml:space="preserve">
@@ -1306,7 +1285,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Message of the warning dialog shown when the user tries to make a new sign up using an invalid link (#newsignup).</comment>
   </data>
   <data name="AM_AccountBlocked" xml:space="preserve">
-    <value>Your account was terminated due to a breach of MEGA's Terms of Service, such as abuse of rights of others; sharing and/or importing illegal data; or system abuse.</value>
+    <value>Your account was terminated due to a breach of MEGA’s Terms of Service, such as abuse of rights of others; sharing and/or importing illegal data; or system abuse.</value>
     <comment>Message of the dialog shown when the user is trying to login and the account has been blocked.</comment>
   </data>
   <data name="AM_AccountNotConfirmed" xml:space="preserve">
@@ -1416,7 +1395,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the process to prepare files or folders for download failed.</comment>
   </data>
   <data name="AM_AccountBlockedCopyright" xml:space="preserve">
-    <value>Your account has been suspended due to multiple breaches of MEGA's Terms of Service. Please check your email inbox.</value>
+    <value>Your account has been suspended due to multiple breaches of MEGA’s Terms of Service. Please check your email inbox.</value>
     <comment>Message of the dialog shown when the user is trying to login and the account has been blocked for multiple copyright violation.</comment>
   </data>
 </root>

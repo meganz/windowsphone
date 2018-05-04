@@ -209,7 +209,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the process/request to get a link to a node failed.</comment>
   </data>
   <data name="GetLinkFailed_Title" xml:space="preserve">
-    <value>リンクできません。</value>
+    <value>リンク取得失敗</value>
     <comment>Title of the dialog displayed when the process/request to get a link to a node failed - (String as short as possible).</comment>
   </data>
   <data name="GetPreviewFailed" xml:space="preserve">
@@ -303,7 +303,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
     <comment>Title of the dialog displayed when the process/request remove definitely an item from the rubbish bin failed - (String as short as possible).</comment>
   </data>
   <data name="RemoveNodeSuccess" xml:space="preserve">
-    <value>取り除きました。</value>
+    <value>アイテムを削除成功</value>
     <comment>Message of the dialog displayed when remove successfully a node definitely from the rubbish bin.</comment>
   </data>
   <data name="RemoveNodeSuccess_Title" xml:space="preserve">
@@ -608,7 +608,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException" xml:space="preserve">
-    <value>このファイルタイプをコピー先のフォルダにコピーする権限がありません。サポートされていないタイプのファイルをSDカードに保存/コピーしようとしていますか？　その代わりに、ファイルを端末の内蔵メモリに保存/コピーしてください。</value>
+    <value>このファイルタイプをコピー先のフォルダにコピーする権限がありません。サポートされていないタイプのファイルをSDカードに保存/コピーしようとしていますか？
+その代わりに、ファイルを端末の内蔵メモリに保存/コピーしてください。</value>
     <comment>Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException_Title" xml:space="preserve">
@@ -660,9 +661,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Button of the dialog displayed the first time that a user want to download a image. Option automatically download to the photo album after downloads - (String as short as possible).</comment>
   </data>
   <data name="SelectFolderFailed" xml:space="preserve">
-    <value>フォルダ選択できませんでした。再度トライするか、別のフォルダを選択して下さい。[{0}]</value>
-    <comment>Message of the dialog displayed when the process to select a folder failed.
-Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+    <value>フォルダを選択できませんでした。もう一度やり直すか、別のものを選択してください。</value>
+    <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="SelectFolderFailed_Title" xml:space="preserve">
     <value>失敗したフォルダを選択</value>
@@ -685,10 +685,6 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="SelectFileFailed_Title" xml:space="preserve">
     <value>ファイル選択できず</value>
     <comment>Title of the dialog displayed when the process to select files failed - (String as short as possible).</comment>
-  </data>
-  <data name="MalformedEmail" xml:space="preserve">
-    <value>不備メール。やり直して下さい。</value>
-    <comment>Message of the dialog displayed when the user types a malformed email address.</comment>
   </data>
   <data name="WrongEmailPasswordLogin" xml:space="preserve">
     <value>アドレス、又はパスワードが違います。再度トライして下さい。</value>
@@ -922,21 +918,9 @@ Preserve the {0} code because is for include the number of contacts to be remove
     <value>知り合いを削除しますか</value>
     <comment>Title of the dialog displayed when a user want to remove multiple contacts asking for confirmation to make it - (String as short as possible).</comment>
   </data>
-  <data name="ChangePasswordFailed" xml:space="preserve">
-    <value>パスワードを変更失敗。もう一度やり直してください。</value>
-    <comment>Message of the dialog displayed when the process/request to change the MEGA account password failed.</comment>
-  </data>
-  <data name="ChangePasswordSuccess" xml:space="preserve">
-    <value>あなたのパスワードは変更されました。</value>
-    <comment>Message of the dialog displayed when change a MEGA account password succesfully.</comment>
-  </data>
   <data name="NewAndOldPasswordMatch" xml:space="preserve">
     <value>新旧のパスワードが一致しません。</value>
     <comment>Message of the dialog displayed when a user are trying to change his/her MEGA account password and the new password is equal to the old password.</comment>
-  </data>
-  <data name="RequiredFieldsChangePassword" xml:space="preserve">
-    <value>過去のMEGAパスワードと新しいMEGAパスワードを入力してください。</value>
-    <comment>Message of the dialog displayed when required fields for change password are not filled in.</comment>
   </data>
   <data name="CloseAllSessionsFailed" xml:space="preserve">
     <value>セッションを閉じられませんでした。もう一度やり直してください。 [{0}]</value>
@@ -985,9 +969,9 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</comment>
   </data>
   <data name="FolderUnauthorizedAccess" xml:space="preserve">
-    <value>あなたはパス '{0}'にアクセスできません。別のものを選択してもう一度お試しください。</value>
-    <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.
-Preserve the '{0}' code because is for include the file/folder path in runtime.</comment>
+    <value>あなたはフォルダ '{0}'にアクセスできません。別のものを選択してもう一度お試しください。</value>
+    <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder in the device memory. For example to download a file/folder, create a new folder, etc.
+Preserve the '{0}' code because is for include the folder name in runtime.</comment>
   </data>
   <data name="FolderUnauthorizedAccess_Title" xml:space="preserve">
     <value>アクセスは拒否されました。</value>
@@ -1023,10 +1007,6 @@ Preserve the '{0}' code because is for include the file name in runtime.</commen
   <data name="AM_InvalidLink" xml:space="preserve">
     <value>リンク無効</value>
     <comment>Message of the dialog displayed when the user is trying to open an invliad lick (NO KEY).</comment>
-  </data>
-  <data name="SelectFolderFailedNoErrorCode" xml:space="preserve">
-    <value>フォルダを選択失敗。もう一度やり直すか他のフォルダを選択してください。</value>
-    <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="AM_ImportFileFailed" xml:space="preserve">
     <value>ファイルインポートに失敗しました[{0}]</value>
@@ -1123,14 +1103,14 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>これは、以下の理由による可能性があります：
 －ファイルがToS/AUP違反により削除されました。
 －URLが無効－アクセスしようとしているリンクが存在しません。
-－ファイルがユーザーによって削除されました。</value>
+－ファイルがユーザーによって削除されました。                                </value>
     <comment>Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</comment>
   </data>
   <data name="AM_FolderLinkUnavailable" xml:space="preserve">
     <value>これは、以下の理由による可能性があります：
 －フォルダがToS/AUP違反により削除されました。
 －URLが無効－アクセスしようとしているリンクが存在しません。
-－フォルダリンクがユーザーによって削除されました。</value>
+－フォルダリンクがユーザーによって削除されました。                                </value>
     <comment>Error message shown when a folder link doesn't exist. Keep "\n"</comment>
   </data>
   <data name="AM_LinkUnavailableTitle" xml:space="preserve">

@@ -125,10 +125,6 @@
     <value>adaugă folder</value>
     <comment>Label for any 'Add folder' button, link, etc. - (String as short as possible).</comment>
   </data>
-  <data name="AppName" xml:space="preserve">
-    <value>MEGA Privacy</value>
-    <comment>Label with the application name. Try to preserve uppercase - (NO-TRANSLATION).</comment>
-  </data>
   <data name="Cancel" xml:space="preserve">
     <value>Anulează</value>
     <comment>Label for any 'Cancel' button, link, etc. - (String as short as possible).</comment>
@@ -350,7 +346,7 @@
     <comment>Text placed just before app version number into the 'about' page.</comment>
   </data>
   <data name="AskDownloadLocationText" xml:space="preserve">
-    <value>Întreabă mereu locaţia descărcării</value>
+    <value>Întreabă mereu pentru locaţia de descărcare</value>
     <comment>Text placed just before a switch button (on/off) into the 'settings' page indicating if the app should ask always for a download location or use a default download location.</comment>
   </data>
   <data name="Available" xml:space="preserve">
@@ -1037,11 +1033,11 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Get link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_Login" xml:space="preserve">
-    <value>Autentifică-te</value>
+    <value>Autentificare</value>
     <comment>Label for any 'Login' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_Logout" xml:space="preserve">
-    <value>Deconectare</value>
+    <value>Deconectează-te</value>
     <comment>Label for any 'Logout' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_UpgradeAccount" xml:space="preserve">

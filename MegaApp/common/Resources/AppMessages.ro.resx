@@ -286,7 +286,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when save successfully a single picture in the photo album - (String as short as possible).</comment>
   </data>
   <data name="RemoveItemQuestion" xml:space="preserve">
-    <value>Sigur doreşti să elimini {0}?</value>
+    <value>Sigur vrei să elimini {0}?</value>
     <comment>Message of the dialog displayed when a user want to remove definitely an itemfrom the rubbish bin, asking for confirmation to do it.
 Preserve the {0} code because is for include the name of the item to be removed in runtime.</comment>
   </data>
@@ -386,7 +386,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the logout to the MEGA cloud service api fails - (String as short as possible).</comment>
   </data>
   <data name="MultiSelectRemoveQuestion" xml:space="preserve">
-    <value>Sigur doreşti să elimini {0} elemente?</value>
+    <value>Sigur vrei să elimini {0} elemente?</value>
     <comment>Message of the dialog displayed when a user want to remove multiple nodes definitely from the rubbish bin, asking for confirmation to make the movement.
 Preserve the {0} code because is for include the number of nodes to be removed in runtime.</comment>
   </data>
@@ -412,7 +412,7 @@ Preserve the {0} code because is for include the number of nodes to be moved in 
     <comment>Title of the dialog displayed when the process/request to move nodes to the rubbish bin failed - (String as short as possible).</comment>
   </data>
   <data name="MoveToRubbishBinQuestion" xml:space="preserve">
-    <value>Sigur doreşti să muţi {0} în coşul de gunoi?</value>
+    <value>Sigur vrei să muţi {0} în coşul de gunoi?</value>
     <comment>Message of the dialog displayed when a user want to move a single node to the rubbish bin, asking for confirmation to make the movement.
 Preserve the {0} code because is for include the name of the node to be moved in runtime.</comment>
   </data>
@@ -429,7 +429,7 @@ Preserve the {0} code because is for include the name of the node to be moved in
     <comment>Title of the dialog displayed when move successfully one single node to the rubbish bin - (String as short as possible).</comment>
   </data>
   <data name="MultiMoveToRubbishBinQuestion" xml:space="preserve">
-    <value>Sigur doreşti să muţi în coşul de gunoi {0} elemente?</value>
+    <value>Sigur vrei să muţi {0} elemente în coşul de gunoi?</value>
     <comment>Message of the dialog displayed when a user want to move multiple nodes to the rubbish bin, asking for confirmation to make the movement.
 Preserve the {0} code because is for include the number of nodes to be moved in runtime.</comment>
   </data>
@@ -447,7 +447,7 @@ Preserve the {0} code because is for include the number of nodes to be moved in 
     <comment>Title of the dialog displayed when move successfully multiple nodes to the rubbish bin - (String as short as possible).</comment>
   </data>
   <data name="PendingTransfersLogout" xml:space="preserve">
-    <value>Ai {0} transferuri în curs. Transferurile în curs vor fi anulate. Sigur doreşti să te deconectezi?</value>
+    <value>Ai {0} transferuri în curs. Transferurile în curs vor fi anulate. Sigur vrei să te deconectezi?</value>
     <comment>Message of the dialog displayed when a user are trying to logout the application and has pending transfers. Asks for confirmation to logout.
 Preserve the {0} code because is for include the number of pending transfers in runtime.</comment>
   </data>
@@ -456,7 +456,7 @@ Preserve the {0} code because is for include the number of pending transfers in 
     <comment>Title of the dialog displayed when a user are trying to logout the application and has pending transfers. Asks for confirmation to logout - (String as short as possible).</comment>
   </data>
   <data name="PendingTransfersExit" xml:space="preserve">
-    <value>Ai {0} transferuri în curs. Transferurile în curs vor fi anulate. Sigur doreşti să ieşi?</value>
+    <value>Ai {0} transferuri în curs. Transferurile în curs vor fi anulate. Sigur vrei să ieşi?</value>
     <comment>Message of the dialog displayed when a user are trying to exit the application and has pending transfers. Asks for confirmation to exit.
 Preserve the {0} code because is for include the number of pending transfers in runtime.</comment>
   </data>
@@ -661,9 +661,8 @@ Te rugăm să încerci să salvezi/copiezi fişierul în memoria internă a disp
     <comment>Button of the dialog displayed the first time that a user want to download a image. Option automatically download to the photo album after downloads - (String as short as possible).</comment>
   </data>
   <data name="SelectFolderFailed" xml:space="preserve">
-    <value>Eşec la selectarea folderului. Încearcă din nou sau selectează alt folder: [{0}]</value>
-    <comment>Message of the dialog displayed when the process to select a folder failed.
-Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+    <value>Eşec la selectarea folderului. Te rugăm să încerci din nou sau selectează alt folder: [{0}]</value>
+    <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="SelectFolderFailed_Title" xml:space="preserve">
     <value>Selectarea folderului a eşuat</value>
@@ -687,16 +686,12 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>Selectarea fişierului a eşuat</value>
     <comment>Title of the dialog displayed when the process to select files failed - (String as short as possible).</comment>
   </data>
-  <data name="MalformedEmail" xml:space="preserve">
-    <value>E-mail incorect. Te rugăm să reîncerci.</value>
-    <comment>Message of the dialog displayed when the user types a malformed email address.</comment>
-  </data>
   <data name="WrongEmailPasswordLogin" xml:space="preserve">
     <value>Adresă de e-mail sau parolă incorectă. Te rugăm să reîncerci.</value>
     <comment>Message of the dialog displayed when a user is trying to login with an e-mail that is not associated with a MEGA account or type a wrong password. Preserve the MEGA word in uppercase.</comment>
   </data>
   <data name="DeleteNodeQuestion" xml:space="preserve">
-    <value>Sigur doreşti să ştergi definitiv {0}?</value>
+    <value>Sigur vrei să ştergi definitiv {0}?</value>
     <comment>Message of the dialog displayed when a user want to delete permanently a node, asking for confirmation to make it.
 Preserve the {0} code because is for include name of the node to be removed in runtime.</comment>
   </data>
@@ -750,7 +745,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process to save settings failed - (String as short as possible).</comment>
   </data>
   <data name="ShortCutFailed" xml:space="preserve">
-    <value>A apărut o eroare la încercarea de deschidere a scurtăturii. Poate este o scurtătură invalidă sau folderul de destinaţie a fost şters.</value>
+    <value>A apărut o eroare la încercarea de deschidere a scurtăturii. Poate este o scurtătură nevalidă sau folderul de destinaţie a fost şters.</value>
     <comment>Message of the dialog displayed when the user is trying to open an invalid shortcut.</comment>
   </data>
   <data name="ShortCutFailed_Title" xml:space="preserve">
@@ -778,7 +773,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed in cases that the user types some data with a wrong format - (String as short as possible).</comment>
   </data>
   <data name="CancelSubscriptionFailed" xml:space="preserve">
-    <value>Abonamentul nu a fost anulat corect. Te rugăm să contactezi support@mega.nz pentru a anula abonamentul.</value>
+    <value>Abonamentul nu a fost anulat cu succes. Te rugăm să contactezi support@mega.nz pentru a anula abonamentul.</value>
     <comment>Message of the dialog displayed when the process/request to cancel a subscription failed.</comment>
   </data>
   <data name="CancelSubscriptionFailed_Title" xml:space="preserve">
@@ -923,21 +918,9 @@ Preserve the {0} code because is for include the number of contacts to be remove
     <value>Elimini contactele?</value>
     <comment>Title of the dialog displayed when a user want to remove multiple contacts asking for confirmation to make it - (String as short as possible).</comment>
   </data>
-  <data name="ChangePasswordFailed" xml:space="preserve">
-    <value>Eşec la schimbarea parolei. Te rugăm să reîncerci.</value>
-    <comment>Message of the dialog displayed when the process/request to change the MEGA account password failed.</comment>
-  </data>
-  <data name="ChangePasswordSuccess" xml:space="preserve">
-    <value>Parola ta a fost schimbată.</value>
-    <comment>Message of the dialog displayed when change a MEGA account password succesfully.</comment>
-  </data>
   <data name="NewAndOldPasswordMatch" xml:space="preserve">
     <value>Parola nouă şi cea veche nu se pot potrivi.</value>
     <comment>Message of the dialog displayed when a user are trying to change his/her MEGA account password and the new password is equal to the old password.</comment>
-  </data>
-  <data name="RequiredFieldsChangePassword" xml:space="preserve">
-    <value>Te rugăm să completezi parola veche MEGA şi parola nouă MEGA.</value>
-    <comment>Message of the dialog displayed when required fields for change password are not filled in.</comment>
   </data>
   <data name="CloseAllSessionsFailed" xml:space="preserve">
     <value>Eşec la închiderea sesiunii. Te rugăm să încerci din nou [{0}]</value>
@@ -962,7 +945,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the process/request to empty the rubbish bin failed.</comment>
   </data>
   <data name="CleanRubbishBinQuestion" xml:space="preserve">
-    <value>Sigur doreşti să ştergi definitiv toate fişierele din coşul de gunoi?</value>
+    <value>Sigur vrei să ştergi definitiv toate fişierele din coşul de gunoi?</value>
     <comment>Message of the dialog displayed when a user want to empty the rubbish bin, asking for confirmation to do it.</comment>
   </data>
   <data name="CleanRubbishBinSuccess" xml:space="preserve">
@@ -986,9 +969,9 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</comment>
   </data>
   <data name="FolderUnauthorizedAccess" xml:space="preserve">
-    <value>Nu ai acces la calea '{0}'. Te rugăm să selectezi alta şi să încerci din nou.</value>
-    <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.
-Preserve the '{0}' code because is for include the file/folder path in runtime.</comment>
+    <value>Nu ai acces la folderul '{0}'. Te rugăm să selectezi altul şi să încerci din nou.</value>
+    <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder in the device memory. For example to download a file/folder, create a new folder, etc.
+Preserve the '{0}' code because is for include the folder name in runtime.</comment>
   </data>
   <data name="FolderUnauthorizedAccess_Title" xml:space="preserve">
     <value>Acces interzis</value>
@@ -1000,7 +983,7 @@ Preserve the '{0}' code because is for include the file/folder path in runtime.<
 Preserve the '{0}' code because is for include the file name in runtime.</comment>
   </data>
   <data name="InvalidFileName_Title" xml:space="preserve">
-    <value>Numele fişierului invalid</value>
+    <value>Numele fişierului nevalid</value>
     <comment>Title of the dialog displayed in cases that the file name is not valid or has illegal characters - (String as short as possible).</comment>
   </data>
   <data name="PathTooLong" xml:space="preserve">
@@ -1018,16 +1001,12 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
 Preserve the '{0}' code because is for include the file name in runtime.</comment>
   </data>
   <data name="InvalidFolderNameOrPath_Title" xml:space="preserve">
-    <value>Nume sau cale invalidă</value>
+    <value>Nume sau cale nevalidă</value>
     <comment>Title of the dialog displayed in cases that the file name or path is not valid or has illegal characters - (String as short as possible).</comment>
   </data>
   <data name="AM_InvalidLink" xml:space="preserve">
-    <value>Link invalid</value>
+    <value>Link nevalid</value>
     <comment>Message of the dialog displayed when the user is trying to open an invliad lick (NO KEY).</comment>
-  </data>
-  <data name="SelectFolderFailedNoErrorCode" xml:space="preserve">
-    <value>Eşec la selectarea folderului. Te rugăm să încerci din nou sau să selectezi un alt folder.</value>
-    <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="AM_ImportFileFailed" xml:space="preserve">
     <value>Importarea fişierului a eşuat [{0}]</value>
@@ -1041,7 +1020,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 Preserve the {0} and ({1}) codes because is for include the maximum reliable download number and the precise number of nodes to be downloaded in runtime.</comment>
   </data>
   <data name="AM_CancelSubscriptionConfirmation" xml:space="preserve">
-    <value>Îţi mulţumim pentru feedback! Sigur doreşti să anulezi abonamentul MEGA?</value>
+    <value>Îţi mulţumim pentru feedback! Sigur vrei să anulezi abonamentul MEGA?</value>
     <comment>Message of the dialog displayed when a user is trying to cancel a subscription. This sentence is for give thanks to the user for the feedback sent during the cancellation process and asking for confirmation to do it.</comment>
   </data>
   <data name="AM_ImportFileFailedNoErrorCode" xml:space="preserve">
@@ -1117,21 +1096,21 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Alert title shown when you tap on a encrypted file/folder link that can't be opened because it doesn't include the key to see its contents - (String as short as possible).</comment>
   </data>
   <data name="AM_DecryptionKeyNotValid" xml:space="preserve">
-    <value>Cheie de decriptate invalidă</value>
+    <value>Cheie de decriptate nevalidă</value>
     <comment>Alert title shown when you have written a decryption key not valid - (String as short as possible).</comment>
   </data>
   <data name="AM_FileLinkUnavailable" xml:space="preserve">
     <value>Acest lucru ar putea fi din cauza următoarelor motive:
 - Fişierul a fost eliminat din cauza unei încălcări a ToS/AUP.
-- URL invalid – linkul pe care încerci să-l accesezi nu există.
-- Fişierul a fost şters de către utilizator.</value>
+- URL nevalid – linkul pe care încerci să-l accesezi nu există.
+- Fişierul a fost şters de către utilizator.                                </value>
     <comment>Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</comment>
   </data>
   <data name="AM_FolderLinkUnavailable" xml:space="preserve">
     <value>Acest lucru ar putea fi din cauza următoarelor motive:
 - Linkul folderului a fost eliminat din cauza unei încălcări a ToS/AUP.
-- URL invalid – linkul pe care încerci să-l accesezi nu există.
-- Linkul folderului a fost şters de către utilizator.</value>
+- URL nevalid – linkul pe care încerci să-l accesezi nu există.
+- Linkul folderului a fost şters de către utilizator.                                </value>
     <comment>Error message shown when a folder link doesn't exist. Keep "\n"</comment>
   </data>
   <data name="AM_LinkUnavailableTitle" xml:space="preserve">
@@ -1306,7 +1285,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Message of the warning dialog shown when the user tries to make a new sign up using an invalid link (#newsignup).</comment>
   </data>
   <data name="AM_AccountBlocked" xml:space="preserve">
-    <value>Your account was terminated due to a breach of MEGA's Terms of Service, such as abuse of rights of others; sharing and/or importing illegal data; or system abuse.</value>
+    <value>Your account was terminated due to a breach of MEGA’s Terms of Service, such as abuse of rights of others; sharing and/or importing illegal data; or system abuse.</value>
     <comment>Message of the dialog shown when the user is trying to login and the account has been blocked.</comment>
   </data>
   <data name="AM_AccountNotConfirmed" xml:space="preserve">
@@ -1356,11 +1335,11 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when a user exceeds the transfer quota limits of the account (transfer overquota error) - (String as short as possible).</comment>
   </data>
   <data name="AM_CancelDownloadsQuestion" xml:space="preserve">
-    <value>Sigur doreşti să anulezi toate descărcările în aşteptare?</value>
+    <value>Sigur vrei să anulezi toate descărcările în aşteptare?</value>
     <comment>Message of the dialog displayed when a user wants to cancel all the pending downloads.</comment>
   </data>
   <data name="AM_CancelUploadsQuestion" xml:space="preserve">
-    <value>Sigur doreşti să anulezi toate încărcările în aşteptare?</value>
+    <value>Sigur vrei să anulezi toate încărcările în aşteptare?</value>
     <comment>Message of the dialog displayed when a user wants to cancel all the pending uploads.</comment>
   </data>
   <data name="AM_ViewContactDetailsFailed" xml:space="preserve">
@@ -1400,15 +1379,15 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when fail trying to open a link of an internal node.</comment>
   </data>
   <data name="AM_InternalNodeFailed_Title" xml:space="preserve">
-    <value>Failed to open the internal file/folder</value>
+    <value>Eşec la deschiderea fişierului/folderului</value>
     <comment>Title of the dialog displayed when fail trying to open a link of an internal node - (String as short as possible).</comment>
   </data>
   <data name="AM_ClearCacheFailed" xml:space="preserve">
-    <value>Failed to clear cache. Please try again.</value>
+    <value>Eşec la ştergerea cache-ului. Te rugăm să încerci din nou.</value>
     <comment>Message of the dialog displayed when the process to clear cache failed.</comment>
   </data>
   <data name="AM_ClearCacheFailed_Title" xml:space="preserve">
-    <value>Clear cache failed</value>
+    <value>Ştergerea cache-ului a eşuat</value>
     <comment>Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</comment>
   </data>
   <data name="AM_PrepareDownloadsFailed" xml:space="preserve">
@@ -1416,7 +1395,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the process to prepare files or folders for download failed.</comment>
   </data>
   <data name="AM_AccountBlockedCopyright" xml:space="preserve">
-    <value>Your account has been suspended due to multiple breaches of MEGA's Terms of Service. Please check your email inbox.</value>
+    <value>Your account has been suspended due to multiple breaches of MEGA’s Terms of Service. Please check your email inbox.</value>
     <comment>Message of the dialog shown when the user is trying to login and the account has been blocked for multiple copyright violation.</comment>
   </data>
 </root>

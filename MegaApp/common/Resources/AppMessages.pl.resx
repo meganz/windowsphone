@@ -209,7 +209,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the process/request to get a link to a node failed.</comment>
   </data>
   <data name="GetLinkFailed_Title" xml:space="preserve">
-    <value>Nie ma możliwości pobrania linku</value>
+    <value>Pobieranie linku nie powiodło się</value>
     <comment>Title of the dialog displayed when the process/request to get a link to a node failed - (String as short as possible).</comment>
   </data>
   <data name="GetPreviewFailed" xml:space="preserve">
@@ -608,8 +608,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException" xml:space="preserve">
-    <value>Nie posiadasz uprawnień do kopiowania tych plików do miejsca docelowego. Czy próbujesz skopiować/zapisać plik na karcie SD?
-Prosimy spróbować ponownie lub użyć innego nośnika pamięci.</value>
+    <value>Nie masz uprawnień do skopiowania tego pliku do katalogu docelowego. Czy chcesz zapisać/skopiować plik nie wspierany przez kartę SD?
+Spróbuj zapisać/skopiować plik lokalnie na swoim urządzeniu.</value>
     <comment>Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException_Title" xml:space="preserve">
@@ -661,9 +661,8 @@ Prosimy spróbować ponownie lub użyć innego nośnika pamięci.</value>
     <comment>Button of the dialog displayed the first time that a user want to download a image. Option automatically download to the photo album after downloads - (String as short as possible).</comment>
   </data>
   <data name="SelectFolderFailed" xml:space="preserve">
-    <value>Nie powidło się zaznaczenie katalogu. Spróbuj ponownie z innym katalogiem: [{0}]</value>
-    <comment>Message of the dialog displayed when the process to select a folder failed.
-Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+    <value>Nie wybrano katalogu. Spróbuj ponownie.</value>
+    <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="SelectFolderFailed_Title" xml:space="preserve">
     <value>Wybór katalogu nie powiódł się</value>
@@ -686,10 +685,6 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="SelectFileFailed_Title" xml:space="preserve">
     <value>Wybór nie powiódł się</value>
     <comment>Title of the dialog displayed when the process to select files failed - (String as short as possible).</comment>
-  </data>
-  <data name="MalformedEmail" xml:space="preserve">
-    <value>Błędny e-mail. Spróbuj ponownie.</value>
-    <comment>Message of the dialog displayed when the user types a malformed email address.</comment>
   </data>
   <data name="WrongEmailPasswordLogin" xml:space="preserve">
     <value>Nie poprawny adres e-mail i hasło. Spróbuj ponownie.</value>
@@ -923,21 +918,9 @@ Preserve the {0} code because is for include the number of contacts to be remove
     <value>Usuąć kontakty?</value>
     <comment>Title of the dialog displayed when a user want to remove multiple contacts asking for confirmation to make it - (String as short as possible).</comment>
   </data>
-  <data name="ChangePasswordFailed" xml:space="preserve">
-    <value>Zmiana hasła nie powiodła się. Spróbuj ponownie.</value>
-    <comment>Message of the dialog displayed when the process/request to change the MEGA account password failed.</comment>
-  </data>
-  <data name="ChangePasswordSuccess" xml:space="preserve">
-    <value>Hasło zostało zmienione.</value>
-    <comment>Message of the dialog displayed when change a MEGA account password succesfully.</comment>
-  </data>
   <data name="NewAndOldPasswordMatch" xml:space="preserve">
     <value>Nowe i poprzednie hasło nie pasują do siebie.</value>
     <comment>Message of the dialog displayed when a user are trying to change his/her MEGA account password and the new password is equal to the old password.</comment>
-  </data>
-  <data name="RequiredFieldsChangePassword" xml:space="preserve">
-    <value>Wprowadź swoje stare a następnie nowe hasło do MEGA.</value>
-    <comment>Message of the dialog displayed when required fields for change password are not filled in.</comment>
   </data>
   <data name="CloseAllSessionsFailed" xml:space="preserve">
     <value>Zamykanie sesji nie powiodło się. Spróbuj ponownie. [{0}]</value>
@@ -986,9 +969,9 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</comment>
   </data>
   <data name="FolderUnauthorizedAccess" xml:space="preserve">
-    <value>Nie masz dostępu do '{0}'. Wybierz inną lokalizację i spróbuj ponownie.</value>
-    <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.
-Preserve the '{0}' code because is for include the file/folder path in runtime.</comment>
+    <value>Brak dostępu do katalogu '{0}'. Wybierz inny i spróbuj ponownie.</value>
+    <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder in the device memory. For example to download a file/folder, create a new folder, etc.
+Preserve the '{0}' code because is for include the folder name in runtime.</comment>
   </data>
   <data name="FolderUnauthorizedAccess_Title" xml:space="preserve">
     <value>Dostęp zabroniony</value>
@@ -1024,10 +1007,6 @@ Preserve the '{0}' code because is for include the file name in runtime.</commen
   <data name="AM_InvalidLink" xml:space="preserve">
     <value>Nieprawidłowy link</value>
     <comment>Message of the dialog displayed when the user is trying to open an invliad lick (NO KEY).</comment>
-  </data>
-  <data name="SelectFolderFailedNoErrorCode" xml:space="preserve">
-    <value>Wybór katalogu nie powiódł się. Spróbuj ponownie i wybierz inny katalog.</value>
-    <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="AM_ImportFileFailed" xml:space="preserve">
     <value>Import pliku nie powiódł się [{0}]</value>
@@ -1124,14 +1103,14 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>Mogło to nastąpić z następujących powodów:
 - Podlinkowany plik został usunięty z powodu naruszenia regulaminu
 - Błędny link - link, który posiadasz nie istnieje
-- Plik został usunięty przez użytkownika.</value>
+- Plik został usunięty przez użytkownika.                                </value>
     <comment>Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</comment>
   </data>
   <data name="AM_FolderLinkUnavailable" xml:space="preserve">
     <value>Mogło to nastąpić z następujących powodów:
 - Podlinkowany katalog został usunięty z powodu naruszenia regulaminu
 - Błędny link - link, który posiadasz nie istnieje
-- Katalog został usunięty przez użytkownika.</value>
+- Katalog został usunięty przez użytkownika.                                </value>
     <comment>Error message shown when a folder link doesn't exist. Keep "\n"</comment>
   </data>
   <data name="AM_LinkUnavailableTitle" xml:space="preserve">

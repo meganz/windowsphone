@@ -245,7 +245,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
         </trans-unit>
         <trans-unit id="Resx/RemoveNodeSuccess" translate="yes" space="preserve">
           <source>Item successfully removed</source>
-          <target state="translated">항목이 성공적으로 제거됨</target>
+          <target state="translated">항목이 성공적으로 삭제됨</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when remove successfully a node definitely from the rubbish bin.</note>
         </trans-unit>
         <trans-unit id="Resx/RemoveNodeSuccess_Title" translate="yes" space="preserve">
@@ -629,9 +629,9 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException" translate="yes" space="preserve">
           <source>You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?
-Please try to save/copy the file to your device's internal memory instead.</source>
-          <target state="translated">이 파일 유형을 대상 폴더로 복사할 권한이 없습니다. 혹시 SD카드에 지원하지 않는 유형의 파일을 저장/복사하려고 하시나요?
-파일을 내부 저장소에 저장/복사하는 것을 시도하세요.</target>
+Please try to save/copy the file to your device’s internal memory instead.</source>
+          <target state="needs-review-translation">이 파일 유형을 대상 폴더로 복사할 권한이 없습니다. 지원하지 않는 유형의 파일을 SD카드에 저장/복사하려고 하시나요?
+대신 기기의 내부 메모리에 파일을 저장/복사해보시기 바랍니다.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</note>
         </trans-unit>
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException_Title" translate="yes" space="preserve">
@@ -715,10 +715,9 @@ Please try to save/copy the file to your device's internal memory instead.</sour
           <note from="MultilingualBuild" annotates="source" priority="2">Button of the dialog displayed the first time that a user want to download a image. Option automatically download to the photo album after downloads - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/SelectFolderFailed" translate="yes" space="preserve">
-          <source>Failed to select folder. Please, try again or select another folder: [{0}]</source>
-          <target state="translated">폴더 선택을 실패하였습니다. 다시 시도하거나 다른 폴더를 선택하세요: [{0}]</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to select a folder failed.
-Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+          <source>Failed to select folder. Please, try again or select another one.</source>
+          <target state="translated">폴더 선택을 실패하였습니다. 다시 시도하거나 다른 폴더를 선택하세요.                                </target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to select a folder failed.</note>
         </trans-unit>
         <trans-unit id="Resx/SelectFolderFailed_Title" translate="yes" space="preserve">
           <source>Select folder failed</source>
@@ -746,11 +745,6 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <source>File selection failed</source>
           <target state="translated">파일 선택 실패</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to select files failed - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/MalformedEmail" translate="yes" space="preserve">
-          <source>Malformed e-mail. Please try again.</source>
-          <target state="translated">잘못된 형태의 이메일입니다. 다시 시도하세요.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user types a malformed email address.</note>
         </trans-unit>
         <trans-unit id="Resx/WrongEmailPasswordLogin" translate="yes" space="preserve">
           <source>Incorrect e-mail address or password. Please try again.</source>
@@ -1049,25 +1043,10 @@ Preserve the {0} code because is for include the number of contacts to be remove
           <target state="translated">연락체를 삭제할까요?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to remove multiple contacts asking for confirmation to make it - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/ChangePasswordFailed" translate="yes" space="preserve">
-          <source>Failed to change password. Please try again.</source>
-          <target state="translated">비밀번호 변경 실패. 다시 시도하세요.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to change the MEGA account password failed.</note>
-        </trans-unit>
-        <trans-unit id="Resx/ChangePasswordSuccess" translate="yes" space="preserve">
-          <source>Your password has been changed.</source>
-          <target state="translated">비밀번호가 변경되었습니다.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when change a MEGA account password succesfully.</note>
-        </trans-unit>
         <trans-unit id="Resx/NewAndOldPasswordMatch" translate="yes" space="preserve">
           <source>The new and the old password must not match.</source>
           <target state="translated">새 비밀번호와 옛 비밀번호가 달라야합니다.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user are trying to change his/her MEGA account password and the new password is equal to the old password.</note>
-        </trans-unit>
-        <trans-unit id="Resx/RequiredFieldsChangePassword" translate="yes" space="preserve">
-          <source>Please fill in your old MEGA password and your new MEGA password.</source>
-          <target state="translated">이전 MEGA 비밀번호와 새 MEGA 비밀번호를 입력하세요.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when required fields for change password are not filled in.</note>
         </trans-unit>
         <trans-unit id="Resx/CloseAllSessionsFailed" translate="yes" space="preserve">
           <source>Failed to close the session. Please try again. [{0}]</source>
@@ -1122,10 +1101,10 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user is trying to perform any online action without an active Internet connection.</note>
         </trans-unit>
         <trans-unit id="Resx/FolderUnauthorizedAccess" translate="yes" space="preserve">
-          <source>You don't have access to the path '{0}'. Please select another one and try again.</source>
-          <target state="translated">경로 '{0}'에 대한 접근 권한이 없습니다. 다른 것을 선택하고 다시 시도하세요.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.
-Preserve the '{0}' code because is for include the file/folder path in runtime.</note>
+          <source>You don't have access to the folder '{0}'. Please select another one and try again.</source>
+          <target state="translated">폴더 '{0}'에 대한 접근 권한이 없습니다. 다른 것을 선택하고 다시 시도하세요.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that the app or the user doesn't have access to a folder in the device memory. For example to download a file/folder, create a new folder, etc.
+Preserve the '{0}' code because is for include the folder name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/FolderUnauthorizedAccess_Title" translate="yes" space="preserve">
           <source>Access denied</source>
@@ -1169,11 +1148,6 @@ Preserve the '{0}' code because is for include the file name in runtime.</note>
           <source>Invalid link</source>
           <target state="translated">유효하지 않은 링크</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user is trying to open an invliad lick (NO KEY).</note>
-        </trans-unit>
-        <trans-unit id="Resx/SelectFolderFailedNoErrorCode" translate="yes" space="preserve">
-          <source>Failed to select the folder. Please try again or select another folder.</source>
-          <target state="translated">폴더 선택을 실패하였습니다. 다시 시도하거나 다른 폴더를 선택하세요.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to select a folder failed.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ImportFileFailedNoErrorCode" translate="yes" space="preserve">
           <source>File import failed</source>
@@ -1277,7 +1251,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="translated">다음의 이유로 인해 발생할 수 있습니다:
 - 파일이 이용 약관/이용 목적 제한 방침을 위반하여 삭제되었습니다.
 - 잘못된 URL – 접속하려는 링크가 존재하지 않습니다.
-- 파일이 이용자에 의해 삭제되었습니다.</target>
+- 파일이 이용자에 의해 삭제되었습니다.                                </target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</note>
         </trans-unit>
         <trans-unit id="Resx/AM_FolderLinkUnavailable" translate="yes" space="preserve">
@@ -1288,7 +1262,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="translated">다음의 이유로 인해 발생할 수 있습니다:
 - 폴더 링크가 이용 약관/이용 목적 제한 방침을 위반하여 삭제되었습니다.
 - 잘못된 URL – 접속하려는 링크가 존재하지 않습니다.
-- 폴더 링크가 이용자에 의해 삭제되었습니다.</target>
+- 폴더 링크가 이용자에 의해 삭제되었습니다.                                </target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when a folder link doesn't exist. Keep "\n"</note>
         </trans-unit>
         <trans-unit id="Resx/AM_LinkUnavailableTitle" translate="yes" space="preserve">
@@ -1485,9 +1459,8 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the warning dialog shown when the user tries to make a new sign up using an invalid link (#newsignup).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AccountBlocked" translate="yes" space="preserve">
-          <source>Your account was terminated due to a breach of MEGA's Terms of Service, such as abuse of rights of others; sharing and/or importing illegal data; or system abuse.</source>
-          <target state="translated">당신의 계정은 타인의 권리 침해, 불법 데이터의 공유 및
- 내보내기, 시스템 오용 등의 MEGA 이용 약관 위반으로 제거되었습니다.</target>
+          <source>Your account was terminated due to a breach of MEGA’s Terms of Service, such as abuse of rights of others; sharing and/or importing illegal data; or system abuse.</source>
+          <target state="needs-review-translation">당신의 계정은 타인의 권리 침해, 불법 데이터의 공유 및 내보내기, 시스템 오용 등의 MEGA 이용 약관 위반으로 제거되었습니다.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the user is trying to login and the account has been blocked.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AccountNotConfirmed" translate="yes" space="preserve">
@@ -1623,9 +1596,44 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to prepare files or folders for download failed.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AccountBlockedCopyright" translate="yes" space="preserve">
-          <source>Your account has been suspended due to multiple breaches of MEGA's Terms of Service. Please check your email inbox.</source>
-          <target state="translated">당신의 계정은 MEGA 이용 약관을 다수 위반하여 정지되었습니다. 이메일 수신함을 확인하세요.</target>
+          <source>Your account has been suspended due to multiple breaches of MEGA’s Terms of Service. Please check your email inbox.</source>
+          <target state="needs-review-translation">당신의 계정은 MEGA 이용 약관을 다수 위반하여 정지되었습니다. 이메일 수신함을 확인하세요.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the user is trying to login and the account has been blocked for multiple copyright violation.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_VeryWeakPassword" translate="yes" xml:space="preserve">
+          <source>Please strengthen your password.</source>
+          <target state="new">Please strengthen your password.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user has chosen a very weak password.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_IncorrectEmailFormat" translate="yes" xml:space="preserve">
+          <source>Incorrect email format. Please try again.</source>
+          <target state="new">Incorrect email format. Please try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user types an email address with an incorrect format.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_PasswordChangeFailed_Title" translate="yes" xml:space="preserve">
+          <source>Error change password</source>
+          <target state="new">Error change password</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the user has failed to change his password - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_PasswordChangeFailed" translate="yes" xml:space="preserve">
+          <source>Failed to change your password. Please try again.</source>
+          <target state="new">Failed to change your password. Please try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user has failed to change his password</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_PasswordChanged_Title" translate="yes" xml:space="preserve">
+          <source>Password changed</source>
+          <target state="new">Password changed</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the change password process finish successful.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_PasswordChanged" translate="yes" xml:space="preserve">
+          <source>We have sent you an email confirming your password change.</source>
+          <target state="new">We have sent you an email confirming your password change.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the change password process finish successful.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_EmptyRequiredFields" translate="yes" xml:space="preserve">
+          <source>Fill the required fields and try again.</source>
+          <target state="new">Fill the required fields and try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when required fields are empty.</note>
         </trans-unit>
       </group>
     </body>

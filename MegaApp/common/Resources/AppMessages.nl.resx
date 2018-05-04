@@ -303,7 +303,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
     <comment>Title of the dialog displayed when the process/request remove definitely an item from the rubbish bin failed - (String as short as possible).</comment>
   </data>
   <data name="RemoveNodeSuccess" xml:space="preserve">
-    <value>Bestand succesvol verwijderd</value>
+    <value>Item succesvol verwijderd</value>
     <comment>Message of the dialog displayed when remove successfully a node definitely from the rubbish bin.</comment>
   </data>
   <data name="RemoveNodeSuccess_Title" xml:space="preserve">
@@ -574,8 +574,7 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
     <comment>Message of the dialog displayed when the user is logged out from another location and is trying to do any operation that requires a valid session (API_ESID Error).</comment>
   </data>
   <data name="OverquotaAlert" xml:space="preserve">
-    <value>
-Handeling niet toegestaan, u zult het opslag limiet van van uw rekening overschrijden. Wilt u uw account upgraden?</value>
+    <value>Handeling niet toegestaan, u zult het opslag limiet van van uw rekening overschrijden. Wilt u uw account upgraden?</value>
     <comment>Message of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type.</comment>
   </data>
   <data name="OverquotaAlert_Title" xml:space="preserve">
@@ -609,8 +608,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException" xml:space="preserve">
-    <value>U heeft geen toestemming om dit bestandstype te kopiëren naar de locatie map. Probeert u een bestand vanuit een type SD kaart die niet ondersteund wordt op te slaan/kopiëren?
-Probeer in plaats daarvan het bestand op te slaan/kopiëren naar uw apparaat's interne geheugen</value>
+    <value>U heeft geen toestemming om dit type bestand te kopiëren naar de locatie map. Probeert u een niet gesteunde bestand op te slaan/kopiëren naar een SD kaart?
+Probeer in plaats daarvan het bestand op te slaan/kopiëren naar het interne geheugen van uw apparaat.</value>
     <comment>Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException_Title" xml:space="preserve">
@@ -662,9 +661,8 @@ Probeer in plaats daarvan het bestand op te slaan/kopiëren naar uw apparaat's i
     <comment>Button of the dialog displayed the first time that a user want to download a image. Option automatically download to the photo album after downloads - (String as short as possible).</comment>
   </data>
   <data name="SelectFolderFailed" xml:space="preserve">
-    <value>Mislukt om de map te selecteren. Probeer het nog eens of selecteer een andere map: [{0}]</value>
-    <comment>Message of the dialog displayed when the process to select a folder failed.
-Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+    <value>Mislukt om de map te selecteren. Probeer nogmaals of selecteer een andere.</value>
+    <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="SelectFolderFailed_Title" xml:space="preserve">
     <value>Selecteren van map is mislukt</value>
@@ -687,10 +685,6 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="SelectFileFailed_Title" xml:space="preserve">
     <value>Bestand selecteren is mislukt</value>
     <comment>Title of the dialog displayed when the process to select files failed - (String as short as possible).</comment>
-  </data>
-  <data name="MalformedEmail" xml:space="preserve">
-    <value>Onjuiste e-mail. Probeer alstublieft opnieuw.</value>
-    <comment>Message of the dialog displayed when the user types a malformed email address.</comment>
   </data>
   <data name="WrongEmailPasswordLogin" xml:space="preserve">
     <value>Onjuist e-mailadres of wachtwoord. Probeer alstublieft opnieuw.</value>
@@ -924,21 +918,9 @@ Preserve the {0} code because is for include the number of contacts to be remove
     <value>Contacten verwijderen?</value>
     <comment>Title of the dialog displayed when a user want to remove multiple contacts asking for confirmation to make it - (String as short as possible).</comment>
   </data>
-  <data name="ChangePasswordFailed" xml:space="preserve">
-    <value>Wijzigen wachtwoord is mislukt. Probeer alstublieft opnieuw.</value>
-    <comment>Message of the dialog displayed when the process/request to change the MEGA account password failed.</comment>
-  </data>
-  <data name="ChangePasswordSuccess" xml:space="preserve">
-    <value>Uw wachtwoord is gewijzigd.</value>
-    <comment>Message of the dialog displayed when change a MEGA account password succesfully.</comment>
-  </data>
   <data name="NewAndOldPasswordMatch" xml:space="preserve">
     <value>Het nieuwe en oude wachtwoord kunnen niet overeen komen.</value>
     <comment>Message of the dialog displayed when a user are trying to change his/her MEGA account password and the new password is equal to the old password.</comment>
-  </data>
-  <data name="RequiredFieldsChangePassword" xml:space="preserve">
-    <value>Vul alstublieft uw oude MEGA wachtwoord en uw nieuwe MEGA wachtwoord in.</value>
-    <comment>Message of the dialog displayed when required fields for change password are not filled in.</comment>
   </data>
   <data name="CloseAllSessionsFailed" xml:space="preserve">
     <value>Sluiten van de sessie is mislukt. Probeer alstublieft opnieuw. [{0}]</value>
@@ -987,9 +969,9 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</comment>
   </data>
   <data name="FolderUnauthorizedAccess" xml:space="preserve">
-    <value>U heeft geen toegang tot het pad '{0}'. Selecteer alstublieft een andere en probeer het opnieuw.</value>
-    <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.
-Preserve the '{0}' code because is for include the file/folder path in runtime.</comment>
+    <value>U heeft geen toegang tot de map '{0}'. Selecteer een andere en probeer nogmaals.</value>
+    <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder in the device memory. For example to download a file/folder, create a new folder, etc.
+Preserve the '{0}' code because is for include the folder name in runtime.</comment>
   </data>
   <data name="FolderUnauthorizedAccess_Title" xml:space="preserve">
     <value>Toegang geweigerd</value>
@@ -1025,10 +1007,6 @@ Preserve the '{0}' code because is for include the file name in runtime.</commen
   <data name="AM_InvalidLink" xml:space="preserve">
     <value>Ongeldige koppeling</value>
     <comment>Message of the dialog displayed when the user is trying to open an invliad lick (NO KEY).</comment>
-  </data>
-  <data name="SelectFolderFailedNoErrorCode" xml:space="preserve">
-    <value>Selecteren van map is mislukt. Probeer alstublieft opnieuw of selecteer een andere map.</value>
-    <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="AM_ImportFileFailed" xml:space="preserve">
     <value>Bestand importeren mislukt [{0}]</value>
@@ -1397,7 +1375,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when fails the process/request to share a file/folder link.</comment>
   </data>
   <data name="AM_InternalNodeFailed" xml:space="preserve">
-    <value>Mislukt om het interne bestand/map van de koppeling te openen. Probeer nogmaals.</value>
+    <value>Mislukt om het interne bestand/folder te openen van de koppeling. Probeer nogmaals.</value>
     <comment>Title of the dialog displayed when fail trying to open a link of an internal node.</comment>
   </data>
   <data name="AM_InternalNodeFailed_Title" xml:space="preserve">

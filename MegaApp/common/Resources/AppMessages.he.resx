@@ -229,8 +229,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when a image is saved/exported successfully saved to the 'saved pictures' album of the phone device - (String as short as possible).</comment>
   </data>
   <data name="ImageSaveError" xml:space="preserve">
-    <value>שגיאה בייצוא התמונה לאלבור "תמונות שמורות".
-אנא נסה שוב</value>
+    <value>שגיאה בייצוא התמונה לאלבור "תמונות שמורות".אנא נסה שוב</value>
     <comment>Message of the dialog displayed when fails the process/request to save/export an image to the 'saved pictures' album of the phone device.</comment>
   </data>
   <data name="ImageSaveError_Title" xml:space="preserve">
@@ -304,7 +303,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
     <comment>Title of the dialog displayed when the process/request remove definitely an item from the rubbish bin failed - (String as short as possible).</comment>
   </data>
   <data name="RemoveNodeSuccess" xml:space="preserve">
-    <value>הקובץ נמחק בהצלחה</value>
+    <value>הפריט נמחק בהצלחה</value>
     <comment>Message of the dialog displayed when remove successfully a node definitely from the rubbish bin.</comment>
   </data>
   <data name="RemoveNodeSuccess_Title" xml:space="preserve">
@@ -609,8 +608,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException" xml:space="preserve">
-    <value>אין לך הרשאות להעתיק קובץ זה לתיקייה שבחרת. האם אתה מנסה לשמור/להעתיק קובץ בכרטיס SD שלא נתמך?
-אנא נסה לשמור/להעתיק את הקבוץ לזכרון הפנימי של הטלפון.</value>
+    <value>אין לך הרשאות להעתיק קובץ זה לתיקייה שבחרת. האם אתה מנסה לשמור/להעתיק קובץ בכרטיס SD שלא נתמך?אנא נסה לשמור/להעתיק את הקבוץ לזכרון הפנימי של הטלפון.</value>
     <comment>Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException_Title" xml:space="preserve">
@@ -662,9 +660,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Button of the dialog displayed the first time that a user want to download a image. Option automatically download to the photo album after downloads - (String as short as possible).</comment>
   </data>
   <data name="SelectFolderFailed" xml:space="preserve">
-    <value>שגיאה בבחירת תיקייה. אנא בחר מאוחר יותר או בחר תיקייה אחרת: [{0}]</value>
-    <comment>Message of the dialog displayed when the process to select a folder failed.
-Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+    <value>Failed to select folder. Please, try again or select another one.</value>
+    <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="SelectFolderFailed_Title" xml:space="preserve">
     <value>שגיאה בבחירת תיקייה</value>
@@ -687,10 +684,6 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="SelectFileFailed_Title" xml:space="preserve">
     <value>בחירת קובץ נכשלה</value>
     <comment>Title of the dialog displayed when the process to select files failed - (String as short as possible).</comment>
-  </data>
-  <data name="MalformedEmail" xml:space="preserve">
-    <value>כתובת אימייל שגויה. אנא נסה שוב.</value>
-    <comment>Message of the dialog displayed when the user types a malformed email address.</comment>
   </data>
   <data name="WrongEmailPasswordLogin" xml:space="preserve">
     <value>כתובת מייל או סיסמא אינם נכונים. אנא נסה שוב.</value>
@@ -779,8 +772,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed in cases that the user types some data with a wrong format - (String as short as possible).</comment>
   </data>
   <data name="CancelSubscriptionFailed" xml:space="preserve">
-    <value>הרישום לא בוטל.
-אנא צור קשר עם support@mega.nz לביטול הרישום.</value>
+    <value>הרישום לא בוטל.אנא צור קשר עם support@mega.nz לביטול הרישום.</value>
     <comment>Message of the dialog displayed when the process/request to cancel a subscription failed.</comment>
   </data>
   <data name="CancelSubscriptionFailed_Title" xml:space="preserve">
@@ -925,21 +917,9 @@ Preserve the {0} code because is for include the number of contacts to be remove
     <value>למחוק אנשי קשר? </value>
     <comment>Title of the dialog displayed when a user want to remove multiple contacts asking for confirmation to make it - (String as short as possible).</comment>
   </data>
-  <data name="ChangePasswordFailed" xml:space="preserve">
-    <value>שגיאה בשינוי הסיסמא. אנא נסה שוב. </value>
-    <comment>Message of the dialog displayed when the process/request to change the MEGA account password failed.</comment>
-  </data>
-  <data name="ChangePasswordSuccess" xml:space="preserve">
-    <value>הסיסמה שונתה.</value>
-    <comment>Message of the dialog displayed when change a MEGA account password succesfully.</comment>
-  </data>
   <data name="NewAndOldPasswordMatch" xml:space="preserve">
     <value>הסיסמא הקודמת והחדשה לא יכולות להיות זהות.</value>
     <comment>Message of the dialog displayed when a user are trying to change his/her MEGA account password and the new password is equal to the old password.</comment>
-  </data>
-  <data name="RequiredFieldsChangePassword" xml:space="preserve">
-    <value>אנא מלא את הסיסמא הישנה שלך ל-MEGA והסיסמא החדשה ל-MEGA</value>
-    <comment>Message of the dialog displayed when required fields for change password are not filled in.</comment>
   </data>
   <data name="CloseAllSessionsFailed" xml:space="preserve">
     <value>שגיאה בסגירת הסשן. אנא נסה שוב [{0}]</value>
@@ -984,14 +964,13 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the user is trying to perform any online action without an active Internet connection.</comment>
   </data>
   <data name="AM_CancelSubscription" xml:space="preserve">
-    <value>הינך עומד לבטל את ההרשה אל MEGA.
-אנא הודיע לנו אם יש משהו שאנו יכולים לעזור בו על מנת לשנות את דעתך.</value>
+    <value>הינך עומד לבטל את ההרשה אל MEGA.אנא הודיע לנו אם יש משהו שאנו יכולים לעזור בו על מנת לשנות את דעתך.</value>
     <comment>Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</comment>
   </data>
   <data name="FolderUnauthorizedAccess" xml:space="preserve">
     <value>אין לך גישה אל '{0}'. אנא בחר אחר ונסה שוב.</value>
-    <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.
-Preserve the '{0}' code because is for include the file/folder path in runtime.</comment>
+    <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder in the device memory. For example to download a file/folder, create a new folder, etc.
+Preserve the '{0}' code because is for include the folder name in runtime.</comment>
   </data>
   <data name="FolderUnauthorizedAccess_Title" xml:space="preserve">
     <value>הגישה נדחתה</value>
@@ -1027,10 +1006,6 @@ Preserve the '{0}' code because is for include the file name in runtime.</commen
   <data name="AM_InvalidLink" xml:space="preserve">
     <value>קישור לא תקין</value>
     <comment>Message of the dialog displayed when the user is trying to open an invliad lick (NO KEY).</comment>
-  </data>
-  <data name="SelectFolderFailedNoErrorCode" xml:space="preserve">
-    <value>שגיאה בבחירת התיקייה. אנא נסה שוב או בחר בתיקייה אחרת.</value>
-    <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="AM_ImportFileFailed" xml:space="preserve">
     <value>שגיאה בייבוא הקובץ [{0}]</value>
@@ -1309,7 +1284,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Message of the warning dialog shown when the user tries to make a new sign up using an invalid link (#newsignup).</comment>
   </data>
   <data name="AM_AccountBlocked" xml:space="preserve">
-    <value>Your account was terminated due to a breach of MEGA's Terms of Service, such as abuse of rights of others; sharing and/or importing illegal data; or system abuse.</value>
+    <value>Your account was terminated due to a breach of MEGA’s Terms of Service, such as abuse of rights of others; sharing and/or importing illegal data; or system abuse.</value>
     <comment>Message of the dialog shown when the user is trying to login and the account has been blocked.</comment>
   </data>
   <data name="AM_AccountNotConfirmed" xml:space="preserve">
@@ -1419,7 +1394,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the process to prepare files or folders for download failed.</comment>
   </data>
   <data name="AM_AccountBlockedCopyright" xml:space="preserve">
-    <value>Your account has been suspended due to multiple breaches of MEGA's Terms of Service. Please check your email inbox.</value>
+    <value>Your account has been suspended due to multiple breaches of MEGA’s Terms of Service. Please check your email inbox.</value>
     <comment>Message of the dialog shown when the user is trying to login and the account has been blocked for multiple copyright violation.</comment>
   </data>
 </root>

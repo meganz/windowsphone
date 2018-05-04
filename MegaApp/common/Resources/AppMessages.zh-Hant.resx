@@ -209,7 +209,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the process/request to get a link to a node failed.</comment>
   </data>
   <data name="GetLinkFailed_Title" xml:space="preserve">
-    <value>如法獲得連接</value>
+    <value>生成連接失敗</value>
     <comment>Title of the dialog displayed when the process/request to get a link to a node failed - (String as short as possible).</comment>
   </data>
   <data name="GetPreviewFailed" xml:space="preserve">
@@ -258,8 +258,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the login to the MEGA cloud service api fails - (String as short as possible).</comment>
   </data>
   <data name="MoveEqualsParent" xml:space="preserve">
-    <value>目的地資料夾與來源資料夾相同。
-移動已取消。</value>
+    <value>目的地資料夾與來源資料夾相同。移動已取消。</value>
     <comment>Message of the dialog displayed when a user want to move nodes and the destination folder is the same than the source folder.</comment>
   </data>
   <data name="MoveEqualsParent_Title" xml:space="preserve">
@@ -304,7 +303,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
     <comment>Title of the dialog displayed when the process/request remove definitely an item from the rubbish bin failed - (String as short as possible).</comment>
   </data>
   <data name="RemoveNodeSuccess" xml:space="preserve">
-    <value>項目已刪除</value>
+    <value>成功刪除檔案</value>
     <comment>Message of the dialog displayed when remove successfully a node definitely from the rubbish bin.</comment>
   </data>
   <data name="RemoveNodeSuccess_Title" xml:space="preserve">
@@ -609,7 +608,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException" xml:space="preserve">
-    <value>您沒有將此檔案類型複製到目標資料夾的權限。您是否要將不支援的檔案類型儲存/ 複製到SD卡中？也請嘗試將檔案儲存/ 複製到您的設備內部記憶體中，以作為替代方案。</value>
+    <value>您沒有將此檔案類型複製到目標資料夾的權限。您是否要將不支援的檔案類型儲存/ 複製到SD卡中？
+也請嘗試將檔案儲存/ 複製到您的設備內部記憶體中，以作為替代方案。</value>
     <comment>Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException_Title" xml:space="preserve">
@@ -661,9 +661,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Button of the dialog displayed the first time that a user want to download a image. Option automatically download to the photo album after downloads - (String as short as possible).</comment>
   </data>
   <data name="SelectFolderFailed" xml:space="preserve">
-    <value>選擇資料夾失敗，請重試或者選擇另外一個資料夾：[{0}]</value>
-    <comment>Message of the dialog displayed when the process to select a folder failed.
-Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+    <value>選擇資料夾失敗，請重試或者選擇另一個資料夾。</value>
+    <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="SelectFolderFailed_Title" xml:space="preserve">
     <value>選擇資料夾失敗</value>
@@ -686,10 +685,6 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="SelectFileFailed_Title" xml:space="preserve">
     <value>選取檔案失敗</value>
     <comment>Title of the dialog displayed when the process to select files failed - (String as short as possible).</comment>
-  </data>
-  <data name="MalformedEmail" xml:space="preserve">
-    <value>無法辨認的e-mail。請再試一次。</value>
-    <comment>Message of the dialog displayed when the user types a malformed email address.</comment>
   </data>
   <data name="WrongEmailPasswordLogin" xml:space="preserve">
     <value>不正確的e-mail或密碼。請再試一次。</value>
@@ -714,8 +709,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to get the user data failed - (String as short as possible).</comment>
   </data>
   <data name="CapturePhotoFailed" xml:space="preserve">
-    <value>選取照片失敗。請再試一次[{0}]
-</value>
+    <value>選取照片失敗。請再試一次[{0}]</value>
     <comment>Message of the dialog displayed when the process to capture photo failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
@@ -845,8 +839,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed in cases when the user has disabled background agents for this application</comment>
   </data>
   <data name="CameraUploadNeedsStayLoggedIn" xml:space="preserve">
-    <value>為了使相機自動上傳功能正常執行，您需要啟用選項“保持登入”。
-確定要啟用這個選項嗎？</value>
+    <value>為了使相機自動上傳功能正常執行，您需要啟用選項“保持登入”。確定要啟用這個選項嗎？</value>
     <comment>Message of the dialog displayed when the user wants to enable auto camera uploads but Stay logged in is disabled.</comment>
   </data>
   <data name="CameraUploadNeedsStayLoggedIn_Title" xml:space="preserve">
@@ -925,21 +918,9 @@ Preserve the {0} code because is for include the number of contacts to be remove
     <value>移除聯絡人？</value>
     <comment>Title of the dialog displayed when a user want to remove multiple contacts asking for confirmation to make it - (String as short as possible).</comment>
   </data>
-  <data name="ChangePasswordFailed" xml:space="preserve">
-    <value>更換密碼失敗，請再試一次。</value>
-    <comment>Message of the dialog displayed when the process/request to change the MEGA account password failed.</comment>
-  </data>
-  <data name="ChangePasswordSuccess" xml:space="preserve">
-    <value>你的密碼已變更。</value>
-    <comment>Message of the dialog displayed when change a MEGA account password succesfully.</comment>
-  </data>
   <data name="NewAndOldPasswordMatch" xml:space="preserve">
     <value>新的密碼不能與您現在的密碼相同。</value>
     <comment>Message of the dialog displayed when a user are trying to change his/her MEGA account password and the new password is equal to the old password.</comment>
-  </data>
-  <data name="RequiredFieldsChangePassword" xml:space="preserve">
-    <value>請填寫您的舊MEGA密碼和新MEGA密碼。</value>
-    <comment>Message of the dialog displayed when required fields for change password are not filled in.</comment>
   </data>
   <data name="CloseAllSessionsFailed" xml:space="preserve">
     <value>無法關閉項目，請再試一次。[{0}]</value>
@@ -988,9 +969,9 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</comment>
   </data>
   <data name="FolderUnauthorizedAccess" xml:space="preserve">
-    <value>您無法存取路徑 '{0}' 。請選擇其他路徑並再試一次。</value>
-    <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.
-Preserve the '{0}' code because is for include the file/folder path in runtime.</comment>
+    <value>您無法存取資料夾 '{0}' 。請選擇其他資料夾並再試一次。</value>
+    <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder in the device memory. For example to download a file/folder, create a new folder, etc.
+Preserve the '{0}' code because is for include the folder name in runtime.</comment>
   </data>
   <data name="FolderUnauthorizedAccess_Title" xml:space="preserve">
     <value>進入遭拒</value>
@@ -1026,10 +1007,6 @@ Preserve the '{0}' code because is for include the file name in runtime.</commen
   <data name="AM_InvalidLink" xml:space="preserve">
     <value>無效的連結</value>
     <comment>Message of the dialog displayed when the user is trying to open an invliad lick (NO KEY).</comment>
-  </data>
-  <data name="SelectFolderFailedNoErrorCode" xml:space="preserve">
-    <value>沒有已選的資料夾。請重試或選擇其他資料夾。</value>
-    <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="AM_ImportFileFailed" xml:space="preserve">
     <value>檔案匯入失敗 [{0}]</value>
@@ -1126,14 +1103,14 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>檔案連結不存在之可能原因：
 - 因ToS / AUP違規，故該檔案連結已被刪除。
 - 無效的網址 – 您嘗試存取的連結並不存在。
-- 該使用者已將檔案連結刪除。</value>
+- 該使用者已將檔案連結刪除。                                </value>
     <comment>Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</comment>
   </data>
   <data name="AM_FolderLinkUnavailable" xml:space="preserve">
     <value>資料夾連結不存在之可能原因：
 - 因ToS / AUP違規，故該資料夾連結已被刪除。
 - 無效的網址 – 您嘗試存取的連結並不存在。
-- 該使用者已將資料夾連結刪除。</value>
+- 該使用者已將資料夾連結刪除。                                </value>
     <comment>Error message shown when a folder link doesn't exist. Keep "\n"</comment>
   </data>
   <data name="AM_LinkUnavailableTitle" xml:space="preserve">

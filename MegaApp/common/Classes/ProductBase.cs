@@ -17,12 +17,13 @@ namespace MegaApp.Classes
     public class ProductBase
     {
         [DataMember] public MAccountType AccountType { get; set; }
-        [DataMember] public String Name { get; set; }
         [DataMember] public int Amount { get; set; }
-        [DataMember] public String Currency { get; set; }
+        [DataMember] public string Name { get; set; }
+        [DataMember] public string FormattedPrice { get; set; }
+        [DataMember] public string Currency { get; set; }
         [DataMember] public int GbStorage { get; set; }
         [DataMember] public int GbTransfer { get; set; }        
-        [DataMember] public String ProductPathData { get; set; }
+        [DataMember] public string ProductPathData { get; set; }
         [DataMember] public Color ProductColor { get; set; }        
         [DataMember] public bool IsNewOffer { get; set; }
         [DataMember] public bool Purchased { get; set; }        
@@ -39,36 +40,30 @@ namespace MegaApp.Classes
             Purchased = false;
         }
 
-        public String Storage
+        public string Storage
         {
             get
             {
-                if (AccountType == MAccountType.ACCOUNT_TYPE_FREE)
-                    return "50 GB";
-                else
-                    return Convert.ToUInt64(GbStorage).FromGBToBytes().ToStringAndSuffix();
+                return AccountType == MAccountType.ACCOUNT_TYPE_FREE ? "50 GB" : 
+                    Convert.ToUInt64(GbStorage).FromGBToBytes().ToStringAndSuffix();
             }
         }
 
-        public String Transfer
+        public string Transfer
         {
             get
             {
-                if (AccountType == MAccountType.ACCOUNT_TYPE_FREE)                
-                    return UiResources.Limited;
-                else
-                    return Convert.ToUInt64(GbTransfer).FromGBToBytes().ToStringAndSuffix();
+                return AccountType == MAccountType.ACCOUNT_TYPE_FREE ? UiResources.Limited : 
+                    Convert.ToUInt64(GbTransfer).FromGBToBytes().ToStringAndSuffix();
             }
         }
 
-        public String BasePrice
+        public string BasePrice
         {
             get
             {
-                if (AccountType == MAccountType.ACCOUNT_TYPE_FREE)
-                    return UiResources.UI_Free;
-                else
-                    return String.Format(UiResources.UI_FromBasePrice, (double)(Amount/12) / 100, Currency);
+                return AccountType == MAccountType.ACCOUNT_TYPE_FREE ? UiResources.UI_Free : 
+                    string.Format(UiResources.UI_FromBasePrice, (double)(Amount/12) / 100, Currency);
             }
         }
     }

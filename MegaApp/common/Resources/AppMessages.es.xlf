@@ -163,7 +163,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/ImportFileFailed_Title" translate="yes" space="preserve">
           <source>File import failed</source>
-          <target state="translated">No se pudo importar el archivo</target>
+          <target state="translated">Error importando archivo</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to import an image - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/LinkCopiedToClipboard" translate="yes" space="preserve">
@@ -245,7 +245,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
         </trans-unit>
         <trans-unit id="Resx/RemoveNodeSuccess" translate="yes" space="preserve">
           <source>Item successfully removed</source>
-          <target state="translated">Elemento eliminado correctamente</target>
+          <target state="translated">Elemento eliminado correctamente.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when remove successfully a node definitely from the rubbish bin.</note>
         </trans-unit>
         <trans-unit id="Resx/RemoveNodeSuccess_Title" translate="yes" space="preserve">
@@ -629,8 +629,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException" translate="yes" space="preserve">
           <source>You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?
-Please try to save/copy the file to your device's internal memory instead.</source>
-          <target state="translated">No tienes permiso para copiar este tipo de archivo en la carpeta de destino. ¿Está intentando guardar/copiar un archivo no soportado en una tarjeta SD?
+Please try to save/copy the file to your device’s internal memory instead.</source>
+          <target state="needs-review-translation">No tienes permisos para copiar este tipo de archivo en la carpeta de destino. ¿Está intentando guardar/copiar un archivo no soportado en una tarjeta SD?
 Intenta guardar/copiar el archivo en la memoria interna de tu dispositivo.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</note>
         </trans-unit>
@@ -715,10 +715,9 @@ Intenta guardar/copiar el archivo en la memoria interna de tu dispositivo.</targ
           <note from="MultilingualBuild" annotates="source" priority="2">Button of the dialog displayed the first time that a user want to download a image. Option automatically download to the photo album after downloads - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/SelectFolderFailed" translate="yes" space="preserve">
-          <source>Failed to select folder. Please, try again or select another folder: [{0}]</source>
-          <target state="translated">Error al seleccionar la carpeta. Por favor, inténtalo de nuevo o selecciona otra carpeta: [{0}]</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to select a folder failed.
-Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+          <source>Failed to select folder. Please, try again or select another one.</source>
+          <target state="translated">Error al seleccionar la carpeta. Por favor, inténtalo de nuevo o selecciona otra:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to select a folder failed.</note>
         </trans-unit>
         <trans-unit id="Resx/SelectFolderFailed_Title" translate="yes" space="preserve">
           <source>Select folder failed</source>
@@ -746,11 +745,6 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <source>File selection failed</source>
           <target state="translated">Error al seleccionar fichero(s)</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to select files failed - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/MalformedEmail" translate="yes" space="preserve">
-          <source>Malformed e-mail. Please try again.</source>
-          <target state="translated">E-mail con formato incorrecto. Por favor, vuelve a intentarlo.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user types a malformed email address.</note>
         </trans-unit>
         <trans-unit id="Resx/WrongEmailPasswordLogin" translate="yes" space="preserve">
           <source>Incorrect e-mail address or password. Please try again.</source>
@@ -1049,25 +1043,10 @@ Preserve the {0} code because is for include the number of contacts to be remove
           <target state="translated">¿Eliminar contactos?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to remove multiple contacts asking for confirmation to make it - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/ChangePasswordFailed" translate="yes" space="preserve">
-          <source>Failed to change password. Please try again.</source>
-          <target state="translated">Error al cambiar la contraseña. Por favor, vuelve a intentarlo.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to change the MEGA account password failed.</note>
-        </trans-unit>
-        <trans-unit id="Resx/ChangePasswordSuccess" translate="yes" space="preserve">
-          <source>Your password has been changed.</source>
-          <target state="translated">Tu contraseña ha sido cambiada.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when change a MEGA account password succesfully.</note>
-        </trans-unit>
         <trans-unit id="Resx/NewAndOldPasswordMatch" translate="yes" space="preserve">
           <source>The new and the old password must not match.</source>
           <target state="translated">La nueva contraseña no puede coincidir con la antigua.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user are trying to change his/her MEGA account password and the new password is equal to the old password.</note>
-        </trans-unit>
-        <trans-unit id="Resx/RequiredFieldsChangePassword" translate="yes" space="preserve">
-          <source>Please fill in your old MEGA password and your new MEGA password.</source>
-          <target state="translated">Por favor, introduce tu contraseña antigua y tu nueva contraseña de MEGA.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when required fields for change password are not filled in.</note>
         </trans-unit>
         <trans-unit id="Resx/CloseAllSessionsFailed" translate="yes" space="preserve">
           <source>Failed to close the session. Please try again. [{0}]</source>
@@ -1122,10 +1101,10 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user is trying to perform any online action without an active Internet connection.</note>
         </trans-unit>
         <trans-unit id="Resx/FolderUnauthorizedAccess" translate="yes" space="preserve">
-          <source>You don't have access to the path '{0}'. Please select another one and try again.</source>
-          <target state="translated">No tienes acceso a la ruta '{0}'. Por favor selecciona otra e inténtalo de nuevo.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.
-Preserve the '{0}' code because is for include the file/folder path in runtime.</note>
+          <source>You don't have access to the folder '{0}'. Please select another one and try again.</source>
+          <target state="translated">No tienes acceso a la carpeta '{0}'. Por favor selecciona otra e inténtalo de nuevo.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that the app or the user doesn't have access to a folder in the device memory. For example to download a file/folder, create a new folder, etc.
+Preserve the '{0}' code because is for include the folder name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/FolderUnauthorizedAccess_Title" translate="yes" space="preserve">
           <source>Access denied</source>
@@ -1170,14 +1149,9 @@ Preserve the '{0}' code because is for include the file name in runtime.</note>
           <target state="translated">Enlace no válido</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user is trying to open an invliad lick (NO KEY).</note>
         </trans-unit>
-        <trans-unit id="Resx/SelectFolderFailedNoErrorCode" translate="yes" space="preserve">
-          <source>Failed to select the folder. Please try again or select another folder.</source>
-          <target state="translated">No se pudo seleccionar la carpeta. Por favor inténtelo de nuevo o seleccione otra carpeta.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to select a folder failed.</note>
-        </trans-unit>
         <trans-unit id="Resx/AM_ImportFileFailedNoErrorCode" translate="yes" space="preserve">
           <source>File import failed</source>
-          <target state="translated">No se pudo importar el archivo</target>
+          <target state="translated">Error importando archivo</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to import an image.
 
 </note>
@@ -1485,8 +1459,8 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the warning dialog shown when the user tries to make a new sign up using an invalid link (#newsignup).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AccountBlocked" translate="yes" space="preserve">
-          <source>Your account was terminated due to a breach of MEGA's Terms of Service, such as abuse of rights of others; sharing and/or importing illegal data; or system abuse.</source>
-          <target state="translated">Hemos cerrado tu cuenta debido a un incumplimiento de los Términos de servicio de MEGA, como el abuso de los derechos de terceros, la compartición y/o importación de datos ilegales o el abuso del sistema.</target>
+          <source>Your account was terminated due to a breach of MEGA’s Terms of Service, such as abuse of rights of others; sharing and/or importing illegal data; or system abuse.</source>
+          <target state="needs-review-translation">Hemos cerrado tu cuenta debido a un incumplimiento de los Términos de servicio de MEGA, como el abuso de los derechos de terceros, la compartición y/o importación de datos ilegales o el abuso del sistema.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the user is trying to login and the account has been blocked.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AccountNotConfirmed" translate="yes" space="preserve">
@@ -1622,9 +1596,44 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to prepare files or folders for download failed.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AccountBlockedCopyright" translate="yes" space="preserve">
-          <source>Your account has been suspended due to multiple breaches of MEGA's Terms of Service. Please check your email inbox.</source>
-          <target state="translated">Tu cuenta ha sido suspendida debido a infracciones múltiples de los Términos de servicio de MEGA. Por favor revisa la bandeja de entrada de tu correo electrónico.</target>
+          <source>Your account has been suspended due to multiple breaches of MEGA’s Terms of Service. Please check your email inbox.</source>
+          <target state="needs-review-translation">Tu cuenta ha sido suspendida debido a infracciones múltiples de los Términos de servicio de MEGA. Por favor revisa la bandeja de entrada de tu correo electrónico.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the user is trying to login and the account has been blocked for multiple copyright violation.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_VeryWeakPassword" translate="yes" xml:space="preserve">
+          <source>Please strengthen your password.</source>
+          <target state="new">Please strengthen your password.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user has chosen a very weak password.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_IncorrectEmailFormat" translate="yes" xml:space="preserve">
+          <source>Incorrect email format. Please try again.</source>
+          <target state="new">Incorrect email format. Please try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user types an email address with an incorrect format.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_PasswordChangeFailed_Title" translate="yes" xml:space="preserve">
+          <source>Error change password</source>
+          <target state="new">Error change password</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the user has failed to change his password - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_PasswordChangeFailed" translate="yes" xml:space="preserve">
+          <source>Failed to change your password. Please try again.</source>
+          <target state="new">Failed to change your password. Please try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user has failed to change his password</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_PasswordChanged_Title" translate="yes" xml:space="preserve">
+          <source>Password changed</source>
+          <target state="new">Password changed</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the change password process finish successful.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_PasswordChanged" translate="yes" xml:space="preserve">
+          <source>We have sent you an email confirming your password change.</source>
+          <target state="new">We have sent you an email confirming your password change.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the change password process finish successful.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_EmptyRequiredFields" translate="yes" xml:space="preserve">
+          <source>Fill the required fields and try again.</source>
+          <target state="new">Fill the required fields and try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when required fields are empty.</note>
         </trans-unit>
       </group>
     </body>

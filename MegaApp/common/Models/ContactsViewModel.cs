@@ -628,7 +628,7 @@ namespace MegaApp.Models
                     {
                         new CustomMessageDialog(
                             AppMessages.InviteContactAddFailed_Title.ToUpper(),
-                            AppMessages.MalformedEmail,
+                            AppMessages.AM_IncorrectEmailFormat,
                             App.AppInformation,
                             MessageDialogButtons.Ok).ShowDialog();
                     });

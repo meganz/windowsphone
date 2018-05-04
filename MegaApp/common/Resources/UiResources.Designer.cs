@@ -178,15 +178,6 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a MEGA Privacy.
-        /// </summary>
-        public static string AppName {
-            get {
-                return ResourceManager.GetString("AppName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a App version.
         /// </summary>
         public static string AppVersionText {
@@ -871,7 +862,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a keep your files safe with MEGA&apos;s.
+        ///   Busca una cadena traducida similar a keep your files safe with MEGA’s.
         /// </summary>
         public static string InitTourPrivacy1 {
             get {
@@ -979,7 +970,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Loading preview....
+        ///   Busca una cadena traducida similar a Loading preview….
         /// </summary>
         public static string LoadingPreview {
             get {
@@ -2401,7 +2392,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Completing....
+        ///   Busca una cadena traducida similar a Completing….
         /// </summary>
         public static string UI_TransferStateCompleting {
             get {
@@ -2419,7 +2410,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Downloading....
+        ///   Busca una cadena traducida similar a Downloading….
         /// </summary>
         public static string UI_TransferStateDownloading {
             get {
@@ -2455,7 +2446,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Preparing....
+        ///   Busca una cadena traducida similar a Preparing….
         /// </summary>
         public static string UI_TransferStatePreparing {
             get {
@@ -2473,7 +2464,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Retrying....
+        ///   Busca una cadena traducida similar a Retrying….
         /// </summary>
         public static string UI_TransferStateRetrying {
             get {
@@ -2491,7 +2482,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Uploading....
+        ///   Busca una cadena traducida similar a Uploading….
         /// </summary>
         public static string UI_TransferStateUploading {
             get {

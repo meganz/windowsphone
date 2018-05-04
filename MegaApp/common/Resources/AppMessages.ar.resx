@@ -209,7 +209,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the process/request to get a link to a node failed.</comment>
   </data>
   <data name="GetLinkFailed_Title" xml:space="preserve">
-    <value>من المستحيل الحصول على الرابط</value>
+    <value>فشل الحصول علي الرابط</value>
     <comment>Title of the dialog displayed when the process/request to get a link to a node failed - (String as short as possible).</comment>
   </data>
   <data name="GetPreviewFailed" xml:space="preserve">
@@ -303,7 +303,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
     <comment>Title of the dialog displayed when the process/request remove definitely an item from the rubbish bin failed - (String as short as possible).</comment>
   </data>
   <data name="RemoveNodeSuccess" xml:space="preserve">
-    <value>تم حذف البند بنجاح</value>
+    <value>عنصر تم إزالته بنجاح</value>
     <comment>Message of the dialog displayed when remove successfully a node definitely from the rubbish bin.</comment>
   </data>
   <data name="RemoveNodeSuccess_Title" xml:space="preserve">
@@ -661,9 +661,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Button of the dialog displayed the first time that a user want to download a image. Option automatically download to the photo album after downloads - (String as short as possible).</comment>
   </data>
   <data name="SelectFolderFailed" xml:space="preserve">
-    <value>فشل تحديد المجلد. من فضلك، حاول مرة أخرى أو اختر مجلد آخر: [{0}]</value>
-    <comment>Message of the dialog displayed when the process to select a folder failed.
-Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+    <value>فشل تحديد المجلد. من فضلك، حاول مرة أخرى أو اختر مجلد آخر.</value>
+    <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="SelectFolderFailed_Title" xml:space="preserve">
     <value>فشل تحديد المجلد</value>
@@ -686,10 +685,6 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="SelectFileFailed_Title" xml:space="preserve">
     <value>فشل اختيار الملف</value>
     <comment>Title of the dialog displayed when the process to select files failed - (String as short as possible).</comment>
-  </data>
-  <data name="MalformedEmail" xml:space="preserve">
-    <value>بريد إلكتروني غير صحيح ، الرجاء المحاولة مرة أخرى</value>
-    <comment>Message of the dialog displayed when the user types a malformed email address.</comment>
   </data>
   <data name="WrongEmailPasswordLogin" xml:space="preserve">
     <value>عنوان البريد الإلكتروني أو كلمة سر خاطئة. حاول مرة اخرى.</value>
@@ -923,21 +918,9 @@ Preserve the {0} code because is for include the number of contacts to be remove
     <value>حذف جهات الاتصال؟</value>
     <comment>Title of the dialog displayed when a user want to remove multiple contacts asking for confirmation to make it - (String as short as possible).</comment>
   </data>
-  <data name="ChangePasswordFailed" xml:space="preserve">
-    <value>فشل في تغيير كلمة المرور ، الرجاء حاول مرة أخرى</value>
-    <comment>Message of the dialog displayed when the process/request to change the MEGA account password failed.</comment>
-  </data>
-  <data name="ChangePasswordSuccess" xml:space="preserve">
-    <value>لقد تم تغيير كلمة المرور.</value>
-    <comment>Message of the dialog displayed when change a MEGA account password succesfully.</comment>
-  </data>
   <data name="NewAndOldPasswordMatch" xml:space="preserve">
     <value>كلمة السر الجديدة يجب ألا تطابق القديمة.</value>
     <comment>Message of the dialog displayed when a user are trying to change his/her MEGA account password and the new password is equal to the old password.</comment>
-  </data>
-  <data name="RequiredFieldsChangePassword" xml:space="preserve">
-    <value>يرجى ملء كلمة السر MEGA القديمة و كلمة السر MEGA الجديدة.</value>
-    <comment>Message of the dialog displayed when required fields for change password are not filled in.</comment>
   </data>
   <data name="CloseAllSessionsFailed" xml:space="preserve">
     <value>فشل اغلاق الجلسة. يرجي المحاولة مرة اخري. [{0}]</value>
@@ -986,9 +969,9 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</comment>
   </data>
   <data name="FolderUnauthorizedAccess" xml:space="preserve">
-    <value>ليس لديك إذن بالولوج إلى المسار '{0}'. الرجاء اختيار مسار آخر والمحاولة ثانية</value>
-    <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.
-Preserve the '{0}' code because is for include the file/folder path in runtime.</comment>
+    <value>ليس لديك إذن بالولوج إلى المجلد '{0}'. الرجاء اختيار مجلد آخر والمحاولة ثانية</value>
+    <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder in the device memory. For example to download a file/folder, create a new folder, etc.
+Preserve the '{0}' code because is for include the folder name in runtime.</comment>
   </data>
   <data name="FolderUnauthorizedAccess_Title" xml:space="preserve">
     <value>غير مسموح بالدخول</value>
@@ -1024,10 +1007,6 @@ Preserve the '{0}' code because is for include the file name in runtime.</commen
   <data name="AM_InvalidLink" xml:space="preserve">
     <value>رابط غير موجود</value>
     <comment>Message of the dialog displayed when the user is trying to open an invliad lick (NO KEY).</comment>
-  </data>
-  <data name="SelectFolderFailedNoErrorCode" xml:space="preserve">
-    <value>فشل تحديد المجلد. يرجى المحاولة مرة أخرى أو اختيار مجلد آخر.</value>
-    <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="AM_ImportFileFailed" xml:space="preserve">
     <value>فشل في توريد الملف [{0}]</value>
@@ -1122,15 +1101,13 @@ Preserve the [{0}] code because is for include the error code or the error messa
   </data>
   <data name="AM_FileLinkUnavailable" xml:space="preserve">
     <value>قد يرجع ذلك إلى الأسباب التالية:
-
 - تمت إزالة الملف بسبب انتهاك ToS/AUP.
 - رابط غير موجود - الرابط الذي تحاول الدخول إليه غير موجود.
 - تم حذف الملف من قبل المستخدم.</value>
     <comment>Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</comment>
   </data>
   <data name="AM_FolderLinkUnavailable" xml:space="preserve">
-    <value>قد يرجع ذلك إلى الأسباب التالية:
-
+    <value>قد يرجع ذلك إلى الأسباب التالية: 
 - تمت إزالة رابط المجلد بسبب انتهاك ToS/AUP.
 - رابط غير موجود - الرابط الذي تحاول الدخول إليه غير موجود.
 - تم حذف رابط المجلد من قبل المستخدم.</value>
@@ -1150,8 +1127,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process to open a link failed - (String as short as possible).</comment>
   </data>
   <data name="AM_DowloadPathUnauthorizedAccess" xml:space="preserve">
-    <value>ليس لديك الإذن بالدخول لمسار التحميل المحدد.
-الرجاء اختيار مسار تحميل مختلف والمحاولة مرة أخرى.</value>
+    <value>ليس لديك الإذن بالدخول لمسار التحميل المحدد.الرجاء اختيار مسار تحميل مختلف والمحاولة مرة أخرى.</value>
     <comment>Message of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder.</comment>
   </data>
   <data name="AM_DowloadPathUnauthorizedAccess_Title" xml:space="preserve">
@@ -1399,7 +1375,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when fails the process/request to share a file/folder link.</comment>
   </data>
   <data name="AM_InternalNodeFailed" xml:space="preserve">
-    <value>فشل في فتح الملف/المجلد الداخلي للرابط، الرجاء حاول ثانية.</value>
+    <value>فشل في فتح الملف/المجلد الداخلي للرابط. حاول مرة اخرى.</value>
     <comment>Title of the dialog displayed when fail trying to open a link of an internal node.</comment>
   </data>
   <data name="AM_InternalNodeFailed_Title" xml:space="preserve">

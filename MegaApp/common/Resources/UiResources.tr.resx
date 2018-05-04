@@ -125,16 +125,12 @@
     <value>klasör ekle</value>
     <comment>Label for any 'Add folder' button, link, etc. - (String as short as possible).</comment>
   </data>
-  <data name="AppName" xml:space="preserve">
-    <value>MEGA Privacy</value>
-    <comment>Label with the application name. Try to preserve uppercase - (NO-TRANSLATION).</comment>
-  </data>
   <data name="Cancel" xml:space="preserve">
-    <value>İptal Et</value>
+    <value>İptal</value>
     <comment>Label for any 'Cancel' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="CloudDriveName" xml:space="preserve">
-    <value>Bulut Sürücüsü</value>
+    <value>Bulut Sürücü</value>
     <comment>Label for any 'Cloud Drive' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Confirm" xml:space="preserve">
@@ -302,7 +298,7 @@
     <comment>Label for 'File upload' option of the dialog shown to upload nodes - (String as short as possible).</comment>
   </data>
   <data name="Import" xml:space="preserve">
-    <value>Hesaba Ekle</value>
+    <value>Aktar</value>
     <comment>Label for any 'Import' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="LinkOptions" xml:space="preserve">
@@ -350,7 +346,7 @@
     <comment>Text placed just before app version number into the 'about' page.</comment>
   </data>
   <data name="AskDownloadLocationText" xml:space="preserve">
-    <value>İndirme yerini her zaman sor</value>
+    <value>İndirme konumunu her zaman sor</value>
     <comment>Text placed just before a switch button (on/off) into the 'settings' page indicating if the app should ask always for a download location or use a default download location.</comment>
   </data>
   <data name="Available" xml:space="preserve">
@@ -494,7 +490,7 @@
     <comment>Label for any 'Used' button, link, text, title, etc. (i.e. used space) - (String as short as possible).</comment>
   </data>
   <data name="UsedSpace" xml:space="preserve">
-    <value>Kullanılan Alan</value>
+    <value>alan kullanıldı</value>
     <comment>Text placed just before the amount used space into the 'my account' page - (String as short as possible).</comment>
   </data>
   <data name="Version" xml:space="preserve">
@@ -610,7 +606,7 @@
     <comment>Label for any 'Sort' button, link, text, etc. - (String as short as possible).</comment>
   </data>
   <data name="ClearRubbishBin" xml:space="preserve">
-    <value>Çöp Kutusunu Boşalt</value>
+    <value>Çöp kutusunu boşalt</value>
     <comment>Label for any 'Empty rubbish' button, link, text, etc. - (String as short as possible).</comment>
   </data>
   <data name="Ok" xml:space="preserve">
@@ -634,7 +630,7 @@
     <comment>Label for the 'Wifi only' option in the 'set up camera uploads' page - (String as short as possible).</comment>
   </data>
   <data name="EnableCameraUploads" xml:space="preserve">
-    <value>Kamera Yüklemelerini Etkinleştir</value>
+    <value>Kamera yüklemelerini etkinleştir</value>
     <comment>Label for the switch button to enable or disable the Camera Uploads service - (String as short as possible).</comment>
   </data>
   <data name="Security" xml:space="preserve">
@@ -642,7 +638,7 @@
     <comment>Label for any 'Security' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Back" xml:space="preserve">
-    <value>Geri</value>
+    <value>Önceki</value>
     <comment>Label for any 'Back' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Dismiss" xml:space="preserve">
@@ -666,7 +662,7 @@
     <comment>Label to indicate the user that is needed choose a renewal period for upgrade his account.</comment>
   </data>
   <data name="City" xml:space="preserve">
-    <value>İl</value>
+    <value>Şehir</value>
     <comment>Label for any 'City' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Country" xml:space="preserve">
@@ -973,7 +969,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label asking user if wants to enable the auto camera uploads service.</comment>
   </data>
   <data name="ShareFolder" xml:space="preserve">
-    <value>Klasörü Paylaş</value>
+    <value>Paylaşım klasörü</value>
     <comment>Label for any 'Share folder' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="ManageLink" xml:space="preserve">
@@ -997,7 +993,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for the background of an empty transfers page - (String as short as possible).</comment>
   </data>
   <data name="EmptyRubbishBin" xml:space="preserve">
-    <value>Çöp Kutusunu Boşalt</value>
+    <value>Çöp kutusunu boşalt</value>
     <comment>Label for the background of an empty rubbish bin page - (String as short as possible).</comment>
   </data>
   <data name="EmptySharedFolders" xml:space="preserve">
@@ -1041,7 +1037,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Login' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_Logout" xml:space="preserve">
-    <value>Oturumu Kapat</value>
+    <value>Oturumu kapat</value>
     <comment>Label for any 'Logout' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_UpgradeAccount" xml:space="preserve">
@@ -1110,7 +1106,7 @@ Preserve the {0} code because is for include the name of the destination folder 
     <comment>Label for any 'Open link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_ExportRecoveryKeyText" xml:space="preserve">
-    <value>Kurtarma Anahtarını Dışa Aktar</value>
+    <value>Kurtarma Anahtarını Dışarı Aktar</value>
     <comment>Text 'Export Recovery Key' placed just before two buttons into the 'settings' page to allow see (copy/paste) and export the Recovery Key.</comment>
   </data>
   <data name="UI_RecoveryKey" xml:space="preserve">
@@ -1169,7 +1165,7 @@ Keep the code {1} because is for include currency in runtime.</comment>
     <comment>Label for any 'Link with key' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_LinkWithoutKey" xml:space="preserve">
-    <value>Anahtarsız bağlantı</value>
+    <value>Anahtarı olmayan bağlantı</value>
     <comment>Label for any 'Link without key' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_ProOnly" xml:space="preserve">

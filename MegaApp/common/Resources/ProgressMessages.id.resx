@@ -247,10 +247,6 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <value>Menyimpan untuk offline...</value>
     <comment>Progress indicator message when saving folders/files for offline - (String as short as possible).</comment>
   </data>
-  <data name="ServersTooBusy" xml:space="preserve">
-    <value>Server terlalu sibuk. Harap tunggu...</value>
-    <comment>Progress indicator message when servers are too busy - (String as short as possible).</comment>
-  </data>
   <data name="PM_CancelSubscription" xml:space="preserve">
     <value>Membatalkan subskripsi...</value>
     <comment>Progress indicator message when canceling a subscription - (String as short as possible).</comment>
@@ -318,5 +314,21 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
   <data name="PM_ValidatePurchase" xml:space="preserve">
     <value>Memvalidasi...</value>
     <comment>Progress indicator message when validating purchase receipt - (String as short as possible).</comment>
+  </data>
+  <data name="PM_ApiLocked" xml:space="preserve">
+    <value>This process is taking longer than expected. Please wait.</value>
+    <comment>Progress indicator message when the SDK is waiting for the server to complete a request due to an API lock (API error -3) - (String as short as possible).</comment>
+  </data>
+  <data name="PM_ApiRateLimit" xml:space="preserve">
+    <value>Too many requests. Please wait.</value>
+    <comment>Progress indicator message when the SDK is waiting for the server to complete a request due to a rate limit (API error -4) - (String as short as possible).</comment>
+  </data>
+  <data name="PM_ConnectivityIssue" xml:space="preserve">
+    <value>Unable to reach MEGA. Please check your connectivity or try again later.</value>
+    <comment>Progress indicator message when the SDK is waiting for the server to complete a request due to connectivity issue - (String as short as possible).</comment>
+  </data>
+  <data name="PM_ServersBusy" xml:space="preserve">
+    <value>Server sangat sibuk. Harap tunggu.</value>
+    <comment>Progress indicator message when servers are too busy. SDK is waiting for the server to complete a request due to a HTTP error 500  - (String as short as possible).</comment>
   </data>
 </root>

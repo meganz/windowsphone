@@ -221,7 +221,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to get a image preview failed - (String as short as possible).</comment>
   </data>
   <data name="ImageSaved" xml:space="preserve">
-    <value>Image successfully exported to &apos;saved pictures&apos; album</value>
+    <value>Image successfully exported to 'saved pictures' album</value>
     <comment>Message of the dialog displayed when a image is saved/exported successfully saved to the 'saved pictures' album of the phone device.</comment>
   </data>
   <data name="ImageSaved_Title" xml:space="preserve">
@@ -229,7 +229,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when a image is saved/exported successfully saved to the 'saved pictures' album of the phone device - (String as short as possible).</comment>
   </data>
   <data name="ImageSaveError" xml:space="preserve">
-    <value>Error exporting image to  &apos;saved pictures&apos; album. Please try again</value>
+    <value>Error exporting image to  'saved pictures' album. Please try again</value>
     <comment>Message of the dialog displayed when fails the process/request to save/export an image to the 'saved pictures' album of the phone device.</comment>
   </data>
   <data name="ImageSaveError_Title" xml:space="preserve">
@@ -341,7 +341,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
     <comment>Title of the dialog displayed when any required field is not filled in - (String as short as possible).</comment>
   </data>
   <data name="SaveImageQuestion" xml:space="preserve">
-    <value>Export current image to &apos;saved pictures&apos; album?</value>
+    <value>Export current image to 'saved pictures' album?</value>
     <comment>Message of the dialog displayed when a user want to save a image to the 'saved pictures' album, asking for confirmation to do it.</comment>
   </data>
   <data name="SaveImageQuestion_Title" xml:space="preserve">
@@ -620,7 +620,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
   </data>
   <data name="CopyFileUnauthorizedAccessException" xml:space="preserve">
     <value>You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?
-Please try to save/copy the file to your device's internal memory instead.</value>
+Please try to save/copy the file to your device’s internal memory instead.</value>
     <comment>Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException_Title" xml:space="preserve">
@@ -688,9 +688,8 @@ Please try to save/copy the file to your device's internal memory instead.</valu
     <comment>Button of the dialog displayed the first time that a user want to download a image. Option automatically download to the photo album after downloads - (String as short as possible).</comment>
   </data>
   <data name="SelectFolderFailed" xml:space="preserve">
-    <value>Failed to select folder. Please, try again or select another folder: [{0}]</value>
-    <comment>Message of the dialog displayed when the process to select a folder failed.
-Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+    <value>Failed to select folder. Please, try again or select another one.</value>
+    <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="SelectFolderFailed_Title" xml:space="preserve">
     <value>Select folder failed</value>
@@ -713,10 +712,6 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="SelectFileFailed_Title" xml:space="preserve">
     <value>File selection failed</value>
     <comment>Title of the dialog displayed when the process to select files failed - (String as short as possible).</comment>
-  </data>
-  <data name="MalformedEmail" xml:space="preserve">
-    <value>Malformed e-mail. Please try again.</value>
-    <comment>Message of the dialog displayed when the user types a malformed email address.</comment>
   </data>
   <data name="WrongEmailPasswordLogin" xml:space="preserve">
     <value>Incorrect e-mail address or password. Please try again.</value>
@@ -879,7 +874,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed in cases when the user has disabled background agents for this application</comment>
   </data>
   <data name="CameraUploadNeedsStayLoggedIn" xml:space="preserve">
-    <value>In order for the automatic Camera Uploads to work correctly, you need to enable the option &quot;Stay logged in&quot;. Do you want to enable this option?</value>
+    <value>In order for the automatic Camera Uploads to work correctly, you need to enable the option "Stay logged in". Do you want to enable this option?</value>
     <comment>Message of the dialog displayed when the user wants to enable auto camera uploads but Stay logged in is disabled.</comment>
   </data>
   <data name="CameraUploadNeedsStayLoggedIn_Title" xml:space="preserve">
@@ -925,7 +920,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</co
     <comment>Title of the dialog displayed when the account is updated (upgraded or downgraded).</comment>
   </data>
   <data name="SSLKeyError" xml:space="preserve">
-    <value>Our SSL/TLS certificate can&apos;t be verified. You could be affected by a man-in-the-middle attack.</value>
+    <value>Our SSL/TLS certificate can't be verified. You could be affected by a man-in-the-middle attack.</value>
     <comment>Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
   </data>
   <data name="SSLKeyError_Title" xml:space="preserve">
@@ -958,21 +953,9 @@ Preserve the {0} code because is for include the number of contacts to be remove
     <value>Remove contacts?</value>
     <comment>Title of the dialog displayed when a user want to remove multiple contacts asking for confirmation to make it - (String as short as possible).</comment>
   </data>
-  <data name="ChangePasswordFailed" xml:space="preserve">
-    <value>Failed to change password. Please try again.</value>
-    <comment>Message of the dialog displayed when the process/request to change the MEGA account password failed.</comment>
-  </data>
-  <data name="ChangePasswordSuccess" xml:space="preserve">
-    <value>Your password has been changed.</value>
-    <comment>Message of the dialog displayed when change a MEGA account password succesfully.</comment>
-  </data>
   <data name="NewAndOldPasswordMatch" xml:space="preserve">
     <value>The new and the old password must not match.</value>
     <comment>Message of the dialog displayed when a user are trying to change his/her MEGA account password and the new password is equal to the old password.</comment>
-  </data>
-  <data name="RequiredFieldsChangePassword" xml:space="preserve">
-    <value>Please fill in your old MEGA password and your new MEGA password.</value>
-    <comment>Message of the dialog displayed when required fields for change password are not filled in.</comment>
   </data>
   <data name="CloseAllSessionsFailed" xml:space="preserve">
     <value>Failed to close the session. Please try again. [{0}]</value>
@@ -1017,16 +1000,16 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the user is trying to perform any online action without an active Internet connection.</comment>
   </data>
   <data name="FolderUnauthorizedAccess" xml:space="preserve">
-    <value>You don&apos;t have access to the path &apos;{0}&apos;. Please select another one and try again.</value>
-    <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.
-Preserve the '{0}' code because is for include the file/folder path in runtime.</comment>
+    <value>You don't have access to the folder '{0}'. Please select another one and try again.</value>
+    <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder in the device memory. For example to download a file/folder, create a new folder, etc.
+Preserve the '{0}' code because is for include the folder name in runtime.</comment>
   </data>
   <data name="FolderUnauthorizedAccess_Title" xml:space="preserve">
     <value>Access denied</value>
     <comment>Title of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.</comment>
   </data>
   <data name="InvalidFileName" xml:space="preserve">
-    <value>The name of the file &apos;{0}&apos; is not valid or has illegal characters. Please change it and try again.</value>
+    <value>The name of the file '{0}' is not valid or has illegal characters. Please change it and try again.</value>
     <comment>Message of the dialog displayed in cases that a file name is not valid or has illegal characters.
 Preserve the '{0}' code because is for include the file name in runtime.</comment>
   </data>
@@ -1035,7 +1018,7 @@ Preserve the '{0}' code because is for include the file name in runtime.</commen
     <comment>Title of the dialog displayed in cases that the file name is not valid or has illegal characters - (String as short as possible).</comment>
   </data>
   <data name="PathTooLong" xml:space="preserve">
-    <value>The path of the file/folder &apos;{0}&apos; is too long. Please change it and try again.</value>
+    <value>The path of the file/folder '{0}' is too long. Please change it and try again.</value>
     <comment>Message of the dialog displayed in cases that the file/folder path is too long.
 Preserve the '{0}' code because is for include the file/folder name in runtime.</comment>
   </data>
@@ -1044,7 +1027,7 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
     <comment>Title of the dialog displayed in cases that the file/folder path is too long - (String as short as possible).</comment>
   </data>
   <data name="InvalidFolderNameOrPath" xml:space="preserve">
-    <value>The name or path of the folder &apos;{0}&apos; is not valid or has illegal characters. Please change it and try again.</value>
+    <value>The name or path of the folder '{0}' is not valid or has illegal characters. Please change it and try again.</value>
     <comment>Message of the dialog displayed in cases that a folder name or path is not valid or has illegal characters.
 Preserve the '{0}' code because is for include the file name in runtime.</comment>
   </data>
@@ -1055,10 +1038,6 @@ Preserve the '{0}' code because is for include the file name in runtime.</commen
   <data name="AM_InvalidLink" xml:space="preserve">
     <value>Invalid link</value>
     <comment>Message of the dialog displayed when the user is trying to open an invliad lick (NO KEY).</comment>
-  </data>
-  <data name="SelectFolderFailedNoErrorCode" xml:space="preserve">
-    <value>Failed to select the folder. Please try again or select another folder.</value>
-    <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="AM_ImportFileFailedNoErrorCode" xml:space="preserve">
     <value>File import failed</value>
@@ -1164,7 +1143,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process to open a link failed - (String as short as possible).</comment>
   </data>
   <data name="AM_DowloadPathUnauthorizedAccess" xml:space="preserve">
-    <value>You don&apos;t have access to the selected download path. Please select a different download path and try again.</value>
+    <value>You don't have access to the selected download path. Please select a different download path and try again.</value>
     <comment>Message of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder.</comment>
   </data>
   <data name="AM_DowloadPathUnauthorizedAccess_Title" xml:space="preserve">
@@ -1306,7 +1285,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Message of the warning dialog shown when the user tries to make a new sign up using an invalid link (#newsignup).</comment>
   </data>
   <data name="AM_AccountBlocked" xml:space="preserve">
-    <value>Your account was terminated due to a breach of MEGA&apos;s Terms of Service, such as abuse of rights of others; sharing and/or importing illegal data; or system abuse.</value>
+    <value>Your account was terminated due to a breach of MEGA’s Terms of Service, such as abuse of rights of others; sharing and/or importing illegal data; or system abuse.</value>
     <comment>Message of the dialog shown when the user is trying to login and the account has been blocked.</comment>
   </data>
   <data name="AM_AccountNotConfirmed" xml:space="preserve">
@@ -1416,7 +1395,35 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the process to prepare files or folders for download failed.</comment>
   </data>
   <data name="AM_AccountBlockedCopyright" xml:space="preserve">
-    <value>Your account has been suspended due to multiple breaches of MEGA&apos;s Terms of Service. Please check your email inbox.</value>
+    <value>Your account has been suspended due to multiple breaches of MEGA’s Terms of Service. Please check your email inbox.</value>
     <comment>Message of the dialog shown when the user is trying to login and the account has been blocked for multiple copyright violation.</comment>
+  </data>
+  <data name="AM_EmptyRequiredFields" xml:space="preserve">
+    <value>Fill the required fields and try again.</value>
+    <comment>Message of the dialog displayed when required fields are empty.</comment>
+  </data>
+  <data name="AM_PasswordChanged" xml:space="preserve">
+    <value>We have sent you an email confirming your password change.</value>
+    <comment>Message of the dialog displayed when the change password process finish successful.</comment>
+  </data>
+  <data name="AM_PasswordChanged_Title" xml:space="preserve">
+    <value>Password changed</value>
+    <comment>Title of the dialog displayed when the change password process finish successful.</comment>
+  </data>
+  <data name="AM_PasswordChangeFailed" xml:space="preserve">
+    <value>Failed to change your password. Please try again.</value>
+    <comment>Message of the dialog displayed when the user has failed to change his password</comment>
+  </data>
+  <data name="AM_PasswordChangeFailed_Title" xml:space="preserve">
+    <value>Error change password</value>
+    <comment>Title of the dialog displayed when the user has failed to change his password - (String as short as possible).</comment>
+  </data>
+  <data name="AM_IncorrectEmailFormat" xml:space="preserve">
+    <value>Incorrect email format. Please try again.</value>
+    <comment>Message of the dialog displayed when the user types an email address with an incorrect format.</comment>
+  </data>
+  <data name="AM_VeryWeakPassword" xml:space="preserve">
+    <value>Please strengthen your password.</value>
+    <comment>Message of the dialog displayed when the user has chosen a very weak password.</comment>
   </data>
 </root>

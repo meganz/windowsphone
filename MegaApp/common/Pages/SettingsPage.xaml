@@ -65,7 +65,7 @@
                                     <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
                                 </TextBlock.Foreground>
                             </TextBlock>
-                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.PinLock, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,0" Foreground="{StaticResource PhoneSubtleBrush}"/>
+                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.UI_PinLock, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,0" Foreground="{StaticResource PhoneSubtleBrush}"/>
                             <StackPanel Margin="0,0,0,40">
                                 <telerikPrimitives:RadToggleSwitch x:Name="BtnPinLockSwitch" VerticalAlignment="Center" Content="{Binding PinLockIsEnabledText}" IsChecked="{Binding PinLockIsEnabled, Mode=TwoWay}" Margin="12,0" FontFamily="Portable User Interface">
                                     <telerikPrimitives:RadToggleSwitch.ButtonStyle>

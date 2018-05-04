@@ -608,7 +608,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException" xml:space="preserve">
-    <value>คุณไม่มีสิทธิ์คัดลอกไฟล์ประเภทนี้ไปยังโฟลเดอร์ปลายทาง คุณกำลังลองบันทึก/คัดลอกไฟล์ประเภทที่ไม่สนับสนุนไปยังการ์ด SD หรือไม่ กรุณาลองบันทึก/คัดลอกไฟล์ไปยังหน่วยความจำภายในของอุปกรณ์แทน</value>
+    <value>คุณไม่มีสิทธิ์คัดลอกไฟล์ประเภทนี้ไปยังโฟลเดอร์ปลายทาง คุณกำลังพยายามบันทึก/คัดลอกไฟล์ประเภทที่ไม่สนับสนุนไปยังการ์ด SD
+หรือไม่ กรุณาลองบันทึก/คัดลอกไฟล์ไปยังหน่วยความจำภายในของอุปกรณ์แทน</value>
     <comment>Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException_Title" xml:space="preserve">
@@ -660,9 +661,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Button of the dialog displayed the first time that a user want to download a image. Option automatically download to the photo album after downloads - (String as short as possible).</comment>
   </data>
   <data name="SelectFolderFailed" xml:space="preserve">
-    <value>ไม่สามารถเลือกโฟลเดอร์ได้ กรุณาลองใหม่อีกครั้งหรือลองเลือกโฟลเดอร์อื่น: [{0}]</value>
-    <comment>Message of the dialog displayed when the process to select a folder failed.
-Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+    <value>ไม่สามารถเลือกโฟลเดอร์ กรุณาลองอีกครั้งหรือเลือกรายการอื่น</value>
+    <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="SelectFolderFailed_Title" xml:space="preserve">
     <value>เลือกโฟลเดอร์ไม่สำเร็จ</value>
@@ -685,10 +685,6 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="SelectFileFailed_Title" xml:space="preserve">
     <value>เลือกไฟล์ไม่สำเร็จ</value>
     <comment>Title of the dialog displayed when the process to select files failed - (String as short as possible).</comment>
-  </data>
-  <data name="MalformedEmail" xml:space="preserve">
-    <value>อีเมลไม่ถูกต้อง กรุณาลองใหม่อีกครั้ง</value>
-    <comment>Message of the dialog displayed when the user types a malformed email address.</comment>
   </data>
   <data name="WrongEmailPasswordLogin" xml:space="preserve">
     <value>อีเมลหรือรหัสผ่านไม่ถูกต้อง กรุณาลองใหม่อีกครั้ง</value>
@@ -922,21 +918,9 @@ Preserve the {0} code because is for include the number of contacts to be remove
     <value>ลบรายการผู้ติดต่อใช่หรือไม่</value>
     <comment>Title of the dialog displayed when a user want to remove multiple contacts asking for confirmation to make it - (String as short as possible).</comment>
   </data>
-  <data name="ChangePasswordFailed" xml:space="preserve">
-    <value>ไม่สามารถเปลี่ยนรหัสผ่านได้ กรุณาลองใหม่อีกครั้ง</value>
-    <comment>Message of the dialog displayed when the process/request to change the MEGA account password failed.</comment>
-  </data>
-  <data name="ChangePasswordSuccess" xml:space="preserve">
-    <value>รหัสผ่านของคุณได้ถูกเปลี่ยนแล้ว.</value>
-    <comment>Message of the dialog displayed when change a MEGA account password succesfully.</comment>
-  </data>
   <data name="NewAndOldPasswordMatch" xml:space="preserve">
     <value>รหัสผ่านใหม่และเก่าจะต้องไม่เหมือนกัน</value>
     <comment>Message of the dialog displayed when a user are trying to change his/her MEGA account password and the new password is equal to the old password.</comment>
-  </data>
-  <data name="RequiredFieldsChangePassword" xml:space="preserve">
-    <value>กรุณากรอกรหัสผ่านเก่าและรหัสผ่านใหม่ของ MEGA</value>
-    <comment>Message of the dialog displayed when required fields for change password are not filled in.</comment>
   </data>
   <data name="CloseAllSessionsFailed" xml:space="preserve">
     <value>ไม่สามารถปิดเซสชั่นได้ กรุณาลองใหม่อีกครั้ง [{0}]</value>
@@ -985,9 +969,9 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</comment>
   </data>
   <data name="FolderUnauthorizedAccess" xml:space="preserve">
-    <value>คุณไม่ได้เข้าถึงเส้นทาง '{0}' นี้ กรุณาเลือกเส้นทางและลองใหม่อีกครั้ง</value>
-    <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.
-Preserve the '{0}' code because is for include the file/folder path in runtime.</comment>
+    <value>คุณไม่มีสิทธิ์เข้าถึงโฟลเดอร์ '{0}' กรุณาเลือกอื่นและลองอีกครั้ง</value>
+    <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder in the device memory. For example to download a file/folder, create a new folder, etc.
+Preserve the '{0}' code because is for include the folder name in runtime.</comment>
   </data>
   <data name="FolderUnauthorizedAccess_Title" xml:space="preserve">
     <value>การเข้าถึงถูกปฏิเสธ</value>
@@ -1023,10 +1007,6 @@ Preserve the '{0}' code because is for include the file name in runtime.</commen
   <data name="AM_InvalidLink" xml:space="preserve">
     <value>ลิงก์ไม่ถูกต้อง</value>
     <comment>Message of the dialog displayed when the user is trying to open an invliad lick (NO KEY).</comment>
-  </data>
-  <data name="SelectFolderFailedNoErrorCode" xml:space="preserve">
-    <value>ไม่สามารถเลือกโฟลเดอร์ได้ กรุณาลองใหม่หรือเลือกโฟลเดอร์อื่น</value>
-    <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="AM_ImportFileFailed" xml:space="preserve">
     <value>นำเข้าไฟล์ไม่สำเร็จ [{0}]</value>

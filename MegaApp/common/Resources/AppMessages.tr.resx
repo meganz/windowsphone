@@ -209,7 +209,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the process/request to get a link to a node failed.</comment>
   </data>
   <data name="GetLinkFailed_Title" xml:space="preserve">
-    <value>Bağlantıyı almak imkansız</value>
+    <value>Bağlantı alınamadı</value>
     <comment>Title of the dialog displayed when the process/request to get a link to a node failed - (String as short as possible).</comment>
   </data>
   <data name="GetPreviewFailed" xml:space="preserve">
@@ -335,8 +335,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
     <comment>Title of the dialog displayed when any required field is not filled in - (String as short as possible).</comment>
   </data>
   <data name="SaveImageQuestion" xml:space="preserve">
-    <value>
-Mevcut görsel 'kaydedilen resimler' albümüne aktarılsın mı?</value>
+    <value>Mevcut görsel 'kaydedilen resimler' albümüne aktarılsın mı?</value>
     <comment>Message of the dialog displayed when a user want to save a image to the 'saved pictures' album, asking for confirmation to do it.</comment>
   </data>
   <data name="SaveImageQuestion_Title" xml:space="preserve">
@@ -555,8 +554,7 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
     <comment>Title of the dialog displayed when the process/request to upload a selfie picture failed - (String as short as possible).</comment>
   </data>
   <data name="LoadNodesFailed" xml:space="preserve">
-    <value>
-MEGA dosya ve klasörleri yüklenemedi. Tekrar deneyin ya da yenilemeye tıklayın.</value>
+    <value>MEGA dosya ve klasörleri yüklenemedi. Tekrar deneyin ya da yenilemeye tıklayın.</value>
     <comment>Message of the dialog displayed when fails the process/request to load the nodes of the MEGA cloud service.</comment>
   </data>
   <data name="LoadNodesFailed_Title" xml:space="preserve">
@@ -610,8 +608,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException" xml:space="preserve">
-    <value>Bu dosyayı istediğiniz konumuna kopyalamak için izniniz yok. Desteklenmeyen dosya tipini SD kartınıza kopyalamaya mı çalışıyorsunuz?
-Lütfen cihazınızın kendi depolama alanına kaydetmeyi deneyin.</value>
+    <value>Bu dosya türünü seçilen konuma aktarma iznine sahip değilsiniz. Desteklenmeyen bir dosya türünü SD kartınıza mı aktarmak istiyorsunuz?
+Lütfen cihazınızın dahili hafızasına kaydetmeyi/kopyalamayı deneyin.                                </value>
     <comment>Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException_Title" xml:space="preserve">
@@ -663,9 +661,8 @@ Lütfen cihazınızın kendi depolama alanına kaydetmeyi deneyin.</value>
     <comment>Button of the dialog displayed the first time that a user want to download a image. Option automatically download to the photo album after downloads - (String as short as possible).</comment>
   </data>
   <data name="SelectFolderFailed" xml:space="preserve">
-    <value>Klasör seçilemedi. Lütfen tekrar deneyin veya başka bir klasör seçin: [{0}]</value>
-    <comment>Message of the dialog displayed when the process to select a folder failed.
-Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+    <value>Klasör seçilemedi. Lütfen tekrar deneyin veya başka birini seçin.                                </value>
+    <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="SelectFolderFailed_Title" xml:space="preserve">
     <value>Klasör seç başarısız oldu</value>
@@ -688,10 +685,6 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="SelectFileFailed_Title" xml:space="preserve">
     <value>Dosya seçilemedi</value>
     <comment>Title of the dialog displayed when the process to select files failed - (String as short as possible).</comment>
-  </data>
-  <data name="MalformedEmail" xml:space="preserve">
-    <value>E-posta biçimi hatalı. Lütfen tekrar deneyin.</value>
-    <comment>Message of the dialog displayed when the user types a malformed email address.</comment>
   </data>
   <data name="WrongEmailPasswordLogin" xml:space="preserve">
     <value>Yanlış bir e-posta adresi veya şifre. Lütfen tekrar deneyin.</value>
@@ -925,21 +918,9 @@ Preserve the {0} code because is for include the number of contacts to be remove
     <value>Kişiler kaldırılsın mı?</value>
     <comment>Title of the dialog displayed when a user want to remove multiple contacts asking for confirmation to make it - (String as short as possible).</comment>
   </data>
-  <data name="ChangePasswordFailed" xml:space="preserve">
-    <value>Şifre değiştirme başarısız oldu. Lütfen tekrar deneyin.</value>
-    <comment>Message of the dialog displayed when the process/request to change the MEGA account password failed.</comment>
-  </data>
-  <data name="ChangePasswordSuccess" xml:space="preserve">
-    <value>Şifreniz değiştirildi.</value>
-    <comment>Message of the dialog displayed when change a MEGA account password succesfully.</comment>
-  </data>
   <data name="NewAndOldPasswordMatch" xml:space="preserve">
     <value>Yeni ve eski şifre aynı  olamaz.</value>
     <comment>Message of the dialog displayed when a user are trying to change his/her MEGA account password and the new password is equal to the old password.</comment>
-  </data>
-  <data name="RequiredFieldsChangePassword" xml:space="preserve">
-    <value>Eski MEGA şifrenizi ve yeni MEGA şifrenizi girin.</value>
-    <comment>Message of the dialog displayed when required fields for change password are not filled in.</comment>
   </data>
   <data name="CloseAllSessionsFailed" xml:space="preserve">
     <value>Oturumu kapatma başarısız oldu. Lütfen tekrar deneyin. [{0}]</value>
@@ -984,14 +965,13 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the user is trying to perform any online action without an active Internet connection.</comment>
   </data>
   <data name="AM_CancelSubscription" xml:space="preserve">
-    <value>MEGA aboneliğinizi iptal etmek üzeresiniz.
-Fikrinizi değiştirmek için yapabileceğimiz birşey varsa bizi bilgilendirin.</value>
+    <value>MEGA aboneliğinizi iptal etmek üzeresiniz.Fikrinizi değiştirmek için yapabileceğimiz birşey varsa bizi bilgilendirin.</value>
     <comment>Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</comment>
   </data>
   <data name="FolderUnauthorizedAccess" xml:space="preserve">
-    <value>Bu yola erişiminiz yok '{0}'. Lütfen başka bir tane seçip tekrar deneyin.</value>
-    <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.
-Preserve the '{0}' code because is for include the file/folder path in runtime.</comment>
+    <value>'{0}' klasörüne erişiminiz yok. Lütfen başka birini seçin ve tekrar deneyin.</value>
+    <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder in the device memory. For example to download a file/folder, create a new folder, etc.
+Preserve the '{0}' code because is for include the folder name in runtime.</comment>
   </data>
   <data name="FolderUnauthorizedAccess_Title" xml:space="preserve">
     <value>Erişim reddedildi</value>
@@ -1027,10 +1007,6 @@ Preserve the '{0}' code because is for include the file name in runtime.</commen
   <data name="AM_InvalidLink" xml:space="preserve">
     <value>Geçersiz bağlantı</value>
     <comment>Message of the dialog displayed when the user is trying to open an invliad lick (NO KEY).</comment>
-  </data>
-  <data name="SelectFolderFailedNoErrorCode" xml:space="preserve">
-    <value>Klasör seçilemedi. Tekrar deneyin ya da başka bir klasör seçin.</value>
-    <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="AM_ImportFileFailed" xml:space="preserve">
     <value>Dosya alımı başarısız [{0}]</value>
@@ -1126,15 +1102,15 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="AM_FileLinkUnavailable" xml:space="preserve">
     <value>Bunun nedeni aşağıdakilerden biri olabilir:
 - Dosya Hizmet Koşullarını ihlal ettiği için kaldırıldı.
-- Geçersiz URL – erişmeye çalıştığınız link yok
-- Dosya kullanıcı tarafından kaldırıldı.</value>
+- Geçersiz URL – erişmeye çalıştığınız link mevcut değil.
+- Dosya kullanıcı tarafından kaldırıldı.                                </value>
     <comment>Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</comment>
   </data>
   <data name="AM_FolderLinkUnavailable" xml:space="preserve">
     <value>Bunun nedeni aşağıdakilerden biri olabilir:
-- Klasör linki Hizmet Koşullarını ihlal ettiği için kaldırıldı.
-- Geçersiz URL – erişmeye çalıştığınız link yok
-- Klasör linki kullanıcı tarafından kaldırıldı.</value>
+- Klasör Hizmet Koşullarını ihlal ettiği için kaldırıldı.
+- Geçersiz URL – erişmeye çalıştığınız bağlantı mevcut değil.
+- Klasör bağlantısı kullanıcı tarafından kaldırıldı.                                </value>
     <comment>Error message shown when a folder link doesn't exist. Keep "\n"</comment>
   </data>
   <data name="AM_LinkUnavailableTitle" xml:space="preserve">
@@ -1159,7 +1135,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder</comment>
   </data>
   <data name="AM_RecoveryKeyClipboardFailed" xml:space="preserve">
-    <value>Kurtarma Anahtarı panoya kopyalanamadı. Tekrar deneyin.</value>
+    <value>Kurtarma Anahtarı panoya kopyalanamadı. Lütfen tekrar deneyin.                                </value>
     <comment>Message of the dialog displayed when fails to copy the user's Recovery Key to the clipboard to be saved or exported.</comment>
   </data>
   <data name="AM_RecoveryKeyClipboardFailed_Title" xml:space="preserve">
@@ -1171,7 +1147,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported.</comment>
   </data>
   <data name="AM_RecoveryKeyCopied_Title" xml:space="preserve">
-    <value>Kurtarma Anahtarı kopyalandı</value>
+    <value>Kurtarma Anahtarı kopyalandı                                </value>
     <comment>Title of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported - (String as short as possible).</comment>
   </data>
   <data name="AM_CopyFailed" xml:space="preserve">

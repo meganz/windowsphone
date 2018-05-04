@@ -209,7 +209,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the process/request to get a link to a node failed.</comment>
   </data>
   <data name="GetLinkFailed_Title" xml:space="preserve">
-    <value>Link kann nicht erstellt werden</value>
+    <value>Link-Export fehlgeschlagen</value>
     <comment>Title of the dialog displayed when the process/request to get a link to a node failed - (String as short as possible).</comment>
   </data>
   <data name="GetPreviewFailed" xml:space="preserve">
@@ -303,7 +303,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
     <comment>Title of the dialog displayed when the process/request remove definitely an item from the rubbish bin failed - (String as short as possible).</comment>
   </data>
   <data name="RemoveNodeSuccess" xml:space="preserve">
-    <value>Datei/Ordner erfolgreich entfernt</value>
+    <value>Datei/Ordner aus dem Papierkorb entfernt</value>
     <comment>Message of the dialog displayed when remove successfully a node definitely from the rubbish bin.</comment>
   </data>
   <data name="RemoveNodeSuccess_Title" xml:space="preserve">
@@ -608,8 +608,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException" xml:space="preserve">
-    <value>You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?
-Please try to save/copy the file to your device's internal memory instead.</value>
+    <value>Sie können diesen Dateityp nicht in den gewählten Zielordner kopieren. Dies ist z.B. bei nicht unterstützten Dateitypen und SD-Cards der Fall.
+Bitte speichern/kopieren Sie die Datei stattdessen in den internen Gerätespeicher.</value>
     <comment>Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException_Title" xml:space="preserve">
@@ -661,9 +661,8 @@ Please try to save/copy the file to your device's internal memory instead.</valu
     <comment>Button of the dialog displayed the first time that a user want to download a image. Option automatically download to the photo album after downloads - (String as short as possible).</comment>
   </data>
   <data name="SelectFolderFailed" xml:space="preserve">
-    <value>Folderauswahl fehlgeschlagen. Bitte versuchen Sie es erneut oder wählen Sie einen anderen Ordner aus: [{0}]</value>
-    <comment>Message of the dialog displayed when the process to select a folder failed.
-Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+    <value>Failed to select folder. Please, try again or select another one.</value>
+    <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="SelectFolderFailed_Title" xml:space="preserve">
     <value>Folderauswahl fehlgeschlagen</value>
@@ -686,10 +685,6 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="SelectFileFailed_Title" xml:space="preserve">
     <value>Fehler beim Auswählen</value>
     <comment>Title of the dialog displayed when the process to select files failed - (String as short as possible).</comment>
-  </data>
-  <data name="MalformedEmail" xml:space="preserve">
-    <value>Ungültige E-Mail-Adresse. Bitte versuchen Sie es erneut.</value>
-    <comment>Message of the dialog displayed when the user types a malformed email address.</comment>
   </data>
   <data name="WrongEmailPasswordLogin" xml:space="preserve">
     <value>Die angegebene E-Mail-Adresse und/oder das Passwort sind falsch. Bitte versuchen Sie es noch einmal.</value>
@@ -778,7 +773,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed in cases that the user types some data with a wrong format - (String as short as possible).</comment>
   </data>
   <data name="CancelSubscriptionFailed" xml:space="preserve">
-    <value>Das Abonnement konnte nicht storniert werden. Bitte setzen Sie sich mit support@mega.nz in Verbindung.</value>
+    <value>Das Abonnement konnte nicht storniert werden. Bitte setzen Sie sich mit support@mega.nz in Verbindung.                                </value>
     <comment>Message of the dialog displayed when the process/request to cancel a subscription failed.</comment>
   </data>
   <data name="CancelSubscriptionFailed_Title" xml:space="preserve">
@@ -923,21 +918,9 @@ Preserve the {0} code because is for include the number of contacts to be remove
     <value>Kontakte entfernen?</value>
     <comment>Title of the dialog displayed when a user want to remove multiple contacts asking for confirmation to make it - (String as short as possible).</comment>
   </data>
-  <data name="ChangePasswordFailed" xml:space="preserve">
-    <value>Ihr Passwort konnte nicht geändert werden. Bitte versuchen Sie es erneut.</value>
-    <comment>Message of the dialog displayed when the process/request to change the MEGA account password failed.</comment>
-  </data>
-  <data name="ChangePasswordSuccess" xml:space="preserve">
-    <value>Ihr Passwort wurde geändert.</value>
-    <comment>Message of the dialog displayed when change a MEGA account password succesfully.</comment>
-  </data>
   <data name="NewAndOldPasswordMatch" xml:space="preserve">
     <value>Das alte und das neue Password müssen sich unterscheiden.</value>
     <comment>Message of the dialog displayed when a user are trying to change his/her MEGA account password and the new password is equal to the old password.</comment>
-  </data>
-  <data name="RequiredFieldsChangePassword" xml:space="preserve">
-    <value>Bitte geben Sie Ihr jetziges und das neue MEGA-Passwort ein.</value>
-    <comment>Message of the dialog displayed when required fields for change password are not filled in.</comment>
   </data>
   <data name="CloseAllSessionsFailed" xml:space="preserve">
     <value>Die Sitzungen konnten nicht deaktiviert werden. Bitte versuchen Sie es erneut. [{0}]</value>
@@ -987,8 +970,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
   </data>
   <data name="FolderUnauthorizedAccess" xml:space="preserve">
     <value>Sie haben keinen Zugriff auf den Pfad '{0}'. Bitte wählen Sie einen anderen und versuchen Sie es noch einmal.</value>
-    <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.
-Preserve the '{0}' code because is for include the file/folder path in runtime.</comment>
+    <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder in the device memory. For example to download a file/folder, create a new folder, etc.
+Preserve the '{0}' code because is for include the folder name in runtime.</comment>
   </data>
   <data name="FolderUnauthorizedAccess_Title" xml:space="preserve">
     <value>Zugriff verweigert</value>
@@ -1024,10 +1007,6 @@ Preserve the '{0}' code because is for include the file name in runtime.</commen
   <data name="AM_InvalidLink" xml:space="preserve">
     <value>Ungültiger Link</value>
     <comment>Message of the dialog displayed when the user is trying to open an invliad lick (NO KEY).</comment>
-  </data>
-  <data name="SelectFolderFailedNoErrorCode" xml:space="preserve">
-    <value>Der Ordner konnte nicht ausgewählt werden. Bitte versuchen Sie es erneut oder wählen Sie einen anderen Ordner.</value>
-    <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="AM_ImportFileFailed" xml:space="preserve">
     <value>Import fehlgeschlagen [{0}]</value>
@@ -1164,7 +1143,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when fails to copy the user's Recovery Key to the clipboard to be saved or exported - (String as short as possible).</comment>
   </data>
   <data name="AM_RecoveryKeyCopied" xml:space="preserve">
-    <value>Rettungsschlüssel in die Zwischenablage kopiert</value>
+    <value>Der Rettungsschlüssel wurde in die Zwischenablage kopiert</value>
     <comment>Message of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported.</comment>
   </data>
   <data name="AM_RecoveryKeyCopied_Title" xml:space="preserve">
@@ -1266,7 +1245,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Title of the dialog displayed when a user has purchased an item from the store</comment>
   </data>
   <data name="AM_PurchaseValidationFailed" xml:space="preserve">
-    <value>Your purchase of a MEGA subscription has not passed validation at our licence server. On restart of this app we will retry to validate your subscription licences. Please contact MEGA support if the error continues.</value>
+    <value>Der Kauf Ihres MEGA-Pakets konnte von uns nicht validiert werden. Beim nächsten Neustart der App werden wir die Validierung erneut vornehmen. Bitte setzen Sie sich mit unserem Kundendienst in Verbindung, sollte der Fehler fortbestehen.</value>
     <comment>Message of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</comment>
   </data>
   <data name="AM_PurchaseValidationFailed_Title" xml:space="preserve">

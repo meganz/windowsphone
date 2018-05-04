@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text.RegularExpressions;
+using mega;
 
 namespace MegaApp.Services
 {
@@ -23,6 +24,18 @@ namespace MegaApp.Services
                     RegexOptions.IgnoreCase);
             }
             catch (Exception) { return false; }
+        }
+
+        /// <summary>
+        /// Calculate the strength of a password
+        /// </summary>
+        /// <param name="value">Password to calculate</param>
+        /// <returns>Strength value of the input password</returns>
+        public static MPasswordStrength CalculatePasswordStrength(string value)
+        {
+            return (MPasswordStrength)Enum.ToObject(
+                typeof(MPasswordStrength),
+                SdkService.MegaSdk.getPasswordStrength(value));
         }
     }
 }

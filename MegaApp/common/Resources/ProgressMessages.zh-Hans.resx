@@ -135,7 +135,7 @@
 Preserve the '{0}' code because is for include node name.</comment>
   </data>
   <data name="DownloadLink" xml:space="preserve">
-    <value>正在检索下载连接...</value>
+    <value>正在检索下载链接...</value>
     <comment>Progress indicator message when retieving a download link - (String as short as possible).</comment>
   </data>
   <data name="FastLogin" xml:space="preserve">
@@ -247,10 +247,6 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <value>储存资料以供离线使用...</value>
     <comment>Progress indicator message when saving folders/files for offline - (String as short as possible).</comment>
   </data>
-  <data name="ServersTooBusy" xml:space="preserve">
-    <value>系统繁忙，请稍等...</value>
-    <comment>Progress indicator message when servers are too busy - (String as short as possible).</comment>
-  </data>
   <data name="PM_CancelSubscription" xml:space="preserve">
     <value>取消订阅中...</value>
     <comment>Progress indicator message when canceling a subscription - (String as short as possible).</comment>
@@ -276,11 +272,11 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when creating a MEGA account - (String as short as possible).</comment>
   </data>
   <data name="PM_CreateFolder" xml:space="preserve">
-    <value>正在创建文件夹</value>
+    <value>正在创建文件夹...</value>
     <comment>Progress indicator message when creating a folder - (String as short as possible).</comment>
   </data>
   <data name="PM_GetLink" xml:space="preserve">
-    <value>正在生出连接...</value>
+    <value>正在生成链接...</value>
     <comment>Progress indicator message when getting a link to export a node - (String as short as possible).</comment>
   </data>
   <data name="PM_Login" xml:space="preserve">
@@ -318,5 +314,21 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
   <data name="PM_ValidatePurchase" xml:space="preserve">
     <value>验证进行中...</value>
     <comment>Progress indicator message when validating purchase receipt - (String as short as possible).</comment>
+  </data>
+  <data name="PM_ApiLocked" xml:space="preserve">
+    <value>处理花费的时间比预期的要长。请稍候。</value>
+    <comment>Progress indicator message when the SDK is waiting for the server to complete a request due to an API lock (API error -3) - (String as short as possible).</comment>
+  </data>
+  <data name="PM_ApiRateLimit" xml:space="preserve">
+    <value>请求太多。请稍候。</value>
+    <comment>Progress indicator message when the SDK is waiting for the server to complete a request due to a rate limit (API error -4) - (String as short as possible).</comment>
+  </data>
+  <data name="PM_ConnectivityIssue" xml:space="preserve">
+    <value>无法连接MEGA。请检查您的连接或稍后再试。</value>
+    <comment>Progress indicator message when the SDK is waiting for the server to complete a request due to connectivity issue - (String as short as possible).</comment>
+  </data>
+  <data name="PM_ServersBusy" xml:space="preserve">
+    <value>服务器忙碌中。请稍候...</value>
+    <comment>Progress indicator message when servers are too busy. SDK is waiting for the server to complete a request due to a HTTP error 500  - (String as short as possible).</comment>
   </data>
 </root>
