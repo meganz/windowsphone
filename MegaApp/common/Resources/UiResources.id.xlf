@@ -82,8 +82,8 @@
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Get link' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/LoadingPreview" translate="yes" space="preserve">
-          <source>Loading preview…</source>
-          <target state="needs-review-translation">Memuat preview...</target>
+          <source>Loading preview...</source>
+          <target state="translated">Memuat preview...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label shown with an animation when the app is loading a preview - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_Login" translate="yes" space="preserve">
@@ -640,8 +640,8 @@ Preserve the PIN uppercase word.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the title of the init tour page dedicated to the easy access. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/InitTourPrivacy1" translate="yes" space="preserve">
-          <source>keep your files safe with MEGA’s</source>
-          <target state="needs-review-translation">simpan file anda dengan aman dengan MEGA</target>
+          <source>keep your files safe with MEGA's</source>
+          <target state="translated">simpan file anda dengan aman dengan MEGA</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label 'keep your files safe with MEGA's' for the first part of the sentence 'keep your files safe with MEGA's end-to-end encryption.', to build this sentence in two colors into the init tour page. Don't place '.' at the end of the string.  Keep all in lowercase less the word MEGA in uppercase.</note>
         </trans-unit>
         <trans-unit id="Resx/InitTourPrivacy2" translate="yes" space="preserve">
@@ -1390,8 +1390,8 @@ NOTE: Keep the capital letter if possible.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a canceled transfer - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateCompleting" translate="yes" space="preserve">
-          <source>Completing…</source>
-          <target state="needs-review-translation">Melengkapi ...</target>
+          <source>Completing...</source>
+          <target state="translated">Melengkapi ...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being completing - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateDownloaded" translate="yes" space="preserve">
@@ -1400,8 +1400,8 @@ NOTE: Keep the capital letter if possible.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a download transfer when is finished - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateDownloading" translate="yes" space="preserve">
-          <source>Downloading…</source>
-          <target state="needs-review-translation">Mengunduh...</target>
+          <source>Downloading...</source>
+          <target state="translated">Mengunduh...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being downloading - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateError" translate="yes" space="preserve">
@@ -1420,8 +1420,8 @@ NOTE: Keep the capital letter if possible.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a paused transfer - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStatePreparing" translate="yes" space="preserve">
-          <source>Preparing…</source>
-          <target state="needs-review-translation">Mempersiapkan...</target>
+          <source>Preparing...</source>
+          <target state="translated">Mempersiapkan...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being preparing - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateQueued" translate="yes" space="preserve">
@@ -1430,8 +1430,8 @@ NOTE: Keep the capital letter if possible.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is queued - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateRetrying" translate="yes" space="preserve">
-          <source>Retrying…</source>
-          <target state="needs-review-translation">Mencoba lagi ...</target>
+          <source>Retrying...</source>
+          <target state="translated">Mencoba lagi ...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being retrying - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateUploaded" translate="yes" space="preserve">
@@ -1440,8 +1440,8 @@ NOTE: Keep the capital letter if possible.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of an upload transfer when is finished - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateUploading" translate="yes" space="preserve">
-          <source>Uploading…</source>
-          <target state="needs-review-translation">Mengupload...</target>
+          <source>Uploading...</source>
+          <target state="translated">Mengupload...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being uploading - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_CancelDownloads" translate="yes" space="preserve">
@@ -1484,15 +1484,15 @@ NOTE: Keep the capital letter if possible.</note>
           <target state="new">Copyright</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Copyright' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_DataProtectionRegulation" translate="yes" xml:space="preserve">
-          <source>Data Protection Regulation</source>
-          <target state="new">Data Protection Regulation</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Data Protection Regulation' button, link, text, title, etc. - (String as short as possible).</note>
-        </trans-unit>
         <trans-unit id="Resx/UI_LegalAndPolicies" translate="yes" xml:space="preserve">
           <source>Legal and Policies</source>
           <target state="new">Legal and Policies</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the title of the "Legal and Policies" section which include links to the Terms of Service, Privacy Policy, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_DataProtectionRegulation" translate="yes" xml:space="preserve">
+          <source>Data Protection Regulation</source>
+          <target state="new">Data Protection Regulation</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Data Protection Regulation' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>
