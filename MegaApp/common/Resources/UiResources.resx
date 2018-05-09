@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -178,7 +178,7 @@
     <comment>Label for any 'Get link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="LoadingPreview" xml:space="preserve">
-    <value>Loading preview…</value>
+    <value>Loading preview...</value>
     <comment>Label shown with an animation when the app is loading a preview - (String as short as possible).</comment>
   </data>
   <data name="UI_Login" xml:space="preserve">
@@ -625,7 +625,7 @@ Preserve the PIN uppercase word.</comment>
     <comment>Label for the title of the init tour page dedicated to the easy access. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</comment>
   </data>
   <data name="InitTourPrivacy1" xml:space="preserve">
-    <value>keep your files safe with MEGA’s</value>
+    <value>keep your files safe with MEGA's</value>
     <comment>Label 'keep your files safe with MEGA's' for the first part of the sentence 'keep your files safe with MEGA's end-to-end encryption.', to build this sentence in two colors into the init tour page. Don't place '.' at the end of the string.  Keep all in lowercase less the word MEGA in uppercase.</comment>
   </data>
   <data name="InitTourPrivacy2" xml:space="preserve">
@@ -1228,7 +1228,7 @@ NOTE: Keep the capital letter if possible.</comment>
     <comment>Label for the state of a canceled transfer - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStateCompleting" xml:space="preserve">
-    <value>Completing…</value>
+    <value>Completing...</value>
     <comment>Label for the state of a transfer when is being completing - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStateDownloaded" xml:space="preserve">
@@ -1236,7 +1236,7 @@ NOTE: Keep the capital letter if possible.</comment>
     <comment>Label for the state of a download transfer when is finished - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStateDownloading" xml:space="preserve">
-    <value>Downloading…</value>
+    <value>Downloading...</value>
     <comment>Label for the state of a transfer when is being downloading - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStateError" xml:space="preserve">
@@ -1252,7 +1252,7 @@ NOTE: Keep the capital letter if possible.</comment>
     <comment>Label for the state of a paused transfer - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStatePreparing" xml:space="preserve">
-    <value>Preparing…</value>
+    <value>Preparing...</value>
     <comment>Label for the state of a transfer when is being preparing - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStateQueued" xml:space="preserve">
@@ -1260,7 +1260,7 @@ NOTE: Keep the capital letter if possible.</comment>
     <comment>Label for the state of a transfer when is queued - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStateRetrying" xml:space="preserve">
-    <value>Retrying…</value>
+    <value>Retrying...</value>
     <comment>Label for the state of a transfer when is being retrying - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStateUploaded" xml:space="preserve">
@@ -1268,7 +1268,7 @@ NOTE: Keep the capital letter if possible.</comment>
     <comment>Label for the state of an upload transfer when is finished - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStateUploading" xml:space="preserve">
-    <value>Uploading…</value>
+    <value>Uploading...</value>
     <comment>Label for the state of a transfer when is being uploading - (String as short as possible).</comment>
   </data>
   <data name="UI_CancelDownloads" xml:space="preserve">
@@ -1290,5 +1290,25 @@ NOTE: Keep the capital letter if possible.</comment>
   <data name="UI_ViewTermsOfService" xml:space="preserve">
     <value>View Terms of Service here</value>
     <comment>Text used as a link to view the 'Terms of Service' into the 'create account' page.</comment>
+  </data>
+  <data name="UI_DataProtectionRegulation" xml:space="preserve">
+    <value>Data Protection Regulation</value>
+    <comment>Label for any 'Data Protection Regulation' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_LegalAndPolicies" xml:space="preserve">
+    <value>Legal and Policies</value>
+    <comment>Label for the title of the "Legal and Policies" section which include links to the Terms of Service, Privacy Policy, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_Copyright" xml:space="preserve">
+    <value>Copyright</value>
+    <comment>Label for any 'Copyright' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_LearnMore" xml:space="preserve">
+    <value>Learn more</value>
+    <comment>Label for any 'Learn more' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_TakedownGuidance" xml:space="preserve">
+    <value>Takedown Guidance</value>
+    <comment>Label for any 'Takedown Guidance' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
 </root>

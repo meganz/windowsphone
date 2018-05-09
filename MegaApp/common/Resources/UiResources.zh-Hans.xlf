@@ -38,7 +38,7 @@
         </trans-unit>
         <trans-unit id="Resx/UI_ConfirmAccount" translate="yes" space="preserve">
           <source>Confirm account</source>
-          <target state="translated">确认帐户</target>
+          <target state="translated">确认账户</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Confirm account' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_ConfirmPassword" translate="yes" space="preserve">
@@ -53,7 +53,7 @@
         </trans-unit>
         <trans-unit id="Resx/UI_CreateAccount" translate="yes" space="preserve">
           <source>Create account</source>
-          <target state="translated">创建帐号</target>
+          <target state="translated">创建账号</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Create account' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_CreateFolder" translate="yes" space="preserve">
@@ -82,8 +82,8 @@
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Get link' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/LoadingPreview" translate="yes" space="preserve">
-          <source>Loading preview…</source>
-          <target state="needs-review-translation">正在加载预览...</target>
+          <source>Loading preview...</source>
+          <target state="translated">正在加载预览...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label shown with an animation when the app is loading a preview - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_Login" translate="yes" space="preserve">
@@ -118,7 +118,7 @@
         </trans-unit>
         <trans-unit id="Resx/MyAccount" translate="yes" space="preserve">
           <source>my account</source>
-          <target state="translated">我的帐户</target>
+          <target state="translated">我的账户</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'My account' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_FirstName" translate="yes" space="preserve">
@@ -640,8 +640,8 @@ Preserve the PIN uppercase word.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the title of the init tour page dedicated to the easy access. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/InitTourPrivacy1" translate="yes" space="preserve">
-          <source>keep your files safe with MEGA’s</source>
-          <target state="needs-review-translation">您的MEGA文件很安全</target>
+          <source>keep your files safe with MEGA's</source>
+          <target state="translated">您的MEGA文件很安全</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label 'keep your files safe with MEGA's' for the first part of the sentence 'keep your files safe with MEGA's end-to-end encryption.', to build this sentence in two colors into the init tour page. Don't place '.' at the end of the string.  Keep all in lowercase less the word MEGA in uppercase.</note>
         </trans-unit>
         <trans-unit id="Resx/InitTourPrivacy2" translate="yes" space="preserve">
@@ -786,7 +786,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/BillingDetails" translate="yes" space="preserve">
           <source>Billing details</source>
-          <target state="translated">帐单细节</target>
+          <target state="translated">账单细节</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Billing details' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ChooseRenewalPeriod" translate="yes" space="preserve">
@@ -924,13 +924,13 @@ Preserve the {0} code because is for include the name/type of the selected plan 
         </trans-unit>
         <trans-unit id="Resx/AccountPurchased" translate="yes" space="preserve">
           <source>You have purchased a {0} account.</source>
-          <target state="translated">您已选购{0} 个帐号。</target>
+          <target state="translated">您已选购{0} 个账号。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label to indicate the purchased account/subscription.
 Preserve the {0} code because is for include the name/type in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AccountRenewalNotice" translate="yes" space="preserve">
           <source>Your {0} subscription will be automatically rebilled on your {0} anniversary unless you log in to your account and cancel the subscription prior to the renewal date.</source>
-          <target state="translated">您的{0}订购将于您的{0}周期被自动延续，除非您登入至帐号并于续期日前取消订购。</target>
+          <target state="translated">您的{0}订购将于您的{0}周期被自动延续，除非您登入至账号并于续期日前取消订购。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label to indicate the renewal period of the purchased subscription. 
 Preserve the {0} code because is for include the renewal period string (Monthly or Annually) in runtime.</note>
         </trans-unit>
@@ -961,7 +961,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
         </trans-unit>
         <trans-unit id="Resx/PhoneBill" translate="yes" space="preserve">
           <source>Phone Bill</source>
-          <target state="translated">电话帐单</target>
+          <target state="translated">电话账单</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any Phone Bill or Mobile payment button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Punctual" translate="yes" space="preserve">
@@ -986,7 +986,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
         </trans-unit>
         <trans-unit id="Resx/UpgradeAccountQuestion" translate="yes" space="preserve">
           <source>Do you want to upgrade your account?</source>
-          <target state="translated">想要升级您的帐户吗?</target>
+          <target state="translated">想要升级您的账户吗?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the dialog shown randomly when a user logs into a free account, asking if the user wants to upgrade the account - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UpgradeNow" translate="yes" space="preserve">
@@ -1390,8 +1390,8 @@ NOTE: Keep the capital letter if possible.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a canceled transfer - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateCompleting" translate="yes" space="preserve">
-          <source>Completing…</source>
-          <target state="needs-review-translation">即将完成...</target>
+          <source>Completing...</source>
+          <target state="translated">即将完成...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being completing - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateDownloaded" translate="yes" space="preserve">
@@ -1400,8 +1400,8 @@ NOTE: Keep the capital letter if possible.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a download transfer when is finished - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateDownloading" translate="yes" space="preserve">
-          <source>Downloading…</source>
-          <target state="needs-review-translation">正在下载...</target>
+          <source>Downloading...</source>
+          <target state="translated">正在下载...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being downloading - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateError" translate="yes" space="preserve">
@@ -1420,8 +1420,8 @@ NOTE: Keep the capital letter if possible.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a paused transfer - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStatePreparing" translate="yes" space="preserve">
-          <source>Preparing…</source>
-          <target state="needs-review-translation">准备中...</target>
+          <source>Preparing...</source>
+          <target state="translated">准备中...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being preparing - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateQueued" translate="yes" space="preserve">
@@ -1430,8 +1430,8 @@ NOTE: Keep the capital letter if possible.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is queued - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateRetrying" translate="yes" space="preserve">
-          <source>Retrying…</source>
-          <target state="needs-review-translation">重试中...</target>
+          <source>Retrying...</source>
+          <target state="translated">重试中...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being retrying - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateUploaded" translate="yes" space="preserve">
@@ -1440,8 +1440,8 @@ NOTE: Keep the capital letter if possible.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of an upload transfer when is finished - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateUploading" translate="yes" space="preserve">
-          <source>Uploading…</source>
-          <target state="needs-review-translation">正在上传...</target>
+          <source>Uploading...</source>
+          <target state="translated">正在上传...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being uploading - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_CancelDownloads" translate="yes" space="preserve">
@@ -1468,6 +1468,31 @@ NOTE: Keep the capital letter if possible.</note>
           <source>View Terms of Service here</source>
           <target state="translated">在此查看服务条款</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text used as a link to view the 'Terms of Service' into the 'create account' page.</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_TakedownGuidance" translate="yes" xml:space="preserve">
+          <source>Takedown Guidance</source>
+          <target state="new">Takedown Guidance</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Takedown Guidance' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_LearnMore" translate="yes" xml:space="preserve">
+          <source>Learn more</source>
+          <target state="new">Learn more</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Learn more' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_Copyright" translate="yes" xml:space="preserve">
+          <source>Copyright</source>
+          <target state="new">Copyright</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Copyright' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_LegalAndPolicies" translate="yes" xml:space="preserve">
+          <source>Legal and Policies</source>
+          <target state="new">Legal and Policies</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the title of the "Legal and Policies" section which include links to the Terms of Service, Privacy Policy, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_DataProtectionRegulation" translate="yes" xml:space="preserve">
+          <source>Data Protection Regulation</source>
+          <target state="new">Data Protection Regulation</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Data Protection Regulation' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>

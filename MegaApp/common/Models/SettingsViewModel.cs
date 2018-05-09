@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Input;
+using Microsoft.Phone.Tasks;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.Resources;
 using MegaApp.Services;
-using Microsoft.Phone.Tasks;
 
 namespace MegaApp.Models
 {
@@ -30,6 +30,13 @@ namespace MegaApp.Models
 
             this.MegaSdkCommand = new DelegateCommand(NavigateToMegaSdk);
             this.GoedWareCommand = new DelegateCommand(NavigateToGoedWare);
+            this.TermsOfServiceCommand = new DelegateCommand(NavigateToTermsOfService);
+            this.PrivacyPolicyCommand = new DelegateCommand(NavigateToPrivacyPolicy);
+            this.CopyrightCommand = new DelegateCommand(NavigateToCopyright);
+            this.TakedownGuidanceCommand = new DelegateCommand(NavigateToTakedownGuidance);
+            this.GeneralCommand = new DelegateCommand(NavigateToGeneral);
+            this.DataProtectionRegulationCommand =
+                new DelegateCommand(NavigateToDataProtectionRegulation);
 
             this.PinLockIsEnabled = SettingsService.LoadSetting<bool>(SettingsResources.UserPinLockIsEnabled, false);
             
@@ -59,6 +66,12 @@ namespace MegaApp.Models
         public ICommand SelectDownloadLocationCommand { get; private set; }
         public ICommand MegaSdkCommand { get; private set; }
         public ICommand GoedWareCommand { get; private set; }
+        public ICommand TermsOfServiceCommand { get; private set; }
+        public ICommand PrivacyPolicyCommand { get; private set; }
+        public ICommand CopyrightCommand { get; private set; }
+        public ICommand TakedownGuidanceCommand { get; private set; }
+        public ICommand GeneralCommand { get; private set; }
+        public ICommand DataProtectionRegulationCommand { get; private set; }
 
         #endregion
 
@@ -129,6 +142,42 @@ namespace MegaApp.Models
         private void NavigateToGoedWare(object obj)
         {
             var webBrowserTask = new WebBrowserTask { Uri = new Uri(AppResources.GoedWareUrl) };
+            webBrowserTask.Show();
+        }
+
+        private void NavigateToTermsOfService(object obj)
+        {
+            var webBrowserTask = new WebBrowserTask { Uri = new Uri(AppResources.AR_TermsOfServiceUrl) };
+            webBrowserTask.Show();
+        }
+
+        private void NavigateToPrivacyPolicy(object obj)
+        {
+            var webBrowserTask = new WebBrowserTask { Uri = new Uri(AppResources.AR_PrivacyPolicyUrl) };
+            webBrowserTask.Show();
+        }
+
+        private void NavigateToCopyright(object obj)
+        {
+            var webBrowserTask = new WebBrowserTask { Uri = new Uri(AppResources.AR_CopyrightUrl) };
+            webBrowserTask.Show();
+        }
+
+        private void NavigateToTakedownGuidance(object obj)
+        {
+            var webBrowserTask = new WebBrowserTask { Uri = new Uri(AppResources.AR_TakedownGuidanceUrl) };
+            webBrowserTask.Show();
+        }
+
+        private void NavigateToGeneral(object obj)
+        {
+            var webBrowserTask = new WebBrowserTask { Uri = new Uri(AppResources.AR_GeneralLegalUrl) };
+            webBrowserTask.Show();
+        }
+
+        private void NavigateToDataProtectionRegulation(object obj)
+        {
+            var webBrowserTask = new WebBrowserTask { Uri = new Uri(AppResources.AR_DataProtectionRegulationUrl) };
             webBrowserTask.Show();
         }
 

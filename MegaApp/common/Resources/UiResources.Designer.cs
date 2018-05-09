@@ -2059,6 +2059,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Copyright.
+        /// </summary>
+        public static string UI_Copyright {
+            get {
+                return ResourceManager.GetString("UI_Copyright", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Create account.
         /// </summary>
         public static string UI_CreateAccount {
@@ -2073,6 +2082,15 @@ namespace MegaApp.Resources {
         public static string UI_CreateFolder {
             get {
                 return ResourceManager.GetString("UI_CreateFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Data Protection Regulation.
+        /// </summary>
+        public static string UI_DataProtectionRegulation {
+            get {
+                return ResourceManager.GetString("UI_DataProtectionRegulation", resourceCulture);
             }
         }
         
@@ -2199,6 +2217,24 @@ namespace MegaApp.Resources {
         public static string UI_LastName {
             get {
                 return ResourceManager.GetString("UI_LastName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Learn more.
+        /// </summary>
+        public static string UI_LearnMore {
+            get {
+                return ResourceManager.GetString("UI_LearnMore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Legal and Policies.
+        /// </summary>
+        public static string UI_LegalAndPolicies {
+            get {
+                return ResourceManager.GetString("UI_LegalAndPolicies", resourceCulture);
             }
         }
         
@@ -2379,6 +2415,15 @@ namespace MegaApp.Resources {
         public static string UI_Size {
             get {
                 return ResourceManager.GetString("UI_Size", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Takedown Guidance.
+        /// </summary>
+        public static string UI_TakedownGuidance {
+            get {
+                return ResourceManager.GetString("UI_TakedownGuidance", resourceCulture);
             }
         }
         

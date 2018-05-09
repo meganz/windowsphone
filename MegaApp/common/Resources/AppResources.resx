@@ -133,8 +133,8 @@
     <value>/Pages/</value>
     <comment>Location of the pages of the application - (NO-TRANSLATION).</comment>
   </data>
-  <data name="TermsOfServiceUrl" xml:space="preserve">
-    <value>https://mega.nz/mobile_terms.html</value>
+  <data name="AR_TermsOfServiceUrl" xml:space="preserve">
+    <value>https://mega.nz/terms</value>
     <comment>URL to the 'Terms of Service' information web page - (NO-TRANSLATION).</comment>
   </data>
   <data name="AppKey" xml:space="preserve">
@@ -169,8 +169,8 @@
     <value>uploads\</value>
     <comment>Path of the 'uploads' folder of the application - (NO-TRANSLATION).</comment>
   </data>
-  <data name="PrivacyPolicyUrl" xml:space="preserve">
-    <value>https://mega.nz/mobile_privacy.html</value>
+  <data name="AR_PrivacyPolicyUrl" xml:space="preserve">
+    <value>https://mega.nz/privacy</value>
     <comment>URL to the 'Privacy Policy' information web page - (NO-TRANSLATION).</comment>
   </data>
   <data name="GoedWareUrl" xml:space="preserve">
@@ -240,5 +240,21 @@
   <data name="AR_SdkVersion" xml:space="preserve">
     <value>a6a7e37</value>
     <comment>Current SDK version used in the app - (NO-TRANSLATION).</comment>
+  </data>
+  <data name="AR_DataProtectionRegulationUrl" xml:space="preserve">
+    <value>https://mega.nz/gdpr</value>
+    <comment>URL to the 'Data Protection Regulation' information web page - (NO-TRANSLATION).</comment>
+  </data>
+  <data name="AR_CopyrightUrl" xml:space="preserve">
+    <value>https://mega.nz/copyright</value>
+    <comment>URL to the 'Copyright' information web page - (NO-TRANSLATION).</comment>
+  </data>
+  <data name="AR_GeneralLegalUrl" xml:space="preserve">
+    <value>https://mega.nz/general</value>
+    <comment>URL to the 'General' legal information web page - (NO-TRANSLATION).</comment>
+  </data>
+  <data name="AR_TakedownGuidanceUrl" xml:space="preserve">
+    <value>https://mega.nz/takedown</value>
+    <comment>URL to the 'Copyright' information web page - (NO-TRANSLATION).</comment>
   </data>
 </root>

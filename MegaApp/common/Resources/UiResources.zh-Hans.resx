@@ -174,7 +174,7 @@
     <comment>Label for any 'Folders' (multiple folders) button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="MyAccount" xml:space="preserve">
-    <value>我的帐户</value>
+    <value>我的账户</value>
     <comment>Label for any 'My account' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Next" xml:space="preserve">
@@ -654,7 +654,7 @@
     <comment>Label for any 'Address' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="BillingDetails" xml:space="preserve">
-    <value>帐单细节</value>
+    <value>账单细节</value>
     <comment>Label for any 'Billing details' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="ChooseRenewalPeriod" xml:space="preserve">
@@ -755,12 +755,12 @@ Preserve the {0} code because is for include the name/type of the selected plan 
     <comment>Label for the 'Renews on' text into the my account page, indicating the renewal date of a subscription - (String as short as possible).</comment>
   </data>
   <data name="AccountPurchased" xml:space="preserve">
-    <value>您已选购{0} 个帐号。</value>
+    <value>您已选购{0} 个账号。</value>
     <comment>Label to indicate the purchased account/subscription.
 Preserve the {0} code because is for include the name/type in runtime.</comment>
   </data>
   <data name="AccountRenewalNotice" xml:space="preserve">
-    <value>您的{0}订购将于您的{0}周期被自动延续，除非您登入至帐号并于续期日前取消订购。</value>
+    <value>您的{0}订购将于您的{0}周期被自动延续，除非您登入至账号并于续期日前取消订购。</value>
     <comment>Label to indicate the renewal period of the purchased subscription. 
 Preserve the {0} code because is for include the renewal period string (Monthly or Annually) in runtime.</comment>
   </data>
@@ -785,7 +785,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
     <comment>Label for any 'Credit Card' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="PhoneBill" xml:space="preserve">
-    <value>电话帐单</value>
+    <value>电话账单</value>
     <comment>Label for any Phone Bill or Mobile payment button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Punctual" xml:space="preserve">
@@ -805,7 +805,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
     <comment>Label for the dialog shown randomly when a user logs into a free account, notifying the user the possibility of upgrade the account - (String as short as possible).</comment>
   </data>
   <data name="UpgradeAccountQuestion" xml:space="preserve">
-    <value>想要升级您的帐户吗?</value>
+    <value>想要升级您的账户吗?</value>
     <comment>Label for the dialog shown randomly when a user logs into a free account, asking if the user wants to upgrade the account - (String as short as possible).</comment>
   </data>
   <data name="UpgradeNow" xml:space="preserve">
@@ -1017,11 +1017,11 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Default value for the string shown into the preferences page. It will substituted by the path of the folder selected by the user when selecting a default location for downloads.</comment>
   </data>
   <data name="UI_ConfirmAccount" xml:space="preserve">
-    <value>确认帐户</value>
+    <value>确认账户</value>
     <comment>Label for any 'Confirm account' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_CreateAccount" xml:space="preserve">
-    <value>创建帐号</value>
+    <value>创建账号</value>
     <comment>Label for any 'Create account' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_CreateFolder" xml:space="preserve">
