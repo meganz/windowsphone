@@ -883,14 +883,6 @@ Preserve the [{0}] code because is for include the contact email in runtime.</co
     <value>החשבון עודכן</value>
     <comment>Title of the dialog displayed when the account is updated (upgraded or downgraded).</comment>
   </data>
-  <data name="SSLKeyError" xml:space="preserve">
-    <value>לא הצלחנו לאמת את תעודת ה-SSL/TLS שלנו. ייתכן כי הינך מושפע מהתקפת איש-באמצע. </value>
-    <comment>Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
-  </data>
-  <data name="SSLKeyError_Title" xml:space="preserve">
-    <value>נותק בהצלחה</value>
-    <comment>Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
-  </data>
   <data name="AutoCameraUploadFailed" xml:space="preserve">
     <value>פעילות העלאת תמונות המצלמה אוטומטית נכשלה. בינך יכול להפעיל אותה מחדש מעמוד ההגדרות. </value>
     <comment>Message of the dialog displayed when the auto camera upload service failed.</comment>

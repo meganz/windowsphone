@@ -1001,16 +1001,6 @@ Preserve the [{0}] code because is for include the contact email in runtime.</no
           <target state="translated">อัปเดตบัญชี</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the account is updated (upgraded or downgraded).</note>
         </trans-unit>
-        <trans-unit id="Resx/SSLKeyError" translate="yes" space="preserve">
-          <source>Our SSL/TLS certificate can't be verified. You could be affected by a man-in-the-middle attack.</source>
-          <target state="translated">ใบรับรอง SSL/TLS ของเราไม่สามารถตรวจสอบได้ คุณอาจจะได้รับผลกระทบจากการลักลอบดักข้อมูล</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</note>
-        </trans-unit>
-        <trans-unit id="Resx/SSLKeyError_Title" translate="yes" space="preserve">
-          <source>Logged out</source>
-          <target state="translated">ออกจากระบบ</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</note>
-        </trans-unit>
         <trans-unit id="Resx/AutoCameraUploadFailed" translate="yes" space="preserve">
           <source>The Auto Camera Upload background task has failed. You can re-enable it on the settings page.</source>
           <target state="translated">การอัปโหลดจากกล้องโดยอัตโนมัติที่ทำงานอยู่เบื้องหลังไม่สำเร็จ กรุณาเปิดใช้งานใหม่อีกครั้งในหน้าการตั้งค่า</target>
@@ -1604,6 +1594,16 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <source>Please strengthen your password.</source>
           <target state="new">Please strengthen your password.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user has chosen a very weak password.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_SSLKeyError_Title" translate="yes" xml:space="preserve">
+          <source>SSL certificate error</source>
+          <target state="new">SSL certificate error</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_SSLKeyError" translate="yes" xml:space="preserve">
+          <source>MEGA is unable to connect securely through SSL. You might be on public WiFi with additional requirements.</source>
+          <target state="new">MEGA is unable to connect securely through SSL. You might be on public WiFi with additional requirements.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_IncorrectEmailFormat" translate="yes" xml:space="preserve">
           <source>Incorrect email format. Please try again.</source>

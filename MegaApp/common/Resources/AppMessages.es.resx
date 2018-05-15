@@ -185,10 +185,6 @@
     <value>Cuenta actualizada</value>
     <comment>Title of the dialog displayed when the account is updated (upgraded or downgraded).</comment>
   </data>
-  <data name="SSLKeyError_Title" xml:space="preserve">
-    <value>Sesión cerrada</value>
-    <comment>Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
-  </data>
   <data name="DeleteContactFailed_Title" xml:space="preserve">
     <value>Error al eliminar el contacto</value>
     <comment>Message of the dialog displayed when the process/request to remove a contact failed - (String as short as possible).</comment>
@@ -260,10 +256,6 @@ Preserve the {0} code because is for include the number of contacts to be remove
   <data name="AutoCameraUploadFailed_Title" xml:space="preserve">
     <value>Error en las Subidas de la cámara</value>
     <comment>Title of the dialog displayed when the auto camera upload service failed.</comment>
-  </data>
-  <data name="SSLKeyError" xml:space="preserve">
-    <value>Nuestro certificado SSL/TLS no se ha podido verificar. Es posible que estén tratando de interceptar tus comunicaciones.</value>
-    <comment>Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
   </data>
   <data name="AccountUpdate" xml:space="preserve">
     <value>Tu cuenta se ha actualizado. ¿Quieres comprobar el nuevo estado?</value>

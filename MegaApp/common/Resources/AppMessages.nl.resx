@@ -884,14 +884,6 @@ Preserve the [{0}] code because is for include the contact email in runtime.</co
     <value>Bijgewerkt account</value>
     <comment>Title of the dialog displayed when the account is updated (upgraded or downgraded).</comment>
   </data>
-  <data name="SSLKeyError" xml:space="preserve">
-    <value>Onze SSL/TLS-certificaat kan niet worden geverifieerd. U zou kunnen worden getroffen door een man-in-the-middle-aanval.</value>
-    <comment>Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
-  </data>
-  <data name="SSLKeyError_Title" xml:space="preserve">
-    <value>Afgemeld</value>
-    <comment>Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
-  </data>
   <data name="AutoCameraUploadFailed" xml:space="preserve">
     <value>De Auto Camera Upload achtergrondtaak is mislukt. U kunt deze opnieuw inschakelen op de pagina instellingen.</value>
     <comment>Message of the dialog displayed when the auto camera upload service failed.</comment>

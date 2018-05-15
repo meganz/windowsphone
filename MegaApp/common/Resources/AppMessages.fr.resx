@@ -884,14 +884,6 @@ Preserve the [{0}] code because is for include the contact email in runtime.</co
     <value>Le compte a été mis à jour</value>
     <comment>Title of the dialog displayed when the account is updated (upgraded or downgraded).</comment>
   </data>
-  <data name="SSLKeyError" xml:space="preserve">
-    <value>Notre certificat SSL/TLS ne peut pas être vérifié. Vous pourriez être la cible d'une attaque de l'intercepteur.</value>
-    <comment>Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
-  </data>
-  <data name="SSLKeyError_Title" xml:space="preserve">
-    <value>Déconnecté</value>
-    <comment>Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
-  </data>
   <data name="AutoCameraUploadFailed" xml:space="preserve">
     <value>La tâche d'arrière-plan de téléversement automatique de la caméra a échoué. Vous pouvez la réactiver dans la fenêtre des paramètres.</value>
     <comment>Message of the dialog displayed when the auto camera upload service failed.</comment>

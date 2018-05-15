@@ -1474,6 +1474,16 @@ NOTE: Keep the capital letter if possible.</note>
           <target state="new">Takedown Guidance</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Takedown Guidance' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
+        <trans-unit id="Resx/UI_Retry" translate="yes" xml:space="preserve">
+          <source>Retry</source>
+          <target state="new">Retry</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Retry' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_OpenBrowser" translate="yes" xml:space="preserve">
+          <source>Open browser</source>
+          <target state="new">Open browser</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the button to allow the user open the default browser - (String as short as possible).</note>
+        </trans-unit>
         <trans-unit id="Resx/UI_LearnMore" translate="yes" xml:space="preserve">
           <source>Learn more</source>
           <target state="new">Learn more</target>

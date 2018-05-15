@@ -884,14 +884,6 @@ Preserve the [{0}] code because is for include the contact email in runtime.</co
     <value>업데이트된 계정</value>
     <comment>Title of the dialog displayed when the account is updated (upgraded or downgraded).</comment>
   </data>
-  <data name="SSLKeyError" xml:space="preserve">
-    <value>우리의 SSL/TLS 인증서를 확인할 수 없습니다. 중간자 공격을 받고 있을 수 있습니다.</value>
-    <comment>Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
-  </data>
-  <data name="SSLKeyError_Title" xml:space="preserve">
-    <value>로그아웃됨</value>
-    <comment>Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
-  </data>
   <data name="AutoCameraUploadFailed" xml:space="preserve">
     <value>자동 카메라 업로드 백그라운드 작업이 실패했습니다. 설정 페이지에서 다시 활성화할 수 있습니다.</value>
     <comment>Message of the dialog displayed when the auto camera upload service failed.</comment>

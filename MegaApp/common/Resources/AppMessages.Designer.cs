@@ -967,6 +967,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a MEGA is unable to connect securely through SSL. You might be on public WiFi with additional requirements..
+        /// </summary>
+        public static string AM_SSLKeyError {
+            get {
+                return ResourceManager.GetString("AM_SSLKeyError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a SSL certificate error.
+        /// </summary>
+        public static string AM_SSLKeyError_Title {
+            get {
+                return ResourceManager.GetString("AM_SSLKeyError_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a You have attempted to log in too many times. Please wait until {0} and try again..
         /// </summary>
         public static string AM_TooManyFailedLoginAttempts {
@@ -2728,24 +2746,6 @@ namespace MegaApp.Resources {
         public static string ShortCutFailed_Title {
             get {
                 return ResourceManager.GetString("ShortCutFailed_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Our SSL/TLS certificate can&apos;t be verified. You could be affected by a man-in-the-middle attack..
-        /// </summary>
-        public static string SSLKeyError {
-            get {
-                return ResourceManager.GetString("SSLKeyError", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Logged out.
-        /// </summary>
-        public static string SSLKeyError_Title {
-            get {
-                return ResourceManager.GetString("SSLKeyError_Title", resourceCulture);
             }
         }
         

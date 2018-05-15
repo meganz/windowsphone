@@ -884,14 +884,6 @@ Preserve the [{0}] code because is for include the contact email in runtime.</co
     <value>تم تحديث الحساب</value>
     <comment>Title of the dialog displayed when the account is updated (upgraded or downgraded).</comment>
   </data>
-  <data name="SSLKeyError" xml:space="preserve">
-    <value>شهادتنا SSL/TLS لايمكن توثيقها، ربما تتأثر بهجوم رجل في الوسط.</value>
-    <comment>Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
-  </data>
-  <data name="SSLKeyError_Title" xml:space="preserve">
-    <value>تم تسجيل الخروج</value>
-    <comment>Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
-  </data>
   <data name="AutoCameraUploadFailed" xml:space="preserve">
     <value>مهمة تحميلات الكاميرا التلقائية قد فشل. تستطيع إعادة تفعيله من صفحة الإعدادات.</value>
     <comment>Message of the dialog displayed when the auto camera upload service failed.</comment>

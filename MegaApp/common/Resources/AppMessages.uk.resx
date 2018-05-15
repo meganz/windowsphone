@@ -884,14 +884,6 @@ Preserve the [{0}] code because is for include the contact email in runtime.</co
     <value>Оновлення облікового запису</value>
     <comment>Title of the dialog displayed when the account is updated (upgraded or downgraded).</comment>
   </data>
-  <data name="SSLKeyError" xml:space="preserve">
-    <value>Наш SSL/TLS сертифікат не можливо перевірити. Ви можете бути уражені атакою людина-по-середині.</value>
-    <comment>Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
-  </data>
-  <data name="SSLKeyError_Title" xml:space="preserve">
-    <value>Вихід</value>
-    <comment>Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
-  </data>
   <data name="AutoCameraUploadFailed" xml:space="preserve">
     <value>Фонове автозавантаження з камери не вдалося. Ви можете повторно включити його на сторінці налаштувань.</value>
     <comment>Message of the dialog displayed when the auto camera upload service failed.</comment>

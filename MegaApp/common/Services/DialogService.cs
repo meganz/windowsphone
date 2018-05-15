@@ -366,6 +366,42 @@ namespace MegaApp.Services
             customMessageDialog.ShowDialog();
         }
 
+        /// <summary>
+        /// Show a SSL Key error alert and gives the user several options
+        /// </summary>
+        /// <param name="api">Current SDK instance</param>
+        /// <returns>Message dialog result specified by user button tap action</returns>
+        public static async Task<MessageDialogResult> ShowSSLKeyErrorAlertAsync(MegaSDK api)
+        {
+            // "Retry" button
+            var retryButton = new DialogButton(
+                UiResources.UI_Retry, () => api.reconnect());
+
+            // "Open browser" button
+            var openBrowserButton = new DialogButton(
+                UiResources.UI_OpenBrowser, () =>
+                {
+                    var webBrowserTask = new WebBrowserTask { Uri = new Uri(AppResources.AR_MegaUrl) };
+                    webBrowserTask.Show();
+                });
+
+            // "Ignore" button
+            var ignoreButton = new DialogButton(
+                UiResources.Ignore, () =>
+                {
+                    api.setPublicKeyPinning(false);
+                    api.reconnect();
+                });
+
+            var customMessageDialog = new CustomMessageDialog(
+                AppMessages.AM_SSLKeyError_Title,
+                AppMessages.AM_SSLKeyError, App.AppInformation,
+                new[] { retryButton, openBrowserButton, ignoreButton },
+                Orientation.Vertical);
+
+            return await customMessageDialog.ShowDialogAsync();
+        }
+
         public static void DialogOpening(CancelEventArgs args)
         {
             // Do not show dialog when another dialog is already open
