@@ -630,7 +630,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException" translate="yes" space="preserve">
           <source>You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?
 Please try to save/copy the file to your device’s internal memory instead.</source>
-          <target state="needs-review-translation">No tienes permisos para copiar este tipo de archivo en la carpeta de destino. ¿Está intentando guardar/copiar un archivo no soportado en una tarjeta SD?
+          <target state="translated">No tienes permisos para copiar este tipo de archivo en la carpeta de destino. ¿Está intentando guardar/copiar un archivo no soportado en una tarjeta SD?
 Intenta guardar/copiar el archivo en la memoria interna de tu dispositivo.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</note>
         </trans-unit>
@@ -1450,7 +1450,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AccountBlocked" translate="yes" space="preserve">
           <source>Your account was terminated due to a breach of MEGA’s Terms of Service, such as abuse of rights of others; sharing and/or importing illegal data; or system abuse.</source>
-          <target state="needs-review-translation">Hemos cerrado tu cuenta debido a un incumplimiento de los Términos de servicio de MEGA, como el abuso de los derechos de terceros, la compartición y/o importación de datos ilegales o el abuso del sistema.</target>
+          <target state="translated">Hemos cerrado tu cuenta debido a un incumplimiento de los Términos de servicio de MEGA, como el abuso de los derechos de terceros, la compartición y/o importación de datos ilegales o el abuso del sistema.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the user is trying to login and the account has been blocked.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AccountNotConfirmed" translate="yes" space="preserve">
@@ -1577,7 +1577,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_ClearCacheFailed_Title" translate="yes" space="preserve">
           <source>Clear cache failed</source>
-          <target state="translated">Error al borrar caché </target>
+          <target state="translated">Error al borrar caché</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PrepareDownloadsFailed" translate="yes" space="preserve">
@@ -1587,12 +1587,43 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_AccountBlockedCopyright" translate="yes" space="preserve">
           <source>Your account has been suspended due to multiple breaches of MEGA’s Terms of Service. Please check your email inbox.</source>
-          <target state="needs-review-translation">Tu cuenta ha sido suspendida debido a infracciones múltiples de los Términos de servicio de MEGA. Por favor revisa la bandeja de entrada de tu correo electrónico.</target>
+          <target state="translated">Tu cuenta ha sido suspendida debido a infracciones múltiples de los Términos de servicio de MEGA. Por favor revisa la bandeja de entrada de tu correo electrónico.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the user is trying to login and the account has been blocked for multiple copyright violation.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_VeryWeakPassword" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/AM_EmptyRequiredFields" translate="yes" space="preserve">
+          <source>Fill the required fields and try again.</source>
+          <target state="translated">Completa los campos requeridos e intenta de nuevo.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when required fields are empty.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_PasswordChanged" translate="yes" space="preserve">
+          <source>We have sent you an email confirming your password change.</source>
+          <target state="translated">Te hemos enviado un correo electrónico confirmando el cambio de contraseña.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the change password process finish successful.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_PasswordChanged_Title" translate="yes" space="preserve">
+          <source>Password changed</source>
+          <target state="translated">Contraseña modificada</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the change password process finish successful.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_PasswordChangeFailed" translate="yes" space="preserve">
+          <source>Failed to change your password. Please try again.</source>
+          <target state="translated">Failed to change your password. Please try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user has failed to change his password</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_PasswordChangeFailed_Title" translate="yes" space="preserve">
+          <source>Error changing password</source>
+          <target state="needs-review-translation">Error changing password</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the user has failed to change his password - (String as short as possible).</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_IncorrectEmailFormat" translate="yes" space="preserve">
+          <source>Incorrect email format. Please try again.</source>
+          <target state="translated">Incorrect email format. Please try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user types an email address with an incorrect format.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_VeryWeakPassword" translate="yes" space="preserve">
           <source>Please strengthen your password.</source>
-          <target state="new">Please strengthen your password.</target>
+          <target state="translated">Por favor, elige una contraseña más segura.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user has chosen a very weak password.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_SSLKeyError_Title" translate="yes" xml:space="preserve">
@@ -1604,36 +1635,6 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <source>MEGA is unable to connect securely through SSL. You might be on public WiFi with additional requirements.</source>
           <target state="new">MEGA is unable to connect securely through SSL. You might be on public WiFi with additional requirements.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_IncorrectEmailFormat" translate="yes" xml:space="preserve">
-          <source>Incorrect email format. Please try again.</source>
-          <target state="new">Incorrect email format. Please try again.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user types an email address with an incorrect format.</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_PasswordChangeFailed_Title" translate="yes" xml:space="preserve">
-          <source>Error change password</source>
-          <target state="new">Error change password</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the user has failed to change his password - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_PasswordChangeFailed" translate="yes" xml:space="preserve">
-          <source>Failed to change your password. Please try again.</source>
-          <target state="new">Failed to change your password. Please try again.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user has failed to change his password</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_PasswordChanged_Title" translate="yes" xml:space="preserve">
-          <source>Password changed</source>
-          <target state="new">Password changed</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the change password process finish successful.</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_PasswordChanged" translate="yes" xml:space="preserve">
-          <source>We have sent you an email confirming your password change.</source>
-          <target state="new">We have sent you an email confirming your password change.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the change password process finish successful.</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_EmptyRequiredFields" translate="yes" xml:space="preserve">
-          <source>Fill the required fields and try again.</source>
-          <target state="new">Fill the required fields and try again.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when required fields are empty.</note>
         </trans-unit>
       </group>
     </body>

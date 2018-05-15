@@ -28,7 +28,7 @@
         </trans-unit>
         <trans-unit id="Resx/CloudDriveName" translate="yes" space="preserve">
           <source>Cloud Drive</source>
-          <target state="translated">Cloud Schijf</target>
+          <target state="translated">Cloud Drive</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Cloud Drive' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Confirm" translate="yes" space="preserve">
@@ -48,7 +48,7 @@
         </trans-unit>
         <trans-unit id="Resx/Copy" translate="yes" space="preserve">
           <source>Copy</source>
-          <target state="translated">Kopiëren </target>
+          <target state="translated">Kopiëren</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Copy' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_CreateAccount" translate="yes" space="preserve">
@@ -273,7 +273,7 @@
         </trans-unit>
         <trans-unit id="Resx/RubbishBinRoot" translate="yes" space="preserve">
           <source>Rubbish Bin</source>
-          <target state="translated">Prullenbak</target>
+          <target state="translated">Rubbish Bin</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the name of the Rubbish bin breadcum root node - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_ConfirmPinLock" translate="yes" space="preserve">
@@ -465,7 +465,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_RecoveryKey" translate="yes" space="preserve">
           <source>Recovery Key</source>
-          <target state="translated">Herstel Sleutel</target>
+          <target state="translated">Recovery Key</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Recovery Key' button, link, text, title, etc. Preserve uppercase - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_MEGA_SDK_Version" translate="yes" space="preserve">
@@ -526,7 +526,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/SmallestSortOption" translate="yes" space="preserve">
           <source>Smallest</source>
-          <target state="translated">kleinste</target>
+          <target state="translated">Kleinste</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the menu option to sort the nodes of the cloud drive in ascending order by size (from smaller to bigger) - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/SortByMenuTitle" translate="yes" space="preserve">
@@ -721,7 +721,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/ClearRubbishBin" translate="yes" space="preserve">
           <source>Empty rubbish bin</source>
-          <target state="translated">Leeg de prullenmand</target>
+          <target state="translated">Leeg de prullenbak</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Empty rubbish' button, link, text, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Ok" translate="yes" space="preserve">
@@ -811,7 +811,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/CreditCardRecurringPayments" translate="yes" space="preserve">
           <source>Credit Card recurring payments</source>
-          <target state="translated">Periodieke creditcardbetalingen </target>
+          <target state="translated">Periodieke creditcardbetalingen</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label to indicate the user that the Credit Card payments are recurring.</note>
         </trans-unit>
         <trans-unit id="Resx/CVV" translate="yes" space="preserve">
@@ -956,7 +956,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
         </trans-unit>
         <trans-unit id="Resx/CreditCard" translate="yes" space="preserve">
           <source>Credit card</source>
-          <target state="translated">Credit card</target>
+          <target state="translated">Credit kaart</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Credit Card' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PhoneBill" translate="yes" space="preserve">
@@ -1246,7 +1246,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/EmptyRubbishBin" translate="yes" space="preserve">
           <source>Empty rubbish bin</source>
-          <target state="translated">Leeg de prullenmand</target>
+          <target state="translated">Leeg de prullenbak</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty rubbish bin page - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/EmptySharedFolders" translate="yes" space="preserve">
@@ -1466,12 +1466,32 @@ NOTE: Keep the capital letter if possible.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_ViewTermsOfService" translate="yes" space="preserve">
           <source>View Terms of Service here</source>
-          <target state="translated">Bekijk de Algemene Voorwaarden hier </target>
+          <target state="translated">Bekijk de Algemene Voorwaarden hier</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text used as a link to view the 'Terms of Service' into the 'create account' page.</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_TakedownGuidance" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_DataProtectionRegulation" translate="yes" space="preserve">
+          <source>Data Protection Regulation</source>
+          <target state="translated">Data Protection Regulation</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Data Protection Regulation' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_LegalAndPolicies" translate="yes" space="preserve">
+          <source>Legal and Policies</source>
+          <target state="translated">Juridisch &amp; Beleid</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the title of the "Legal and Policies" section which include links to the Terms of Service, Privacy Policy, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_Copyright" translate="yes" space="preserve">
+          <source>Copyright</source>
+          <target state="translated">Auteursrecht</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Copyright' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_LearnMore" translate="yes" space="preserve">
+          <source>Learn more</source>
+          <target state="translated">Leer meer</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Learn more' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_TakedownGuidance" translate="yes" space="preserve">
           <source>Takedown Guidance</source>
-          <target state="new">Takedown Guidance</target>
+          <target state="translated">Takedown Guidance</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Takedown Guidance' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_Retry" translate="yes" xml:space="preserve">
@@ -1483,26 +1503,6 @@ NOTE: Keep the capital letter if possible.</note>
           <source>Open browser</source>
           <target state="new">Open browser</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the button to allow the user open the default browser - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/UI_LearnMore" translate="yes" xml:space="preserve">
-          <source>Learn more</source>
-          <target state="new">Learn more</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Learn more' button, link, text, title, etc. - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/UI_Copyright" translate="yes" xml:space="preserve">
-          <source>Copyright</source>
-          <target state="new">Copyright</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Copyright' button, link, text, title, etc. - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/UI_LegalAndPolicies" translate="yes" xml:space="preserve">
-          <source>Legal and Policies</source>
-          <target state="new">Legal and Policies</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the title of the "Legal and Policies" section which include links to the Terms of Service, Privacy Policy, etc. - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/UI_DataProtectionRegulation" translate="yes" xml:space="preserve">
-          <source>Data Protection Regulation</source>
-          <target state="new">Data Protection Regulation</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Data Protection Regulation' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>

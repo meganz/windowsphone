@@ -661,7 +661,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Button of the dialog displayed the first time that a user want to download a image. Option automatically download to the photo album after downloads - (String as short as possible).</comment>
   </data>
   <data name="SelectFolderFailed" xml:space="preserve">
-    <value>폴더 선택을 실패하였습니다. 다시 시도하거나 다른 폴더를 선택하세요.                                </value>
+    <value>폴더 선택을 실패하였습니다. 다시 시도하거나 다른 폴더를 선택하세요.</value>
     <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="SelectFolderFailed_Title" xml:space="preserve">
@@ -1095,14 +1095,14 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>다음의 이유로 인해 발생할 수 있습니다:
 - 파일이 이용 약관/이용 목적 제한 방침을 위반하여 삭제되었습니다.
 - 잘못된 URL – 접속하려는 링크가 존재하지 않습니다.
-- 파일이 이용자에 의해 삭제되었습니다.                                </value>
+- 파일이 이용자에 의해 삭제되었습니다.</value>
     <comment>Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</comment>
   </data>
   <data name="AM_FolderLinkUnavailable" xml:space="preserve">
     <value>다음의 이유로 인해 발생할 수 있습니다:
 - 폴더 링크가 이용 약관/이용 목적 제한 방침을 위반하여 삭제되었습니다.
 - 잘못된 URL – 접속하려는 링크가 존재하지 않습니다.
-- 폴더 링크가 이용자에 의해 삭제되었습니다.                                </value>
+- 폴더 링크가 이용자에 의해 삭제되었습니다.</value>
     <comment>Error message shown when a folder link doesn't exist. Keep "\n"</comment>
   </data>
   <data name="AM_LinkUnavailableTitle" xml:space="preserve">
@@ -1389,5 +1389,33 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="AM_AccountBlockedCopyright" xml:space="preserve">
     <value>당신의 계정은 MEGA 이용 약관을 다수 위반하여 정지되었습니다. 이메일 수신함을 확인하세요.</value>
     <comment>Message of the dialog shown when the user is trying to login and the account has been blocked for multiple copyright violation.</comment>
+  </data>
+  <data name="AM_EmptyRequiredFields" xml:space="preserve">
+    <value>필수 항목을 입력하고 다시 시도하세요.</value>
+    <comment>Message of the dialog displayed when required fields are empty.</comment>
+  </data>
+  <data name="AM_PasswordChanged" xml:space="preserve">
+    <value>비밀번호 변경을 확인하는 이메일을 발송하였습니다.</value>
+    <comment>Message of the dialog displayed when the change password process finish successful.</comment>
+  </data>
+  <data name="AM_PasswordChanged_Title" xml:space="preserve">
+    <value>비밀번호 변경됨</value>
+    <comment>Title of the dialog displayed when the change password process finish successful.</comment>
+  </data>
+  <data name="AM_PasswordChangeFailed" xml:space="preserve">
+    <value>비밀번호 변경 실패. 다시 시도하세요.</value>
+    <comment>Message of the dialog displayed when the user has failed to change his password</comment>
+  </data>
+  <data name="AM_PasswordChangeFailed_Title" xml:space="preserve">
+    <value>비밀번호 변경 오류</value>
+    <comment>Title of the dialog displayed when the user has failed to change his password - (String as short as possible).</comment>
+  </data>
+  <data name="AM_IncorrectEmailFormat" xml:space="preserve">
+    <value>잘못된 이메일 형식. 다시 시도하세요.</value>
+    <comment>Message of the dialog displayed when the user types an email address with an incorrect format.</comment>
+  </data>
+  <data name="AM_VeryWeakPassword" xml:space="preserve">
+    <value>더 강력한 비밀번호를 입력하세요.</value>
+    <comment>Message of the dialog displayed when the user has chosen a very weak password.</comment>
   </data>
 </root>

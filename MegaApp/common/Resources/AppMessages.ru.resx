@@ -513,7 +513,7 @@ Preserve the {0} code because is for include the number of pending transfers in 
     <comment>Title of the dialog displayed when a user want to do a multi image upload and haven't selected any element - (String as short as possible).</comment>
   </data>
   <data name="PrepareImageForUploadFailed" xml:space="preserve">
-    <value>Не удалось подготовить изображение к загрузке: {0} </value>
+    <value>Не удалось подготовить изображение к загрузке: {0}</value>
     <comment>Message of the dialog displayed when the process to prepare a image for upload failed.
 Preserve the {0} code because is for include the file name in runtime.</comment>
   </data>
@@ -661,7 +661,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Button of the dialog displayed the first time that a user want to download a image. Option automatically download to the photo album after downloads - (String as short as possible).</comment>
   </data>
   <data name="SelectFolderFailed" xml:space="preserve">
-    <value>Не удалось выбрать папку. Пожалуйста, попробуйте ещё раз или выберите другую.                                                                </value>
+    <value>Не удалось выбрать папку. Пожалуйста, попробуйте ещё раз или выберите другую.                                </value>
     <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="SelectFolderFailed_Title" xml:space="preserve">
@@ -723,7 +723,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="CapturePhotoVideoFailed_Title" xml:space="preserve">
-    <value>Фото/видео съемка не удалась </value>
+    <value>Фото/видео съемка не удалась</value>
     <comment>Title of the dialog displayed when the process to capture photo or video failed - (String as short as possible).</comment>
   </data>
   <data name="CaptureVideoFailed" xml:space="preserve">
@@ -961,7 +961,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</comment>
   </data>
   <data name="FolderUnauthorizedAccess" xml:space="preserve">
-    <value>У вас нет доступа к папке '{0}'. Пожалуйста, выберите другую и попробуйте снова.                                </value>
+    <value>У вас нет доступа к папке '{0}'. Пожалуйста, выберите другую и попробуйте снова.</value>
     <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder in the device memory. For example to download a file/folder, create a new folder, etc.
 Preserve the '{0}' code because is for include the folder name in runtime.</comment>
   </data>
@@ -1095,14 +1095,14 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>Это может быть вызвано следующими причинами:
 - Файл был удалён из-за нарушения Условий обслуживания/Правил использования.
 - Недействительный адрес — ссылка, по которой вы пытаетесь перейти, не существует.
-- Файл был удалён пользователем.                                </value>
+- Файл был удалён пользователем.</value>
     <comment>Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</comment>
   </data>
   <data name="AM_FolderLinkUnavailable" xml:space="preserve">
     <value>Это может быть вызвано следующими причинами:
 - Ссылка на папку была удалена из-за нарушения Условий обслуживания/Правил использования.
 - Недействительный адрес — ссылка, по которой вы пытаетесь перейти, не существует.
-- Ссылка на папку была удалена пользователем.                                </value>
+- Ссылка на папку была удалена пользователем.</value>
     <comment>Error message shown when a folder link doesn't exist. Keep "\n"</comment>
   </data>
   <data name="AM_LinkUnavailableTitle" xml:space="preserve">
@@ -1389,5 +1389,33 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="AM_AccountBlockedCopyright" xml:space="preserve">
     <value>Ваша учетная запись была приостановлена из-за многочисленных нарушений Условий предоставления услуг MEGA. Пожалуйста, проверьте свой почтовый ящик.</value>
     <comment>Message of the dialog shown when the user is trying to login and the account has been blocked for multiple copyright violation.</comment>
+  </data>
+  <data name="AM_EmptyRequiredFields" xml:space="preserve">
+    <value>Заполните требуемые поля и попробуйте ещё раз.</value>
+    <comment>Message of the dialog displayed when required fields are empty.</comment>
+  </data>
+  <data name="AM_PasswordChanged" xml:space="preserve">
+    <value>Мы отправили письмо для подтверждения изменения пароля.</value>
+    <comment>Message of the dialog displayed when the change password process finish successful.</comment>
+  </data>
+  <data name="AM_PasswordChanged_Title" xml:space="preserve">
+    <value>Пароль изменён</value>
+    <comment>Title of the dialog displayed when the change password process finish successful.</comment>
+  </data>
+  <data name="AM_PasswordChangeFailed" xml:space="preserve">
+    <value>Не удалось изменить пароль. Попробуйте ещё раз.</value>
+    <comment>Message of the dialog displayed when the user has failed to change his password</comment>
+  </data>
+  <data name="AM_PasswordChangeFailed_Title" xml:space="preserve">
+    <value>Ошибка при смене пароля</value>
+    <comment>Title of the dialog displayed when the user has failed to change his password - (String as short as possible).</comment>
+  </data>
+  <data name="AM_IncorrectEmailFormat" xml:space="preserve">
+    <value>Неправильный формат email. Попробуйте ещё раз.</value>
+    <comment>Message of the dialog displayed when the user types an email address with an incorrect format.</comment>
+  </data>
+  <data name="AM_VeryWeakPassword" xml:space="preserve">
+    <value>Повысьте надежность пароля.</value>
+    <comment>Message of the dialog displayed when the user has chosen a very weak password.</comment>
   </data>
 </root>

@@ -924,13 +924,13 @@ Preserve the {0} code because is for include the name/type of the selected plan 
         </trans-unit>
         <trans-unit id="Resx/AccountPurchased" translate="yes" space="preserve">
           <source>You have purchased a {0} account.</source>
-          <target state="translated"> {0} アカウントの購入、ありがとうございます。</target>
+          <target state="translated">{0} アカウントの購入、ありがとうございます。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label to indicate the purchased account/subscription.
 Preserve the {0} code because is for include the name/type in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AccountRenewalNotice" translate="yes" space="preserve">
           <source>Your {0} subscription will be automatically rebilled on your {0} anniversary unless you log in to your account and cancel the subscription prior to the renewal date.</source>
-          <target state="translated"> {0} 定期契約の料金は、前もってキャンセルされない限り、 {0} 後の更新時に自動的に請求されます。</target>
+          <target state="translated">{0} 定期契約の料金は、前もってキャンセルされない限り、 {0} 後の更新時に自動的に請求されます。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label to indicate the renewal period of the purchased subscription. 
 Preserve the {0} code because is for include the renewal period string (Monthly or Annually) in runtime.</note>
         </trans-unit>
@@ -1469,9 +1469,29 @@ NOTE: Keep the capital letter if possible.</note>
           <target state="translated">ここでご利用規約を表示</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text used as a link to view the 'Terms of Service' into the 'create account' page.</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_TakedownGuidance" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_DataProtectionRegulation" translate="yes" space="preserve">
+          <source>Data Protection Regulation</source>
+          <target state="translated">Data Protection Regulation</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Data Protection Regulation' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_LegalAndPolicies" translate="yes" space="preserve">
+          <source>Legal and Policies</source>
+          <target state="translated">法律と方針</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the title of the "Legal and Policies" section which include links to the Terms of Service, Privacy Policy, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_Copyright" translate="yes" space="preserve">
+          <source>Copyright</source>
+          <target state="translated">著作権</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Copyright' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_LearnMore" translate="yes" space="preserve">
+          <source>Learn more</source>
+          <target state="translated">もっと読む</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Learn more' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_TakedownGuidance" translate="yes" space="preserve">
           <source>Takedown Guidance</source>
-          <target state="new">Takedown Guidance</target>
+          <target state="translated">テイクダウンに関する手引き</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Takedown Guidance' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_Retry" translate="yes" xml:space="preserve">
@@ -1483,26 +1503,6 @@ NOTE: Keep the capital letter if possible.</note>
           <source>Open browser</source>
           <target state="new">Open browser</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the button to allow the user open the default browser - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/UI_LearnMore" translate="yes" xml:space="preserve">
-          <source>Learn more</source>
-          <target state="new">Learn more</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Learn more' button, link, text, title, etc. - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/UI_Copyright" translate="yes" xml:space="preserve">
-          <source>Copyright</source>
-          <target state="new">Copyright</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Copyright' button, link, text, title, etc. - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/UI_LegalAndPolicies" translate="yes" xml:space="preserve">
-          <source>Legal and Policies</source>
-          <target state="new">Legal and Policies</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the title of the "Legal and Policies" section which include links to the Terms of Service, Privacy Policy, etc. - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/UI_DataProtectionRegulation" translate="yes" xml:space="preserve">
-          <source>Data Protection Regulation</source>
-          <target state="new">Data Protection Regulation</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Data Protection Regulation' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>

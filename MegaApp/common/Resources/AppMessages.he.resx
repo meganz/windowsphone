@@ -851,11 +851,11 @@ Preserve the [{0}] code because is for include the error code or the error messa
 Preserve the {0} code because is for include email of the contact to be removed in runtime.</comment>
   </data>
   <data name="DeleteContactQuestion_Title" xml:space="preserve">
-    <value>למחוק איש קשר? </value>
+    <value>למחוק איש קשר?</value>
     <comment>Title of the dialog displayed when a user want to remove a contact asking for confirmation to make it - (String as short as possible).</comment>
   </data>
   <data name="InviteContactAddFailed" xml:space="preserve">
-    <value>הזמנת איש הקשר לא נשלחה. אנא נסה שוב. </value>
+    <value>הזמנת איש הקשר לא נשלחה. אנא נסה שוב.</value>
     <comment>Message of the dialog displayed when the process/request to invite a contact failed.</comment>
   </data>
   <data name="InviteContactAddFailed_Title" xml:space="preserve">
@@ -863,7 +863,7 @@ Preserve the {0} code because is for include email of the contact to be removed 
     <comment>Title of the dialog displayed when the process/request to invite a contact failed - (String as short as possible).</comment>
   </data>
   <data name="InviteContactAddSuccessfully" xml:space="preserve">
-    <value>איש הקשר {0} הוזמן והופיע ברשימת אנשי הקשר שלך לאחר שההזמנה תאושר. </value>
+    <value>איש הקשר {0} הוזמן והופיע ברשימת אנשי הקשר שלך לאחר שההזמנה תאושר.</value>
     <comment>Message of the dialog displayed when the process/request to invite a contact finished successfully - (String as short as possible).
 Preserve the [{0}] code because is for include the contact email in runtime.</comment>
   </data>
@@ -876,7 +876,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</co
     <comment>Descripton of the task that automatic uploads photos tot MEGA. Seen in the background services Settings screen</comment>
   </data>
   <data name="AccountUpdate" xml:space="preserve">
-    <value>החשבון שלך עודכן. האם אתה רוצה לראות את הפרטים החדשים של חשבונך? </value>
+    <value>החשבון שלך עודכן. האם אתה רוצה לראות את הפרטים החדשים של חשבונך?</value>
     <comment>Message of the dialog displayed when the account is updated (upgraded or downgraded).</comment>
   </data>
   <data name="AccountUpdated_Title" xml:space="preserve">
@@ -884,7 +884,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</co
     <comment>Title of the dialog displayed when the account is updated (upgraded or downgraded).</comment>
   </data>
   <data name="AutoCameraUploadFailed" xml:space="preserve">
-    <value>פעילות העלאת תמונות המצלמה אוטומטית נכשלה. בינך יכול להפעיל אותה מחדש מעמוד ההגדרות. </value>
+    <value>פעילות העלאת תמונות המצלמה אוטומטית נכשלה. בינך יכול להפעיל אותה מחדש מעמוד ההגדרות.</value>
     <comment>Message of the dialog displayed when the auto camera upload service failed.</comment>
   </data>
   <data name="AutoCameraUploadFailed_Title" xml:space="preserve">
@@ -901,12 +901,12 @@ Preserve the {0} code because is for include the contact email in runtime. Prese
     <comment>Message of the dialog displayed when the process/request to remove a contact failed - (String as short as possible).</comment>
   </data>
   <data name="DeleteMultipleContactsQuestion" xml:space="preserve">
-    <value>האם אתה רוצה למחוק {0} אנשי קשר? </value>
+    <value>האם אתה רוצה למחוק {0} אנשי קשר?</value>
     <comment>Message of the dialog displayed when a user want to remove multiple contacts, asking for confirmation to make it.
 Preserve the {0} code because is for include the number of contacts to be removed in runtime.</comment>
   </data>
   <data name="DeleteMultipleContactsQuestion_Title" xml:space="preserve">
-    <value>למחוק אנשי קשר? </value>
+    <value>למחוק אנשי קשר?</value>
     <comment>Title of the dialog displayed when a user want to remove multiple contacts asking for confirmation to make it - (String as short as possible).</comment>
   </data>
   <data name="NewAndOldPasswordMatch" xml:space="preserve">
@@ -919,7 +919,7 @@ Preserve the {0} code because is for include the number of contacts to be remove
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="CloseAllSessionsSuccess" xml:space="preserve">
-    <value>הסשנס שנותרו פתוחות, נסגרו בהצלחה. </value>
+    <value>הסשנס שנותרו פתוחות, נסגרו בהצלחה.</value>
     <comment>Message of the dialog displayed when close or kill all sessions (except current) successfully.</comment>
   </data>
   <data name="CloseSessionFailed" xml:space="preserve">
@@ -928,31 +928,31 @@ Preserve the [{0}] code because is for include the error code or the error messa
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="CloseSessionSucces" xml:space="preserve">
-    <value>כל הסשנס נסגרו בהצלחה. </value>
+    <value>כל הסשנס נסגרו בהצלחה.</value>
     <comment>Message of the dialog displayed when close or kill a session succesfully.</comment>
   </data>
   <data name="CleanRubbishBinFailed" xml:space="preserve">
-    <value>שגיאה בניסיון לרוקן את פח האשפה. אנא נסה שוב. </value>
+    <value>שגיאה בניסיון לרוקן את פח האשפה. אנא נסה שוב.</value>
     <comment>Message of the dialog displayed when the process/request to empty the rubbish bin failed.</comment>
   </data>
   <data name="CleanRubbishBinQuestion" xml:space="preserve">
-    <value>האם אתה בטוח שברצונך למחוק לצמיתות את כל הקבצים בפח האשפה? </value>
+    <value>האם אתה בטוח שברצונך למחוק לצמיתות את כל הקבצים בפח האשפה?</value>
     <comment>Message of the dialog displayed when a user want to empty the rubbish bin, asking for confirmation to do it.</comment>
   </data>
   <data name="CleanRubbishBinSuccess" xml:space="preserve">
-    <value>הפח אשפה התרוקן בהצלחה. </value>
+    <value>הפח אשפה התרוקן בהצלחה.</value>
     <comment>Message of the dialog displayed when empty the rubbish bin succesfully.</comment>
   </data>
   <data name="InviteContactAddFailedOwnEmail" xml:space="preserve">
-    <value>אתה מנסה להוסיף את המייל של עצמך כאיש קשר. </value>
+    <value>אתה מנסה להוסיף את המייל של עצמך כאיש קשר.</value>
     <comment>Message of the dialog displayed when the process/request to invite a contact failed because the user is trying to his/her own e-mail.</comment>
   </data>
   <data name="RemoveLinkFailed" xml:space="preserve">
-    <value>שגיאה במחלקת הקישור. אנא נסה שוב. </value>
+    <value>שגיאה במחלקת הקישור. אנא נסה שוב.</value>
     <comment>Message of the dialog displayed when the process/request to remove a link to a node failed.</comment>
   </data>
   <data name="NoInternetConnectionMessage" xml:space="preserve">
-    <value>אינך יכול לבצע פעולה זו. אנא התחבר לאינטרנט ונסה שוב. </value>
+    <value>אינך יכול לבצע פעולה זו. אנא התחבר לאינטרנט ונסה שוב.</value>
     <comment>Message of the dialog displayed when the user is trying to perform any online action without an active Internet connection.</comment>
   </data>
   <data name="AM_CancelSubscription" xml:space="preserve">
@@ -1388,5 +1388,33 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="AM_AccountBlockedCopyright" xml:space="preserve">
     <value>Your account has been suspended due to multiple breaches of MEGA’s Terms of Service. Please check your email inbox.</value>
     <comment>Message of the dialog shown when the user is trying to login and the account has been blocked for multiple copyright violation.</comment>
+  </data>
+  <data name="AM_EmptyRequiredFields" xml:space="preserve">
+    <value>Fill the required fields and try again.</value>
+    <comment>Message of the dialog displayed when required fields are empty.</comment>
+  </data>
+  <data name="AM_PasswordChanged" xml:space="preserve">
+    <value>We have sent you an email confirming your password change.</value>
+    <comment>Message of the dialog displayed when the change password process finish successful.</comment>
+  </data>
+  <data name="AM_PasswordChanged_Title" xml:space="preserve">
+    <value>Password changed</value>
+    <comment>Title of the dialog displayed when the change password process finish successful.</comment>
+  </data>
+  <data name="AM_PasswordChangeFailed" xml:space="preserve">
+    <value>Failed to change your password. Please try again.</value>
+    <comment>Message of the dialog displayed when the user has failed to change his password</comment>
+  </data>
+  <data name="AM_PasswordChangeFailed_Title" xml:space="preserve">
+    <value>Error changing password</value>
+    <comment>Title of the dialog displayed when the user has failed to change his password - (String as short as possible).</comment>
+  </data>
+  <data name="AM_IncorrectEmailFormat" xml:space="preserve">
+    <value>Incorrect email format. Please try again.</value>
+    <comment>Message of the dialog displayed when the user types an email address with an incorrect format.</comment>
+  </data>
+  <data name="AM_VeryWeakPassword" xml:space="preserve">
+    <value>אנא הכנס סיסמא חזקה יותר.</value>
+    <comment>Message of the dialog displayed when the user has chosen a very weak password.</comment>
   </data>
 </root>

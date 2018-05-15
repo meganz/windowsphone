@@ -130,7 +130,7 @@
     <comment>Label for any 'Cancel' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="CloudDriveName" xml:space="preserve">
-    <value>כונן ענן</value>
+    <value>Cloud Drive</value>
     <comment>Label for any 'Cloud Drive' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Confirm" xml:space="preserve">
@@ -282,7 +282,7 @@
     <comment>Label for the name of the Cloud Drive breadcum root node - (String as short as possible).</comment>
   </data>
   <data name="RubbishBinRoot" xml:space="preserve">
-    <value>סל האשפה</value>
+    <value>Rubbish Bin</value>
     <comment>Label for the name of the Rubbish bin breadcum root node - (String as short as possible).</comment>
   </data>
   <data name="No" xml:space="preserve">
@@ -590,7 +590,7 @@
     <comment>Label for any 'Help' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="CameraUploads" xml:space="preserve">
-    <value>העלאות מצלמה</value>
+    <value>Camera Uploads</value>
     <comment>Label for any 'Camera Uploads' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Contacts" xml:space="preserve">
@@ -965,7 +965,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Outgoing' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="SetupCameraUploadsQuestion" xml:space="preserve">
-    <value>האם אתה רוצה לאפשר את שירות העלאת תמונות אוטומטית ממצלמה? </value>
+    <value>האם אתה רוצה לאפשר את שירות העלאת תמונות אוטומטית ממצלמה?</value>
     <comment>Label asking user if wants to enable the auto camera uploads service.</comment>
   </data>
   <data name="ShareFolder" xml:space="preserve">
@@ -985,7 +985,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Saved for offline' button, link, text, title, etc. - (String as short as possible, LESS THAN 22 CHARS).</comment>
   </data>
   <data name="EmptyCloudDrive" xml:space="preserve">
-    <value>אין קבצים באחסון בענן שלך </value>
+    <value>אין קבצים באחסון בענן שלך</value>
     <comment>Label for the background of an empty cloud drive page - (String as short as possible).</comment>
   </data>
   <data name="EmptyOffline" xml:space="preserve">
@@ -997,7 +997,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for the background of an empty rubbish bin page - (String as short as possible).</comment>
   </data>
   <data name="EmptySharedFolders" xml:space="preserve">
-    <value>אין תיקיות משותפות </value>
+    <value>אין תיקיות משותפות</value>
     <comment>Label for the background of an empty shared folders page - (String as short as possible).</comment>
   </data>
   <data name="NoDownloads" xml:space="preserve">
@@ -1013,7 +1013,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for the background of an empty uploads page - (String as short as possible).</comment>
   </data>
   <data name="DefaultDownloadLocation" xml:space="preserve">
-    <value>אנא בחר תיקיית הורדות ברירת מחדל. </value>
+    <value>אנא בחר תיקיית הורדות ברירת מחדל.</value>
     <comment>Default value for the string shown into the preferences page. It will substituted by the path of the folder selected by the user when selecting a default location for downloads.</comment>
   </data>
   <data name="UI_ConfirmAccount" xml:space="preserve">
@@ -1290,5 +1290,25 @@ Preserve the PIN uppercase word.</comment>
   <data name="UI_ViewTermsOfService" xml:space="preserve">
     <value>View Terms of Service here</value>
     <comment>Text used as a link to view the 'Terms of Service' into the 'create account' page.</comment>
+  </data>
+  <data name="UI_DataProtectionRegulation" xml:space="preserve">
+    <value>Data Protection Regulation</value>
+    <comment>Label for any 'Data Protection Regulation' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_LegalAndPolicies" xml:space="preserve">
+    <value>מדיניות וכללים משפטיים</value>
+    <comment>Label for the title of the "Legal and Policies" section which include links to the Terms of Service, Privacy Policy, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_Copyright" xml:space="preserve">
+    <value>זכויות יוצרים</value>
+    <comment>Label for any 'Copyright' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_LearnMore" xml:space="preserve">
+    <value>קרא עוד</value>
+    <comment>Label for any 'Learn more' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_TakedownGuidance" xml:space="preserve">
+    <value>Takedown Guidance</value>
+    <comment>Label for any 'Takedown Guidance' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
 </root>

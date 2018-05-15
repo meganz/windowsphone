@@ -630,7 +630,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException" translate="yes" space="preserve">
           <source>You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?
 Please try to save/copy the file to your device’s internal memory instead.</source>
-          <target state="needs-review-translation">אין לך הרשאות להעתיק קובץ זה לתיקייה שבחרת. האם אתה מנסה לשמור/להעתיק קובץ בכרטיס SD שלא נתמך?אנא נסה לשמור/להעתיק את הקבוץ לזכרון הפנימי של הטלפון.</target>
+          <target state="translated">אין לך הרשאות להעתיק קובץ זה לתיקייה שבחרת. האם אתה מנסה לשמור/להעתיק קובץ בכרטיס SD שלא נתמך?אנא נסה לשמור/להעתיק את הקבוץ לזכרון הפנימי של הטלפון.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</note>
         </trans-unit>
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException_Title" translate="yes" space="preserve">
@@ -961,12 +961,12 @@ Preserve the {0} code because is for include email of the contact to be removed 
         </trans-unit>
         <trans-unit id="Resx/DeleteContactQuestion_Title" translate="yes" space="preserve">
           <source>Remove contact?</source>
-          <target state="translated">למחוק איש קשר? </target>
+          <target state="translated">למחוק איש קשר?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to remove a contact asking for confirmation to make it - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/InviteContactAddFailed" translate="yes" space="preserve">
           <source>The contact invitation could not be sent. Please try again.</source>
-          <target state="translated">הזמנת איש הקשר לא נשלחה. אנא נסה שוב. </target>
+          <target state="translated">הזמנת איש הקשר לא נשלחה. אנא נסה שוב.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to invite a contact failed.</note>
         </trans-unit>
         <trans-unit id="Resx/InviteContactAddFailed_Title" translate="yes" space="preserve">
@@ -976,7 +976,7 @@ Preserve the {0} code because is for include email of the contact to be removed 
         </trans-unit>
         <trans-unit id="Resx/InviteContactAddSuccessfully" translate="yes" space="preserve">
           <source>User {0} has been invited and will appear on your contact list once they have accepted the invitation.</source>
-          <target state="translated">איש הקשר {0} הוזמן והופיע ברשימת אנשי הקשר שלך לאחר שההזמנה תאושר. </target>
+          <target state="translated">איש הקשר {0} הוזמן והופיע ברשימת אנשי הקשר שלך לאחר שההזמנה תאושר.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to invite a contact finished successfully - (String as short as possible).
 Preserve the [{0}] code because is for include the contact email in runtime.</note>
         </trans-unit>
@@ -992,7 +992,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</no
         </trans-unit>
         <trans-unit id="Resx/AccountUpdate" translate="yes" space="preserve">
           <source>Your account has been updated. Do you want to check the new account details?</source>
-          <target state="translated">החשבון שלך עודכן. האם אתה רוצה לראות את הפרטים החדשים של חשבונך? </target>
+          <target state="translated">החשבון שלך עודכן. האם אתה רוצה לראות את הפרטים החדשים של חשבונך?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the account is updated (upgraded or downgraded).</note>
         </trans-unit>
         <trans-unit id="Resx/AccountUpdated_Title" translate="yes" space="preserve">
@@ -1002,7 +1002,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</no
         </trans-unit>
         <trans-unit id="Resx/AutoCameraUploadFailed" translate="yes" space="preserve">
           <source>The Auto Camera Upload background task has failed. You can re-enable it on the settings page.</source>
-          <target state="translated">פעילות העלאת תמונות המצלמה אוטומטית נכשלה. בינך יכול להפעיל אותה מחדש מעמוד ההגדרות. </target>
+          <target state="translated">פעילות העלאת תמונות המצלמה אוטומטית נכשלה. בינך יכול להפעיל אותה מחדש מעמוד ההגדרות.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the auto camera upload service failed.</note>
         </trans-unit>
         <trans-unit id="Resx/AutoCameraUploadFailed_Title" translate="yes" space="preserve">
@@ -1023,13 +1023,13 @@ Preserve the {0} code because is for include the contact email in runtime. Prese
         </trans-unit>
         <trans-unit id="Resx/DeleteMultipleContactsQuestion" translate="yes" space="preserve">
           <source>Do you want to remove {0} contacts?</source>
-          <target state="translated">האם אתה רוצה למחוק {0} אנשי קשר? </target>
+          <target state="translated">האם אתה רוצה למחוק {0} אנשי קשר?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to remove multiple contacts, asking for confirmation to make it.
 Preserve the {0} code because is for include the number of contacts to be removed in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/DeleteMultipleContactsQuestion_Title" translate="yes" space="preserve">
           <source>Remove contacts?</source>
-          <target state="translated">למחוק אנשי קשר? </target>
+          <target state="translated">למחוק אנשי קשר?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to remove multiple contacts asking for confirmation to make it - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/NewAndOldPasswordMatch" translate="yes" space="preserve">
@@ -1045,7 +1045,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/CloseAllSessionsSuccess" translate="yes" space="preserve">
           <source>The remaining sessions were successfully closed.</source>
-          <target state="translated">הסשנס שנותרו פתוחות, נסגרו בהצלחה. </target>
+          <target state="translated">הסשנס שנותרו פתוחות, נסגרו בהצלחה.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when close or kill all sessions (except current) successfully.</note>
         </trans-unit>
         <trans-unit id="Resx/CloseSessionFailed" translate="yes" space="preserve">
@@ -1056,37 +1056,37 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/CloseSessionSucces" translate="yes" space="preserve">
           <source>The session has been successfully closed.</source>
-          <target state="translated">כל הסשנס נסגרו בהצלחה. </target>
+          <target state="translated">כל הסשנס נסגרו בהצלחה.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when close or kill a session succesfully.</note>
         </trans-unit>
         <trans-unit id="Resx/CleanRubbishBinFailed" translate="yes" space="preserve">
           <source>Failed to clear the rubbish bin. Please try again.</source>
-          <target state="translated">שגיאה בניסיון לרוקן את פח האשפה. אנא נסה שוב. </target>
+          <target state="translated">שגיאה בניסיון לרוקן את פח האשפה. אנא נסה שוב.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to empty the rubbish bin failed.</note>
         </trans-unit>
         <trans-unit id="Resx/CleanRubbishBinQuestion" translate="yes" space="preserve">
           <source>Are you sure you want to permanently delete all files from the rubbish bin?</source>
-          <target state="translated">האם אתה בטוח שברצונך למחוק לצמיתות את כל הקבצים בפח האשפה? </target>
+          <target state="translated">האם אתה בטוח שברצונך למחוק לצמיתות את כל הקבצים בפח האשפה?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to empty the rubbish bin, asking for confirmation to do it.</note>
         </trans-unit>
         <trans-unit id="Resx/CleanRubbishBinSuccess" translate="yes" space="preserve">
           <source>The rubbish bin has been cleared successfully.</source>
-          <target state="translated">הפח אשפה התרוקן בהצלחה. </target>
+          <target state="translated">הפח אשפה התרוקן בהצלחה.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when empty the rubbish bin succesfully.</note>
         </trans-unit>
         <trans-unit id="Resx/InviteContactAddFailedOwnEmail" translate="yes" space="preserve">
           <source>You are trying to add your own email as a contact.</source>
-          <target state="translated">אתה מנסה להוסיף את המייל של עצמך כאיש קשר. </target>
+          <target state="translated">אתה מנסה להוסיף את המייל של עצמך כאיש קשר.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to invite a contact failed because the user is trying to his/her own e-mail.</note>
         </trans-unit>
         <trans-unit id="Resx/RemoveLinkFailed" translate="yes" space="preserve">
           <source>Failed to remove link. Please try again.</source>
-          <target state="translated">שגיאה במחלקת הקישור. אנא נסה שוב. </target>
+          <target state="translated">שגיאה במחלקת הקישור. אנא נסה שוב.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to remove a link to a node failed.</note>
         </trans-unit>
         <trans-unit id="Resx/NoInternetConnectionMessage" translate="yes" space="preserve">
           <source>You cannot perform this action. Please connect to the Internet and try again.</source>
-          <target state="translated">אינך יכול לבצע פעולה זו. אנא התחבר לאינטרנט ונסה שוב. </target>
+          <target state="translated">אינך יכול לבצע פעולה זו. אנא התחבר לאינטרנט ונסה שוב.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user is trying to perform any online action without an active Internet connection.</note>
         </trans-unit>
         <trans-unit id="Resx/FolderUnauthorizedAccess" translate="yes" space="preserve">
@@ -1449,7 +1449,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AccountBlocked" translate="yes" space="preserve">
           <source>Your account was terminated due to a breach of MEGA’s Terms of Service, such as abuse of rights of others; sharing and/or importing illegal data; or system abuse.</source>
-          <target state="needs-review-translation">Your account was terminated due to a breach of MEGA’s Terms of Service, such as abuse of rights of others; sharing and/or importing illegal data; or system abuse.</target>
+          <target state="translated">Your account was terminated due to a breach of MEGA’s Terms of Service, such as abuse of rights of others; sharing and/or importing illegal data; or system abuse.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the user is trying to login and the account has been blocked.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AccountNotConfirmed" translate="yes" space="preserve">
@@ -1586,12 +1586,43 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_AccountBlockedCopyright" translate="yes" space="preserve">
           <source>Your account has been suspended due to multiple breaches of MEGA’s Terms of Service. Please check your email inbox.</source>
-          <target state="needs-review-translation">Your account has been suspended due to multiple breaches of MEGA’s Terms of Service. Please check your email inbox.</target>
+          <target state="translated">Your account has been suspended due to multiple breaches of MEGA’s Terms of Service. Please check your email inbox.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the user is trying to login and the account has been blocked for multiple copyright violation.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_VeryWeakPassword" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/AM_EmptyRequiredFields" translate="yes" space="preserve">
+          <source>Fill the required fields and try again.</source>
+          <target state="translated">Fill the required fields and try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when required fields are empty.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_PasswordChanged" translate="yes" space="preserve">
+          <source>We have sent you an email confirming your password change.</source>
+          <target state="translated">We have sent you an email confirming your password change.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the change password process finish successful.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_PasswordChanged_Title" translate="yes" space="preserve">
+          <source>Password changed</source>
+          <target state="translated">Password changed</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the change password process finish successful.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_PasswordChangeFailed" translate="yes" space="preserve">
+          <source>Failed to change your password. Please try again.</source>
+          <target state="translated">Failed to change your password. Please try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user has failed to change his password</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_PasswordChangeFailed_Title" translate="yes" space="preserve">
+          <source>Error changing password</source>
+          <target state="needs-review-translation">Error changing password</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the user has failed to change his password - (String as short as possible).</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_IncorrectEmailFormat" translate="yes" space="preserve">
+          <source>Incorrect email format. Please try again.</source>
+          <target state="translated">Incorrect email format. Please try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user types an email address with an incorrect format.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_VeryWeakPassword" translate="yes" space="preserve">
           <source>Please strengthen your password.</source>
-          <target state="new">Please strengthen your password.</target>
+          <target state="translated">אנא הכנס סיסמא חזקה יותר.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user has chosen a very weak password.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_SSLKeyError_Title" translate="yes" xml:space="preserve">
@@ -1603,36 +1634,6 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <source>MEGA is unable to connect securely through SSL. You might be on public WiFi with additional requirements.</source>
           <target state="new">MEGA is unable to connect securely through SSL. You might be on public WiFi with additional requirements.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_IncorrectEmailFormat" translate="yes" xml:space="preserve">
-          <source>Incorrect email format. Please try again.</source>
-          <target state="new">Incorrect email format. Please try again.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user types an email address with an incorrect format.</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_PasswordChangeFailed_Title" translate="yes" xml:space="preserve">
-          <source>Error change password</source>
-          <target state="new">Error change password</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the user has failed to change his password - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_PasswordChangeFailed" translate="yes" xml:space="preserve">
-          <source>Failed to change your password. Please try again.</source>
-          <target state="new">Failed to change your password. Please try again.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user has failed to change his password</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_PasswordChanged_Title" translate="yes" xml:space="preserve">
-          <source>Password changed</source>
-          <target state="new">Password changed</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the change password process finish successful.</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_PasswordChanged" translate="yes" xml:space="preserve">
-          <source>We have sent you an email confirming your password change.</source>
-          <target state="new">We have sent you an email confirming your password change.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the change password process finish successful.</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_EmptyRequiredFields" translate="yes" xml:space="preserve">
-          <source>Fill the required fields and try again.</source>
-          <target state="new">Fill the required fields and try again.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when required fields are empty.</note>
         </trans-unit>
       </group>
     </body>
