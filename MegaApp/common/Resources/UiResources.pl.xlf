@@ -28,7 +28,7 @@
         </trans-unit>
         <trans-unit id="Resx/CloudDriveName" translate="yes" space="preserve">
           <source>Cloud Drive</source>
-          <target state="translated">Cloud Dysk</target>
+          <target state="translated">Cloud Drive</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Cloud Drive' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Confirm" translate="yes" space="preserve">
@@ -273,7 +273,7 @@
         </trans-unit>
         <trans-unit id="Resx/RubbishBinRoot" translate="yes" space="preserve">
           <source>Rubbish Bin</source>
-          <target state="translated">Kosz</target>
+          <target state="translated">Rubbish Bin</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the name of the Rubbish bin breadcum root node - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_ConfirmPinLock" translate="yes" space="preserve">
@@ -465,7 +465,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_RecoveryKey" translate="yes" space="preserve">
           <source>Recovery Key</source>
-          <target state="translated">Klucz zapasowy</target>
+          <target state="translated">Recovery Key</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Recovery Key' button, link, text, title, etc. Preserve uppercase - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_MEGA_SDK_Version" translate="yes" space="preserve">
@@ -701,7 +701,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/CameraUploads" translate="yes" space="preserve">
           <source>Camera Uploads</source>
-          <target state="translated">Wgrywanie zdjęć</target>
+          <target state="translated">Camera Uploads</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Camera Uploads' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Contacts" translate="yes" space="preserve">
@@ -919,7 +919,7 @@ Preserve the {0} code because is for include the name/type of the selected plan 
         </trans-unit>
         <trans-unit id="Resx/RenewsOn" translate="yes" space="preserve">
           <source>Renews on</source>
-          <target state="translated">Odnowienie </target>
+          <target state="translated">Odnowienie</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the 'Renews on' text into the my account page, indicating the renewal date of a subscription - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AccountPurchased" translate="yes" space="preserve">
@@ -1469,30 +1469,40 @@ NOTE: Keep the capital letter if possible.</note>
           <target state="translated">Zobacz Regulamin tutaj</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text used as a link to view the 'Terms of Service' into the 'create account' page.</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_TakedownGuidance" translate="yes" xml:space="preserve">
-          <source>Takedown Guidance</source>
-          <target state="new">Takedown Guidance</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Takedown Guidance' button, link, text, title, etc. - (String as short as possible).</note>
+        <trans-unit id="Resx/UI_DataProtectionRegulation" translate="yes" space="preserve">
+          <source>Data Protection Regulation</source>
+          <target state="translated">Data Protection Regulation</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Data Protection Regulation' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_LearnMore" translate="yes" xml:space="preserve">
-          <source>Learn more</source>
-          <target state="new">Learn more</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Learn more' button, link, text, title, etc. - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/UI_Copyright" translate="yes" xml:space="preserve">
-          <source>Copyright</source>
-          <target state="new">Copyright</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Copyright' button, link, text, title, etc. - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/UI_LegalAndPolicies" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_LegalAndPolicies" translate="yes" space="preserve">
           <source>Legal and Policies</source>
-          <target state="new">Legal and Policies</target>
+          <target state="translated">Polityka prywatności</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the title of the "Legal and Policies" section which include links to the Terms of Service, Privacy Policy, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_DataProtectionRegulation" translate="yes" xml:space="preserve">
-          <source>Data Protection Regulation</source>
-          <target state="new">Data Protection Regulation</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Data Protection Regulation' button, link, text, title, etc. - (String as short as possible).</note>
+        <trans-unit id="Resx/UI_Copyright" translate="yes" space="preserve">
+          <source>Copyright</source>
+          <target state="translated">Prawa autorskie</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Copyright' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_LearnMore" translate="yes" space="preserve">
+          <source>Learn more</source>
+          <target state="translated">Dowiedz się więcej</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Learn more' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_TakedownGuidance" translate="yes" space="preserve">
+          <source>Takedown Guidance</source>
+          <target state="translated">Takedown Guidance</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Takedown Guidance' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_Retry" translate="yes" xml:space="preserve">
+          <source>Retry</source>
+          <target state="new">Retry</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Retry' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_OpenBrowser" translate="yes" xml:space="preserve">
+          <source>Open browser</source>
+          <target state="new">Open browser</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the button to allow the user open the default browser - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>

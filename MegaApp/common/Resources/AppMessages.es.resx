@@ -185,10 +185,6 @@
     <value>Cuenta actualizada</value>
     <comment>Title of the dialog displayed when the account is updated (upgraded or downgraded).</comment>
   </data>
-  <data name="SSLKeyError_Title" xml:space="preserve">
-    <value>Sesión cerrada</value>
-    <comment>Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
-  </data>
   <data name="DeleteContactFailed_Title" xml:space="preserve">
     <value>Error al eliminar el contacto</value>
     <comment>Message of the dialog displayed when the process/request to remove a contact failed - (String as short as possible).</comment>
@@ -260,10 +256,6 @@ Preserve the {0} code because is for include the number of contacts to be remove
   <data name="AutoCameraUploadFailed_Title" xml:space="preserve">
     <value>Error en las Subidas de la cámara</value>
     <comment>Title of the dialog displayed when the auto camera upload service failed.</comment>
-  </data>
-  <data name="SSLKeyError" xml:space="preserve">
-    <value>Nuestro certificado SSL/TLS no se ha podido verificar. Es posible que estén tratando de interceptar tus comunicaciones.</value>
-    <comment>Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
   </data>
   <data name="AccountUpdate" xml:space="preserve">
     <value>Tu cuenta se ha actualizado. ¿Quieres comprobar el nuevo estado?</value>
@@ -1387,7 +1379,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the process to clear cache failed.</comment>
   </data>
   <data name="AM_ClearCacheFailed_Title" xml:space="preserve">
-    <value>Error al borrar caché </value>
+    <value>Error al borrar caché</value>
     <comment>Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</comment>
   </data>
   <data name="AM_PrepareDownloadsFailed" xml:space="preserve">
@@ -1397,5 +1389,33 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="AM_AccountBlockedCopyright" xml:space="preserve">
     <value>Tu cuenta ha sido suspendida debido a infracciones múltiples de los Términos de servicio de MEGA. Por favor revisa la bandeja de entrada de tu correo electrónico.</value>
     <comment>Message of the dialog shown when the user is trying to login and the account has been blocked for multiple copyright violation.</comment>
+  </data>
+  <data name="AM_EmptyRequiredFields" xml:space="preserve">
+    <value>Completa los campos requeridos e intenta de nuevo.</value>
+    <comment>Message of the dialog displayed when required fields are empty.</comment>
+  </data>
+  <data name="AM_PasswordChanged" xml:space="preserve">
+    <value>Te hemos enviado un correo electrónico confirmando el cambio de contraseña.</value>
+    <comment>Message of the dialog displayed when the change password process finish successful.</comment>
+  </data>
+  <data name="AM_PasswordChanged_Title" xml:space="preserve">
+    <value>Contraseña modificada</value>
+    <comment>Title of the dialog displayed when the change password process finish successful.</comment>
+  </data>
+  <data name="AM_PasswordChangeFailed" xml:space="preserve">
+    <value>Failed to change your password. Please try again.</value>
+    <comment>Message of the dialog displayed when the user has failed to change his password</comment>
+  </data>
+  <data name="AM_PasswordChangeFailed_Title" xml:space="preserve">
+    <value>Error changing password</value>
+    <comment>Title of the dialog displayed when the user has failed to change his password - (String as short as possible).</comment>
+  </data>
+  <data name="AM_IncorrectEmailFormat" xml:space="preserve">
+    <value>Incorrect email format. Please try again.</value>
+    <comment>Message of the dialog displayed when the user types an email address with an incorrect format.</comment>
+  </data>
+  <data name="AM_VeryWeakPassword" xml:space="preserve">
+    <value>Por favor, elige una contraseña más segura.</value>
+    <comment>Message of the dialog displayed when the user has chosen a very weak password.</comment>
   </data>
 </root>

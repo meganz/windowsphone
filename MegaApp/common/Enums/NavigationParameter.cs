@@ -21,7 +21,6 @@
         None                = 999,
 
         API_ESID            = -15,
-        API_EBLOCKED        = -16,
-        API_ESSL            = -23
+        API_EBLOCKED        = -16
     }
 }

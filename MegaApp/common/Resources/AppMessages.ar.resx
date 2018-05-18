@@ -757,7 +757,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the process/request to store a user credit card failed.</comment>
   </data>
   <data name="CreditCardStoreFailed_Title" xml:space="preserve">
-    <value>تخزين بطاقة ائتمانية فاشل </value>
+    <value>تخزين بطاقة ائتمانية فاشل</value>
     <comment>Title of the dialog displayed when the process/request to store a user credit card failed - (String as short as possible).</comment>
   </data>
   <data name="RequiredFieldsCreditCardPayment" xml:space="preserve">
@@ -777,7 +777,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the process/request to cancel a subscription failed.</comment>
   </data>
   <data name="CancelSubscriptionFailed_Title" xml:space="preserve">
-    <value>فشل في إلغاء الاشتراك </value>
+    <value>فشل في إلغاء الاشتراك</value>
     <comment>Title of the dialog displayed when the process/request to cancel a subscription failed - (String as short as possible).</comment>
   </data>
   <data name="CancelSubscriptionSuccessfully" xml:space="preserve">
@@ -818,7 +818,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="GetPaymentMethodsFailed_Title" xml:space="preserve">
-    <value>خطأ في طرق الدفع </value>
+    <value>خطأ في طرق الدفع</value>
     <comment>Title of the dialog displayed when the process/request to get the payment methods failed - (String as short as possible).</comment>
   </data>
   <data name="GetPaymentUrlFailed" xml:space="preserve">
@@ -860,11 +860,11 @@ Preserve the {0} code because is for include email of the contact to be removed 
     <comment>Message of the dialog displayed when the process/request to invite a contact failed.</comment>
   </data>
   <data name="InviteContactAddFailed_Title" xml:space="preserve">
-    <value>فشل في دعوة جهة الاتصال </value>
+    <value>فشل في دعوة جهة الاتصال</value>
     <comment>Title of the dialog displayed when the process/request to invite a contact failed - (String as short as possible).</comment>
   </data>
   <data name="InviteContactAddSuccessfully" xml:space="preserve">
-    <value>المستخدم {0} قد تم دعوته وسيظر على لائحة جهات اتصالك حالما يقبل الدعوة </value>
+    <value>المستخدم {0} قد تم دعوته وسيظر على لائحة جهات اتصالك حالما يقبل الدعوة</value>
     <comment>Message of the dialog displayed when the process/request to invite a contact finished successfully - (String as short as possible).
 Preserve the [{0}] code because is for include the contact email in runtime.</comment>
   </data>
@@ -873,7 +873,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</co
     <comment>Title of the dialog displayed when the process/request to invite a contact finished successfully - (String as short as possible).</comment>
   </data>
   <data name="ResourceIntensiveTaskDescription" xml:space="preserve">
-    <value>تحميلات الكاميرا التلقائية من MEGA </value>
+    <value>تحميلات الكاميرا التلقائية من MEGA</value>
     <comment>Descripton of the task that automatic uploads photos tot MEGA. Seen in the background services Settings screen</comment>
   </data>
   <data name="AccountUpdate" xml:space="preserve">
@@ -884,20 +884,12 @@ Preserve the [{0}] code because is for include the contact email in runtime.</co
     <value>تم تحديث الحساب</value>
     <comment>Title of the dialog displayed when the account is updated (upgraded or downgraded).</comment>
   </data>
-  <data name="SSLKeyError" xml:space="preserve">
-    <value>شهادتنا SSL/TLS لايمكن توثيقها، ربما تتأثر بهجوم رجل في الوسط.</value>
-    <comment>Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
-  </data>
-  <data name="SSLKeyError_Title" xml:space="preserve">
-    <value>تم تسجيل الخروج</value>
-    <comment>Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
-  </data>
   <data name="AutoCameraUploadFailed" xml:space="preserve">
     <value>مهمة تحميلات الكاميرا التلقائية قد فشل. تستطيع إعادة تفعيله من صفحة الإعدادات.</value>
     <comment>Message of the dialog displayed when the auto camera upload service failed.</comment>
   </data>
   <data name="AutoCameraUploadFailed_Title" xml:space="preserve">
-    <value>تحميل الكاميرا التلقائي فشل </value>
+    <value>تحميل الكاميرا التلقائي فشل</value>
     <comment>Title of the dialog displayed when the auto camera upload service failed.</comment>
   </data>
   <data name="DeleteContactFailed" xml:space="preserve">
@@ -992,7 +984,7 @@ Preserve the '{0}' code because is for include the file name in runtime.</commen
 Preserve the '{0}' code because is for include the file/folder name in runtime.</comment>
   </data>
   <data name="PathTooLong_Title" xml:space="preserve">
-    <value>العنوان طويل جدا </value>
+    <value>العنوان طويل جدا</value>
     <comment>Title of the dialog displayed in cases that the file/folder path is too long - (String as short as possible).</comment>
   </data>
   <data name="InvalidFolderNameOrPath" xml:space="preserve">
@@ -1001,7 +993,7 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
 Preserve the '{0}' code because is for include the file name in runtime.</comment>
   </data>
   <data name="InvalidFolderNameOrPath_Title" xml:space="preserve">
-    <value>اسم أو عنوان غير متوفر </value>
+    <value>اسم أو عنوان غير متوفر</value>
     <comment>Title of the dialog displayed in cases that the file name or path is not valid or has illegal characters - (String as short as possible).</comment>
   </data>
   <data name="AM_InvalidLink" xml:space="preserve">
@@ -1038,7 +1030,7 @@ Preserve the {0} and ({1}) codes because is for include the maximum reliable dow
     <comment>Title of the dialog displayed when the process to prepare file(s) for upload failed - (String as short as possible).</comment>
   </data>
   <data name="AM_DownloadNodeFailedNoErrorCode" xml:space="preserve">
-    <value>فشل في تحميل الملف، الرجاء حاول ثانية </value>
+    <value>فشل في تحميل الملف، الرجاء حاول ثانية</value>
     <comment>Message of the dialog displayed when the process/request to download a node failed.</comment>
   </data>
   <data name="AM_LoadFailed_Title" xml:space="preserve">
@@ -1046,7 +1038,7 @@ Preserve the {0} and ({1}) codes because is for include the maximum reliable dow
     <comment>Title of the dialog displayed when fails the process/request to load something (nodes, out shares, in shares, etc.) - (String as short as possible).</comment>
   </data>
   <data name="AM_LoadInSharesFailed" xml:space="preserve">
-    <value>فشل في تحميل العناصر المشاركة من MEGA. الرجاء المحاولة مرة أخرى أو اضغط على التحديث </value>
+    <value>فشل في تحميل العناصر المشاركة من MEGA. الرجاء المحاولة مرة أخرى أو اضغط على التحديث</value>
     <comment>Message of the dialog displayed when fails the process/request to load the incoming shared items.</comment>
   </data>
   <data name="AM_LoadOutSharesFailed" xml:space="preserve">
@@ -1072,7 +1064,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process to load settings failed - (String as short as possible).</comment>
   </data>
   <data name="AM_CopyLinkToClipboardFailed" xml:space="preserve">
-    <value>فشتل في نسخ رابط MEGA لحافظتك </value>
+    <value>فشتل في نسخ رابط MEGA لحافظتك</value>
     <comment>Message of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard.</comment>
   </data>
   <data name="AM_CopyLinkToClipboardFailed_Title" xml:space="preserve">
@@ -1123,7 +1115,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="AM_OpenLinkFailed_Title" xml:space="preserve">
-    <value>فشل في فتح الرابط </value>
+    <value>فشل في فتح الرابط</value>
     <comment>Title of the dialog displayed when the process to open a link failed - (String as short as possible).</comment>
   </data>
   <data name="AM_DowloadPathUnauthorizedAccess" xml:space="preserve">
@@ -1135,7 +1127,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder</comment>
   </data>
   <data name="AM_RecoveryKeyClipboardFailed" xml:space="preserve">
-    <value>فشل في نسخ مفتاح الإستعادة إلى الحافظة. الرجاء المحاولة ثانية. </value>
+    <value>فشل في نسخ مفتاح الإستعادة إلى الحافظة. الرجاء المحاولة ثانية.</value>
     <comment>Message of the dialog displayed when fails to copy the user's Recovery Key to the clipboard to be saved or exported.</comment>
   </data>
   <data name="AM_RecoveryKeyClipboardFailed_Title" xml:space="preserve">
@@ -1147,7 +1139,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported.</comment>
   </data>
   <data name="AM_RecoveryKeyCopied_Title" xml:space="preserve">
-    <value>تم نسخ مفتاح الإستعادة </value>
+    <value>تم نسخ مفتاح الإستعادة</value>
     <comment>Title of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported - (String as short as possible).</comment>
   </data>
   <data name="AM_CopyFailed" xml:space="preserve">
@@ -1159,7 +1151,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to copy a node failed - (String as short as possible).</comment>
   </data>
   <data name="AM_DisableDebugMode_Message" xml:space="preserve">
-    <value>السجل ({0}) سيتم حذفه من قسم "دون اتصال." </value>
+    <value>السجل ({0}) سيتم حذفه من قسم "دون اتصال."</value>
     <comment>Alert message shown when the DEBUG mode is disabled.
 Preserve the ({0}) code because is for include the file name in runtime.</comment>
   </data>
@@ -1225,7 +1217,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Message of the dialog displayed when a user already has purchased an item from the store</comment>
   </data>
   <data name="AM_AlreadyPurchased_Title" xml:space="preserve">
-    <value>تم شراءه مسبقا </value>
+    <value>تم شراءه مسبقا</value>
     <comment>Title of the dialog displayed when a user already has purchased an item from the store</comment>
   </data>
   <data name="AM_PurchaseFailed" xml:space="preserve">
@@ -1237,7 +1229,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Title of the dialog displayed when a user tries to purchase an item from the store and it failed</comment>
   </data>
   <data name="AM_PurchaseSucceeded" xml:space="preserve">
-    <value>تم بنجاح شراء الاشتراك في MEGA </value>
+    <value>تم بنجاح شراء الاشتراك في MEGA</value>
     <comment>Message of the dialog displayed when a user has purchased an item from the store</comment>
   </data>
   <data name="AM_PurchaseSucceeded_Title" xml:space="preserve">
@@ -1363,7 +1355,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app.</comment>
   </data>
   <data name="AM_SaveLogFile_Title" xml:space="preserve">
-    <value>احفظ ملف السجل </value>
+    <value>احفظ ملف السجل</value>
     <comment>Title of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app - (String as short as possible).</comment>
   </data>
   <data name="AM_ShareLinkFailed" xml:space="preserve">
@@ -1397,5 +1389,33 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="AM_AccountBlockedCopyright" xml:space="preserve">
     <value>تم تعليق حسابك بسبب انتهاكات متعددة لشروط الخدمة الخاصة ب MEGA. يرجى التحقق من بريدك الوارد.</value>
     <comment>Message of the dialog shown when the user is trying to login and the account has been blocked for multiple copyright violation.</comment>
+  </data>
+  <data name="AM_EmptyRequiredFields" xml:space="preserve">
+    <value>يرجى تعبئة الحقول الاجبارية ثم إعادة المحاولة.</value>
+    <comment>Message of the dialog displayed when required fields are empty.</comment>
+  </data>
+  <data name="AM_PasswordChanged" xml:space="preserve">
+    <value>تم ارسال بريد الكتروني اليك لتأكيد عملية تغيير كلمة المرور.</value>
+    <comment>Message of the dialog displayed when the change password process finish successful.</comment>
+  </data>
+  <data name="AM_PasswordChanged_Title" xml:space="preserve">
+    <value>تم تغيير كلمة المرور</value>
+    <comment>Title of the dialog displayed when the change password process finish successful.</comment>
+  </data>
+  <data name="AM_PasswordChangeFailed" xml:space="preserve">
+    <value>فشل عملية تغيير كلمة المرور، يرجى إعادة المحاولة</value>
+    <comment>Message of the dialog displayed when the user has failed to change his password</comment>
+  </data>
+  <data name="AM_PasswordChangeFailed_Title" xml:space="preserve">
+    <value>حدث خطأ اثناء تغيير كلمة المرور</value>
+    <comment>Title of the dialog displayed when the user has failed to change his password - (String as short as possible).</comment>
+  </data>
+  <data name="AM_IncorrectEmailFormat" xml:space="preserve">
+    <value>البريد الالكتروني المدخل غير صالح. يرجى إعادة المحاولة</value>
+    <comment>Message of the dialog displayed when the user types an email address with an incorrect format.</comment>
+  </data>
+  <data name="AM_VeryWeakPassword" xml:space="preserve">
+    <value>كلمة السر غير صالحة.</value>
+    <comment>Message of the dialog displayed when the user has chosen a very weak password.</comment>
   </data>
 </root>

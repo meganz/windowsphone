@@ -360,7 +360,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/AppVersionText" translate="yes" space="preserve">
           <source>App version</source>
-          <target state="translated">Versão do app</target>
+          <target state="translated">Versão do aplicativo</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text placed just before app version number into the 'about' page.</note>
         </trans-unit>
         <trans-unit id="Resx/AskDownloadLocationText" translate="yes" space="preserve">
@@ -455,7 +455,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/LargestSortOption" translate="yes" space="preserve">
           <source>Largest</source>
-          <target state="translated">maior</target>
+          <target state="translated">Maior</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the menu option to sort the nodes of the cloud drive in descending order by size (from bigger to smaller) - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/MakePinLock" translate="yes" space="preserve">
@@ -470,7 +470,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_MEGA_SDK_Version" translate="yes" space="preserve">
           <source>MEGA SDK version</source>
-          <target state="translated">Versão do MEGA SDK</target>
+          <target state="translated">MEGA - versão do SDK</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'MEGA SDK version' button, link, text, title, etc. Preserve the "MEGA SDK" in uppercase - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Monthly" translate="yes" space="preserve">
@@ -490,7 +490,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/NewestSortOption" translate="yes" space="preserve">
           <source>Newest</source>
-          <target state="translated">mais novo</target>
+          <target state="translated">Mais recente</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the menu option to sort the nodes of the cloud drive in descending order by date (from newer to older) - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_NewPinLock" translate="yes" space="preserve">
@@ -511,7 +511,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/OldestSortOption" translate="yes" space="preserve">
           <source>Oldest</source>
-          <target state="translated">mais velho</target>
+          <target state="translated">Mais antigo</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the menu option to sort the nodes of the cloud drive in ascending order by size (from smaller to bigger) - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PauseAll" translate="yes" space="preserve">
@@ -526,7 +526,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/SmallestSortOption" translate="yes" space="preserve">
           <source>Smallest</source>
-          <target state="translated">menor</target>
+          <target state="translated">Menor</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the menu option to sort the nodes of the cloud drive in ascending order by size (from smaller to bigger) - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/SortByMenuTitle" translate="yes" space="preserve">
@@ -1032,7 +1032,7 @@ Preserve the {0} code because is for include the name of the destination folder 
         </trans-unit>
         <trans-unit id="Resx/SendFile" translate="yes" space="preserve">
           <source>Send file</source>
-          <target state="translated">Envie arquivo</target>
+          <target state="translated">Enviar arquivo</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Send file' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ShareFolders" translate="yes" space="preserve">
@@ -1166,7 +1166,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/PhotosOnly" translate="yes" space="preserve">
           <source>Photos only</source>
-          <target state="translated">Apenas fotos</target>
+          <target state="translated">Somente fotos</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the "Photos only" auto camera upload settings</note>
         </trans-unit>
         <trans-unit id="Resx/PowerConnected" translate="yes" space="preserve">
@@ -1281,7 +1281,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/SelectAll" translate="yes" space="preserve">
           <source>Select all</source>
-          <target state="translated">Marcar tudo</target>
+          <target state="translated">Selecionar tudo</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Select' button, link, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/DeselectAll" translate="yes" space="preserve">
@@ -1469,30 +1469,40 @@ NOTE: Keep the capital letter if possible.</note>
           <target state="translated">Veja os Termos de serviço aqui</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text used as a link to view the 'Terms of Service' into the 'create account' page.</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_TakedownGuidance" translate="yes" xml:space="preserve">
-          <source>Takedown Guidance</source>
-          <target state="new">Takedown Guidance</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Takedown Guidance' button, link, text, title, etc. - (String as short as possible).</note>
+        <trans-unit id="Resx/UI_DataProtectionRegulation" translate="yes" space="preserve">
+          <source>Data Protection Regulation</source>
+          <target state="translated">Regulamento de proteção de dados</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Data Protection Regulation' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_LearnMore" translate="yes" xml:space="preserve">
-          <source>Learn more</source>
-          <target state="new">Learn more</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Learn more' button, link, text, title, etc. - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/UI_Copyright" translate="yes" xml:space="preserve">
-          <source>Copyright</source>
-          <target state="new">Copyright</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Copyright' button, link, text, title, etc. - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/UI_LegalAndPolicies" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_LegalAndPolicies" translate="yes" space="preserve">
           <source>Legal and Policies</source>
-          <target state="new">Legal and Policies</target>
+          <target state="translated">Legal e Políticas</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the title of the "Legal and Policies" section which include links to the Terms of Service, Privacy Policy, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_DataProtectionRegulation" translate="yes" xml:space="preserve">
-          <source>Data Protection Regulation</source>
-          <target state="new">Data Protection Regulation</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Data Protection Regulation' button, link, text, title, etc. - (String as short as possible).</note>
+        <trans-unit id="Resx/UI_Copyright" translate="yes" space="preserve">
+          <source>Copyright</source>
+          <target state="translated">Direitos autorais</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Copyright' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_LearnMore" translate="yes" space="preserve">
+          <source>Learn more</source>
+          <target state="translated">Mais informações</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Learn more' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_TakedownGuidance" translate="yes" space="preserve">
+          <source>Takedown Guidance</source>
+          <target state="translated">Guia de remoção</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Takedown Guidance' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_Retry" translate="yes" xml:space="preserve">
+          <source>Retry</source>
+          <target state="new">Retry</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Retry' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_OpenBrowser" translate="yes" xml:space="preserve">
+          <source>Open browser</source>
+          <target state="new">Open browser</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the button to allow the user open the default browser - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>

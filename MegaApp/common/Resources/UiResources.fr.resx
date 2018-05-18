@@ -474,7 +474,7 @@
     <comment>Label for any 'Subscribe' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="TermsOfService" xml:space="preserve">
-    <value>Conditions générales d'utilisation </value>
+    <value>Conditions générales d'utilisation</value>
     <comment>Label for any 'Terms of Service' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Total" xml:space="preserve">
@@ -686,7 +686,7 @@
     <comment>Label to indicate the user that is needed to type his payment data details for upgrade his account.</comment>
   </data>
   <data name="ExpiresOn" xml:space="preserve">
-    <value>Expire en </value>
+    <value>Expire en</value>
     <comment>Label for the 'Expires on' text into the my account page, indicating the expiration date of a PRO account without a valid subscription - (String as short as possible).</comment>
   </data>
   <data name="FirstName" xml:space="preserve">
@@ -1290,5 +1290,25 @@ Preserve the PIN uppercase word.</comment>
   <data name="UI_ViewTermsOfService" xml:space="preserve">
     <value>Consulter ici les conditions générales d’utilisation</value>
     <comment>Text used as a link to view the 'Terms of Service' into the 'create account' page.</comment>
+  </data>
+  <data name="UI_DataProtectionRegulation" xml:space="preserve">
+    <value>Règlement sur la protection des données</value>
+    <comment>Label for any 'Data Protection Regulation' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_LegalAndPolicies" xml:space="preserve">
+    <value>Juridique et politiques</value>
+    <comment>Label for the title of the "Legal and Policies" section which include links to the Terms of Service, Privacy Policy, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_Copyright" xml:space="preserve">
+    <value>Tous droits réservés</value>
+    <comment>Label for any 'Copyright' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_LearnMore" xml:space="preserve">
+    <value>En apprendre davantage</value>
+    <comment>Label for any 'Learn more' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_TakedownGuidance" xml:space="preserve">
+    <value>Informations sur les retraits</value>
+    <comment>Label for any 'Takedown Guidance' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
 </root>

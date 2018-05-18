@@ -127,19 +127,19 @@
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="ConfirmAccountFailed_Title" xml:space="preserve">
-    <value>帐号状态确认失败</value>
+    <value>账号状态确认失败</value>
     <comment>Title of the dialog displayed when the confirmation of a MEGA account failed - (String as short as possible).</comment>
   </data>
   <data name="ConfirmAccountSucces" xml:space="preserve">
-    <value>您的帐户已创建，确认并激活了。您将自动登入。</value>
+    <value>您的账户已创建，确认并激活了。您将自动登入。</value>
     <comment>Message of the dialog displayed when confirm a MEGA account succesfully.</comment>
   </data>
   <data name="ConfirmAccountSucces_Title" xml:space="preserve">
-    <value>帐户已激活</value>
+    <value>账户已激活</value>
     <comment>Title of the dialog displayed when confirm a MEGA account succesfully - (String as short as possible).</comment>
   </data>
   <data name="ConfirmNeeded" xml:space="preserve">
-    <value>检查您的e-mail并点击链接登入以确认您的帐号</value>
+    <value>检查您的e-mail并点击链接登入以确认您的账号</value>
     <comment>Message of the dialog displayed when a user create a new MEGA account successfully, informing that will receive an e-mail with a link to confirm account.</comment>
   </data>
   <data name="ConfirmNeeded_Title" xml:space="preserve">
@@ -360,12 +360,12 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to get a image thumbnail failed - (String as short as possible).</comment>
   </data>
   <data name="GetAccountDetailsFailed" xml:space="preserve">
-    <value>无法载入您的帐户资料，请重试。 [{0}]</value>
+    <value>无法载入您的账户资料，请重试。 [{0}]</value>
     <comment>Message of the dialog displayed when the process/request to get the user account details failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="GetAccountDetailsFailed_Title" xml:space="preserve">
-    <value>恢复帐户资料失败</value>
+    <value>恢复账户资料失败</value>
     <comment>Title of the dialog displayed when the process/request to get the user account details failed - (String as short as possible).</comment>
   </data>
   <data name="LoggedOut" xml:space="preserve">
@@ -465,11 +465,11 @@ Preserve the {0} code because is for include the number of pending transfers in 
     <comment>Title of the dialog displayed when a user are trying to exit the application and has pending transfers. Asks for confirmation to exit - (String as short as possible).</comment>
   </data>
   <data name="AlreadyConfirmedAccount" xml:space="preserve">
-    <value>您的帐户已确认激活。您现在可以登入使用了。</value>
+    <value>您的账户已确认激活。您现在可以登入使用了。</value>
     <comment>Message of the dialog displayed when a user try to confirm a MEGA account that has been already confirmed previously.</comment>
   </data>
   <data name="AlreadyConfirmedAccount_Title" xml:space="preserve">
-    <value>帐户已确认</value>
+    <value>账户已确认</value>
     <comment>Title of the dialog displayed when a user try to confirm a MEGA account that has been already confirmed previously - (String as short as possible).</comment>
   </data>
   <data name="WrongPassword" xml:space="preserve">
@@ -801,15 +801,15 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the process/request to upgrade an user account failed.</comment>
   </data>
   <data name="UpgradeAccountFailed_Title" xml:space="preserve">
-    <value>升级帐号错误</value>
+    <value>升级账号错误</value>
     <comment>Title of the dialog displayed when the process/request to upgrade an user account failed - (String as short as possible).</comment>
   </data>
   <data name="UpgradeAccountSuccessfully" xml:space="preserve">
-    <value>帐户已成功升级！</value>
+    <value>账户已成功升级！</value>
     <comment>Message of the dialog displayed when the process/request to upgrade an user account finished successfully.</comment>
   </data>
   <data name="UpgradeAccountSuccessfully_Title" xml:space="preserve">
-    <value>帐户已升级</value>
+    <value>账户已升级</value>
     <comment>Title of the dialog displayed when the process/request to upgrade an user account finished successfully - (String as short as possible).</comment>
   </data>
   <data name="GetPaymentMethodsFailed" xml:space="preserve">
@@ -877,20 +877,12 @@ Preserve the [{0}] code because is for include the contact email in runtime.</co
     <comment>Descripton of the task that automatic uploads photos tot MEGA. Seen in the background services Settings screen</comment>
   </data>
   <data name="AccountUpdate" xml:space="preserve">
-    <value>您的帐户已更新。是否要检查新帐户的详细资讯？</value>
+    <value>您的账户已更新。是否要检查新账户的详细资讯？</value>
     <comment>Message of the dialog displayed when the account is updated (upgraded or downgraded).</comment>
   </data>
   <data name="AccountUpdated_Title" xml:space="preserve">
-    <value>已更新之帐户</value>
+    <value>已更新之账户</value>
     <comment>Title of the dialog displayed when the account is updated (upgraded or downgraded).</comment>
-  </data>
-  <data name="SSLKeyError" xml:space="preserve">
-    <value>我们的SSL/ TLS凭证无法被认证。您可能受到中间人攻击。</value>
-    <comment>Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
-  </data>
-  <data name="SSLKeyError_Title" xml:space="preserve">
-    <value>已登出</value>
-    <comment>Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
   </data>
   <data name="AutoCameraUploadFailed" xml:space="preserve">
     <value>相片自动上传功能无法使用。您可以在设定页面中重新激活此功能。</value>
@@ -1253,7 +1245,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Title of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</comment>
   </data>
   <data name="AM_AssociatedUserAccountTerminated" xml:space="preserve">
-    <value>由于多次违反我们的服务条款，因此创建此链接的帐户已被停权。</value>
+    <value>由于多次违反我们的服务条款，因此创建此链接的账户已被停权。</value>
     <comment>Error message shown when you open a file/folder link (or other shared resource) and it's no longer available because the the associated user account has been terminated due to multiple violations of our Terms of Service.</comment>
   </data>
   <data name="AM_DownloadFailed_Title" xml:space="preserve">
@@ -1277,7 +1269,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Message of the dialog shown when the users tries to create an account with an email already in use.</comment>
   </data>
   <data name="AM_IncompleteConfirmationLink" xml:space="preserve">
-    <value>您所使用的帐户激活确认链接并不完整。请检查该链接之长度，确保已复制了整个链接，然后再试一次。</value>
+    <value>您所使用的账户激活确认链接并不完整。请检查该链接之长度，确保已复制了整个链接，然后再试一次。</value>
     <comment>Message of the dialog displayed when a user try to confirm a MEGA account but the confirm link is incomplete because it has less characters than it should (probably because the user hasn't copied and pasted the entire link).</comment>
   </data>
   <data name="AM_NewSignUpInvalidLink" xml:space="preserve">
@@ -1285,11 +1277,11 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Message of the warning dialog shown when the user tries to make a new sign up using an invalid link (#newsignup).</comment>
   </data>
   <data name="AM_AccountBlocked" xml:space="preserve">
-    <value>您的帐户因违反MEGA的服务条款而被终止，如侵害他人权利;共享和/或导入非法数据;或侵害系统。</value>
+    <value>您的账户因违反MEGA的服务条款而被终止，如侵害他人权利;共享和/或导入非法数据;或侵害系统。</value>
     <comment>Message of the dialog shown when the user is trying to login and the account has been blocked.</comment>
   </data>
   <data name="AM_AccountNotConfirmed" xml:space="preserve">
-    <value>您的帐户尚未确认激活。</value>
+    <value>您的账户尚未确认激活。</value>
     <comment>Message of the dialog shown when the user is trying to login and the account has not been confirmed yet.</comment>
   </data>
   <data name="AM_TooManyFailedLoginAttempts" xml:space="preserve">
@@ -1298,7 +1290,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
 Preserve the {0} code because is for include the exact time until the user has to wait.</comment>
   </data>
   <data name="AM_AccountBlocked_Title" xml:space="preserve">
-    <value>帐户已锁</value>
+    <value>账户已锁</value>
     <comment>Title of the dialog shown when the user is trying to login and the account has been blocked.</comment>
   </data>
   <data name="AM_ShareFromMegaAppBusy_Message" xml:space="preserve">
@@ -1395,7 +1387,35 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the process to prepare files or folders for download failed.</comment>
   </data>
   <data name="AM_AccountBlockedCopyright" xml:space="preserve">
-    <value>由于多次违反MEGA的服务条款，您的帐户已被暂停。请检查您的电子邮件收件箱。</value>
+    <value>由于多次违反MEGA的服务条款，您的账户已被暂停。请检查您的电子邮件收件箱。</value>
     <comment>Message of the dialog shown when the user is trying to login and the account has been blocked for multiple copyright violation.</comment>
+  </data>
+  <data name="AM_EmptyRequiredFields" xml:space="preserve">
+    <value>填写必填字段并重试。</value>
+    <comment>Message of the dialog displayed when required fields are empty.</comment>
+  </data>
+  <data name="AM_PasswordChanged" xml:space="preserve">
+    <value>我们已向您发送确认更改密码的电子邮件。</value>
+    <comment>Message of the dialog displayed when the change password process finish successful.</comment>
+  </data>
+  <data name="AM_PasswordChanged_Title" xml:space="preserve">
+    <value>密码已更改</value>
+    <comment>Title of the dialog displayed when the change password process finish successful.</comment>
+  </data>
+  <data name="AM_PasswordChangeFailed" xml:space="preserve">
+    <value>无法更改您的密码。请再试一次。</value>
+    <comment>Message of the dialog displayed when the user has failed to change his password</comment>
+  </data>
+  <data name="AM_PasswordChangeFailed_Title" xml:space="preserve">
+    <value>更改密码时出错</value>
+    <comment>Title of the dialog displayed when the user has failed to change his password - (String as short as possible).</comment>
+  </data>
+  <data name="AM_IncorrectEmailFormat" xml:space="preserve">
+    <value>错误的电子邮件格式。请再试一次。</value>
+    <comment>Message of the dialog displayed when the user types an email address with an incorrect format.</comment>
+  </data>
+  <data name="AM_VeryWeakPassword" xml:space="preserve">
+    <value>请强化您的密码。</value>
+    <comment>Message of the dialog displayed when the user has chosen a very weak password.</comment>
   </data>
 </root>

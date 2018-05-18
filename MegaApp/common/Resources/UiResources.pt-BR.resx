@@ -342,7 +342,7 @@
     <comment>Label for any 'Annually' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="AppVersionText" xml:space="preserve">
-    <value>Versão do app</value>
+    <value>Versão do aplicativo</value>
     <comment>Text placed just before app version number into the 'about' page.</comment>
   </data>
   <data name="AskDownloadLocationText" xml:space="preserve">
@@ -414,7 +414,7 @@
     <comment>Text placed just before the amount free space into the 'my account' page - (String as short as possible).</comment>
   </data>
   <data name="LargestSortOption" xml:space="preserve">
-    <value>maior</value>
+    <value>Maior</value>
     <comment>Label for the menu option to sort the nodes of the cloud drive in descending order by size (from bigger to smaller) - (String as short as possible).</comment>
   </data>
   <data name="MakePinLock" xml:space="preserve">
@@ -434,7 +434,7 @@
     <comment>Label for the menu option to sort the nodes of the cloud drive in descending order by name - (String as short as possible).</comment>
   </data>
   <data name="NewestSortOption" xml:space="preserve">
-    <value>mais novo</value>
+    <value>Mais recente</value>
     <comment>Label for the menu option to sort the nodes of the cloud drive in descending order by date (from newer to older) - (String as short as possible).</comment>
   </data>
   <data name="NoDataToShow" xml:space="preserve">
@@ -446,7 +446,7 @@
     <comment>Label shown when the app has no information about the subscription plans to show into 'subscription' page - (String as short as possible).</comment>
   </data>
   <data name="OldestSortOption" xml:space="preserve">
-    <value>mais velho</value>
+    <value>Mais antigo</value>
     <comment>Label for the menu option to sort the nodes of the cloud drive in ascending order by size (from smaller to bigger) - (String as short as possible).</comment>
   </data>
   <data name="PauseAll" xml:space="preserve">
@@ -458,7 +458,7 @@
     <comment>Label for any 'Privacy policy' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="SmallestSortOption" xml:space="preserve">
-    <value>menor</value>
+    <value>Menor</value>
     <comment>Label for the menu option to sort the nodes of the cloud drive in ascending order by size (from smaller to bigger) - (String as short as possible).</comment>
   </data>
   <data name="SortByMenuTitle" xml:space="preserve">
@@ -837,7 +837,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
     <comment>Label for any 'Message' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="SendFile" xml:space="preserve">
-    <value>Envie arquivo</value>
+    <value>Enviar arquivo</value>
     <comment>Label for any 'Send file' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="ShareFolders" xml:space="preserve">
@@ -945,7 +945,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'View details' button, link, text, title, etc. (i.e. View contact details) - (String as short as possible).</comment>
   </data>
   <data name="PhotosOnly" xml:space="preserve">
-    <value>Apenas fotos</value>
+    <value>Somente fotos</value>
     <comment>Label for the "Photos only" auto camera upload settings</comment>
   </data>
   <data name="PowerConnected" xml:space="preserve">
@@ -1065,7 +1065,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Remove link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="SelectAll" xml:space="preserve">
-    <value>Marcar tudo</value>
+    <value>Selecionar tudo</value>
     <comment>Label for any 'Select' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="DeselectAll" xml:space="preserve">
@@ -1271,7 +1271,7 @@ Preserve the PIN uppercase word.</comment>
 Try to preserve the PIN uppercase word.</comment>
   </data>
   <data name="UI_MEGA_SDK_Version" xml:space="preserve">
-    <value>Versão do MEGA SDK</value>
+    <value>MEGA - versão do SDK</value>
     <comment>Label for any 'MEGA SDK version' button, link, text, title, etc. Preserve the "MEGA SDK" in uppercase - (String as short as possible).</comment>
   </data>
   <data name="UI_NewPinLock" xml:space="preserve">
@@ -1290,5 +1290,25 @@ Preserve the PIN uppercase word.</comment>
   <data name="UI_ViewTermsOfService" xml:space="preserve">
     <value>Veja os Termos de serviço aqui</value>
     <comment>Text used as a link to view the 'Terms of Service' into the 'create account' page.</comment>
+  </data>
+  <data name="UI_DataProtectionRegulation" xml:space="preserve">
+    <value>Regulamento de proteção de dados</value>
+    <comment>Label for any 'Data Protection Regulation' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_LegalAndPolicies" xml:space="preserve">
+    <value>Legal e Políticas</value>
+    <comment>Label for the title of the "Legal and Policies" section which include links to the Terms of Service, Privacy Policy, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_Copyright" xml:space="preserve">
+    <value>Direitos autorais</value>
+    <comment>Label for any 'Copyright' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_LearnMore" xml:space="preserve">
+    <value>Mais informações</value>
+    <comment>Label for any 'Learn more' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_TakedownGuidance" xml:space="preserve">
+    <value>Guia de remoção</value>
+    <comment>Label for any 'Takedown Guidance' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
 </root>

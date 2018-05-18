@@ -151,6 +151,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a https://mega.nz.
+        /// </summary>
+        public static string AR_MegaUrl {
+            get {
+                return ResourceManager.GetString("AR_MegaUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a https://mega.nz/privacy.
         /// </summary>
         public static string AR_PrivacyPolicyUrl {
@@ -160,7 +169,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a https://github.com/meganz/sdk/tree/a6a7e37a22d78f4679f554c29c98beaf3a047985.
+        ///   Busca una cadena traducida similar a https://github.com/meganz/sdk/tree/ee112ec5cef6e01883282483af68e5d0fa2cfc65.
         /// </summary>
         public static string AR_SdkLink {
             get {
@@ -169,7 +178,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a a6a7e37.
+        ///   Busca una cadena traducida similar a ee112ec.
         /// </summary>
         public static string AR_SdkVersion {
             get {

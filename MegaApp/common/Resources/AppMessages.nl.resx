@@ -311,7 +311,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
     <comment>Title of the dialog displayed when remove successfully a node definitely from the rubbish bin - (String as short as possible).</comment>
   </data>
   <data name="RenameNodeFailed" xml:space="preserve">
-    <value>Hernamen van het bestand mislukt</value>
+    <value>Hernoemen van het bestand mislukt</value>
     <comment>Message of the dialog displayed when the process/request to remove definitely an item node from the rubbish bin failed.</comment>
   </data>
   <data name="RenameNodeFailed_Title" xml:space="preserve">
@@ -377,7 +377,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when a user logged out successfully - (String as short as possible).</comment>
   </data>
   <data name="LogoutFailed" xml:space="preserve">
-    <value>Mislukt af te melden. </value>
+    <value>Mislukt af te melden.</value>
     <comment>Message of the dialog displayed when the logout to the MEGA cloud service api fails. 
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
@@ -661,7 +661,7 @@ Probeer in plaats daarvan het bestand op te slaan/kopiëren naar het interne geh
     <comment>Button of the dialog displayed the first time that a user want to download a image. Option automatically download to the photo album after downloads - (String as short as possible).</comment>
   </data>
   <data name="SelectFolderFailed" xml:space="preserve">
-    <value>Mislukt om de map te selecteren. Probeer nogmaals of selecteer een andere.</value>
+    <value>Mislukt om map te selecteren. Probeer nogmaals, of selecteer een andere.</value>
     <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="SelectFolderFailed_Title" xml:space="preserve">
@@ -741,7 +741,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="SaveSettingsFailed_Title" xml:space="preserve">
-    <value>Fout bij opslaan instellingen </value>
+    <value>Fout bij opslaan instellingen</value>
     <comment>Title of the dialog displayed when the process to save settings failed - (String as short as possible).</comment>
   </data>
   <data name="ShortCutFailed" xml:space="preserve">
@@ -883,14 +883,6 @@ Preserve the [{0}] code because is for include the contact email in runtime.</co
   <data name="AccountUpdated_Title" xml:space="preserve">
     <value>Bijgewerkt account</value>
     <comment>Title of the dialog displayed when the account is updated (upgraded or downgraded).</comment>
-  </data>
-  <data name="SSLKeyError" xml:space="preserve">
-    <value>Onze SSL/TLS-certificaat kan niet worden geverifieerd. U zou kunnen worden getroffen door een man-in-the-middle-aanval.</value>
-    <comment>Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
-  </data>
-  <data name="SSLKeyError_Title" xml:space="preserve">
-    <value>Afgemeld</value>
-    <comment>Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
   </data>
   <data name="AutoCameraUploadFailed" xml:space="preserve">
     <value>De Auto Camera Upload achtergrondtaak is mislukt. U kunt deze opnieuw inschakelen op de pagina instellingen.</value>
@@ -1397,5 +1389,33 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="AM_AccountBlockedCopyright" xml:space="preserve">
     <value>Uw account is geschorst door meerdere misbruiken van MEGA's Algemene Voorwaarden. Controleer uw Email Postbak.</value>
     <comment>Message of the dialog shown when the user is trying to login and the account has been blocked for multiple copyright violation.</comment>
+  </data>
+  <data name="AM_EmptyRequiredFields" xml:space="preserve">
+    <value>Vul de benodigde velden in en probeer nogmaals.</value>
+    <comment>Message of the dialog displayed when required fields are empty.</comment>
+  </data>
+  <data name="AM_PasswordChanged" xml:space="preserve">
+    <value>We hebben u een mail verzonden die bevestigd uw wachtwoord wijziging.</value>
+    <comment>Message of the dialog displayed when the change password process finish successful.</comment>
+  </data>
+  <data name="AM_PasswordChanged_Title" xml:space="preserve">
+    <value>Wachtwoord gewijzigd</value>
+    <comment>Title of the dialog displayed when the change password process finish successful.</comment>
+  </data>
+  <data name="AM_PasswordChangeFailed" xml:space="preserve">
+    <value>Mislukt om uw wachtwoord te wijzigen. Probeer nogmaals.</value>
+    <comment>Message of the dialog displayed when the user has failed to change his password</comment>
+  </data>
+  <data name="AM_PasswordChangeFailed_Title" xml:space="preserve">
+    <value>Fout wijziging wachtwoord</value>
+    <comment>Title of the dialog displayed when the user has failed to change his password - (String as short as possible).</comment>
+  </data>
+  <data name="AM_IncorrectEmailFormat" xml:space="preserve">
+    <value>Onjuiste email formaat. Probeer nogmaals</value>
+    <comment>Message of the dialog displayed when the user types an email address with an incorrect format.</comment>
+  </data>
+  <data name="AM_VeryWeakPassword" xml:space="preserve">
+    <value>Kies a.u.b. een sterker wachtwoord.</value>
+    <comment>Message of the dialog displayed when the user has chosen a very weak password.</comment>
   </data>
 </root>

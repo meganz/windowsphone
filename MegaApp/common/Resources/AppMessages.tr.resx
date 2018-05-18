@@ -241,7 +241,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when fails the process/request to import an image - (String as short as possible).</comment>
   </data>
   <data name="LinkCopiedToClipboard" xml:space="preserve">
-    <value>MEGA link panoya kopyalanır</value>
+    <value>MEGA linki panonuza kopyalandı</value>
     <comment>Message of the dialog displayed when the process/request to copy a MEGA link to the clipboard finished successfully.</comment>
   </data>
   <data name="LinkCopiedToClipboard_Title" xml:space="preserve">
@@ -274,7 +274,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to move a file failed - (String as short as possible).</comment>
   </data>
   <data name="PasswordsDoNotMatch" xml:space="preserve">
-    <value>Şifreler eşleşmiyor. Lütfen tekrar deneyin.</value>
+    <value>Parolalar eşleşmiyor. Lütfen tekrar deneyin.</value>
     <comment>Message of the dialog displayed when a user are trying to create a MEGA account and the introduced passwords don't match.</comment>
   </data>
   <data name="PictureSaved" xml:space="preserve">
@@ -319,15 +319,15 @@ Preserve the {0} code because is for include the name of the item to be removed 
     <comment>Title of the dialog displayed when the process/request to remove definitely an item node from the rubbish bin failed - (String as short as possible).</comment>
   </data>
   <data name="RequiredFieldsConfirmAccount" xml:space="preserve">
-    <value>Seçtiğiniz şifreyi girin.</value>
+    <value>Seçtiğiniz parolayı girin.</value>
     <comment>Message of the dialog displayed when required fields for confirm account are not filled in.</comment>
   </data>
   <data name="RequiredFieldsCreateAccount" xml:space="preserve">
-    <value>Adınızı, e-posta adresinizi ve şifrenizi girin</value>
+    <value>Adınızı, e-posta adresinizi ve parolanızı girin</value>
     <comment>Message of the dialog displayed when required fields for create account are not filled in.</comment>
   </data>
   <data name="RequiredFieldsLogin" xml:space="preserve">
-    <value>Lütfen e-posta adresinizi ve MEGA şifrenizi girin.</value>
+    <value>Lütfen e-posta adresinizi ve MEGA parolanızı girin.</value>
     <comment>Message of the dialog displayed when required fields for login are not filled in.</comment>
   </data>
   <data name="RequiredFields_Title" xml:space="preserve">
@@ -412,7 +412,7 @@ Preserve the {0} code because is for include the number of nodes to be moved in 
     <comment>Title of the dialog displayed when the process/request to move nodes to the rubbish bin failed - (String as short as possible).</comment>
   </data>
   <data name="MoveToRubbishBinQuestion" xml:space="preserve">
-    <value> {0} öğesini çöp tenekesine taşımak istediğinizden emin misiniz?</value>
+    <value>{0} öğesini çöp tenekesine taşımak istediğinizden emin misiniz?</value>
     <comment>Message of the dialog displayed when a user want to move a single node to the rubbish bin, asking for confirmation to make the movement.
 Preserve the {0} code because is for include the name of the node to be moved in runtime.</comment>
   </data>
@@ -473,11 +473,11 @@ Preserve the {0} code because is for include the number of pending transfers in 
     <comment>Title of the dialog displayed when a user try to confirm a MEGA account that has been already confirmed previously - (String as short as possible).</comment>
   </data>
   <data name="WrongPassword" xml:space="preserve">
-    <value>Girilen şifre yanlış</value>
+    <value>Girilen parola yanlış</value>
     <comment>Message of the dialog displayed in cases that the app requires that the user type the password and the user types a wrong password.</comment>
   </data>
   <data name="WrongPassword_Title" xml:space="preserve">
-    <value>Hatalı şifre</value>
+    <value>Hatalı parola</value>
     <comment>Title of the dialog displayed in cases that the app requires that the user type the password and the user types a wrong password - (String as short as possible).</comment>
   </data>
   <data name="DownloadLimitMessage_Title" xml:space="preserve">
@@ -609,7 +609,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
   </data>
   <data name="CopyFileUnauthorizedAccessException" xml:space="preserve">
     <value>Bu dosya türünü seçilen konuma aktarma iznine sahip değilsiniz. Desteklenmeyen bir dosya türünü SD kartınıza mı aktarmak istiyorsunuz?
-Lütfen cihazınızın dahili hafızasına kaydetmeyi/kopyalamayı deneyin.                                </value>
+Lütfen cihazınızın dahili hafızasına kaydetmeyi/kopyalamayı deneyin.</value>
     <comment>Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException_Title" xml:space="preserve">
@@ -661,7 +661,7 @@ Lütfen cihazınızın dahili hafızasına kaydetmeyi/kopyalamayı deneyin.     
     <comment>Button of the dialog displayed the first time that a user want to download a image. Option automatically download to the photo album after downloads - (String as short as possible).</comment>
   </data>
   <data name="SelectFolderFailed" xml:space="preserve">
-    <value>Klasör seçilemedi. Lütfen tekrar deneyin veya başka birini seçin.                                </value>
+    <value>Klasör seçilemedi. Lütfen tekrar deneyin veya başka birini seçin.</value>
     <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="SelectFolderFailed_Title" xml:space="preserve">
@@ -687,7 +687,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process to select files failed - (String as short as possible).</comment>
   </data>
   <data name="WrongEmailPasswordLogin" xml:space="preserve">
-    <value>Yanlış bir e-posta adresi veya şifre. Lütfen tekrar deneyin.</value>
+    <value>Yanlış e-posta adresi veya parola. Lütfen tekrar deneyin.</value>
     <comment>Message of the dialog displayed when a user is trying to login with an e-mail that is not associated with a MEGA account or type a wrong password. Preserve the MEGA word in uppercase.</comment>
   </data>
   <data name="DeleteNodeQuestion" xml:space="preserve">
@@ -884,14 +884,6 @@ Preserve the [{0}] code because is for include the contact email in runtime.</co
     <value>Hesap güncellendi</value>
     <comment>Title of the dialog displayed when the account is updated (upgraded or downgraded).</comment>
   </data>
-  <data name="SSLKeyError" xml:space="preserve">
-    <value>SSL/TLS sertifikamız doğrulanamıyor. İki bağlantı noktası arasındaki bağlantıyı izinsiz izleme saldırısından etkilenmiş olabilirsiniz.</value>
-    <comment>Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
-  </data>
-  <data name="SSLKeyError_Title" xml:space="preserve">
-    <value>Çıkış yapıldı</value>
-    <comment>Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
-  </data>
   <data name="AutoCameraUploadFailed" xml:space="preserve">
     <value>Otomatik Kamera Yükleme arka plan görevi başarısız oldu. Ayarlar sayfasında yeniden etkinleştirebilirsiniz.</value>
     <comment>Message of the dialog displayed when the auto camera upload service failed.</comment>
@@ -919,7 +911,7 @@ Preserve the {0} code because is for include the number of contacts to be remove
     <comment>Title of the dialog displayed when a user want to remove multiple contacts asking for confirmation to make it - (String as short as possible).</comment>
   </data>
   <data name="NewAndOldPasswordMatch" xml:space="preserve">
-    <value>Yeni ve eski şifre aynı  olamaz.</value>
+    <value>Yeni parolanız eskisi ile aynı olamaz.</value>
     <comment>Message of the dialog displayed when a user are trying to change his/her MEGA account password and the new password is equal to the old password.</comment>
   </data>
   <data name="CloseAllSessionsFailed" xml:space="preserve">
@@ -1102,15 +1094,15 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="AM_FileLinkUnavailable" xml:space="preserve">
     <value>Bunun nedeni aşağıdakilerden biri olabilir:
 - Dosya Hizmet Koşullarını ihlal ettiği için kaldırıldı.
-- Geçersiz URL – erişmeye çalıştığınız link mevcut değil.
-- Dosya kullanıcı tarafından kaldırıldı.                                </value>
+- Geçersiz URL – erişmeye çalıştığınız bağlantısı mevcut değil.
+- Dosya kullanıcı tarafından kaldırıldı.</value>
     <comment>Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</comment>
   </data>
   <data name="AM_FolderLinkUnavailable" xml:space="preserve">
     <value>Bunun nedeni aşağıdakilerden biri olabilir:
 - Klasör Hizmet Koşullarını ihlal ettiği için kaldırıldı.
 - Geçersiz URL – erişmeye çalıştığınız bağlantı mevcut değil.
-- Klasör bağlantısı kullanıcı tarafından kaldırıldı.                                </value>
+- Klasör bağlantısı kullanıcı tarafından kaldırıldı.</value>
     <comment>Error message shown when a folder link doesn't exist. Keep "\n"</comment>
   </data>
   <data name="AM_LinkUnavailableTitle" xml:space="preserve">
@@ -1135,7 +1127,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder</comment>
   </data>
   <data name="AM_RecoveryKeyClipboardFailed" xml:space="preserve">
-    <value>Kurtarma Anahtarı panoya kopyalanamadı. Lütfen tekrar deneyin.                                </value>
+    <value>Kurtarma Anahtarı panoya kopyalanamadı. Lütfen tekrar deneyin.</value>
     <comment>Message of the dialog displayed when fails to copy the user's Recovery Key to the clipboard to be saved or exported.</comment>
   </data>
   <data name="AM_RecoveryKeyClipboardFailed_Title" xml:space="preserve">
@@ -1147,7 +1139,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported.</comment>
   </data>
   <data name="AM_RecoveryKeyCopied_Title" xml:space="preserve">
-    <value>Kurtarma Anahtarı kopyalandı                                </value>
+    <value>Kurtarma Anahtarı kopyalandı</value>
     <comment>Title of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported - (String as short as possible).</comment>
   </data>
   <data name="AM_CopyFailed" xml:space="preserve">
@@ -1209,7 +1201,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Title of the dialog displayed when fails the process/request to import a folder - (String as short as possible).</comment>
   </data>
   <data name="AM_ImportLinkFailed_Title" xml:space="preserve">
-    <value>Link alma başarısız</value>
+    <value>Bağlantı alma başarısız</value>
     <comment>Title of the dialog displayed when fails the process/request to import a link - (String as short as possible).</comment>
   </data>
   <data name="AM_ShareFromMegaFailed_Message" xml:space="preserve">
@@ -1319,7 +1311,7 @@ Preserve the {0} code because is for include the exact time until the user has t
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="AM_InternalNodeNotFound" xml:space="preserve">
-    <value>Açmaya çalıştığınız dosya/klasör linki bulunamadı. Büyük ihtimalle farklı bir hesapta hesaptasınız. Lütfen, doğru hesaba giriş yapıp tekrar deneyin.</value>
+    <value>Açmaya çalıştığınız dosya/klasör bağlantısı bulunamadı. Büyük ihtimalle farklı bir hesapta hesaptasınız. Lütfen, doğru hesaba giriş yapıp tekrar deneyin.</value>
     <comment>Title of the dialog displayed when trying to open a link of an internal node and this node is not found in the account in which the user is logged in.</comment>
   </data>
   <data name="AM_InternalNodeNotFound_Title" xml:space="preserve">
@@ -1397,5 +1389,33 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="AM_AccountBlockedCopyright" xml:space="preserve">
     <value>Hesabınız, MEGA Hizmet Şartları'nın birden fazla ihlalinden dolayı askıya alındı. Lütfen e-posta gelen kutunuzu kontrol edin.</value>
     <comment>Message of the dialog shown when the user is trying to login and the account has been blocked for multiple copyright violation.</comment>
+  </data>
+  <data name="AM_EmptyRequiredFields" xml:space="preserve">
+    <value>Gerekli alanları doldurun ve tekrar deneyin.</value>
+    <comment>Message of the dialog displayed when required fields are empty.</comment>
+  </data>
+  <data name="AM_PasswordChanged" xml:space="preserve">
+    <value>Parola değişiminizin onayı için size eposta gönderdik.</value>
+    <comment>Message of the dialog displayed when the change password process finish successful.</comment>
+  </data>
+  <data name="AM_PasswordChanged_Title" xml:space="preserve">
+    <value>Parola değiştirildi</value>
+    <comment>Title of the dialog displayed when the change password process finish successful.</comment>
+  </data>
+  <data name="AM_PasswordChangeFailed" xml:space="preserve">
+    <value>Şifreniz değiştirilemedi. Lütfen tekrar deneyin.</value>
+    <comment>Message of the dialog displayed when the user has failed to change his password</comment>
+  </data>
+  <data name="AM_PasswordChangeFailed_Title" xml:space="preserve">
+    <value>Şifre değiştirilirken hata oluştu</value>
+    <comment>Title of the dialog displayed when the user has failed to change his password - (String as short as possible).</comment>
+  </data>
+  <data name="AM_IncorrectEmailFormat" xml:space="preserve">
+    <value>Yanlış e-posta biçimi. Lütfen tekrar deneyin.</value>
+    <comment>Message of the dialog displayed when the user types an email address with an incorrect format.</comment>
+  </data>
+  <data name="AM_VeryWeakPassword" xml:space="preserve">
+    <value>Lütfen parolanızı güçlendirin.</value>
+    <comment>Message of the dialog displayed when the user has chosen a very weak password.</comment>
   </data>
 </root>

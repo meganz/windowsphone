@@ -626,7 +626,7 @@
     <comment>Label for the 'Wifi and data plan' option in the 'set up camera uploads' page - (String as short as possible).</comment>
   </data>
   <data name="WifiOnly" xml:space="preserve">
-    <value>限於Wifi </value>
+    <value>限於Wifi</value>
     <comment>Label for the 'Wifi only' option in the 'set up camera uploads' page - (String as short as possible).</comment>
   </data>
   <data name="EnableCameraUploads" xml:space="preserve">
@@ -1290,5 +1290,25 @@ Preserve the PIN uppercase word.</comment>
   <data name="UI_ViewTermsOfService" xml:space="preserve">
     <value>請從此處閱覽我們的服務條款</value>
     <comment>Text used as a link to view the 'Terms of Service' into the 'create account' page.</comment>
+  </data>
+  <data name="UI_DataProtectionRegulation" xml:space="preserve">
+    <value>Data Protection Regulation</value>
+    <comment>Label for any 'Data Protection Regulation' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_LegalAndPolicies" xml:space="preserve">
+    <value>法律和政策</value>
+    <comment>Label for the title of the "Legal and Policies" section which include links to the Terms of Service, Privacy Policy, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_Copyright" xml:space="preserve">
+    <value>智慧財產權</value>
+    <comment>Label for any 'Copyright' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_LearnMore" xml:space="preserve">
+    <value>瞭解更多</value>
+    <comment>Label for any 'Learn more' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_TakedownGuidance" xml:space="preserve">
+    <value>侵權撤除守則</value>
+    <comment>Label for any 'Takedown Guidance' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
 </root>

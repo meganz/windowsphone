@@ -130,7 +130,7 @@
     <comment>Label for any 'Cancel' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="CloudDriveName" xml:space="preserve">
-    <value>Partizione Cloud</value>
+    <value>Cloud Drive</value>
     <comment>Label for any 'Cloud Drive' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Confirm" xml:space="preserve">
@@ -282,7 +282,7 @@
     <comment>Label for the name of the Cloud Drive breadcum root node - (String as short as possible).</comment>
   </data>
   <data name="RubbishBinRoot" xml:space="preserve">
-    <value>Cestino</value>
+    <value>Rubbish Bin</value>
     <comment>Label for the name of the Rubbish bin breadcum root node - (String as short as possible).</comment>
   </data>
   <data name="No" xml:space="preserve">
@@ -945,7 +945,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'View details' button, link, text, title, etc. (i.e. View contact details) - (String as short as possible).</comment>
   </data>
   <data name="PhotosOnly" xml:space="preserve">
-    <value> Solo foto</value>
+    <value>Solo foto</value>
     <comment>Label for the "Photos only" auto camera upload settings</comment>
   </data>
   <data name="PowerConnected" xml:space="preserve">
@@ -1290,5 +1290,25 @@ Preserve the PIN uppercase word.</comment>
   <data name="UI_ViewTermsOfService" xml:space="preserve">
     <value>Vedi i Termini di Servizio qui</value>
     <comment>Text used as a link to view the 'Terms of Service' into the 'create account' page.</comment>
+  </data>
+  <data name="UI_DataProtectionRegulation" xml:space="preserve">
+    <value>Data Protection Regulation</value>
+    <comment>Label for any 'Data Protection Regulation' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_LegalAndPolicies" xml:space="preserve">
+    <value>Legale e policy</value>
+    <comment>Label for the title of the "Legal and Policies" section which include links to the Terms of Service, Privacy Policy, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_Copyright" xml:space="preserve">
+    <value>Copyright</value>
+    <comment>Label for any 'Copyright' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_LearnMore" xml:space="preserve">
+    <value>Di più</value>
+    <comment>Label for any 'Learn more' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_TakedownGuidance" xml:space="preserve">
+    <value>Takedown Guidance</value>
+    <comment>Label for any 'Takedown Guidance' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
 </root>
