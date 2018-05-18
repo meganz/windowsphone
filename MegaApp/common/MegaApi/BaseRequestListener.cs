@@ -69,8 +69,10 @@ namespace MegaApp.MegaApi
                     apiErrorTimer.Stop();
             });
 
+            if (this.api == null) return;
+
             string message = string.Empty;
-            switch ((MRetryReason)api.isWaiting())
+            switch ((MRetryReason)this.api.isWaiting())
             {
                 case MRetryReason.RETRY_CONNECTIVITY:
                     message = ProgressMessages.PM_ConnectivityIssue;
@@ -100,6 +102,8 @@ namespace MegaApp.MegaApi
 
         public virtual void onRequestFinish(MegaSDK api, MRequest request, MError e)
         {
+            this.api = api;
+
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
                 ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["PhoneChromeColor"]);
@@ -182,6 +186,8 @@ namespace MegaApp.MegaApi
 
         public virtual void onRequestTemporaryError(MegaSDK api, MRequest request, MError e)
         {
+            this.api = api;
+
             if(DebugService.DebugSettings.IsDebugMode || Debugger.IsAttached)
             {
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
@@ -190,7 +196,9 @@ namespace MegaApp.MegaApi
         }
 
         public virtual void onRequestUpdate(MegaSDK api, MRequest request)
-        {            
+        {
+            this.api = api;
+
             Deployment.Current.Dispatcher.BeginInvoke(() =>
                 ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["PhoneChromeColor"]));
         }
