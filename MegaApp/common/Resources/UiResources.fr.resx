@@ -462,7 +462,7 @@
     <comment>Label for the menu option to sort the nodes of the cloud drive in ascending order by size (from smaller to bigger) - (String as short as possible).</comment>
   </data>
   <data name="SortByMenuTitle" xml:space="preserve">
-    <value>Trier</value>
+    <value>Trier par</value>
     <comment>Label used like title for the sort menu.</comment>
   </data>
   <data name="StartResumeAll" xml:space="preserve">
@@ -590,7 +590,7 @@
     <comment>Label for any 'Help' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="CameraUploads" xml:space="preserve">
-    <value>Téléversement caméra</value>
+    <value>Téléversements de la caméra</value>
     <comment>Label for any 'Camera Uploads' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Contacts" xml:space="preserve">
@@ -614,7 +614,7 @@
     <comment>Label for any 'Ok' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="SetupCameraUploadsTitle" xml:space="preserve">
-    <value>Configurer le téléversement de la caméra</value>
+    <value>Configurer les téléversements de la caméra</value>
     <comment>Label used like title for the "set up camera uploads" page - (String as short as possible)</comment>
   </data>
   <data name="Skip" xml:space="preserve">
@@ -630,7 +630,7 @@
     <comment>Label for the 'Wifi only' option in the 'set up camera uploads' page - (String as short as possible).</comment>
   </data>
   <data name="EnableCameraUploads" xml:space="preserve">
-    <value>Activer le téléversement de la caméra</value>
+    <value>Activer les téléversements de la caméra</value>
     <comment>Label for the switch button to enable or disable the Camera Uploads service - (String as short as possible).</comment>
   </data>
   <data name="Security" xml:space="preserve">
@@ -1189,7 +1189,7 @@ Keep the code {1} because is for include currency in runtime.</comment>
     <comment>Label for the state of a download transfer when is finished - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStateDownloading" xml:space="preserve">
-    <value>Téléchargement...</value>
+    <value>Téléchargement…</value>
     <comment>Label for the state of a transfer when is being downloading - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStateError" xml:space="preserve">
@@ -1271,7 +1271,7 @@ Preserve the PIN uppercase word.</comment>
 Try to preserve the PIN uppercase word.</comment>
   </data>
   <data name="UI_MEGA_SDK_Version" xml:space="preserve">
-    <value>Version du kit SDK MEGA</value>
+    <value>Version de la trousse SDK MEGA</value>
     <comment>Label for any 'MEGA SDK version' button, link, text, title, etc. Preserve the "MEGA SDK" in uppercase - (String as short as possible).</comment>
   </data>
   <data name="UI_NewPinLock" xml:space="preserve">
@@ -1300,7 +1300,7 @@ Preserve the PIN uppercase word.</comment>
     <comment>Label for the title of the "Legal and Policies" section which include links to the Terms of Service, Privacy Policy, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_Copyright" xml:space="preserve">
-    <value>Tous droits réservés</value>
+    <value>Droits d’auteur</value>
     <comment>Label for any 'Copyright' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_LearnMore" xml:space="preserve">
@@ -1310,5 +1310,13 @@ Preserve the PIN uppercase word.</comment>
   <data name="UI_TakedownGuidance" xml:space="preserve">
     <value>Informations sur les retraits</value>
     <comment>Label for any 'Takedown Guidance' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_OpenBrowser" xml:space="preserve">
+    <value>Ouvrir le navigateur</value>
+    <comment>Label for the button to allow the user open the default browser - (String as short as possible).</comment>
+  </data>
+  <data name="UI_Retry" xml:space="preserve">
+    <value>Ressayer</value>
+    <comment>Label for any 'Retry' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
 </root>

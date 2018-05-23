@@ -701,7 +701,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/CameraUploads" translate="yes" space="preserve">
           <source>Camera Uploads</source>
-          <target state="translated">Camera Uploads</target>
+          <target state="translated">相机上传</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Camera Uploads' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Contacts" translate="yes" space="preserve">
@@ -1491,18 +1491,18 @@ NOTE: Keep the capital letter if possible.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TakedownGuidance" translate="yes" space="preserve">
           <source>Takedown Guidance</source>
-          <target state="translated">Takedown Guidance</target>
+          <target state="translated">侵权撤除守则</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Takedown Guidance' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_Retry" translate="yes" xml:space="preserve">
-          <source>Retry</source>
-          <target state="new">Retry</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Retry' button, link, text, title, etc. - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/UI_OpenBrowser" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_OpenBrowser" translate="yes" space="preserve">
           <source>Open browser</source>
-          <target state="new">Open browser</target>
+          <target state="translated">打开浏览器</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the button to allow the user open the default browser - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_Retry" translate="yes" space="preserve">
+          <source>Retry</source>
+          <target state="translated">重试</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Retry' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>

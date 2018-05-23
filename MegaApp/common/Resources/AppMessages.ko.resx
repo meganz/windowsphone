@@ -1418,4 +1418,12 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>더 강력한 비밀번호를 입력하세요.</value>
     <comment>Message of the dialog displayed when the user has chosen a very weak password.</comment>
   </data>
+  <data name="AM_SSLKeyError" xml:space="preserve">
+    <value>MEGA가 SSL을 통하여 안전하게 연결할 수 없습니다. 추가 요구사항이 있는 공개 WiFi에 연결되어 있을 수 있습니다.</value>
+    <comment>Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
+  </data>
+  <data name="AM_SSLKeyError_Title" xml:space="preserve">
+    <value>SSL certificate error</value>
+    <comment>Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
+  </data>
 </root>

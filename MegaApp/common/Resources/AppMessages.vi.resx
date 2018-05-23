@@ -961,7 +961,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</comment>
   </data>
   <data name="FolderUnauthorizedAccess" xml:space="preserve">
-    <value>Bạn không có quyền hạn để truy cập tới vùng '{0}'. Xin thử cái khác hoặc thử lại.</value>
+    <value>Bạn không có quyền hạn để truy cập tới vùng '{0}'. Xin chọn cái khác hoặc thử lại.</value>
     <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder in the device memory. For example to download a file/folder, create a new folder, etc.
 Preserve the '{0}' code because is for include the folder name in runtime.</comment>
   </data>
@@ -1417,5 +1417,13 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="AM_VeryWeakPassword" xml:space="preserve">
     <value>Xin tạo một mật khẩu phức tạp hơn.</value>
     <comment>Message of the dialog displayed when the user has chosen a very weak password.</comment>
+  </data>
+  <data name="AM_SSLKeyError" xml:space="preserve">
+    <value>Không xác thực được SSL key từ máy chủ. Xem chừng bạn đã bị tác động bởi người hack trung gian.</value>
+    <comment>Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
+  </data>
+  <data name="AM_SSLKeyError_Title" xml:space="preserve">
+    <value>SSL certificate error</value>
+    <comment>Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
   </data>
 </root>

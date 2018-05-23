@@ -1612,9 +1612,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_PasswordChangeFailed_Title" translate="yes" space="preserve">
           <source>Error changing password</source>
-          <target state="needs-review-translation">Ошибка при смене пароля</target>
+          <target state="translated">Ошибка при смене пароля</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the user has failed to change his password - (String as short as possible).</note>
-          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_IncorrectEmailFormat" translate="yes" space="preserve">
           <source>Incorrect email format. Please try again.</source>
@@ -1626,15 +1625,15 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="translated">Повысьте надежность пароля.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user has chosen a very weak password.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_SSLKeyError_Title" translate="yes" xml:space="preserve">
-          <source>SSL certificate error</source>
-          <target state="new">SSL certificate error</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_SSLKeyError" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/AM_SSLKeyError" translate="yes" space="preserve">
           <source>MEGA is unable to connect securely through SSL. You might be on public WiFi with additional requirements.</source>
-          <target state="new">MEGA is unable to connect securely through SSL. You might be on public WiFi with additional requirements.</target>
+          <target state="translated">MEGA не удаётся подключиться в защищённом режиме по SSL. Возможно, вы используете общественный WiFi с дополнительными требованиями.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_SSLKeyError_Title" translate="yes" space="preserve">
+          <source>SSL certificate error</source>
+          <target state="translated">SSL certificate error</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</note>
         </trans-unit>
       </group>
     </body>

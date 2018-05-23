@@ -709,7 +709,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to get the user data failed - (String as short as possible).</comment>
   </data>
   <data name="CapturePhotoFailed" xml:space="preserve">
-    <value>Cattura della foto fallita. Per favore, riprova [{0}]</value>
+    <value>Scatto della foto fallito. Per favore, riprova [{0}]</value>
     <comment>Message of the dialog displayed when the process to capture photo failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
@@ -718,16 +718,16 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process to capture photo failed - (String as short as possible).</comment>
   </data>
   <data name="CapturePhotoVideoFailed" xml:space="preserve">
-    <value>Cattura della foto o del video fallita. Per favore, riprova [{0}]</value>
+    <value>Scatto della foto o del video fallito. Per favore, riprova [{0}]</value>
     <comment>Message of the dialog displayed when the process to capture photo or video failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="CapturePhotoVideoFailed_Title" xml:space="preserve">
-    <value>Cattura foto/video fallita</value>
+    <value>Scatto foto/video fallita</value>
     <comment>Title of the dialog displayed when the process to capture photo or video failed - (String as short as possible).</comment>
   </data>
   <data name="CaptureVideoFailed" xml:space="preserve">
-    <value>Cattura del video fallita. Per favore, riprova [{0}]</value>
+    <value>Registrazione del video fallita. Per favore, riprova [{0}]</value>
     <comment>Message of the dialog displayed when the process to capture video failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
@@ -1417,5 +1417,13 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="AM_VeryWeakPassword" xml:space="preserve">
     <value>Inserisci una password più sicura.</value>
     <comment>Message of the dialog displayed when the user has chosen a very weak password.</comment>
+  </data>
+  <data name="AM_SSLKeyError" xml:space="preserve">
+    <value>MEGA non riesce a connettersi in sicurezza attraverso SSL. Dovresti essere su un WiFi pubblico con requisiti addizionali.</value>
+    <comment>Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
+  </data>
+  <data name="AM_SSLKeyError_Title" xml:space="preserve">
+    <value>Errore del certificato SSL</value>
+    <comment>Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
   </data>
 </root>
