@@ -186,11 +186,11 @@
     <comment>Title of the dialog displayed when the account is updated (upgraded or downgraded).</comment>
   </data>
   <data name="DeleteContactFailed_Title" xml:space="preserve">
-    <value>Error al eliminar el contacto</value>
+    <value>No se ha podido eliminar el contacto</value>
     <comment>Message of the dialog displayed when the process/request to remove a contact failed - (String as short as possible).</comment>
   </data>
   <data name="DeleteContactFailed" xml:space="preserve">
-    <value>No se pudo eliminar el contacto {0}. Por favor, vuelve a intentarlo. [{0}]</value>
+    <value>No se ha podido eliminar el contacto {0}.  Inténtalo de nuevo. [{0}]</value>
     <comment>Message of the dialog displayed when the process/request to remove a contact failed. 
 Preserve the {0} code because is for include the contact email in runtime. Preserve the [{1}] code because is for include the error code or the error message in runtime.</comment>
   </data>
@@ -207,7 +207,7 @@ Preserve the {0} code because is for include the contact email in runtime. Prese
     <comment>Message of the dialog displayed when empty the rubbish bin succesfully.</comment>
   </data>
   <data name="CleanRubbishBinFailed" xml:space="preserve">
-    <value>Error al vaciar la papelera. Por favor, vuelve a intentarlo.</value>
+    <value>No se ha podido vaciar la papelera.  Inténtalo de nuevo. </value>
     <comment>Message of the dialog displayed when the process/request to empty the rubbish bin failed.</comment>
   </data>
   <data name="CleanRubbishBinQuestion" xml:space="preserve">
@@ -219,7 +219,7 @@ Preserve the {0} code because is for include the contact email in runtime. Prese
     <comment>Message of the dialog displayed when the process/request to invite a contact failed because the user is trying to his/her own e-mail.</comment>
   </data>
   <data name="RemoveLinkFailed" xml:space="preserve">
-    <value>Error al eliminar el enlace. Por favor, vuelve a intentarlo.</value>
+    <value>No se ha podido eliminar el enlace. Inténtalo de nuevo.  </value>
     <comment>Message of the dialog displayed when the process/request to remove a link to a node failed.</comment>
   </data>
   <data name="NoInternetConnectionMessage" xml:space="preserve">
@@ -227,7 +227,7 @@ Preserve the {0} code because is for include the contact email in runtime. Prese
     <comment>Message of the dialog displayed when the user is trying to perform any online action without an active Internet connection.</comment>
   </data>
   <data name="CloseSessionFailed" xml:space="preserve">
-    <value>Error al cerrar la sesión. Por favor, vuelve a intentarlo. [{0}]</value>
+    <value>No se ha podido cerrar la sesión. Inténtalo de nuevo. [{0}]</value>
     <comment>Message of the dialog displayed when the process/request to close or kill session failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
@@ -236,7 +236,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when close or kill all sessions (except current) successfully.</comment>
   </data>
   <data name="CloseAllSessionsFailed" xml:space="preserve">
-    <value>Error al cerrar la sesión. Por favor, vuelve a intentarlo. [{0}]</value>
+    <value>No se ha podido cerrar la sesión. Inténtalo de nuevo. [{0}]</value>
     <comment>Message of the dialog displayed when the process/request to close or kill all sessions (except current) failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
@@ -267,7 +267,7 @@ Preserve the {0} code because is for include the number of contacts to be remove
 Preserve the [{0}] code because is for include the contact email in runtime.</comment>
   </data>
   <data name="InviteContactAddFailed_Title" xml:space="preserve">
-    <value>Error invitando al contacto</value>
+    <value>No se ha podido invitar al contacto</value>
     <comment>Title of the dialog displayed when the process/request to invite a contact failed - (String as short as possible).</comment>
   </data>
   <data name="InviteContactAddFailed" xml:space="preserve">
@@ -288,12 +288,12 @@ Preserve the {0} code because is for include email of the contact to be removed 
     <comment>Message of the dialog displayed in cases when the user has disabled background agents for this application</comment>
   </data>
   <data name="GetPaymentUrlFailed" xml:space="preserve">
-    <value>No se ha podido recuperar la URL de pago. Por favor, vuelve a intentarlo. [{0}]</value>
+    <value>No se ha podido recuperar la URL de pago. Inténtalo de nuevo [{0}]</value>
     <comment>Message of the dialog displayed when the process/request to get the payment Url failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="GetPaymentMethodsFailed" xml:space="preserve">
-    <value>No se han podido recuperar los métodos de pago. Por favor, vuelve a intentarlo. [{0}]</value>
+    <value>No se han podido recuperar los métodos de pago. Inténtalo de nuevo [{0}]</value>
     <comment>Message of the dialog displayed when the process/request to get the payment methods failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
@@ -366,7 +366,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process to save settings failed - (String as short as possible).</comment>
   </data>
   <data name="SaveSettingsFailed" xml:space="preserve">
-    <value>No se pudo guardar la configuración. Por favor, inténtalo de nuevo [{0}]</value>
+    <value>No se ha podido guardar la configuración. Inténtalo de nuevo [{0}]</value>
     <comment>Message of the dialog displayed when the process to save settings failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
@@ -375,7 +375,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process to capture video failed - (String as short as possible).</comment>
   </data>
   <data name="CaptureVideoFailed" xml:space="preserve">
-    <value>No se ha podido capturar el vídeo. Por favor, inténtalo de nuevo [{0}]</value>
+    <value>No se ha podido capturar el vídeo. Inténtalo de nuevo [{0}]</value>
     <comment>Message of the dialog displayed when the process to capture video failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
@@ -384,7 +384,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process to capture photo or video failed - (String as short as possible).</comment>
   </data>
   <data name="CapturePhotoVideoFailed" xml:space="preserve">
-    <value>No se ha podido capturar la foto o el vídeo. Por favor, inténtalo de nuevo [{0}]</value>
+    <value>No se ha podido capturar la foto o el vídeo.Inténtalo de nuevo [{0}]</value>
     <comment>Message of the dialog displayed when the process to capture photo or video failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
@@ -393,7 +393,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process to capture photo failed - (String as short as possible).</comment>
   </data>
   <data name="CapturePhotoFailed" xml:space="preserve">
-    <value>No se pudo capturar la foto. Por favor, inténtalo de nuevo [{0}]</value>
+    <value>No se ha podido capturar la foto. Inténtalo de nuevo [{0}]</value>
     <comment>Message of the dialog displayed when the process to capture photo failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
@@ -402,7 +402,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to get the user data failed - (String as short as possible).</comment>
   </data>
   <data name="GetUserDataFailed" xml:space="preserve">
-    <value>No se pudieron cargar tus datos de usuario. Por favor, inténtalo de nuevo [{0}]</value>
+    <value>No se han podido cargar tus datos de usuario.  Inténtalo de nuevo [{0}]</value>
     <comment>Message of the dialog displayed when the process/request to get the user data failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
@@ -412,12 +412,12 @@ Preserve the [{0}] code because is for include the error code or the error messa
 Preserve the {0} code because is for include name of the node to be removed in runtime.</comment>
   </data>
   <data name="SelectFileFailed" xml:space="preserve">
-    <value>Error al seleccionar fichero(s). Por favor, inténtalo de nuevo [{0}]</value>
+    <value>No se ha podido seleccionar fichero(s). Inténtalo de nuevo [{0}]</value>
     <comment>Message of the dialog displayed when the process to select files failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="UploadNodeFailed" xml:space="preserve">
-    <value>Error al subir el archivo. Por favor, vuelve a intentarlo. [{0}]</value>
+    <value>No se ha podido subir el archivo. Inténtalo de nuevo. [{0}]</value>
     <comment>Message of the dialog displayed when the process/request to upload a node failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
@@ -426,7 +426,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process to select a folder failed - (String as short as possible).</comment>
   </data>
   <data name="SelectFolderFailed" xml:space="preserve">
-    <value>Error al seleccionar la carpeta. Por favor, inténtalo de nuevo o selecciona otra:</value>
+    <value>No se ha podido seleccionar la carpeta. Inténtalo de nuevo o selecciona otra.</value>
     <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="QuestionAskedDownloadOption_YesButton" xml:space="preserve">
@@ -475,7 +475,7 @@ Intenta guardar/copiar el archivo en la memoria interna de tu dispositivo.</valu
     <comment>Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</comment>
   </data>
   <data name="CopyFileFailed" xml:space="preserve">
-    <value>No se pudo copiar el archivo seleccionado: [{0}]</value>
+    <value>No se ha podido copiar el archivo seleccionado: [{0}]</value>
     <comment>Message of the dialog displayed when the process/request to copy a file failed by a non specific cause.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
@@ -488,7 +488,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process to prepare a file for upload failed - (String as short as possible).</comment>
   </data>
   <data name="PrepareFileForUploadFailed" xml:space="preserve">
-    <value>No se pudo preparar el archivo: {0} para la subida.</value>
+    <value>No se ha podido preparar el archivo: {0} para la subida.</value>
     <comment>Message of the dialog displayed when the process to prepare a file for upload failed.
 Preserve the {0} code because is for include the file name in runtime.</comment>
   </data>
@@ -517,7 +517,7 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
     <comment>Message of the dialog displayed when a user are trying to create or change a PIN lock code and the introduced codes don't match. Try to preserve the PIN uppercase word.</comment>
   </data>
   <data name="LoadNodesFailed_Title" xml:space="preserve">
-    <value>Error al cargar</value>
+    <value>No se ha podido cargar</value>
     <comment>Title of the dialog displayed when fails the process/request to load the nodes of the MEGA cloud service - (String as short as possible).</comment>
   </data>
   <data name="LoadNodesFailed" xml:space="preserve">
@@ -529,15 +529,15 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
     <comment>Title of the dialog displayed when the process/request to upload a selfie picture failed - (String as short as possible).</comment>
   </data>
   <data name="UploadSelfieFailed" xml:space="preserve">
-    <value>No se pudo subir la imagen selfie.</value>
+    <value>No se ha podido subir la imagen selfie.</value>
     <comment>Message of the dialog displayed when the process/request to upload a selfie picture failed.</comment>
   </data>
   <data name="OpenFileFailed_Title" xml:space="preserve">
-    <value>Error al abrir el archivo</value>
+    <value>No se ha podido abrir el archivo </value>
     <comment>Title of the dialog displayed when the process to open a file failed - (String as short as possible).</comment>
   </data>
   <data name="OpenFileFailed" xml:space="preserve">
-    <value>No se pudo abrir el archivo seleccionado.</value>
+    <value>No se ha podido abrir el archivo seleccionado.</value>
     <comment>Message of the dialog displayed when the process to open a file failed.</comment>
   </data>
   <data name="FileNotFound_Title" xml:space="preserve">
@@ -553,7 +553,7 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
     <comment>Title of the dialog displayed when the process/request to upload a photo failed - (String as short as possible).</comment>
   </data>
   <data name="PhotoUploadError" xml:space="preserve">
-    <value>No se pudo subir la foto.</value>
+    <value>No se ha podido subir la foto.</value>
     <comment>Message of the dialog displayed when the process/request to upload a photo failed.</comment>
   </data>
   <data name="PrepareImageForUploadFailed_Title" xml:space="preserve">
@@ -561,7 +561,7 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
     <comment>Title of the dialog displayed when the process to prepare a image for upload failed - (String as short as possible).</comment>
   </data>
   <data name="PrepareImageForUploadFailed" xml:space="preserve">
-    <value>No se pudo preparar la imagen: {0} para la subida.</value>
+    <value>No se ha podido preparar la imagen: {0} para la subida.</value>
     <comment>Message of the dialog displayed when the process to prepare a image for upload failed.
 Preserve the {0} code because is for include the file name in runtime.</comment>
   </data>
@@ -578,7 +578,7 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
     <comment>Title of the dialog displayed when the process/request to resume transfers failed.</comment>
   </data>
   <data name="ResumingTransfersFailed" xml:space="preserve">
-    <value>No se pudieron reanudar las transferencias.</value>
+    <value>No se han podido reanudar las transferencias.</value>
     <comment>Message of the dialog displayed when the process/request to resume transfers failed.</comment>
   </data>
   <data name="PausingTransfersFailed_Title" xml:space="preserve">
@@ -586,7 +586,7 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
     <comment>Title of the dialog displayed when the process/request to pause transfers failed - (String as short as possible).</comment>
   </data>
   <data name="PausingTransfersFailed" xml:space="preserve">
-    <value>No se pudieron pausar las transferencias.</value>
+    <value>No se han podido pausar las transferencias.</value>
     <comment>Message of the dialog displayed when the process/request to pause transfers failed.</comment>
   </data>
   <data name="QuestionAskedDownloadOption" xml:space="preserve">
@@ -671,7 +671,7 @@ Preserve the {0} code because is for include the name of the node to be moved in
     <comment>Title of the dialog displayed when the process/request to move nodes to the rubbish bin failed - (String as short as possible).</comment>
   </data>
   <data name="MoveToRubbishBinFailed" xml:space="preserve">
-    <value>No se pudo mover el elemento a la Papelera. Por favor, vuelve a intentarlo.</value>
+    <value>No se ha podido mover el elemento a la Papelera. Por favor, vuelve a intentarlo.</value>
     <comment>Message of the dialog displayed when the process/request to move nodes to the rubbish bin failed.</comment>
   </data>
   <data name="MultiRemoveSucces_Title" xml:space="preserve">
@@ -697,7 +697,7 @@ Preserve the {0} code because is for include the number of nodes to be removed i
     <comment>Title of the dialog displayed when the logout to the MEGA cloud service api fails - (String as short as possible).</comment>
   </data>
   <data name="LogoutFailed" xml:space="preserve">
-    <value>No se pudo cerrar la sesión. Vuelve a intentarlo. [{0}]</value>
+    <value>No se ha podido cerrar la sesión. Vuelve a intentarlo. [{0}]</value>
     <comment>Message of the dialog displayed when the logout to the MEGA cloud service api fails. 
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
@@ -714,7 +714,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to get the user account details failed - (String as short as possible).</comment>
   </data>
   <data name="GetAccountDetailsFailed" xml:space="preserve">
-    <value>No se pudieron recuperar los detalles de la cuenta. Vuelve a intentarlo. [{0}]</value>
+    <value>No se han podido recuperar los detalles de la cuenta. Vuelve a intentarlo. [{0}]</value>
     <comment>Message of the dialog displayed when the process/request to get the user account details failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
@@ -723,7 +723,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to get a image thumbnail failed - (String as short as possible).</comment>
   </data>
   <data name="GetThumbnailFailed" xml:space="preserve">
-    <value>No se pudo recuperar la miniatura [{0}]</value>
+    <value>No se ha podido recuperar la miniatura [{0}]</value>
     <comment>Message of the dialog displayed when the process/request to get a image thumbnail failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
@@ -780,7 +780,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when remove successfully a node definitely from the rubbish bin.</comment>
   </data>
   <data name="RemoveNodeFailed" xml:space="preserve">
-    <value>No se pudo eliminar el elemento</value>
+    <value>No se ha podido eliminar el elemento</value>
     <comment>Message of the dialog displayed when the process/request remove definitely an item from the rubbish bin failed.</comment>
   </data>
   <data name="RemoveItemQuestion_Title" xml:space="preserve">
@@ -809,7 +809,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
     <comment>Title of the dialog displayed when the process/request to move a file failed - (String as short as possible).</comment>
   </data>
   <data name="MoveFailed" xml:space="preserve">
-    <value>No se pudo mover el elemento. Por favor, vuelve a intentarlo.</value>
+    <value>No se ha podido mover el elemento.  Inténtalo de nuevo.</value>
     <comment>Message of the dialog displayed when the process/request to move a file failed.</comment>
   </data>
   <data name="MoveEqualsParent_Title" xml:space="preserve">
@@ -842,7 +842,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when fails the process/request to import an image - (String as short as possible).</comment>
   </data>
   <data name="ImageSaveError_Title" xml:space="preserve">
-    <value>Error al guardar la imagen</value>
+    <value>No se ha podido guardar la imagen</value>
     <comment>Title of the dialog displayed when fails the process/request to save/export an image to the 'saved pictures' album of the phone device - (String as short as possible).</comment>
   </data>
   <data name="ImageSaveError" xml:space="preserve">
@@ -862,7 +862,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to get a image preview failed - (String as short as possible).</comment>
   </data>
   <data name="GetPreviewFailed" xml:space="preserve">
-    <value>No se pudo recuperar la vista previa.</value>
+    <value>No se ha podido recuperar la vista previa.</value>
     <comment>Message of the dialog displayed when the process/request to get a image preview failed.</comment>
   </data>
   <data name="GetLinkFailed_Title" xml:space="preserve">
@@ -870,7 +870,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to get a link to a node failed - (String as short as possible).</comment>
   </data>
   <data name="GetLinkFailed" xml:space="preserve">
-    <value>No se pudo obtener el enlace.</value>
+    <value>No se ha podido obtener el enlace.</value>
     <comment>Message of the dialog displayed when the process/request to get a link to a node failed.</comment>
   </data>
   <data name="FolderCreateFailed_Title" xml:space="preserve">
@@ -878,7 +878,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to create a folder failed - (String as short as possible).</comment>
   </data>
   <data name="FolderCreateFailed" xml:space="preserve">
-    <value>No se pudo crear la carpeta. Por favor, vuelve a intentarlo.</value>
+    <value>No se ha podido crear la carpeta. Inténtalo de nuevo.</value>
     <comment>Message of the dialog displayed when the process/request to create a folder failed.</comment>
   </data>
   <data name="FetchingNodesFailed_Title" xml:space="preserve">
@@ -894,7 +894,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to download a node failed - (String as short as possible).</comment>
   </data>
   <data name="DownloadNodeFailed" xml:space="preserve">
-    <value>Error al descargar el archivo. Vuelve a intentarlo. [{0}]</value>
+    <value>No se ha podido descargar el archivo. Vuelve a intentarlo. [{0}]</value>
     <comment>Message of the dialog displayed when the process/request to download a node failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
@@ -903,7 +903,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when failed to retrieve a download link - (String as short as possible).</comment>
   </data>
   <data name="DownloadLinkFailed" xml:space="preserve">
-    <value>No se pudo recuperar un enlace de descarga. Por favor, vuelve a intentarlo.</value>
+    <value>No se ha podido recuperar un enlace de descarga. Inténtalo de nuevo.</value>
     <comment>Message of the dialog displayed when failed to retrieve a download link.</comment>
   </data>
   <data name="CreateFolderSuccess_Title" xml:space="preserve">
@@ -919,7 +919,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the creation of a folder failed - (String as short as possible).</comment>
   </data>
   <data name="CreateFolderFailed" xml:space="preserve">
-    <value>No se pudo crear la carpeta</value>
+    <value>No se ha podido crear la carpeta</value>
     <comment>Message of the dialog displayed when the creation of a folder failed.</comment>
   </data>
   <data name="CreateAccountFailed_Title" xml:space="preserve">
@@ -952,7 +952,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the confirmation of a MEGA account failed - (String as short as possible).</comment>
   </data>
   <data name="ConfirmAccountFailed" xml:space="preserve">
-    <value>No se pudo confirmar la cuenta. Vuelve a intentarlo. [{0}]</value>
+    <value>No se ha podido confirmar la cuenta. Vuelve a intentarlo. [{0}]</value>
     <comment>Message of the dialog displayed when the confirmation of a MEGA account failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
@@ -1022,7 +1022,7 @@ Preserve the {0} and ({1}) codes because is for include the maximum reliable dow
     <comment>Message of the dialog displayed when a user is trying to cancel a subscription. This sentence is for give thanks to the user for the feedback sent during the cancellation process and asking for confirmation to do it.</comment>
   </data>
   <data name="AM_PrepareFilesForUploadFailed" xml:space="preserve">
-    <value>Fallo preparando archivo(s) para la subida. Por favor, inténtelo de nuevo.</value>
+    <value>Error al preparar archivo(s) para la subida.  Inténtalo de nuevo</value>
     <comment>Message of the dialog displayed when the process to prepare a file(s) for upload failed.</comment>
   </data>
   <data name="AM_PrepareFilesForUploadFailed_Title" xml:space="preserve">
@@ -1030,23 +1030,23 @@ Preserve the {0} and ({1}) codes because is for include the maximum reliable dow
     <comment>Title of the dialog displayed when the process to prepare file(s) for upload failed - (String as short as possible).</comment>
   </data>
   <data name="AM_DownloadNodeFailedNoErrorCode" xml:space="preserve">
-    <value>Falló la descarga del archivo. Por favor, inténtalo de nuevo.</value>
+    <value>No se ha podido descargar el archivo. Inténtalo de nuevo</value>
     <comment>Message of the dialog displayed when the process/request to download a node failed.</comment>
   </data>
   <data name="AM_LoadFailed_Title" xml:space="preserve">
-    <value>Error al cargar</value>
+    <value>No se ha podido cargar</value>
     <comment>Title of the dialog displayed when fails the process/request to load something (nodes, out shares, in shares, etc.) - (String as short as possible).</comment>
   </data>
   <data name="AM_LoadInSharesFailed" xml:space="preserve">
-    <value>No se pudieron cargar los elementos compartidos entrantes desde MEGA. Por favor inténtalo de nuevo o pulsa en actualizar.</value>
+    <value>No se han podido cargar los elementos compartidos entrantes desde MEGA. Inténtalo de nuevo o pulsa en actualizar.</value>
     <comment>Message of the dialog displayed when fails the process/request to load the incoming shared items.</comment>
   </data>
   <data name="AM_LoadOutSharesFailed" xml:space="preserve">
-    <value>No se pudieron cargar los elementos compartidos salientes desde MEGA. Por favor inténtalo de nuevo o pulsa en actualizar.</value>
+    <value>No se han podido cargar los elementos compartidos salientes desde MEGA. Inténtalo de nuevo o pulsa en actualizar.</value>
     <comment>Message of the dialog displayed when fails the process/request to load the outgoing shared items.</comment>
   </data>
   <data name="AM_DeleteSettingsFailed" xml:space="preserve">
-    <value>Falló el borrado de configuración. Por favor, inténtelo de nuevo. [{0}]</value>
+    <value>No se ha podido borrar la configuración. Inténtalo de nuevo. [{0}]</value>
     <comment>Message of the dialog displayed when the process to delete settings failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
@@ -1055,7 +1055,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process to delete settings failed - (String as short as possible).</comment>
   </data>
   <data name="AM_LoadSettingsFailed" xml:space="preserve">
-    <value>Falló la carga de configuración. Por favor, inténtelo de nuevo. [{0}]</value>
+    <value>No se ha podido cargar la configuración. Inténtalo de nuevo. [{0}]</value>
     <comment>Message of the dialog displayed when the process to load settings failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
@@ -1064,7 +1064,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process to load settings failed - (String as short as possible).</comment>
   </data>
   <data name="AM_CopyLinkToClipboardFailed" xml:space="preserve">
-    <value>Se ha producido un error al copiar el enlace MEGA a tu portapapeles.</value>
+    <value>No se ha podido copiar el enlace MEGA a tu portapapeles.</value>
     <comment>Message of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard.</comment>
   </data>
   <data name="AM_CopyLinkToClipboardFailed_Title" xml:space="preserve">
@@ -1127,7 +1127,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder</comment>
   </data>
   <data name="AM_RecoveryKeyClipboardFailed" xml:space="preserve">
-    <value>No se ha podido copiar la Clave de recuperación al portapapeles. Por favor, inténtalo de nuevo.</value>
+    <value>No se ha podido copiar la Clave de recuperación al portapapeles. Inténtalo de nuevo.</value>
     <comment>Message of the dialog displayed when fails to copy the user's Recovery Key to the clipboard to be saved or exported.</comment>
   </data>
   <data name="AM_RecoveryKeyClipboardFailed_Title" xml:space="preserve">
@@ -1143,7 +1143,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported - (String as short as possible).</comment>
   </data>
   <data name="AM_CopyFailed" xml:space="preserve">
-    <value>No se ha podido copiar el elemento. Por favor, inténtelo de nuevo.</value>
+    <value>No se ha podido copiar el elemento. Por favor, inténtelo de nuevo. Inténtalo de nuevo.</value>
     <comment>Message of the dialog displayed when the process/request to copy a node failed.</comment>
   </data>
   <data name="AM_CopyFailed_Title" xml:space="preserve">
@@ -1193,7 +1193,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Title for the shared resource or the dialog displayed when the user is sharing multiple items from MEGA with other app of his Windows Phone device - (String as short as possible).</comment>
   </data>
   <data name="AM_ImportFolderFailed" xml:space="preserve">
-    <value>Fallo al importar carpeta. Por favor, inténtelo de nuevo.</value>
+    <value>No se ha podido importar carpeta. Inténtalo de nuevo.</value>
     <comment>Message of the dialog displayed when fails the process/request to import a folder.</comment>
   </data>
   <data name="AM_ImportFolderFailed_Title" xml:space="preserve">
@@ -1205,7 +1205,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Title of the dialog displayed when fails the process/request to import a link - (String as short as possible).</comment>
   </data>
   <data name="AM_ShareFromMegaFailed_Message" xml:space="preserve">
-    <value>Fallo al compartir elemento(s) de MEGA. Por favor, inténtelo de nuevo.</value>
+    <value>Error al compartir elemento(s) de MEGA. Inténtalo de nuevo.</value>
     <comment>Message of the dialog displayed when the process to share item(s) from MEGA with other app fails.</comment>
   </data>
   <data name="AM_ShareFromMegaFailed_Title" xml:space="preserve">
@@ -1294,11 +1294,11 @@ Preserve the {0} code because is for include the exact time until the user has t
     <comment>Title of the dialog shown when the user is trying to login and the account has been blocked.</comment>
   </data>
   <data name="AM_ShareFromMegaAppBusy_Message" xml:space="preserve">
-    <value>No se pudieron compartir elemento(s) de MEGA. La aplicación de destino parece ocupada. Por favor, inténtalo de nuevo más tarde.</value>
+    <value>Error al compartir elemento(s) de MEGA. La aplicación de destino parece ocupada. Inténtalo de nuevo.</value>
     <comment>Message of the dialog displayed when the process to share item(s) from MEGA with other app fails because the destination app is busy.</comment>
   </data>
   <data name="AM_GetNodeDetailsFailed" xml:space="preserve">
-    <value>No se pudieron recuperar los detalles del nodo. Por favor, inténtelo de nuevo.</value>
+    <value>No se han podido recuperar los detalles del nodo. Inténtalo de nuevo.</value>
     <comment>Message of the dialog displayed when the process/request to get node details failed.</comment>
   </data>
   <data name="AM_GetNodeDetailsFailed_Title" xml:space="preserve">
@@ -1335,7 +1335,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when a user wants to cancel all the pending uploads.</comment>
   </data>
   <data name="AM_ViewContactDetailsFailed" xml:space="preserve">
-    <value>Error al cargar los detalles del contacto. Por favor, inténtalo de nuevo más tarde.</value>
+    <value>No se han podido cargar los detalles del contacto. Inténtalo de nuevo más tarde.</value>
     <comment>Message of the dialog displayed when the process/request to view a contact details failed.</comment>
   </data>
   <data name="AM_ViewContactDetailsFailed_Title" xml:space="preserve">
@@ -1343,7 +1343,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to view a contact details failed - (String as short as possible).</comment>
   </data>
   <data name="AM_ShowUploadOptionsFailed" xml:space="preserve">
-    <value>Error al mostrar las opciones de subida. Por favor, inténtalo más tarde.</value>
+    <value>No se han podido mostrar las opciones de subida. Inténtalo de nuevo más tarde.</value>
     <comment>Message of the dialog displayed when the process/request to show the upload options failed.</comment>
   </data>
   <data name="AM_ShowUploadOptionsFailed_Title" xml:space="preserve">
@@ -1359,7 +1359,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app - (String as short as possible).</comment>
   </data>
   <data name="AM_ShareLinkFailed" xml:space="preserve">
-    <value>No se pudo compartir el enlace de archivo/carpeta. Vuelve a intentarlo.</value>
+    <value>No se ha podido compartir el enlace de archivo/carpeta. Inténtalo de nuevo.</value>
     <comment>Message of the dialog displayed when fails the process/request to share a file/folder link.</comment>
   </data>
   <data name="AM_ShareLinkFailed_Title" xml:space="preserve">
@@ -1367,7 +1367,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when fails the process/request to share a file/folder link.</comment>
   </data>
   <data name="AM_InternalNodeFailed" xml:space="preserve">
-    <value>No se ha podido abrir el archivo/carpeta del enlace. Por favor prueba de nuevo.</value>
+    <value>No se ha podido abrir el archivo/carpeta del enlace. Inténtalo de nuevo.</value>
     <comment>Title of the dialog displayed when fail trying to open a link of an internal node.</comment>
   </data>
   <data name="AM_InternalNodeFailed_Title" xml:space="preserve">
@@ -1375,7 +1375,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when fail trying to open a link of an internal node - (String as short as possible).</comment>
   </data>
   <data name="AM_ClearCacheFailed" xml:space="preserve">
-    <value>Error al borrar caché. Inténtalo de nuevo.</value>
+    <value>No se ha podido borrar caché. Inténtalo de nuevo.</value>
     <comment>Message of the dialog displayed when the process to clear cache failed.</comment>
   </data>
   <data name="AM_ClearCacheFailed_Title" xml:space="preserve">
@@ -1403,19 +1403,27 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the change password process finish successful.</comment>
   </data>
   <data name="AM_PasswordChangeFailed" xml:space="preserve">
-    <value>Failed to change your password. Please try again.</value>
+    <value>No se ha podido cambiar la contraseña. Inténtalo de nuevo.</value>
     <comment>Message of the dialog displayed when the user has failed to change his password</comment>
   </data>
   <data name="AM_PasswordChangeFailed_Title" xml:space="preserve">
-    <value>Error changing password</value>
+    <value>Error al cambiar la contraseña</value>
     <comment>Title of the dialog displayed when the user has failed to change his password - (String as short as possible).</comment>
   </data>
   <data name="AM_IncorrectEmailFormat" xml:space="preserve">
-    <value>Incorrect email format. Please try again.</value>
+    <value>Formato de correo incorrecto. Inténtalo de nuevo.</value>
     <comment>Message of the dialog displayed when the user types an email address with an incorrect format.</comment>
   </data>
   <data name="AM_VeryWeakPassword" xml:space="preserve">
     <value>Por favor, elige una contraseña más segura.</value>
     <comment>Message of the dialog displayed when the user has chosen a very weak password.</comment>
+  </data>
+  <data name="AM_SSLKeyError" xml:space="preserve">
+    <value>MEGA no se puede conectar de forma segura a través de SSL. Es posible que estés conectado a una WiFi pública con requisitos adicionales.</value>
+    <comment>Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
+  </data>
+  <data name="AM_SSLKeyError_Title" xml:space="preserve">
+    <value>Error certificado SSL</value>
+    <comment>Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
   </data>
 </root>

@@ -38,17 +38,17 @@
         </trans-unit>
         <trans-unit id="Resx/PM_ConfirmAccount" translate="yes" space="preserve">
           <source>Confirming account...</source>
-          <target state="translated">Confirmation du compte...</target>
+          <target state="translated">Confirmation du compte…</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when confirming a MEGA account - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PM_CreateAccount" translate="yes" space="preserve">
-          <source>Creating account...</source>
-          <target state="translated">Création du compte...</target>
+          <source>Creating account…</source>
+          <target state="needs-review-translation">Création du compte…                                </target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when creating a MEGA account - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PM_CreateFolder" translate="yes" space="preserve">
-          <source>Creating folder...</source>
-          <target state="translated">Création du dossier...</target>
+          <source>Creating folder…</source>
+          <target state="needs-review-translation">Création du dossier…</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when creating a folder - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CreditCardStore" translate="yes" space="preserve">
@@ -58,18 +58,18 @@
         </trans-unit>
         <trans-unit id="Resx/DeleteNode" translate="yes" space="preserve">
           <source>Deleting '{0}'...</source>
-          <target state="translated">Suppression de {0}...</target>
+          <target state="translated">Suppression de {0}…</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when deleting a node (folder or file) indicating the name - (String as short as possible).
 Preserve the '{0}' code because is for include node name.</note>
         </trans-unit>
         <trans-unit id="Resx/DownloadLink" translate="yes" space="preserve">
           <source>Retrieving download link...</source>
-          <target state="translated">Récupération du lien...</target>
+          <target state="translated">Récupération du lien de téléchargement…</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when retieving a download link - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/FastLogin" translate="yes" space="preserve">
           <source>Resuming session...</source>
-          <target state="translated">Reprise de la session...</target>
+          <target state="translated">Reprise de la session…</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when resuming a session - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/FetchingNodes" translate="yes" space="preserve">
@@ -80,7 +80,7 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
         </trans-unit>
         <trans-unit id="Resx/GetAccountDetails" translate="yes" space="preserve">
           <source>Getting account details...</source>
-          <target state="translated">Récupération des infos du compte...</target>
+          <target state="translated">Récupération des informations du compte…</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when getting account details - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/GetContactData" translate="yes" space="preserve">
@@ -90,7 +90,7 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
         </trans-unit>
         <trans-unit id="Resx/PM_GetLink" translate="yes" space="preserve">
           <source>Getting link...</source>
-          <target state="translated">Récupération du lien...</target>
+          <target state="translated">Récupération du lien…</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when getting a link to export a node - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/GetPaymentMethods" translate="yes" space="preserve">
@@ -105,7 +105,7 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
         </trans-unit>
         <trans-unit id="Resx/GetPreview" translate="yes" space="preserve">
           <source>Getting preview...</source>
-          <target state="translated">Récupération de l'aperçu...</target>
+          <target state="translated">Récupération de l'aperçu…</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when getting a preview - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/GetUserData" translate="yes" space="preserve">
@@ -115,7 +115,7 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
         </trans-unit>
         <trans-unit id="Resx/ImportFile" translate="yes" space="preserve">
           <source>Importing file...</source>
-          <target state="translated">Importation du fichier...</target>
+          <target state="translated">Importation du fichier…</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when importing a file - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/InviteContactAdd" translate="yes" space="preserve">
@@ -139,13 +139,13 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when building a nodes view - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PM_Login" translate="yes" space="preserve">
-          <source>Logging in...</source>
-          <target state="translated">Connexion...</target>
+          <source>Logging in…</source>
+          <target state="needs-review-translation">Connexion…</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when logging in - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PM_Logout" translate="yes" space="preserve">
-          <source>Logging out...</source>
-          <target state="translated">Déconnexion...</target>
+          <source>Logging out…</source>
+          <target state="needs-review-translation">Déconnexion…</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when logging out - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/MoveNode" translate="yes" space="preserve">
@@ -235,7 +235,7 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
         </trans-unit>
         <trans-unit id="Resx/PM_OpenFolderLink" translate="yes" space="preserve">
           <source>Opening folder link...</source>
-          <target state="translated">Ouverture du lien du dossier...</target>
+          <target state="translated">Ouverture du lien de dossier…</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when opening a folder link to import/download - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PM_CopyNode" translate="yes" space="preserve">
