@@ -724,11 +724,29 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Error change password.
+        ///   Busca una cadena traducida similar a Error changing password.
         /// </summary>
         public static string AM_PasswordChangeFailed_Title {
             get {
                 return ResourceManager.GetString("AM_PasswordChangeFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Due to MEGA’s encryption technology you are unable to reset your password without data loss. Please make sure you remember your password..
+        /// </summary>
+        public static string AM_PasswordReminder {
+            get {
+                return ResourceManager.GetString("AM_PasswordReminder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Do you remember your password?.
+        /// </summary>
+        public static string AM_PasswordReminder_Title {
+            get {
+                return ResourceManager.GetString("AM_PasswordReminder_Title", resourceCulture);
             }
         }
         
@@ -846,6 +864,42 @@ namespace MegaApp.Resources {
         public static string AM_RecoveryKeyCopied_Title {
             get {
                 return ResourceManager.GetString("AM_RecoveryKeyCopied_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The Recovery Key has been exported..
+        /// </summary>
+        public static string AM_RecoveryKeyExported {
+            get {
+                return ResourceManager.GetString("AM_RecoveryKeyExported", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Recovery Key exported.
+        /// </summary>
+        public static string AM_RecoveryKeyExported_Title {
+            get {
+                return ResourceManager.GetString("AM_RecoveryKeyExported_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Failed to export the Recovery Key. Please try again..
+        /// </summary>
+        public static string AM_RecoveryKeyExportFailed {
+            get {
+                return ResourceManager.GetString("AM_RecoveryKeyExportFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Recovery Key export failed.
+        /// </summary>
+        public static string AM_RecoveryKeyExportFailed_Title {
+            get {
+                return ResourceManager.GetString("AM_RecoveryKeyExportFailed_Title", resourceCulture);
             }
         }
         
@@ -981,6 +1035,42 @@ namespace MegaApp.Resources {
         public static string AM_SSLKeyError_Title {
             get {
                 return ResourceManager.GetString("AM_SSLKeyError_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Please test your password below to ensure you remember it. If you lost your password, you will lose access to your data..
+        /// </summary>
+        public static string AM_TestPassword {
+            get {
+                return ResourceManager.GetString("AM_TestPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Test Password.
+        /// </summary>
+        public static string AM_TestPassword_Title {
+            get {
+                return ResourceManager.GetString("AM_TestPassword_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Password accepted, we still recommend you back up your Recovery key..
+        /// </summary>
+        public static string AM_TestPasswordSuccess {
+            get {
+                return ResourceManager.GetString("AM_TestPasswordSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Wrong password!, backup your Recovery Key as soon as possible!.
+        /// </summary>
+        public static string AM_TestPasswordWarning {
+            get {
+                return ResourceManager.GetString("AM_TestPasswordWarning", resourceCulture);
             }
         }
         

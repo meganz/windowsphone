@@ -529,6 +529,9 @@
     <Compile Include="..\common\MegaApi\ReplyContactRequestListener.cs">
       <Link>MegaApi\ReplyContactRequestListener.cs</Link>
     </Compile>
+    <Compile Include="..\common\MegaApi\SetUserAttributeListenerAsync.cs">
+      <Link>MegaApi\SetUserAttributeListenerAsync.cs</Link>
+    </Compile>
     <Compile Include="..\common\MegaApi\ShouldShowPasswordReminderDialogRequestListenerAsync.cs">
       <Link>MegaApi\ShouldShowPasswordReminderDialogRequestListenerAsync.cs</Link>
     </Compile>
@@ -870,6 +873,12 @@
     </Compile>
     <Compile Include="..\common\UserControls\BreadCrumbTapEventArgs.cs">
       <Link>UserControls\BreadCrumbTapEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\common\UserControls\Dialogs\MegaDialog.cs">
+      <Link>UserControls\Dialogs\MegaDialog.cs</Link>
+    </Compile>
+    <Compile Include="..\common\UserControls\Dialogs\PasswordReminderDialog.cs">
+      <Link>UserControls\Dialogs\PasswordReminderDialog.cs</Link>
     </Compile>
     <Compile Include="..\common\UserControls\DrawerLayout.cs">
       <Link>UserControls\DrawerLayout.cs</Link>
