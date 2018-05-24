@@ -2,7 +2,7 @@
 
 namespace MegaApp.MegaApi
 {
-    internal class SetUserAttributeListenerAsync : BaseRequestListenerAsync<bool>
+    internal class SetUserAttributeRequestListenerAsync : BaseRequestListenerAsync<bool>
     {
         #region MRequestListenerInterface
 
@@ -31,5 +31,5 @@ namespace MegaApp.MegaApi
         #endregion
     }
 
-    internal class SetPasswordReminderDialogResultListenerAsync : SetUserAttributeListenerAsync { }
+    internal class SetPasswordReminderDialogResultListenerAsync : SetUserAttributeRequestListenerAsync { }
 }
