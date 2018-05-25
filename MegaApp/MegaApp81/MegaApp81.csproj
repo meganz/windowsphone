@@ -538,230 +538,230 @@
     <Compile Include="..\common\MegaApi\UpgradeAccountRequestListener.cs">
       <Link>MegaApi\UpgradeAccountRequestListener.cs</Link>
     </Compile>
-    <Compile Include="..\common\Models\AccountDetailsViewModel.cs">
+    <Compile Include="..\common\ViewModels\AccountDetailsViewModel.cs">
       <Link>Models\AccountDetailsViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\common\Models\BaseAppInfoAwareViewModel.cs">
+    <Compile Include="..\common\ViewModels\BaseAppInfoAwareViewModel.cs">
       <Link>Models\BaseAppInfoAwareViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\common\Models\BaseMediaViewModel.cs">
+    <Compile Include="..\common\ViewModels\BaseMediaViewModel.cs">
       <Link>Models\BaseMediaViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\common\Models\BaseSDKViewModel.cs">
+    <Compile Include="..\common\ViewModels\BaseSDKViewModel.cs">
       <Link>Models\BaseSDKViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\common\Models\BaseViewModel.cs">
+    <Compile Include="..\common\ViewModels\BaseViewModel.cs">
       <Link>Models\BaseViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\common\Models\CameraUploadsFolderViewModel.cs">
+    <Compile Include="..\common\ViewModels\CameraUploadsFolderViewModel.cs">
       <Link>Models\CameraUploadsFolderViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\common\Models\CameraUploadsPageViewModel.cs">
+    <Compile Include="..\common\ViewModels\CameraUploadsPageViewModel.cs">
       <Link>Models\CameraUploadsPageViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\common\Models\CameraUploadsViewModel.cs">
+    <Compile Include="..\common\ViewModels\CameraUploadsViewModel.cs">
       <Link>Models\CameraUploadsViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\common\Models\CloudDriveViewModel.cs">
+    <Compile Include="..\common\ViewModels\CloudDriveViewModel.cs">
       <Link>Models\CloudDriveViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\common\Models\ConfirmAccountViewModel.cs">
+    <Compile Include="..\common\ViewModels\ConfirmAccountViewModel.cs">
       <Link>Models\ConfirmAccountViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\common\Models\ContactDetailsViewModel.cs">
+    <Compile Include="..\common\ViewModels\ContactDetailsViewModel.cs">
       <Link>Models\ContactDetailsViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\common\Models\ContactsViewModel.cs">
+    <Compile Include="..\common\ViewModels\ContactsViewModel.cs">
       <Link>Models\ContactsViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\common\Models\CreateAccountViewModel.cs">
+    <Compile Include="..\common\ViewModels\CreateAccountViewModel.cs">
       <Link>Models\CreateAccountViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\common\Models\DebugSettingsViewModel.cs">
+    <Compile Include="..\common\ViewModels\DebugSettingsViewModel.cs">
       <Link>Models\DebugSettingsViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\common\Models\DelegateCommand.cs">
+    <Compile Include="..\common\ViewModels\DelegateCommand.cs">
       <Link>Models\DelegateCommand.cs</Link>
     </Compile>
-    <Compile Include="..\common\Models\FileNodeViewModel.cs">
+    <Compile Include="..\common\ViewModels\FileNodeViewModel.cs">
       <Link>Models\FileNodeViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\common\Models\FolderLinkViewModel.cs">
+    <Compile Include="..\common\ViewModels\FolderLinkViewModel.cs">
       <Link>Models\FolderLinkViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\common\Models\FolderNodeViewModel.cs">
+    <Compile Include="..\common\ViewModels\FolderNodeViewModel.cs">
       <Link>Models\FolderNodeViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\common\Models\FolderViewModel.cs">
+    <Compile Include="..\common\ViewModels\FolderViewModel.cs">
       <Link>Models\FolderViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\common\Models\ImageNodeViewModel.cs">
+    <Compile Include="..\common\ViewModels\ImageNodeViewModel.cs">
       <Link>Models\ImageNodeViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\common\Models\LoginViewModel.cs">
+    <Compile Include="..\common\ViewModels\LoginViewModel.cs">
       <Link>Models\LoginViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\common\Models\MainPageViewModel.cs">
+    <Compile Include="..\common\ViewModels\MainPageViewModel.cs">
       <Link>Models\MainPageViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\common\Models\MediaAlbumViewModel.cs">
+    <Compile Include="..\common\ViewModels\MediaAlbumViewModel.cs">
       <Link>Models\MediaAlbumViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\common\Models\MediaSelectionPageModel.cs">
+    <Compile Include="..\common\ViewModels\MediaSelectionPageModel.cs">
       <Link>Models\MediaSelectionPageModel.cs</Link>
     </Compile>
-    <Compile Include="..\common\Models\MemDiagnosticViewModel.cs">
+    <Compile Include="..\common\ViewModels\MemDiagnosticViewModel.cs">
       <Link>Models\MemDiagnosticViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\common\Models\MyAccountPageViewModel.cs">
+    <Compile Include="..\common\ViewModels\MyAccountPageViewModel.cs">
       <Link>Models\MyAccountPageViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\common\Models\NodeDetailsViewModel.cs">
+    <Compile Include="..\common\ViewModels\NodeDetailsViewModel.cs">
       <Link>Models\NodeDetailsViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\common\Models\NodeViewModel.cs">
+    <Compile Include="..\common\ViewModels\NodeViewModel.cs">
       <Link>Models\NodeViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\common\Models\OfflineFileNodeViewModel.cs">
+    <Compile Include="..\common\ViewModels\OfflineFileNodeViewModel.cs">
       <Link>Models\OfflineFileNodeViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\common\Models\OfflineFolderNodeViewModel.cs">
+    <Compile Include="..\common\ViewModels\OfflineFolderNodeViewModel.cs">
       <Link>Models\OfflineFolderNodeViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\common\Models\OfflineFolderViewModel.cs">
+    <Compile Include="..\common\ViewModels\OfflineFolderViewModel.cs">
       <Link>Models\OfflineFolderViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\common\Models\OfflineNodeViewModel.cs">
+    <Compile Include="..\common\ViewModels\OfflineNodeViewModel.cs">
       <Link>Models\OfflineNodeViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\common\Models\PasswordViewModel.cs">
+    <Compile Include="..\common\ViewModels\PasswordViewModel.cs">
       <Link>Models\PasswordViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\common\Models\PaymentViewModel.cs">
+    <Compile Include="..\common\ViewModels\PaymentViewModel.cs">
       <Link>Models\PaymentViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\common\Models\PreviewImageViewModel.cs">
+    <Compile Include="..\common\ViewModels\PreviewImageViewModel.cs">
       <Link>Models\PreviewImageViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\common\Models\PreviewSelfieViewModel.cs">
+    <Compile Include="..\common\ViewModels\PreviewSelfieViewModel.cs">
       <Link>Models\PreviewSelfieViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\common\Models\SavedForOfflineViewModel.cs">
+    <Compile Include="..\common\ViewModels\SavedForOfflineViewModel.cs">
       <Link>Models\SavedForOfflineViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\common\Models\SettingsViewModel.cs">
+    <Compile Include="..\common\ViewModels\SettingsViewModel.cs">
       <Link>Models\SettingsViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\common\Models\SharedItemsViewModel.cs">
+    <Compile Include="..\common\ViewModels\SharedItemsViewModel.cs">
       <Link>Models\SharedItemsViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\common\Models\SongSelectionViewModel.cs">
+    <Compile Include="..\common\ViewModels\SongSelectionViewModel.cs">
       <Link>Models\SongSelectionViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\common\Models\TransferListViewModel.cs">
+    <Compile Include="..\common\ViewModels\TransferListViewModel.cs">
       <Link>Models\TransferListViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\common\Models\TransferObjectModel.cs">
+    <Compile Include="..\common\ViewModels\TransferObjectModel.cs">
       <Link>Models\TransferObjectModel.cs</Link>
     </Compile>
-    <Compile Include="..\common\Models\TransfersViewModel.cs">
+    <Compile Include="..\common\ViewModels\TransfersViewModel.cs">
       <Link>Models\TransfersViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\common\Models\UpgradeAccountViewModel.cs">
+    <Compile Include="..\common\ViewModels\UpgradeAccountViewModel.cs">
       <Link>Models\UpgradeAccountViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\common\Models\UserDataViewModel.cs">
+    <Compile Include="..\common\ViewModels\UserDataViewModel.cs">
       <Link>Models\UserDataViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\common\Pages\CameraUploadsPage.xaml.cs">
+    <Compile Include="..\common\Views\CameraUploadsPage.xaml.cs">
       <Link>Pages\CameraUploadsPage.xaml.cs</Link>
       <DependentUpon>CameraUploadsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="..\common\Pages\ConfirmAccountPage.xaml.cs">
+    <Compile Include="..\common\Views\ConfirmAccountPage.xaml.cs">
       <Link>Pages\ConfirmAccountPage.xaml.cs</Link>
       <DependentUpon>ConfirmAccountPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="..\common\Pages\ContactDetailsPage.xaml.cs">
+    <Compile Include="..\common\Views\ContactDetailsPage.xaml.cs">
       <Link>Pages\ContactDetailsPage.xaml.cs</Link>
       <DependentUpon>ContactDetailsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="..\common\Pages\ContactsPage.xaml.cs">
+    <Compile Include="..\common\Views\ContactsPage.xaml.cs">
       <Link>Pages\ContactsPage.xaml.cs</Link>
       <DependentUpon>ContactsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="..\common\Pages\FolderLinkPage.xaml.cs">
+    <Compile Include="..\common\Views\FolderLinkPage.xaml.cs">
       <Link>Pages\FolderLinkPage.xaml.cs</Link>
       <DependentUpon>FolderLinkPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="..\common\Pages\InitCameraUploadsPage.xaml.cs">
+    <Compile Include="..\common\Views\InitCameraUploadsPage.xaml.cs">
       <Link>Pages\InitCameraUploadsPage.xaml.cs</Link>
       <DependentUpon>InitCameraUploadsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="..\common\Pages\InitTourPage.xaml.cs">
+    <Compile Include="..\common\Views\InitTourPage.xaml.cs">
       <Link>Pages\InitTourPage.xaml.cs</Link>
       <DependentUpon>InitTourPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="..\common\Pages\LoginPage.xaml.cs">
+    <Compile Include="..\common\Views\LoginPage.xaml.cs">
       <Link>Pages\LoginPage.xaml.cs</Link>
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="..\common\Pages\MainPage.xaml.cs">
+    <Compile Include="..\common\Views\MainPage.xaml.cs">
       <Link>Pages\MainPage.xaml.cs</Link>
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="..\common\Pages\MediaAlbumPage.xaml.cs">
+    <Compile Include="..\common\Views\MediaAlbumPage.xaml.cs">
       <Link>Pages\MediaAlbumPage.xaml.cs</Link>
       <DependentUpon>MediaAlbumPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="..\common\Pages\MediaSelectionPage.xaml.cs">
+    <Compile Include="..\common\Views\MediaSelectionPage.xaml.cs">
       <Link>Pages\MediaSelectionPage.xaml.cs</Link>
       <DependentUpon>MediaSelectionPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="..\common\Pages\MyAccountPage.xaml.cs">
+    <Compile Include="..\common\Views\MyAccountPage.xaml.cs">
       <Link>Pages\MyAccountPage.xaml.cs</Link>
       <DependentUpon>MyAccountPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="..\common\Pages\NodeDetailsPage.xaml.cs">
+    <Compile Include="..\common\Views\NodeDetailsPage.xaml.cs">
       <Link>Pages\NodeDetailsPage.xaml.cs</Link>
       <DependentUpon>NodeDetailsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="..\common\Pages\PasswordPage.xaml.cs">
+    <Compile Include="..\common\Views\PasswordPage.xaml.cs">
       <Link>Pages\PasswordPage.xaml.cs</Link>
       <DependentUpon>PasswordPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="..\common\Pages\PaymentPage.xaml.cs">
+    <Compile Include="..\common\Views\PaymentPage.xaml.cs">
       <Link>Pages\PaymentPage.xaml.cs</Link>
       <DependentUpon>PaymentPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="..\common\Pages\PhotoCameraPage.xaml.cs">
+    <Compile Include="..\common\Views\PhotoCameraPage.xaml.cs">
       <Link>Pages\PhotoCameraPage.xaml.cs</Link>
       <DependentUpon>PhotoCameraPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="..\common\Pages\PreviewImagePage.xaml.cs">
+    <Compile Include="..\common\Views\PreviewImagePage.xaml.cs">
       <Link>Pages\PreviewImagePage.xaml.cs</Link>
       <DependentUpon>PreviewImagePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="..\common\Pages\PreviewSelfiePage.xaml.cs">
+    <Compile Include="..\common\Views\PreviewSelfiePage.xaml.cs">
       <Link>Pages\PreviewSelfiePage.xaml.cs</Link>
       <DependentUpon>PreviewSelfiePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="..\common\Pages\SavedForOfflinePage.xaml.cs">
+    <Compile Include="..\common\Views\SavedForOfflinePage.xaml.cs">
       <Link>Pages\SavedForOfflinePage.xaml.cs</Link>
       <DependentUpon>SavedForOfflinePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="..\common\Pages\SettingsPage.xaml.cs">
+    <Compile Include="..\common\Views\SettingsPage.xaml.cs">
       <Link>Pages\SettingsPage.xaml.cs</Link>
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="..\common\Pages\SharedItemsPage.xaml.cs">
+    <Compile Include="..\common\Views\SharedItemsPage.xaml.cs">
       <Link>Pages\SharedItemsPage.xaml.cs</Link>
       <DependentUpon>SharedItemsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="..\common\Pages\SongSelectionPage.xaml.cs">
+    <Compile Include="..\common\Views\SongSelectionPage.xaml.cs">
       <Link>Pages\SongSelectionPage.xaml.cs</Link>
       <DependentUpon>SongSelectionPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="..\common\Pages\TransferPage.xaml.cs">
+    <Compile Include="..\common\Views\TransferPage.xaml.cs">
       <Link>Pages\TransferPage.xaml.cs</Link>
       <DependentUpon>TransferPage.xaml</DependentUpon>
     </Compile>
@@ -1436,95 +1436,95 @@
       <Link>App.xaml</Link>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\common\Pages\CameraUploadsPage.xaml">
+    <Page Include="..\common\Views\CameraUploadsPage.xaml">
       <Link>Pages\CameraUploadsPage.xaml</Link>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\common\Pages\ConfirmAccountPage.xaml">
+    <Page Include="..\common\Views\ConfirmAccountPage.xaml">
       <Link>Pages\ConfirmAccountPage.xaml</Link>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\common\Pages\ContactDetailsPage.xaml">
+    <Page Include="..\common\Views\ContactDetailsPage.xaml">
       <Link>Pages\ContactDetailsPage.xaml</Link>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\common\Pages\ContactsPage.xaml">
+    <Page Include="..\common\Views\ContactsPage.xaml">
       <Link>Pages\ContactsPage.xaml</Link>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\common\Pages\FolderLinkPage.xaml">
+    <Page Include="..\common\Views\FolderLinkPage.xaml">
       <Link>Pages\FolderLinkPage.xaml</Link>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\common\Pages\InitCameraUploadsPage.xaml">
+    <Page Include="..\common\Views\InitCameraUploadsPage.xaml">
       <Link>Pages\InitCameraUploadsPage.xaml</Link>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\common\Pages\InitTourPage.xaml">
+    <Page Include="..\common\Views\InitTourPage.xaml">
       <Link>Pages\InitTourPage.xaml</Link>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\common\Pages\LoginPage.xaml">
+    <Page Include="..\common\Views\LoginPage.xaml">
       <Link>Pages\LoginPage.xaml</Link>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\common\Pages\MainPage.xaml">
+    <Page Include="..\common\Views\MainPage.xaml">
       <Link>Pages\MainPage.xaml</Link>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\common\Pages\MediaAlbumPage.xaml">
+    <Page Include="..\common\Views\MediaAlbumPage.xaml">
       <Link>Pages\MediaAlbumPage.xaml</Link>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\common\Pages\MediaSelectionPage.xaml">
+    <Page Include="..\common\Views\MediaSelectionPage.xaml">
       <Link>Pages\MediaSelectionPage.xaml</Link>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\common\Pages\MyAccountPage.xaml">
+    <Page Include="..\common\Views\MyAccountPage.xaml">
       <Link>Pages\MyAccountPage.xaml</Link>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\common\Pages\NodeDetailsPage.xaml">
+    <Page Include="..\common\Views\NodeDetailsPage.xaml">
       <Link>Pages\NodeDetailsPage.xaml</Link>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\common\Pages\PasswordPage.xaml">
+    <Page Include="..\common\Views\PasswordPage.xaml">
       <Link>Pages\PasswordPage.xaml</Link>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\common\Pages\PaymentPage.xaml">
+    <Page Include="..\common\Views\PaymentPage.xaml">
       <Link>Pages\PaymentPage.xaml</Link>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\common\Pages\PhotoCameraPage.xaml">
+    <Page Include="..\common\Views\PhotoCameraPage.xaml">
       <Link>Pages\PhotoCameraPage.xaml</Link>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\common\Pages\PreviewImagePage.xaml">
+    <Page Include="..\common\Views\PreviewImagePage.xaml">
       <Link>Pages\PreviewImagePage.xaml</Link>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\common\Pages\PreviewSelfiePage.xaml">
+    <Page Include="..\common\Views\PreviewSelfiePage.xaml">
       <Link>Pages\PreviewSelfiePage.xaml</Link>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\common\Pages\SavedForOfflinePage.xaml">
+    <Page Include="..\common\Views\SavedForOfflinePage.xaml">
       <Link>Pages\SavedForOfflinePage.xaml</Link>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\common\Pages\SettingsPage.xaml">
+    <Page Include="..\common\Views\SettingsPage.xaml">
       <Link>Pages\SettingsPage.xaml</Link>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\common\Pages\SharedItemsPage.xaml">
+    <Page Include="..\common\Views\SharedItemsPage.xaml">
       <Link>Pages\SharedItemsPage.xaml</Link>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\common\Pages\SongSelectionPage.xaml">
+    <Page Include="..\common\Views\SongSelectionPage.xaml">
       <Link>Pages\SongSelectionPage.xaml</Link>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\common\Pages\TransferPage.xaml">
+    <Page Include="..\common\Views\TransferPage.xaml">
       <Link>Pages\TransferPage.xaml</Link>
       <SubType>Designer</SubType>
     </Page>

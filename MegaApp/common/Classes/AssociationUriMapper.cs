@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Navigation;
 using MegaApp.Enums;
-using MegaApp.Pages;
 using MegaApp.Resources;
 using MegaApp.Services;
+using MegaApp.Views;
 
 namespace MegaApp.Classes
 {

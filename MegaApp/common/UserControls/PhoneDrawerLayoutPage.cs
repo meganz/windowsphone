@@ -3,15 +3,15 @@ using System.ComponentModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Navigation;
-using MegaApp.Classes;
-using MegaApp.Enums;
-using MegaApp.Pages;
-using MegaApp.Resources;
-using MegaApp.Services;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Telerik.Windows.Controls;
 using GestureEventArgs = System.Windows.Input.GestureEventArgs;
+using MegaApp.Classes;
+using MegaApp.Enums;
+using MegaApp.Resources;
+using MegaApp.Services;
+using MegaApp.Views;
 
 namespace MegaApp.UserControls
 {

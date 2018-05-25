@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 using mega;
 using MegaApp.Classes;
 using MegaApp.MegaApi;
-using MegaApp.Models;
 using MegaApp.Resources;
+using MegaApp.ViewModels;
 
 namespace MegaApp.Services
 {

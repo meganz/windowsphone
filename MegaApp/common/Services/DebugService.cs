@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Threading;
 using Windows.Devices.Geolocation;
-using MegaApp.Models;
+using MegaApp.ViewModels;
 
 namespace MegaApp.Services
 {

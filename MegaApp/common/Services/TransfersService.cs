@@ -13,7 +13,7 @@ using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.Extensions;
 using MegaApp.MegaApi;
-using MegaApp.Models;
+using MegaApp.ViewModels;
 
 namespace MegaApp.Services
 {

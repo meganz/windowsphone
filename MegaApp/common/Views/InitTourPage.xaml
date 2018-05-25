@@ -1,0 +1,116 @@
+﻿<userControls:MegaPhoneApplicationPage    
+    x:Class="MegaApp.Views.InitTourPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:userControls="clr-namespace:MegaApp.UserControls"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"    
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="True"
+    shell:SystemTray.BackgroundColor="{StaticResource PhoneChromeColor}">
+        
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="84"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <ContentPresenter 
+            ContentTemplate="{StaticResource MegaPageHeaderLogo}"
+            Tap="OnMegaHeaderLogoTapped"/>
+        
+        <!--Pivot Control-->
+        <phone:Pivot x:Name="InitTour" Grid.Row="1" HeaderTemplate="{StaticResource PivotMegaHeaderTemplate}" Margin="0,-4,0,0">
+            <!--Pivot item one-->
+            <phone:PivotItem Header="{Binding LocalizedUiResources.InitTourSpace_Title, Source={StaticResource LocalizedStrings}}" Margin="12,4,12,0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>                    
+                    </Grid.RowDefinitions>
+
+                    <RichTextBox Grid.Row="0">
+                        <Paragraph>
+                            <Run Text="{Binding LocalizedUiResources.InitTourSpace1, Source={StaticResource LocalizedStrings}}"/>
+                            <Run Text="{Binding LocalizedUiResources.InitTourSpace2, Source={StaticResource LocalizedStrings}}" Foreground="{StaticResource MegaRedSolidColorBrush}"/>
+                        </Paragraph>
+                    </RichTextBox>
+                    <Image x:Name="ImgMegaSpace" Grid.Row="1" Stretch="None" Source="/Assets/Images/01A_storage.png" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </Grid>
+            </phone:PivotItem>
+
+            <!--Pivot item two-->
+            <phone:PivotItem Header="{Binding LocalizedUiResources.InitTourSpeed_Title, Source={StaticResource LocalizedStrings}}" Margin="12,4,12,0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <RichTextBox Grid.Row="0">
+                        <Paragraph>
+                            <Run Text="{Binding LocalizedUiResources.InitTourSpeed1, Source={StaticResource LocalizedStrings}}" Foreground="{StaticResource MegaRedSolidColorBrush}"/>
+                            <Run Text="{Binding LocalizedUiResources.InitTourSpeed2, Source={StaticResource LocalizedStrings}}"/>
+                        </Paragraph>
+                    </RichTextBox>
+                    <Image x:Name="ImgMegaSpeed" Grid.Row="1" Stretch="None" Source="/Assets/Images/02A_speed.png" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </Grid>                
+            </phone:PivotItem>
+
+            <!--Pivot item three-->
+            <phone:PivotItem Header="{Binding LocalizedUiResources.InitTourPrivacy_Title, Source={StaticResource LocalizedStrings}}" Margin="12,4,12,0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <RichTextBox Grid.Row="0">
+                        <Paragraph>
+                            <Run Text="{Binding LocalizedUiResources.InitTourPrivacy1, Source={StaticResource LocalizedStrings}}"/>
+                            <Run Text="{Binding LocalizedUiResources.InitTourPrivacy2, Source={StaticResource LocalizedStrings}}" Foreground="{StaticResource MegaRedSolidColorBrush}"/>
+                        </Paragraph>
+                    </RichTextBox>
+                    <Image x:Name="ImgMegaPrivacy" Grid.Row="1" Stretch="None" Source="/Assets/Images/03A_security.png" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </Grid>
+            </phone:PivotItem>
+
+            <!--Pivot item four-->
+            <phone:PivotItem Header="{Binding LocalizedUiResources.InitTourAccess_Title, Source={StaticResource LocalizedStrings}}" Margin="12,4,12,0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <RichTextBox Grid.Row="0">
+                        <Paragraph>
+                            <Run Text="{Binding LocalizedUiResources.InitTourAccess1, Source={StaticResource LocalizedStrings}}"/>
+                            <Run Text="{Binding LocalizedUiResources.InitTourAccess2, Source={StaticResource LocalizedStrings}}" Foreground="{StaticResource MegaRedSolidColorBrush}"/>
+                            <Run Text="{Binding LocalizedUiResources.InitTourAccess3, Source={StaticResource LocalizedStrings}}"/>
+                        </Paragraph>
+                    </RichTextBox>
+                    <Image x:Name="ImgMegaAccess" Grid.Row="1" Stretch="None" Source="/Assets/Images/04A_access.png" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </Grid>                
+            </phone:PivotItem>
+        </phone:Pivot>
+
+        <Grid x:Name="LayoutBottom" Grid.Row="2" VerticalAlignment="Bottom" Background="Transparent">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btnLogin" Grid.Column="0" Margin="12,0,0,12" Content="{Binding LocalizedUiResources.UI_Login, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Click="btnLogin_Click" />
+            <Button x:Name="btnCreateAccount" Grid.Column="1" Margin="0,0,12,12" Content="{Binding LocalizedUiResources.UI_CreateAccount, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Click="btnCreateAccount_Click" />
+        </Grid>
+
+    </Grid>    
+
+</userControls:MegaPhoneApplicationPage>

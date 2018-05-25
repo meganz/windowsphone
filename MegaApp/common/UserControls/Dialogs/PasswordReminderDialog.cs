@@ -6,9 +6,9 @@ using System.Windows.Media;
 using Telerik.Windows.Controls;
 using MegaApp.Classes;
 using MegaApp.MegaApi;
-using MegaApp.Models;
 using MegaApp.Resources;
 using MegaApp.Services;
+using MegaApp.ViewModels;
 
 namespace MegaApp.Dialogs
 {

@@ -4,7 +4,7 @@ using System.Globalization;
 using System.Threading;
 using System.Windows.Data;
 using mega;
-using MegaApp.Models;
+using MegaApp.ViewModels;
 
 namespace MegaApp.Converters
 {

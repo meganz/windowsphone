@@ -7,8 +7,8 @@ using System.Windows;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
-using MegaApp.Models;
 using MegaApp.Resources;
+using MegaApp.ViewModels;
 
 namespace MegaApp.MegaApi
 {

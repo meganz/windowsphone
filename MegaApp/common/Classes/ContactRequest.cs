@@ -6,8 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.Storage;
 using mega;
-using MegaApp.Models;
 using MegaApp.Resources;
+using MegaApp.ViewModels;
 
 namespace MegaApp.Classes
 {

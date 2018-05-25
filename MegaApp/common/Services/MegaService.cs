@@ -6,12 +6,12 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using Telerik.Windows.Controls;
 using mega;
 using MegaApp.Interfaces;
 using MegaApp.MegaApi;
-using MegaApp.Models;
 using MegaApp.Resources;
-using Telerik.Windows.Controls;
+using MegaApp.ViewModels;
 
 namespace MegaApp.Services
 {

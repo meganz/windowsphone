@@ -6,8 +6,8 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using Telerik.Windows.Controls;
-using MegaApp.Models;
 using MegaApp.Services;
+using MegaApp.ViewModels;
 
 namespace MegaApp.Dialogs
 {
