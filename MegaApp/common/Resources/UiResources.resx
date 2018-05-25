@@ -1319,4 +1319,25 @@ NOTE: Keep the capital letter if possible.</comment>
     <value>Retry</value>
     <comment>Label for any 'Retry' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
+  <data name="UI_DoNotShowMeAgain" xml:space="preserve">
+    <value>Don’t show me again</value>
+    <comment>Label for a check box included into a dialog to indicate don't show it again.</comment>
+  </data>
+  <data name="UI_BackupRecoveryKey" xml:space="preserve">
+    <value>Backup Recovery Key</value>
+    <comment>Label for any 'Backup Recovery Key' button, link, text, title, etc. - (String as short as possible).
+NOTE: Max. length 20 characters.</comment>
+  </data>
+  <data name="UI_Close" xml:space="preserve">
+    <value>Close</value>
+    <comment>Label for any 'Close' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_TestPassword" xml:space="preserve">
+    <value>Test Password</value>
+    <comment>Label for any 'Test Password' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_PlainText" xml:space="preserve">
+    <value>Plain text</value>
+    <comment>Label for any 'Plain text' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
 </root>

@@ -118,6 +118,13 @@ namespace MegaApp.MegaApi
             // doing the fetch nodes request (app, folder link, etc.)
             api.enableTransferResumption();
 
+            // If is required show the password reminder dialog on background thread
+            Task.Run(async () =>
+            {
+                if (await AccountService.ShouldShowPasswordReminderDialogAsync())
+                    Deployment.Current.Dispatcher.BeginInvoke(() => DialogService.ShowPasswordReminderDialog(false));
+            });
+
             if (_mainPageViewModel != null)
                 FetchNodesMainPage(api, request);
             else if (_cameraUploadsPageViewModel != null)

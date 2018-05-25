@@ -470,7 +470,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_MEGA_SDK_Version" translate="yes" space="preserve">
           <source>MEGA SDK version</source>
-          <target state="translated">Version du kit SDK MEGA</target>
+          <target state="translated">Version de la trousse SDK MEGA</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'MEGA SDK version' button, link, text, title, etc. Preserve the "MEGA SDK" in uppercase - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Monthly" translate="yes" space="preserve">
@@ -531,7 +531,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/SortByMenuTitle" translate="yes" space="preserve">
           <source>Sort by</source>
-          <target state="translated">Trier</target>
+          <target state="translated">Trier par</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label used like title for the sort menu.</note>
         </trans-unit>
         <trans-unit id="Resx/StartResumeAll" translate="yes" space="preserve">
@@ -701,7 +701,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/CameraUploads" translate="yes" space="preserve">
           <source>Camera Uploads</source>
-          <target state="translated">Téléversement caméra</target>
+          <target state="translated">Téléversements de la caméra</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Camera Uploads' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Contacts" translate="yes" space="preserve">
@@ -731,7 +731,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/SetupCameraUploadsTitle" translate="yes" space="preserve">
           <source>Set up camera uploads</source>
-          <target state="translated">Configurer le téléversement de la caméra</target>
+          <target state="translated">Configurer les téléversements de la caméra</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label used like title for the "set up camera uploads" page - (String as short as possible)</note>
         </trans-unit>
         <trans-unit id="Resx/Skip" translate="yes" space="preserve">
@@ -751,7 +751,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/EnableCameraUploads" translate="yes" space="preserve">
           <source>Enable Camera Uploads</source>
-          <target state="translated">Activer le téléversement de la caméra</target>
+          <target state="translated">Activer les téléversements de la caméra</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the switch button to enable or disable the Camera Uploads service - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Security" translate="yes" space="preserve">
@@ -1401,7 +1401,7 @@ NOTE: Keep the capital letter if possible.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateDownloading" translate="yes" space="preserve">
           <source>Downloading...</source>
-          <target state="translated">Téléchargement...</target>
+          <target state="translated">Téléchargement…</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being downloading - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateError" translate="yes" space="preserve">
@@ -1479,9 +1479,40 @@ NOTE: Keep the capital letter if possible.</note>
           <target state="translated">Juridique et politiques</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the title of the "Legal and Policies" section which include links to the Terms of Service, Privacy Policy, etc. - (String as short as possible).</note>
         </trans-unit>
+        <trans-unit id="Resx/UI_DoNotShowMeAgain" translate="yes" xml:space="preserve">
+          <source>Don’t show me again</source>
+          <target state="new">Don’t show me again</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for a check box included into a dialog to indicate don't show it again.</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_TestPassword" translate="yes" xml:space="preserve">
+          <source>Test Password</source>
+          <target state="new">Test Password</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Test Password' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_PlainText" translate="yes" xml:space="preserve">
+          <source>Plain text</source>
+          <target state="new">Plain text</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Plain text' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_BackupRecoveryKey" translate="yes" xml:space="preserve">
+          <source>Backup Recovery Key</source>
+          <target state="new">Backup Recovery Key</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Backup Recovery Key' button, link, text, title, etc. - (String as short as possible).
+NOTE: Max. length 20 characters.</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_Close" translate="yes" xml:space="preserve">
+          <source>Close</source>
+          <target state="new">Close</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Close' button, link, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_LearnMore" translate="yes" xml:space="preserve">
+          <source>Learn more</source>
+          <target state="new">Learn more</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Learn more' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
         <trans-unit id="Resx/UI_Copyright" translate="yes" space="preserve">
           <source>Copyright</source>
-          <target state="translated">Tous droits réservés</target>
+          <target state="translated">Droits d’auteur</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Copyright' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_LearnMore" translate="yes" space="preserve">
@@ -1494,15 +1525,15 @@ NOTE: Keep the capital letter if possible.</note>
           <target state="translated">Informations sur les retraits</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Takedown Guidance' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_Retry" translate="yes" xml:space="preserve">
-          <source>Retry</source>
-          <target state="new">Retry</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Retry' button, link, text, title, etc. - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/UI_OpenBrowser" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_OpenBrowser" translate="yes" space="preserve">
           <source>Open browser</source>
-          <target state="new">Open browser</target>
+          <target state="translated">Ouvrir le navigateur</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the button to allow the user open the default browser - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_Retry" translate="yes" space="preserve">
+          <source>Retry</source>
+          <target state="translated">Ressayer</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Retry' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>

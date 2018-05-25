@@ -394,6 +394,9 @@
     <Compile Include="..\common\MegaApi\BaseRequestListener.cs">
       <Link>MegaApi\BaseRequestListener.cs</Link>
     </Compile>
+    <Compile Include="..\common\MegaApi\BaseRequestListenerAsync.cs">
+      <Link>MegaApi\BaseRequestListenerAsync.cs</Link>
+    </Compile>
     <Compile Include="..\common\MegaApi\CancelSubscriptionRequestListener.cs">
       <Link>MegaApi\CancelSubscriptionRequestListener.cs</Link>
     </Compile>
@@ -525,6 +528,12 @@
     </Compile>
     <Compile Include="..\common\MegaApi\ReplyContactRequestListener.cs">
       <Link>MegaApi\ReplyContactRequestListener.cs</Link>
+    </Compile>
+    <Compile Include="..\common\MegaApi\SetUserAttributeRequestListenerAsync.cs">
+      <Link>MegaApi\SetUserAttributeRequestListenerAsync.cs</Link>
+    </Compile>
+    <Compile Include="..\common\MegaApi\ShouldShowPasswordReminderDialogRequestListenerAsync.cs">
+      <Link>MegaApi\ShouldShowPasswordReminderDialogRequestListenerAsync.cs</Link>
     </Compile>
     <Compile Include="..\common\MegaApi\UpgradeAccountRequestListener.cs">
       <Link>MegaApi\UpgradeAccountRequestListener.cs</Link>
@@ -864,6 +873,12 @@
     </Compile>
     <Compile Include="..\common\UserControls\BreadCrumbTapEventArgs.cs">
       <Link>UserControls\BreadCrumbTapEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\common\UserControls\Dialogs\MegaDialog.cs">
+      <Link>UserControls\Dialogs\MegaDialog.cs</Link>
+    </Compile>
+    <Compile Include="..\common\UserControls\Dialogs\PasswordReminderDialog.cs">
+      <Link>UserControls\Dialogs\PasswordReminderDialog.cs</Link>
     </Compile>
     <Compile Include="..\common\UserControls\DrawerLayout.cs">
       <Link>UserControls\DrawerLayout.cs</Link>
@@ -2346,7 +2361,7 @@
     </XliffResource>
   </ItemGroup>
   <ItemGroup>
-    <SDKReference Include="SQLite.WP80, Version=3.22.0">
+    <SDKReference Include="SQLite.WP80, Version=3.23.1">
       <Name>SQLite for Windows Phone</Name>
     </SDKReference>
   </ItemGroup>

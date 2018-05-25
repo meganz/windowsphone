@@ -130,7 +130,7 @@
     <comment>Label for any 'Cancel' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="CloudDriveName" xml:space="preserve">
-    <value>Cloud Drive</value>
+    <value>سحابة التخزين</value>
     <comment>Label for any 'Cloud Drive' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Confirm" xml:space="preserve">
@@ -282,7 +282,7 @@
     <comment>Label for the name of the Cloud Drive breadcum root node - (String as short as possible).</comment>
   </data>
   <data name="RubbishBinRoot" xml:space="preserve">
-    <value>Rubbish Bin</value>
+    <value>سلة المهملات</value>
     <comment>Label for the name of the Rubbish bin breadcum root node - (String as short as possible).</comment>
   </data>
   <data name="No" xml:space="preserve">
@@ -590,7 +590,7 @@
     <comment>Label for any 'Help' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="CameraUploads" xml:space="preserve">
-    <value>Camera Uploads</value>
+    <value>رفع الألبوم</value>
     <comment>Label for any 'Camera Uploads' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Contacts" xml:space="preserve">
@@ -1308,7 +1308,15 @@ Preserve the PIN uppercase word.</comment>
     <comment>Label for any 'Learn more' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_TakedownGuidance" xml:space="preserve">
-    <value>Takedown Guidance</value>
+    <value>إرشادات انهاء الخدمة</value>
     <comment>Label for any 'Takedown Guidance' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_OpenBrowser" xml:space="preserve">
+    <value>فتح متصفح الويب</value>
+    <comment>Label for the button to allow the user open the default browser - (String as short as possible).</comment>
+  </data>
+  <data name="UI_Retry" xml:space="preserve">
+    <value>اعادة المحاولة</value>
+    <comment>Label for any 'Retry' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
 </root>

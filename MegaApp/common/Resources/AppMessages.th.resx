@@ -1395,11 +1395,11 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when required fields are empty.</comment>
   </data>
   <data name="AM_PasswordChanged" xml:space="preserve">
-    <value>We have sent you an email confirming your password change.</value>
+    <value>เราได้ส่งอีเมลยืนยันการเปลี่ยนรหัสผ่านของคุณแล้ว</value>
     <comment>Message of the dialog displayed when the change password process finish successful.</comment>
   </data>
   <data name="AM_PasswordChanged_Title" xml:space="preserve">
-    <value>Password changed</value>
+    <value>เปลี่ยนรหัสผ่านแล้ว</value>
     <comment>Title of the dialog displayed when the change password process finish successful.</comment>
   </data>
   <data name="AM_PasswordChangeFailed" xml:space="preserve">
@@ -1417,5 +1417,13 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="AM_VeryWeakPassword" xml:space="preserve">
     <value>กรุณาใช้รหัสผ่านที่คาดเดาได้ยากแต่ง่ายต่อการจดจำของคุณ</value>
     <comment>Message of the dialog displayed when the user has chosen a very weak password.</comment>
+  </data>
+  <data name="AM_SSLKeyError" xml:space="preserve">
+    <value>คีย์ SSL ของเซิร์ฟเวอร์ไม่สามารถตรวจสอบได้ คุณอาจจะได้รับผลกระทบจากการลักลอบดักข้อมูล</value>
+    <comment>Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
+  </data>
+  <data name="AM_SSLKeyError_Title" xml:space="preserve">
+    <value>SSL certificate error</value>
+    <comment>Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
   </data>
 </root>

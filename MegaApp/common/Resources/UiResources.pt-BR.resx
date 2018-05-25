@@ -370,7 +370,7 @@
     <comment>Label for any 'Capture' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="ChangePinLock" xml:space="preserve">
-    <value>Mudar código PIN</value>
+    <value>Alterar o PIN</value>
     <comment>Label for any 'Change PIN Lock' button, link, text, title, etc. Try to preserve the PIN uppercase word. - (String as short as possible).</comment>
   </data>
   <data name="CleanUpTransfers" xml:space="preserve">
@@ -462,7 +462,7 @@
     <comment>Label for the menu option to sort the nodes of the cloud drive in ascending order by size (from smaller to bigger) - (String as short as possible).</comment>
   </data>
   <data name="SortByMenuTitle" xml:space="preserve">
-    <value>ORGANIZAR POR</value>
+    <value>Ordenar por</value>
     <comment>Label used like title for the sort menu.</comment>
   </data>
   <data name="StartResumeAll" xml:space="preserve">
@@ -825,7 +825,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
     <comment>Text to show when a user wants to add a contact to type the email address of the new contact.</comment>
   </data>
   <data name="Search" xml:space="preserve">
-    <value>Buscar</value>
+    <value>Pesquisar</value>
     <comment>Label for any 'Search' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="Select" xml:space="preserve">
@@ -1005,7 +1005,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for the background of an empty downloads page - (String as short as possible).</comment>
   </data>
   <data name="NoInternetConnection" xml:space="preserve">
-    <value>Sem ligação à internet</value>
+    <value>Não há conexão à Internet</value>
     <comment>Label for the background of an empty state when no internet connection - (String as short as possible).</comment>
   </data>
   <data name="NoUploads" xml:space="preserve">
@@ -1310,5 +1310,13 @@ Preserve the PIN uppercase word.</comment>
   <data name="UI_TakedownGuidance" xml:space="preserve">
     <value>Guia de remoção</value>
     <comment>Label for any 'Takedown Guidance' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_OpenBrowser" xml:space="preserve">
+    <value>Abrir o navegador</value>
+    <comment>Label for the button to allow the user open the default browser - (String as short as possible).</comment>
+  </data>
+  <data name="UI_Retry" xml:space="preserve">
+    <value>Tentar novamente</value>
+    <comment>Label for any 'Retry' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
 </root>

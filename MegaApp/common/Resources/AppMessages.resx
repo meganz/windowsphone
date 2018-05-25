@@ -1426,4 +1426,44 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>SSL certificate error</value>
     <comment>Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
   </data>
+  <data name="AM_PasswordReminder" xml:space="preserve">
+    <value>Due to MEGA’s encryption technology you are unable to reset your password without data loss. Please make sure you remember your password.</value>
+    <comment>Message to describe the purpose of the password reminder dialog.</comment>
+  </data>
+  <data name="AM_PasswordReminder_Title" xml:space="preserve">
+    <value>Do you remember your password?</value>
+    <comment>Title of the password reminder dialog.</comment>
+  </data>
+  <data name="AM_TestPassword" xml:space="preserve">
+    <value>Please test your password below to ensure you remember it. If you lost your password, you will lose access to your data.</value>
+    <comment>Message to describe the purpose of the dialog to test the password.</comment>
+  </data>
+  <data name="AM_TestPasswordSuccess" xml:space="preserve">
+    <value>Password accepted, we still recommend you back up your Recovery key.</value>
+    <comment>Message displayed when the password test result is ok.</comment>
+  </data>
+  <data name="AM_TestPasswordWarning" xml:space="preserve">
+    <value>Wrong password!, backup your Recovery Key as soon as possible!</value>
+    <comment>Warning message displayed when the password test fails.</comment>
+  </data>
+  <data name="AM_TestPassword_Title" xml:space="preserve">
+    <value>Test Password</value>
+    <comment>Title of the test password dialog.</comment>
+  </data>
+  <data name="AM_RecoveryKeyExported" xml:space="preserve">
+    <value>The Recovery Key has been exported.</value>
+    <comment>Message of the dialog or notification displayed in cases that the app has succesful exported the recovery key.</comment>
+  </data>
+  <data name="AM_RecoveryKeyExported_Title" xml:space="preserve">
+    <value>Recovery Key exported</value>
+    <comment>Title of the dialog or notification displayed in cases that the app has succesful exported the recovery key.</comment>
+  </data>
+  <data name="AM_RecoveryKeyExportFailed" xml:space="preserve">
+    <value>Failed to export the Recovery Key. Please try again.</value>
+    <comment>Message of the dialog or notification displayed in cases that the app has not succesful exported the recovery key.</comment>
+  </data>
+  <data name="AM_RecoveryKeyExportFailed_Title" xml:space="preserve">
+    <value>Recovery Key export failed</value>
+    <comment>Title of the dialog or notification displayed in cases that the app has not succesful exported the recovery key.</comment>
+  </data>
 </root>

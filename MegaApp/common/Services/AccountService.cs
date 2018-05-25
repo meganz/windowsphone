@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Media;
+using System.Threading.Tasks;
 using mega;
 using MegaApp.Classes;
 using MegaApp.MegaApi;
@@ -33,6 +34,16 @@ namespace MegaApp.Services
                 _upgradeAccount = new UpgradeAccountViewModel();
                 return _upgradeAccount;
             }
+        }
+
+        /// <summary>
+        /// Check if should show the password reminder dialog and show it in that case
+        /// </summary>
+        public static async Task<bool> ShouldShowPasswordReminderDialogAsync()
+        {
+            var passwordReminderDialogListener = new ShouldShowPasswordReminderDialogRequestListenerAsync();
+            return await passwordReminderDialogListener.ExecuteAsync(() =>
+                SdkService.MegaSdk.shouldShowPasswordReminderDialog(false, passwordReminderDialogListener));
         }
 
         public static void ClearAccountDetails()

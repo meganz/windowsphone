@@ -61,8 +61,14 @@ namespace MegaApp.Models
             MegaSdk.getPricing(new GetPricingRequestListener());            
         }
 
-        public void Logout()
+        public async void Logout()
         {
+            if (await AccountService.ShouldShowPasswordReminderDialogAsync())
+            {
+                DialogService.ShowPasswordReminderDialog(true);
+                return;
+            }
+
             MegaSdk.logout(new LogOutRequestListener());
         }
 
