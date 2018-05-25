@@ -7,13 +7,13 @@ using System.Windows;
 using System.Xml.Linq;
 using Windows.Foundation;
 using Windows.Storage;
+using Microsoft.Phone.Tasks;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Converters;
 using MegaApp.MegaApi;
-using MegaApp.Pages;
 using MegaApp.Resources;
-using Microsoft.Phone.Tasks;
+using MegaApp.Views;
 
 // Use mocking library in DEBUG mode
 // And the real Windows Store library in RELEASE Mode

@@ -9,9 +9,9 @@ using Windows.Storage.Pickers;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
-using MegaApp.Models;
-using MegaApp.Pages;
 using MegaApp.Resources;
+using MegaApp.ViewModels;
+using MegaApp.Views;
 
 namespace MegaApp.Services
 {

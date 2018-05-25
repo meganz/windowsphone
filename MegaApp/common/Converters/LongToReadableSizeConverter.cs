@@ -5,7 +5,7 @@ using System.Windows;
 using System.Windows.Data;
 using mega;
 using MegaApp.Extensions;
-using MegaApp.Models;
+using MegaApp.ViewModels;
 
 namespace MegaApp.Converters
 {

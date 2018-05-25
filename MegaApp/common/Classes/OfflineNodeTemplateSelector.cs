@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using Telerik.Windows.Controls;
-using MegaApp.Models;
+using MegaApp.ViewModels;
 
 namespace MegaApp.Classes
 {

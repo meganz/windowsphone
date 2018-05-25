@@ -17,10 +17,10 @@ using MegaApp.Classes;
 using MegaApp.Dialogs;
 using MegaApp.Enums;
 using MegaApp.MegaApi;
-using MegaApp.Models;
-using MegaApp.Pages;
 using MegaApp.Resources;
 using MegaApp.UserControls;
+using MegaApp.ViewModels;
+using MegaApp.Views;
 
 namespace MegaApp.Services
 {
