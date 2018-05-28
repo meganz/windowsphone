@@ -94,7 +94,8 @@
                                         FontFamily="Portable User Interface"
                                         FontSize="{StaticResource PhoneFontSizeMedium}"
                                         Foreground="{StaticResource MegaRedSolidColorBrush}"
-                                        HorizontalAlignment="Left" />
+                                        HorizontalAlignment="Left"
+                                        Style="{StaticResource HyperlinkButtonStyle}" />
                                 </StackPanel>
                             </CheckBox>
                         </StackPanel>

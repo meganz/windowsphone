@@ -28,7 +28,8 @@
                 Content="{Binding LocalizedUiResources.UI_LearnMore, Source={StaticResource LocalizedStrings}}"
                 FontSize="{StaticResource PhoneFontSizeNormal}"
                 Foreground="{StaticResource MegaRedSolidColorBrush}"
-                HorizontalAlignment="Left" />
+                HorizontalAlignment="Left"
+                Style="{StaticResource HyperlinkButtonStyle}" />
         </ControlTemplate>
     </userControls:MegaPhoneApplicationPage.Resources>
     
@@ -136,7 +137,7 @@
                             </Grid>                            
                             <TextBlock x:Name="TextDefaultDownloadLocation" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.DefaultDownloadLocationText, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,10,0,0" Foreground="{StaticResource PhoneSubtleBrush}"/>
                             <HyperlinkButton x:Name="LinkDefaultDownloadLocation" Command="{Binding SelectDownloadLocationCommand}" IsEnabled="{Binding DownloadLocationSelectionIsEnabled}" VerticalAlignment="Center" Margin="0,10,0,40" FontFamily="Portable User Interface" HorizontalAlignment="Left" Content="{Binding StandardDownloadLocation}" 
-                                             FontSize="{StaticResource PhoneFontSizeNormal}" Style="{StaticResource HyperlinkButtonWrappingStyle}"/>
+                                             FontSize="{StaticResource PhoneFontSizeNormal}" Style="{StaticResource UndelineHyperlinkButtonStyle}"/>
 
                             <StackPanel x:Name="DebugPanel" Margin="0,0,0,40" Visibility="{Binding IsDebugMode, Converter={StaticResource BooleanToVisibilityConverter}}">
                                 <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.UI_DebugMode, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,12,0" Style="{StaticResource PhoneTextSubtleStyle}" FontSize="{StaticResource PhoneFontSizeLarge}">
@@ -200,7 +201,8 @@
                                         FontSize="{StaticResource PhoneFontSizeNormal}"
                                         Foreground="{StaticResource MegaRedSolidColorBrush}"
                                         HorizontalAlignment="Right" 
-                                        VerticalAlignment="Center"/>
+                                        VerticalAlignment="Center"
+                                        Style="{StaticResource HyperlinkButtonStyle}"/>
                                 </Grid>
                             </Grid>
 
@@ -234,7 +236,8 @@
                                     FontSize="{StaticResource PhoneFontSizeNormal}"
                                     Foreground="{StaticResource MegaRedSolidColorBrush}"
                                     HorizontalAlignment="Right"                                     
-                                    VerticalAlignment="Center"/>
+                                    VerticalAlignment="Center"
+                                    Style="{StaticResource HyperlinkButtonStyle}"/>
                             </Grid>
                             
                             <!-- LEGAL AND POLICIES -->                            
