@@ -345,7 +345,7 @@ namespace MegaApp.Services
             customMessageDialog.OkOrYesButtonTapped += (sender, args) =>
             {
                 ((PhoneApplicationFrame) Application.Current.RootVisual).Navigate(
-                    new Uri("/Pages/MyAccountPage.xaml?Pivot=1", UriKind.RelativeOrAbsolute));
+                    new Uri("/Views/MyAccountPage.xaml?Pivot=1", UriKind.RelativeOrAbsolute));
             };
 
             customMessageDialog.ShowDialog();
@@ -357,7 +357,7 @@ namespace MegaApp.Services
                 UiResources.UI_UpgradeAccount, () =>
                 {
                     ((PhoneApplicationFrame)Application.Current.RootVisual).Navigate(
-                        new Uri("/Pages/MyAccountPage.xaml?Pivot=1", UriKind.RelativeOrAbsolute));
+                        new Uri("/Views/MyAccountPage.xaml?Pivot=1", UriKind.RelativeOrAbsolute));
                 });
 
             var customMessageDialog = new CustomMessageDialog(AppMessages.AM_TransferOverquotaWarning_Title,

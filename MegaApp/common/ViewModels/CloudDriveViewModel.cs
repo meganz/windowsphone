@@ -282,7 +282,7 @@ namespace MegaApp.ViewModels
         //    };
 
         //    LiveTileHelper.CreateOrUpdateTile(shortCutTile,
-        //        new Uri("/Pages/MainPage.xaml?ShortCutHandle=" + FocusedNode.OriginalMNode.getHandle(), UriKind.Relative),
+        //        new Uri("/Views/MainPage.xaml?ShortCutHandle=" + FocusedNode.OriginalMNode.getHandle(), UriKind.Relative),
         //        false);
         //}
 
