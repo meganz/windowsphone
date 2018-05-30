@@ -9,16 +9,16 @@ using System.Windows.Navigation;
 using Windows.Storage;
 using Microsoft.Phone.Net.NetworkInformation;
 using Microsoft.Phone.Shell;
+using Telerik.Windows.Controls;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Database;
 using MegaApp.Enums;
 using MegaApp.MegaApi;
-using MegaApp.Models;
-using MegaApp.Pages;
 using MegaApp.Resources;
 using MegaApp.Services;
-using Telerik.Windows.Controls;
+using MegaApp.ViewModels;
+using MegaApp.Views;
 
 #if WINDOWS_PHONE_81
     using Windows.ApplicationModel.Activation;

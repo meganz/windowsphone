@@ -5,12 +5,12 @@ using System.Windows.Media.Imaging;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
-using MegaApp.Models;
-using MegaApp.Pages;
 using MegaApp.Resources;
 using Microsoft.Phone.Scheduler;
 using Microsoft.Phone.Tasks;
 using Microsoft.Xna.Framework.Media;
+using MegaApp.ViewModels;
+using MegaApp.Views;
 
 namespace MegaApp.Services
 {

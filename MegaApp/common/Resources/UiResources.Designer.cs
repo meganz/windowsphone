@@ -1960,6 +1960,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Backup Recovery Key.
+        /// </summary>
+        public static string UI_BackupRecoveryKey {
+            get {
+                return ResourceManager.GetString("UI_BackupRecoveryKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Cancel downloads.
         /// </summary>
         public static string UI_CancelDownloads {
@@ -1992,6 +2001,15 @@ namespace MegaApp.Resources {
         public static string UI_ChangePassword {
             get {
                 return ResourceManager.GetString("UI_ChangePassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Close.
+        /// </summary>
+        public static string UI_Close {
+            get {
+                return ResourceManager.GetString("UI_Close", resourceCulture);
             }
         }
         
@@ -2118,6 +2136,15 @@ namespace MegaApp.Resources {
         public static string UI_DecryptionKey {
             get {
                 return ResourceManager.GetString("UI_DecryptionKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Don’t show me again.
+        /// </summary>
+        public static string UI_DoNotShowMeAgain {
+            get {
+                return ResourceManager.GetString("UI_DoNotShowMeAgain", resourceCulture);
             }
         }
         
@@ -2383,6 +2410,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Plain text.
+        /// </summary>
+        public static string UI_PlainText {
+            get {
+                return ResourceManager.GetString("UI_PlainText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a (PRO ONLY).
         /// </summary>
         public static string UI_ProOnly {
@@ -2442,6 +2478,15 @@ namespace MegaApp.Resources {
         public static string UI_TakedownGuidance {
             get {
                 return ResourceManager.GetString("UI_TakedownGuidance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Test Password.
+        /// </summary>
+        public static string UI_TestPassword {
+            get {
+                return ResourceManager.GetString("UI_TestPassword", resourceCulture);
             }
         }
         

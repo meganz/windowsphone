@@ -8,10 +8,10 @@ using System.Windows.Media;
 using mega;
 using MegaApp.Enums;
 using MegaApp.Classes;
-using MegaApp.Models;
-using MegaApp.Pages;
 using MegaApp.Resources;
 using MegaApp.Services;
+using MegaApp.ViewModels;
+using MegaApp.Views;
 
 namespace MegaApp.MegaApi
 {

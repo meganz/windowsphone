@@ -6,8 +6,8 @@ using System.Windows.Data;
 using System.Windows.Media;
 using mega;
 using MegaApp.Enums;
-using MegaApp.Models;
 using MegaApp.Resources;
+using MegaApp.ViewModels;
 
 namespace MegaApp.Converters
 {

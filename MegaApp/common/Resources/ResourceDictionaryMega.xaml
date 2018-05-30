@@ -10,11 +10,14 @@
     xmlns:primitives="clr-namespace:Microsoft.Phone.Controls.Primitives;assembly=Microsoft.Phone"
     xmlns:system="clr-namespace:System;assembly=mscorlib">
 
-    <!-- Resource dictionary entries should be defined here. -->
-
+    <!--  OVERRIDE SYSTEM ACCENT COLOR  -->
+    <Color x:Key="PhoneAccentColor">#EB4444</Color>
+    
     <!-- COLOR DEFINITIONS -->
-    <Color x:Key="MegaRedColor">#D90007</Color>
+    <Color x:Key="MegaRedColor">#EB4444</Color>
+    <Color x:Key="MegaRedDisabledColor">#7DEB4444</Color>
     <SolidColorBrush x:Key="MegaRedSolidColorBrush" Color="{StaticResource MegaRedColor}"/>
+    <SolidColorBrush x:Key="MegaRedDisabledColorBrush" Color="{StaticResource MegaRedDisabledColor}"/>
 
     <system:Double x:Key="InformationFontSize">14</system:Double>
 

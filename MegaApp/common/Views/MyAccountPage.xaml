@@ -1,0 +1,289 @@
+﻿<userControls:PhoneDrawerLayoutPage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:converters="clr-namespace:MegaApp.Converters"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Core"
+    xmlns:telerikChart="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Chart"
+    xmlns:charting="clr-namespace:Telerik.Charting;assembly=Telerik.Windows.Controls.Chart"
+    xmlns:telerikDataVisualization="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.DataVisualization"
+    xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
+    xmlns:userControls="clr-namespace:MegaApp.UserControls"
+    xmlns:models="clr-namespace:MegaApp.ViewModels"
+    x:Class="MegaApp.Views.MyAccountPage"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True"
+    shell:SystemTray.BackgroundColor="{StaticResource PhoneChromeColor}"
+    d:DataContext="{d:DesignInstance models:MyAccountPageViewModel}">
+
+    <userControls:MegaPhoneApplicationPage.Resources>
+        <converters:LongToReadableSizeConverter x:Key="LongToReadableSizeConverter"/>
+
+        <shell:ApplicationBar x:Key="MyAccountMenu">
+            <shell:ApplicationBarIconButton IconUri="\Assets\Appbar\settings.png" Text="settings" Click="OnSettingsClick"/>
+            <shell:ApplicationBarIconButton IconUri="\Assets\Appbar\logout.png" Text="logout" Click="OnLogoutClick" />
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="change password" Click="OnChangePasswordClick" />                
+                <shell:ApplicationBarMenuItem Text="clear cache" Click="OnClearCacheClick"/>
+                <shell:ApplicationBarMenuItem Text="close all sessions" Click="OnCloseAllSessionsClick"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </userControls:MegaPhoneApplicationPage.Resources>
+
+    <userControls:MegaPhoneApplicationPage.FontFamily>
+        <StaticResource ResourceKey="PhoneFontFamilyNormal"/>
+    </userControls:MegaPhoneApplicationPage.FontFamily>
+    <userControls:MegaPhoneApplicationPage.FontSize>
+        <StaticResource ResourceKey="PhoneFontSizeNormal"/>
+    </userControls:MegaPhoneApplicationPage.FontSize>
+    <userControls:MegaPhoneApplicationPage.Foreground>
+        <StaticResource ResourceKey="PhoneForegroundBrush"/>
+    </userControls:MegaPhoneApplicationPage.Foreground>
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <userControls:DrawerLayout x:Name="MainDrawerLayout">
+        <Grid x:Name="LayoutRoot" Background="Transparent">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="84"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid x:Name="HeaderGrid" Background="{StaticResource PhoneChromeBrush}" Margin="0,-6,0,0">
+                <Button x:Name="BtnHamburger" HorizontalAlignment="Left" Style="{StaticResource AppBarButtonStyleNoBorder}" VerticalAlignment="Center" Width="48" Height="48" Margin="12,0,0,0" Tap="OnHamburgerTap">
+                    <Path Data="{Binding LocalizedVisualResources.HamburgerPathData, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Height="20" Width="24" HorizontalAlignment="Left" Stretch="UniformToFill" VerticalAlignment="Center" FlowDirection="LeftToRight" StrokeThickness="0">
+                        <Path.Fill>
+                            <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                        </Path.Fill>
+                    </Path>
+                </Button>
+            </Grid>
+
+            <phone:Pivot x:Name="PivotAccountInformation" Grid.Row="1" HeaderTemplate="{StaticResource PivotMegaHeaderTemplate}" Margin="0,-4,0,0">
+                <phone:PivotItem x:Name="PivotAccount" Header="{Binding LocalizedUiResources.MyAccount, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Loaded="OnPivotLoaded" Margin="12,0">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Ellipse HorizontalAlignment="Center" Height="190" Stroke="Black" VerticalAlignment="Center" Width="190">
+                            <Ellipse.Fill>
+                                <SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        <Ellipse x:Name="AvatarLetterBackgroud" HorizontalAlignment="Center" Height="180" VerticalAlignment="Center" Width="180">
+                            <Ellipse.Fill>
+                                <SolidColorBrush Color="{Binding AccountDetails.AvatarColor}"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        <TextBlock x:Name="AvatarLetter" Margin="0,0,0,8" Text="{Binding AccountDetails.AvatarLetter}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeExtraExtraLarge}" Style="{StaticResource PhoneTextTitle1Style}"/>
+                        <Image x:Name="ImgAvatar" HorizontalAlignment="Center" Height="180" VerticalAlignment="Center" Width="180" Stretch="UniformToFill" Visibility="{Binding AccountDetails.HasAvatarImage, Converter={StaticResource BooleanToVisibilityConverter}}">
+                            <Image.Clip>
+                                <EllipseGeometry Center="90,90" RadiusX="90" RadiusY="90" />
+                            </Image.Clip>
+                            <Image.Source>
+                                <BitmapImage UriSource="{Binding AccountDetails.AvatarUri}" />
+                            </Image.Source>
+                        </Image>
+                        <StackPanel x:Name="StackUserInfo" Grid.Column="1" VerticalAlignment="Center">
+                            <TextBlock Text="{Binding AccountDetails.UserName}" TextTrimming="WordEllipsis" MaxHeight="128" Margin="0,0,0,10" TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeLarge}" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource PhoneTextTitle1Style}"/>
+                            <TextBlock Text="{Binding AccountDetails.UserEmail}" Margin="0,0,0,10" TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeNormal}" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                            <Grid HorizontalAlignment="Left">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Image x:Name="ImgAccountType" Source="{Binding AccountDetails.AccountTypeUri}" Stretch="None" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                <TextBlock Text="{Binding AccountDetails.AccountTypeText}" FontSize="{StaticResource PhoneFontSizeMedium}" FontFamily="Segoe WP Semibold" Grid.Column="1" Margin="12,0"/>
+                            </Grid>
+                            <StackPanel Visibility="{Binding AccountDetails.IsProAccount, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                <RichTextBox Grid.Row="0" Margin="-12,0,0,10" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center" Visibility="{Binding AccountDetails.IsValidSubscription, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                    <Paragraph>
+                                        <Run Text="{Binding LocalizedUiResources.RenewsOn, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" FontSize="{StaticResource PhoneFontSizeNormal}"/>
+                                        <Run Text="{Binding AccountDetails.SubscriptionRenewDate}" Foreground="{StaticResource MegaRedSolidColorBrush}"/>
+                                    </Paragraph>
+                                </RichTextBox>
+                                <RichTextBox Grid.Row="0" Margin="-12,0,0,10" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center" Visibility="{Binding AccountDetails.IsValidSubscription, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=false}">
+                                    <Paragraph>
+                                        <Run Text="{Binding LocalizedUiResources.ExpiresOn, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" FontSize="{StaticResource PhoneFontSizeNormal}"/>
+                                        <Run Text="{Binding AccountDetails.ProExpirationDate}" Foreground="{StaticResource MegaRedSolidColorBrush}"/>
+                                    </Paragraph>
+                                </RichTextBox>
+                            </StackPanel>                            
+                        </StackPanel>
+                        <Ellipse Grid.Row="1" HorizontalAlignment="Center" Height="190" Stroke="Black" VerticalAlignment="Center" Width="190">
+                            <Ellipse.Fill>
+                                <SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        <telerikChart:RadPieChart x:Name="AccountPieChart" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="{StaticResource PhoneFontSizeNormal}" EmptyContent="{Binding LocalizedUiResources.NoDataToShow, Source={StaticResource LocalizedStrings}}" Grid.Row="1" Width="180" Height="180">
+                            <telerikChart:DoughnutSeries ShowLabels="False" ItemsSource="{Binding AccountDetails.PieChartCollection}" DataBindingComplete="OnPieDataBindingComplete" InnerRadiusFactor="0.80" LabelOffset="8">
+                                <!--<telerikChart:PieSeries.LabelDefinitions>
+                                    <telerikChart:ChartSeriesLabelDefinition>
+                                        <telerikChart:ChartSeriesLabelDefinition.Template>
+                                            <DataTemplate>
+                                                <StackPanel>
+                                                    <TextBlock Text="{Binding DataItem.Label}" HorizontalAlignment="Center"/>
+                                                    <TextBlock Text="{Binding Percent, StringFormat=\{0:N\} %}" HorizontalAlignment="Center"/>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </telerikChart:ChartSeriesLabelDefinition.Template>
+                                    </telerikChart:ChartSeriesLabelDefinition>
+                                </telerikChart:PieSeries.LabelDefinitions>-->
+                                <telerikChart:PieSeries.ValueBinding>
+                                    <telerikChart:PropertyNameDataPointBinding PropertyName="Value" />
+                                </telerikChart:PieSeries.ValueBinding>
+                                <telerikChart:PieSeries.SliceStyles>
+                                    <Style TargetType="Path">
+                                        <Setter Property="Fill" Value="#FF2BA6DE"/>
+                                        <!--<Setter Property="Stroke" Value="{StaticResource PhoneContrastBackgroundColor}"/>-->
+                                    </Style>
+                                    <Style TargetType="Path">
+                                        <Setter Property="Fill" Value="Gray"/>
+                                        <!--<Setter Property="Stroke" Value="{StaticResource PhoneContrastBackgroundColor}"/>-->
+                                    </Style>
+                                </telerikChart:PieSeries.SliceStyles>
+                                <telerikChart:PieSeries.AngleRange>
+                                    <charting:AngleRange StartAngle="270" SweepAngle="360"/>
+                                </telerikChart:PieSeries.AngleRange>
+                            </telerikChart:DoughnutSeries>
+                        </telerikChart:RadPieChart>
+                        <StackPanel Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="{Binding AccountDetails.IsDataLoaded, Converter={StaticResource BooleanToVisibilityConverter}}">
+                            <TextBlock Text="{Binding AccountDetails.TotalSpaceSize}" FontSize="{StaticResource PhoneFontSizeExtraLarge}"/>
+                            <TextBlock Text="{Binding AccountDetails.TotalSpaceUnits}" FontSize="{StaticResource PhoneFontSizeNormal}" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                        <StackPanel VerticalAlignment="Center" Grid.Row="1" Grid.Column="1">
+                            <Grid x:Name="StorageSpaceGrid">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Ellipse HorizontalAlignment="Left" Height="30" Stroke="Black" VerticalAlignment="Top" Width="30" Fill="#FF13E03C"/>
+                                <TextBlock HorizontalAlignment="Left" Text="{Binding LocalizedUiResources.Total, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Grid.Column="1" FontSize="{StaticResource PhoneFontSizeNormal}" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                                <TextBlock HorizontalAlignment="Right" Text="{Binding AccountDetails.TotalSpace, Converter={StaticResource LongToReadableSizeConverter}}" VerticalAlignment="Center" Grid.Column="2" FontSize="{StaticResource PhoneFontSizeNormal}" Margin="0,-6,0,0"/>
+                            </Grid>
+                            <Grid x:Name="UsedSpaceGrid" Margin="0,25">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Ellipse HorizontalAlignment="Center" Height="30" Stroke="Black" VerticalAlignment="Center" Width="30" Fill="#FF2BA6DE"/>
+                                <TextBlock HorizontalAlignment="Left" Text="{Binding LocalizedUiResources.Used, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Grid.Column="1" FontSize="{StaticResource PhoneFontSizeNormal}" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                                <TextBlock HorizontalAlignment="Right" Text="{Binding AccountDetails.UsedSpace, Converter={StaticResource LongToReadableSizeConverter}}" VerticalAlignment="Center" Grid.Column="2" FontSize="{StaticResource PhoneFontSizeNormal}" Margin="0,-6,0,0"/>
+                            </Grid>
+                            <Grid x:Name="FreeSpaceGrid">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Ellipse HorizontalAlignment="Center" Height="30" Stroke="Black" VerticalAlignment="Center" Width="30" Fill="Gray"/>
+                                <TextBlock HorizontalAlignment="Left" Text="{Binding LocalizedUiResources.Available, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Grid.Column="1" FontSize="{StaticResource PhoneFontSizeNormal}" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                                <TextBlock HorizontalAlignment="Right" Text="{Binding AccountDetails.FreeSpace, Converter={StaticResource LongToReadableSizeConverter}}" VerticalAlignment="Center" Grid.Column="2" FontSize="{StaticResource PhoneFontSizeNormal}" Margin="0,-6,0,0"/>
+                            </Grid>
+                        </StackPanel>
+                        <ProgressBar x:Name="ProgressCache" Height="30" Maximum="{Binding AccountDetails.MaxCache}" Value="{Binding AccountDetails.CacheSize}" VerticalAlignment="Center" Grid.Row="2" Margin="12,0,12,12">
+                            <ProgressBar.Foreground>
+                                <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
+                            </ProgressBar.Foreground>
+                        </ProgressBar>
+                        <Grid x:Name="CacheSpaceGrid" Grid.Row="2" Grid.Column="1" Margin="0,0,0,12" VerticalAlignment="Center">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Ellipse HorizontalAlignment="Center" Height="30" Stroke="Black" VerticalAlignment="Center" Width="30">
+                                <Ellipse.Fill>
+                                    <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                            <TextBlock HorizontalAlignment="Left" Text="{Binding LocalizedUiResources.Cache, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Grid.Column="1" FontSize="{StaticResource PhoneFontSizeNormal}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="12,-6,12,0"/>
+                            <TextBlock HorizontalAlignment="Right" Text="{Binding AccountDetails.CacheSize, Converter={StaticResource LongToReadableSizeConverter}}" VerticalAlignment="Center" Grid.Column="2" FontSize="{StaticResource PhoneFontSizeNormal}" Margin="0,-6,0,0"/>
+                        </Grid>
+                    </Grid>
+                </phone:PivotItem>
+                <phone:PivotItem x:Name="PivotSubscription" CacheMode="{x:Null}" Header="{Binding LocalizedUiResources.UI_UpgradeAccount, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Loaded="OnPivotLoaded">
+                    <Grid>
+                        <Grid Visibility="{Binding IsAccountUpdate, ConverterParameter=false, Converter={StaticResource BooleanToVisibilityConverter}}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Grid.Row="0" Text="{Binding EmptyInformationText}" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" VerticalAlignment="Center" Margin="0" Visibility="{Binding UpgradeAccount.HasAvailablePlans, ConverterParameter=false, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                            <telerikPrimitives:RadDataBoundListBox
+                                x:Name="LstPlans"
+                                Grid.Row="1"
+                                telerik:InteractionEffectManager.IsInteractionEnabled="True" 
+                                ItemTemplate="{StaticResource ProductItemTemplate}" 
+                                ItemsSource="{Binding UpgradeAccount.Plans}"
+                                EmptyContentDisplayMode="DataSourceEmpty"
+                                EmptyContent="{Binding LocalizedUiResources.NoPlansToDisplay, Source={StaticResource LocalizedStrings}}" 
+                                EmptyContentTemplate="{Binding EmptyContentTemplate}"
+                                ItemTap="OnItemTap"/>
+                        </Grid>                        
+                        
+                        <StackPanel Visibility="{Binding IsAccountUpdate, Converter={StaticResource BooleanToVisibilityConverter}}">
+                            <ContentPresenter x:Name="ProductPurchased" ContentTemplate="{StaticResource ProductItemTemplate}" Content="{Binding UpgradeAccount.ProductPurchased}"/>
+                            <TextBlock Text="{Binding LocalizedUiResources.Awesome, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap" Margin="12,24" FontSize="{StaticResource PhoneFontSizeExtraLarge}"/>
+                            <TextBlock Text="{Binding AccountDetails.PurchaseAccountTypeText}" TextWrapping="Wrap" Margin="12,24" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
+                            <TextBlock Text="{Binding AccountDetails.PurchaseAccountRenewalText}" TextWrapping="Wrap" Visibility="{Binding AccountDetails.IsValidSubscription, Converter={StaticResource BooleanToVisibilityConverter}}" Margin="12,24"/>
+                        </StackPanel>
+                    </Grid>
+                </phone:PivotItem>
+            </phone:Pivot>
+        </Grid>
+        <Grid x:Name="SlideInGrid" Background="{StaticResource PhoneChromeBrush}" Margin="0,-4,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Height="100" Margin="0,50,0,48">
+                <Button x:Name="BtnMyAccount" Width="420" Style="{StaticResource ButtonStyleNoBorder}" HorizontalAlignment="Left" VerticalAlignment="Center" Tap="OnMyAccountTap">
+                    <Grid HorizontalAlignment="Left" VerticalAlignment="Center" Width="420">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Ellipse x:Name="HamburgerAvatarLetterBackgroud" Grid.Column="0" HorizontalAlignment="Left" Height="72" Stroke="Black" VerticalAlignment="Center" Width="72" Margin="24,0">
+                            <Ellipse.Fill>
+                                <SolidColorBrush Color="{Binding AccountDetails.AvatarColor}"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        <TextBlock x:Name="HamburgerAvatarLetter" Margin="0,0,0,8" Text="{Binding AccountDetails.AvatarLetter}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeExtraLarge}" Style="{StaticResource PhoneTextTitle1Style}"/>
+                        <Image x:Name="ImgAvatarMenu" Source="{Binding AccountDetails.AvatarUri}" HorizontalAlignment="Center" Height="72" VerticalAlignment="Center" Width="72" Stretch="UniformToFill">
+                            <Image.Clip>
+                                <EllipseGeometry Center="36,36" RadiusX="36" RadiusY="36" />
+                            </Image.Clip>
+                        </Image>
+                        <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,-12,12,0">
+                            <TextBlock Text="{Binding AccountDetails.UserName}" TextTrimming="WordEllipsis" FontFamily="Segoe WP" FontSize="30" Foreground="{StaticResource PhoneDisabledBrush}"/>
+                            <TextBlock Text="{Binding AccountDetails.UserEmail}" TextTrimming="WordEllipsis" FontFamily="Segoe WP SemiLight" FontSize="20" Foreground="{StaticResource PhoneDisabledBrush}"/>
+                        </StackPanel>
+                    </Grid>
+                </Button>
+            </Grid>
+            <telerikPrimitives:RadDataBoundListBox 
+                x:Name="LstHamburgerMenu" 
+                Grid.Row="1" 
+                ItemsSource="{Binding MenuItems}" 
+                ItemTap="OnHamburgerMenuItemTap" 
+                ItemTemplate="{StaticResource HamburgerMenuItem}" 
+                ScrollViewer.VerticalScrollBarVisibility="Disabled" 
+                telerik:InteractionEffectManager.IsInteractionEnabled="True" 
+             />
+        </Grid>
+    </userControls:DrawerLayout>
+
+</userControls:PhoneDrawerLayoutPage>

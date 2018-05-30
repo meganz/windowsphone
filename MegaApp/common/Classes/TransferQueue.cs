@@ -5,8 +5,8 @@ using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Linq;
 using mega;
-using MegaApp.Models;
 using MegaApp.Services;
+using MegaApp.ViewModels;
 
 namespace MegaApp.Classes
 {

@@ -14,12 +14,13 @@ using Telerik.Windows.Controls;
 using Telerik.Windows.Data;
 using mega;
 using MegaApp.Classes;
+using MegaApp.Dialogs;
 using MegaApp.Enums;
 using MegaApp.MegaApi;
-using MegaApp.Models;
-using MegaApp.Pages;
 using MegaApp.Resources;
 using MegaApp.UserControls;
+using MegaApp.ViewModels;
+using MegaApp.Views;
 
 namespace MegaApp.Services
 {
@@ -1467,6 +1468,16 @@ namespace MegaApp.Services
             changePasswordRadWindow.Content = grid;
 
             changePasswordRadWindow.IsOpen = true;
+        }
+
+        /// <summary>
+        /// Show a dialog to check if the user remember the account password
+        /// </summary>
+        /// <param name="atLogout">True if the dialog is being displayed just before a logout</param>
+        public static void ShowPasswordReminderDialog(bool atLogout)
+        {
+            var passwordReminderDialog = new PasswordReminderDialog(atLogout);
+            passwordReminderDialog.ShowDialog();
         }
 
         public static async Task<MessageDialogResult> ShowOptionsDialog(string title, string message, IEnumerable<DialogButton> buttons)

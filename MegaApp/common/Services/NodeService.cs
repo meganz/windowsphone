@@ -7,7 +7,7 @@ using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.Interfaces;
-using MegaApp.Models;
+using MegaApp.ViewModels;
 
 namespace MegaApp.Services
 {
