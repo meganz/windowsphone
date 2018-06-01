@@ -241,7 +241,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a /Pages/.
+        ///   Busca una cadena traducida similar a /Views/.
         /// </summary>
         public static string PagesLocation {
             get {

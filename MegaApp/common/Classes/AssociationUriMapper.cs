@@ -149,14 +149,14 @@ namespace MegaApp.Classes
                     });
 
                     App.LinkInformation.Reset();
-                    return new Uri("/Pages/MainPage.xaml", UriKind.Relative);
+                    return new Uri("/Views/MainPage.xaml", UriKind.Relative);
                 }
             }
 
             // User has selected a folder shortcut
             if (tempUri.Contains("ShortCutBase64Handle"))
             {
-                App.ShortCutBase64Handle = tempUri.Replace(@"/Pages/MainPage.xaml?ShortCutBase64Handle=", String.Empty);
+                App.ShortCutBase64Handle = tempUri.Replace(@"/Views/MainPage.xaml?ShortCutBase64Handle=", String.Empty);
             }
 
             // User has selected MEGA app for operating system auto upload function 

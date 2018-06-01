@@ -853,7 +853,7 @@ namespace MegaApp.ViewModels
             };
 
             LiveTileHelper.CreateOrUpdateTile(shortCutTile,
-                new Uri("/Pages/MainPage.xaml?ShortCutBase64Handle=" + FocusedNode.OriginalMNode.getBase64Handle(), UriKind.Relative),
+                new Uri("/Views/MainPage.xaml?ShortCutBase64Handle=" + FocusedNode.OriginalMNode.getBase64Handle(), UriKind.Relative),
                 false);
         }
 
