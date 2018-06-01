@@ -124,7 +124,52 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a https://github.com/meganz/sdk/tree/a6a7e37a22d78f4679f554c29c98beaf3a047985.
+        ///   Busca una cadena traducida similar a https://mega.nz/copyright.
+        /// </summary>
+        public static string AR_CopyrightUrl {
+            get {
+                return ResourceManager.GetString("AR_CopyrightUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a https://mega.nz/gdpr.
+        /// </summary>
+        public static string AR_DataProtectionRegulationUrl {
+            get {
+                return ResourceManager.GetString("AR_DataProtectionRegulationUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a https://mega.nz/general.
+        /// </summary>
+        public static string AR_GeneralLegalUrl {
+            get {
+                return ResourceManager.GetString("AR_GeneralLegalUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a https://mega.nz.
+        /// </summary>
+        public static string AR_MegaUrl {
+            get {
+                return ResourceManager.GetString("AR_MegaUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a https://mega.nz/privacy.
+        /// </summary>
+        public static string AR_PrivacyPolicyUrl {
+            get {
+                return ResourceManager.GetString("AR_PrivacyPolicyUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a https://github.com/meganz/sdk/tree/0cdef20b9e25beefdb0475b2d8bcd2436058791e.
         /// </summary>
         public static string AR_SdkLink {
             get {
@@ -133,11 +178,29 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a a6a7e37.
+        ///   Busca una cadena traducida similar a 0cdef20.
         /// </summary>
         public static string AR_SdkVersion {
             get {
                 return ResourceManager.GetString("AR_SdkVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a https://mega.nz/takedown.
+        /// </summary>
+        public static string AR_TakedownGuidanceUrl {
+            get {
+                return ResourceManager.GetString("AR_TakedownGuidanceUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a https://mega.nz/terms.
+        /// </summary>
+        public static string AR_TermsOfServiceUrl {
+            get {
+                return ResourceManager.GetString("AR_TermsOfServiceUrl", resourceCulture);
             }
         }
         
@@ -192,15 +255,6 @@ namespace MegaApp.Resources {
         public static string PreviewsDirectory {
             get {
                 return ResourceManager.GetString("PreviewsDirectory", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a https://mega.nz/mobile_privacy.html.
-        /// </summary>
-        public static string PrivacyPolicyUrl {
-            get {
-                return ResourceManager.GetString("PrivacyPolicyUrl", resourceCulture);
             }
         }
         
@@ -291,15 +345,6 @@ namespace MegaApp.Resources {
         public static string ResourceLanguage {
             get {
                 return ResourceManager.GetString("ResourceLanguage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a https://mega.nz/mobile_terms.html.
-        /// </summary>
-        public static string TermsOfServiceUrl {
-            get {
-                return ResourceManager.GetString("TermsOfServiceUrl", resourceCulture);
             }
         }
         

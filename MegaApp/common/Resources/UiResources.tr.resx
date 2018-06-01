@@ -751,7 +751,7 @@ Preserve the {0} code because is for include the name/type of the selected plan 
     <comment>Label for any 'Year' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="RenewsOn" xml:space="preserve">
-    <value>Şu tarihte yenilenir: </value>
+    <value>Şu tarihte yenilenir:</value>
     <comment>Label for the 'Renews on' text into the my account page, indicating the renewal date of a subscription - (String as short as possible).</comment>
   </data>
   <data name="AccountPurchased" xml:space="preserve">
@@ -1045,7 +1045,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Upgrade account' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_ChangePassword" xml:space="preserve">
-    <value>Şifre değiştir</value>
+    <value>Parola değiştir</value>
     <comment>Label for any 'Change password' button, menu, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_CancelSubscription" xml:space="preserve">
@@ -1257,7 +1257,7 @@ Keep the code {1} because is for include currency in runtime.</comment>
     <comment>Label for any 'First name' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_Password" xml:space="preserve">
-    <value>Şifre</value>
+    <value>Parola</value>
     <comment>Label for any 'Password' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_ConfirmPinLock" xml:space="preserve">
@@ -1290,5 +1290,33 @@ Preserve the PIN uppercase word.</comment>
   <data name="UI_ViewTermsOfService" xml:space="preserve">
     <value>Hizmet Şartlarını burada görüntüle</value>
     <comment>Text used as a link to view the 'Terms of Service' into the 'create account' page.</comment>
+  </data>
+  <data name="UI_DataProtectionRegulation" xml:space="preserve">
+    <value>Data Protection Regulation</value>
+    <comment>Label for any 'Data Protection Regulation' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_LegalAndPolicies" xml:space="preserve">
+    <value>Yasal ve Politikalar</value>
+    <comment>Label for the title of the "Legal and Policies" section which include links to the Terms of Service, Privacy Policy, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_Copyright" xml:space="preserve">
+    <value>Telif Hakkı</value>
+    <comment>Label for any 'Copyright' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_LearnMore" xml:space="preserve">
+    <value>Dahası</value>
+    <comment>Label for any 'Learn more' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_TakedownGuidance" xml:space="preserve">
+    <value>Belge Kaldırtma Kılavuzu</value>
+    <comment>Label for any 'Takedown Guidance' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_OpenBrowser" xml:space="preserve">
+    <value>Tarayıcıyı aç</value>
+    <comment>Label for the button to allow the user open the default browser - (String as short as possible).</comment>
+  </data>
+  <data name="UI_Retry" xml:space="preserve">
+    <value>Yeniden Dene</value>
+    <comment>Label for any 'Retry' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
 </root>

@@ -862,7 +862,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a keep your files safe with MEGA’s.
+        ///   Busca una cadena traducida similar a keep your files safe with MEGA&apos;s.
         /// </summary>
         public static string InitTourPrivacy1 {
             get {
@@ -970,7 +970,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Loading preview….
+        ///   Busca una cadena traducida similar a Loading preview....
         /// </summary>
         public static string LoadingPreview {
             get {
@@ -2059,6 +2059,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Copyright.
+        /// </summary>
+        public static string UI_Copyright {
+            get {
+                return ResourceManager.GetString("UI_Copyright", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Create account.
         /// </summary>
         public static string UI_CreateAccount {
@@ -2073,6 +2082,15 @@ namespace MegaApp.Resources {
         public static string UI_CreateFolder {
             get {
                 return ResourceManager.GetString("UI_CreateFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Data Protection Regulation.
+        /// </summary>
+        public static string UI_DataProtectionRegulation {
+            get {
+                return ResourceManager.GetString("UI_DataProtectionRegulation", resourceCulture);
             }
         }
         
@@ -2203,6 +2221,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Learn more.
+        /// </summary>
+        public static string UI_LearnMore {
+            get {
+                return ResourceManager.GetString("UI_LearnMore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Legal and Policies.
+        /// </summary>
+        public static string UI_LegalAndPolicies {
+            get {
+                return ResourceManager.GetString("UI_LegalAndPolicies", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Link with key.
         /// </summary>
         public static string UI_LinkWithKey {
@@ -2293,6 +2329,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Open browser.
+        /// </summary>
+        public static string UI_OpenBrowser {
+            get {
+                return ResourceManager.GetString("UI_OpenBrowser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Open link.
         /// </summary>
         public static string UI_OpenLink {
@@ -2365,6 +2410,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Retry.
+        /// </summary>
+        public static string UI_Retry {
+            get {
+                return ResourceManager.GetString("UI_Retry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Set expiry date.
         /// </summary>
         public static string UI_SetExpirationDate {
@@ -2383,6 +2437,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Takedown Guidance.
+        /// </summary>
+        public static string UI_TakedownGuidance {
+            get {
+                return ResourceManager.GetString("UI_TakedownGuidance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Canceled.
         /// </summary>
         public static string UI_TransferStateCanceled {
@@ -2392,7 +2455,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Completing….
+        ///   Busca una cadena traducida similar a Completing....
         /// </summary>
         public static string UI_TransferStateCompleting {
             get {
@@ -2410,7 +2473,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Downloading….
+        ///   Busca una cadena traducida similar a Downloading....
         /// </summary>
         public static string UI_TransferStateDownloading {
             get {
@@ -2446,7 +2509,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Preparing….
+        ///   Busca una cadena traducida similar a Preparing....
         /// </summary>
         public static string UI_TransferStatePreparing {
             get {
@@ -2464,7 +2527,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Retrying….
+        ///   Busca una cadena traducida similar a Retrying....
         /// </summary>
         public static string UI_TransferStateRetrying {
             get {
@@ -2482,7 +2545,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Uploading….
+        ///   Busca una cadena traducida similar a Uploading....
         /// </summary>
         public static string UI_TransferStateUploading {
             get {

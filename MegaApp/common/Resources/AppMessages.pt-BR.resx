@@ -209,7 +209,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the process/request to get a link to a node failed.</comment>
   </data>
   <data name="GetLinkFailed_Title" xml:space="preserve">
-    <value>Impossível pegar o link</value>
+    <value>Erro ao criar o link</value>
     <comment>Title of the dialog displayed when the process/request to get a link to a node failed - (String as short as possible).</comment>
   </data>
   <data name="GetPreviewFailed" xml:space="preserve">
@@ -237,7 +237,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when fails the process/request to save/export an image to the 'saved pictures' album of the phone device - (String as short as possible).</comment>
   </data>
   <data name="ImportFileFailed_Title" xml:space="preserve">
-    <value>Importação do arquivo falhou</value>
+    <value>Erro ao importar o arquivo</value>
     <comment>Title of the dialog displayed when fails the process/request to import an image - (String as short as possible).</comment>
   </data>
   <data name="LinkCopiedToClipboard" xml:space="preserve">
@@ -245,7 +245,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the process/request to copy a MEGA link to the clipboard finished successfully.</comment>
   </data>
   <data name="LinkCopiedToClipboard_Title" xml:space="preserve">
-    <value>Copiado para Área de transferência</value>
+    <value>Copiado para a área de transferência</value>
     <comment>Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard finished successfully - (String as short as possible).</comment>
   </data>
   <data name="LoginFailed" xml:space="preserve">
@@ -303,7 +303,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
     <comment>Title of the dialog displayed when the process/request remove definitely an item from the rubbish bin failed - (String as short as possible).</comment>
   </data>
   <data name="RemoveNodeSuccess" xml:space="preserve">
-    <value>Item removido com sucesso</value>
+    <value>Item eliminado corretamente</value>
     <comment>Message of the dialog displayed when remove successfully a node definitely from the rubbish bin.</comment>
   </data>
   <data name="RemoveNodeSuccess_Title" xml:space="preserve">
@@ -727,7 +727,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process to capture photo or video failed - (String as short as possible).</comment>
   </data>
   <data name="CaptureVideoFailed" xml:space="preserve">
-    <value>Falha ao capturar vídeo. Por favor, tente novamente. [{0}] </value>
+    <value>Falha ao capturar vídeo. Por favor, tente novamente. [{0}]</value>
     <comment>Message of the dialog displayed when the process to capture video failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
@@ -884,14 +884,6 @@ Preserve the [{0}] code because is for include the contact email in runtime.</co
     <value>Conta atualizada</value>
     <comment>Title of the dialog displayed when the account is updated (upgraded or downgraded).</comment>
   </data>
-  <data name="SSLKeyError" xml:space="preserve">
-    <value>O nosso certificado SSL / TLS não pode ser verificada. Você poderia ser afetada por um ataque man-in-the-middle.</value>
-    <comment>Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
-  </data>
-  <data name="SSLKeyError_Title" xml:space="preserve">
-    <value>Desconectado</value>
-    <comment>Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
-  </data>
   <data name="AutoCameraUploadFailed" xml:space="preserve">
     <value>A tarefa de fundo Auto Camera carregamento falhou. Você pode reativá-lo na página de configurações.</value>
     <comment>Message of the dialog displayed when the auto camera upload service failed.</comment>
@@ -1009,7 +1001,7 @@ Preserve the '{0}' code because is for include the file name in runtime.</commen
     <comment>Message of the dialog displayed when the user is trying to open an invliad lick (NO KEY).</comment>
   </data>
   <data name="AM_ImportFileFailed" xml:space="preserve">
-    <value>Falha na importação de arquivo [{0}]</value>
+    <value>Não foi possível importar o arquivo [{0}]</value>
     <comment>Message of the dialog displayed when fails the process/request to import an image.
 
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
@@ -1024,7 +1016,7 @@ Preserve the {0} and ({1}) codes because is for include the maximum reliable dow
     <comment>Message of the dialog displayed when a user is trying to cancel a subscription. This sentence is for give thanks to the user for the feedback sent during the cancellation process and asking for confirmation to do it.</comment>
   </data>
   <data name="AM_ImportFileFailedNoErrorCode" xml:space="preserve">
-    <value>Importação do arquivo falhou</value>
+    <value>Erro ao importar o arquivo</value>
     <comment>Message of the dialog displayed when fails the process/request to import an image.
 
 </comment>
@@ -1080,7 +1072,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard - (String as short as possible).</comment>
   </data>
   <data name="AM_AlreadyLoggedInAlert" xml:space="preserve">
-    <value>Se você concorda, a conta atual será desconectada e todos os dados off-line serão apagados. Pretende continuar? </value>
+    <value>Se você concorda, a conta atual será desconectada e todos os dados off-line serão apagados. Pretende continuar?</value>
     <comment>Message of the warning dialog shown when you try to confirm an account but you are logged in with another one.</comment>
   </data>
   <data name="AM_AlreadyLoggedInAlert_Title" xml:space="preserve">
@@ -1101,14 +1093,14 @@ Preserve the [{0}] code because is for include the error code or the error messa
   </data>
   <data name="AM_FileLinkUnavailable" xml:space="preserve">
     <value>Isso pode acontecer por um dos motivos abaixo:
-- O arquivo foi removidopor não respeitar os nossos Termos de serviço.
+- O arquivo foi removido por infringir os nossos Termos de serviço.
 - URL inválida - o link que você está tentando acessar não existe.
 - O arquivo foi excluído pelo usuário.</value>
     <comment>Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</comment>
   </data>
   <data name="AM_FolderLinkUnavailable" xml:space="preserve">
     <value>Isso pode acontecer por um dos motivos abaixo:
-- O link da pasta foi removido por não respeitar os nossos Termos de serviço.
+- O link da pasta foi removido por infringir os nossos Termos de serviço.
 - URL inválida - o link que você está tentando acessar não existe.
 - O link da pasta foi deletado pelo usuário.</value>
     <comment>Error message shown when a folder link doesn't exist. Keep "\n"</comment>
@@ -1143,11 +1135,11 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when fails to copy the user's Recovery Key to the clipboard to be saved or exported - (String as short as possible).</comment>
   </data>
   <data name="AM_RecoveryKeyCopied" xml:space="preserve">
-    <value>A chave de recuperação foi copiada para o clipboard</value>
+    <value>Chave de recuperação copiada para a área de transferência</value>
     <comment>Message of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported.</comment>
   </data>
   <data name="AM_RecoveryKeyCopied_Title" xml:space="preserve">
-    <value>A recuperação de chave copiada</value>
+    <value>Chave de recuperação copiada</value>
     <comment>Title of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported - (String as short as possible).</comment>
   </data>
   <data name="AM_CopyFailed" xml:space="preserve">
@@ -1375,11 +1367,11 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when fails the process/request to share a file/folder link.</comment>
   </data>
   <data name="AM_InternalNodeFailed" xml:space="preserve">
-    <value>Falha ao abrir o arquivo/pasta do link. Por favor, tente novamente.</value>
+    <value>Erro ao abrir o arquivo/pasta do link. Por favor, tente novamente.</value>
     <comment>Title of the dialog displayed when fail trying to open a link of an internal node.</comment>
   </data>
   <data name="AM_InternalNodeFailed_Title" xml:space="preserve">
-    <value>Falha ao abrir o arquivo/pasta. </value>
+    <value>Falha ao abrir o arquivo/pasta.</value>
     <comment>Title of the dialog displayed when fail trying to open a link of an internal node - (String as short as possible).</comment>
   </data>
   <data name="AM_ClearCacheFailed" xml:space="preserve">
@@ -1397,5 +1389,41 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="AM_AccountBlockedCopyright" xml:space="preserve">
     <value>A sua conta foi suspensa devido a múltiplas infrações dos Termos de serviço do MEGA. Verifique a caixa de entrada do seu email para mais detalhes.</value>
     <comment>Message of the dialog shown when the user is trying to login and the account has been blocked for multiple copyright violation.</comment>
+  </data>
+  <data name="AM_EmptyRequiredFields" xml:space="preserve">
+    <value>Preencha os campos obrigatórios e tente novamente.</value>
+    <comment>Message of the dialog displayed when required fields are empty.</comment>
+  </data>
+  <data name="AM_PasswordChanged" xml:space="preserve">
+    <value>Enviamos um email confirmando a alteração da sua senha.</value>
+    <comment>Message of the dialog displayed when the change password process finish successful.</comment>
+  </data>
+  <data name="AM_PasswordChanged_Title" xml:space="preserve">
+    <value>Senha alterada</value>
+    <comment>Title of the dialog displayed when the change password process finish successful.</comment>
+  </data>
+  <data name="AM_PasswordChangeFailed" xml:space="preserve">
+    <value>Não foi possível alterar a sua senha. Por favor, tente novamente.</value>
+    <comment>Message of the dialog displayed when the user has failed to change his password</comment>
+  </data>
+  <data name="AM_PasswordChangeFailed_Title" xml:space="preserve">
+    <value>Erro ao alterar a senha</value>
+    <comment>Title of the dialog displayed when the user has failed to change his password - (String as short as possible).</comment>
+  </data>
+  <data name="AM_IncorrectEmailFormat" xml:space="preserve">
+    <value>Formato de email incorreto. Por favor, tente novamente.</value>
+    <comment>Message of the dialog displayed when the user types an email address with an incorrect format.</comment>
+  </data>
+  <data name="AM_VeryWeakPassword" xml:space="preserve">
+    <value>Por favor deixe sua senha mais forte</value>
+    <comment>Message of the dialog displayed when the user has chosen a very weak password.</comment>
+  </data>
+  <data name="AM_SSLKeyError" xml:space="preserve">
+    <value>O MEGA não consegue se conectar de forma segura por meio de SSL. Você pode estar usando uma rede WiFi pública com requisitos adicionais.</value>
+    <comment>Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
+  </data>
+  <data name="AM_SSLKeyError_Title" xml:space="preserve">
+    <value>Erro no certificado SSL</value>
+    <comment>Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
   </data>
 </root>

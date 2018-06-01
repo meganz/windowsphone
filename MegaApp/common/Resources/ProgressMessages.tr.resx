@@ -268,7 +268,7 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when confirming a MEGA account - (String as short as possible).</comment>
   </data>
   <data name="PM_CreateAccount" xml:space="preserve">
-    <value>Hesap oluşturuluyor...</value>
+    <value>Hesap oluşturuluyor...                                </value>
     <comment>Progress indicator message when creating a MEGA account - (String as short as possible).</comment>
   </data>
   <data name="PM_CreateFolder" xml:space="preserve">
@@ -280,11 +280,11 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when getting a link to export a node - (String as short as possible).</comment>
   </data>
   <data name="PM_Login" xml:space="preserve">
-    <value>Giriş yapılıyor ...</value>
+    <value>Giriş yapılıyor...                                </value>
     <comment>Progress indicator message when logging in - (String as short as possible).</comment>
   </data>
   <data name="PM_Logout" xml:space="preserve">
-    <value>Oturum kapatılıyor...</value>
+    <value>Oturum kapatılıyor...                                </value>
     <comment>Progress indicator message when logging out - (String as short as possible).</comment>
   </data>
   <data name="PM_RemoveLink" xml:space="preserve">
@@ -324,7 +324,7 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when the SDK is waiting for the server to complete a request due to a rate limit (API error -4) - (String as short as possible).</comment>
   </data>
   <data name="PM_ConnectivityIssue" xml:space="preserve">
-    <value>MEGA'ya erişim başarısız. Lütfen bağlantınızı kontrol edin veya tekrar deneyin. </value>
+    <value>MEGA'ya erişim başarısız. Lütfen bağlantınızı kontrol edin veya tekrar deneyin.</value>
     <comment>Progress indicator message when the SDK is waiting for the server to complete a request due to connectivity issue - (String as short as possible).</comment>
   </data>
   <data name="PM_ServersBusy" xml:space="preserve">

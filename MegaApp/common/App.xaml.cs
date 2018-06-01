@@ -1,17 +1,14 @@
 ﻿using SQLite;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Globalization;
 using System.IO;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Markup;
 using System.Windows.Media;
 using System.Windows.Navigation;
-using Windows.ApplicationModel.Activation;
-using Windows.Networking.Connectivity;
 using Windows.Storage;
+using Microsoft.Phone.Net.NetworkInformation;
+using Microsoft.Phone.Shell;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Database;
@@ -21,11 +18,10 @@ using MegaApp.Models;
 using MegaApp.Pages;
 using MegaApp.Resources;
 using MegaApp.Services;
-using Microsoft.Phone.Net.NetworkInformation;
-using Microsoft.Phone.Shell;
-using MockIAPLib;
 using Telerik.Windows.Controls;
+
 #if WINDOWS_PHONE_81
+    using Windows.ApplicationModel.Activation;
     using Windows.ApplicationModel.DataTransfer.ShareTarget;
     using Windows.Storage.AccessCache;
 #endif
@@ -489,23 +485,35 @@ namespace MegaApp
 
         #region MRequestListenerInterface
 
+        // Avoid show multiple SSL certificate alerts
+        private bool SSLCertificateAlertDisplayed = false;
+
         public virtual void onRequestFinish(MegaSDK api, MRequest request, MError e)
         {
-            if (e.getErrorCode() == MErrorType.API_ESID || e.getErrorCode() == MErrorType.API_ESSL)
+            switch (e.getErrorCode())
             {
-                AppService.LogoutActions();
-                
-                // Show the init tour / login page with the corresponding navigation parameter
-                if(e.getErrorCode() == MErrorType.API_ESID)
-                {
+                // SSL Key error management
+                case MErrorType.API_EINCOMPLETE:
+                    if (request.getType() == MRequestType.TYPE_LOGOUT &&
+                        request.getParamType() == (int)MErrorType.API_ESSL)
+                    {
+                        if (SSLCertificateAlertDisplayed) break;
+
+                        SSLCertificateAlertDisplayed = true;
+                        Deployment.Current.Dispatcher.BeginInvoke(async() =>
+                        {
+                            await DialogService.ShowSSLKeyErrorAlertAsync(api);
+                            SSLCertificateAlertDisplayed = false;
+                        });
+                    }
+                    break;
+
+                // Bad session ID error management
+                case MErrorType.API_ESID:
+                    AppService.LogoutActions();
                     Deployment.Current.Dispatcher.BeginInvoke(() =>
                         NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.API_ESID));
-                }                    
-                else if(e.getErrorCode() == MErrorType.API_ESSL)
-                {
-                    Deployment.Current.Dispatcher.BeginInvoke(() =>
-                        NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.API_ESSL));
-                }                    
+                    break;
             }
         }
 

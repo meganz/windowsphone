@@ -919,14 +919,6 @@ Preserve the [{0}] code because is for include the contact email in runtime.</co
     <value>Updated account</value>
     <comment>Title of the dialog displayed when the account is updated (upgraded or downgraded).</comment>
   </data>
-  <data name="SSLKeyError" xml:space="preserve">
-    <value>Our SSL/TLS certificate can't be verified. You could be affected by a man-in-the-middle attack.</value>
-    <comment>Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
-  </data>
-  <data name="SSLKeyError_Title" xml:space="preserve">
-    <value>Logged out</value>
-    <comment>Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
-  </data>
   <data name="AutoCameraUploadFailed" xml:space="preserve">
     <value>The Auto Camera Upload background task has failed. You can re-enable it on the settings page.</value>
     <comment>Message of the dialog displayed when the auto camera upload service failed.</comment>
@@ -1415,7 +1407,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the user has failed to change his password</comment>
   </data>
   <data name="AM_PasswordChangeFailed_Title" xml:space="preserve">
-    <value>Error change password</value>
+    <value>Error changing password</value>
     <comment>Title of the dialog displayed when the user has failed to change his password - (String as short as possible).</comment>
   </data>
   <data name="AM_IncorrectEmailFormat" xml:space="preserve">
@@ -1425,5 +1417,13 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="AM_VeryWeakPassword" xml:space="preserve">
     <value>Please strengthen your password.</value>
     <comment>Message of the dialog displayed when the user has chosen a very weak password.</comment>
+  </data>
+  <data name="AM_SSLKeyError" xml:space="preserve">
+    <value>MEGA is unable to connect securely through SSL. You might be on public WiFi with additional requirements.</value>
+    <comment>Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
+  </data>
+  <data name="AM_SSLKeyError_Title" xml:space="preserve">
+    <value>SSL certificate error</value>
+    <comment>Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
   </data>
 </root>

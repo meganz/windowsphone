@@ -412,7 +412,7 @@ Preserve the {0} code because is for include the number of nodes to be moved in 
     <comment>Title of the dialog displayed when the process/request to move nodes to the rubbish bin failed - (String as short as possible).</comment>
   </data>
   <data name="MoveToRubbishBinQuestion" xml:space="preserve">
-    <value> {0} をゴミ箱へ移していいですね？</value>
+    <value>{0} をゴミ箱へ移していいですね？</value>
     <comment>Message of the dialog displayed when a user want to move a single node to the rubbish bin, asking for confirmation to make the movement.
 Preserve the {0} code because is for include the name of the node to be moved in runtime.</comment>
   </data>
@@ -513,7 +513,7 @@ Preserve the {0} code because is for include the number of pending transfers in 
     <comment>Title of the dialog displayed when a user want to do a multi image upload and haven't selected any element - (String as short as possible).</comment>
   </data>
   <data name="PrepareImageForUploadFailed" xml:space="preserve">
-    <value>イメージの準備できませんでした: アップロード用{0} </value>
+    <value>イメージの準備できませんでした: アップロード用{0}</value>
     <comment>Message of the dialog displayed when the process to prepare a image for upload failed.
 Preserve the {0} code because is for include the file name in runtime.</comment>
   </data>
@@ -586,7 +586,7 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
     <comment>Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</comment>
   </data>
   <data name="PrepareFileForUploadFailed" xml:space="preserve">
-    <value>ファイル準備できず: アップロード用{0} </value>
+    <value>ファイル準備できず: アップロード用{0}</value>
     <comment>Message of the dialog displayed when the process to prepare a file for upload failed.
 Preserve the {0} code because is for include the file name in runtime.</comment>
   </data>
@@ -691,7 +691,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when a user is trying to login with an e-mail that is not associated with a MEGA account or type a wrong password. Preserve the MEGA word in uppercase.</comment>
   </data>
   <data name="DeleteNodeQuestion" xml:space="preserve">
-    <value> {0}を永久に削除しますね？</value>
+    <value>{0}を永久に削除しますね？</value>
     <comment>Message of the dialog displayed when a user want to delete permanently a node, asking for confirmation to make it.
 Preserve the {0} code because is for include name of the node to be removed in runtime.</comment>
   </data>
@@ -883,14 +883,6 @@ Preserve the [{0}] code because is for include the contact email in runtime.</co
   <data name="AccountUpdated_Title" xml:space="preserve">
     <value>アカウント・アップデート済み</value>
     <comment>Title of the dialog displayed when the account is updated (upgraded or downgraded).</comment>
-  </data>
-  <data name="SSLKeyError" xml:space="preserve">
-    <value>当社のSSL/TLS証明書を検証できません。あなたは中間者攻撃の影響を受ける可能性があります。</value>
-    <comment>Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
-  </data>
-  <data name="SSLKeyError_Title" xml:space="preserve">
-    <value>ログアウト済み</value>
-    <comment>Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
   </data>
   <data name="AutoCameraUploadFailed" xml:space="preserve">
     <value>自動カメラアップロードのバックグラウンドタスクが失敗しました。設定ページで再度有効にすることができます。</value>
@@ -1103,14 +1095,14 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>これは、以下の理由による可能性があります：
 －ファイルがToS/AUP違反により削除されました。
 －URLが無効－アクセスしようとしているリンクが存在しません。
-－ファイルがユーザーによって削除されました。                                </value>
+－ファイルがユーザーによって削除されました。</value>
     <comment>Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</comment>
   </data>
   <data name="AM_FolderLinkUnavailable" xml:space="preserve">
     <value>これは、以下の理由による可能性があります：
 －フォルダがToS/AUP違反により削除されました。
 －URLが無効－アクセスしようとしているリンクが存在しません。
-－フォルダリンクがユーザーによって削除されました。                                </value>
+－フォルダリンクがユーザーによって削除されました。</value>
     <comment>Error message shown when a folder link doesn't exist. Keep "\n"</comment>
   </data>
   <data name="AM_LinkUnavailableTitle" xml:space="preserve">
@@ -1397,5 +1389,41 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="AM_AccountBlockedCopyright" xml:space="preserve">
     <value>あなたのアカウントは、MEGAのご利用規約に複数違反したため、凍結されました。メールの受信トレイを確認してください。</value>
     <comment>Message of the dialog shown when the user is trying to login and the account has been blocked for multiple copyright violation.</comment>
+  </data>
+  <data name="AM_EmptyRequiredFields" xml:space="preserve">
+    <value>Fill the required fields and try again.</value>
+    <comment>Message of the dialog displayed when required fields are empty.</comment>
+  </data>
+  <data name="AM_PasswordChanged" xml:space="preserve">
+    <value>We have sent you an email confirming your password change.</value>
+    <comment>Message of the dialog displayed when the change password process finish successful.</comment>
+  </data>
+  <data name="AM_PasswordChanged_Title" xml:space="preserve">
+    <value>Password changed</value>
+    <comment>Title of the dialog displayed when the change password process finish successful.</comment>
+  </data>
+  <data name="AM_PasswordChangeFailed" xml:space="preserve">
+    <value>Failed to change your password. Please try again.</value>
+    <comment>Message of the dialog displayed when the user has failed to change his password</comment>
+  </data>
+  <data name="AM_PasswordChangeFailed_Title" xml:space="preserve">
+    <value>Error changing password</value>
+    <comment>Title of the dialog displayed when the user has failed to change his password - (String as short as possible).</comment>
+  </data>
+  <data name="AM_IncorrectEmailFormat" xml:space="preserve">
+    <value>Incorrect email format. Please try again.</value>
+    <comment>Message of the dialog displayed when the user types an email address with an incorrect format.</comment>
+  </data>
+  <data name="AM_VeryWeakPassword" xml:space="preserve">
+    <value>パスワードを強化して下さい。</value>
+    <comment>Message of the dialog displayed when the user has chosen a very weak password.</comment>
+  </data>
+  <data name="AM_SSLKeyError" xml:space="preserve">
+    <value>サーバーのSSL鍵が照合できません。中間者攻撃かも知れません。</value>
+    <comment>Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
+  </data>
+  <data name="AM_SSLKeyError_Title" xml:space="preserve">
+    <value>SSL certificate error</value>
+    <comment>Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
   </data>
 </root>

@@ -82,11 +82,16 @@ namespace MegaApp.Services
         private static MegaSDK CreateSdk()
         {
             // Initialize a MegaSDK instance
-            return new MegaSDK(
+            var newMegaSDK = new MegaSDK(
                 "Z5dGhQhL",
                 AppService.GetAppUserAgent(),
                 ApplicationData.Current.LocalFolder.Path,
                 new MegaRandomNumberProvider());
+
+            // Enable retrying when public key pinning fails
+            newMegaSDK.retrySSLerrors(true);
+
+            return newMegaSDK;
         }
     }
 }

@@ -262,7 +262,7 @@
     <comment>Text placed into the 'acknowledgements' page introducing the list of acknowledgements.</comment>
   </data>
   <data name="RubbishBinName" xml:space="preserve">
-    <value>Lata de lixo</value>
+    <value>Lixeira</value>
     <comment>Label for any 'Rubbish bin' button, link, text, etc. - (String as short as possible).</comment>
   </data>
   <data name="Off" xml:space="preserve">
@@ -342,7 +342,7 @@
     <comment>Label for any 'Annually' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="AppVersionText" xml:space="preserve">
-    <value>Versão do app</value>
+    <value>Versão do aplicativo</value>
     <comment>Text placed just before app version number into the 'about' page.</comment>
   </data>
   <data name="AskDownloadLocationText" xml:space="preserve">
@@ -370,7 +370,7 @@
     <comment>Label for any 'Capture' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="ChangePinLock" xml:space="preserve">
-    <value>Mudar código PIN</value>
+    <value>Alterar o PIN</value>
     <comment>Label for any 'Change PIN Lock' button, link, text, title, etc. Try to preserve the PIN uppercase word. - (String as short as possible).</comment>
   </data>
   <data name="CleanUpTransfers" xml:space="preserve">
@@ -414,7 +414,7 @@
     <comment>Text placed just before the amount free space into the 'my account' page - (String as short as possible).</comment>
   </data>
   <data name="LargestSortOption" xml:space="preserve">
-    <value>maior</value>
+    <value>Maior</value>
     <comment>Label for the menu option to sort the nodes of the cloud drive in descending order by size (from bigger to smaller) - (String as short as possible).</comment>
   </data>
   <data name="MakePinLock" xml:space="preserve">
@@ -434,7 +434,7 @@
     <comment>Label for the menu option to sort the nodes of the cloud drive in descending order by name - (String as short as possible).</comment>
   </data>
   <data name="NewestSortOption" xml:space="preserve">
-    <value>mais novo</value>
+    <value>Mais recente</value>
     <comment>Label for the menu option to sort the nodes of the cloud drive in descending order by date (from newer to older) - (String as short as possible).</comment>
   </data>
   <data name="NoDataToShow" xml:space="preserve">
@@ -446,7 +446,7 @@
     <comment>Label shown when the app has no information about the subscription plans to show into 'subscription' page - (String as short as possible).</comment>
   </data>
   <data name="OldestSortOption" xml:space="preserve">
-    <value>mais velho</value>
+    <value>Mais antigo</value>
     <comment>Label for the menu option to sort the nodes of the cloud drive in ascending order by size (from smaller to bigger) - (String as short as possible).</comment>
   </data>
   <data name="PauseAll" xml:space="preserve">
@@ -458,11 +458,11 @@
     <comment>Label for any 'Privacy policy' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="SmallestSortOption" xml:space="preserve">
-    <value>menor</value>
+    <value>Menor</value>
     <comment>Label for the menu option to sort the nodes of the cloud drive in ascending order by size (from smaller to bigger) - (String as short as possible).</comment>
   </data>
   <data name="SortByMenuTitle" xml:space="preserve">
-    <value>ORGANIZAR POR</value>
+    <value>Ordenar por</value>
     <comment>Label used like title for the sort menu.</comment>
   </data>
   <data name="StartResumeAll" xml:space="preserve">
@@ -825,7 +825,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
     <comment>Text to show when a user wants to add a contact to type the email address of the new contact.</comment>
   </data>
   <data name="Search" xml:space="preserve">
-    <value>Buscar</value>
+    <value>Pesquisar</value>
     <comment>Label for any 'Search' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="Select" xml:space="preserve">
@@ -837,7 +837,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
     <comment>Label for any 'Message' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="SendFile" xml:space="preserve">
-    <value>Envie arquivo</value>
+    <value>Enviar arquivo</value>
     <comment>Label for any 'Send file' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="ShareFolders" xml:space="preserve">
@@ -945,7 +945,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'View details' button, link, text, title, etc. (i.e. View contact details) - (String as short as possible).</comment>
   </data>
   <data name="PhotosOnly" xml:space="preserve">
-    <value>Apenas fotos</value>
+    <value>Somente fotos</value>
     <comment>Label for the "Photos only" auto camera upload settings</comment>
   </data>
   <data name="PowerConnected" xml:space="preserve">
@@ -961,7 +961,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Incoming' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Outgoing" xml:space="preserve">
-    <value>Extrovertido</value>
+    <value>Saída</value>
     <comment>Label for any 'Outgoing' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="SetupCameraUploadsQuestion" xml:space="preserve">
@@ -1005,7 +1005,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for the background of an empty downloads page - (String as short as possible).</comment>
   </data>
   <data name="NoInternetConnection" xml:space="preserve">
-    <value>Sem ligação à internet</value>
+    <value>Não há conexão à Internet</value>
     <comment>Label for the background of an empty state when no internet connection - (String as short as possible).</comment>
   </data>
   <data name="NoUploads" xml:space="preserve">
@@ -1045,7 +1045,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Upgrade account' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_ChangePassword" xml:space="preserve">
-    <value>Mudar a senha</value>
+    <value>Alterar senha</value>
     <comment>Label for any 'Change password' button, menu, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_CancelSubscription" xml:space="preserve">
@@ -1065,7 +1065,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Remove link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="SelectAll" xml:space="preserve">
-    <value>Marcar tudo</value>
+    <value>Selecionar tudo</value>
     <comment>Label for any 'Select' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="DeselectAll" xml:space="preserve">
@@ -1110,7 +1110,7 @@ Preserve the {0} code because is for include the name of the destination folder 
     <comment>Text 'Export Recovery Key' placed just before two buttons into the 'settings' page to allow see (copy/paste) and export the Recovery Key.</comment>
   </data>
   <data name="UI_RecoveryKey" xml:space="preserve">
-    <value>Chave de Recuperação</value>
+    <value>Chave de recuperação</value>
     <comment>Label for any 'Recovery Key' button, link, text, title, etc. Preserve uppercase - (String as short as possible).</comment>
   </data>
   <data name="UI_DebugMode" xml:space="preserve">
@@ -1271,7 +1271,7 @@ Preserve the PIN uppercase word.</comment>
 Try to preserve the PIN uppercase word.</comment>
   </data>
   <data name="UI_MEGA_SDK_Version" xml:space="preserve">
-    <value>Versão do MEGA SDK</value>
+    <value>MEGA - versão do SDK</value>
     <comment>Label for any 'MEGA SDK version' button, link, text, title, etc. Preserve the "MEGA SDK" in uppercase - (String as short as possible).</comment>
   </data>
   <data name="UI_NewPinLock" xml:space="preserve">
@@ -1290,5 +1290,33 @@ Preserve the PIN uppercase word.</comment>
   <data name="UI_ViewTermsOfService" xml:space="preserve">
     <value>Veja os Termos de serviço aqui</value>
     <comment>Text used as a link to view the 'Terms of Service' into the 'create account' page.</comment>
+  </data>
+  <data name="UI_DataProtectionRegulation" xml:space="preserve">
+    <value>Regulamento de proteção de dados</value>
+    <comment>Label for any 'Data Protection Regulation' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_LegalAndPolicies" xml:space="preserve">
+    <value>Legal e Políticas</value>
+    <comment>Label for the title of the "Legal and Policies" section which include links to the Terms of Service, Privacy Policy, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_Copyright" xml:space="preserve">
+    <value>Direitos autorais</value>
+    <comment>Label for any 'Copyright' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_LearnMore" xml:space="preserve">
+    <value>Mais informações</value>
+    <comment>Label for any 'Learn more' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_TakedownGuidance" xml:space="preserve">
+    <value>Guia de remoção</value>
+    <comment>Label for any 'Takedown Guidance' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_OpenBrowser" xml:space="preserve">
+    <value>Abrir o navegador</value>
+    <comment>Label for the button to allow the user open the default browser - (String as short as possible).</comment>
+  </data>
+  <data name="UI_Retry" xml:space="preserve">
+    <value>Tentar novamente</value>
+    <comment>Label for any 'Retry' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
 </root>

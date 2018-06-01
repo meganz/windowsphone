@@ -755,12 +755,12 @@ Preserve the {0} code because is for include the name/type of the selected plan 
     <comment>Label for the 'Renews on' text into the my account page, indicating the renewal date of a subscription - (String as short as possible).</comment>
   </data>
   <data name="AccountPurchased" xml:space="preserve">
-    <value> {0} アカウントの購入、ありがとうございます。</value>
+    <value>{0} アカウントの購入、ありがとうございます。</value>
     <comment>Label to indicate the purchased account/subscription.
 Preserve the {0} code because is for include the name/type in runtime.</comment>
   </data>
   <data name="AccountRenewalNotice" xml:space="preserve">
-    <value> {0} 定期契約の料金は、前もってキャンセルされない限り、 {0} 後の更新時に自動的に請求されます。</value>
+    <value>{0} 定期契約の料金は、前もってキャンセルされない限り、 {0} 後の更新時に自動的に請求されます。</value>
     <comment>Label to indicate the renewal period of the purchased subscription. 
 Preserve the {0} code because is for include the renewal period string (Monthly or Annually) in runtime.</comment>
   </data>
@@ -1290,5 +1290,33 @@ Preserve the PIN uppercase word.</comment>
   <data name="UI_ViewTermsOfService" xml:space="preserve">
     <value>ここでご利用規約を表示</value>
     <comment>Text used as a link to view the 'Terms of Service' into the 'create account' page.</comment>
+  </data>
+  <data name="UI_DataProtectionRegulation" xml:space="preserve">
+    <value>Data Protection Regulation</value>
+    <comment>Label for any 'Data Protection Regulation' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_LegalAndPolicies" xml:space="preserve">
+    <value>法律と方針</value>
+    <comment>Label for the title of the "Legal and Policies" section which include links to the Terms of Service, Privacy Policy, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_Copyright" xml:space="preserve">
+    <value>著作権</value>
+    <comment>Label for any 'Copyright' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_LearnMore" xml:space="preserve">
+    <value>もっと読む</value>
+    <comment>Label for any 'Learn more' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_TakedownGuidance" xml:space="preserve">
+    <value>テイクダウンに関する手引き</value>
+    <comment>Label for any 'Takedown Guidance' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_OpenBrowser" xml:space="preserve">
+    <value>Open browser</value>
+    <comment>Label for the button to allow the user open the default browser - (String as short as possible).</comment>
+  </data>
+  <data name="UI_Retry" xml:space="preserve">
+    <value>もう一度やる</value>
+    <comment>Label for any 'Retry' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
 </root>

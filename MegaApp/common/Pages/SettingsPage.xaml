@@ -20,6 +20,18 @@
     shell:SystemTray.BackgroundColor="{StaticResource PhoneChromeColor}"
     d:DataContext="{d:DesignInstance models:SettingsViewModel}">
 
+    <userControls:MegaPhoneApplicationPage.Resources>
+        <ControlTemplate x:Name="LearnMoreLink" TargetType="HyperlinkButton">
+            <HyperlinkButton
+                Margin="-10,0,0,0"
+                Command="{TemplateBinding Command}"
+                Content="{Binding LocalizedUiResources.UI_LearnMore, Source={StaticResource LocalizedStrings}}"
+                FontSize="{StaticResource PhoneFontSizeNormal}"
+                Foreground="{StaticResource MegaRedSolidColorBrush}"
+                HorizontalAlignment="Left" />
+        </ControlTemplate>
+    </userControls:MegaPhoneApplicationPage.Resources>
+    
     <!--LayoutRoot is the root grid where all page content is placed-->
     <userControls:DrawerLayout x:Name="MainDrawerLayout">
         <Grid x:Name="LayoutRoot" Background="Transparent">
@@ -136,6 +148,7 @@
                                 <telerikPrimitives:RadToggleSwitch x:Name="BtnMemorySwitch" VerticalAlignment="Center" Content="{Binding ShowMemoryInformationText}" IsChecked="{Binding ShowMemoryInformation, Mode=TwoWay}" Margin="12,0" FontFamily="Portable User Interface"/>
                             </StackPanel>
 
+                            <!-- ABOUT -->
                             <TextBlock HorizontalAlignment="Left" Margin="12,0,0,10" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.About, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Style="{StaticResource PhoneTextSubtleStyle}" FontSize="{StaticResource PhoneFontSizeLarge}" FontFamily="Portable User Interface" Grid.Column="1">
                                 <TextBlock.Foreground>
                                     <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
@@ -190,12 +203,14 @@
                                         VerticalAlignment="Center"/>
                                 </Grid>
                             </Grid>
+
+                            <!-- ACKNOWLEDGEMENTS -->
                             <TextBlock HorizontalAlignment="Left" Margin="12,10,0,10" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.Acknowledgements, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Style="{StaticResource PhoneTextSubtleStyle}" FontSize="{StaticResource PhoneFontSizeLarge}" FontFamily="Portable User Interface" Grid.Column="1">
                                 <TextBlock.Foreground>
                                     <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
                                 </TextBlock.Foreground>
                             </TextBlock>
-                            <Grid x:Name="AcknowledgementGrid" Margin="12,0,12,0">
+                            <Grid x:Name="AcknowledgementGrid" Margin="12,0,12,40">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto"/>
                                 </Grid.RowDefinitions>
@@ -220,6 +235,78 @@
                                     Foreground="{StaticResource MegaRedSolidColorBrush}"
                                     HorizontalAlignment="Right"                                     
                                     VerticalAlignment="Center"/>
+                            </Grid>
+                            
+                            <!-- LEGAL AND POLICIES -->                            
+                            <TextBlock 
+                                Margin="12,12,0,12" 
+                                Grid.Column="1"
+                                FontSize="{StaticResource PhoneFontSizeLarge}"
+                                Style="{StaticResource PhoneTextSubtleStyle}"
+                                Text="{Binding LocalizedUiResources.UI_LegalAndPolicies, Source={StaticResource LocalizedStrings}}" 
+                                TextWrapping="Wrap">
+                                <TextBlock.Foreground>
+                                    <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
+                                </TextBlock.Foreground>
+                            </TextBlock>
+                            <Grid x:Name="LegalAndPolicyGrid" Margin="12,0,12,40">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Grid.Row="0" Grid.Column="0" Margin="0,0,0,24">
+                                    <TextBlock
+                                        Text="{Binding LocalizedUiResources.TermsOfService, Source={StaticResource LocalizedStrings}}"
+                                        TextWrapping="Wrap" />
+                                    <HyperlinkButton
+                                        Command="{Binding TermsOfServiceCommand}"
+                                        Template="{StaticResource LearnMoreLink}" />
+                                </StackPanel>
+                                <StackPanel Grid.Row="0" Grid.Column="1" Margin="12,0,0,24">
+                                    <TextBlock
+                                        Text="{Binding LocalizedUiResources.PrivacyPolicy, Source={StaticResource LocalizedStrings}}"
+                                        TextWrapping="Wrap" />
+                                    <HyperlinkButton
+                                        Command="{Binding PrivacyPolicyCommand}"
+                                        Template="{StaticResource LearnMoreLink}" />
+                                </StackPanel>
+                                <StackPanel Grid.Row="1" Grid.Column="0" Margin="0,0,0,24">
+                                    <TextBlock
+                                        Text="{Binding LocalizedUiResources.UI_Copyright, Source={StaticResource LocalizedStrings}}"
+                                        TextWrapping="Wrap" />
+                                    <HyperlinkButton
+                                        Command="{Binding CopyrightCommand}"
+                                        Template="{StaticResource LearnMoreLink}" />
+                                </StackPanel>
+                                <StackPanel Grid.Row="1" Grid.Column="1" Margin="12,0,0,24">
+                                    <TextBlock
+                                        Text="{Binding LocalizedUiResources.UI_TakedownGuidance, Source={StaticResource LocalizedStrings}}"
+                                        TextWrapping="Wrap" />
+                                    <HyperlinkButton
+                                        Command="{Binding TakedownGuidanceCommand}"
+                                        Template="{StaticResource LearnMoreLink}" />
+                                </StackPanel>
+                                <StackPanel Grid.Row="2" Grid.Column="0" Margin="0,0,0,24">
+                                    <TextBlock
+                                        Text="{Binding LocalizedUiResources.General, Source={StaticResource LocalizedStrings}}"
+                                        TextWrapping="Wrap" />
+                                    <HyperlinkButton
+                                        Command="{Binding GeneralCommand}"
+                                        Template="{StaticResource LearnMoreLink}" />
+                                </StackPanel>
+                                <StackPanel Grid.Row="2" Grid.Column="1" Margin="12,0,0,24">
+                                    <TextBlock
+                                        Text="{Binding LocalizedUiResources.UI_DataProtectionRegulation, Source={StaticResource LocalizedStrings}}"
+                                        TextWrapping="Wrap" />
+                                    <HyperlinkButton
+                                        Command="{Binding DataProtectionRegulationCommand}"
+                                        Template="{StaticResource LearnMoreLink}" />
+                                </StackPanel>
                             </Grid>
                         </StackPanel>
                     </ScrollViewer>
