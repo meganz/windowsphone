@@ -1,6 +1,6 @@
 ﻿using System.Threading;
 using mega;
-using MegaApp.Models;
+using MegaApp.ViewModels;
 
 namespace MegaApp.Interfaces
 {

@@ -1047,7 +1047,7 @@ Preserve the {0} code because is for include the name of the destination folder 
         </trans-unit>
         <trans-unit id="Resx/MEGAContacts" translate="yes" space="preserve">
           <source>MEGA contacts</source>
-          <target state="translated">Contactos en MEGA </target>
+          <target state="translated">Contactos en MEGA</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Yes' button, link, text, title, etc. Try to preserve the MEGA uppercase word. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/SharedFolders" translate="yes" space="preserve">
@@ -1503,6 +1503,32 @@ NOTE: Keep the capital letter if possible.</note>
           <source>Retry</source>
           <target state="translated">Reintentar</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Retry' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_PlainText" translate="yes" xml:space="preserve">
+          <source>Plain text</source>
+          <target state="new">Plain text</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Plain text' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_TestPassword" translate="yes" xml:space="preserve">
+          <source>Test Password</source>
+          <target state="new">Test Password</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Test Password' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_Close" translate="yes" xml:space="preserve">
+          <source>Close</source>
+          <target state="new">Close</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Close' button, link, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_BackupRecoveryKey" translate="yes" xml:space="preserve">
+          <source>Backup Recovery Key</source>
+          <target state="new">Backup Recovery Key</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Backup Recovery Key' button, link, text, title, etc. - (String as short as possible).
+NOTE: Max. length 20 characters.</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_DoNotShowMeAgain" translate="yes" xml:space="preserve">
+          <source>Don’t show me again</source>
+          <target state="new">Don’t show me again</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for a check box included into a dialog to indicate don't show it again.</note>
         </trans-unit>
       </group>
     </body>

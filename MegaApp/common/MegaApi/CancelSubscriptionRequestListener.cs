@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MegaApp.Enums;
-using MegaApp.Pages;
 using MegaApp.Resources;
+using MegaApp.Views;
 
 namespace MegaApp.MegaApi
 {

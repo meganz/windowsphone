@@ -547,7 +547,7 @@ Preserve the {0} code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/OpenFileFailed_Title" translate="yes" space="preserve">
           <source>File failed to open</source>
-          <target state="translated">No se ha podido abrir el archivo </target>
+          <target state="translated">No se ha podido abrir el archivo</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to open a file failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UploadSelfieFailed" translate="yes" space="preserve">
@@ -1062,7 +1062,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/CleanRubbishBinFailed" translate="yes" space="preserve">
           <source>Failed to clear the rubbish bin. Please try again.</source>
-          <target state="translated">No se ha podido vaciar la papelera.  Inténtalo de nuevo. </target>
+          <target state="translated">No se ha podido vaciar la papelera.  Inténtalo de nuevo.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to empty the rubbish bin failed.</note>
         </trans-unit>
         <trans-unit id="Resx/CleanRubbishBinQuestion" translate="yes" space="preserve">
@@ -1082,7 +1082,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/RemoveLinkFailed" translate="yes" space="preserve">
           <source>Failed to remove link. Please try again.</source>
-          <target state="translated">No se ha podido eliminar el enlace. Inténtalo de nuevo.  </target>
+          <target state="translated">No se ha podido eliminar el enlace. Inténtalo de nuevo.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to remove a link to a node failed.</note>
         </trans-unit>
         <trans-unit id="Resx/NoInternetConnectionMessage" translate="yes" space="preserve">
@@ -1148,7 +1148,7 @@ Preserve the '{0}' code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PrepareFilesForUploadFailed" translate="yes" space="preserve">
           <source>Failed to prepare file(s) for upload. Please try again.</source>
-          <target state="translated">Error al preparar archivo(s) para la subida.  Inténtalo de nuevo</target>
+          <target state="translated">Error al preparar archivo(s) para la subida. Inténtalo de nuevo</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to prepare a file(s) for upload failed.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PrepareFilesForUploadFailed_Title" translate="yes" space="preserve">
@@ -1634,6 +1634,56 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <source>SSL certificate error</source>
           <target state="translated">Error certificado SSL</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_RecoveryKeyExportFailed_Title" translate="yes" xml:space="preserve">
+          <source>Recovery Key export failed</source>
+          <target state="new">Recovery Key export failed</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog or notification displayed in cases that the app has not succesful exported the recovery key.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_RecoveryKeyExportFailed" translate="yes" xml:space="preserve">
+          <source>Failed to export the Recovery Key. Please try again.</source>
+          <target state="new">Failed to export the Recovery Key. Please try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog or notification displayed in cases that the app has not succesful exported the recovery key.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_RecoveryKeyExported_Title" translate="yes" xml:space="preserve">
+          <source>Recovery Key exported</source>
+          <target state="new">Recovery Key exported</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog or notification displayed in cases that the app has succesful exported the recovery key.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_RecoveryKeyExported" translate="yes" xml:space="preserve">
+          <source>The Recovery Key has been exported.</source>
+          <target state="new">The Recovery Key has been exported.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog or notification displayed in cases that the app has succesful exported the recovery key.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_TestPassword_Title" translate="yes" xml:space="preserve">
+          <source>Test Password</source>
+          <target state="new">Test Password</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the test password dialog.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_TestPasswordWarning" translate="yes" xml:space="preserve">
+          <source>Wrong password!, backup your Recovery Key as soon as possible!</source>
+          <target state="new">Wrong password!, backup your Recovery Key as soon as possible!</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Warning message displayed when the password test fails.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_TestPasswordSuccess" translate="yes" xml:space="preserve">
+          <source>Password accepted, we still recommend you back up your Recovery key.</source>
+          <target state="new">Password accepted, we still recommend you back up your Recovery key.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message displayed when the password test result is ok.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_TestPassword" translate="yes" xml:space="preserve">
+          <source>Please test your password below to ensure you remember it. If you lost your password, you will lose access to your data.</source>
+          <target state="new">Please test your password below to ensure you remember it. If you lost your password, you will lose access to your data.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message to describe the purpose of the dialog to test the password.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_PasswordReminder_Title" translate="yes" xml:space="preserve">
+          <source>Do you remember your password?</source>
+          <target state="new">Do you remember your password?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the password reminder dialog.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_PasswordReminder" translate="yes" xml:space="preserve">
+          <source>Due to MEGA’s encryption technology you are unable to reset your password without data loss. Please make sure you remember your password.</source>
+          <target state="new">Due to MEGA’s encryption technology you are unable to reset your password without data loss. Please make sure you remember your password.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message to describe the purpose of the password reminder dialog.</note>
         </trans-unit>
       </group>
     </body>

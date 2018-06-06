@@ -1592,17 +1592,17 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_EmptyRequiredFields" translate="yes" space="preserve">
           <source>Fill the required fields and try again.</source>
-          <target state="translated">Fill the required fields and try again.</target>
+          <target state="translated">Wypełnij wymagane pola i spróbuj ponownie.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when required fields are empty.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PasswordChanged" translate="yes" space="preserve">
           <source>We have sent you an email confirming your password change.</source>
-          <target state="translated">We have sent you an email confirming your password change.</target>
+          <target state="translated">Potwierdzenie zmiany hasła zostało wysłane na twój adres email.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the change password process finish successful.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PasswordChanged_Title" translate="yes" space="preserve">
           <source>Password changed</source>
-          <target state="translated">Password changed</target>
+          <target state="translated">Hasło zostało zmienione</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the change password process finish successful.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PasswordChangeFailed" translate="yes" space="preserve">
@@ -1627,13 +1627,63 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_SSLKeyError" translate="yes" space="preserve">
           <source>MEGA is unable to connect securely through SSL. You might be on public WiFi with additional requirements.</source>
-          <target state="translated">Klucz SSL nie może zostać zweryfikowany.</target>
+          <target state="translated">MEGA nie może zweryfikować SSL. Możliwe, że korzystasz z publicznego WiFi.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_SSLKeyError_Title" translate="yes" space="preserve">
           <source>SSL certificate error</source>
           <target state="translated">SSL certificate error</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_RecoveryKeyExportFailed_Title" translate="yes" xml:space="preserve">
+          <source>Recovery Key export failed</source>
+          <target state="new">Recovery Key export failed</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog or notification displayed in cases that the app has not succesful exported the recovery key.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_RecoveryKeyExportFailed" translate="yes" xml:space="preserve">
+          <source>Failed to export the Recovery Key. Please try again.</source>
+          <target state="new">Failed to export the Recovery Key. Please try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog or notification displayed in cases that the app has not succesful exported the recovery key.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_RecoveryKeyExported_Title" translate="yes" xml:space="preserve">
+          <source>Recovery Key exported</source>
+          <target state="new">Recovery Key exported</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog or notification displayed in cases that the app has succesful exported the recovery key.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_RecoveryKeyExported" translate="yes" xml:space="preserve">
+          <source>The Recovery Key has been exported.</source>
+          <target state="new">The Recovery Key has been exported.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog or notification displayed in cases that the app has succesful exported the recovery key.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_TestPassword_Title" translate="yes" xml:space="preserve">
+          <source>Test Password</source>
+          <target state="new">Test Password</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the test password dialog.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_TestPasswordWarning" translate="yes" xml:space="preserve">
+          <source>Wrong password!, backup your Recovery Key as soon as possible!</source>
+          <target state="new">Wrong password!, backup your Recovery Key as soon as possible!</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Warning message displayed when the password test fails.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_TestPasswordSuccess" translate="yes" xml:space="preserve">
+          <source>Password accepted, we still recommend you back up your Recovery key.</source>
+          <target state="new">Password accepted, we still recommend you back up your Recovery key.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message displayed when the password test result is ok.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_TestPassword" translate="yes" xml:space="preserve">
+          <source>Please test your password below to ensure you remember it. If you lost your password, you will lose access to your data.</source>
+          <target state="new">Please test your password below to ensure you remember it. If you lost your password, you will lose access to your data.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message to describe the purpose of the dialog to test the password.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_PasswordReminder_Title" translate="yes" xml:space="preserve">
+          <source>Do you remember your password?</source>
+          <target state="new">Do you remember your password?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the password reminder dialog.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_PasswordReminder" translate="yes" xml:space="preserve">
+          <source>Due to MEGA’s encryption technology you are unable to reset your password without data loss. Please make sure you remember your password.</source>
+          <target state="new">Due to MEGA’s encryption technology you are unable to reset your password without data loss. Please make sure you remember your password.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message to describe the purpose of the password reminder dialog.</note>
         </trans-unit>
       </group>
     </body>

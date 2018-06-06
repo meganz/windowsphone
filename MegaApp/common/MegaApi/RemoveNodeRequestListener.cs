@@ -12,10 +12,10 @@ using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.Extensions;
 using MegaApp.Interfaces;
-using MegaApp.Models;
-using MegaApp.Pages;
 using MegaApp.Resources;
 using MegaApp.Services;
+using MegaApp.ViewModels;
+using MegaApp.Views;
 
 namespace MegaApp.MegaApi
 {

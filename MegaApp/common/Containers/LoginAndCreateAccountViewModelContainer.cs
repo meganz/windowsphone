@@ -2,10 +2,10 @@
 using System.Collections;
 using System.Linq;
 using Microsoft.Phone.Shell;
-using MegaApp.Models;
-using MegaApp.Pages;
 using MegaApp.Resources;
 using MegaApp.Services;
+using MegaApp.ViewModels;
+using MegaApp.Views;
 
 namespace MegaApp.Containers
 {

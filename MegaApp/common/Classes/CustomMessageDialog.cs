@@ -6,11 +6,11 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Media;
 using System.Windows.Shapes;
+using Telerik.Windows.Controls;
 using MegaApp.Extensions;
-using MegaApp.Models;
 using MegaApp.Resources;
 using MegaApp.Services;
-using Telerik.Windows.Controls;
+using MegaApp.ViewModels;
 
 namespace MegaApp.Classes
 {

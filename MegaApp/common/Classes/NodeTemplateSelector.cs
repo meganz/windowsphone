@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using mega;
-using MegaApp.Models;
 using Telerik.Windows.Controls;
+using mega;
+using MegaApp.ViewModels;
 
 namespace MegaApp.Classes
 {
