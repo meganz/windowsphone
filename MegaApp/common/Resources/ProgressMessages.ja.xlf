@@ -43,12 +43,12 @@
         </trans-unit>
         <trans-unit id="Resx/PM_CreateAccount" translate="yes" space="preserve">
           <source>Creating account…</source>
-          <target state="needs-review-translation">アカウント作成中...</target>
+          <target state="translated">アカウントを作成中...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when creating a MEGA account - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PM_CreateFolder" translate="yes" space="preserve">
           <source>Creating folder…</source>
-          <target state="needs-review-translation">Creating folder…</target>
+          <target state="translated">フォルダを作成中...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when creating a folder - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CreditCardStore" translate="yes" space="preserve">
@@ -140,12 +140,12 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
         </trans-unit>
         <trans-unit id="Resx/PM_Login" translate="yes" space="preserve">
           <source>Logging in…</source>
-          <target state="needs-review-translation">ログイン中</target>
+          <target state="translated">ログイン中...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when logging in - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PM_Logout" translate="yes" space="preserve">
           <source>Logging out…</source>
-          <target state="needs-review-translation">ログアウトします...</target>
+          <target state="translated">ログアウト中…</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when logging out - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/MoveNode" translate="yes" space="preserve">
@@ -255,17 +255,17 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
         </trans-unit>
         <trans-unit id="Resx/PM_ApiLocked" translate="yes" space="preserve">
           <source>This process is taking longer than expected. Please wait.</source>
-          <target state="translated">This process is taking longer than expected. Please wait.</target>
+          <target state="translated">このプロセスに予想以上時間がかかっています。お待ちください。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when the SDK is waiting for the server to complete a request due to an API lock (API error -3) - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PM_ApiRateLimit" translate="yes" space="preserve">
           <source>Too many requests. Please wait.</source>
-          <target state="translated">Too many requests. Please wait.</target>
+          <target state="translated">要求が多すぎます。お待ちください。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when the SDK is waiting for the server to complete a request due to a rate limit (API error -4) - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PM_ConnectivityIssue" translate="yes" space="preserve">
           <source>Unable to reach MEGA. Please check your connectivity or try again later.</source>
-          <target state="translated">Unable to reach MEGA. Please check your connectivity or try again later.</target>
+          <target state="translated">MEGAに到達できません。接続を確認するか、後でもう一度お試しください。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when the SDK is waiting for the server to complete a request due to connectivity issue - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PM_ServersBusy" translate="yes" space="preserve">

@@ -213,11 +213,11 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to get a link to a node failed - (String as short as possible).</comment>
   </data>
   <data name="GetPreviewFailed" xml:space="preserve">
-    <value>Échec de récupération de l'aperçu.</value>
+    <value>Échec de récupération de l’aperçu.</value>
     <comment>Message of the dialog displayed when the process/request to get a image preview failed.</comment>
   </data>
   <data name="GetPreviewFailed_Title" xml:space="preserve">
-    <value>Échec d'aperçu</value>
+    <value>Échec d’aperçu</value>
     <comment>Title of the dialog displayed when the process/request to get a image preview failed - (String as short as possible).</comment>
   </data>
   <data name="ImageSaved" xml:space="preserve">
@@ -1013,7 +1013,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 </comment>
   </data>
   <data name="DownloadLimitMessage" xml:space="preserve">
-    <value>Vous avez sélectionné plus de {0} éléments ({1}) à télécharger. Voulez-vous poursuivre ?</value>
+    <value>Vous avez sélectionné plus de {0} éléments ({1}) à télécharger. Souhaitez-vous poursuivre ?</value>
     <comment>Message of the dialog displayed when a user would try to download at the same time more nodes than the reliable number of simultaneous downloads for a good app performance. This dialog ask confirmation to start the download process. 
 Preserve the {0} and ({1}) codes because is for include the maximum reliable download number and the precise number of nodes to be downloaded in runtime.</comment>
   </data>
