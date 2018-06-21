@@ -52,7 +52,7 @@ namespace MegaApp.Views
             if (navParam == NavigationParameter.AutoCameraUpload)
             {
                 App.AppInformation.IsStartedAsAutoUpload = false;
-                MainSettingsPivot.SelectedItem = PivotAutoUpload;
+                this.MainPivot.SelectedItem = PivotAutoUpload;
             }
             
             DebugPanel.DataContext = DebugService.DebugSettings;

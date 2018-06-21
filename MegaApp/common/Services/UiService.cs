@@ -84,7 +84,7 @@ namespace MegaApp.Services
                 {
                     //HorizontalAlignment = HorizontalAlignment.Stretch,
                     //VerticalAlignment = VerticalAlignment.Stretch,
-                    Background = (SolidColorBrush) Application.Current.Resources["MegaRedSolidColorBrush"],
+                    Background = (SolidColorBrush) Application.Current.Resources["MegaRedColorBrush"],
                     Children =
                     {
                         new Image()

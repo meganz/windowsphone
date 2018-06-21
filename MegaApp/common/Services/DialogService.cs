@@ -1367,7 +1367,7 @@ namespace MegaApp.Services
                 Height = 4,
                 Margin = new Thickness(12, 0, 12, 0),
                 IndicatorBackground = (Brush)Application.Current.Resources["PhoneInactiveBrush"],
-                IndicatorForeground = (Brush)Application.Current.Resources["MegaRedSolidColorBrush"]
+                IndicatorForeground = (Brush)Application.Current.Resources["MegaRedColorBrush"]
             };
             passwordStrengthIndicator.IndicatorsOpacity.Add(0.4);
             passwordStrengthIndicator.IndicatorsOpacity.Add(0.6);
@@ -1398,7 +1398,7 @@ namespace MegaApp.Services
             var warningMessage = new TextBlock()
             {
                 Margin = new Thickness(12,0,12,0),
-                Foreground = (Brush)Application.Current.Resources["MegaRedSolidColorBrush"],
+                Foreground = (Brush)Application.Current.Resources["MegaRedColorBrush"],
                 Text = string.Empty,
                 TextWrapping = TextWrapping.Wrap
             };

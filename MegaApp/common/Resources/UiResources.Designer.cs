@@ -2158,6 +2158,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Enable PIN lock.
+        /// </summary>
+        public static string UI_EnablePinLock {
+            get {
+                return ResourceManager.GetString("UI_EnablePinLock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Export Recovery Key.
         /// </summary>
         public static string UI_ExportRecoveryKeyText {
@@ -2433,6 +2442,15 @@ namespace MegaApp.Resources {
         public static string UI_RecoveryKey {
             get {
                 return ResourceManager.GetString("UI_RecoveryKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Your Recovery Key allows you to login to your account even if you forget your password. Store it somewhere safe..
+        /// </summary>
+        public static string UI_RecoveryKeyDescription {
+            get {
+                return ResourceManager.GetString("UI_RecoveryKeyDescription", resourceCulture);
             }
         }
         

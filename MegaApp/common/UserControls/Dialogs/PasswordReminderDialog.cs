@@ -75,7 +75,7 @@ namespace MegaApp.Dialogs
             this.errorMessage = new TextBlock()
             {
                 Margin = new Thickness(0, 8, 0, 16),
-                Foreground = (Brush)Application.Current.Resources["MegaRedSolidColorBrush"],
+                Foreground = (Brush)Application.Current.Resources["MegaRedColorBrush"],
                 Text = string.Empty,
                 TextWrapping = TextWrapping.Wrap
             };

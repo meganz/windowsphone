@@ -1509,6 +1509,16 @@ NOTE: Keep the capital letter if possible.</note>
           <target state="new">Plain text</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Plain text' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
+        <trans-unit id="Resx/UI_EnablePinLock" translate="yes" xml:space="preserve">
+          <source>Enable PIN lock</source>
+          <target state="new">Enable PIN lock</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the switch button to enable or disable the PIN lock code. Keep PIN uppercase - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_RecoveryKeyDescription" translate="yes" xml:space="preserve">
+          <source>Your Recovery Key allows you to login to your account even if you forget your password. Store it somewhere safe.</source>
+          <target state="new">Your Recovery Key allows you to login to your account even if you forget your password. Store it somewhere safe.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label to describe the 'Recovery Key' and its purpose.</note>
+        </trans-unit>
         <trans-unit id="Resx/UI_TestPassword" translate="yes" xml:space="preserve">
           <source>Test Password</source>
           <target state="new">Test Password</target>
