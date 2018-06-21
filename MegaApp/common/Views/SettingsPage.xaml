@@ -396,6 +396,31 @@
                                     Command="{Binding CopyRecoveryKeyCommand}"
                                     Content="{Binding LocalizedUiResources.Copy, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" />
                             </Grid>
+
+                            <!-- SESSION MANAGEMENT -->
+                            <TextBlock 
+                                Margin="12,0,0,0"
+                                FontFamily="Portable User Interface" 
+                                Foreground="{StaticResource MegaRedColorBrush}"
+                                HorizontalAlignment="Left" 
+                                Text="{Binding LocalizedUiResources.UI_SessionManagement, Source={StaticResource LocalizedStrings}}" 
+                                TextWrapping="Wrap" 
+                                Style="{StaticResource PhoneTextSubtleStyle}" FontSize="{StaticResource PhoneFontSizeLarge}"
+                                VerticalAlignment="Center" />
+                            <TextBlock 
+                                Margin="12,0"
+                                FontFamily="Portable User Interface" 
+                                Foreground="{StaticResource PhoneSubtleBrush}"
+                                HorizontalAlignment="Left" 
+                                Text="{Binding LocalizedUiResources.UI_SessionManagementDescription, Source={StaticResource LocalizedStrings}}" 
+                                TextWrapping="Wrap" 
+                                VerticalAlignment="Center" />
+                            <Button
+                                x:Name="BtnCloseOtherSessions" 
+                                MinWidth="136"
+                                Command="{Binding CloseOtherSessionsCommand}"
+                                Content="{Binding LocalizedUiResources.UI_CloseOtherSessions, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}"
+                                HorizontalAlignment="Left" />
                         </StackPanel>
                     </ScrollViewer>
                 </phone:PivotItem>

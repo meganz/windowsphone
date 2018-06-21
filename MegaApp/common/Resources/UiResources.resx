@@ -1078,9 +1078,9 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <value>New password</value>
     <comment>Label for any 'New password' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
-  <data name="UI_CloseAllSessions" xml:space="preserve">
-    <value>Close all sessions</value>
-    <comment>Label for any 'Close all sessions' button, link, etc. - (String as short as possible).</comment>
+  <data name="UI_CloseOtherSessions" xml:space="preserve">
+    <value>Close other sessions</value>
+    <comment>Label for any 'Close other sessions' button, link, etc., to close all other active sessions except the current one - (String as short as possible).</comment>
   </data>
   <data name="UI_CloseSession" xml:space="preserve">
     <value>Close session</value>
@@ -1347,5 +1347,13 @@ NOTE: Max. length 20 characters.</comment>
   <data name="UI_RecoveryKeyDescription" xml:space="preserve">
     <value>Your Recovery Key allows you to login to your account even if you forget your password. Store it somewhere safe.</value>
     <comment>Label to describe the 'Recovery Key' and its purpose.</comment>
+  </data>
+  <data name="UI_SessionManagement" xml:space="preserve">
+    <value>Session Management</value>
+    <comment>Label for the "Settings" option to manage sessions - (String as short as possible).</comment>
+  </data>
+  <data name="UI_SessionManagementDescription" xml:space="preserve">
+    <value>This will log you out on all other active sessions except the current one. You will need to re-login to your other devices to continue using MEGA.</value>
+    <comment>Label to describe the "Session Management" option of the "Settings" section.</comment>
   </data>
 </root>

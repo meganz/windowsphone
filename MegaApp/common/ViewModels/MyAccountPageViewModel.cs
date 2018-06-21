@@ -1,13 +1,10 @@
-﻿using System;
-using System.IO;
-using System.Windows;
+﻿using System.Windows;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.MegaApi;
 using MegaApp.Resources;
 using MegaApp.Services;
-using MegaApp.Views;
 
 namespace MegaApp.ViewModels
 {
@@ -105,11 +102,6 @@ namespace MegaApp.ViewModels
             DialogService.ShowCancelSubscriptionFeedbackDialog();
         }
 
-        public void CloseAllSessions()
-        {
-            MegaSdk.killAllSessions(new KillAllSessionsRequestListener());
-        }
-
         #endregion
 
         #region Properties
@@ -121,8 +113,8 @@ namespace MegaApp.ViewModels
             private set { SetField(ref _emptyContentTemplate, value); }
         }
 
-        private String _emptyInformationText;
-        public String EmptyInformationText
+        private string _emptyInformationText;
+        public string EmptyInformationText
         {
             get { return _emptyInformationText; }
             private set { SetField(ref _emptyInformationText, value); }
