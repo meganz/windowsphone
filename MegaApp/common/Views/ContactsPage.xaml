@@ -93,7 +93,7 @@
                         <RichTextBox Grid.Row="0" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" VerticalAlignment="Top" Margin="0" Visibility="{Binding IsNetworkAvailable, Converter={StaticResource BooleanToVisibilityConverter}}">
                             <Paragraph>
                                 <Run Text="{Binding NumberOfMegaContactsText}"/>
-                                <Run Text="{Binding LocalizedUiResources.Contacts, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" Foreground="{StaticResource MegaRedSolidColorBrush}"/>
+                                <Run Text="{Binding LocalizedUiResources.Contacts, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" Foreground="{StaticResource MegaRedColorBrush}"/>
                             </Paragraph>
                         </RichTextBox>
                         <TextBlock Margin="0,0,12,0" Text="{Binding LocalizedUiResources.NoInternetConnection, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" VerticalAlignment="Center" Grid.Row="0" Visibility="{Binding IsNetworkAvailable, ConverterParameter=false, Converter={StaticResource BooleanToVisibilityConverter}}"/>
@@ -155,7 +155,7 @@
                         <RichTextBox Grid.Row="0" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" VerticalAlignment="Top" Margin="0" Visibility="{Binding IsNetworkAvailable, Converter={StaticResource BooleanToVisibilityConverter}}">
                             <Paragraph>
                                 <Run Text="{Binding NumberOfSentContactRequestsText}"/>
-                                <Run Text="{Binding LocalizedUiResources.SentRequests, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" Foreground="{StaticResource MegaRedSolidColorBrush}"/>
+                                <Run Text="{Binding LocalizedUiResources.SentRequests, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" Foreground="{StaticResource MegaRedColorBrush}"/>
                             </Paragraph>
                         </RichTextBox>
                         <TextBlock Margin="0,0,12,0" Text="{Binding LocalizedUiResources.NoInternetConnection, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" VerticalAlignment="Center" Grid.Row="0" Visibility="{Binding IsNetworkAvailable, ConverterParameter=false, Converter={StaticResource BooleanToVisibilityConverter}}"/>
@@ -200,7 +200,7 @@
                         <RichTextBox Grid.Row="0" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" VerticalAlignment="Top" Margin="0" Visibility="{Binding IsNetworkAvailable, Converter={StaticResource BooleanToVisibilityConverter}}">
                             <Paragraph>
                                 <Run Text="{Binding NumberOfReceivedContactRequestsText}"/>
-                                <Run Text="{Binding LocalizedUiResources.ReceivedRequests, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" Foreground="{StaticResource MegaRedSolidColorBrush}"/>
+                                <Run Text="{Binding LocalizedUiResources.ReceivedRequests, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" Foreground="{StaticResource MegaRedColorBrush}"/>
                             </Paragraph>
                         </RichTextBox>
                         <TextBlock Margin="0,0,12,0" Text="{Binding LocalizedUiResources.NoInternetConnection, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" VerticalAlignment="Center" Grid.Row="0" Visibility="{Binding IsNetworkAvailable, ConverterParameter=false, Converter={StaticResource BooleanToVisibilityConverter}}"/>

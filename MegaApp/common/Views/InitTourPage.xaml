@@ -39,7 +39,7 @@
                     <RichTextBox Grid.Row="0">
                         <Paragraph>
                             <Run Text="{Binding LocalizedUiResources.InitTourSpace1, Source={StaticResource LocalizedStrings}}"/>
-                            <Run Text="{Binding LocalizedUiResources.InitTourSpace2, Source={StaticResource LocalizedStrings}}" Foreground="{StaticResource MegaRedSolidColorBrush}"/>
+                            <Run Text="{Binding LocalizedUiResources.InitTourSpace2, Source={StaticResource LocalizedStrings}}" Foreground="{StaticResource MegaRedColorBrush}"/>
                         </Paragraph>
                     </RichTextBox>
                     <Image x:Name="ImgMegaSpace" Grid.Row="1" Stretch="None" Source="/Assets/Images/01A_storage.png" HorizontalAlignment="Center" VerticalAlignment="Center" />
@@ -56,7 +56,7 @@
 
                     <RichTextBox Grid.Row="0">
                         <Paragraph>
-                            <Run Text="{Binding LocalizedUiResources.InitTourSpeed1, Source={StaticResource LocalizedStrings}}" Foreground="{StaticResource MegaRedSolidColorBrush}"/>
+                            <Run Text="{Binding LocalizedUiResources.InitTourSpeed1, Source={StaticResource LocalizedStrings}}" Foreground="{StaticResource MegaRedColorBrush}"/>
                             <Run Text="{Binding LocalizedUiResources.InitTourSpeed2, Source={StaticResource LocalizedStrings}}"/>
                         </Paragraph>
                     </RichTextBox>
@@ -75,7 +75,7 @@
                     <RichTextBox Grid.Row="0">
                         <Paragraph>
                             <Run Text="{Binding LocalizedUiResources.InitTourPrivacy1, Source={StaticResource LocalizedStrings}}"/>
-                            <Run Text="{Binding LocalizedUiResources.InitTourPrivacy2, Source={StaticResource LocalizedStrings}}" Foreground="{StaticResource MegaRedSolidColorBrush}"/>
+                            <Run Text="{Binding LocalizedUiResources.InitTourPrivacy2, Source={StaticResource LocalizedStrings}}" Foreground="{StaticResource MegaRedColorBrush}"/>
                         </Paragraph>
                     </RichTextBox>
                     <Image x:Name="ImgMegaPrivacy" Grid.Row="1" Stretch="None" Source="/Assets/Images/03A_security.png" HorizontalAlignment="Center" VerticalAlignment="Center" />
@@ -93,7 +93,7 @@
                     <RichTextBox Grid.Row="0">
                         <Paragraph>
                             <Run Text="{Binding LocalizedUiResources.InitTourAccess1, Source={StaticResource LocalizedStrings}}"/>
-                            <Run Text="{Binding LocalizedUiResources.InitTourAccess2, Source={StaticResource LocalizedStrings}}" Foreground="{StaticResource MegaRedSolidColorBrush}"/>
+                            <Run Text="{Binding LocalizedUiResources.InitTourAccess2, Source={StaticResource LocalizedStrings}}" Foreground="{StaticResource MegaRedColorBrush}"/>
                             <Run Text="{Binding LocalizedUiResources.InitTourAccess3, Source={StaticResource LocalizedStrings}}"/>
                         </Paragraph>
                     </RichTextBox>

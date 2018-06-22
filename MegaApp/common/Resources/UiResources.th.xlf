@@ -1204,10 +1204,10 @@ Preserve the {0} code because is for include a number in runtime.</note>
           <target state="translated">รหัสผ่านใหม่</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'New password' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_CloseAllSessions" translate="yes" space="preserve">
-          <source>Close all sessions</source>
-          <target state="translated">ปิดทุกเซสชัน</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Close all sessions' button, link, etc. - (String as short as possible).</note>
+        <trans-unit id="Resx/UI_CloseOtherSessions" translate="yes" xml:space="preserve">
+          <source>Close other sessions</source>
+          <target state="new">Close other sessions</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Close other sessions' button, link, etc., to close all other active sessions except the current one - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_CloseSession" translate="yes" space="preserve">
           <source>Close session</source>
@@ -1508,6 +1508,26 @@ NOTE: Keep the capital letter if possible.</note>
           <source>Plain text</source>
           <target state="new">Plain text</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Plain text' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_EnablePinLock" translate="yes" xml:space="preserve">
+          <source>Enable PIN lock</source>
+          <target state="new">Enable PIN lock</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the switch button to enable or disable the PIN lock code. Keep PIN uppercase - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_RecoveryKeyDescription" translate="yes" xml:space="preserve">
+          <source>Your Recovery Key allows you to login to your account even if you forget your password. Store it somewhere safe.</source>
+          <target state="new">Your Recovery Key allows you to login to your account even if you forget your password. Store it somewhere safe.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label to describe the 'Recovery Key' and its purpose.</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_SessionManagementDescription" translate="yes" xml:space="preserve">
+          <source>This will log you out on all other active sessions except the current one. You will need to re-login to your other devices to continue using MEGA.</source>
+          <target state="new">This will log you out on all other active sessions except the current one. You will need to re-login to your other devices to continue using MEGA.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label to describe the "Session Management" option of the "Settings" section.</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_SessionManagement" translate="yes" xml:space="preserve">
+          <source>Session Management</source>
+          <target state="new">Session Management</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the "Settings" option to manage sessions - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TestPassword" translate="yes" xml:space="preserve">
           <source>Test Password</source>

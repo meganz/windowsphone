@@ -5,6 +5,7 @@ using Microsoft.Phone.Tasks;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
+using MegaApp.MegaApi;
 using MegaApp.Resources;
 using MegaApp.Services;
 
@@ -21,6 +22,7 @@ namespace MegaApp.ViewModels
             this.CopyRecoveryKeyCommand = new DelegateCommand(CopyRecoveryKey);
             this.ChangePinLockCommand = new DelegateCommand(ChangePinLock);
             this.ViewRecoveryKeyCommand = new DelegateCommand(ViewRecoveryKey);
+            this.CloseOtherSessionsCommand = new DelegateCommand(CloseOtherSessions);
 
             #if WINDOWS_PHONE_80
             this.SelectDownloadLocationCommand = null;
@@ -72,6 +74,7 @@ namespace MegaApp.ViewModels
         public ICommand TakedownGuidanceCommand { get; private set; }
         public ICommand GeneralCommand { get; private set; }
         public ICommand DataProtectionRegulationCommand { get; private set; }
+        public ICommand CloseOtherSessionsCommand { get; private set; }
 
         #endregion
 
@@ -179,6 +182,12 @@ namespace MegaApp.ViewModels
         {
             var webBrowserTask = new WebBrowserTask { Uri = new Uri(AppResources.AR_DataProtectionRegulationUrl) };
             webBrowserTask.Show();
+        }
+
+        private void CloseOtherSessions(object obj)
+        {
+            if (!NetworkService.IsNetworkAvailable(true)) return;
+            this.MegaSdk.killAllSessions(new KillAllSessionsRequestListener());
         }
 
         #endregion

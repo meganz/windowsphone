@@ -2,7 +2,6 @@
 using System.ComponentModel;
 using System.Linq;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Net.NetworkInformation;
@@ -12,7 +11,6 @@ using GestureEventArgs = System.Windows.Input.GestureEventArgs;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
-using MegaApp.MegaApi;
 using MegaApp.Resources;
 using MegaApp.Services;
 using MegaApp.UserControls;
@@ -81,7 +79,6 @@ namespace MegaApp.Views
 
             ((ApplicationBarMenuItem)ApplicationBar.MenuItems[0]).Text = UiResources.UI_ChangePassword.ToLower();
             ((ApplicationBarMenuItem)ApplicationBar.MenuItems[1]).Text = UiResources.ClearCache.ToLower();
-            ((ApplicationBarMenuItem)ApplicationBar.MenuItems[2]).Text = UiResources.UI_CloseAllSessions.ToLower();
             
             // Only if is a LITE account show a "cancel subscription" menu option
             if (myAccountPageViewModel.AccountDetails.AccountType == MAccountType.ACCOUNT_TYPE_LITE &&
@@ -246,13 +243,6 @@ namespace MegaApp.Views
             if (!NetworkService.IsNetworkAvailable(true)) return;
 
             myAccountPageViewModel.CancelSubscription();
-        }
-
-        private void OnCloseAllSessionsClick(object sender, EventArgs e)
-        {
-            if (!NetworkService.IsNetworkAvailable(true)) return;
-
-            myAccountPageViewModel.CloseAllSessions();
         }
 
         private void OnItemTap(object sender, ListBoxItemTapEventArgs e)

@@ -2014,11 +2014,11 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Close all sessions.
+        ///   Busca una cadena traducida similar a Close other sessions.
         /// </summary>
-        public static string UI_CloseAllSessions {
+        public static string UI_CloseOtherSessions {
             get {
-                return ResourceManager.GetString("UI_CloseAllSessions", resourceCulture);
+                return ResourceManager.GetString("UI_CloseOtherSessions", resourceCulture);
             }
         }
         
@@ -2154,6 +2154,15 @@ namespace MegaApp.Resources {
         public static string UI_Email {
             get {
                 return ResourceManager.GetString("UI_Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Enable PIN lock.
+        /// </summary>
+        public static string UI_EnablePinLock {
+            get {
+                return ResourceManager.GetString("UI_EnablePinLock", resourceCulture);
             }
         }
         
@@ -2437,6 +2446,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Your Recovery Key allows you to login to your account even if you forget your password. Store it somewhere safe..
+        /// </summary>
+        public static string UI_RecoveryKeyDescription {
+            get {
+                return ResourceManager.GetString("UI_RecoveryKeyDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Remove link.
         /// </summary>
         public static string UI_RemoveLink {
@@ -2451,6 +2469,24 @@ namespace MegaApp.Resources {
         public static string UI_Retry {
             get {
                 return ResourceManager.GetString("UI_Retry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Session Management.
+        /// </summary>
+        public static string UI_SessionManagement {
+            get {
+                return ResourceManager.GetString("UI_SessionManagement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a This will log you out on all other active sessions except the current one. You will need to re-login to your other devices to continue using MEGA..
+        /// </summary>
+        public static string UI_SessionManagementDescription {
+            get {
+                return ResourceManager.GetString("UI_SessionManagementDescription", resourceCulture);
             }
         }
         

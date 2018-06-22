@@ -29,7 +29,6 @@
             <shell:ApplicationBar.MenuItems>
                 <shell:ApplicationBarMenuItem Text="change password" Click="OnChangePasswordClick" />                
                 <shell:ApplicationBarMenuItem Text="clear cache" Click="OnClearCacheClick"/>
-                <shell:ApplicationBarMenuItem Text="close all sessions" Click="OnCloseAllSessionsClick"/>
             </shell:ApplicationBar.MenuItems>
         </shell:ApplicationBar>
     </userControls:MegaPhoneApplicationPage.Resources>
@@ -108,13 +107,13 @@
                                 <RichTextBox Grid.Row="0" Margin="-12,0,0,10" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center" Visibility="{Binding AccountDetails.IsValidSubscription, Converter={StaticResource BooleanToVisibilityConverter}}">
                                     <Paragraph>
                                         <Run Text="{Binding LocalizedUiResources.RenewsOn, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" FontSize="{StaticResource PhoneFontSizeNormal}"/>
-                                        <Run Text="{Binding AccountDetails.SubscriptionRenewDate}" Foreground="{StaticResource MegaRedSolidColorBrush}"/>
+                                        <Run Text="{Binding AccountDetails.SubscriptionRenewDate}" Foreground="{StaticResource MegaRedColorBrush}"/>
                                     </Paragraph>
                                 </RichTextBox>
                                 <RichTextBox Grid.Row="0" Margin="-12,0,0,10" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center" Visibility="{Binding AccountDetails.IsValidSubscription, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=false}">
                                     <Paragraph>
                                         <Run Text="{Binding LocalizedUiResources.ExpiresOn, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" FontSize="{StaticResource PhoneFontSizeNormal}"/>
-                                        <Run Text="{Binding AccountDetails.ProExpirationDate}" Foreground="{StaticResource MegaRedSolidColorBrush}"/>
+                                        <Run Text="{Binding AccountDetails.ProExpirationDate}" Foreground="{StaticResource MegaRedColorBrush}"/>
                                     </Paragraph>
                                 </RichTextBox>
                             </StackPanel>                            

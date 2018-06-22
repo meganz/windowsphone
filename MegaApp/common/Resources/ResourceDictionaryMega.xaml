@@ -16,7 +16,7 @@
     <!-- COLOR DEFINITIONS -->
     <Color x:Key="MegaRedColor">#EB4444</Color>
     <Color x:Key="MegaRedDisabledColor">#7DEB4444</Color>
-    <SolidColorBrush x:Key="MegaRedSolidColorBrush" Color="{StaticResource MegaRedColor}"/>
+    <SolidColorBrush x:Key="MegaRedColorBrush" Color="{StaticResource MegaRedColor}"/>
     <SolidColorBrush x:Key="MegaRedDisabledColorBrush" Color="{StaticResource MegaRedDisabledColor}"/>
 
     <system:Double x:Key="InformationFontSize">14</system:Double>
@@ -1617,10 +1617,10 @@
                                 <VisualState x:Name="Pressed">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Fill" Storyboard.TargetName="PathArrow">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource MegaRedSolidColorBrush}"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource MegaRedColorBrush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="TxtName">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource MegaRedSolidColorBrush}"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource MegaRedColorBrush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
@@ -1660,7 +1660,7 @@
                                 <VisualState x:Name="Pressed">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Fill" Storyboard.TargetName="PathArrow">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource MegaRedSolidColorBrush}"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource MegaRedColorBrush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
@@ -1698,7 +1698,7 @@
                                 <VisualState x:Name="Pressed">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Fill" Storyboard.TargetName="PathArrow">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource MegaRedSolidColorBrush}"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource MegaRedColorBrush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
@@ -1736,7 +1736,7 @@
                                 <VisualState x:Name="Pressed">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Fill" Storyboard.TargetName="PathArrow">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource MegaRedSolidColorBrush}"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource MegaRedColorBrush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
@@ -1774,7 +1774,7 @@
                                 <VisualState x:Name="Pressed">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Fill" Storyboard.TargetName="PathArrow">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource MegaRedSolidColorBrush}"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource MegaRedColorBrush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
@@ -1812,7 +1812,7 @@
                                 <VisualState x:Name="Pressed">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Fill" Storyboard.TargetName="PathArrow">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource MegaRedSolidColorBrush}"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource MegaRedColorBrush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
@@ -1850,7 +1850,7 @@
                                 <VisualState x:Name="Pressed">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Fill" Storyboard.TargetName="PathArrow">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource MegaRedSolidColorBrush}"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource MegaRedColorBrush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
