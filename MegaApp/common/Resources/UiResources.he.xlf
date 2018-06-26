@@ -1524,6 +1524,11 @@ NOTE: Keep the capital letter if possible.</note>
           <target state="new">This will log you out on all other active sessions except the current one. You will need to re-login to your other devices to continue using MEGA.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label to describe the "Session Management" option of the "Settings" section.</note>
         </trans-unit>
+        <trans-unit id="Resx/UI_Warning" translate="yes" xml:space="preserve">
+          <source>Warning</source>
+          <target state="new">Warning</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Warning' title, message, etc. - (String as short as possible).</note>
+        </trans-unit>
         <trans-unit id="Resx/UI_SessionManagement" translate="yes" xml:space="preserve">
           <source>Session Management</source>
           <target state="new">Session Management</target>

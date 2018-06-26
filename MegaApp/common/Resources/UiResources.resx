@@ -1356,4 +1356,8 @@ NOTE: Max. length 20 characters.</comment>
     <value>This will log you out on all other active sessions except the current one. You will need to re-login to your other devices to continue using MEGA.</value>
     <comment>Label to describe the "Session Management" option of the "Settings" section.</comment>
   </data>
+  <data name="UI_Warning" xml:space="preserve">
+    <value>Warning</value>
+    <comment>Label for any 'Warning' title, message, etc. - (String as short as possible).</comment>
+  </data>
 </root>
