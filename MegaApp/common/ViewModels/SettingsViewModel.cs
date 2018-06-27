@@ -184,9 +184,18 @@ namespace MegaApp.ViewModels
             webBrowserTask.Show();
         }
 
-        private void CloseOtherSessions(object obj)
+        private async void CloseOtherSessions(object obj)
         {
             if (!NetworkService.IsNetworkAvailable(true)) return;
+
+            var result = await new CustomMessageDialog(
+                UiResources.UI_Warning,
+                AppMessages.AM_CloseOtherSessionsQuestionMessage,
+                App.AppInformation,
+                MessageDialogButtons.YesNo).ShowDialogAsync();
+
+            if (result == MessageDialogResult.CancelNo) return;
+
             this.MegaSdk.killAllSessions(new KillAllSessionsRequestListener());
         }
 

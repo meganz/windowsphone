@@ -241,6 +241,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Do you want to close all other sessions? This will log you out on all other active sessions except the current one..
+        /// </summary>
+        public static string AM_CloseOtherSessionsQuestionMessage {
+            get {
+                return ResourceManager.GetString("AM_CloseOtherSessionsQuestionMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Failed to copy item. Please try again..
         /// </summary>
         public static string AM_CopyFailed {

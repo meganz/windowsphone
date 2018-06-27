@@ -1639,6 +1639,11 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="new">Recovery Key export failed</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog or notification displayed in cases that the app has not succesful exported the recovery key.</note>
         </trans-unit>
+        <trans-unit id="Resx/AM_CloseOtherSessionsQuestionMessage" translate="yes" xml:space="preserve">
+          <source>Do you want to close all other sessions? This will log you out on all other active sessions except the current one.</source>
+          <target state="new">Do you want to close all other sessions? This will log you out on all other active sessions except the current one.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed to ask the user to confirm want to close all the other sessions.</note>
+        </trans-unit>
         <trans-unit id="Resx/AM_RecoveryKeyExportFailed" translate="yes" xml:space="preserve">
           <source>Failed to export the Recovery Key. Please try again.</source>
           <target state="new">Failed to export the Recovery Key. Please try again.</target>

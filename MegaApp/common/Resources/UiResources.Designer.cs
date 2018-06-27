@@ -2653,6 +2653,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Warning.
+        /// </summary>
+        public static string UI_Warning {
+            get {
+                return ResourceManager.GetString("UI_Warning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Unknown.
         /// </summary>
         public static string Unknown {
