@@ -94,6 +94,14 @@ namespace MegaApp.Services
             }
         }
 
+        /// <summary>
+        /// Initialize the DB (create tables if no exist).
+        /// </summary>
+        public static void InitializeDatabase()
+        {
+            SavedForOffline.CreateTable();
+        }
+
         public static MemoryInformation GetAppMemoryUsage()
         {
             #if WINDOWS_PHONE_80
