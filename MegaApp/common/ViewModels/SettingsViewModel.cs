@@ -206,10 +206,10 @@ namespace MegaApp.ViewModels
         /// <summary>
         /// Clear the app cache
         /// </summary>
-        private void ClearCache(object obj)
+        private async void ClearCache(object obj)
         {
             string title, message = string.Empty;
-            if (AppService.ClearAppCache())
+            if (await AppService.ClearAppCacheAsync())
             {
                 title = AppMessages.CacheCleared_Title;
                 message = AppMessages.CacheCleared;
