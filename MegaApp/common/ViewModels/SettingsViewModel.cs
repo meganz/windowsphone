@@ -23,6 +23,7 @@ namespace MegaApp.ViewModels
             this.ChangePinLockCommand = new DelegateCommand(ChangePinLock);
             this.ViewRecoveryKeyCommand = new DelegateCommand(ViewRecoveryKey);
             this.CloseOtherSessionsCommand = new DelegateCommand(CloseOtherSessions);
+            this.ClearCacheCommand = new DelegateCommand(ClearCache);
 
             #if WINDOWS_PHONE_80
             this.SelectDownloadLocationCommand = null;
@@ -57,6 +58,8 @@ namespace MegaApp.ViewModels
             UpdateUserData();
 
             InitializeMenu(HamburgerMenuItemType.Settings);
+
+            AccountDetails.GetAppCacheSize();
         }
 
         #region Commands
@@ -75,6 +78,7 @@ namespace MegaApp.ViewModels
         public ICommand GeneralCommand { get; private set; }
         public ICommand DataProtectionRegulationCommand { get; private set; }
         public ICommand CloseOtherSessionsCommand { get; private set; }
+        public ICommand ClearCacheCommand { get; private set; }
 
         #endregion
 
@@ -197,6 +201,32 @@ namespace MegaApp.ViewModels
             if (result == MessageDialogResult.CancelNo) return;
 
             this.MegaSdk.killAllSessions(new KillAllSessionsRequestListener());
+        }
+
+        /// <summary>
+        /// Clear the app cache
+        /// </summary>
+        private void ClearCache(object obj)
+        {
+            string title, message = string.Empty;
+            if (AppService.ClearAppCache())
+            {
+                title = AppMessages.CacheCleared_Title;
+                message = AppMessages.CacheCleared;
+            }
+            else
+            {
+                title = AppMessages.AM_ClearCacheFailed_Title;
+                message = AppMessages.AM_ClearCacheFailed;
+            }
+
+            OnUiThread(() =>
+            {
+                new CustomMessageDialog(title, message, App.AppInformation,
+                    MessageDialogButtons.Ok).ShowDialog();
+            });
+
+            AccountDetails.GetAppCacheSize();
         }
 
         #endregion

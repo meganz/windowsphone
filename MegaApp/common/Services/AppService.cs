@@ -155,38 +155,46 @@ namespace MegaApp.Services
             catch (IOException) { }
         }
 
-        public static ulong GetAppCacheSize()
+        /// <summary>
+        /// Get the size of the app cache
+        /// </summary>
+        /// <returns>App cache size</returns>
+        public static async Task<ulong> GetAppCacheSizeAsync()
         {
-            var files = new List<string>();
-
-            try { files.AddRange(Directory.GetFiles(GetThumbnailDirectoryPath())); }
-            catch (Exception e) { LogService.Log(MLogLevel.LOG_LEVEL_WARNING, "Error getting thumbnails cache.", e); }
-            
-            try { files.AddRange(Directory.GetFiles(GetPreviewDirectoryPath())); }
-            catch (Exception e) { LogService.Log(MLogLevel.LOG_LEVEL_WARNING, "Error getting previews cache.", e); }
-
-            try { files.AddRange(Directory.GetFiles(GetUploadDirectoryPath())); } 
-            catch (Exception e) { LogService.Log(MLogLevel.LOG_LEVEL_WARNING, "Error getting uploads cache.", e); }
-
-            try { files.AddRange(GetDownloadDirectoryFiles(GetDownloadDirectoryPath())); } 
-            catch (Exception e) { LogService.Log(MLogLevel.LOG_LEVEL_WARNING, "Error getting uploads cache.", e); }
-            
             ulong totalSize = 0;
-            foreach (var file in files)
+
+            await Task.Run(() =>
             {
-                if(FileService.FileExists(file))
+                var files = new List<string>();
+
+                try { files.AddRange(Directory.GetFiles(GetThumbnailDirectoryPath())); }
+                catch (Exception e) { LogService.Log(MLogLevel.LOG_LEVEL_WARNING, "Error getting thumbnails cache.", e); }
+
+                try { files.AddRange(Directory.GetFiles(GetPreviewDirectoryPath())); }
+                catch (Exception e) { LogService.Log(MLogLevel.LOG_LEVEL_WARNING, "Error getting previews cache.", e); }
+
+                try { files.AddRange(Directory.GetFiles(GetUploadDirectoryPath())); }
+                catch (Exception e) { LogService.Log(MLogLevel.LOG_LEVEL_WARNING, "Error getting uploads cache.", e); }
+
+                try { files.AddRange(GetDownloadDirectoryFiles(GetDownloadDirectoryPath())); }
+                catch (Exception e) { LogService.Log(MLogLevel.LOG_LEVEL_WARNING, "Error getting downloads cache.", e); }
+
+                foreach (var file in files)
                 {
-                    try
+                    if (FileService.FileExists(file))
                     {
-                        var fileInfo = new FileInfo(file);
-                        totalSize += (ulong)fileInfo.Length;
-                    }
-                    catch (Exception e)
-                    {
-                        LogService.Log(MLogLevel.LOG_LEVEL_WARNING, "Error getting app cache size.", e);
+                        try
+                        {
+                            var fileInfo = new FileInfo(file);
+                            totalSize += (ulong)fileInfo.Length;
+                        }
+                        catch (Exception e)
+                        {
+                            LogService.Log(MLogLevel.LOG_LEVEL_WARNING, "Error getting app cache size.", e);
+                        }
                     }
                 }
-            }
+            });
 
             return totalSize;
         }
@@ -213,19 +221,24 @@ namespace MegaApp.Services
             return files;
         }
 
-        public static bool ClearAppCache(bool includeLocalFolder)
+        /// <summary>
+        /// Clear the app cache
+        /// </summary>
+        /// <param name="includeLocalFolder">Flag to indicate if clear the app local cache.</param>
+        /// <returns>TRUE if the cache was successfully deleted or FALSE otherwise.</returns>
+        public static bool ClearAppCache(bool includeLocalFolder = false)
         {
             bool result = true;
             
-            if (includeLocalFolder)
-                result = result & ClearLocalCache();
-
             result = result & ClearThumbnailCache();
             result = result & ClearPreviewCache();
             result = result & ClearDownloadCache();
             result = result & ClearUploadCache();
 
             result = result & ClearAppDatabase();
+
+            if (includeLocalFolder)
+                result = result & ClearLocalCache();
 
             return result;
         }
@@ -374,7 +387,7 @@ namespace MegaApp.Services
                 if (App.MainPageViewModel.RubbishBin != null) 
                     App.MainPageViewModel.RubbishBin.ChildNodes.Clear();
             });
-            AppService.ClearAppCache(false);  
+            AppService.ClearAppCache(true);  
           
             // Delete Account Details info
             AccountService.ClearAccountDetails();

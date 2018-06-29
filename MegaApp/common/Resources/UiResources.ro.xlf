@@ -1529,6 +1529,11 @@ NOTE: Keep the capital letter if possible.</note>
           <target state="new">Warning</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Warning' title, message, etc. - (String as short as possible).</note>
         </trans-unit>
+        <trans-unit id="Resx/UI_UsedCache" translate="yes" xml:space="preserve">
+          <source>Used cache</source>
+          <target state="new">Used cache</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label to indicate the amount of used cache - (String as short as possible).</note>
+        </trans-unit>
         <trans-unit id="Resx/UI_SessionManagement" translate="yes" xml:space="preserve">
           <source>Session Management</source>
           <target state="new">Session Management</target>

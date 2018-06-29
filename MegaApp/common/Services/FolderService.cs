@@ -143,7 +143,7 @@ namespace MegaApp.Services
 
                 result = result & FileService.ClearFiles(Directory.GetFiles(path));
 
-                return true;
+                return result;
             }
             catch (Exception e)
             {
