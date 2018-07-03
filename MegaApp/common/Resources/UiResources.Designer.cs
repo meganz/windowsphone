@@ -2464,6 +2464,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Restore.
+        /// </summary>
+        public static string UI_Restore {
+            get {
+                return ResourceManager.GetString("UI_Restore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Retry.
         /// </summary>
         public static string UI_Retry {

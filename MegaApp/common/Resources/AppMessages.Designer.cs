@@ -913,6 +913,33 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Failed to restore &apos;{0}&apos; from rubbish bin. Please try again..
+        /// </summary>
+        public static string AM_RestoreFromRubbishBinFailed {
+            get {
+                return ResourceManager.GetString("AM_RestoreFromRubbishBinFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Restore from rubbish bin failed.
+        /// </summary>
+        public static string AM_RestoreFromRubbishBinFailed_Title {
+            get {
+                return ResourceManager.GetString("AM_RestoreFromRubbishBinFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Failed to restore items from rubbish bin. Please try again..
+        /// </summary>
+        public static string AM_RestoreMultiFromRubbishBinFailed {
+            get {
+                return ResourceManager.GetString("AM_RestoreMultiFromRubbishBinFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Do you want to save the log file in an external location to use it later?.
         /// </summary>
         public static string AM_SaveLogFile {

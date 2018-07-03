@@ -331,7 +331,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Creating account....
+        ///   Busca una cadena traducida similar a Creating account….
         /// </summary>
         public static string PM_CreateAccount {
             get {
@@ -340,7 +340,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Creating folder....
+        ///   Busca una cadena traducida similar a Creating folder….
         /// </summary>
         public static string PM_CreateFolder {
             get {
@@ -367,7 +367,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Logging in....
+        ///   Busca una cadena traducida similar a Logging in….
         /// </summary>
         public static string PM_Login {
             get {
@@ -376,7 +376,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Logging out....
+        ///   Busca una cadena traducida similar a Logging out….
         /// </summary>
         public static string PM_Logout {
             get {
@@ -412,7 +412,16 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Servers too busy. Please wait..
+        ///   Busca una cadena traducida similar a Restoring....
+        /// </summary>
+        public static string PM_Restoring {
+            get {
+                return ResourceManager.GetString("PM_Restoring", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Servers are too busy. Please wait….
         /// </summary>
         public static string PM_ServersBusy {
             get {

@@ -114,42 +114,62 @@
 			/>
         </shell:ApplicationBar>
 
-        <shell:ApplicationBar x:Key="MultiSelectMenu">
+        <shell:ApplicationBar x:Key="MultiSelectCloudDriveMenu">
             <shell:ApplicationBar.MenuItems>
                 <shell:ApplicationBarMenuItem
 					Text="select all"	
-					Click="OnSelectAllClick"			
-				/>
+					Click="OnSelectAllClick" />
                 <shell:ApplicationBarMenuItem
 					Text="deselect all"	
-					Click="OnDeselectAllClick"			
-				/>
+					Click="OnDeselectAllClick" />
                 <shell:ApplicationBarMenuItem
 					Text="cancel"	
-					Click="OnMultiSelectClick"			
-				/>
+					Click="OnMultiSelectClick"	/>
             </shell:ApplicationBar.MenuItems>
             <shell:ApplicationBarIconButton 
         		IconUri="/Assets/AppBar/download.png" 
         		Text="download" 
-        		Click="OnMultiSelectDownloadClick" 				
-			/>
+        		Click="OnMultiSelectDownloadClick" />
             <shell:ApplicationBarIconButton 
         		IconUri="/Assets/AppBar/move-copy.png" 
         		Text="copy/move" 
-        		Click="OnMultiSelectCopyOrMoveClick" 
-			/>
+        		Click="OnMultiSelectCopyOrMoveClick" />            
             <shell:ApplicationBarIconButton 
         		IconUri="/Assets/AppBar/remove.png" 
         		Text="remove" 
-        		Click="OnMultiSelectRemoveClick" 
-			/>
+        		Click="OnMultiSelectRemoveClick" />
         </shell:ApplicationBar>
 
+        <shell:ApplicationBar x:Key="MultiSelectRubbishBinMenu">
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem
+					Text="select all"	
+					Click="OnSelectAllClick" />
+                <shell:ApplicationBarMenuItem
+					Text="deselect all"	
+					Click="OnDeselectAllClick" />
+                <shell:ApplicationBarMenuItem
+					Text="cancel"	
+					Click="OnMultiSelectClick" />
+            </shell:ApplicationBar.MenuItems>
+            <shell:ApplicationBarIconButton 
+        		IconUri="/Assets/AppBar/download.png" 
+        		Text="download" 
+        		Click="OnMultiSelectDownloadClick" />
+            <shell:ApplicationBarIconButton 
+        		IconUri="/Assets/AppBar/move-copy.png" 
+        		Text="copy/move" 
+        		Click="OnMultiSelectCopyOrMoveClick" />
+            <shell:ApplicationBarIconButton 
+                IconUri="/Assets/AppBar/refresh.png" 
+        		Text="restore" 
+        		Click="OnMultiSelectRestoreClick" />
+            <shell:ApplicationBarIconButton 
+        		IconUri="/Assets/AppBar/remove.png" 
+        		Text="remove" 
+        		Click="OnMultiSelectRemoveClick" />
+        </shell:ApplicationBar>
     </userControls:MegaPhoneApplicationPage.Resources>
-
-
-    <!--LayoutRoot is the root grid where all page content is placed-->
 
     <userControls:MegaPhoneApplicationPage.FontFamily>
         <StaticResource ResourceKey="PhoneFontFamilyNormal"/>
@@ -264,27 +284,23 @@
                                         <telerikPrimitives:RadContextMenuItem 
                                             x:Name="BtnDownloadItemCloudDrive" 
                                             Command="{Binding DownloadItemCommand}"
-                                            Content="{Binding LocalizedUiResources.Download, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" 
-                                            />
+                                            Content="{Binding LocalizedUiResources.Download, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" />
                                         <telerikPrimitives:RadContextMenuItem 
                                             x:Name="BtnViewDetailsCloudDrive" 
                                             Command="{Binding ViewDetailsCommand}"
-                                            Content="{Binding LocalizedUiResources.ViewDetails, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" 
-                                            />
+                                            Content="{Binding LocalizedUiResources.ViewDetails, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" />
                                         <telerikPrimitives:RadContextMenuItem 
                                             x:Name="BtnRenameItemCloudDrive" 
                                             Command="{Binding RenameItemCommand}"
-                                            Content="{Binding LocalizedUiResources.Rename, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
-                                            />
+                                            Content="{Binding LocalizedUiResources.Rename, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" />
                                         <telerikPrimitives:RadContextMenuItem 
                                             x:Name="BtnCopyOrMoveItemCloudDrive"
                                             Tapped="OnCopyOrMoveItemTap"
-                                            Content="{Binding LocalizedUiResources.Copy, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
-                                            />
+                                            Content="{Binding LocalizedUiResources.Copy, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" />
                                         <telerikPrimitives:RadContextMenuItem 
                                             Command="{Binding RemoveItemCommand}" 
                                             Content="{Binding LocalizedUiResources.Remove, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
-                                            />
+                                            Foreground="{StaticResource MegaRedColorBrush}" />
                                     </telerikPrimitives:RadContextMenu>
                                 </telerikPrimitives:RadContextMenu.ContextMenu>
                             </telerikPrimitives:RadDataBoundListBox>
@@ -358,30 +374,33 @@
                               EmptyContentTemplate="{Binding EmptyContentTemplate}" 
                               VirtualizationStrategyDefinition="{Binding VirtualizationStrategy}">
                               <telerikPrimitives:RadContextMenu.ContextMenu>
-                                <telerikPrimitives:RadContextMenu 
-                                  OpenGesture="Hold" 
-                                  x:Name="RubbishBinMenu" 
-                                  Opening="OnMenuOpening">
-                                  <telerikPrimitives:RadContextMenuItem 
-                                    x:Name="BtnDownloadItemRubbishBin" 
-                                    Command="{Binding DownloadItemCommand}"
-                                    Content="{Binding LocalizedUiResources.Download, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" 
-                                    />
-                                  <telerikPrimitives:RadContextMenuItem 
-                                    x:Name="BtnRenameItemRubbishBin" 
-                                    Command="{Binding RenameItemCommand}"
-                                    Content="{Binding LocalizedUiResources.Rename, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
-                                    />
-                                  <telerikPrimitives:RadContextMenuItem 
-                                    x:Name="BtnCopyOrMoveItemRubbishBin"
-                                    Tapped="OnCopyOrMoveItemTap"
-                                    Content="{Binding LocalizedUiResources.Copy, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
-                                    />
-                                  <telerikPrimitives:RadContextMenuItem 
-                                    x:Name="BtnRemoveRubbishBin" 
-                                    Command="{Binding RemoveItemCommand}" 
-                                    Content="{Binding LocalizedUiResources.Remove, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
-                                    />
+                                  <telerikPrimitives:RadContextMenu 
+                                      OpenGesture="Hold" 
+                                      x:Name="RubbishBinMenu" 
+                                      Opening="OnMenuOpening">
+                                      <telerikPrimitives:RadContextMenuItem 
+                                          x:Name="BtnDownloadItemRubbishBin" 
+                                          Command="{Binding DownloadItemCommand}"
+                                          Content="{Binding LocalizedUiResources.Download, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" />
+                                      <telerikPrimitives:RadContextMenuItem 
+                                          x:Name="BtnRenameItemRubbishBin" 
+                                          Command="{Binding RenameItemCommand}"
+                                          Content="{Binding LocalizedUiResources.Rename, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" />
+                                      <telerikPrimitives:RadContextMenuItem 
+                                          x:Name="BtnCopyOrMoveItemRubbishBin"
+                                          Tapped="OnCopyOrMoveItemTap"
+                                          Content="{Binding LocalizedUiResources.Copy, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" />
+                                      <telerikPrimitives:RadContextMenuItem 
+                                          x:Name="BtnRestoreRubbishBin" 
+                                          Command="{Binding RestoreItemCommand}" 
+                                          Content="{Binding LocalizedUiResources.UI_Restore, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
+                                          Foreground="{StaticResource MegaGreenColorBrush}"
+                                          Visibility="{Binding FocusedNode.CanRestore, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                                      <telerikPrimitives:RadContextMenuItem 
+                                          x:Name="BtnRemoveRubbishBin" 
+                                          Command="{Binding RemoveItemCommand}" 
+                                          Content="{Binding LocalizedUiResources.Remove, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
+                                          Foreground="{StaticResource MegaRedColorBrush}" />
                                 </telerikPrimitives:RadContextMenu>
                               </telerikPrimitives:RadContextMenu.ContextMenu>
                             </telerikPrimitives:RadDataBoundListBox>

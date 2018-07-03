@@ -787,7 +787,10 @@ namespace MegaApp.Views
                     this.ApplicationBar = (ApplicationBar)Resources["ImportItemMenu"];
                     break;
                 case DriveDisplayMode.MultiSelect:
-                    this.ApplicationBar = (ApplicationBar)Resources["MultiSelectMenu"];
+                    if (_mainPageViewModel.ActiveFolderView.PreviousDisplayMode == DriveDisplayMode.RubbishBin)
+                        this.ApplicationBar = (ApplicationBar)Resources["MultiSelectRubbishBinMenu"];
+                    else
+                        this.ApplicationBar = (ApplicationBar)Resources["MultiSelectCloudDriveMenu"];
                     break;
                 case DriveDisplayMode.RubbishBin:
                     this.ApplicationBar = (ApplicationBar)Resources["RubbishBinMenu"];
@@ -1038,7 +1041,7 @@ namespace MegaApp.Views
                     {
                         foreach (var node in _mainPageViewModel.SourceFolderView.SelectedNodes)
                         {
-                            node.Copy(_mainPageViewModel.ActiveFolderView.FolderRootNode);
+                            node.Copy(_mainPageViewModel.ActiveFolderView.FolderRootNode.OriginalMNode);
                             node.DisplayMode = NodeDisplayMode.Normal;
                         }
                         _mainPageViewModel.SourceFolderView.SelectedNodes.Clear();
@@ -1074,10 +1077,11 @@ namespace MegaApp.Views
             SetApplicationBarData();
         }
 
-        private void AcceptMoveAction()
+        private async void AcceptMoveAction()
         {
             if(_mainPageViewModel.SourceFolderView != null)
             {
+                bool result = true;
                 try
                 {
                     // Move all the selected nodes and then clear and release the selected nodes list
@@ -1086,8 +1090,9 @@ namespace MegaApp.Views
                     {
                         foreach (var node in _mainPageViewModel.SourceFolderView.SelectedNodes)
                         {
-                            node.Move(_mainPageViewModel.ActiveFolderView.FolderRootNode);
                             node.DisplayMode = NodeDisplayMode.Normal;
+                            var nodeResult = await node.MoveAsync(_mainPageViewModel.ActiveFolderView.FolderRootNode.OriginalMNode);
+                            result = result & (nodeResult == NodeActionResult.Succeeded);
                         }
                         _mainPageViewModel.SourceFolderView.SelectedNodes.Clear();
                     }
@@ -1099,13 +1104,17 @@ namespace MegaApp.Views
                         _mainPageViewModel.SourceFolderView.FocusedNode = null;
                     }
                 }
-                catch(InvalidOperationException)
+                catch (InvalidOperationException) { result = false; }
+                finally
                 {
-                    new CustomMessageDialog(AppMessages.MoveFailed_Title, AppMessages.MoveFailed,
-                        App.AppInformation, MessageDialogButtons.Ok).ShowDialog();
-                }
+                    _mainPageViewModel.SourceFolderView = null;
 
-                _mainPageViewModel.SourceFolderView = null;
+                    if (!result)
+                    {
+                        new CustomMessageDialog(AppMessages.MoveFailed_Title, AppMessages.MoveFailed,
+                            App.AppInformation, MessageDialogButtons.Ok).ShowDialog();
+                    }
+                }
             }
                         
             _mainPageViewModel.CloudDrive.CurrentDisplayMode = _mainPageViewModel.CloudDrive.PreviousDisplayMode;
@@ -1333,6 +1342,23 @@ namespace MegaApp.Views
             
             SetApplicationBarData();
         }
+
+        private void OnMultiSelectRestoreClick(object sender, EventArgs e)
+        {
+            // Needed on every UI interaction
+            SdkService.MegaSdk.retryPendingConnections();
+
+            MultiSelectRestoreAction();
+        }
+
+        private void MultiSelectRestoreAction()
+        {
+            _mainPageViewModel.RubbishBin.MultipleRestoreItems();
+
+            _mainPageViewModel.RubbishBin.CurrentDisplayMode = _mainPageViewModel.RubbishBin.PreviousDisplayMode;
+
+            SetApplicationBarData();
+        }
         
         private void OnMultiSelectRemoveClick(object sender, EventArgs e)
         {
@@ -1441,7 +1467,7 @@ namespace MegaApp.Views
             base.OnHamburgerMenuItemTap(sender, e);
         }
 
-        #endregion        
+        #endregion
     }
 
 }

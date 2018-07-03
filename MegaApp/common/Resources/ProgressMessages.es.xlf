@@ -273,6 +273,11 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
           <target state="translated">Servidores ocupados. Por favor, espera.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when servers are too busy. SDK is waiting for the server to complete a request due to a HTTP error 500  - (String as short as possible).</note>
         </trans-unit>
+        <trans-unit id="Resx/PM_Restoring" translate="yes" xml:space="preserve">
+          <source>Restoring...</source>
+          <target state="new">Restoring...</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when restoring node(s) from the rubbish bin - (String as short as possible).</note>
+        </trans-unit>
       </group>
     </body>
   </file>
