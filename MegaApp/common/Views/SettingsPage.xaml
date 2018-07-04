@@ -396,6 +396,48 @@
                                     Command="{Binding CopyRecoveryKeyCommand}"
                                     Content="{Binding LocalizedUiResources.Copy, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" />
                             </Grid>
+                            
+                            <!-- MULTI-FACTOR AUTHENTICATION-->
+                            <TextBlock 
+                                Margin="12,0,0,0"
+                                FontFamily="Portable User Interface"
+                                FontSize="{StaticResource PhoneFontSizeLarge}"
+                                Foreground="{StaticResource MegaRedColorBrush}"
+                                HorizontalAlignment="Left"
+                                Text="{Binding LocalizedUiResources.UI_TwoFactorAuth, Source={StaticResource LocalizedStrings}}"
+                                TextWrapping="Wrap"
+                                Style="{StaticResource PhoneTextSubtleStyle}"
+                                VerticalAlignment="Center" />
+                            <TextBlock
+                                Margin="12,0,0,20" 
+                                FontFamily="Portable User Interface"
+                                HorizontalAlignment="Left"
+                                Text="{Binding LocalizedUiResources.UI_TwoFactorAuthSettingsDescription, Source={StaticResource LocalizedStrings}}" 
+                                TextWrapping="Wrap"
+                                VerticalAlignment="Center" />
+                            <TextBlock
+                                Margin="12,0,0,0" 
+                                FontFamily="Portable User Interface"
+                                Foreground="{StaticResource PhoneSubtleBrush}"
+                                HorizontalAlignment="Left"
+                                Text="{Binding LocalizedUiResources.UI_EnableTwoFactorAuth, Source={StaticResource LocalizedStrings}}" 
+                                TextWrapping="Wrap"
+                                VerticalAlignment="Center" />
+                            <StackPanel Margin="0,0,0,40">
+                                <telerikPrimitives:RadToggleSwitch 
+                                    x:Name="BtnMultiFactorAuthSwitch" 
+                                    Margin="12,0" 
+                                    Content="{Binding IsMultiFactorAuthEnabled, Mode=OneWay, Converter={StaticResource BooleanToStatusTextConverter}}" 
+                                    FontFamily="Portable User Interface"
+                                    IsChecked="{Binding IsMultiFactorAuthEnabled, Mode=TwoWay}" 
+                                    VerticalAlignment="Center">
+                                    <telerikPrimitives:RadToggleSwitch.ButtonStyle>
+                                        <Style TargetType="telerikToggleSwitch:ToggleSwitchButton">
+                                            <Setter Property="CheckBackground" Value="{StaticResource MegaRedColorBrush}" />
+                                        </Style>
+                                    </telerikPrimitives:RadToggleSwitch.ButtonStyle>
+                                </telerikPrimitives:RadToggleSwitch>
+                            </StackPanel>
 
                             <!-- SESSION MANAGEMENT -->
                             <TextBlock 

@@ -35,6 +35,7 @@
     <converters:TextToUpperCaseConverter x:Key="TextToUpperCaseConverter"/>
     <converters:TextToLowerCaseConverter x:Key="TextToLowerCaseConverter"/>
     <converters:ActiveToOpacityConverter x:Key="ActiveToOpacityConverter"/>
+    <converters:BooleanToStatusTextConverter x:Key="BooleanToStatusTextConverter"/>
 
     <!-- TEMPLATES -->
     <DataTemplate x:Key="MegaPageHeaderLogo">

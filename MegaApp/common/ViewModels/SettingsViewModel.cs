@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using Microsoft.Phone.Tasks;
@@ -16,8 +17,6 @@ namespace MegaApp.ViewModels
         public SettingsViewModel(MegaSDK megaSdk, AppInformation appInformation)
             : base(megaSdk, appInformation)
         {
-            this.AppVersion = AppService.GetAppVersion();
-            this.MegaSdkVersion = AppService.GetMegaSDK_Version();
             this.ShareRecoveryKeyCommand = new DelegateCommand(ShareRecoveryKey);
             this.CopyRecoveryKeyCommand = new DelegateCommand(CopyRecoveryKey);
             this.ChangePinLockCommand = new DelegateCommand(ChangePinLock);
@@ -40,19 +39,7 @@ namespace MegaApp.ViewModels
             this.DataProtectionRegulationCommand =
                 new DelegateCommand(NavigateToDataProtectionRegulation);
 
-            this.PinLockIsEnabled = SettingsService.LoadSetting<bool>(SettingsResources.UserPinLockIsEnabled, false);
-            
-            // Do not set the property on initialize, because it fill fire the SetAutoCameraUploadStatus
-            _cameraUploadsIsEnabled = MediaService.GetAutoCameraUploadStatus();
-            this.CameraUploadsIsEnabledText = _cameraUploadsIsEnabled ? UiResources.On : UiResources.Off;
-
-            #if WINDOWS_PHONE_80
-            this.ExportIsEnabled = SettingsService.LoadSetting<bool>(SettingsResources.ExportImagesToPhotoAlbum, false);
-            #elif WINDOWS_PHONE_81
-            this.AskDownloadLocationIsEnabled = SettingsService.LoadSetting<bool>(SettingsResources.AskDownloadLocationIsEnabled, false);
-            this.StandardDownloadLocation = SettingsService.LoadSetting<string>(
-                SettingsResources.DefaultDownloadLocation, UiResources.DefaultDownloadLocation);
-            #endif
+            this.Initialize();
 
             UpdateUserData();
 
@@ -79,6 +66,30 @@ namespace MegaApp.ViewModels
         #endregion
 
         #region Methods
+
+        private async void Initialize()
+        {
+            this.AppVersion = AppService.GetAppVersion();
+            this.MegaSdkVersion = AppService.GetMegaSDK_Version();
+
+            this.PinLockIsEnabled = SettingsService.LoadSetting<bool>(SettingsResources.UserPinLockIsEnabled, false);
+
+            // Do not set the property on initialize, because it fill fire the SetAutoCameraUploadStatus
+            _cameraUploadsIsEnabled = MediaService.GetAutoCameraUploadStatus();
+            this.CameraUploadsIsEnabledText = _cameraUploadsIsEnabled ? UiResources.On : UiResources.Off;
+
+            #if WINDOWS_PHONE_80
+            this.ExportIsEnabled = SettingsService.LoadSetting<bool>(SettingsResources.ExportImagesToPhotoAlbum, false);
+            #elif WINDOWS_PHONE_81
+            this.AskDownloadLocationIsEnabled = SettingsService.LoadSetting<bool>(SettingsResources.AskDownloadLocationIsEnabled, false);
+            this.StandardDownloadLocation = SettingsService.LoadSetting<string>(
+                SettingsResources.DefaultDownloadLocation, UiResources.DefaultDownloadLocation);
+            #endif
+
+            var mfaStatus = await this.CheckMultiFactorAuthStatusAsync();
+            if (mfaStatus.HasValue)
+                SetField(ref this._isMultiFactorAuthEnabled, mfaStatus.Value, "IsMultiFactorAuthEnabled");
+        }
 
         private void ShareRecoveryKey(object obj)
         {
@@ -197,6 +208,27 @@ namespace MegaApp.ViewModels
             if (result == MessageDialogResult.CancelNo) return;
 
             this.MegaSdk.killAllSessions(new KillAllSessionsRequestListener());
+        }
+
+        /// <summary>
+        /// Check the status of the Multi-Factor Authentication
+        /// </summary>
+        /// <returns>The current status of the MFA or NULL if something failed</returns>
+        private async Task<bool?> CheckMultiFactorAuthStatusAsync()
+        {
+            var multiFactorAuthCheck = new MultiFactorAuthCheckRequestListenerAsync();
+            var result = await multiFactorAuthCheck.ExecuteAsync(() =>
+            {
+                SdkService.MegaSdk.multiFactorAuthCheck(
+                    SdkService.MegaSdk.getMyEmail(), multiFactorAuthCheck);
+            });
+
+            return result;
+        }
+
+        private void OnIsMultiFactorAuthEnabledValueChanged()
+        {
+            
         }
 
         #endregion
@@ -346,6 +378,19 @@ namespace MegaApp.ViewModels
             {
                 _standardDownloadLocation = value;
                 OnPropertyChanged("StandardDownloadLocation");
+            }
+        }
+
+        private bool _isMultiFactorAuthEnabled;
+        public bool IsMultiFactorAuthEnabled
+        {
+            get { return _isMultiFactorAuthEnabled; }
+            set
+            {
+                if (!SetField(ref _isMultiFactorAuthEnabled, value))
+                    return;
+
+                OnIsMultiFactorAuthEnabledValueChanged();
             }
         }
 

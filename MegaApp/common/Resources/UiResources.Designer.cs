@@ -2167,6 +2167,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Enable Two-Factor Authentication.
+        /// </summary>
+        public static string UI_EnableTwoFactorAuth {
+            get {
+                return ResourceManager.GetString("UI_EnableTwoFactorAuth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Export Recovery Key.
         /// </summary>
         public static string UI_ExportRecoveryKeyText {
@@ -2631,6 +2640,24 @@ namespace MegaApp.Resources {
         public static string UI_TransferStateUploading {
             get {
                 return ResourceManager.GetString("UI_TransferStateUploading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Two-Factor Authentication.
+        /// </summary>
+        public static string UI_TwoFactorAuth {
+            get {
+                return ResourceManager.GetString("UI_TwoFactorAuth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Two-Factor Authentication helps to keep your account more secure..
+        /// </summary>
+        public static string UI_TwoFactorAuthSettingsDescription {
+            get {
+                return ResourceManager.GetString("UI_TwoFactorAuthSettingsDescription", resourceCulture);
             }
         }
         

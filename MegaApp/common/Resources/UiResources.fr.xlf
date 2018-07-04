@@ -1529,6 +1529,21 @@ NOTE: Keep the capital letter if possible.</note>
           <target state="new">Warning</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Warning' title, message, etc. - (String as short as possible).</note>
         </trans-unit>
+        <trans-unit id="Resx/UI_TwoFactorAuthSettingsDescription" translate="yes" xml:space="preserve">
+          <source>Two-Factor Authentication helps to keep your account more secure.</source>
+          <target state="new">Two-Factor Authentication helps to keep your account more secure.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Description for the 'Two-Factor Authentication' in the security settings section.</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_TwoFactorAuth" translate="yes" xml:space="preserve">
+          <source>Two-Factor Authentication</source>
+          <target state="new">Two-Factor Authentication</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the 'Two-Factor Authentication' section of the security settings.</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_EnableTwoFactorAuth" translate="yes" xml:space="preserve">
+          <source>Enable Two-Factor Authentication</source>
+          <target state="new">Enable Two-Factor Authentication</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the "toggle" or "switch" button to enable/disable the Two-Factor Authentication.</note>
+        </trans-unit>
         <trans-unit id="Resx/UI_SessionManagement" translate="yes" xml:space="preserve">
           <source>Session Management</source>
           <target state="new">Session Management</target>

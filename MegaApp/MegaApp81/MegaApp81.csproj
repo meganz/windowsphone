@@ -259,6 +259,9 @@
     <Compile Include="..\common\Converters\BooleanToColorConverter.cs">
       <Link>Converters\BooleanToColorConverter.cs</Link>
     </Compile>
+    <Compile Include="..\common\Converters\BooleanToStatusTextConverter.cs">
+      <Link>Converters\BooleanToStatusTextConverter.cs</Link>
+    </Compile>
     <Compile Include="..\common\Converters\BooleanToVisibilityConverter.cs">
       <Link>Converters\BooleanToVisibilityConverter.cs</Link>
     </Compile>
@@ -507,6 +510,9 @@
     </Compile>
     <Compile Include="..\common\MegaApi\MoveNodeRequestListener.cs">
       <Link>MegaApi\MoveNodeRequestListener.cs</Link>
+    </Compile>
+    <Compile Include="..\common\MegaApi\MultiFactorAuthCheckRequestListenerAsync.cs">
+      <Link>MegaApi\MultiFactorAuthCheckRequestListenerAsync.cs</Link>
     </Compile>
     <Compile Include="..\common\MegaApi\PauseTransferRequestListener.cs">
       <Link>MegaApi\PauseTransferRequestListener.cs</Link>
