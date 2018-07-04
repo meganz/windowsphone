@@ -124,6 +124,11 @@ namespace MegaApp.Interfaces
         /// </summary>
         MNode OriginalMNode { get; }
 
+        /// <summary>
+        /// Indicates if the node can be restored to its previous location
+        /// </summary>
+        bool CanRestore { get; }
+
         #endregion
     }
 }

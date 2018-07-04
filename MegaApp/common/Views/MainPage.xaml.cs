@@ -768,6 +768,25 @@ namespace MegaApp.Views
 
             UiService.ChangeAppBarStatus(this.ApplicationBar.Buttons,
                 this.ApplicationBar.MenuItems, isNetworkConnected);
+
+            if (!isNetworkConnected) return;
+
+            var hasSelectedItems = this._mainPageViewModel.ActiveFolderView.SelectedNodes.Count >= 1;
+            if (this.ApplicationBar.Equals((ApplicationBar)Resources["MultiSelectCloudDriveMenu"]))
+            {
+                ((ApplicationBarIconButton)this.ApplicationBar.Buttons.ElementAt(0)).IsEnabled = hasSelectedItems;
+                ((ApplicationBarIconButton)this.ApplicationBar.Buttons.ElementAt(1)).IsEnabled = hasSelectedItems;
+                ((ApplicationBarIconButton)this.ApplicationBar.Buttons.ElementAt(2)).IsEnabled = hasSelectedItems;
+            }
+            else if (this.ApplicationBar.Equals((ApplicationBar)Resources["MultiSelectRubbishBinMenu"]))
+            {
+                ((ApplicationBarIconButton)this.ApplicationBar.Buttons.ElementAt(0)).IsEnabled = hasSelectedItems;
+                ((ApplicationBarIconButton)this.ApplicationBar.Buttons.ElementAt(1)).IsEnabled = hasSelectedItems;
+                ((ApplicationBarIconButton)this.ApplicationBar.Buttons.ElementAt(3)).IsEnabled = hasSelectedItems;
+
+                var canMultiSelectRestore = this._mainPageViewModel.RubbishBin.CanMultiSelectRestore;
+                ((ApplicationBarIconButton)this.ApplicationBar.Buttons.ElementAt(2)).IsEnabled = canMultiSelectRestore;
+            }
         }
 
         private void SetAppbarResources(DriveDisplayMode driveDisplayMode)
@@ -1295,6 +1314,11 @@ namespace MegaApp.Views
                 listBox.CheckedItems.Clear();
                 _mainPageViewModel.ActiveFolderView.CurrentDisplayMode = _mainPageViewModel.ActiveFolderView.PreviousDisplayMode;          
             }
+        }
+
+        private void OnItemCheckedStateChanged(object sender, ItemCheckedStateChangedEventArgs e)
+        {
+            this.SetApplicationBarData(NetworkService.IsNetworkAvailable());
         }
         
         private void OnMultiSelectDownloadClick(object sender, EventArgs e)
