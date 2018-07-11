@@ -231,6 +231,12 @@
     <Compile Include="..\common\Database\SQLiteAsync.cs">
       <Link>Database\SQLiteAsync.cs</Link>
     </Compile>
+    <Compile Include="..\common\Dialogs\MegaDialog.cs">
+      <Link>Dialogs\MegaDialog.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Dialogs\PasswordReminderDialog.cs">
+      <Link>Dialogs\PasswordReminderDialog.cs</Link>
+    </Compile>
     <Compile Include="..\common\Enums\AccountBlockedReason.cs">
       <Link>Enums\AccountBlockedReason.cs</Link>
     </Compile>
@@ -813,12 +819,6 @@
     </Compile>
     <Compile Include="..\common\UserControls\BreadCrumbTapEventArgs.cs">
       <Link>UserControls\BreadCrumbTapEventArgs.cs</Link>
-    </Compile>
-    <Compile Include="..\common\UserControls\Dialogs\MegaDialog.cs">
-      <Link>UserControls\Dialogs\MegaDialog.cs</Link>
-    </Compile>
-    <Compile Include="..\common\UserControls\Dialogs\PasswordReminderDialog.cs">
-      <Link>UserControls\Dialogs\PasswordReminderDialog.cs</Link>
     </Compile>
     <Compile Include="..\common\UserControls\DrawerLayout.cs">
       <Link>UserControls\DrawerLayout.cs</Link>
