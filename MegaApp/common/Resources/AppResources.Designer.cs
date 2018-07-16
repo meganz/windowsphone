@@ -169,6 +169,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a https://mega.nz/recovery.
+        /// </summary>
+        public static string AR_RecoveryUrl {
+            get {
+                return ResourceManager.GetString("AR_RecoveryUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a https://github.com/meganz/sdk/tree/37a231c3fbbfbea549b8eb87230a5da83f0452d0.
         /// </summary>
         public static string AR_SdkLink {

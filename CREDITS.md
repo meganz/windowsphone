@@ -61,6 +61,18 @@ Microsoft Limited Public License (MS-LPL).\
 https://gallery.technet.microsoft.com/scriptcenter/site/DSC-Resource-Kit-All-c449312d/eulapartial?licenseType=MSLPL
 <hr>
 
+### ZXing.Net ("Zebra Crossing")
+https://github.com/micjahn/ZXing.Net \
+Copyright (c) Michael Jahn
+
+**Description**\
+A library which supports decoding and generating of barcodes within images.
+
+**License**\
+Apache License 2.0\
+https://github.com/micjahn/ZXing.Net/blob/master/COPYING
+<hr>
+
 ### MEGA C++ SDK
 https://github.com/meganz/sdk \
 © 2013-2016 by Mega Limited, Auckland, New Zealand.

@@ -1,0 +1,152 @@
+﻿<userControls:MegaPhoneApplicationPage
+    x:Class="MegaApp.Views.MultiFactorAuthAppSetupPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="clr-namespace:MegaApp.ViewModels"
+    xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
+    xmlns:userControls="clr-namespace:MegaApp.UserControls"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"
+    Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True"
+    shell:SystemTray.BackgroundColor="{StaticResource PhoneChromeColor}"
+    d:DataContext="{d:DesignInstance models:MultiFactorAuthAppSetupViewModel}">
+
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="84"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid x:Name="HeaderGrid" Background="{StaticResource PhoneChromeBrush}" />
+
+        <Grid 
+            x:Name="ContentGrid"
+            Grid.Row="2"
+            Margin="24,24,24,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <TextBlock
+                Grid.Row="0"
+                Margin="0,0,0,28"
+                FontSize="32"
+                Text="{Binding LocalizedUiResources.UI_TwoFactorAuth, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
+                TextWrapping="Wrap"/>
+            <ScrollViewer 
+                Grid.Row="1"
+                HorizontalAlignment="Stretch"
+                VerticalScrollBarVisibility="Auto">
+                <StackPanel Margin="0,0,0,20" HorizontalAlignment="Stretch">
+                    <TextBlock
+                        Text="{Binding LocalizedUiResources.UI_MFA_ManuallySetupStep1, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
+                        TextWrapping="Wrap"
+                        Opacity="0.8"/>
+                    <StackPanel
+                        Margin="0,24,0,48"
+                        Background="{StaticResource PhoneChromeBrush}"
+                        HorizontalAlignment="Stretch">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Button
+                                Grid.Column="1"
+                                Margin="-12"
+                                BorderThickness="0"
+                                Content="···"
+                                VerticalContentAlignment="Top">
+                                <telerikPrimitives:RadContextMenu.ContextMenu>
+                                    <telerikPrimitives:RadContextMenu
+                                        OpenGesture="Tap">
+                                        <telerikPrimitives:RadContextMenuItem 
+                                            x:Name="CopySeedOption" 
+                                            Command="{Binding CopySeedCommand}"
+                                            Content="{Binding LocalizedUiResources.UI_CopySeed, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" />
+                                    </telerikPrimitives:RadContextMenu>
+                                </telerikPrimitives:RadContextMenu.ContextMenu>
+                            </Button>
+                        </Grid>
+                        <Image
+                            Margin="0,24,0,20"
+                            Height="148"
+                            Width="148"
+                            Source="{Binding QRImage, Mode=TwoWay, UpdateSourceTrigger=Default}"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"/>
+                        <TextBlock
+                            Margin="12,0"
+                            FontSize="18"
+                            HorizontalAlignment="Center"
+                            Opacity="0.6"
+                            Text="Or enter this code into your authentication app"
+                            TextAlignment="Center"
+                            TextWrapping="Wrap"/>
+                        <TextBlock
+                            Margin="20,24"
+                            HorizontalAlignment="Center"
+                            Text="{Binding MultiFactorAuthCode, Mode=OneWay}"
+                            TextAlignment="Center"
+                            TextWrapping="Wrap"/>
+                    </StackPanel>
+                    <TextBlock
+                        Margin="0,0,0,12"
+                        Text="{Binding LocalizedUiResources.UI_MFA_ManuallySetupStep2, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
+                        TextWrapping="Wrap"
+                        Opacity="0.8"/>
+                    <TextBlock
+                        Margin="0,0,0,24"
+                        FontSize="16"
+                        Text="{Binding LocalizedUiResources.UI_MFA_ManuallySetupStep2_Description, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
+                        TextWrapping="Wrap"/>
+                    <telerikPrimitives:RadTextBox
+                        Margin="-12,-12,-12,0"
+                        FontSize="{StaticResource PhoneFontSizeMediumLarge}"
+                        HideWatermarkOnFocus="True"
+                        InputScope="Number"
+                        IsEnabled="{Binding ControlState, Mode=OneWay}"
+                        KeyDown="OnVerifyTextBoxKeyDown"
+                        MaxLength="6"
+                        Text="{Binding VerifyCode, Mode=TwoWay, UpdateSourceTrigger=Default}"
+                        TextAlignment="Center"
+                        TextWrapping="Wrap"
+                        Watermark="{Binding LocalizedUiResources.UI_SixDigitCode, Mode=OneWay, Source={StaticResource LocalizedStrings}}" />
+                    <Grid Margin="0,4,0,4" HorizontalAlignment="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Viewbox
+                            Grid.Column="0"
+                            Margin="0,0,12,0"
+                            MaxWidth="20" MaxHeight="20"
+                            Visibility="{Binding WarningText, Converter={StaticResource StringToVisibilityConverter}}">
+                            <Path
+                                Data="{Binding LocalizedVisualResources.VR_WarningIconPathData, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
+                                Fill="{StaticResource MegaRedColorBrush}" />
+                        </Viewbox>
+                        <TextBlock
+                            Grid.Column="1"
+                            Style="{StaticResource MegaErrorFontStyle}"
+                            Text="{Binding WarningText, Mode=OneWay}"/>
+                    </Grid>
+                    <Button
+                        x:Name="VerifyButton"
+                        Margin="-12,0"
+                        Command="{Binding VerifyCommand, Mode=OneTime}"
+                        Content="{Binding LocalizedUiResources.UI_Verify, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
+                        IsEnabled="{Binding VerifyButtonState, Mode=OneWay}"/>
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</userControls:MegaPhoneApplicationPage>

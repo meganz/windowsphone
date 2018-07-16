@@ -26,6 +26,17 @@ namespace MegaApp.Services
 {
     static class DialogService
     {
+        #region Properties
+
+        /// <summary>
+        /// Instance of the MFA code input dialog displayed
+        /// </summary>
+        private static MultiFactorAuthCodeInputDialog MultiFactorAuthCodeInputDialogInstance;
+
+        #endregion
+
+        #region Methods
+
         /// <summary>
         /// Shows a dialog to allow copy a node link to the clipboard or share it using other app
         /// </summary>
@@ -1582,5 +1593,69 @@ namespace MegaApp.Services
                 
             }
         }
+
+        /// <summary>
+        /// Show a dialog to setup the Multi-Factor Authentication for the account
+        /// </summary>
+        /// <returns>TRUE if the user continues with the setup process or FALSE in other case</returns>
+        public static async Task<bool> ShowMultiFactorAuthSetupDialogAsync()
+        {
+            var mfaSetupDialog = new MultiFactorAuthSetupDialog();
+            var result = await mfaSetupDialog.ShowDialogAsync();
+            return result;
+        }
+
+        /// <summary>
+        /// Show a dialog to indicate that the user has successfully enabled the Multi-Factor Authentication
+        /// </summary>
+        public static async void ShowMultiFactorAuthEnabledDialog()
+        {
+            var mfaEnabledDialog = new MultiFactorAuthEnabledDialog();
+            await mfaEnabledDialog.ShowDialogAsync();
+        }
+
+        /// <summary>
+        /// Show an input dialog to type the MFA code and execute an action.
+        /// </summary>
+        /// <param name="dialogAction">Action to do by the primary button.</param>
+        /// <param name="title">Title of the input dialog.</param>
+        /// <param name="message">Message of the input dialog.</param>
+        /// <returns>The dialog action result as <see cref="bool"/> value.</returns>
+        public static async Task<bool> ShowMultiFactorAuthCodeInputDialogAsync(
+            Func<string, bool> dialogAction, string title = null, string message = null)
+        {
+            var dialog = MultiFactorAuthCodeInputDialogInstance =
+                new MultiFactorAuthCodeInputDialog(dialogAction, title, message);
+            return await dialog.ShowDialogAsync();
+        }
+
+        /// <summary>
+        /// Show an input dialog to type the MFA code and execute an async action.
+        /// </summary>
+        /// <param name="dialogActionAsync">Async action to do by the primary button.</param>
+        /// <param name="title">Title of the input dialog.</param>
+        /// <param name="message">Message of the input dialog.</param>
+        /// <returns>The dialog action result as <see cref="bool"/> value.</returns>
+        public static async Task<bool> ShowAsyncMultiFactorAuthCodeInputDialogAsync(
+            Func<string, Task<bool>> dialogActionAsync, string title = null, string message = null)
+        {
+            var dialog = MultiFactorAuthCodeInputDialogInstance =
+                new MultiFactorAuthCodeInputDialog(dialogActionAsync, title, message);
+            return await dialog.ShowDialogAsync();
+        }
+
+        /// <summary>
+        /// Set the warning message of the MFA code input dialog displayed
+        /// </summary>
+        /// <param name="warningMessage">Text of the warning message</param>
+        public static void SetMultiFactorAuthCodeInputDialogWarningMessage(string warningMessage = null)
+        {
+            if (MultiFactorAuthCodeInputDialogInstance == null) return;
+            MultiFactorAuthCodeInputDialogInstance.WarningMessageText = warningMessage ??
+                AppMessages.AM_InvalidCode;
+            MultiFactorAuthCodeInputDialogInstance.IsWarningMessageVisible = true;
+        }
+
+        #endregion
     }
 }

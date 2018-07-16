@@ -44,17 +44,28 @@ namespace MegaApp.Views
             base.OnNavigatedTo(e);
 
             var navParam = NavigateService.ProcessQueryString(NavigationContext.QueryString);
-            
-            if (navParam == NavigationParameter.UriLaunch &&
-                NavigationContext.QueryString.ContainsKey("backup"))
-                    _settingsViewModel.ProcessBackupLink();
-
-            if (navParam == NavigationParameter.AutoCameraUpload)
+            switch(navParam)
             {
-                App.AppInformation.IsStartedAsAutoUpload = false;
-                this.MainPivot.SelectedItem = PivotAutoUpload;
+                case NavigationParameter.UriLaunch:
+                    if (NavigationContext.QueryString.ContainsKey("backup"))
+                        _settingsViewModel.ProcessBackupLink();
+                    break;
+
+                case NavigationParameter.AutoCameraUpload:
+                    App.AppInformation.IsStartedAsAutoUpload = false;
+                    this.MainPivot.SelectedItem = PivotAutoUpload;
+                    break;
+
+                case NavigationParameter.SecuritySettings:
+                    this.MainPivot.SelectedItem = SecurityPivot;
+                    break;
+
+                case NavigationParameter.MFA_Enabled:
+                    this.MainPivot.SelectedItem = SecurityPivot;
+                    DialogService.ShowMultiFactorAuthEnabledDialog();
+                    break;
             }
-            
+
             DebugPanel.DataContext = DebugService.DebugSettings;
 
             #if WINDOWS_PHONE_81

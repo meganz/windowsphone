@@ -36,6 +36,7 @@
     <converters:TextToLowerCaseConverter x:Key="TextToLowerCaseConverter"/>
     <converters:ActiveToOpacityConverter x:Key="ActiveToOpacityConverter"/>
     <converters:BooleanToStatusTextConverter x:Key="BooleanToStatusTextConverter"/>
+    <converters:StringToVisibilityConverter x:Key="StringToVisibilityConverter"/>
 
     <!-- TEMPLATES -->
     <DataTemplate x:Key="MegaPageHeaderLogo">
@@ -1274,6 +1275,13 @@
     <!--SELECTORS -->
     <selectors:NodeTemplateSelector x:Key="NodeTemplateSelector" FileItemTemplate="{StaticResource MegaNodeListFileItemContent}" FolderItemTemplate="{StaticResource MegaNodeListFolderItemContent}"/>
 
+    <!-- STYLES -->
+    <Style x:Key="MegaErrorFontStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="Opacity" Value="0.8" />
+    </Style>
+    
     <!-- EMPTY STYLE FOR MEDIA SELECTION -->
     <Style x:Key="MultiSelectItemCheckBoxStyle" TargetType="telerikPrimitives:ItemCheckBox">
         <Setter Property="Template">

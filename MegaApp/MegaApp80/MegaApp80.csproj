@@ -207,6 +207,9 @@
     <Compile Include="..\common\Converters\NodeDisplayModeToColorBrushConverter.cs">
       <Link>Converters\NodeDisplayModeToColorBrushConverter.cs</Link>
     </Compile>
+    <Compile Include="..\common\Converters\StringToVisibilityConverter.cs">
+      <Link>Converters\StringToVisibilityConverter.cs</Link>
+    </Compile>
     <Compile Include="..\common\Converters\TextToLowerCaseConverter.cs">
       <Link>Converters\TextToLowerCaseConverter.cs</Link>
     </Compile>
@@ -233,6 +236,15 @@
     </Compile>
     <Compile Include="..\common\Dialogs\MegaDialog.cs">
       <Link>Dialogs\MegaDialog.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Dialogs\MultiFactorAuthCodeInputDialog.cs">
+      <Link>Dialogs\MultiFactorAuthCodeInputDialog.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Dialogs\MultiFactorAuthEnabledDialog.cs">
+      <Link>Dialogs\MultiFactorAuthEnabledDialog.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Dialogs\MultiFactorAuthSetupDialog.cs">
+      <Link>Dialogs\MultiFactorAuthSetupDialog.cs</Link>
     </Compile>
     <Compile Include="..\common\Dialogs\PasswordReminderDialog.cs">
       <Link>Dialogs\PasswordReminderDialog.cs</Link>
@@ -444,6 +456,12 @@
     <Compile Include="..\common\MegaApi\MultiFactorAuthCheckRequestListenerAsync.cs">
       <Link>MegaApi\MultiFactorAuthCheckRequestListenerAsync.cs</Link>
     </Compile>
+    <Compile Include="..\common\MegaApi\MultiFactorAuthEnableRequestListenerAsync.cs">
+      <Link>MegaApi\MultiFactorAuthEnableRequestListenerAsync.cs</Link>
+    </Compile>
+    <Compile Include="..\common\MegaApi\MultiFactorAuthGetCodeRequestListenerAsync.cs">
+      <Link>MegaApi\MultiFactorAuthGetCodeRequestListenerAsync.cs</Link>
+    </Compile>
     <Compile Include="..\common\MegaApi\PauseTransferRequestListener.cs">
       <Link>MegaApi\PauseTransferRequestListener.cs</Link>
     </Compile>
@@ -549,6 +567,9 @@
     <Compile Include="..\common\ViewModels\MemDiagnosticViewModel.cs">
       <Link>ViewModels\MemDiagnosticViewModel.cs</Link>
     </Compile>
+    <Compile Include="..\common\ViewModels\MultiFactorAuthAppSetupViewModel.cs">
+      <Link>ViewModels\MultiFactorAuthAppSetupViewModel.cs</Link>
+    </Compile>
     <Compile Include="..\common\ViewModels\MyAccountPageViewModel.cs">
       <Link>ViewModels\MyAccountPageViewModel.cs</Link>
     </Compile>
@@ -652,6 +673,10 @@
     <Compile Include="..\common\Views\MediaSelectionPage.xaml.cs">
       <Link>Views\MediaSelectionPage.xaml.cs</Link>
       <DependentUpon>MediaSelectionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\common\Views\MultiFactorAuthAppSetupPage.xaml.cs">
+      <Link>Views\MultiFactorAuthAppSetupPage.xaml.cs</Link>
+      <DependentUpon>MultiFactorAuthAppSetupPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="..\common\Views\MyAccountPage.xaml.cs">
       <Link>Views\MyAccountPage.xaml.cs</Link>
@@ -2172,6 +2197,9 @@
     <Content Include="..\common\Assets\Images\VISA_WP.Screen-WXGA.png">
       <Link>Assets\Images\VISA_WP.Screen-WXGA.png</Link>
     </Content>
+    <Content Include="..\common\Assets\MultiFactorAuth\multiFactorAuth.png">
+      <Link>Assets\MultiFactorAuth\multiFactorAuth.png</Link>
+    </Content>
     <Content Include="..\common\Assets\Tiles\FolderIconImage.png">
       <Link>Assets\Tiles\FolderIconImage.png</Link>
     </Content>
@@ -2238,6 +2266,10 @@
     </Page>
     <Page Include="..\common\Views\MediaSelectionPage.xaml">
       <Link>Views\MediaSelectionPage.xaml</Link>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\common\Views\MultiFactorAuthAppSetupPage.xaml">
+      <Link>Views\MultiFactorAuthAppSetupPage.xaml</Link>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="..\common\Views\MyAccountPage.xaml">
@@ -2346,6 +2378,10 @@
     </Reference>
     <Reference Include="Telerik.Windows.Data, Version=2017.1.118.3040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
       <HintPath>..\lib\RCWP\2017.1.118.3040\Telerik.Windows.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="zxing.wp8.0, Version=0.16.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.4\lib\wp8\zxing.wp8.0.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>

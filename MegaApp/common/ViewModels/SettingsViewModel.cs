@@ -9,6 +9,7 @@ using MegaApp.Enums;
 using MegaApp.MegaApi;
 using MegaApp.Resources;
 using MegaApp.Services;
+using MegaApp.Views;
 
 namespace MegaApp.ViewModels
 {
@@ -226,9 +227,52 @@ namespace MegaApp.ViewModels
             return result;
         }
 
-        private void OnIsMultiFactorAuthEnabledValueChanged()
+        /// <summary>
+        /// Enable the Multi-Factor Authentication
+        /// </summary>
+        /// <returns>TRUE if all is OK or FALSE if something failed</returns>
+        private async Task<bool> EnableMultiFactorAuthAsync()
         {
+            return await DialogService.ShowMultiFactorAuthSetupDialogAsync();
+        }
+
+        /// <summary>
+        /// Show the dialog to disable the Multi-Factor Authentication
+        /// </summary>
+        /// <returns>TRUE if all is OK or FALSE if something failed</returns>
+        private async Task<bool> ShowDisableMultiFactorAuthDialogAsync()
+        {
+            var result = await DialogService.ShowAsyncMultiFactorAuthCodeInputDialogAsync(
+                this.DisableMultiFactorAuthAsync,
+                AppMessages.AM_2FA_DisableDialogTitle,
+                AppMessages.AM_2FA_DisableDialogMessage);
+
+            return result;
+        }
+
+        /// <summary>
+        /// Disable the Multi-Factor Authentication
+        /// </summary>
+        /// <returns>TRUE if all is OK or FALSE if something failed</returns>
+        private async Task<bool> DisableMultiFactorAuthAsync(string code)
+        {
+            var disableMultiFactorAuth = new MultiFactorAuthDisableRequestListenerAsync();
+            var result = await disableMultiFactorAuth.ExecuteAsync(() =>
+                SdkService.MegaSdk.multiFactorAuthDisable(code, disableMultiFactorAuth));
+
+            if (!result)
+                DialogService.SetMultiFactorAuthCodeInputDialogWarningMessage();
+
+            return result;
+        }
+
+        private async void OnIsMultiFactorAuthEnabledValueChanged()
+        {
+            var value = this.IsMultiFactorAuthEnabled ?
+                await this.EnableMultiFactorAuthAsync() :
+                !await this.ShowDisableMultiFactorAuthDialogAsync();
             
+            SetField(ref this._isMultiFactorAuthEnabled, value, "IsMultiFactorAuthEnabled");
         }
 
         #endregion
