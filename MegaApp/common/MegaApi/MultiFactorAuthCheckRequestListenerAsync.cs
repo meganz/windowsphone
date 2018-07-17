@@ -1,8 +1,9 @@
 ﻿using mega;
+using MegaApp.Enums;
 
 namespace MegaApp.MegaApi
 {
-    class MultiFactorAuthCheckRequestListenerAsync : BaseRequestListenerAsync<bool?>
+    class MultiFactorAuthCheckRequestListenerAsync : BaseRequestListenerAsync<MultiFactorAuthStatus>
     {
         #region MRequestListenerInterface
 
@@ -18,11 +19,17 @@ namespace MegaApp.MegaApi
                 {
                     case MErrorType.API_OK: // Successfull check multi-factor authentication process
                         if (Tcs != null)
-                            Tcs.TrySetResult(request.getFlag());
+                        {
+                            Tcs.TrySetResult(request.getFlag() ?
+                                MultiFactorAuthStatus.Enabled :
+                                MultiFactorAuthStatus.Disabled);
+                        }
                         break;
-                    default: // Default error processing
+
+                    // Default error processing
+                    default: // Multi-Factor authentication is not available on the server side
                         if (Tcs != null)
-                            Tcs.TrySetResult(null);
+                            Tcs.TrySetResult(MultiFactorAuthStatus.NotAvailable);
                         break;
                 }
             }

@@ -1554,6 +1554,11 @@ NOTE: Keep the capital letter if possible.</note>
           <target state="new">Lost your authenticator device?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any link/button to help the user in case lost the authentication device for MFA - (String as short as possible).</note>
         </trans-unit>
+        <trans-unit id="Resx/UI_ChangePasswordDescription" translate="yes" xml:space="preserve">
+          <source>Enter and confirm your new password and click save.</source>
+          <target state="new">Enter and confirm your new password and click save.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Text to describe the change password process.</note>
+        </trans-unit>
         <trans-unit id="Resx/UI_SixDigitCode" translate="yes" xml:space="preserve">
           <source>6 digit code</source>
           <target state="new">6 digit code</target>

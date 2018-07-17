@@ -14,6 +14,8 @@ namespace MegaApp.MegaApi
         {
             base.onRequestStart(api, request);
 
+            if (request.getType() != MRequestType.TYPE_LOGIN) return;
+
             Deployment.Current.Dispatcher.BeginInvoke(() =>
                 ProgressService.SetProgressIndicator(true, ProgressMessages.PM_Login));
         }

@@ -310,6 +310,9 @@
     <Compile Include="..\common\Database\SQLiteAsync.cs">
       <Link>Database\SQLiteAsync.cs</Link>
     </Compile>
+    <Compile Include="..\common\Dialogs\ChangePasswordDialog.cs">
+      <Link>Dialogs\ChangePasswordDialog.cs</Link>
+    </Compile>
     <Compile Include="..\common\Dialogs\MegaDialog.cs">
       <Link>Dialogs\MegaDialog.cs</Link>
     </Compile>
@@ -330,6 +333,9 @@
     </Compile>
     <Compile Include="..\common\Enums\CameraUploadsConnectionType.cs">
       <Link>Enums\CameraUploadsConnectionType.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Enums\ChangePasswordResult.cs">
+      <Link>Enums\ChangePasswordResult.cs</Link>
     </Compile>
     <Compile Include="..\common\Enums\ContactsDisplayMode.cs">
       <Link>Enums\ContactsDisplayMode.cs</Link>
@@ -360,6 +366,9 @@
     </Compile>
     <Compile Include="..\common\Enums\MenuType.cs">
       <Link>Enums\MenuType.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Enums\MultiFactorAuthStatus.cs">
+      <Link>Enums\MultiFactorAuthStatus.cs</Link>
     </Compile>
     <Compile Include="..\common\Enums\NavigationParameter.cs">
       <Link>Enums\NavigationParameter.cs</Link>
@@ -427,8 +436,8 @@
     <Compile Include="..\common\MegaApi\CancelTransferRequestListener.cs">
       <Link>MegaApi\CancelTransferRequestListener.cs</Link>
     </Compile>
-    <Compile Include="..\common\MegaApi\ChangePasswordRequestListener.cs">
-      <Link>MegaApi\ChangePasswordRequestListener.cs</Link>
+    <Compile Include="..\common\MegaApi\ChangePasswordRequestListenerAsync.cs">
+      <Link>MegaApi\ChangePasswordRequestListenerAsync.cs</Link>
     </Compile>
     <Compile Include="..\common\MegaApi\CleanRubbishBinRequestListener.cs">
       <Link>MegaApi\CleanRubbishBinRequestListener.cs</Link>

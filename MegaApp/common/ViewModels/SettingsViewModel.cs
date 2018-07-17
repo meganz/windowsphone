@@ -87,9 +87,18 @@ namespace MegaApp.ViewModels
                 SettingsResources.DefaultDownloadLocation, UiResources.DefaultDownloadLocation);
             #endif
 
-            var mfaStatus = await this.CheckMultiFactorAuthStatusAsync();
-            if (mfaStatus.HasValue)
-                SetField(ref this._isMultiFactorAuthEnabled, mfaStatus.Value, "IsMultiFactorAuthEnabled");
+            var mfaStatus = await AccountService.CheckMultiFactorAuthStatusAsync();
+            switch (mfaStatus)
+            {
+                case MultiFactorAuthStatus.Enabled:
+                    SetField(ref this._isMultiFactorAuthEnabled, true, "IsMultiFactorAuthEnabled");
+                    break;
+
+                case MultiFactorAuthStatus.Disabled:
+                case MultiFactorAuthStatus.NotAvailable:
+                    SetField(ref this._isMultiFactorAuthEnabled, false, "IsMultiFactorAuthEnabled");
+                    break;
+            }
         }
 
         private void ShareRecoveryKey(object obj)
@@ -209,22 +218,6 @@ namespace MegaApp.ViewModels
             if (result == MessageDialogResult.CancelNo) return;
 
             this.MegaSdk.killAllSessions(new KillAllSessionsRequestListener());
-        }
-
-        /// <summary>
-        /// Check the status of the Multi-Factor Authentication
-        /// </summary>
-        /// <returns>The current status of the MFA or NULL if something failed</returns>
-        private async Task<bool?> CheckMultiFactorAuthStatusAsync()
-        {
-            var multiFactorAuthCheck = new MultiFactorAuthCheckRequestListenerAsync();
-            var result = await multiFactorAuthCheck.ExecuteAsync(() =>
-            {
-                SdkService.MegaSdk.multiFactorAuthCheck(
-                    SdkService.MegaSdk.getMyEmail(), multiFactorAuthCheck);
-            });
-
-            return result;
         }
 
         /// <summary>

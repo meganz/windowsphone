@@ -2005,6 +2005,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Enter and confirm your new password and click save..
+        /// </summary>
+        public static string UI_ChangePasswordDescription {
+            get {
+                return ResourceManager.GetString("UI_ChangePasswordDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Close.
         /// </summary>
         public static string UI_Close {
