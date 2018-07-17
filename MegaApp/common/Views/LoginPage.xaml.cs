@@ -98,7 +98,7 @@ namespace MegaApp.Views
                 _loginAndCreateAccountViewModelContainer = new LoginAndCreateAccountViewModelContainer(this);
 
             if (Pivot_LoginAndCreateAccount.SelectedItem == PivotItem_Login)                
-                _loginAndCreateAccountViewModelContainer.LoginViewModel.DoLogin();
+                _loginAndCreateAccountViewModelContainer.LoginViewModel.Login();
             else if (Pivot_LoginAndCreateAccount.SelectedItem == PivotItem_CreateAccount)                
                 _loginAndCreateAccountViewModelContainer.CreateAccountViewModel.CreateAccount();
         }

@@ -276,6 +276,9 @@
     <Compile Include="..\common\Enums\LinkAction.cs">
       <Link>Enums\LinkAction.cs</Link>
     </Compile>
+    <Compile Include="..\common\Enums\LoginResult.cs">
+      <Link>Enums\LoginResult.cs</Link>
+    </Compile>
     <Compile Include="..\common\Enums\MediaType.cs">
       <Link>Enums\MediaType.cs</Link>
     </Compile>
@@ -434,6 +437,9 @@
     </Compile>
     <Compile Include="..\common\MegaApi\LoginRequestListener.cs">
       <Link>MegaApi\LoginRequestListener.cs</Link>
+    </Compile>
+    <Compile Include="..\common\MegaApi\LoginRequestListenerAsync.cs">
+      <Link>MegaApi\LoginRequestListenerAsync.cs</Link>
     </Compile>
     <Compile Include="..\common\MegaApi\LoginToFolderRequestListener.cs">
       <Link>MegaApi\LoginToFolderRequestListener.cs</Link>
