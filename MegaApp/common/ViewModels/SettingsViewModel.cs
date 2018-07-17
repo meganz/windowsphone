@@ -91,12 +91,17 @@ namespace MegaApp.ViewModels
             switch (mfaStatus)
             {
                 case MultiFactorAuthStatus.Enabled:
+                    this.IsMultiFactorAuthAvailable = true;
                     SetField(ref this._isMultiFactorAuthEnabled, true, "IsMultiFactorAuthEnabled");
                     break;
 
                 case MultiFactorAuthStatus.Disabled:
-                case MultiFactorAuthStatus.NotAvailable:
+                    this.IsMultiFactorAuthAvailable = true;
                     SetField(ref this._isMultiFactorAuthEnabled, false, "IsMultiFactorAuthEnabled");
+                    break;
+
+                case MultiFactorAuthStatus.NotAvailable:
+                    this.IsMultiFactorAuthAvailable = false;
                     break;
             }
         }
@@ -429,6 +434,13 @@ namespace MegaApp.ViewModels
 
                 OnIsMultiFactorAuthEnabledValueChanged();
             }
+        }
+
+        private bool _isMultiFactorAuthAvailable;
+        public bool IsMultiFactorAuthAvailable
+        {
+            get { return _isMultiFactorAuthAvailable; }
+            set { SetField(ref _isMultiFactorAuthAvailable, value); }
         }
 
         #endregion
