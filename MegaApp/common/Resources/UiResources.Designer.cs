@@ -2194,6 +2194,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Export.
+        /// </summary>
+        public static string UI_Export {
+            get {
+                return ResourceManager.GetString("UI_Export", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Export Recovery Key.
         /// </summary>
         public static string UI_ExportRecoveryKeyText {

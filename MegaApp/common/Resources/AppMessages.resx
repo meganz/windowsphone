@@ -1518,4 +1518,12 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>Disable Two-Factor Authentication</value>
     <comment>Title of the dialog displayed to disable the Two-Factor Authentication.</comment>
   </data>
+  <data name="AM_2FA_EnabledDialogRecommendation" xml:space="preserve">
+    <value>Consider exporting your Recovery Key in case you lose access to your app or want to disable Two-Factor Authentication in the future.</value>
+    <comment>Text recommending export the Recovery Key in the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication.</comment>
+  </data>
+  <data name="AM_2FA_DisabledDialogTitle" xml:space="preserve">
+    <value>Two-Factor Authentication Disabled</value>
+    <comment>Title text of the dialog displayed to indicate that the user has successfully disabled the Two-Factor Authentication.</comment>
+  </data>
 </root>

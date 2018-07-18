@@ -1559,6 +1559,11 @@ NOTE: Keep the capital letter if possible.</note>
           <target state="new">Enter and confirm your new password and click save.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text to describe the change password process.</note>
         </trans-unit>
+        <trans-unit id="Resx/UI_Export" translate="yes" xml:space="preserve">
+          <source>Export</source>
+          <target state="new">Export</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Export' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
         <trans-unit id="Resx/UI_SixDigitCode" translate="yes" xml:space="preserve">
           <source>6 digit code</source>
           <target state="new">6 digit code</target>

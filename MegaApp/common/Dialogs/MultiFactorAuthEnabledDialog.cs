@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using MegaApp.Classes;
 using MegaApp.Resources;
+using MegaApp.Services;
+using MegaApp.ViewModels;
 
 namespace MegaApp.Dialogs
 {
@@ -14,6 +18,8 @@ namespace MegaApp.Dialogs
         /// </summary>
         public MultiFactorAuthEnabledDialog()
         {
+            this.SaveKeyButtonCommand = new DelegateCommand(this.SaveKey);
+
             var contentStackPanel = new StackPanel()
             {
                 Orientation = Orientation.Vertical,
@@ -47,7 +53,6 @@ namespace MegaApp.Dialogs
 
             var description = new TextBlock()
             {
-                Margin = new Thickness(0, 0, 0, 32),
                 HorizontalAlignment = HorizontalAlignment.Center,
                 Opacity = 0.8,
                 Text = AppMessages.AM_2FA_EnabledDialogDescription,
@@ -56,16 +61,96 @@ namespace MegaApp.Dialogs
             };
             contentStackPanel.Children.Add(description);
 
+            var border = new Border()
+            {
+                Margin = new Thickness(-20, 24, -20, 32),
+                Background = (Brush)Application.Current.Resources["PhoneInactiveBrush"]
+            };
+            border.Child = new TextBlock()
+            {
+                Margin = new Thickness(20),
+                HorizontalAlignment = HorizontalAlignment.Stretch,
+                Opacity = 0.8,
+                Text = AppMessages.AM_2FA_EnabledDialogRecommendation,
+                TextAlignment = TextAlignment.Center,
+                TextWrapping = TextWrapping.Wrap
+            };
+            contentStackPanel.Children.Add(border);
+            
+            this.MainGrid.Children.Add(contentStackPanel);
+            Grid.SetRow(contentStackPanel, 2);
+
+            var buttonsGrid = new Grid()
+            {
+                Width = Double.NaN,
+                Margin = new Thickness(12),
+                HorizontalAlignment = HorizontalAlignment.Stretch,
+                VerticalAlignment = VerticalAlignment.Bottom,
+                Background = new SolidColorBrush((Color)Application.Current.Resources["PhoneChromeColor"])
+            };
+            buttonsGrid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
+            buttonsGrid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
+
+            var exportButton = new Button()
+            {
+                Content = UiResources.UI_Export.ToLower(),
+                HorizontalAlignment = HorizontalAlignment.Stretch,
+                Command = SaveKeyButtonCommand
+            };
+            buttonsGrid.Children.Add(exportButton);
+            Grid.SetColumn(exportButton, 0);
+
             var closeButton = new Button()
             {
                 Content = UiResources.UI_Close.ToLower(),
                 HorizontalAlignment = HorizontalAlignment.Stretch,
                 Command = CloseCommand
             };
-            contentStackPanel.Children.Add(closeButton);
+            buttonsGrid.Children.Add(closeButton);
+            Grid.SetColumn(closeButton, 1);
 
-            this.MainGrid.Children.Add(contentStackPanel);
-            Grid.SetRow(contentStackPanel, 2);
+            this.MainGrid.Children.Add(buttonsGrid);
+            Grid.SetRow(buttonsGrid, 3);
         }
+
+        #region Commands
+
+        /// <summary>
+        /// Command invoked when the user select the "Backup Recovery key" option
+        /// </summary>
+        public ICommand SaveKeyButtonCommand { get; private set; }
+
+        #endregion
+
+        #region
+
+        /// <summary>
+        /// Backup the Recovery key
+        /// </summary>
+        private void SaveKey(object obj)
+        {
+            try
+            {
+                this.CloseDialog();
+                Clipboard.SetText(SdkService.MegaSdk.exportMasterKey());
+                SdkService.MegaSdk.masterKeyExported();
+
+                new CustomMessageDialog(
+                    AppMessages.AM_RecoveryKeyCopied_Title,
+                    AppMessages.AM_RecoveryKeyCopied,
+                    App.AppInformation,
+                    MessageDialogButtons.Ok).ShowDialog();
+            }
+            catch (Exception)
+            {
+                new CustomMessageDialog(
+                    AppMessages.AM_RecoveryKeyClipboardFailed_Title,
+                    AppMessages.AM_RecoveryKeyClipboardFailed,
+                    App.AppInformation,
+                    MessageDialogButtons.Ok).ShowDialog();
+            }
+        }
+
+        #endregion
     }
 }

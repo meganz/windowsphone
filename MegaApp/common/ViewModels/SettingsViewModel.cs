@@ -245,6 +245,16 @@ namespace MegaApp.ViewModels
                 AppMessages.AM_2FA_DisableDialogTitle,
                 AppMessages.AM_2FA_DisableDialogMessage);
 
+            if (result)
+            {
+                OnUiThread(() =>
+                {
+                    new CustomMessageDialog(
+                        AppMessages.AM_2FA_DisabledDialogTitle, string.Empty,
+                        App.AppInformation, MessageDialogButtons.Ok).ShowDialog();
+                });
+            }
+
             return result;
         }
 
