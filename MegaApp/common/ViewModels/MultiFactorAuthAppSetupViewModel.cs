@@ -1,7 +1,11 @@
 ﻿using System;
+using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
+using Telerik.Windows.Controls;
 using ZXing;
 using ZXing.QrCode;
 using MegaApp.Classes;
@@ -49,7 +53,20 @@ namespace MegaApp.ViewModels
         public string MultiFactorAuthCode
         {
             get { return _multiFactorAuthCode; }
-            set { SetField(ref _multiFactorAuthCode, value); }
+            set
+            {
+                if (!SetField(ref _multiFactorAuthCode, value)) return;
+                OnPropertyChanged("MultiFactorAuthCodeParts");
+            }
+        }
+
+        /// <summary>
+        /// Code or seed needed to enable the Multi-Factor Authentication
+        /// divided in 4-digits groups
+        /// </summary>
+        public ObservableCollection<string> MultiFactorAuthCodeParts
+        {
+            get { return this.SplitMultiFactorAuthCode(MultiFactorAuthCode, 4); }
         }
 
         private string _verifyCode;
@@ -181,6 +198,16 @@ namespace MegaApp.ViewModels
                 this.VerifyCode.Length == 6;
 
             OnUiThread(() => this.VerifyButtonState = enabled);
+        }
+
+        private ObservableCollection<string> SplitMultiFactorAuthCode(string str, int chunkSize)
+        {
+            if (string.IsNullOrWhiteSpace(str)) return new ObservableCollection<string>();
+
+            var parts = new ObservableCollection<string>(
+                Enumerable.Range(0, str.Length / chunkSize).Select(i => str.Substring(i * chunkSize, chunkSize)));
+            parts.Insert(10, string.Empty); //For a correct alignment of the three last blocks
+            return parts;
         }
 
         #endregion

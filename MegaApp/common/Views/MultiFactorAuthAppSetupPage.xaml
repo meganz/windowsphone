@@ -7,6 +7,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:models="clr-namespace:MegaApp.ViewModels"
+    xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Core"
     xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
     xmlns:userControls="clr-namespace:MegaApp.UserControls"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
@@ -77,7 +78,7 @@
                             </Button>
                         </Grid>
                         <Image
-                            Margin="0,24,0,20"
+                            Margin="0,0,0,20"
                             Height="148"
                             Width="148"
                             Source="{Binding QRImage, Mode=TwoWay, UpdateSourceTrigger=Default}"
@@ -91,12 +92,35 @@
                             Text="Or enter this code into your authentication app"
                             TextAlignment="Center"
                             TextWrapping="Wrap"/>
-                        <TextBlock
-                            Margin="20,24"
-                            HorizontalAlignment="Center"
-                            Text="{Binding MultiFactorAuthCode, Mode=OneWay}"
-                            TextAlignment="Center"
-                            TextWrapping="Wrap"/>
+                        <Border
+                            Margin="12"
+                            Background="{StaticResource PhoneBackgroundBrush}">
+                            <telerikPrimitives:RadDataBoundListBox
+                                Margin="32,8"
+                                EmptyContentDisplayMode="DataSourceEmpty" 
+            					EmptyContent="" 
+                                HorizontalAlignment="Center"
+                                HorizontalContentAlignment="Center"
+                                IsAsyncBalanceEnabled="True"
+                                IsCheckModeActive="False"
+                                IsCheckModeEnabled="False"
+                                ItemsSource="{Binding MultiFactorAuthCodeParts, Mode=OneWay}"
+                                telerik:InteractionEffectManager.IsInteractionEnabled="False" 
+                                VerticalAlignment="Center">
+                                <telerikPrimitives:RadDataBoundListBox.VirtualizationStrategyDefinition>
+                                    <telerikPrimitives:WrapVirtualizationStrategyDefinition Orientation="Horizontal" WrapLineAlignment="Near" />
+                                </telerikPrimitives:RadDataBoundListBox.VirtualizationStrategyDefinition>
+                                <telerikPrimitives:RadDataBoundListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock 
+                                            Margin="4" 
+                                            Width="60" 
+                                            Text="{Binding}" 
+                                            TextAlignment="Center" />
+                                    </DataTemplate>
+                                </telerikPrimitives:RadDataBoundListBox.ItemTemplate>
+                            </telerikPrimitives:RadDataBoundListBox>
+                        </Border>
                     </StackPanel>
                     <TextBlock
                         Margin="0,0,0,12"
