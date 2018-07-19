@@ -44,6 +44,8 @@ namespace MegaApp.Dialogs
             this.Initialize(title, message);
         }
 
+        #region Methods
+
         private void Initialize(string title, string message)
         {
             this.VerifyCommand = new DelegateCommand(this.Verify);
@@ -70,8 +72,8 @@ namespace MegaApp.Dialogs
             };
             contentStackPanel.Children.Add(description);
 
-            this.digitInput = this.CreateDigitInput();
-            contentStackPanel.Children.Add(this.digitInput);
+            this.verificationCode = this.CreateDigitInput();
+            contentStackPanel.Children.Add(this.verificationCode);
 
             this.warningMessageStackPanel = this.CreateErrorMessage();
             contentStackPanel.Children.Add(this.warningMessageStackPanel);
@@ -119,13 +121,30 @@ namespace MegaApp.Dialogs
             };
             digitInput.TextChanged += (sender, args) =>
             {
+                this.verificationCode.Foreground = (Brush)Application.Current.Resources["PhoneTextBoxForegroundBrush"];
                 this.IsWarningMessageVisible = false;
                 this.verifyButton.IsEnabled = NetworkService.IsNetworkAvailable() &&
-                    !string.IsNullOrWhiteSpace(this.digitInput.Text) &&
-                    this.digitInput.Text.Length == this.digitInput.MaxLength;
+                    !string.IsNullOrWhiteSpace(this.verificationCode.Text) &&
+                    this.verificationCode.Text.Length == this.verificationCode.MaxLength;
             };
-
+            digitInput.KeyDown += OnInputTextBoxKeyDown;
+            
             return digitInput;
+        }
+
+        private void OnInputTextBoxKeyDown(object sender, KeyEventArgs e)
+        {
+            if ((e.Key >= Key.D0 && e.Key <= Key.D9) ||
+                (e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9))
+            {
+                e.Handled = false;
+                return;
+            }
+
+            if (this.verifyButton.IsEnabled && e.Key == Key.Enter)
+                this.Verify();
+
+            e.Handled = true;
         }
 
         private StackPanel CreateErrorMessage()
@@ -140,8 +159,8 @@ namespace MegaApp.Dialogs
             var errorViewBox = new Viewbox()
             {
                 Margin = new Thickness(0,0,12,0),
-                MaxWidth = 20,
-                MaxHeight = 20,
+                Width = 20,
+                Height = 20,
             };
             this.warningIcon = new Path()
             {
@@ -166,6 +185,53 @@ namespace MegaApp.Dialogs
             return errorStackPanel;
         }
 
+        private async void Verify(object obj = null)
+        {
+            if (this.dialogAction != null || this.dialogActionAsync != null)
+            {
+                this.verifyButton.IsEnabled = false;
+
+                dialogResult = false;
+                if (this.dialogAction != null)
+                    dialogResult = this.dialogAction.Invoke(this.verificationCode.Text);
+
+                if (this.dialogActionAsync != null)
+                    dialogResult = await this.dialogActionAsync.Invoke(this.verificationCode.Text);
+
+                this.verifyButton.IsEnabled = true;
+
+                if (!dialogResult)
+                {
+                    this.verificationCode.Foreground = (Brush)Application.Current.Resources["MegaRedColorBrush"];
+                    return;
+                }
+
+                if (this.TaskCompletionSource != null)
+                    this.TaskCompletionSource.TrySetResult(true);
+
+                base.CloseDialog();
+            }
+        }
+
+        private void LostAuthDevice(object obj = null)
+        {
+            var webBrowserTask = new WebBrowserTask { Uri = new Uri(AppResources.AR_RecoveryUrl) };
+            webBrowserTask.Show();
+        }
+
+        protected override bool OnWindowClosing()
+        {
+            if (!this.dialogResult)
+            {
+                if (this.TaskCompletionSource != null)
+                    this.TaskCompletionSource.TrySetResult(false);
+            }
+
+            return base.OnWindowClosing();
+        }
+
+        #endregion
+
         #region Commands
 
         /// <summary>
@@ -182,7 +248,7 @@ namespace MegaApp.Dialogs
 
         #region Controls
 
-        private RadTextBox digitInput;
+        private RadTextBox verificationCode;
         private StackPanel warningMessageStackPanel;
         private TextBlock warningMessageTextBlock;
         private Path warningIcon;
@@ -210,51 +276,6 @@ namespace MegaApp.Dialogs
         {
             get { return warningMessageTextBlock.Text; }
             set { warningMessageTextBlock.Text = value; }
-        }
-
-        #endregion
-
-        #region Methods
-
-        private async void Verify(object obj = null)
-        {
-            if (this.dialogAction != null || this.dialogActionAsync != null)
-            {
-                this.verifyButton.IsEnabled = false;
-                
-                dialogResult = false;
-                if (this.dialogAction != null)
-                    dialogResult = this.dialogAction.Invoke(this.digitInput.Text);
-
-                if (this.dialogActionAsync != null)
-                    dialogResult = await this.dialogActionAsync.Invoke(this.digitInput.Text);
-
-                this.verifyButton.IsEnabled = true;
-
-                if (!dialogResult) return;
-
-                if (this.TaskCompletionSource != null)
-                    this.TaskCompletionSource.TrySetResult(true);
-
-                base.CloseDialog();
-            }
-        }
-
-        private void LostAuthDevice(object obj = null)
-        {
-            var webBrowserTask = new WebBrowserTask { Uri = new Uri(AppResources.AR_RecoveryUrl) };
-            webBrowserTask.Show();
-        }
-
-        protected override bool OnWindowClosing()
-        {
-            if (!this.dialogResult)
-            {
-                if (this.TaskCompletionSource != null)
-                    this.TaskCompletionSource.TrySetResult(false);
-            }
-
-            return base.OnWindowClosing();
         }
 
         #endregion
