@@ -60,7 +60,7 @@ namespace MegaApp.ViewModels
 
         public async void Logout()
         {
-            if (await AccountService.ShouldShowPasswordReminderDialogAsync())
+            if (await AccountService.ShouldShowPasswordReminderDialogAsync(true))
             {
                 DialogService.ShowPasswordReminderDialog(true);
                 return;
