@@ -121,7 +121,7 @@ namespace MegaApp.MegaApi
             // If is required show the password reminder dialog on background thread
             Task.Run(async () =>
             {
-                if (await AccountService.ShouldShowPasswordReminderDialogAsync())
+                if (await AccountService.ShouldShowPasswordReminderDialogAsync(false))
                     Deployment.Current.Dispatcher.BeginInvoke(() => DialogService.ShowPasswordReminderDialog(false));
             });
 
