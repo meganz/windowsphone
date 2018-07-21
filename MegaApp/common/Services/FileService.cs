@@ -72,13 +72,16 @@ namespace MegaApp.Services
             return false;
         }
 
-        public static bool ClearFiles(IEnumerable<string> filesToDelete)
+        public static async Task<bool> ClearFilesAsync(IEnumerable<string> filesToDelete)
         {
             if (filesToDelete == null) return false;
 
             bool result = true;
-            foreach (var file in filesToDelete)
-                result = result & DeleteFile(file);
+            await Task.Run(() =>
+            {
+                foreach (var file in filesToDelete)
+                    result = result & DeleteFile(file);
+            });
 
             return result;
         }

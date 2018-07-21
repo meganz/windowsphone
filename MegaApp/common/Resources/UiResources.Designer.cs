@@ -2644,6 +2644,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Used cache.
+        /// </summary>
+        public static string UI_UsedCache {
+            get {
+                return ResourceManager.GetString("UI_UsedCache", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a View Terms of Service here.
         /// </summary>
         public static string UI_ViewTermsOfService {

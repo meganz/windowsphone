@@ -14,7 +14,7 @@ using MegaApp.ViewModels;
 
 namespace MegaApp.Database
 {
-    public class SavedForOffline
+    public class SavedForOffline : DataBaseHelper<SavedForOffline>
     {
         #region Properties
 
