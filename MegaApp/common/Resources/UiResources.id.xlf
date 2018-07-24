@@ -1208,7 +1208,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
           <source>Close other sessions</source>
           <target state="new">Close other sessions</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Close other sessions' button, link, etc., to close all other active sessions except the current one - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/UI_CloseSession" translate="yes" space="preserve">
           <source>Close session</source>
           <target state="translated">Tutup sesi</target>
@@ -1508,58 +1508,63 @@ NOTE: Keep the capital letter if possible.</note>
           <source>Plain text</source>
           <target state="new">Plain text</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Plain text' button, link, text, title, etc. - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/UI_EnablePinLock" translate="yes" xml:space="preserve">
           <source>Enable PIN lock</source>
           <target state="new">Enable PIN lock</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the switch button to enable or disable the PIN lock code. Keep PIN uppercase - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/UI_RecoveryKeyDescription" translate="yes" xml:space="preserve">
           <source>Your Recovery Key allows you to login to your account even if you forget your password. Store it somewhere safe.</source>
           <target state="new">Your Recovery Key allows you to login to your account even if you forget your password. Store it somewhere safe.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label to describe the 'Recovery Key' and its purpose.</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/UI_SessionManagementDescription" translate="yes" xml:space="preserve">
           <source>This will log you out on all other active sessions except the current one. You will need to re-login to your other devices to continue using MEGA.</source>
           <target state="new">This will log you out on all other active sessions except the current one. You will need to re-login to your other devices to continue using MEGA.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label to describe the "Session Management" option of the "Settings" section.</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/UI_Warning" translate="yes" xml:space="preserve">
           <source>Warning</source>
           <target state="new">Warning</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Warning' title, message, etc. - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/UI_Restore" translate="yes" xml:space="preserve">
           <source>Restore</source>
           <target state="new">Restore</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Restore' button, link, text, title, etc. For example for restore files from the rubbish bin - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
+        <trans-unit id="Resx/UI_UsedCache" translate="yes" xml:space="preserve">
+          <source>Used cache</source>
+          <target state="new">Used cache</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label to indicate the amount of used cache - (String as short as possible).</note>
+          </trans-unit>
         <trans-unit id="Resx/UI_SessionManagement" translate="yes" xml:space="preserve">
           <source>Session Management</source>
           <target state="new">Session Management</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the "Settings" option to manage sessions - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/UI_TestPassword" translate="yes" xml:space="preserve">
           <source>Test Password</source>
           <target state="new">Test Password</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Test Password' button, link, text, title, etc. - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/UI_Close" translate="yes" xml:space="preserve">
           <source>Close</source>
           <target state="new">Close</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Close' button, link, etc. - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/UI_BackupRecoveryKey" translate="yes" xml:space="preserve">
           <source>Backup Recovery Key</source>
           <target state="new">Backup Recovery Key</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Backup Recovery Key' button, link, text, title, etc. - (String as short as possible).
 NOTE: Max. length 20 characters.</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/UI_DoNotShowMeAgain" translate="yes" xml:space="preserve">
           <source>Don’t show me again</source>
           <target state="new">Don’t show me again</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for a check box included into a dialog to indicate don't show it again.</note>
-        </trans-unit>
+          </trans-unit>
       </group>
     </body>
   </file>

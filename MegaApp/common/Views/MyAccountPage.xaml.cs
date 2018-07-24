@@ -78,7 +78,6 @@ namespace MegaApp.Views
             ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).Text = UiResources.UI_Logout.ToLower();
 
             ((ApplicationBarMenuItem)ApplicationBar.MenuItems[0]).Text = UiResources.UI_ChangePassword.ToLower();
-            ((ApplicationBarMenuItem)ApplicationBar.MenuItems[1]).Text = UiResources.ClearCache.ToLower();
             
             // Only if is a LITE account show a "cancel subscription" menu option
             if (myAccountPageViewModel.AccountDetails.AccountType == MAccountType.ACCOUNT_TYPE_LITE &&
@@ -222,13 +221,6 @@ namespace MegaApp.Views
         private void OnSettingsClick(object sender, EventArgs e)
         {
             NavigateService.NavigateTo(typeof(SettingsPage), NavigationParameter.Normal);
-        }
-
-        private void OnClearCacheClick(object sender, EventArgs e)
-        {
-            App.MainPageViewModel.CloudDrive.ChildNodes.Clear();
-            App.MainPageViewModel.RubbishBin.ChildNodes.Clear();
-            myAccountPageViewModel.ClearCache();
         }
 
         private void OnChangePasswordClick(object sender, EventArgs e)

@@ -27,8 +27,7 @@
             <shell:ApplicationBarIconButton IconUri="\Assets\Appbar\settings.png" Text="settings" Click="OnSettingsClick"/>
             <shell:ApplicationBarIconButton IconUri="\Assets\Appbar\logout.png" Text="logout" Click="OnLogoutClick" />
             <shell:ApplicationBar.MenuItems>
-                <shell:ApplicationBarMenuItem Text="change password" Click="OnChangePasswordClick" />                
-                <shell:ApplicationBarMenuItem Text="clear cache" Click="OnClearCacheClick"/>
+                <shell:ApplicationBarMenuItem Text="change password" Click="OnChangePasswordClick" />
             </shell:ApplicationBar.MenuItems>
         </shell:ApplicationBar>
     </userControls:MegaPhoneApplicationPage.Resources>
@@ -191,25 +190,6 @@
                                 <TextBlock HorizontalAlignment="Right" Text="{Binding AccountDetails.FreeSpace, Converter={StaticResource LongToReadableSizeConverter}}" VerticalAlignment="Center" Grid.Column="2" FontSize="{StaticResource PhoneFontSizeNormal}" Margin="0,-6,0,0"/>
                             </Grid>
                         </StackPanel>
-                        <ProgressBar x:Name="ProgressCache" Height="30" Maximum="{Binding AccountDetails.MaxCache}" Value="{Binding AccountDetails.CacheSize}" VerticalAlignment="Center" Grid.Row="2" Margin="12,0,12,12">
-                            <ProgressBar.Foreground>
-                                <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
-                            </ProgressBar.Foreground>
-                        </ProgressBar>
-                        <Grid x:Name="CacheSpaceGrid" Grid.Row="2" Grid.Column="1" Margin="0,0,0,12" VerticalAlignment="Center">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
-                            </Grid.ColumnDefinitions>
-                            <Ellipse HorizontalAlignment="Center" Height="30" Stroke="Black" VerticalAlignment="Center" Width="30">
-                                <Ellipse.Fill>
-                                    <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
-                                </Ellipse.Fill>
-                            </Ellipse>
-                            <TextBlock HorizontalAlignment="Left" Text="{Binding LocalizedUiResources.Cache, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Grid.Column="1" FontSize="{StaticResource PhoneFontSizeNormal}" Style="{StaticResource PhoneTextSubtleStyle}" Margin="12,-6,12,0"/>
-                            <TextBlock HorizontalAlignment="Right" Text="{Binding AccountDetails.CacheSize, Converter={StaticResource LongToReadableSizeConverter}}" VerticalAlignment="Center" Grid.Column="2" FontSize="{StaticResource PhoneFontSizeNormal}" Margin="0,-6,0,0"/>
-                        </Grid>
                     </Grid>
                 </phone:PivotItem>
                 <phone:PivotItem x:Name="PivotSubscription" CacheMode="{x:Null}" Header="{Binding LocalizedUiResources.UI_UpgradeAccount, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Loaded="OnPivotLoaded">
