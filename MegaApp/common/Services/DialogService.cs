@@ -1472,8 +1472,8 @@ namespace MegaApp.Services
         /// Show an input dialog to type the MFA code and execute an action.
         /// </summary>
         /// <param name="dialogAction">Action to do by the primary button.</param>
-        /// <param name="title">Title of the input dialog.</param>
-        /// <param name="message">Message of the input dialog.</param>
+        /// <param name="title">Custom title of the input dialog.</param>
+        /// <param name="message">Custom message of the input dialog.</param>
         /// <returns>The dialog action result as <see cref="bool"/> value.</returns>
         public static async Task<bool> ShowMultiFactorAuthCodeInputDialogAsync(
             Func<string, bool> dialogAction, string title = null, string message = null)
@@ -1487,8 +1487,8 @@ namespace MegaApp.Services
         /// Show an input dialog to type the MFA code and execute an async action.
         /// </summary>
         /// <param name="dialogActionAsync">Async action to do by the primary button.</param>
-        /// <param name="title">Title of the input dialog.</param>
-        /// <param name="message">Message of the input dialog.</param>
+        /// <param name="title">Custom title of the input dialog.</param>
+        /// <param name="message">Custom message of the input dialog.</param>
         /// <returns>The dialog action result as <see cref="bool"/> value.</returns>
         public static async Task<bool> ShowAsyncMultiFactorAuthCodeInputDialogAsync(
             Func<string, Task<bool>> dialogActionAsync, string title = null, string message = null)

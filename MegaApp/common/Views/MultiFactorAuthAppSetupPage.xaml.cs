@@ -34,6 +34,12 @@ namespace MegaApp.Views
             e.Cancel = true;
         }
 
+        private void OnBackButtonTapped(object sender, GestureEventArgs e)
+        {
+            NavigateService.NavigateTo(typeof(SettingsPage),
+                NavigationParameter.SecuritySettings);
+        }
+
         private void OnVerifyTextBoxKeyDown(object sender, KeyEventArgs e)
         {
             if ((e.Key >= Key.D0 && e.Key <= Key.D9) ||

@@ -2743,7 +2743,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Two-Factor Authentication helps to keep your account more secure..
+        ///   Busca una cadena traducida similar a Two-factor authentication is a second layer of security for your account..
         /// </summary>
         public static string UI_TwoFactorAuthSettingsDescription {
             get {

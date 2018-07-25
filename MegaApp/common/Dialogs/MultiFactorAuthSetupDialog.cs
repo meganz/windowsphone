@@ -66,6 +66,7 @@ namespace MegaApp.Dialogs
 
             var setupMultiFactorAuthButton = new Button()
             {
+                Margin = new Thickness(0, 0, 0, 28),
                 Content = UiResources.UI_Setup2FA,
                 HorizontalAlignment = HorizontalAlignment.Stretch,
                 Command = this.SetupMultiFactorAuthCommand
@@ -74,10 +75,16 @@ namespace MegaApp.Dialogs
 
             var howDoesItWorkLink = new HyperlinkButton()
             {
-                Margin = new Thickness(0, 28, 0, 28),
+                Margin = new Thickness(0, 0, 0, 28),
                 Content = UiResources.UI_HowDoesItWork,
                 Foreground = (Brush)Application.Current.Resources["MegaRedColorBrush"],
                 Style = (Style)Application.Current.Resources["HyperlinkButtonStyle"]
+            };
+            howDoesItWorkLink.Tap += (sender, args) =>
+            {
+                title.Text = AppMessages.AM_2FA_HowDoesItWorkTitle;
+                description.Text = AppMessages.AM_2FA_HowDoesItWorkDescription;
+                howDoesItWorkLink.Visibility = Visibility.Collapsed;
             };
             contentStackPanel.Children.Add(howDoesItWorkLink);
 

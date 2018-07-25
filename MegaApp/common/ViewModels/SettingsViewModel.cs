@@ -246,8 +246,7 @@ namespace MegaApp.ViewModels
         {
             var result = await DialogService.ShowAsyncMultiFactorAuthCodeInputDialogAsync(
                 this.DisableMultiFactorAuthAsync,
-                AppMessages.AM_2FA_DisableDialogTitle,
-                AppMessages.AM_2FA_DisableDialogMessage);
+                AppMessages.AM_2FA_DisableDialogTitle);
 
             if (result)
             {

@@ -26,7 +26,37 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Grid x:Name="HeaderGrid" Background="{StaticResource PhoneChromeBrush}" />
+        <Grid x:Name="HeaderGrid" Background="{StaticResource PhoneChromeBrush}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button 
+                x:Name="BackButton" 
+                Grid.Column="0"
+                Height="48"
+                Width="48"
+                Margin="12,0"
+                HorizontalAlignment="Left"
+                Style="{StaticResource AppBarButtonStyleNoBorder}"
+                Tap="OnBackButtonTapped">
+                <Path 
+                    Height="20" 
+                    Width="20" 
+                    Data="{Binding LocalizedVisualResources.VR_BackIconPathData, Mode=OneWay, Source={StaticResource LocalizedStrings}}" 
+                    Stretch="UniformToFill" >
+                    <Path.Fill>
+                        <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                    </Path.Fill>
+                </Path>
+            </Button>
+            <TextBlock
+                Grid.Column="1"
+                FontSize="{StaticResource PhoneFontSizeSmall}"
+                Foreground="{StaticResource MegaRedColorBrush}"
+                Text="{Binding LocalizedUiResources.Security, Source={StaticResource LocalizedStrings}}"
+                VerticalAlignment="Center" />
+        </Grid>
 
         <Grid 
             x:Name="ContentGrid"
@@ -39,7 +69,7 @@
             <TextBlock
                 Grid.Row="0"
                 Margin="0,0,0,28"
-                FontSize="32"
+                FontSize="{StaticResource PhoneFontSizeLarge}"
                 Text="{Binding LocalizedUiResources.UI_TwoFactorAuth, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
                 TextWrapping="Wrap"/>
             <ScrollViewer 
