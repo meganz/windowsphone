@@ -60,36 +60,13 @@ namespace MegaApp.ViewModels
 
         public async void Logout()
         {
-            if (await AccountService.ShouldShowPasswordReminderDialogAsync())
+            if (await AccountService.ShouldShowPasswordReminderDialogAsync(true))
             {
                 DialogService.ShowPasswordReminderDialog(true);
                 return;
             }
 
             MegaSdk.logout(new LogOutRequestListener());
-        }
-
-        public void ClearCache()
-        {
-            string title, message = string.Empty;
-            if (AppService.ClearAppCache(false))
-            {
-                title = AppMessages.CacheCleared_Title;
-                message = AppMessages.CacheCleared;
-            }
-            else
-            {
-                title = AppMessages.AM_ClearCacheFailed_Title;
-                message = AppMessages.AM_ClearCacheFailed;
-            }
-
-            OnUiThread(() =>
-            {
-                new CustomMessageDialog(title, message, App.AppInformation,
-                    MessageDialogButtons.Ok).ShowDialog();
-            });
-            
-            AccountDetails.CacheSize = AppService.GetAppCacheSize();
         }
 
         public void ChangePassword()

@@ -13,6 +13,24 @@ namespace MegaApp.Database
 {
     public class DataBaseHelper<T> where T : new()
     {
+        /// <summary>
+        /// Create the table in the database if not exist.
+        /// </summary>
+        public static void CreateTable()
+        {
+            try
+            {
+                using (var db = new SQLiteConnection(App.DB_PATH))
+                {
+                    db.CreateTable<T>();
+                }
+            }
+            catch (Exception e)
+            {
+                LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error creating the DB", e);
+            }
+        }
+
         // Indicate if the node exists in the database table.
         public static bool ExistsNode(String tableName, String fieldName, String fieldValue)
         {

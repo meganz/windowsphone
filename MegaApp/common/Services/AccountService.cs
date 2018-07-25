@@ -40,11 +40,12 @@ namespace MegaApp.Services
         /// <summary>
         /// Check if should show the password reminder dialog and show it in that case
         /// </summary>
-        public static async Task<bool> ShouldShowPasswordReminderDialogAsync()
+        /// <param name="atLogout">True if the dialog is being displayed just before a logout</param>
+        public static async Task<bool> ShouldShowPasswordReminderDialogAsync(bool atLogout)
         {
             var passwordReminderDialogListener = new ShouldShowPasswordReminderDialogRequestListenerAsync();
             return await passwordReminderDialogListener.ExecuteAsync(() =>
-                SdkService.MegaSdk.shouldShowPasswordReminderDialog(false, passwordReminderDialogListener));
+                SdkService.MegaSdk.shouldShowPasswordReminderDialog(atLogout, passwordReminderDialogListener));
         }
 
         public static void ClearAccountDetails()

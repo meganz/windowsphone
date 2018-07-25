@@ -229,10 +229,10 @@ namespace MegaApp.ViewModels
         /// <summary>
         /// Refresh the current folder. Delete cached thumbnails and reload the nodes
         /// </summary>
-        public void Refresh()
+        public async void Refresh()
         {
-            FileService.ClearFiles(
-             NodeService.GetFiles(this.ChildNodes,
+            await FileService.ClearFilesAsync(
+                NodeService.GetFiles(this.ChildNodes,
                 Path.Combine(ApplicationData.Current.LocalFolder.Path,
                 AppResources.ThumbnailsDirectory)));
 

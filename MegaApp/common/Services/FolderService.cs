@@ -111,7 +111,7 @@ namespace MegaApp.Services
             }
         }        
 
-        public static bool Clear(string path)
+        public static async Task<bool> ClearAsync(string path)
         {
             try
             {
@@ -122,28 +122,32 @@ namespace MegaApp.Services
                 }
 
                 bool result = true;
-                IEnumerable<string> foldersToDelete = Directory.GetDirectories(path);
-                if (foldersToDelete != null)
-                {
-                    foreach (var folder in foldersToDelete)
-                    {
-                        if (folder != null)
-                        {
-                            if (HasIllegalChars(folder))
-                            {
-                                LogService.Log(MLogLevel.LOG_LEVEL_WARNING, string.Format("Error deleting folder '{0}'.", path));
-                                result = false;
-                                continue;
-                            }
 
-                            Directory.Delete(folder, true);
+                await Task.Run(async() =>
+                {
+                    IEnumerable<string> foldersToDelete = Directory.GetDirectories(path);
+                    if (foldersToDelete != null)
+                    {
+                        foreach (var folder in foldersToDelete)
+                        {
+                            if (folder != null)
+                            {
+                                if (HasIllegalChars(folder))
+                                {
+                                    LogService.Log(MLogLevel.LOG_LEVEL_WARNING, string.Format("Error deleting folder '{0}'.", path));
+                                    result = false;
+                                    continue;
+                                }
+
+                                Directory.Delete(folder, true);
+                            }
                         }
                     }
-                }
 
-                result = result & FileService.ClearFiles(Directory.GetFiles(path));
+                    result = result & await FileService.ClearFilesAsync(Directory.GetFiles(path));
+                });
 
-                return true;
+                return result;
             }
             catch (Exception e)
             {

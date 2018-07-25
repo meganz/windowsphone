@@ -5,6 +5,7 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:converters="clr-namespace:MegaApp.Converters"
     xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
     xmlns:telerikToggleSwitch="clr-namespace:Telerik.Windows.Controls.ToggleSwitch;assembly=Telerik.Windows.Controls.Primitives"
     xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Core"
@@ -21,6 +22,8 @@
     d:DataContext="{d:DesignInstance models:SettingsViewModel}">
 
     <userControls:MegaPhoneApplicationPage.Resources>
+        <converters:LongToReadableSizeConverter x:Key="LongToReadableSizeConverter"/>
+        
         <ControlTemplate x:Name="LearnMoreLink" TargetType="HyperlinkButton">
             <HyperlinkButton
                 Margin="-10,0,0,0"
@@ -62,6 +65,7 @@
                 <phone:PivotItem x:Name="GeneralPivot" Header="{Binding LocalizedUiResources.General, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Margin="12,0">
                     <ScrollViewer Margin="-12,0,0,0" Height="624">
                         <StackPanel x:Name="ContentPanel" Margin="12,24,12,0">
+                            <!-- STORAGE -->
                             <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.Storage, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,0" Style="{StaticResource PhoneTextSubtleStyle}" FontSize="{StaticResource PhoneFontSizeLarge}">
                                 <TextBlock.Foreground>
                                     <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
@@ -104,9 +108,39 @@
                                 </telerikPrimitives:RadToggleSwitch>
                             </Grid>                            
                             <TextBlock x:Name="TextDefaultDownloadLocation" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.DefaultDownloadLocationText, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,10,0,0" Foreground="{StaticResource PhoneSubtleBrush}"/>
-                            <HyperlinkButton x:Name="LinkDefaultDownloadLocation" Command="{Binding SelectDownloadLocationCommand}" IsEnabled="{Binding DownloadLocationSelectionIsEnabled}" VerticalAlignment="Center" Margin="0,10,0,40" FontFamily="Portable User Interface" HorizontalAlignment="Left" Content="{Binding StandardDownloadLocation}" 
+                            <HyperlinkButton x:Name="LinkDefaultDownloadLocation" Command="{Binding SelectDownloadLocationCommand}" IsEnabled="{Binding DownloadLocationSelectionIsEnabled}" VerticalAlignment="Center" Margin="0,10,0,30" FontFamily="Portable User Interface" HorizontalAlignment="Left" Content="{Binding StandardDownloadLocation}" 
                                              FontSize="{StaticResource PhoneFontSizeNormal}" Style="{StaticResource UndelineHyperlinkButtonStyle}"/>
+                            <StackPanel x:Name="ClearCache" Margin="0,0,0,40">
+                                <Grid Margin="12,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock
+                                        Grid.Column="0"
+                                        FontFamily="Portable User Interface" 
+                                        Foreground="{StaticResource PhoneSubtleBrush}"
+                                        HorizontalAlignment="Left" 
+                                        Text="{Binding LocalizedUiResources.UI_UsedCache, Source={StaticResource LocalizedStrings}}" 
+                                        TextWrapping="Wrap" 
+                                        VerticalAlignment="Center" />
+                                    <TextBlock 
+                                        Grid.Column="1"
+                                        FontFamily="Portable User Interface" 
+                                        HorizontalAlignment="Right" 
+                                        Text="{Binding AccountDetails.CacheSize, Converter={StaticResource LongToReadableSizeConverter}}" 
+                                        TextWrapping="Wrap" 
+                                        VerticalAlignment="Center" />
+                                </Grid>
+                                <Button
+                                    x:Name="BtnClearCache" 
+                                    MinWidth="136"
+                                    Command="{Binding ClearCacheCommand}"
+                                    Content="{Binding LocalizedUiResources.ClearCache, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}"
+                                    HorizontalAlignment="Left" />
+                            </StackPanel>                            
 
+                            <!-- DEBUG MODE -->
                             <StackPanel x:Name="DebugPanel" Margin="0,0,0,40" Visibility="{Binding IsDebugMode, Converter={StaticResource BooleanToVisibilityConverter}}">
                                 <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.UI_DebugMode, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,12,0" Style="{StaticResource PhoneTextSubtleStyle}" FontSize="{StaticResource PhoneFontSizeLarge}">
                                     <TextBlock.Foreground>

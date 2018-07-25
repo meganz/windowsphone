@@ -161,6 +161,9 @@ namespace MegaApp.MegaApi
 
             // Validate product subscription license on background thread
             Task.Run(() => LicenseService.ValidateLicenses());
+
+            // Initialize the DB
+            AppService.InitializeDatabase();
         }
 
         #endregion

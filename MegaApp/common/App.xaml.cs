@@ -123,15 +123,6 @@ namespace MegaApp
             ((SolidColorBrush)Resources["PhoneAccentBrush"]).Color = (Color)Current.Resources["MegaRedColor"];
             ((SolidColorBrush)Resources["PhoneTextBoxEditBorderBrush"]).Color = (Color)Current.Resources["MegaRedColor"];
 
-            // Create the DB if not exists
-            if (!FileService.FileExists(DB_PATH))
-            {
-                using (var db = new SQLiteConnection(DB_PATH))
-                {
-                    db.CreateTable<SavedForOffline>();
-                }
-            }
-
 #if DEBUG
             // Setup Mocking IAP library (only in debug mode)
             LicenseService.SetupMockIap();
@@ -285,6 +276,9 @@ namespace MegaApp
             
             // Initialize Folders
             AppService.InitializeAppFolders();
+
+            // Initialize the DB
+            AppService.InitializeDatabase();
             
             // Set the current resolution that we use later on for our image selection
             AppService.CurrentResolution = ResolutionHelper.CurrentResolution;
