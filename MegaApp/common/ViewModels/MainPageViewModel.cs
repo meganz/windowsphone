@@ -150,10 +150,16 @@ namespace MegaApp.ViewModels
                 }
                 case DriveDisplayMode.MultiSelect:
                 {
+                    string[] iconStrings;
+                    if (currentFolderViewModel.PreviousDisplayMode == DriveDisplayMode.RubbishBin)
+                        iconStrings = new[] { UiResources.Download, String.Format("{0}/{1}", UiResources.Copy, UiResources.Move), UiResources.UI_Restore, UiResources.Remove };
+                    else
+                        iconStrings = new[] { UiResources.Download, String.Format("{0}/{1}", UiResources.Copy, UiResources.Move), UiResources.Remove };
+
                     this.TranslateAppBarItems(
                         iconButtons.Cast<ApplicationBarIconButton>().ToList(),
                         menuItems.Cast<ApplicationBarMenuItem>().ToList(),
-                        new[] { UiResources.Download, String.Format("{0}/{1}", UiResources.Copy, UiResources.Move), UiResources.Remove },
+                        iconStrings,
                         new[] { UiResources.SelectAll, UiResources.DeselectAll, UiResources.Cancel });
                     break;
                 }
