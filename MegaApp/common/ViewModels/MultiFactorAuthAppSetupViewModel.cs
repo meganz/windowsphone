@@ -5,6 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
+using Windows.System;
 using Telerik.Windows.Controls;
 using ZXing;
 using ZXing.QrCode;
@@ -22,6 +23,7 @@ namespace MegaApp.ViewModels
         public MultiFactorAuthAppSetupViewModel() : base(SdkService.MegaSdk)
         {
             this.CopySeedCommand = new DelegateCommand(this.CopySeed);
+            this.OpenInCommand = new DelegateCommand(this.OpenIn);
             this.VerifyCommand = new DelegateCommand(this.Verify);
 
             this.Initialize();
@@ -30,6 +32,7 @@ namespace MegaApp.ViewModels
         #region Commands
 
         public ICommand CopySeedCommand { get; private set; }
+        public ICommand OpenInCommand { get; private set; }
         public ICommand VerifyCommand { get; private set; }
 
         #endregion
@@ -104,6 +107,15 @@ namespace MegaApp.ViewModels
             set { SetField(ref _verifyButtonState, value); }
         }
 
+        private string codeURI
+        {
+            get
+            {
+                return string.Format("otpauth://totp/MEGA:{0}?secret={1}&issuer=MEGA",
+                    SdkService.MegaSdk.getMyEmail(), this.MultiFactorAuthCode);
+            }
+        }
+
         #endregion
 
         #region Methods
@@ -136,6 +148,11 @@ namespace MegaApp.ViewModels
                     App.AppInformation,
                     MessageDialogButtons.Ok).ShowDialog();
             }
+        }
+
+        private async void OpenIn(object obj = null)
+        {
+            await Launcher.LaunchUriAsync(new Uri(this.codeURI, UriKind.RelativeOrAbsolute));
         }
 
         /// <summary>

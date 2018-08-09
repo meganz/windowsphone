@@ -2455,6 +2455,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Open in....
+        /// </summary>
+        public static string UI_OpenIn {
+            get {
+                return ResourceManager.GetString("UI_OpenIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Open link.
         /// </summary>
         public static string UI_OpenLink {

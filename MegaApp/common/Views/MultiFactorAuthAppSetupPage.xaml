@@ -102,6 +102,9 @@
                                         <telerikPrimitives:RadContextMenuItem
                                             Command="{Binding CopySeedCommand}"
                                             Content="{Binding LocalizedUiResources.UI_CopySeed, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" />
+                                        <telerikPrimitives:RadContextMenuItem 
+                                            Command="{Binding OpenInCommand}"
+                                            Content="{Binding LocalizedUiResources.UI_OpenIn, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" />
                                     </telerikPrimitives:RadContextMenu>
                                 </telerikPrimitives:RadContextMenu.ContextMenu>
                             </Button>
