@@ -133,7 +133,8 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Consider exporting your Recovery Key in case you lose access to your app or want to disable Two-Factor Authentication in the future..
+        ///   Busca una cadena traducida similar a If you lose access to your account after enabling 2FA and you have not backed up your Recovery Key, MEGA can&apos;t help you gain access to it again.
+        ///Back up your recovery key..
         /// </summary>
         public static string AM_2FA_EnabledDialogRecommendation {
             get {
@@ -142,29 +143,11 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Great! Two-Factor Authentication Enabled.
+        ///   Busca una cadena traducida similar a Two-Factor Authentication Enabled.
         /// </summary>
         public static string AM_2FA_EnabledDialogTitle {
             get {
                 return ResourceManager.GetString("AM_2FA_EnabledDialogTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Two-factor authentication is a second layer of security for your account. Which means that even if someone knows your password they cannot access it, without also having access to the six digit code only you have access to..
-        /// </summary>
-        public static string AM_2FA_HowDoesItWorkDescription {
-            get {
-                return ResourceManager.GetString("AM_2FA_HowDoesItWorkDescription", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Why you need two-factor authentication?.
-        /// </summary>
-        public static string AM_2FA_HowDoesItWorkTitle {
-            get {
-                return ResourceManager.GetString("AM_2FA_HowDoesItWorkTitle", resourceCulture);
             }
         }
         
@@ -178,7 +161,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Add extra security to you account if you have an authenticator app in one of your devices such as Microsoft Authenticator or Lastpass Authenticator..
+        ///   Busca una cadena traducida similar a Two-factor authentication is a second layer of security for your account. Which means that even if someone knows your password they cannot access it, without also having access to the six digit code only you have access to..
         /// </summary>
         public static string AM_2FA_SetupDialogDescription {
             get {
@@ -187,7 +170,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Protect your account with Two-Factor Authentication.
+        ///   Busca una cadena traducida similar a Why you need two-factor authentication?.
         /// </summary>
         public static string AM_2FA_SetupDialogTitle {
             get {

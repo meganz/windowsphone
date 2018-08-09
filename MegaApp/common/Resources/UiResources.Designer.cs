@@ -2266,15 +2266,6 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a How does it work?.
-        /// </summary>
-        public static string UI_HowDoesItWork {
-            get {
-                return ResourceManager.GetString("UI_HowDoesItWork", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a Import to {0}.
         /// </summary>
         public static string UI_ImportLinkBorderText {

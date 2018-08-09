@@ -4,7 +4,6 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using MegaApp.Dialogs;
 using MegaApp.Enums;
 using MegaApp.Resources;
 using MegaApp.Services;
@@ -72,21 +71,6 @@ namespace MegaApp.Dialogs
                 Command = this.SetupMultiFactorAuthCommand
             };
             contentStackPanel.Children.Add(setupMultiFactorAuthButton);
-
-            var howDoesItWorkLink = new HyperlinkButton()
-            {
-                Margin = new Thickness(0, 0, 0, 28),
-                Content = UiResources.UI_HowDoesItWork,
-                Foreground = (Brush)Application.Current.Resources["MegaRedColorBrush"],
-                Style = (Style)Application.Current.Resources["HyperlinkButtonStyle"]
-            };
-            howDoesItWorkLink.Tap += (sender, args) =>
-            {
-                title.Text = AppMessages.AM_2FA_HowDoesItWorkTitle;
-                description.Text = AppMessages.AM_2FA_HowDoesItWorkDescription;
-                howDoesItWorkLink.Visibility = Visibility.Collapsed;
-            };
-            contentStackPanel.Children.Add(howDoesItWorkLink);
 
             this.MainGrid.Children.Add(contentStackPanel);
             Grid.SetRow(contentStackPanel, 2);
