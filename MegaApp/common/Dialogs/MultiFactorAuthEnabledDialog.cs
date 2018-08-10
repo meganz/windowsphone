@@ -5,6 +5,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using MegaApp.Classes;
+using MegaApp.MegaApi;
 using MegaApp.Resources;
 using MegaApp.Services;
 using MegaApp.ViewModels;
@@ -19,6 +20,9 @@ namespace MegaApp.Dialogs
         public MultiFactorAuthEnabledDialog()
         {
             this.SaveKeyButtonCommand = new DelegateCommand(this.SaveKey);
+
+            this.IsClosedOnBackButton = false;
+            this.IsClosedOnOutsideTap = false;
 
             var contentStackPanel = new StackPanel()
             {
@@ -100,17 +104,20 @@ namespace MegaApp.Dialogs
             buttonsGrid.Children.Add(exportButton);
             Grid.SetColumn(exportButton, 0);
 
-            var closeButton = new Button()
+            this.closeButton = new Button()
             {
                 Content = UiResources.UI_Close.ToLower(),
+                IsEnabled = false,
                 HorizontalAlignment = HorizontalAlignment.Stretch,
                 Command = CloseCommand
             };
-            buttonsGrid.Children.Add(closeButton);
-            Grid.SetColumn(closeButton, 1);
+            buttonsGrid.Children.Add(this.closeButton);
+            Grid.SetColumn(this.closeButton, 1);
 
             this.MainGrid.Children.Add(buttonsGrid);
             Grid.SetRow(buttonsGrid, 3);
+
+            this.Initialize();
         }
 
         #region Commands
@@ -122,7 +129,14 @@ namespace MegaApp.Dialogs
 
         #endregion
 
-        #region
+        #region Methods
+
+        private async void Initialize()
+        {
+            var isRecoveryKeyExported = new IsMasterKeyExportedRequestListenerAsync();
+            this.closeButton.IsEnabled = await isRecoveryKeyExported.ExecuteAsync(() =>
+                SdkService.MegaSdk.isMasterKeyExported(isRecoveryKeyExported));
+        }
 
         /// <summary>
         /// Backup the Recovery key
@@ -150,6 +164,12 @@ namespace MegaApp.Dialogs
                     MessageDialogButtons.Ok).ShowDialog();
             }
         }
+
+        #endregion
+
+        #region Controls
+
+        private Button closeButton;
 
         #endregion
     }

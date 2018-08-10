@@ -514,6 +514,9 @@
     <Compile Include="..\common\MegaApi\InviteContactRequestListener.cs">
       <Link>MegaApi\InviteContactRequestListener.cs</Link>
     </Compile>
+    <Compile Include="..\common\MegaApi\IsMasterKeyExportedRequestListenerAsync.cs">
+      <Link>MegaApi\IsMasterKeyExportedRequestListenerAsync.cs</Link>
+    </Compile>
     <Compile Include="..\common\MegaApi\KillAllSessionsRequestListener.cs">
       <Link>MegaApi\KillAllSessionsRequestListener.cs</Link>
     </Compile>
