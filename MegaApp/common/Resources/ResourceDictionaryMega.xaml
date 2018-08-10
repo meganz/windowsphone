@@ -16,8 +16,10 @@
     <!-- COLOR DEFINITIONS -->
     <Color x:Key="MegaRedColor">#EB4444</Color>
     <Color x:Key="MegaRedDisabledColor">#7DEB4444</Color>
+    <Color x:Key="MegaGreenColor">#00BFA5</Color>
     <SolidColorBrush x:Key="MegaRedColorBrush" Color="{StaticResource MegaRedColor}"/>
     <SolidColorBrush x:Key="MegaRedDisabledColorBrush" Color="{StaticResource MegaRedDisabledColor}"/>
+    <SolidColorBrush x:Key="MegaGreenColorBrush" Color="{StaticResource MegaGreenColor}" />
 
     <system:Double x:Key="InformationFontSize">14</system:Double>
 

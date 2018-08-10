@@ -1594,6 +1594,11 @@ NOTE: Keep the capital letter if possible.</note>
           <target state="new">Enable Two-Factor Authentication</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the "toggle" or "switch" button to enable/disable the Two-Factor Authentication.</note>
           </trans-unit>
+        <trans-unit id="Resx/UI_Restore" translate="yes" xml:space="preserve">
+          <source>Restore</source>
+          <target state="new">Restore</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Restore' button, link, text, title, etc. For example for restore files from the rubbish bin - (String as short as possible).</note>
+          </trans-unit>
         <trans-unit id="Resx/UI_UsedCache" translate="yes" xml:space="preserve">
           <source>Used cache</source>
           <target state="new">Used cache</target>
@@ -1603,7 +1608,7 @@ NOTE: Keep the capital letter if possible.</note>
           <source>Open in...</source>
           <target state="new">Open in...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Open in...' button, link, text, title, etc. to open a file or other kind of resource with a certain app - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/UI_SessionManagement" translate="yes" xml:space="preserve">
           <source>Session Management</source>
           <target state="new">Session Management</target>

@@ -487,7 +487,7 @@ namespace MegaApp.Views
                     {
                         foreach (var node in _cameraUploadsPageViewModel.CameraUploads.SelectedNodes)
                         {
-                            node.Copy(_cameraUploadsPageViewModel.CameraUploads.FolderRootNode);
+                            node.Copy(_cameraUploadsPageViewModel.CameraUploads.FolderRootNode.OriginalMNode);
                             node.DisplayMode = NodeDisplayMode.Normal;
                         }
                         _cameraUploadsPageViewModel.CameraUploads.SelectedNodes.Clear();
@@ -522,10 +522,11 @@ namespace MegaApp.Views
             SetApplicationBarData();
         }
 
-        private void AcceptMoveAction()
+        private async void AcceptMoveAction()
         {
             if(_cameraUploadsPageViewModel.CameraUploads != null)
             {
+                bool result = true;
                 try
                 {
                     // Move all the selected nodes and then clear and release the selected nodes list
@@ -534,8 +535,9 @@ namespace MegaApp.Views
                     {
                         foreach (var node in _cameraUploadsPageViewModel.CameraUploads.SelectedNodes)
                         {
-                            node.Move(_cameraUploadsPageViewModel.CameraUploads.FolderRootNode);
                             node.DisplayMode = NodeDisplayMode.Normal;
+                            var nodeResult = await node.MoveAsync(_cameraUploadsPageViewModel.CameraUploads.FolderRootNode.OriginalMNode);
+                            result = result & (nodeResult == NodeActionResult.Succeeded);
                         }
                         _cameraUploadsPageViewModel.CameraUploads.SelectedNodes.Clear();
                     }
@@ -547,14 +549,16 @@ namespace MegaApp.Views
                         _cameraUploadsPageViewModel.CameraUploads.FocusedNode = null;
                     }
                 }
-                catch(InvalidOperationException)
-                {
-                    new CustomMessageDialog(AppMessages.MoveFailed_Title, AppMessages.MoveFailed,
-                        App.AppInformation, MessageDialogButtons.Ok).ShowDialog();
-                }
+                catch (InvalidOperationException) { result = false; }
                 finally
                 {
                     _cameraUploadsPageViewModel.CameraUploads.CurrentDisplayMode = _cameraUploadsPageViewModel.CameraUploads.PreviousDisplayMode;
+
+                    if (!result)
+                    {
+                        new CustomMessageDialog(AppMessages.MoveFailed_Title, AppMessages.MoveFailed,
+                            App.AppInformation, MessageDialogButtons.Ok).ShowDialog();
+                    }
                 }
             }
         }
