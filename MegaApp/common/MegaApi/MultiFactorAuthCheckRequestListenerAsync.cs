@@ -26,10 +26,9 @@ namespace MegaApp.MegaApi
                         }
                         break;
 
-                    // Default error processing
-                    default: // Multi-Factor authentication is not available on the server side
+                    default: // Default error processing
                         if (Tcs != null)
-                            Tcs.TrySetResult(MultiFactorAuthStatus.NotAvailable);
+                            Tcs.TrySetResult(MultiFactorAuthStatus.Unknown);
                         break;
                 }
             }

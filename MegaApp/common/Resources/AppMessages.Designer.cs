@@ -761,6 +761,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Failed to check the Multi-Factor Authentication status..
+        /// </summary>
+        public static string AM_MFA_CheckStatusFailed {
+            get {
+                return ResourceManager.GetString("AM_MFA_CheckStatusFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a The seed has been copied to your clipboard..
         /// </summary>
         public static string AM_MFA_SeedCopied {

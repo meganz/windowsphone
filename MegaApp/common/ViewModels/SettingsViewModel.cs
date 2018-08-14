@@ -91,22 +91,28 @@ namespace MegaApp.ViewModels
                 SettingsResources.DefaultDownloadLocation, UiResources.DefaultDownloadLocation);
             #endif
 
-            var mfaStatus = await AccountService.CheckMultiFactorAuthStatusAsync();
-            switch (mfaStatus)
+            this.IsMultiFactorAuthAvailable = SdkService.MegaSdk.multiFactorAuthAvailable();
+            if (this.IsMultiFactorAuthAvailable)
             {
-                case MultiFactorAuthStatus.Enabled:
-                    this.IsMultiFactorAuthAvailable = true;
-                    SetField(ref this._isMultiFactorAuthEnabled, true, "IsMultiFactorAuthEnabled");
-                    break;
+                var mfaStatus = await AccountService.CheckMultiFactorAuthStatusAsync();
+                switch (mfaStatus)
+                {
+                    case MultiFactorAuthStatus.Enabled:
+                        SetField(ref this._isMultiFactorAuthEnabled, true, "IsMultiFactorAuthEnabled");
+                        break;
 
-                case MultiFactorAuthStatus.Disabled:
-                    this.IsMultiFactorAuthAvailable = true;
-                    SetField(ref this._isMultiFactorAuthEnabled, false, "IsMultiFactorAuthEnabled");
-                    break;
+                    case MultiFactorAuthStatus.Disabled:
+                        SetField(ref this._isMultiFactorAuthEnabled, false, "IsMultiFactorAuthEnabled");
+                        break;
 
-                case MultiFactorAuthStatus.NotAvailable:
-                    this.IsMultiFactorAuthAvailable = false;
-                    break;
+                    case MultiFactorAuthStatus.Unknown:
+                        OnUiThread(() =>
+                        {
+                            new CustomMessageDialog(UiResources.UI_Warning, AppMessages.AM_MFA_CheckStatusFailed,
+                                App.AppInformation, MessageDialogButtons.Ok).ShowDialog();
+                        });
+                        break;
+                }
             }
         }
 
