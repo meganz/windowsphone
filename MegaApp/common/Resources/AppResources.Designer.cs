@@ -169,6 +169,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a MEGARecoveryKey.txt.
+        /// </summary>
+        public static string AR_RecoveryKeyFileName {
+            get {
+                return ResourceManager.GetString("AR_RecoveryKeyFileName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a https://mega.nz/recovery.
         /// </summary>
         public static string AR_RecoveryUrl {

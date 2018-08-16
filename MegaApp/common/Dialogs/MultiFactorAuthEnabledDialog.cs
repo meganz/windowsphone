@@ -4,6 +4,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
 using MegaApp.Classes;
 using MegaApp.MegaApi;
 using MegaApp.Resources;
@@ -23,6 +24,7 @@ namespace MegaApp.Dialogs
 
             this.IsClosedOnBackButton = false;
             this.IsClosedOnOutsideTap = false;
+            this.IsFullScreen = true;
 
             var contentStackPanel = new StackPanel()
             {
@@ -34,6 +36,13 @@ namespace MegaApp.Dialogs
                 Background = new SolidColorBrush((Color)Application.Current.Resources["PhoneChromeColor"])
             };
 
+            var imageGrid = new Grid()
+            {
+                Height = 120,
+                Width = 120
+            };
+            contentStackPanel.Children.Add(imageGrid);
+
             var image = new Image()
             {
                 Height = 120,
@@ -42,7 +51,31 @@ namespace MegaApp.Dialogs
                 VerticalAlignment = VerticalAlignment.Center,
                 Source = new BitmapImage(new Uri("/Assets/MultiFactorAuth/multiFactorAuth.png", UriKind.Relative))
             };
-            contentStackPanel.Children.Add(image);
+            imageGrid.Children.Add(image);
+
+            var ellipse = new Ellipse()
+            {
+                Margin = new Thickness(12),
+                Height = 24,
+                Width = 24,
+                Fill = new SolidColorBrush(Color.FromArgb(255, 0, 226, 44)),
+                HorizontalAlignment = HorizontalAlignment.Left,
+                VerticalAlignment = VerticalAlignment.Top
+            };
+            Canvas.SetZIndex(ellipse, 1);
+            imageGrid.Children.Add(ellipse);
+
+            var icon = new Image()
+            {
+                Margin = new Thickness(12, 12, 0, 0),
+                Height = 24,
+                Width = 24,
+                HorizontalAlignment = HorizontalAlignment.Left,
+                VerticalAlignment = VerticalAlignment.Top,
+                Source = new BitmapImage(new Uri("/Assets/AppBar/check.png", UriKind.Relative))
+            };
+            Canvas.SetZIndex(icon, 2);
+            imageGrid.Children.Add(icon);
 
             var title = new TextBlock()
             {
@@ -65,57 +98,86 @@ namespace MegaApp.Dialogs
             };
             contentStackPanel.Children.Add(description);
 
+            var exportButtonGrid = new Grid();
+            exportButtonGrid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Auto) });
+            exportButtonGrid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
+            exportButtonGrid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Auto) });
+
+            var textFileIcon = new Image()
+            {
+                Height = 24,
+                Width = 24,
+                HorizontalAlignment = HorizontalAlignment.Center,
+                VerticalAlignment = VerticalAlignment.Center,
+                Source = new BitmapImage(new Uri("/Assets/MultiFactorAuth/textFile.png", UriKind.Relative))
+            };
+            exportButtonGrid.Children.Add(textFileIcon);
+            Grid.SetColumn(textFileIcon, 0);
+
+            var exportTextBlock = new TextBlock()
+            {
+                Margin = new Thickness(8, 0, 12, 0),
+                Text = AppResources.AR_RecoveryKeyFileName,
+                VerticalAlignment = VerticalAlignment.Center
+            };
+            exportButtonGrid.Children.Add(exportTextBlock);
+            Grid.SetColumn(exportTextBlock, 1);
+
+            var saveIcon = new Image()
+            {
+                Height = 24,
+                Width = 24,
+                HorizontalAlignment = HorizontalAlignment.Center,
+                VerticalAlignment = VerticalAlignment.Center,
+                Source = new BitmapImage(new Uri("/Assets/AppBar/save.png", UriKind.Relative))
+            };
+            exportButtonGrid.Children.Add(saveIcon);
+            Grid.SetColumn(saveIcon, 2);
+
+            var exportButton = new Button()
+            {
+                Margin = new Thickness(-12),
+                BorderThickness = new Thickness(0),
+                HorizontalAlignment = HorizontalAlignment.Stretch,
+                Command = SaveKeyButtonCommand,
+                Content = exportButtonGrid
+            };
+
             var border = new Border()
             {
-                Margin = new Thickness(-20, 24, -20, 32),
-                Background = (Brush)Application.Current.Resources["PhoneInactiveBrush"]
+                Margin = new Thickness(0, 16, 0, 16),
+                CornerRadius = new CornerRadius(6),
+                HorizontalAlignment = HorizontalAlignment.Center,
+                Background = (Brush)Application.Current.Resources["MegaRedColorBrush"],
+                Child = exportButton,
+                MinHeight = 44
             };
-            border.Child = new TextBlock()
+            contentStackPanel.Children.Add(border);
+
+            var recommendation = new TextBlock()
             {
-                Margin = new Thickness(20),
                 HorizontalAlignment = HorizontalAlignment.Stretch,
                 Opacity = 0.8,
                 Text = AppMessages.AM_2FA_EnabledDialogRecommendation,
                 TextAlignment = TextAlignment.Center,
                 TextWrapping = TextWrapping.Wrap
             };
-            contentStackPanel.Children.Add(border);
+            contentStackPanel.Children.Add(recommendation);
             
             this.MainGrid.Children.Add(contentStackPanel);
             Grid.SetRow(contentStackPanel, 2);
 
-            var buttonsGrid = new Grid()
-            {
-                Width = Double.NaN,
-                Margin = new Thickness(12),
-                HorizontalAlignment = HorizontalAlignment.Stretch,
-                VerticalAlignment = VerticalAlignment.Bottom,
-                Background = new SolidColorBrush((Color)Application.Current.Resources["PhoneChromeColor"])
-            };
-            buttonsGrid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
-            buttonsGrid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
-
-            var exportButton = new Button()
-            {
-                Content = UiResources.UI_Export.ToLower(),
-                HorizontalAlignment = HorizontalAlignment.Stretch,
-                Command = SaveKeyButtonCommand
-            };
-            buttonsGrid.Children.Add(exportButton);
-            Grid.SetColumn(exportButton, 0);
-
             this.closeButton = new Button()
             {
+                Margin = new Thickness(12, 24, 12, 12),
+                Command = CloseCommand,
                 Content = UiResources.UI_Close.ToLower(),
                 IsEnabled = false,
                 HorizontalAlignment = HorizontalAlignment.Stretch,
-                Command = CloseCommand
+                VerticalAlignment = VerticalAlignment.Bottom
             };
-            buttonsGrid.Children.Add(this.closeButton);
-            Grid.SetColumn(this.closeButton, 1);
-
-            this.MainGrid.Children.Add(buttonsGrid);
-            Grid.SetRow(buttonsGrid, 3);
+            this.MainGrid.Children.Add(this.closeButton);
+            Grid.SetRow(this.closeButton, 3);
 
             this.Initialize();
         }

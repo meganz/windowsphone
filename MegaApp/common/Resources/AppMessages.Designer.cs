@@ -986,7 +986,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Recovery Key copied to clipboard.
+        ///   Busca una cadena traducida similar a The Recovery Key has been copied to the clipboard. Please store it in a safe place..
         /// </summary>
         public static string AM_RecoveryKeyCopied {
             get {

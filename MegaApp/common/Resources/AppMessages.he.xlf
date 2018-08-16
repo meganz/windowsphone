@@ -659,9 +659,10 @@ Please try to save/copy the file to your device’s internal memory instead.</so
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user is trying to change the PIN lock code and introduces an incorrect code into the field for the current PIN lock code - (String as short as possible). Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_RecoveryKeyCopied" translate="yes" space="preserve">
-          <source>Recovery Key copied to clipboard</source>
-          <target state="translated">מפתח שחזור הועתק</target>
+          <source>The Recovery Key has been copied to the clipboard. Please store it in a safe place.</source>
+          <target state="needs-review-translation">מפתח שחזור הועתק</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported.</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_RecoveryKeyCopied_Title" translate="yes" space="preserve">
           <source>Recovery Key copied</source>
