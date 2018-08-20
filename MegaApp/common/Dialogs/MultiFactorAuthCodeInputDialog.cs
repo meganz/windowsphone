@@ -74,6 +74,16 @@ namespace MegaApp.Dialogs
             this.verificationCode = this.CreateDigitInput();
             contentStackPanel.Children.Add(this.verificationCode);
 
+            this.progressBar = new ProgressBar()
+            {
+                Width = 160,
+                Foreground = (Brush)Application.Current.Resources["MegaRedColorBrush"],
+                HorizontalAlignment = HorizontalAlignment.Center,
+                IsIndeterminate = true,
+                Visibility = Visibility.Collapsed
+            };
+            contentStackPanel.Children.Add(this.progressBar);
+
             this.warningMessageStackPanel = this.CreateErrorMessage();
             contentStackPanel.Children.Add(this.warningMessageStackPanel);
 
@@ -183,12 +193,16 @@ namespace MegaApp.Dialogs
         {
             if (this.dialogAction != null || this.dialogActionAsync != null)
             {
+                this.progressBar.Visibility = Visibility.Visible;
+
                 dialogResult = false;
                 if (this.dialogAction != null)
                     dialogResult = this.dialogAction.Invoke(this.verificationCode.Text);
 
                 if (this.dialogActionAsync != null)
                     dialogResult = await this.dialogActionAsync.Invoke(this.verificationCode.Text);
+
+                this.progressBar.Visibility = Visibility.Collapsed;
 
                 if (!dialogResult)
                 {
@@ -237,6 +251,7 @@ namespace MegaApp.Dialogs
         private StackPanel warningMessageStackPanel;
         private TextBlock warningMessageTextBlock;
         private Path warningIcon;
+        private ProgressBar progressBar;
 
         #endregion
 
