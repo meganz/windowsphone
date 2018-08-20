@@ -2221,6 +2221,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Find app.
+        /// </summary>
+        public static string UI_FindApp {
+            get {
+                return ResourceManager.GetString("UI_FindApp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a First name.
         /// </summary>
         public static string UI_FirstName {

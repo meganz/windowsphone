@@ -1604,6 +1604,11 @@ NOTE: Keep the capital letter if possible.</note>
           <target state="new">Open in...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Open in...' button, link, text, title, etc. to open a file or other kind of resource with a certain app - (String as short as possible).</note>
           </trans-unit>
+        <trans-unit id="Resx/UI_FindApp" translate="yes" xml:space="preserve">
+          <source>Find app</source>
+          <target state="new">Find app</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Find app' button, link, text, title, etc, to find an app to open a file, resource, etc. - (String as short as possible).</note>
+        </trans-unit>
         <trans-unit id="Resx/UI_SessionManagement" translate="yes" xml:space="preserve">
           <source>Session Management</source>
           <target state="new">Session Management</target>

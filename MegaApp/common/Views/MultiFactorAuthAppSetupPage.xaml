@@ -103,6 +103,9 @@
                                         <telerikPrimitives:RadContextMenuItem
                                             Command="{Binding CopySeedCommand}"
                                             Content="{Binding LocalizedUiResources.UI_CopySeed, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneTime, Source={StaticResource LocalizedStrings}}" />
+                                        <telerikPrimitives:RadContextMenuItem
+                                            Command="{Binding FindAppCommand}"
+                                            Content="{Binding LocalizedUiResources.UI_FindApp, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneTime, Source={StaticResource LocalizedStrings}}" />
                                         <telerikPrimitives:RadContextMenuItem 
                                             Command="{Binding OpenInCommand}"
                                             Content="{Binding LocalizedUiResources.UI_OpenIn, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneTime, Source={StaticResource LocalizedStrings}}" />

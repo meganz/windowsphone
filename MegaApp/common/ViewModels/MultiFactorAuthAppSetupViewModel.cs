@@ -22,6 +22,7 @@ namespace MegaApp.ViewModels
         public MultiFactorAuthAppSetupViewModel() : base(SdkService.MegaSdk)
         {
             this.CopySeedCommand = new DelegateCommand(this.CopySeed);
+            this.FindAppCommand = new DelegateCommand(this.FindApp);
             this.NextCommand = new DelegateCommand(this.EnableMultiFactorAuth);
             this.OpenInCommand = new DelegateCommand(this.OpenIn);
 
@@ -31,6 +32,7 @@ namespace MegaApp.ViewModels
         #region Commands
 
         public ICommand CopySeedCommand { get; private set; }
+        public ICommand FindAppCommand { get; private set; }
         public ICommand NextCommand { get; private set; }
         public ICommand OpenInCommand { get; private set; }
 
@@ -112,6 +114,13 @@ namespace MegaApp.ViewModels
                     App.AppInformation,
                     MessageDialogButtons.Ok).ShowDialog();
             }
+        }
+
+        private async void FindApp(object obj = null)
+        {
+            await Launcher.LaunchUriAsync(new Uri(
+                "ms-windows-store:search?keyword=authenticator",
+                UriKind.RelativeOrAbsolute));
         }
 
         private async void OpenIn(object obj = null)
