@@ -1469,6 +1469,15 @@ namespace MegaApp.Services
         }
 
         /// <summary>
+        /// Show a dialog to indicate that the user has successfully disabled the Multi-Factor Authentication
+        /// </summary>
+        public static async void ShowMultiFactorAuthDisabledDialog()
+        {
+            var mfaDisabledDialog = new MultiFactorAuthDisabledDialog();
+            await mfaDisabledDialog.ShowDialogAsync();
+        }
+
+        /// <summary>
         /// Show an input dialog to type the MFA code and execute an action.
         /// </summary>
         /// <param name="dialogAction">Action to do by the primary button.</param>
@@ -1508,6 +1517,19 @@ namespace MegaApp.Services
             MultiFactorAuthCodeInputDialogInstance.WarningMessageText = warningMessage ??
                 AppMessages.AM_InvalidCode;
             MultiFactorAuthCodeInputDialogInstance.IsWarningMessageVisible = true;
+        }
+
+        /// <summary>
+        /// Close the MFA code input dialog displayed
+        /// </summary>
+        public static void CloseMultiFactorAuthCodeInputDialog()
+        {
+            if (MultiFactorAuthCodeInputDialogInstance == null ||
+                MultiFactorAuthCodeInputDialogInstance.CloseCommand == null ||
+                !MultiFactorAuthCodeInputDialogInstance.CloseCommand.CanExecute(null))
+                return;
+
+            MultiFactorAuthCodeInputDialogInstance.CloseCommand.Execute(null);
         }
 
         #endregion

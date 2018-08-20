@@ -243,6 +243,9 @@
     <Compile Include="..\common\Dialogs\MultiFactorAuthCodeInputDialog.cs">
       <Link>Dialogs\MultiFactorAuthCodeInputDialog.cs</Link>
     </Compile>
+    <Compile Include="..\common\Dialogs\MultiFactorAuthDisabledDialog.cs">
+      <Link>Dialogs\MultiFactorAuthDisabledDialog.cs</Link>
+    </Compile>
     <Compile Include="..\common\Dialogs\MultiFactorAuthEnabledDialog.cs">
       <Link>Dialogs\MultiFactorAuthEnabledDialog.cs</Link>
     </Compile>

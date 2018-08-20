@@ -256,12 +256,8 @@ namespace MegaApp.ViewModels
 
             if (result)
             {
-                OnUiThread(() =>
-                {
-                    new CustomMessageDialog(
-                        AppMessages.AM_2FA_DisabledDialogTitle, string.Empty,
-                        App.AppInformation, MessageDialogButtons.Ok).ShowDialog();
-                });
+                DialogService.CloseMultiFactorAuthCodeInputDialog();
+                DialogService.ShowMultiFactorAuthDisabledDialog();
             }
 
             return result;
