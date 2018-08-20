@@ -24,6 +24,7 @@ namespace MegaApp.Dialogs
 
             this.IsClosedOnBackButton = false;
             this.IsClosedOnOutsideTap = false;
+            this.IsFullScreen = true;
 
             var contentStackPanel = new StackPanel()
             {

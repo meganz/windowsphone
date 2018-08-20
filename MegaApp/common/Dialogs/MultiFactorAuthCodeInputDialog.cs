@@ -9,7 +9,6 @@ using System.Windows.Shapes;
 using Microsoft.Phone.Tasks;
 using Telerik.Windows.Controls;
 using MegaApp.Resources;
-using MegaApp.Services;
 using MegaApp.ViewModels;
 
 namespace MegaApp.Dialogs
@@ -50,7 +49,6 @@ namespace MegaApp.Dialogs
 
         private void Initialize(string message, bool showLostDeviceLink)
         {
-            this.VerifyCommand = new DelegateCommand(this.Verify);
             this.LostAuthDeviceCommand = new DelegateCommand(this.LostAuthDevice);
 
             var contentStackPanel = new StackPanel()
@@ -65,7 +63,6 @@ namespace MegaApp.Dialogs
 
             var description = new TextBlock()
             {
-                Margin = new Thickness(0, 0, 0, 32),
                 HorizontalAlignment = HorizontalAlignment.Left,
                 Opacity = 0.8,
                 Text = message ?? AppMessages.AM_2FA_InputAppCodeDialogMessage,
@@ -79,16 +76,6 @@ namespace MegaApp.Dialogs
 
             this.warningMessageStackPanel = this.CreateErrorMessage();
             contentStackPanel.Children.Add(this.warningMessageStackPanel);
-
-            this.verifyButton = new Button()
-            {
-                Margin = new Thickness(-12,0,-12,0),
-                Content = UiResources.UI_Verify,
-                HorizontalAlignment = HorizontalAlignment.Stretch,
-                Command = this.VerifyCommand,
-                IsEnabled = false
-            };
-            contentStackPanel.Children.Add(this.verifyButton);
 
             if (showLostDeviceLink)
             {
@@ -128,9 +115,11 @@ namespace MegaApp.Dialogs
             {
                 this.verificationCode.Foreground = (Brush)Application.Current.Resources["PhoneTextBoxForegroundBrush"];
                 this.IsWarningMessageVisible = false;
-                this.verifyButton.IsEnabled = NetworkService.IsNetworkAvailable() &&
-                    !string.IsNullOrWhiteSpace(this.verificationCode.Text) &&
+                this.isValidVerifyCode = !string.IsNullOrWhiteSpace(this.verificationCode.Text) &&
                     this.verificationCode.Text.Length == this.verificationCode.MaxLength;
+
+                if (!this.isValidVerifyCode) return;
+                this.Verify();
             };
             digitInput.KeyDown += OnInputTextBoxKeyDown;
             
@@ -146,7 +135,7 @@ namespace MegaApp.Dialogs
                 return;
             }
 
-            if (this.verifyButton.IsEnabled && e.Key == Key.Enter)
+            if (this.isValidVerifyCode && e.Key == Key.Enter)
                 this.Verify();
 
             e.Handled = true;
@@ -190,20 +179,16 @@ namespace MegaApp.Dialogs
             return errorStackPanel;
         }
 
-        private async void Verify(object obj = null)
+        private async void Verify()
         {
             if (this.dialogAction != null || this.dialogActionAsync != null)
             {
-                this.verifyButton.IsEnabled = false;
-
                 dialogResult = false;
                 if (this.dialogAction != null)
                     dialogResult = this.dialogAction.Invoke(this.verificationCode.Text);
 
                 if (this.dialogActionAsync != null)
                     dialogResult = await this.dialogActionAsync.Invoke(this.verificationCode.Text);
-
-                this.verifyButton.IsEnabled = true;
 
                 if (!dialogResult)
                 {
@@ -240,11 +225,6 @@ namespace MegaApp.Dialogs
         #region Commands
 
         /// <summary>
-        /// Command invoked to verify the Multi-Factor code
-        /// </summary>
-        public ICommand VerifyCommand { get; private set; }
-
-        /// <summary>
         /// Command invoked when the user tap the "lost authentication device" link
         /// </summary>
         public ICommand LostAuthDeviceCommand { get; private set; }
@@ -257,7 +237,6 @@ namespace MegaApp.Dialogs
         private StackPanel warningMessageStackPanel;
         private TextBlock warningMessageTextBlock;
         private Path warningIcon;
-        private Button verifyButton;
 
         #endregion
 
@@ -282,6 +261,11 @@ namespace MegaApp.Dialogs
             get { return warningMessageTextBlock.Text; }
             set { warningMessageTextBlock.Text = value; }
         }
+
+        /// <summary>
+        /// Indicates if the typed verify code has the right format and can be verified
+        /// </summary>
+        private bool isValidVerifyCode;
 
         #endregion
     }
