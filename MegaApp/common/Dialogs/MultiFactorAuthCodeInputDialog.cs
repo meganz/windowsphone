@@ -22,12 +22,13 @@ namespace MegaApp.Dialogs
         /// <param name="dialogAction">Action to execute by the primary button.</param>
         /// <param name="title">Custom title of the input dialog.</param>
         /// <param name="message">Custom message of the input dialog.</param>
+        /// <param name="showLostDeviceLink">Indicates if show the lost device link or not.</param>
         public MultiFactorAuthCodeInputDialog(Func<string, bool> dialogAction,
-            string title = null, string message = null)
+            string title = null, string message = null, bool showLostDeviceLink = true)
             : base(title ?? UiResources.UI_TwoFactorAuth)
         {
             this.dialogAction = dialogAction;
-            this.Initialize(message);
+            this.Initialize(message, showLostDeviceLink);
         }
 
         /// <summary>
@@ -36,17 +37,18 @@ namespace MegaApp.Dialogs
         /// <param name="dialogActionAsync">Async action to execute by the primary button.</param>
         /// <param name="title">Custom title of the input dialog.</param>
         /// <param name="message">Custom message of the input dialog.</param>
+        /// <param name="showLostDeviceLink">Indicates if show the lost device link or not.</param>
         public MultiFactorAuthCodeInputDialog(Func<string, Task<bool>> dialogActionAsync,
-            string title = null, string message = null)
+            string title = null, string message = null, bool showLostDeviceLink = true)
             : base(title ?? UiResources.UI_TwoFactorAuth)
         {
             this.dialogActionAsync = dialogActionAsync;
-            this.Initialize(message);
+            this.Initialize(message, showLostDeviceLink);
         }
 
         #region Methods
 
-        private void Initialize(string message)
+        private void Initialize(string message, bool showLostDeviceLink)
         {
             this.VerifyCommand = new DelegateCommand(this.Verify);
             this.LostAuthDeviceCommand = new DelegateCommand(this.LostAuthDevice);
@@ -88,16 +90,19 @@ namespace MegaApp.Dialogs
             };
             contentStackPanel.Children.Add(this.verifyButton);
 
-            var lostAuthDeviceLink = new HyperlinkButton()
+            if (showLostDeviceLink)
             {
-                Margin = new Thickness(0, 28, 0, 28),
-                Command = LostAuthDeviceCommand,
-                Content = UiResources.UI_LostAuthDeviceQuestion,
-                FontSize = Convert.ToDouble(Application.Current.Resources["PhoneFontSizeSmall"]),
-                Foreground = (Brush)Application.Current.Resources["MegaRedColorBrush"],
-                Style = (Style)Application.Current.Resources["HyperlinkButtonStyle"]
-            };
-            contentStackPanel.Children.Add(lostAuthDeviceLink);
+                var lostAuthDeviceLink = new HyperlinkButton()
+                {
+                    Margin = new Thickness(0, 28, 0, 28),
+                    Command = LostAuthDeviceCommand,
+                    Content = UiResources.UI_LostAuthDeviceQuestion,
+                    FontSize = Convert.ToDouble(Application.Current.Resources["PhoneFontSizeSmall"]),
+                    Foreground = (Brush)Application.Current.Resources["MegaRedColorBrush"],
+                    Style = (Style)Application.Current.Resources["HyperlinkButtonStyle"]
+                };
+                contentStackPanel.Children.Add(lostAuthDeviceLink);
+            }
 
             this.MainGrid.Children.Add(contentStackPanel);
             Grid.SetRow(contentStackPanel, 2);

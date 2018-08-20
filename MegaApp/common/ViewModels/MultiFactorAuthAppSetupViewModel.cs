@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
 using Windows.System;
-using Telerik.Windows.Controls;
 using ZXing;
 using ZXing.QrCode;
 using MegaApp.Classes;
@@ -23,8 +22,8 @@ namespace MegaApp.ViewModels
         public MultiFactorAuthAppSetupViewModel() : base(SdkService.MegaSdk)
         {
             this.CopySeedCommand = new DelegateCommand(this.CopySeed);
+            this.NextCommand = new DelegateCommand(this.EnableMultiFactorAuth);
             this.OpenInCommand = new DelegateCommand(this.OpenIn);
-            this.VerifyCommand = new DelegateCommand(this.Verify);
 
             this.Initialize();
         }
@@ -32,8 +31,8 @@ namespace MegaApp.ViewModels
         #region Commands
 
         public ICommand CopySeedCommand { get; private set; }
+        public ICommand NextCommand { get; private set; }
         public ICommand OpenInCommand { get; private set; }
-        public ICommand VerifyCommand { get; private set; }
 
         #endregion
 
@@ -70,41 +69,6 @@ namespace MegaApp.ViewModels
         public ObservableCollection<string> MultiFactorAuthCodeParts
         {
             get { return this.SplitMultiFactorAuthCode(MultiFactorAuthCode, 4); }
-        }
-
-        private string _verifyCode;
-        /// <summary>
-        /// Code typed by the user to verify that the Multi-Factor Authentication is working
-        /// </summary>
-        public string VerifyCode
-        {
-            get { return _verifyCode; }
-            set
-            {
-                SetField(ref _verifyCode, value);
-                SetVerifyButtonState();
-                this.WarningText = string.Empty;
-            }
-        }
-
-        private string _warningText;
-        /// <summary>
-        /// Warning message (verification failed)
-        /// </summary>
-        public string WarningText
-        {
-            get { return _warningText; }
-            set { SetField(ref _warningText, value); }
-        }
-
-        private bool _verifyButtonState;
-        /// <summary>
-        /// State (enabled/disabled) of the verify button
-        /// </summary>
-        public bool VerifyButtonState
-        {
-            get { return _verifyButtonState; }
-            set { SetField(ref _verifyButtonState, value); }
         }
 
         private string codeURI
@@ -155,6 +119,15 @@ namespace MegaApp.ViewModels
             await Launcher.LaunchUriAsync(new Uri(this.codeURI, UriKind.RelativeOrAbsolute));
         }
 
+        private async void EnableMultiFactorAuth(object obj = null)
+        {
+            await DialogService.ShowAsyncMultiFactorAuthCodeInputDialogAsync(
+                this.EnableMultiFactorAuthAsync, 
+                UiResources.UI_TwoFactorAuth, 
+                UiResources.UI_MFA_SetupStep2, 
+                false);
+        }
+
         /// <summary>
         /// Set the QR code image to set up the Multi-Factor Authentication
         /// </summary>
@@ -177,28 +150,20 @@ namespace MegaApp.ViewModels
         }
 
         /// <summary>
-        /// Verify the 6-digit code typed by the user to set up the Multi-Factor Authentication
+        /// Enable the Multi-Factor Authentication
         /// </summary>
-        private async void Verify(object obj = null)
+        private async Task<bool> EnableMultiFactorAuthAsync(string code)
         {
-            if (string.IsNullOrWhiteSpace(this.VerifyCode)) return;
-
-            this.ControlState = false;
-            this.SetVerifyButtonState();
-            this.IsBusy = true;
+            if (string.IsNullOrWhiteSpace(code)) return false;
 
             var enableMultiFactorAuth = new MultiFactorAuthEnableRequestListenerAsync();
             var result = await enableMultiFactorAuth.ExecuteAsync(() =>
-                SdkService.MegaSdk.multiFactorAuthEnable(this.VerifyCode, enableMultiFactorAuth));
-
-            this.ControlState = true;
-            this.SetVerifyButtonState();
-            this.IsBusy = false;
+                SdkService.MegaSdk.multiFactorAuthEnable(code, enableMultiFactorAuth));
 
             if (!result)
             {
-                this.WarningText = AppMessages.AM_InvalidCode;
-                return;
+                DialogService.SetMultiFactorAuthCodeInputDialogWarningMessage();
+                return result;
             }
 
             OnUiThread(() =>
@@ -206,15 +171,8 @@ namespace MegaApp.ViewModels
                 NavigateService.NavigateTo(typeof(SettingsPage),
                     NavigationParameter.MFA_Enabled);
             });
-        }
 
-        private void SetVerifyButtonState()
-        {
-            var enabled = NetworkService.IsNetworkAvailable() &&
-                this.ControlState && !string.IsNullOrWhiteSpace(this.VerifyCode) &&
-                this.VerifyCode.Length == 6;
-
-            OnUiThread(() => this.VerifyButtonState = enabled);
+            return result;
         }
 
         private ObservableCollection<string> SplitMultiFactorAuthCode(string str, int chunkSize)

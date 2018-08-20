@@ -1483,12 +1483,14 @@ namespace MegaApp.Services
         /// <param name="dialogAction">Action to do by the primary button.</param>
         /// <param name="title">Custom title of the input dialog.</param>
         /// <param name="message">Custom message of the input dialog.</param>
+        /// <param name="showLostDeviceLink">Indicates if show the lost device link or not.</param>
         /// <returns>The dialog action result as <see cref="bool"/> value.</returns>
         public static async Task<bool> ShowMultiFactorAuthCodeInputDialogAsync(
-            Func<string, bool> dialogAction, string title = null, string message = null)
+            Func<string, bool> dialogAction,
+            string title = null, string message = null, bool showLostDeviceLink = true)
         {
             var dialog = MultiFactorAuthCodeInputDialogInstance =
-                new MultiFactorAuthCodeInputDialog(dialogAction, title, message);
+                new MultiFactorAuthCodeInputDialog(dialogAction, title, message, showLostDeviceLink);
             return await dialog.ShowDialogAsync();
         }
 
@@ -1498,12 +1500,14 @@ namespace MegaApp.Services
         /// <param name="dialogActionAsync">Async action to do by the primary button.</param>
         /// <param name="title">Custom title of the input dialog.</param>
         /// <param name="message">Custom message of the input dialog.</param>
+        /// <param name="showLostDeviceLink">Indicates if show the lost device link or not.</param>
         /// <returns>The dialog action result as <see cref="bool"/> value.</returns>
         public static async Task<bool> ShowAsyncMultiFactorAuthCodeInputDialogAsync(
-            Func<string, Task<bool>> dialogActionAsync, string title = null, string message = null)
+            Func<string, Task<bool>> dialogActionAsync,
+            string title = null, string message = null, bool showLostDeviceLink = true)
         {
             var dialog = MultiFactorAuthCodeInputDialogInstance =
-                new MultiFactorAuthCodeInputDialog(dialogActionAsync, title, message);
+                new MultiFactorAuthCodeInputDialog(dialogActionAsync, title, message, showLostDeviceLink);
             return await dialog.ShowDialogAsync();
         }
 

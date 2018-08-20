@@ -78,11 +78,12 @@
                 VerticalScrollBarVisibility="Auto">
                 <StackPanel Margin="0,0,0,20" HorizontalAlignment="Stretch">
                     <TextBlock
-                        Text="{Binding LocalizedUiResources.UI_MFA_ManuallySetupStep1, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
+                        FontSize="17"
+                        Text="{Binding LocalizedUiResources.UI_MFA_SetupStep1, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
                         TextWrapping="Wrap"
                         Opacity="0.8"/>
                     <StackPanel
-                        Margin="0,24,0,48"
+                        Margin="0,20,0,0"
                         Background="{StaticResource PhoneChromeBrush}"
                         HorizontalAlignment="Stretch">
                         <Grid>
@@ -101,105 +102,67 @@
                                     <telerikPrimitives:RadContextMenu OpenGesture="Tap">
                                         <telerikPrimitives:RadContextMenuItem
                                             Command="{Binding CopySeedCommand}"
-                                            Content="{Binding LocalizedUiResources.UI_CopySeed, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" />
+                                            Content="{Binding LocalizedUiResources.UI_CopySeed, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneTime, Source={StaticResource LocalizedStrings}}" />
                                         <telerikPrimitives:RadContextMenuItem 
                                             Command="{Binding OpenInCommand}"
-                                            Content="{Binding LocalizedUiResources.UI_OpenIn, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" />
+                                            Content="{Binding LocalizedUiResources.UI_OpenIn, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneTime, Source={StaticResource LocalizedStrings}}" />
                                     </telerikPrimitives:RadContextMenu>
                                 </telerikPrimitives:RadContextMenu.ContextMenu>
                             </Button>
                         </Grid>
                         <Image
+                            Margin="0,4,0,0"
                             Height="148"
                             Width="148"
                             Source="{Binding QRImage, Mode=TwoWay, UpdateSourceTrigger=Default}"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"/>
-                        <Border
-                            Margin="12"
-                            Background="{StaticResource PhoneBackgroundBrush}">
+                        <telerikPrimitives:RadDataBoundListBox
+                            Margin="44,12,32,12"
+                            EmptyContentDisplayMode="DataSourceEmpty" 
+            				EmptyContent="" 
+                            HorizontalAlignment="Center"
+                            HorizontalContentAlignment="Center"
+                            IsAsyncBalanceEnabled="True"
+                            IsCheckModeActive="False"
+                            IsCheckModeEnabled="False"
+                            IsEnabled="False"
+                            ItemsSource="{Binding MultiFactorAuthCodeParts, Mode=OneWay}"
+                            telerik:InteractionEffectManager.IsInteractionEnabled="False" 
+                            VerticalAlignment="Center">
                             <telerikPrimitives:RadContextMenu.ContextMenu>
                                 <telerikPrimitives:RadContextMenu OpenGesture="Hold">
                                     <telerikPrimitives:RadContextMenuItem 
-                                        Command="{Binding CopySeedCommand}"
-                                        Content="{Binding LocalizedUiResources.Copy, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" />
+                                    Command="{Binding CopySeedCommand}"
+                                    Content="{Binding LocalizedUiResources.Copy, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" />
                                 </telerikPrimitives:RadContextMenu>
                             </telerikPrimitives:RadContextMenu.ContextMenu>
-                            <telerikPrimitives:RadDataBoundListBox
-                                Margin="32,8"
-                                EmptyContentDisplayMode="DataSourceEmpty" 
-            					EmptyContent="" 
-                                HorizontalAlignment="Center"
-                                HorizontalContentAlignment="Center"
-                                IsAsyncBalanceEnabled="True"
-                                IsCheckModeActive="False"
-                                IsCheckModeEnabled="False"
-                                IsEnabled="False"
-                                ItemsSource="{Binding MultiFactorAuthCodeParts, Mode=OneWay}"
-                                telerik:InteractionEffectManager.IsInteractionEnabled="False" 
-                                VerticalAlignment="Center">
-                                <telerikPrimitives:RadDataBoundListBox.VirtualizationStrategyDefinition>
-                                    <telerikPrimitives:WrapVirtualizationStrategyDefinition Orientation="Horizontal" WrapLineAlignment="Near" />
-                                </telerikPrimitives:RadDataBoundListBox.VirtualizationStrategyDefinition>
-                                <telerikPrimitives:RadDataBoundListBox.ItemTemplate>
-                                    <DataTemplate>
-                                        <TextBlock 
-                                            Margin="4" 
-                                            Width="60" 
-                                            Text="{Binding}" 
-                                            TextAlignment="Center" />
-                                    </DataTemplate>
-                                </telerikPrimitives:RadDataBoundListBox.ItemTemplate>
-                            </telerikPrimitives:RadDataBoundListBox>
-                        </Border>
+                            <telerikPrimitives:RadDataBoundListBox.VirtualizationStrategyDefinition>
+                                <telerikPrimitives:WrapVirtualizationStrategyDefinition Orientation="Horizontal" WrapLineAlignment="Near" />
+                            </telerikPrimitives:RadDataBoundListBox.VirtualizationStrategyDefinition>
+                            <telerikPrimitives:RadDataBoundListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock 
+                                        Margin="4" 
+                                        Width="60" 
+                                        Text="{Binding}" 
+                                        TextAlignment="Center" />
+                                </DataTemplate>
+                            </telerikPrimitives:RadDataBoundListBox.ItemTemplate>
+                        </telerikPrimitives:RadDataBoundListBox>
                     </StackPanel>
-                    <TextBlock
-                        Margin="0,0,0,12"
-                        Text="{Binding LocalizedUiResources.UI_MFA_ManuallySetupStep2, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
-                        TextWrapping="Wrap"
-                        Opacity="0.8"/>
-                    <TextBlock
-                        Margin="0,0,0,24"
-                        FontSize="16"
-                        Text="{Binding LocalizedUiResources.UI_MFA_ManuallySetupStep2_Description, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
-                        TextWrapping="Wrap"/>
-                    <telerikPrimitives:RadTextBox
-                        Margin="-12,-12,-12,0"
-                        FontSize="{StaticResource PhoneFontSizeMediumLarge}"
-                        HideWatermarkOnFocus="True"
-                        InputScope="Number"
-                        IsEnabled="{Binding ControlState, Mode=OneWay}"
-                        KeyDown="OnVerifyTextBoxKeyDown"
-                        MaxLength="6"
-                        Text="{Binding VerifyCode, Mode=TwoWay, UpdateSourceTrigger=Default}"
-                        TextAlignment="Center"
-                        TextWrapping="Wrap"
-                        Watermark="{Binding LocalizedUiResources.UI_SixDigitCode, Mode=OneWay, Source={StaticResource LocalizedStrings}}" />
-                    <Grid Margin="0,4,0,4" HorizontalAlignment="Center">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Viewbox
-                            Grid.Column="0"
-                            Margin="0,0,12,0"
-                            MaxWidth="20" MaxHeight="20"
-                            Visibility="{Binding WarningText, Converter={StaticResource StringToVisibilityConverter}}">
-                            <Path
-                                Data="{Binding LocalizedVisualResources.VR_WarningIconPathData, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
-                                Fill="{StaticResource MegaRedColorBrush}" />
-                        </Viewbox>
-                        <TextBlock
-                            Grid.Column="1"
-                            Style="{StaticResource MegaErrorFontStyle}"
-                            Text="{Binding WarningText, Mode=OneWay}"/>
-                    </Grid>
                     <Button
-                        x:Name="VerifyButton"
-                        Margin="-12,0"
-                        Command="{Binding VerifyCommand, Mode=OneTime}"
-                        Content="{Binding LocalizedUiResources.UI_Verify, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
-                        IsEnabled="{Binding VerifyButtonState, Mode=OneWay}"/>
+                        Margin="-12,0,-12,0"
+                        Command="{Binding OpenInCommand}"
+                        Content="{Binding LocalizedUiResources.UI_OpenIn, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneTime, Source={StaticResource LocalizedStrings}}"
+                        HorizontalAlignment="Stretch" />
+                    <HyperlinkButton
+                        Margin="0,8,0,0"
+                        Command="{Binding NextCommand}"
+                        Content="{Binding LocalizedUiResources.Next, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneTime, Source={StaticResource LocalizedStrings}}"
+                        Foreground="{StaticResource MegaRedColorBrush}"
+                        HorizontalAlignment="Center"
+                        Style="{StaticResource HyperlinkButtonStyle}" />
                 </StackPanel>
             </ScrollViewer>
         </Grid>
