@@ -112,6 +112,12 @@ namespace MegaApp.MegaApi
                     switch (e.getErrorCode())
                     {
                         case MErrorType.API_OK: // Valid and operative confirmation link
+                            if (request.getFlag()) // Auto confirmed account.
+                            {
+                                ShowErrorMesageAndNavigate(AppMessages.AlreadyConfirmedAccount_Title,
+                                    AppMessages.AlreadyConfirmedAccount);
+                                break;
+                            }
                             this._confirmAccountViewModel.Email = request.getEmail();
                             break;
 
