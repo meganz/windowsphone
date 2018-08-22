@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Threading;
 using System.Threading.Tasks;
 using mega;
@@ -27,16 +24,16 @@ namespace MegaApp.Interfaces
         /// <summary>
         /// Move the node from its current location to a new folder destination
         /// </summary>
-        /// <param name="newParentNode">The root node of the destination folder</param>
+        /// <param name="newParentNode">The new destination folder</param>
         /// <returns>Result of the action</returns>
-        NodeActionResult Move(IMegaNode newParentNode);
+        Task<NodeActionResult> MoveAsync(MNode newParentNode);
 
         /// <summary>
         /// Copy the node from its current location to a new folder destination
         /// </summary>
-        /// <param name="newParentNode">The root node of the destination folder</param>
+        /// <param name="newParentNode">The new destination folder</param>
         /// <returns>Result of the action</returns>
-        NodeActionResult Copy(IMegaNode newParentNode);
+        NodeActionResult Copy(MNode newParentNode);
 
         /// <summary>
         /// Remove the node from the cloud drive to the rubbish bin
@@ -90,6 +87,16 @@ namespace MegaApp.Interfaces
         /// Unique identifier of the node
         /// </summary>
         ulong Handle { get; set; }
+
+        /// <summary>
+        /// Handle of the previous parent of this node.
+        /// </summary>
+        ulong RestoreHandle { get; set; }
+
+        /// <summary>
+        /// Previous parent of this node.
+        /// </summary>
+        MNode RestoreNode { get; set; }
         
         ObservableCollection<IMegaNode> ParentCollection { get; set; }
 
@@ -116,6 +123,11 @@ namespace MegaApp.Interfaces
         /// and used in as input/output in different SDK methods and functions
         /// </summary>
         MNode OriginalMNode { get; }
+
+        /// <summary>
+        /// Indicates if the node can be restored to its previous location
+        /// </summary>
+        bool CanRestore { get; }
 
         #endregion
     }

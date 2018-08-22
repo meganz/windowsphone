@@ -1470,4 +1470,17 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>Do you want to close all other sessions? This will log you out on all other active sessions except the current one.</value>
     <comment>Message of the dialog displayed to ask the user to confirm want to close all the other sessions.</comment>
   </data>
+  <data name="AM_RestoreFromRubbishBinFailed" xml:space="preserve">
+    <value>Failed to restore '{0}' from rubbish bin. Please try again.</value>
+    <comment>Message of the dialog displayed when the process/request to restore a node to the rubbish bin failed.
+Preserve the '{0}' code because is for include the file/folder name in runtime.</comment>
+  </data>
+  <data name="AM_RestoreFromRubbishBinFailed_Title" xml:space="preserve">
+    <value>Restore from rubbish bin failed</value>
+    <comment>Title of the dialog displayed when the process/request to restore nodes from the rubbish bin failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_RestoreMultiFromRubbishBinFailed" xml:space="preserve">
+    <value>Failed to restore items from rubbish bin. Please try again.</value>
+    <comment>Message of the dialog displayed when the process/request to restore multiple nodes from the rubbish bin failed.</comment>
+  </data>
 </root>
