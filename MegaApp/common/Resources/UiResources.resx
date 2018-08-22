@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -166,7 +166,7 @@
     <comment>Label for any 'Email' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="EmptyFolder" xml:space="preserve">
-    <value>empty folder</value>
+    <value>Empty Folder</value>
     <comment>Label for the background of an empty forder page - (String as short as possible).</comment>
   </data>
   <data name="EmptyTransfers" xml:space="preserve">
@@ -178,7 +178,7 @@
     <comment>Label for any 'Get link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="LoadingPreview" xml:space="preserve">
-    <value>Loading preview...</value>
+    <value>Loading preview…</value>
     <comment>Label shown with an animation when the app is loading a preview - (String as short as possible).</comment>
   </data>
   <data name="UI_Login" xml:space="preserve">
@@ -428,7 +428,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for any 'Capture' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="ChangePinLock" xml:space="preserve">
-    <value>Change PIN Lock</value>
+    <value>Change PIN Code</value>
     <comment>Label for any 'Change PIN Lock' button, link, text, title, etc. Try to preserve the PIN uppercase word. - (String as short as possible).</comment>
   </data>
   <data name="CleanUpTransfers" xml:space="preserve">
@@ -460,7 +460,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Text 'Export Recovery Key' placed just before two buttons into the 'settings' page to allow see (copy/paste) and export the Recovery Key.</comment>
   </data>
   <data name="ExportPhotoAlbumText" xml:space="preserve">
-    <value>Export images to 'saved pictures' album after download</value>
+    <value>Export images to ‘saved pictures’ album after download</value>
     <comment>Text placed just before a switch button (on/off) into the 'settings' page indicating if the app should export automatically images to the device photo album after download.</comment>
   </data>
   <data name="FilesAscendingSortOption" xml:space="preserve">
@@ -625,7 +625,7 @@ Preserve the PIN uppercase word.</comment>
     <comment>Label for the title of the init tour page dedicated to the easy access. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</comment>
   </data>
   <data name="InitTourPrivacy1" xml:space="preserve">
-    <value>keep your files safe with MEGA's</value>
+    <value>keep your files safe with MEGA’s</value>
     <comment>Label 'keep your files safe with MEGA's' for the first part of the sentence 'keep your files safe with MEGA's end-to-end encryption.', to build this sentence in two colors into the init tour page. Don't place '.' at the end of the string.  Keep all in lowercase less the word MEGA in uppercase.</comment>
   </data>
   <data name="InitTourPrivacy2" xml:space="preserve">
@@ -910,7 +910,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
     <comment>Label for the 'Upgrade now!' button of the dialog shown randomly when a user logs into a free account - (String as short as possible).</comment>
   </data>
   <data name="WarningOutOfSpace" xml:space="preserve">
-    <value>You're running out of space!</value>
+    <value>You’re running out of space!</value>
     <comment>Warning message in Cloud Drive when the user is running out of space</comment>
   </data>
   <data name="UI_ImportLinkBorderText" xml:space="preserve">
@@ -1103,7 +1103,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Saved for offline' button, link, text, title, etc. - (String as short as possible, LESS THAN 22 CHARS).</comment>
   </data>
   <data name="EmptyCloudDrive" xml:space="preserve">
-    <value>No files in your cloud drive</value>
+    <value>No files in your Cloud Drive</value>
     <comment>Label for the background of an empty cloud drive page - (String as short as possible).</comment>
   </data>
   <data name="EmptyOffline" xml:space="preserve">
@@ -1228,7 +1228,7 @@ NOTE: Keep the capital letter if possible.</comment>
     <comment>Label for the state of a canceled transfer - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStateCompleting" xml:space="preserve">
-    <value>Completing...</value>
+    <value>Completing…</value>
     <comment>Label for the state of a transfer when is being completing - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStateDownloaded" xml:space="preserve">
@@ -1236,7 +1236,7 @@ NOTE: Keep the capital letter if possible.</comment>
     <comment>Label for the state of a download transfer when is finished - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStateDownloading" xml:space="preserve">
-    <value>Downloading...</value>
+    <value>Downloading…</value>
     <comment>Label for the state of a transfer when is being downloading - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStateError" xml:space="preserve">
@@ -1252,7 +1252,7 @@ NOTE: Keep the capital letter if possible.</comment>
     <comment>Label for the state of a paused transfer - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStatePreparing" xml:space="preserve">
-    <value>Preparing...</value>
+    <value>Preparing…</value>
     <comment>Label for the state of a transfer when is being preparing - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStateQueued" xml:space="preserve">
@@ -1260,7 +1260,7 @@ NOTE: Keep the capital letter if possible.</comment>
     <comment>Label for the state of a transfer when is queued - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStateRetrying" xml:space="preserve">
-    <value>Retrying...</value>
+    <value>Retrying…</value>
     <comment>Label for the state of a transfer when is being retrying - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStateUploaded" xml:space="preserve">
@@ -1268,7 +1268,7 @@ NOTE: Keep the capital letter if possible.</comment>
     <comment>Label for the state of an upload transfer when is finished - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStateUploading" xml:space="preserve">
-    <value>Uploading...</value>
+    <value>Uploading…</value>
     <comment>Label for the state of a transfer when is being uploading - (String as short as possible).</comment>
   </data>
   <data name="UI_CancelDownloads" xml:space="preserve">
@@ -1341,7 +1341,7 @@ NOTE: Max. length 20 characters.</comment>
     <comment>Label for any 'Plain text' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_EnablePinLock" xml:space="preserve">
-    <value>Enable PIN lock</value>
+    <value>Enable PIN code</value>
     <comment>Label for the switch button to enable or disable the PIN lock code. Keep PIN uppercase - (String as short as possible).</comment>
   </data>
   <data name="UI_RecoveryKeyDescription" xml:space="preserve">
@@ -1397,7 +1397,7 @@ NOTE: Max. length 20 characters.</comment>
     <comment>Label of the button to copy the seed to enable the Multi-Factor Authentication - (String as short as possible).</comment>
   </data>
   <data name="UI_LostAuthDeviceQuestion" xml:space="preserve">
-    <value>Lost your authenticator device?</value>
+    <value>Lost your authentication device?</value>
     <comment>Label for any link/button to help the user in case lost the authentication device for MFA - (String as short as possible).</comment>
   </data>
   <data name="UI_ChangePasswordDescription" xml:space="preserve">
@@ -1417,7 +1417,7 @@ NOTE: Max. length 20 characters.</comment>
     <comment>Label to indicate the amount of used cache - (String as short as possible).</comment>
   </data>
   <data name="UI_OpenIn" xml:space="preserve">
-    <value>Open in...</value>
+    <value>Open in…</value>
     <comment>Label for any 'Open in...' button, link, text, title, etc. to open a file or other kind of resource with a certain app - (String as short as possible).</comment>
   </data>
   <data name="UI_FindApp" xml:space="preserve">

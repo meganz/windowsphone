@@ -67,7 +67,7 @@
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Email' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/EmptyFolder" translate="yes" space="preserve">
-          <source>empty folder</source>
+          <source>Empty Folder</source>
           <target state="translated">مجلد فارغ</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty forder page - (String as short as possible).</note>
         </trans-unit>
@@ -82,7 +82,7 @@
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Get link' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/LoadingPreview" translate="yes" space="preserve">
-          <source>Loading preview...</source>
+          <source>Loading preview…</source>
           <target state="translated">تحميل المعاينة...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label shown with an animation when the app is loading a preview - (String as short as possible).</note>
         </trans-unit>
@@ -394,7 +394,7 @@ Try to preserve the PIN uppercase word.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Capture' button, link, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ChangePinLock" translate="yes" space="preserve">
-          <source>Change PIN Lock</source>
+          <source>Change PIN Code</source>
           <target state="translated">تغيير رقم التعريف الشخصي</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Change PIN Lock' button, link, text, title, etc. Try to preserve the PIN uppercase word. - (String as short as possible).</note>
         </trans-unit>
@@ -434,7 +434,7 @@ Try to preserve the PIN uppercase word.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Text 'Export Recovery Key' placed just before two buttons into the 'settings' page to allow see (copy/paste) and export the Recovery Key.</note>
         </trans-unit>
         <trans-unit id="Resx/ExportPhotoAlbumText" translate="yes" space="preserve">
-          <source>Export images to 'saved pictures' album after download</source>
+          <source>Export images to ‘saved pictures’ album after download</source>
           <target state="translated">تصدير الصور الي البوم الصور المحفوظة بعد التحميل</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text placed just before a switch button (on/off) into the 'settings' page indicating if the app should export automatically images to the device photo album after download.</note>
         </trans-unit>
@@ -640,7 +640,7 @@ Preserve the PIN uppercase word.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the title of the init tour page dedicated to the easy access. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/InitTourPrivacy1" translate="yes" space="preserve">
-          <source>keep your files safe with MEGA's</source>
+          <source>keep your files safe with MEGA’s</source>
           <target state="translated">ابق ملفاتك آمنة مع خدمة MEGA السحابية</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label 'keep your files safe with MEGA's' for the first part of the sentence 'keep your files safe with MEGA's end-to-end encryption.', to build this sentence in two colors into the init tour page. Don't place '.' at the end of the string.  Keep all in lowercase less the word MEGA in uppercase.</note>
         </trans-unit>
@@ -995,7 +995,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the 'Upgrade now!' button of the dialog shown randomly when a user logs into a free account - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/WarningOutOfSpace" translate="yes" space="preserve">
-          <source>You're running out of space!</source>
+          <source>You’re running out of space!</source>
           <target state="translated">قاربت مساحتك على الامتلاء</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Warning message in Cloud Drive when the user is running out of space</note>
         </trans-unit>
@@ -1235,7 +1235,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Saved for offline' button, link, text, title, etc. - (String as short as possible, LESS THAN 22 CHARS).</note>
         </trans-unit>
         <trans-unit id="Resx/EmptyCloudDrive" translate="yes" space="preserve">
-          <source>No files in your cloud drive</source>
+          <source>No files in your Cloud Drive</source>
           <target state="translated">لا توجد ملفات بوحدة التخزين السحابي لديك</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty cloud drive page - (String as short as possible).</note>
         </trans-unit>
@@ -1390,7 +1390,7 @@ NOTE: Keep the capital letter if possible.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a canceled transfer - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateCompleting" translate="yes" space="preserve">
-          <source>Completing...</source>
+          <source>Completing…</source>
           <target state="translated">الاستكمال...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being completing - (String as short as possible).</note>
         </trans-unit>
@@ -1400,7 +1400,7 @@ NOTE: Keep the capital letter if possible.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a download transfer when is finished - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateDownloading" translate="yes" space="preserve">
-          <source>Downloading...</source>
+          <source>Downloading…</source>
           <target state="translated">جار التحميل...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being downloading - (String as short as possible).</note>
         </trans-unit>
@@ -1420,7 +1420,7 @@ NOTE: Keep the capital letter if possible.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a paused transfer - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStatePreparing" translate="yes" space="preserve">
-          <source>Preparing...</source>
+          <source>Preparing…</source>
           <target state="translated">الاستعداد...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being preparing - (String as short as possible).</note>
         </trans-unit>
@@ -1430,7 +1430,7 @@ NOTE: Keep the capital letter if possible.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is queued - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateRetrying" translate="yes" space="preserve">
-          <source>Retrying...</source>
+          <source>Retrying…</source>
           <target state="translated">إعادة المحاولة...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being retrying - (String as short as possible).</note>
         </trans-unit>
@@ -1440,7 +1440,7 @@ NOTE: Keep the capital letter if possible.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of an upload transfer when is finished - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateUploading" translate="yes" space="preserve">
-          <source>Uploading...</source>
+          <source>Uploading…</source>
           <target state="translated">جاري الرفع...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being uploading - (String as short as possible).</note>
         </trans-unit>
@@ -1510,8 +1510,8 @@ NOTE: Keep the capital letter if possible.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Plain text' button, link, text, title, etc. - (String as short as possible).</note>
           </trans-unit>
         <trans-unit id="Resx/UI_EnablePinLock" translate="yes" xml:space="preserve">
-          <source>Enable PIN lock</source>
-          <target state="new">Enable PIN lock</target>
+          <source>Enable PIN code</source>
+          <target state="new">Enable PIN code</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the switch button to enable or disable the PIN lock code. Keep PIN uppercase - (String as short as possible).</note>
           </trans-unit>
         <trans-unit id="Resx/UI_RecoveryKeyDescription" translate="yes" xml:space="preserve">
@@ -1560,8 +1560,8 @@ NOTE: Keep the capital letter if possible.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label of the button to copy the seed to enable the Multi-Factor Authentication - (String as short as possible).</note>
           </trans-unit>
         <trans-unit id="Resx/UI_LostAuthDeviceQuestion" translate="yes" xml:space="preserve">
-          <source>Lost your authenticator device?</source>
-          <target state="new">Lost your authenticator device?</target>
+          <source>Lost your authentication device?</source>
+          <target state="new">Lost your authentication device?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any link/button to help the user in case lost the authentication device for MFA - (String as short as possible).</note>
           </trans-unit>
         <trans-unit id="Resx/UI_ChangePasswordDescription" translate="yes" xml:space="preserve">
@@ -1600,8 +1600,8 @@ NOTE: Keep the capital letter if possible.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label to indicate the amount of used cache - (String as short as possible).</note>
           </trans-unit>
         <trans-unit id="Resx/UI_OpenIn" translate="yes" xml:space="preserve">
-          <source>Open in...</source>
-          <target state="new">Open in...</target>
+          <source>Open in…</source>
+          <target state="new">Open in…</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Open in...' button, link, text, title, etc. to open a file or other kind of resource with a certain app - (String as short as possible).</note>
           </trans-unit>
         <trans-unit id="Resx/UI_FindApp" translate="yes" xml:space="preserve">
