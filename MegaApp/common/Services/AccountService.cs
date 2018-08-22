@@ -4,6 +4,7 @@ using System.Windows.Media;
 using System.Threading.Tasks;
 using mega;
 using MegaApp.Classes;
+using MegaApp.Enums;
 using MegaApp.MegaApi;
 using MegaApp.Resources;
 using MegaApp.ViewModels;
@@ -270,6 +271,37 @@ namespace MegaApp.Services
                     string.Format("Failure getting currency from {0}", formattedPrice), e);
                 return "n/a";
             }
+        }
+
+        /// <summary>
+        /// Check the status of the Multi-Factor Authentication
+        /// </summary>
+        /// <returns>The current status of the Multi-Factor Authentication</returns>
+        public static async Task<MultiFactorAuthStatus> CheckMultiFactorAuthStatusAsync()
+        {
+            var multiFactorAuthCheck = new MultiFactorAuthCheckRequestListenerAsync();
+            var result = await multiFactorAuthCheck.ExecuteAsync(() =>
+            {
+                SdkService.MegaSdk.multiFactorAuthCheck(
+                    SdkService.MegaSdk.getMyEmail(), multiFactorAuthCheck);
+            });
+
+            switch (result)
+            {
+                case MultiFactorAuthStatus.Enabled:
+                    LogService.Log(MLogLevel.LOG_LEVEL_INFO, "Multi-Factor Authentication status: ENABLED");
+                    break;
+
+                case MultiFactorAuthStatus.Disabled:
+                    LogService.Log(MLogLevel.LOG_LEVEL_INFO, "Multi-Factor Authentication status: DISABLED");
+                    break;
+
+                case MultiFactorAuthStatus.Unknown:
+                    LogService.Log(MLogLevel.LOG_LEVEL_INFO, "Multi-Factor Authentication status: UNKNOWN (ERROR)");
+                    break;
+            }
+
+            return result;
         }
     }
 }

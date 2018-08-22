@@ -17,6 +17,8 @@
         Downloads           = 90,
         DisablePassword     = 100,
         AutoCameraUpload    = 110,
+        SecuritySettings    = 120,
+        MFA_Enabled         = 125,
         AccountUpdate       = 200,
         None                = 999,
 

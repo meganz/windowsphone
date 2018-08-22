@@ -2005,6 +2005,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Enter and confirm your new password and click save..
+        /// </summary>
+        public static string UI_ChangePasswordDescription {
+            get {
+                return ResourceManager.GetString("UI_ChangePasswordDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Close.
         /// </summary>
         public static string UI_Close {
@@ -2082,6 +2091,15 @@ namespace MegaApp.Resources {
         public static string UI_Copyright {
             get {
                 return ResourceManager.GetString("UI_Copyright", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Copy seed.
+        /// </summary>
+        public static string UI_CopySeed {
+            get {
+                return ResourceManager.GetString("UI_CopySeed", resourceCulture);
             }
         }
         
@@ -2167,6 +2185,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Enable Two-Factor Authentication.
+        /// </summary>
+        public static string UI_EnableTwoFactorAuth {
+            get {
+                return ResourceManager.GetString("UI_EnableTwoFactorAuth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Export.
+        /// </summary>
+        public static string UI_Export {
+            get {
+                return ResourceManager.GetString("UI_Export", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Export Recovery Key.
         /// </summary>
         public static string UI_ExportRecoveryKeyText {
@@ -2181,6 +2217,15 @@ namespace MegaApp.Resources {
         public static string UI_FileLink {
             get {
                 return ResourceManager.GetString("UI_FileLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Find app.
+        /// </summary>
+        public static string UI_FindApp {
+            get {
+                return ResourceManager.GetString("UI_FindApp", resourceCulture);
             }
         }
         
@@ -2311,6 +2356,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Lost your authenticator device?.
+        /// </summary>
+        public static string UI_LostAuthDeviceQuestion {
+            get {
+                return ResourceManager.GetString("UI_LostAuthDeviceQuestion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a MEGA SDK version.
         /// </summary>
         public static string UI_MEGA_SDK_Version {
@@ -2325,6 +2379,24 @@ namespace MegaApp.Resources {
         public static string UI_MemoryStatistics {
             get {
                 return ResourceManager.GetString("UI_MemoryStatistics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Scan or copy the seed directly into your authenticator app. Be sure to backup this seed to a safe place in case you lose your phone..
+        /// </summary>
+        public static string UI_MFA_SetupStep1 {
+            get {
+                return ResourceManager.GetString("UI_MFA_SetupStep1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a After setting up your seed on your authenticator app enter the 6-digit code provided..
+        /// </summary>
+        public static string UI_MFA_SetupStep2 {
+            get {
+                return ResourceManager.GetString("UI_MFA_SetupStep2", resourceCulture);
             }
         }
         
@@ -2370,6 +2442,15 @@ namespace MegaApp.Resources {
         public static string UI_OpenBrowser {
             get {
                 return ResourceManager.GetString("UI_OpenBrowser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Open in....
+        /// </summary>
+        public static string UI_OpenIn {
+            get {
+                return ResourceManager.GetString("UI_OpenIn", resourceCulture);
             }
         }
         
@@ -2509,6 +2590,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Setup Two-Factor Authentication.
+        /// </summary>
+        public static string UI_Setup2FA {
+            get {
+                return ResourceManager.GetString("UI_Setup2FA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a 6-digit code.
+        /// </summary>
+        public static string UI_SixDigitCode {
+            get {
+                return ResourceManager.GetString("UI_SixDigitCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Size.
         /// </summary>
         public static string UI_Size {
@@ -2644,6 +2743,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Two-Factor Authentication.
+        /// </summary>
+        public static string UI_TwoFactorAuth {
+            get {
+                return ResourceManager.GetString("UI_TwoFactorAuth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Two-factor authentication is a second layer of security for your account..
+        /// </summary>
+        public static string UI_TwoFactorAuthSettingsDescription {
+            get {
+                return ResourceManager.GetString("UI_TwoFactorAuthSettingsDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Upgrade account.
         /// </summary>
         public static string UI_UpgradeAccount {
@@ -2658,6 +2775,15 @@ namespace MegaApp.Resources {
         public static string UI_UsedCache {
             get {
                 return ResourceManager.GetString("UI_UsedCache", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Verify.
+        /// </summary>
+        public static string UI_Verify {
+            get {
+                return ResourceManager.GetString("UI_Verify", resourceCulture);
             }
         }
         

@@ -32,23 +32,34 @@ namespace MegaApp.UserControls
             bool isMainPage = page == typeof(MainPage);
             var backStack = ((PhoneApplicationFrame)Application.Current.RootVisual).BackStack;
             var lastPage = backStack.FirstOrDefault();
-
-            // If the previous page is the PasswordPage (PIN lock page), delete it from the stack
             var navParam = NavigateService.ProcessQueryString(NavigationContext.QueryString);
-            if (navParam == NavigationParameter.PasswordLogin)
-            {
-                if (lastPage == null) return;
-                if (lastPage.Source.ToString().Contains(typeof(PasswordPage).Name))
-                    ((PhoneApplicationFrame)Application.Current.RootVisual).RemoveBackEntry();
-            }
 
-            // If the previous page is the "FolderLinkPage" delete it from the stack if the
-            // current page is not "PreviewImagePage" or "NodeDetailsPage".
-            if (page != typeof(PreviewImagePage) || page != typeof(NodeDetailsPage))
+            // In some cases we should remove the last page from the stack
+            if (lastPage != null)
             {
-                if (lastPage == null) return;
-                if (lastPage.Source.ToString().Contains(typeof(FolderLinkPage).Name))
-                    ((PhoneApplicationFrame)Application.Current.RootVisual).RemoveBackEntry();
+                switch(navParam)
+                {
+                    case NavigationParameter.PasswordLogin:
+                        // If the previous page is the PasswordPage (PIN lock page)
+                        if (lastPage.Source.ToString().Contains(typeof(PasswordPage).Name))
+                            ((PhoneApplicationFrame)Application.Current.RootVisual).RemoveBackEntry();
+                        break;
+
+                    case NavigationParameter.SecuritySettings:
+                    case NavigationParameter.MFA_Enabled:
+                        // If the previous page is the "MultiFactorAuthAppSetupPage"
+                        if (lastPage.Source.ToString().Contains(typeof(MultiFactorAuthAppSetupPage).Name))
+                            ((PhoneApplicationFrame)Application.Current.RootVisual).RemoveBackEntry();
+                        break;
+                }
+
+                // If the previous page is the "FolderLinkPage" and the
+                // current page is not "PreviewImagePage" or "NodeDetailsPage".
+                if (page != typeof(PreviewImagePage) || page != typeof(NodeDetailsPage))
+                {
+                    if (lastPage.Source.ToString().Contains(typeof(FolderLinkPage).Name))
+                        ((PhoneApplicationFrame)Application.Current.RootVisual).RemoveBackEntry();
+                }
             }
 
             if (isMainPage)
