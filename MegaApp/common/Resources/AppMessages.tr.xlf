@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en" target-language="tr" original="AppMessages.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp81" product-version="1.0.0.0" build-num="0">
+  <file datatype="xml" source-language="en" target-language="en" original="AppMessages.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp81" product-version="1.0.0.0" build-num="0">
     <header>
       <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="3.1.1250.0" tool-company="Microsoft" />
     </header>
@@ -631,7 +631,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <source>You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?
 Please try to save/copy the file to your device’s internal memory instead.</source>
           <target state="translated">Bu dosya türünü seçilen konuma aktarma iznine sahip değilsiniz. Desteklenmeyen bir dosya türünü SD kartınıza mı aktarmak istiyorsunuz?
-Lütfen cihazınızın dahili hafızasına kaydetmeyi/kopyalamayı deneyin.</target>
+Lütfen cihazınızın dahili hafızasına kaydetmeyi/kopyalamayı deneyin.
+</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</note>
         </trans-unit>
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException_Title" translate="yes" space="preserve">
@@ -641,7 +642,8 @@ Lütfen cihazınızın dahili hafızasına kaydetmeyi/kopyalamayı deneyin.</tar
         </trans-unit>
         <trans-unit id="Resx/AM_RecoveryKeyClipboardFailed" translate="yes" space="preserve">
           <source>Failed to copy the Recovery Key to your clipboard. Please try again.</source>
-          <target state="translated">Kurtarma Anahtarı panoya kopyalanamadı. Lütfen tekrar deneyin.</target>
+          <target state="translated">Kurtarma Anahtarı panoya kopyalanamadı. Lütfen tekrar deneyin.
+</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails to copy the user's Recovery Key to the clipboard to be saved or exported.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_RecoveryKeyClipboardFailed_Title" translate="yes" space="preserve">
@@ -651,22 +653,23 @@ Lütfen cihazınızın dahili hafızasına kaydetmeyi/kopyalamayı deneyin.</tar
         </trans-unit>
         <trans-unit id="Resx/CurrentPinLockCodeDoNotMatch" translate="yes" space="preserve">
           <source>Current PIN code is incorrect or does not match</source>
-          <target state="translated">Geçerli PIN kilidi doğru değil ya da eşleşmiyor</target>
+          <target state="translated">Geçerli PIN kodu doğru değil ya da eşleşmiyor</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user is trying to change the PIN lock code and introduces an incorrect code into the field for the current PIN lock code. Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/CurrentPinLockCodeDoNotMatch_Title" translate="yes" space="preserve">
           <source>Current PIN code is incorrect</source>
-          <target state="translated">Mevcut PIN kilidi eşleşmiyor</target>
+          <target state="translated">Mevcut PIN kodu doğru değil</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user is trying to change the PIN lock code and introduces an incorrect code into the field for the current PIN lock code - (String as short as possible). Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_RecoveryKeyCopied" translate="yes" space="preserve">
           <source>The Recovery Key has been copied to the clipboard. Please store it in a safe place.</source>
-          <target state="translated">Kurtarma Anahtarı panoya kopyalandı</target>
+          <target state="translated">Kurtarma Anahtarı panoya kopyalandı. Lütfen güvenli bir yerde saklayın.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_RecoveryKeyCopied_Title" translate="yes" space="preserve">
           <source>Recovery Key copied</source>
-          <target state="translated">Kurtarma Anahtarı kopyalandı</target>
+          <target state="translated">Kurtarma Anahtarı kopyalandı
+</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PinLockTooShort" translate="yes" space="preserve">
@@ -716,7 +719,8 @@ Lütfen cihazınızın dahili hafızasına kaydetmeyi/kopyalamayı deneyin.</tar
         </trans-unit>
         <trans-unit id="Resx/SelectFolderFailed" translate="yes" space="preserve">
           <source>Failed to select folder. Please, try again or select another one.</source>
-          <target state="translated">Klasör seçilemedi. Lütfen tekrar deneyin veya başka birini seçin.</target>
+          <target state="translated">Klasör seçilemedi. Lütfen tekrar deneyin veya başka birini seçin.
+</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to select a folder failed.</note>
         </trans-unit>
         <trans-unit id="Resx/SelectFolderFailed_Title" translate="yes" space="preserve">
@@ -1241,7 +1245,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="translated">Bunun nedeni aşağıdakilerden biri olabilir:
 - Dosya Hizmet Koşullarını ihlal ettiği için kaldırıldı.
 - Geçersiz URL – erişmeye çalıştığınız bağlantısı mevcut değil.
-- Dosya kullanıcı tarafından kaldırıldı.</target>
+- Dosya kullanıcı tarafından kaldırıldı.
+</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</note>
         </trans-unit>
         <trans-unit id="Resx/AM_FolderLinkUnavailable" translate="yes" space="preserve">
@@ -1252,7 +1257,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="translated">Bunun nedeni aşağıdakilerden biri olabilir:
 - Klasör Hizmet Koşullarını ihlal ettiği için kaldırıldı.
 - Geçersiz URL – erişmeye çalıştığınız bağlantı mevcut değil.
-- Klasör bağlantısı kullanıcı tarafından kaldırıldı.</target>
+- Klasör bağlantısı kullanıcı tarafından kaldırıldı.
+</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when a folder link doesn't exist. Keep "\n"</note>
         </trans-unit>
         <trans-unit id="Resx/AM_LinkUnavailableTitle" translate="yes" space="preserve">
@@ -1635,149 +1641,151 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="translated">SSL sertifika hatası</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_RecoveryKeyExportFailed_Title" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/AM_PasswordReminder" translate="yes" space="preserve">
+          <source>Due to MEGA’s encryption technology you are unable to reset your password without data loss. Please make sure you remember your password.</source>
+          <target state="translated">MEGA'nın şifreleme teknolojisi veri kaybına uğramadan parola kurtarmayı imkansız kılar. Lütfen parolanızı hatırladığınıza emin olun.
+</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message to describe the purpose of the password reminder dialog.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_PasswordReminder_Title" translate="yes" space="preserve">
+          <source>Do you remember your password?</source>
+          <target state="translated">Parolanızı hatırlıyor musunuz?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the password reminder dialog.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_TestPassword" translate="yes" space="preserve">
+          <source>Please test your password below to ensure you remember it. If you lose your password, you will lose access to all your data.</source>
+          <target state="translated">Lütfen parolanızı hatırladığınızdan emin olmak için aşağıdan deneyin. Eğer parolanızı kaybederseniz, tüm verilerinize olan erişiminizi de kaybedersiniz.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message to describe the purpose of the dialog to test the password.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_TestPasswordSuccess" translate="yes" space="preserve">
+          <source>Password accepted, we still recommend you back up your Recovery Key.</source>
+          <target state="translated">Şifre kabul edildi, hala Kurtarma Anahtarınızı yedeklemenizi öneririz.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message displayed when the password test result is ok.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_TestPasswordWarning" translate="yes" space="preserve">
+          <source>Wrong password! Backup your Recovery Key as soon as possible!</source>
+          <target state="translated">Yanlış şifre! Kurtarma Anahtarınızı mümkün olan en kısa sürede yedekleyin!</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Warning message displayed when the password test fails.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_TestPassword_Title" translate="yes" space="preserve">
+          <source>Test Password</source>
+          <target state="translated">Parolayı Dene</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the test password dialog.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_RecoveryKeyExported" translate="yes" space="preserve">
+          <source>The Recovery Key has been exported. Please store it in a safe place.</source>
+          <target state="translated">Kurtarma Anahtarı dışarı aktarıldı. Lütfen güvenli bir yerde saklayın.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog or notification displayed in cases that the app has succesful exported the recovery key.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_RecoveryKeyExported_Title" translate="yes" space="preserve">
+          <source>Recovery Key exported</source>
+          <target state="translated">Kurtarma Anahtarı dışarı aktarıldı</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog or notification displayed in cases that the app has succesful exported the recovery key.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_RecoveryKeyExportFailed" translate="yes" space="preserve">
+          <source>Failed to export the Recovery Key. Please try again.</source>
+          <target state="translated">Kurtarma anahtarı dışarı aktarılırken hata oluştu. Lütfen tekrar deneyin.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog or notification displayed in cases that the app has not succesful exported the recovery key.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_RecoveryKeyExportFailed_Title" translate="yes" space="preserve">
           <source>Recovery Key export failed</source>
-          <target state="new">Recovery Key export failed</target>
+          <target state="translated">Kurtarma Anahtarı dışarı aktarılamadı</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog or notification displayed in cases that the app has not succesful exported the recovery key.</note>
-          </trans-unit>
-        <trans-unit id="Resx/AM_CloseOtherSessionsQuestionMessage" translate="yes" xml:space="preserve">
+        </trans-unit>
+        <trans-unit id="Resx/AM_CloseOtherSessionsQuestionMessage" translate="yes" space="preserve">
           <source>Do you want to close all other sessions? This will log you out on all other active sessions except the current one.</source>
-          <target state="new">Do you want to close all other sessions? This will log you out on all other active sessions except the current one.</target>
+          <target state="translated">Diğer tüm oturumları kapatmak istiyor musunuz? Bu, geçerli oturumunuz hariç diğer tüm aktif oturumlarınızı kapatacaktır.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed to ask the user to confirm want to close all the other sessions.</note>
-          </trans-unit>
-        <trans-unit id="Resx/AM_2FA_SetupDialogTitle" translate="yes" xml:space="preserve">
+        </trans-unit>
+        <trans-unit id="Resx/AM_2FA_SetupDialogDescription" translate="yes" space="preserve">
+          <source>Two-factor authentication is a second layer of security for your account. Which means that even if someone knows your password they cannot access it, without also having access to the six digit code only you have access to.</source>
+          <target state="translated">İki faktörlü kimlik doğrulama, hesabınızın ikinci bir güvenlik katmanıdır. Başka bir deyişle, birisi şifrenizi biliyor olsa bile, sadece sizin erişebildiğiniz altı haneli koda erişimi olmadan hesabınıza erişemez.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Description text of the dialog displayed to start setup the Two-Factor Authentication</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_2FA_SetupDialogTitle" translate="yes" space="preserve">
           <source>Why do you need two-factor authentication?</source>
-          <target state="new">Why do you need two-factor authentication?</target>
+          <target state="translated">Neden iki faktörlü kimlik doğrulamaya ihtiyacınız var?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed to start setup the Two-Factor Authentication</note>
-          </trans-unit>
-        <trans-unit id="Resx/AM_InvalidCode" translate="yes" xml:space="preserve">
+        </trans-unit>
+        <trans-unit id="Resx/AM_InvalidCode" translate="yes" space="preserve">
           <source>This code isn’t right, please try again.</source>
-          <target state="new">This code isn’t right, please try again.</target>
+          <target state="translated">Bu kod doğru değil, lütfen tekrar deneyin.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message displayed when the user is trying to insert and invalid code, for example the 6-digit code of the Multi-Factor Authentication.</note>
-          </trans-unit>
-        <trans-unit id="Resx/AM_2FA_EnabledDialogTitle" translate="yes" xml:space="preserve">
+        </trans-unit>
+        <trans-unit id="Resx/AM_2FA_EnabledDialogDescription" translate="yes" space="preserve">
+          <source>Next time you login to your account you will be asked to enter a 6-digit code provided by your Authenticator app.</source>
+          <target state="translated">Bir dahaki sefere hesabınıza giriş yaptığınızda, Authenticator uygulamanız tarafından sağlanan 6 basamaklı bir kod girmeniz istenecektir.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Description text of the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_2FA_EnabledDialogTitle" translate="yes" space="preserve">
           <source>Two-Factor Authentication Enabled</source>
-          <target state="new">Two-Factor Authentication Enabled</target>
+          <target state="translated">İki Faktörlü Kimlik Doğrulama Etkin</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title text of the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication.</note>
-          </trans-unit>
-        <trans-unit id="Resx/AM_MFA_SeedCopied_Title" translate="yes" xml:space="preserve">
+        </trans-unit>
+        <trans-unit id="Resx/AM_MFA_SeedCopied" translate="yes" space="preserve">
+          <source>The seed has been copied to your clipboard.</source>
+          <target state="translated">Tohum panoya kopyalandı.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the seed needed to enable the Multi-Factor Authentication has been copied successfully to the clipboard.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_MFA_SeedCopiedFailed" translate="yes" space="preserve">
+          <source>Failed to copy the seed to your clipboard. Please try again.</source>
+          <target state="translated">Tohum panoya kopyalanamadı. Lütfen tekrar deneyin.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed if fails the process to copy the seed needed to enable the Multi-Factor Authentication to the clipboard.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_MFA_SeedCopiedFailed_Title" translate="yes" space="preserve">
+          <source>Seed copy failed</source>
+          <target state="translated">Tohum kopyalama başarısız oldu</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed if fails the process to copy the seed needed to enable the Multi-Factor Authentication to the clipboard.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_MFA_SeedCopied_Title" translate="yes" space="preserve">
           <source>Seed copied</source>
-          <target state="new">Seed copied</target>
+          <target state="translated">Tohum kopyalandı</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the seed needed to enable the Multi-Factor Authentication has been copied successfully to the clipboard.</note>
-          </trans-unit>
-        <trans-unit id="Resx/AM_2FA_InputAppCodeDialogMessage" translate="yes" xml:space="preserve">
+        </trans-unit>
+        <trans-unit id="Resx/AM_2FA_InputAppCodeDialogMessage" translate="yes" space="preserve">
           <source>Please enter the code generated by your authentication app</source>
-          <target state="new">Please enter the code generated by your authentication app</target>
+          <target state="translated">Lütfen kimlik doğrulama uygulamanızın oluşturduğu kodu girin</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Description text of the dialog displayed to introduce the 6-digit code for the MFA.</note>
-          </trans-unit>
-        <trans-unit id="Resx/AM_2FA_DisableDialogTitle" translate="yes" xml:space="preserve">
+        </trans-unit>
+        <trans-unit id="Resx/AM_2FA_DisableDialogTitle" translate="yes" space="preserve">
           <source>Disable Two-Factor Authentication</source>
-          <target state="new">Disable Two-Factor Authentication</target>
+          <target state="translated">İki Faktörlü Kimlik Doğrulamayı Devre Dışı Bırak</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed to disable the Two-Factor Authentication.</note>
-          </trans-unit>
-        <trans-unit id="Resx/AM_2FA_EnabledDialogRecommendation" translate="yes" xml:space="preserve">
+        </trans-unit>
+        <trans-unit id="Resx/AM_2FA_EnabledDialogRecommendation" translate="yes" space="preserve">
           <source>If you lose access to your account after enabling 2FA and you have not backed up your Recovery Key, MEGA can’t help you gain access to it again.
 Ensure you back up your recovery key.</source>
-          <target state="new">If you lose access to your account after enabling 2FA and you have not backed up your Recovery Key, MEGA can’t help you gain access to it again.
-Ensure you back up your recovery key.</target>
+          <target state="translated">2FD etkinleştirildikten sonra hesabınıza erişiminizi kaybederseniz ve Kurtarma Anahtarını kaydetmediyseniz, MEGA erişiminizi geri kazanmanıza yardımcı olamaz.
+
+Kurtarma anahtarınızı yedeklediğinizden emin olun.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text recommending export the Recovery Key in the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication. KEEP the multi-line format.</note>
-          </trans-unit>
-        <trans-unit id="Resx/AM_2FA_DisabledDialogTitle" translate="yes" xml:space="preserve">
+        </trans-unit>
+        <trans-unit id="Resx/AM_2FA_DisabledDialogTitle" translate="yes" space="preserve">
           <source>Two-Factor Authentication Disabled</source>
-          <target state="new">Two-Factor Authentication Disabled</target>
+          <target state="translated">İki Faktörlü Kimlik Doğrulama Devre Dışı</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title text of the dialog displayed to indicate that the user has successfully disabled the Two-Factor Authentication.</note>
-          </trans-unit>
-        <trans-unit id="Resx/AM_MFA_SeedCopiedFailed_Title" translate="yes" xml:space="preserve">
-          <source>Seed copy failed</source>
-          <target state="new">Seed copy failed</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed if fails the process to copy the seed needed to enable the Multi-Factor Authentication to the clipboard.</note>
-          </trans-unit>
-        <trans-unit id="Resx/AM_MFA_SeedCopiedFailed" translate="yes" xml:space="preserve">
-          <source>Failed to copy the seed to your clipboard. Please try again.</source>
-          <target state="new">Failed to copy the seed to your clipboard. Please try again.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed if fails the process to copy the seed needed to enable the Multi-Factor Authentication to the clipboard.</note>
-          </trans-unit>
-        <trans-unit id="Resx/AM_MFA_SeedCopied" translate="yes" xml:space="preserve">
-          <source>The seed has been copied to your clipboard.</source>
-          <target state="new">The seed has been copied to your clipboard.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the seed needed to enable the Multi-Factor Authentication has been copied successfully to the clipboard.</note>
-          </trans-unit>
-        <trans-unit id="Resx/AM_2FA_EnabledDialogDescription" translate="yes" xml:space="preserve">
-          <source>Next time you login to your account you will be asked to enter a 6-digit code provided by your authentification app.</source>
-          <target state="new">Next time you login to your account you will be asked to enter a 6-digit code provided by your authentification app.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Description text of the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication.</note>
-          </trans-unit>
-        <trans-unit id="Resx/AM_2FA_SetupDialogDescription" translate="yes" xml:space="preserve">
-          <source>Two-factor authentication is a second layer of security for your account. Which means that even if someone knows your password they cannot access it, without also having access to the six digit code only you have access to.</source>
-          <target state="new">Two-factor authentication is a second layer of security for your account. Which means that even if someone knows your password they cannot access it, without also having access to the six digit code only you have access to.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Description text of the dialog displayed to start setup the Two-Factor Authentication</note>
-          </trans-unit>
-        <trans-unit id="Resx/AM_RestoreMultiFromRubbishBinFailed" translate="yes" xml:space="preserve">
+        </trans-unit>
+        <trans-unit id="Resx/AM_RestoreFromRubbishBinFailed" translate="yes" space="preserve">
+          <source>Failed to restore ‘{0}’ from rubbish bin. Please try again.</source>
+          <target state="translated">‘{0}' çöp kutusundan geri yüklenemedi. Lütfen tekrar deneyin.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to restore a node to the rubbish bin failed.
+Preserve the '{0}' code because is for include the file/folder name in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_RestoreFromRubbishBinFailed_Title" translate="yes" space="preserve">
+          <source>Restore from rubbish bin failed</source>
+          <target state="translated">Çöp kutusundan geri yükleme başarısız oldu</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to restore nodes from the rubbish bin failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_RestoreMultiFromRubbishBinFailed" translate="yes" space="preserve">
           <source>Failed to restore items from rubbish bin. Please try again.</source>
-          <target state="new">Failed to restore items from rubbish bin. Please try again.</target>
+          <target state="translated">Öğeler çöp kutusundan geri yüklenemedi. Lütfen tekrar deneyin.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to restore multiple nodes from the rubbish bin failed.</note>
-          </trans-unit>
+        </trans-unit>
         <trans-unit id="Resx/AM_MFA_CheckStatusFailed" translate="yes" xml:space="preserve">
           <source>Failed to check the Multi-Factor Authentication status.</source>
           <target state="new">Failed to check the Multi-Factor Authentication status.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed if fails the process to check the Multi-Factor Authentication status.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_RestoreFromRubbishBinFailed_Title" translate="yes" xml:space="preserve">
-          <source>Restore from rubbish bin failed</source>
-          <target state="new">Restore from rubbish bin failed</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to restore nodes from the rubbish bin failed - (String as short as possible).</note>
-          </trans-unit>
-        <trans-unit id="Resx/AM_RestoreFromRubbishBinFailed" translate="yes" xml:space="preserve">
-          <source>Failed to restore ‘{0}’ from rubbish bin. Please try again.</source>
-          <target state="new">Failed to restore ‘{0}’ from rubbish bin. Please try again.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to restore a node to the rubbish bin failed.
-Preserve the '{0}' code because is for include the file/folder name in runtime.</note>
-          </trans-unit>
-        <trans-unit id="Resx/AM_RecoveryKeyExportFailed" translate="yes" xml:space="preserve">
-          <source>Failed to export the Recovery Key. Please try again.</source>
-          <target state="new">Failed to export the Recovery Key. Please try again.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog or notification displayed in cases that the app has not succesful exported the recovery key.</note>
-          </trans-unit>
-        <trans-unit id="Resx/AM_RecoveryKeyExported_Title" translate="yes" xml:space="preserve">
-          <source>Recovery Key exported</source>
-          <target state="new">Recovery Key exported</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog or notification displayed in cases that the app has succesful exported the recovery key.</note>
-          </trans-unit>
-        <trans-unit id="Resx/AM_RecoveryKeyExported" translate="yes" xml:space="preserve">
-          <source>The Recovery Key has been exported. Please store it in a safe place.</source>
-          <target state="new">The Recovery Key has been exported. Please store it in a safe place.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog or notification displayed in cases that the app has succesful exported the recovery key.</note>
-          </trans-unit>
-        <trans-unit id="Resx/AM_TestPassword_Title" translate="yes" xml:space="preserve">
-          <source>Test Password</source>
-          <target state="new">Test Password</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the test password dialog.</note>
-          </trans-unit>
-        <trans-unit id="Resx/AM_TestPasswordWarning" translate="yes" xml:space="preserve">
-          <source>Wrong password! Backup your Recovery Key as soon as possible!</source>
-          <target state="new">Wrong password! Backup your Recovery Key as soon as possible!</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Warning message displayed when the password test fails.</note>
-          </trans-unit>
-        <trans-unit id="Resx/AM_TestPasswordSuccess" translate="yes" xml:space="preserve">
-          <source>Password accepted, we still recommend you back up your Recovery Key.</source>
-          <target state="new">Password accepted, we still recommend you back up your Recovery Key.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message displayed when the password test result is ok.</note>
-          </trans-unit>
-        <trans-unit id="Resx/AM_TestPassword" translate="yes" xml:space="preserve">
-          <source>Please test your password below to ensure you remember it. If you lose your password, you will lose access to all your data.</source>
-          <target state="new">Please test your password below to ensure you remember it. If you lose your password, you will lose access to all your data.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message to describe the purpose of the dialog to test the password.</note>
-          </trans-unit>
-        <trans-unit id="Resx/AM_PasswordReminder_Title" translate="yes" xml:space="preserve">
-          <source>Do you remember your password?</source>
-          <target state="new">Do you remember your password?</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the password reminder dialog.</note>
-          </trans-unit>
-        <trans-unit id="Resx/AM_PasswordReminder" translate="yes" xml:space="preserve">
-          <source>Due to MEGA’s encryption technology you are unable to reset your password without data loss. Please make sure you remember your password.</source>
-          <target state="new">Due to MEGA’s encryption technology you are unable to reset your password without data loss. Please make sure you remember your password.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message to describe the purpose of the password reminder dialog.</note>
-          </trans-unit>
       </group>
     </body>
   </file>

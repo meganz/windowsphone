@@ -188,7 +188,7 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when reminding a contact request - (String as short as possible).</comment>
   </data>
   <data name="LoadNodes" xml:space="preserve">
-    <value>正在生成視圖...</value>
+    <value>正在生成預覽圖...</value>
     <comment>Progress indicator message when building a nodes view - (String as short as possible).</comment>
   </data>
   <data name="MoveNode" xml:space="preserve">
@@ -316,19 +316,23 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when validating purchase receipt - (String as short as possible).</comment>
   </data>
   <data name="PM_ApiLocked" xml:space="preserve">
-    <value>This process is taking longer than expected. Please wait.</value>
+    <value>這個過程花費的時間比預期的長。請稍候。</value>
     <comment>Progress indicator message when the SDK is waiting for the server to complete a request due to an API lock (API error -3) - (String as short as possible).</comment>
   </data>
   <data name="PM_ApiRateLimit" xml:space="preserve">
-    <value>Too many requests. Please wait.</value>
+    <value>太多程序進行中。請稍候。</value>
     <comment>Progress indicator message when the SDK is waiting for the server to complete a request due to a rate limit (API error -4) - (String as short as possible).</comment>
   </data>
   <data name="PM_ConnectivityIssue" xml:space="preserve">
-    <value>Unable to reach MEGA. Please check your connectivity or try again later.</value>
+    <value>無法連上MEGA。請檢查您的網路連線或於稍後重試。</value>
     <comment>Progress indicator message when the SDK is waiting for the server to complete a request due to connectivity issue - (String as short as possible).</comment>
   </data>
   <data name="PM_ServersBusy" xml:space="preserve">
     <value>系統忙碌中，請稍候。</value>
     <comment>Progress indicator message when servers are too busy. SDK is waiting for the server to complete a request due to a HTTP error 500  - (String as short as possible).</comment>
+  </data>
+  <data name="PM_Restoring" xml:space="preserve">
+    <value>還原中...</value>
+    <comment>Progress indicator message when restoring node(s) from the rubbish bin - (String as short as possible).</comment>
   </data>
 </root>

@@ -164,7 +164,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the creation of a folder failed - (String as short as possible).</comment>
   </data>
   <data name="CreateFolderSuccess" xml:space="preserve">
-    <value>Pasta criada com sucesso</value>
+    <value>Pasta criada corretamente</value>
     <comment>Message of the dialog displayed when create a folder successfully.</comment>
   </data>
   <data name="CreateFolderSuccess_Title" xml:space="preserve">
@@ -205,7 +205,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to create a folder failed - (String as short as possible).</comment>
   </data>
   <data name="GetLinkFailed" xml:space="preserve">
-    <value>Falha ao resgatar link</value>
+    <value>Não foi possível obter o link</value>
     <comment>Message of the dialog displayed when the process/request to get a link to a node failed.</comment>
   </data>
   <data name="GetLinkFailed_Title" xml:space="preserve">
@@ -213,15 +213,15 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to get a link to a node failed - (String as short as possible).</comment>
   </data>
   <data name="GetPreviewFailed" xml:space="preserve">
-    <value>Falha ao recuperar prévia</value>
+    <value>Não foi possível recuperar a visualização</value>
     <comment>Message of the dialog displayed when the process/request to get a image preview failed.</comment>
   </data>
   <data name="GetPreviewFailed_Title" xml:space="preserve">
-    <value>Recuperação da pré visualização falhou</value>
+    <value>Não foi possível gerar a visualização</value>
     <comment>Title of the dialog displayed when the process/request to get a image preview failed - (String as short as possible).</comment>
   </data>
   <data name="ImageSaved" xml:space="preserve">
-    <value>Imagem exportada para o album 'imagens salvas' com sucesso</value>
+    <value>Imagem corretamente exportada para o álbum 'imagens salvas'</value>
     <comment>Message of the dialog displayed when a image is saved/exported successfully saved to the 'saved pictures' album of the phone device.</comment>
   </data>
   <data name="ImageSaved_Title" xml:space="preserve">
@@ -369,7 +369,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to get the user account details failed - (String as short as possible).</comment>
   </data>
   <data name="LoggedOut" xml:space="preserve">
-    <value>Você foi desconectado com sucesso</value>
+    <value>Você fez logout corretamente</value>
     <comment>Message of the dialog displayed when a user logged out successfully.</comment>
   </data>
   <data name="LoggedOut_Title" xml:space="preserve">
@@ -421,7 +421,7 @@ Preserve the {0} code because is for include the name of the node to be moved in
     <comment>Title of the dialog displayed when a user want to move a single node to the rubbish bin, asking for confirmation to make the movement - (String as short as possible).</comment>
   </data>
   <data name="MoveToRubbishBinSuccess" xml:space="preserve">
-    <value>Itens movidos para a lixeira com sucesso</value>
+    <value>Itens corretamente movidos para a lixeira</value>
     <comment>Message of the dialog displayed when move successfully one single node to the rubbish bin.</comment>
   </data>
   <data name="MoveToRubbishBinSuccess_Title" xml:space="preserve">
@@ -617,11 +617,11 @@ Tente salvar/copiar o arquivo na memória interna do seu dispositivo.</value>
     <comment>Title of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type) - (String as short as possible).</comment>
   </data>
   <data name="CurrentPinLockCodeDoNotMatch" xml:space="preserve">
-    <value>Código PIN atual não está correto ou não está combinando</value>
+    <value>O PIN atual não foi digitado corretamente</value>
     <comment>Message of the dialog displayed when a user is trying to change the PIN lock code and introduces an incorrect code into the field for the current PIN lock code. Try to preserve the PIN uppercase word.</comment>
   </data>
   <data name="CurrentPinLockCodeDoNotMatch_Title" xml:space="preserve">
-    <value>Código PIN não combina com o atual</value>
+    <value>O PIN atual é incorreto</value>
     <comment>Title of the dialog displayed when a user is trying to change the PIN lock code and introduces an incorrect code into the field for the current PIN lock code - (String as short as possible). Try to preserve the PIN uppercase word.</comment>
   </data>
   <data name="PinLockTooShort" xml:space="preserve">
@@ -633,11 +633,11 @@ Tente salvar/copiar o arquivo na memória interna do seu dispositivo.</value>
     <comment>Title of the dialog displayed when a user are trying to create or change a PIN lock code and the introduced code is too short (less than 4 digits). Try to preserve the PIN uppercase word - (String as short as possible).</comment>
   </data>
   <data name="CacheCleared" xml:space="preserve">
-    <value>O cache foi limpo com sucesso</value>
+    <value>O cache foi deletado corretamente</value>
     <comment>Message of the dialog displayed when the cache memory is successfully cleared by user request.</comment>
   </data>
   <data name="CacheCleared_Title" xml:space="preserve">
-    <value>Cache limpo</value>
+    <value>Cache deletado</value>
     <comment>Title of the dialog displayed when the cache memory is successfully cleared by user request.</comment>
   </data>
   <data name="MemoryLimitError" xml:space="preserve">
@@ -797,7 +797,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when required fields for cancel subscription are not filled in.</comment>
   </data>
   <data name="UpgradeAccountFailed" xml:space="preserve">
-    <value>A operaçãofalhou. O seu cartão de crédito não será cobrado.</value>
+    <value>A operação falhou. Você nao receberá uma cobrança no seu cartão de crédito.</value>
     <comment>Message of the dialog displayed when the process/request to upgrade an user account failed.</comment>
   </data>
   <data name="UpgradeAccountFailed_Title" xml:space="preserve">
@@ -805,7 +805,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to upgrade an user account failed - (String as short as possible).</comment>
   </data>
   <data name="UpgradeAccountSuccessfully" xml:space="preserve">
-    <value>Conta atualizado com sucesso!</value>
+    <value>O upgrade foi realizado corretamente!</value>
     <comment>Message of the dialog displayed when the process/request to upgrade an user account finished successfully.</comment>
   </data>
   <data name="UpgradeAccountSuccessfully_Title" xml:space="preserve">
@@ -920,7 +920,7 @@ Preserve the {0} code because is for include the number of contacts to be remove
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="CloseAllSessionsSuccess" xml:space="preserve">
-    <value>As sessões restantes foram fechadas com sucesso.</value>
+    <value>As sessões restantes foram fechadas corretamente.</value>
     <comment>Message of the dialog displayed when close or kill all sessions (except current) successfully.</comment>
   </data>
   <data name="CloseSessionFailed" xml:space="preserve">
@@ -1135,7 +1135,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when fails to copy the user's Recovery Key to the clipboard to be saved or exported - (String as short as possible).</comment>
   </data>
   <data name="AM_RecoveryKeyCopied" xml:space="preserve">
-    <value>Chave de recuperação copiada para a área de transferência</value>
+    <value>A chave de recuperação foi copiada para a área de transferência. Guarde a sua chave em um lugar seguro.</value>
     <comment>Message of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported.</comment>
   </data>
   <data name="AM_RecoveryKeyCopied_Title" xml:space="preserve">
@@ -1415,7 +1415,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the user types an email address with an incorrect format.</comment>
   </data>
   <data name="AM_VeryWeakPassword" xml:space="preserve">
-    <value>Por favor deixe sua senha mais forte</value>
+    <value>Escolha uma senha mais forte</value>
     <comment>Message of the dialog displayed when the user has chosen a very weak password.</comment>
   </data>
   <data name="AM_SSLKeyError" xml:space="preserve">
@@ -1425,5 +1425,115 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="AM_SSLKeyError_Title" xml:space="preserve">
     <value>Erro no certificado SSL</value>
     <comment>Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
+  </data>
+  <data name="AM_PasswordReminder" xml:space="preserve">
+    <value>Devido à tecnologia de criptografia do MEGA, você não pode redefinir a sua senha sem perder os seus dados. Por favor, confirme que você lembra da sua senha.</value>
+    <comment>Message to describe the purpose of the password reminder dialog.</comment>
+  </data>
+  <data name="AM_PasswordReminder_Title" xml:space="preserve">
+    <value>Você lembra da senha da sua conta?</value>
+    <comment>Title of the password reminder dialog.</comment>
+  </data>
+  <data name="AM_TestPassword" xml:space="preserve">
+    <value>Por favor, verifique a sua senha abaixo, para garantir que você se lembra dela. Se você perder a sua senha, perderá o acesso aos seus dados no MEGA.</value>
+    <comment>Message to describe the purpose of the dialog to test the password.</comment>
+  </data>
+  <data name="AM_TestPasswordSuccess" xml:space="preserve">
+    <value>Senha correta! Mas ainda recomendamos que você salve a sua chave de recuperação.</value>
+    <comment>Message displayed when the password test result is ok.</comment>
+  </data>
+  <data name="AM_TestPasswordWarning" xml:space="preserve">
+    <value>Senha incorreta! Salve a sua chave de recuperação o mais rápido possível!</value>
+    <comment>Warning message displayed when the password test fails.</comment>
+  </data>
+  <data name="AM_TestPassword_Title" xml:space="preserve">
+    <value>Confirmar senha</value>
+    <comment>Title of the test password dialog.</comment>
+  </data>
+  <data name="AM_RecoveryKeyExported" xml:space="preserve">
+    <value>A chave de recuperação foi exportada. Guarde a sua chave em um lugar seguro.</value>
+    <comment>Message of the dialog or notification displayed in cases that the app has succesful exported the recovery key.</comment>
+  </data>
+  <data name="AM_RecoveryKeyExported_Title" xml:space="preserve">
+    <value>A chave de recuperação foi exportada</value>
+    <comment>Title of the dialog or notification displayed in cases that the app has succesful exported the recovery key.</comment>
+  </data>
+  <data name="AM_RecoveryKeyExportFailed" xml:space="preserve">
+    <value>Não foi possível exportar a chave de recuperação. Tente novamente.</value>
+    <comment>Message of the dialog or notification displayed in cases that the app has not succesful exported the recovery key.</comment>
+  </data>
+  <data name="AM_RecoveryKeyExportFailed_Title" xml:space="preserve">
+    <value>Erro ao exportar a chave de recuperação</value>
+    <comment>Title of the dialog or notification displayed in cases that the app has not succesful exported the recovery key.</comment>
+  </data>
+  <data name="AM_CloseOtherSessionsQuestionMessage" xml:space="preserve">
+    <value>Você quer fechar todas as outras sessões? Essa ação fará logout de todas as outras sessões ativas, exceto a atual.</value>
+    <comment>Message of the dialog displayed to ask the user to confirm want to close all the other sessions.</comment>
+  </data>
+  <data name="AM_2FA_SetupDialogDescription" xml:space="preserve">
+    <value>A autenticação de dois fatores é uma segunda camada de segurança para a sua conta. Isso significa que, mesmo que alguém saiba a sua senha, não poderá acessar a sua conta sem ter acesso ao código de seis dígitos que só você sabe.</value>
+    <comment>Description text of the dialog displayed to start setup the Two-Factor Authentication</comment>
+  </data>
+  <data name="AM_2FA_SetupDialogTitle" xml:space="preserve">
+    <value>Por que você precisa da autenticação de dois fatores?</value>
+    <comment>Title of the dialog displayed to start setup the Two-Factor Authentication</comment>
+  </data>
+  <data name="AM_InvalidCode" xml:space="preserve">
+    <value>Código incorreto, tente novamente.</value>
+    <comment>Message displayed when the user is trying to insert and invalid code, for example the 6-digit code of the Multi-Factor Authentication.</comment>
+  </data>
+  <data name="AM_2FA_EnabledDialogDescription" xml:space="preserve">
+    <value>Na próxima vez que você fizer login na sua conta, você vai precisar digitar o código de seis dígitos proporcionado pelo seu aplicativo de autenticação.</value>
+    <comment>Description text of the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication.</comment>
+  </data>
+  <data name="AM_2FA_EnabledDialogTitle" xml:space="preserve">
+    <value>Autenticação de dois fatores ativa</value>
+    <comment>Title text of the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication.</comment>
+  </data>
+  <data name="AM_MFA_SeedCopied" xml:space="preserve">
+    <value>O código foi copiado para a sua área de transferência.</value>
+    <comment>Message of the dialog displayed when the seed needed to enable the Multi-Factor Authentication has been copied successfully to the clipboard.</comment>
+  </data>
+  <data name="AM_MFA_SeedCopiedFailed" xml:space="preserve">
+    <value>Não foi possível copiar o código para a sua área de transferência. Tente novamente.</value>
+    <comment>Message of the dialog displayed if fails the process to copy the seed needed to enable the Multi-Factor Authentication to the clipboard.</comment>
+  </data>
+  <data name="AM_MFA_SeedCopiedFailed_Title" xml:space="preserve">
+    <value>Erro ao copiar o código</value>
+    <comment>Title of the dialog displayed if fails the process to copy the seed needed to enable the Multi-Factor Authentication to the clipboard.</comment>
+  </data>
+  <data name="AM_MFA_SeedCopied_Title" xml:space="preserve">
+    <value>Código copiado</value>
+    <comment>Title of the dialog displayed when the seed needed to enable the Multi-Factor Authentication has been copied successfully to the clipboard.</comment>
+  </data>
+  <data name="AM_2FA_InputAppCodeDialogMessage" xml:space="preserve">
+    <value>Digite o código gerado pelo seu aplicativo de autenticação</value>
+    <comment>Description text of the dialog displayed to introduce the 6-digit code for the MFA.</comment>
+  </data>
+  <data name="AM_2FA_DisableDialogTitle" xml:space="preserve">
+    <value>Desativar a autenticação de dois fatores</value>
+    <comment>Title of the dialog displayed to disable the Two-Factor Authentication.</comment>
+  </data>
+  <data name="AM_2FA_EnabledDialogRecommendation" xml:space="preserve">
+    <value>Se você perder o acesso à sua conta depois de ativar a autenticação de dois fatores e não tiver feito o backup da chave de recuperação, o MEGA não poderá ajudá-lo a acessar a sua conta novamente. 
+Confirme que você salvou a sua chave de recuperação.</value>
+    <comment>Text recommending export the Recovery Key in the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication. KEEP the multi-line format.</comment>
+  </data>
+  <data name="AM_2FA_DisabledDialogTitle" xml:space="preserve">
+    <value>Autenticação de dois fatores desativada</value>
+    <comment>Title text of the dialog displayed to indicate that the user has successfully disabled the Two-Factor Authentication.</comment>
+  </data>
+  <data name="AM_RestoreFromRubbishBinFailed" xml:space="preserve">
+    <value>Não foi possível restaurar ‘{0}’ da Lixeira. Tente novamente.</value>
+    <comment>Message of the dialog displayed when the process/request to restore a node to the rubbish bin failed.
+Preserve the '{0}' code because is for include the file/folder name in runtime.</comment>
+  </data>
+  <data name="AM_RestoreFromRubbishBinFailed_Title" xml:space="preserve">
+    <value>Erro ao restaurar da Lixeira</value>
+    <comment>Title of the dialog displayed when the process/request to restore nodes from the rubbish bin failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_RestoreMultiFromRubbishBinFailed" xml:space="preserve">
+    <value>Não foi possível restaurar os itens da Lixeira. Tente novamente.</value>
+    <comment>Message of the dialog displayed when the process/request to restore multiple nodes from the rubbish bin failed.</comment>
   </data>
 </root>

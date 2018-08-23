@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en" target-language="ar" original="UiResources.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp81" product-version="1.0.0.0" build-num="0">
+  <file datatype="xml" source-language="en" target-language="en" original="UiResources.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp81" product-version="1.0.0.0" build-num="0">
     <header>
       <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="3.1.1250.0" tool-company="Microsoft" />
     </header>
@@ -68,7 +68,7 @@
         </trans-unit>
         <trans-unit id="Resx/EmptyFolder" translate="yes" space="preserve">
           <source>Empty Folder</source>
-          <target state="translated">مجلد فارغ</target>
+          <target state="translated">لا توجد ملفات في المجلد</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty forder page - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/EmptyTransfers" translate="yes" space="preserve">
@@ -395,7 +395,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/ChangePinLock" translate="yes" space="preserve">
           <source>Change PIN Code</source>
-          <target state="translated">تغيير رقم التعريف الشخصي</target>
+          <target state="translated">تغيير رقم التعريف PIN الشخصي</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Change PIN Lock' button, link, text, title, etc. Try to preserve the PIN uppercase word. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CleanUpTransfers" translate="yes" space="preserve">
@@ -1204,11 +1204,11 @@ Preserve the {0} code because is for include a number in runtime.</note>
           <target state="translated">كلمة سر جديدة</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'New password' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_CloseOtherSessions" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_CloseOtherSessions" translate="yes" space="preserve">
           <source>Close other sessions</source>
-          <target state="new">Close other sessions</target>
+          <target state="translated">غلق الجلسات الاخري</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Close other sessions' button, link, etc., to close all other active sessions except the current one - (String as short as possible).</note>
-          </trans-unit>
+        </trans-unit>
         <trans-unit id="Resx/UI_CloseSession" translate="yes" space="preserve">
           <source>Close session</source>
           <target state="translated">أغلق الجلسة</target>
@@ -1236,7 +1236,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/EmptyCloudDrive" translate="yes" space="preserve">
           <source>No files in your Cloud Drive</source>
-          <target state="translated">لا توجد ملفات بوحدة التخزين السحابي لديك</target>
+          <target state="translated">لم توجد ملفات في محرك السحابة الخاص بك</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty cloud drive page - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/EmptyOffline" translate="yes" space="preserve">
@@ -1504,41 +1504,77 @@ NOTE: Keep the capital letter if possible.</note>
           <target state="translated">اعادة المحاولة</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Retry' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_PlainText" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_DoNotShowMeAgain" translate="yes" space="preserve">
+          <source>Don’t show me again</source>
+          <target state="translated">عدم الإظهار مرة اخرى</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for a check box included into a dialog to indicate don't show it again.</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_BackupRecoveryKey" translate="yes" space="preserve">
+          <source>Backup Recovery Key</source>
+          <target state="translated">نسخ مفتاح الاستتعادة احتياطيا</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Backup Recovery Key' button, link, text, title, etc. - (String as short as possible).
+NOTE: Max. length 20 characters.</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_Close" translate="yes" space="preserve">
+          <source>Close</source>
+          <target state="translated">إغلاق</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Close' button, link, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_TestPassword" translate="yes" space="preserve">
+          <source>Test Password</source>
+          <target state="translated">اختبار كلمة المرور</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Test Password' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_PlainText" translate="yes" space="preserve">
           <source>Plain text</source>
-          <target state="new">Plain text</target>
+          <target state="translated">نصي</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Plain text' button, link, text, title, etc. - (String as short as possible).</note>
-          </trans-unit>
-        <trans-unit id="Resx/UI_EnablePinLock" translate="yes" xml:space="preserve">
+        </trans-unit>
+        <trans-unit id="Resx/UI_EnablePinLock" translate="yes" space="preserve">
           <source>Enable PIN code</source>
-          <target state="new">Enable PIN code</target>
+          <target state="translated">Enable PIN code</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the switch button to enable or disable the PIN lock code. Keep PIN uppercase - (String as short as possible).</note>
-          </trans-unit>
-        <trans-unit id="Resx/UI_RecoveryKeyDescription" translate="yes" xml:space="preserve">
+        </trans-unit>
+        <trans-unit id="Resx/UI_RecoveryKeyDescription" translate="yes" space="preserve">
           <source>Your Recovery Key allows you to login to your account even if you forget your password. Store it somewhere safe.</source>
-          <target state="new">Your Recovery Key allows you to login to your account even if you forget your password. Store it somewhere safe.</target>
+          <target state="translated">مفتاح الاسترجاع يسمح لك بالولوج الى حسابك في حال نسيت كلمة المرور. يرجى الاحتفاظ به بمكان آمن</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label to describe the 'Recovery Key' and its purpose.</note>
-          </trans-unit>
-        <trans-unit id="Resx/UI_SessionManagementDescription" translate="yes" xml:space="preserve">
+        </trans-unit>
+        <trans-unit id="Resx/UI_SessionManagement" translate="yes" space="preserve">
+          <source>Session Management</source>
+          <target state="translated">Session Management</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the "Settings" option to manage sessions - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_SessionManagementDescription" translate="yes" space="preserve">
           <source>This will log you out on all other active sessions except the current one. You will need to re-login to your other devices to continue using MEGA.</source>
-          <target state="new">This will log you out on all other active sessions except the current one. You will need to re-login to your other devices to continue using MEGA.</target>
+          <target state="translated">This will log you out on all other active sessions except the current one. You will need to re-login to your other devices to continue using MEGA.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label to describe the "Session Management" option of the "Settings" section.</note>
-          </trans-unit>
-        <trans-unit id="Resx/UI_Warning" translate="yes" xml:space="preserve">
+        </trans-unit>
+        <trans-unit id="Resx/UI_Warning" translate="yes" space="preserve">
           <source>Warning</source>
-          <target state="new">Warning</target>
+          <target state="translated">تحذير</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Warning' title, message, etc. - (String as short as possible).</note>
-          </trans-unit>
-        <trans-unit id="Resx/UI_TwoFactorAuthSettingsDescription" translate="yes" xml:space="preserve">
+        </trans-unit>
+        <trans-unit id="Resx/UI_EnableTwoFactorAuth" translate="yes" space="preserve">
+          <source>Enable Two-Factor Authentication</source>
+          <target state="translated">Enable Two-Factor Authentication</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the "toggle" or "switch" button to enable/disable the Two-Factor Authentication.</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_TwoFactorAuth" translate="yes" space="preserve">
+          <source>Two-Factor Authentication</source>
+          <target state="translated">Two-Factor Authentication</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the 'Two-Factor Authentication' section of the security settings.</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_TwoFactorAuthSettingsDescription" translate="yes" space="preserve">
           <source>Two-factor authentication is a second layer of security for your account.</source>
-          <target state="new">Two-factor authentication is a second layer of security for your account.</target>
+          <target state="translated">Two-factor authentication is a second layer of security for your account.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Description for the 'Two-Factor Authentication' in the security settings section.</note>
-          </trans-unit>
-        <trans-unit id="Resx/UI_Setup2FA" translate="yes" xml:space="preserve">
+        </trans-unit>
+        <trans-unit id="Resx/UI_Setup2FA" translate="yes" space="preserve">
           <source>Setup Two-Factor Authentication</source>
-          <target state="new">Setup Two-Factor Authentication</target>
+          <target state="translated">Setup Two-Factor Authentication</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Setup Two-Factor Authentication' button, link, text, title, etc. - (String as short as possible).</note>
-          </trans-unit>
+        </trans-unit>
         <trans-unit id="Resx/UI_MFA_SetupStep2" translate="yes" xml:space="preserve">
           <source>After setting up your seed on your authenticator app enter the 6-digit code provided.</source>
           <target state="new">After setting up your seed on your authenticator app enter the 6-digit code provided.</target>
@@ -1549,92 +1585,57 @@ NOTE: Keep the capital letter if possible.</note>
           <target state="new">Scan or copy the seed directly into your authenticator app. Be sure to backup this seed to a safe place in case you lose your phone.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the step 1 to setup the Multi-Factor Authentication.</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_Verify" translate="yes" xml:space="preserve">
-          <source>Verify</source>
-          <target state="new">Verify</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Verify' button, link, text, title, etc. - (String as short as possible).</note>
-          </trans-unit>
-        <trans-unit id="Resx/UI_CopySeed" translate="yes" xml:space="preserve">
-          <source>Copy seed</source>
-          <target state="new">Copy seed</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label of the button to copy the seed to enable the Multi-Factor Authentication - (String as short as possible).</note>
-          </trans-unit>
-        <trans-unit id="Resx/UI_LostAuthDeviceQuestion" translate="yes" xml:space="preserve">
-          <source>Lost your authentication device?</source>
-          <target state="new">Lost your authentication device?</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any link/button to help the user in case lost the authentication device for MFA - (String as short as possible).</note>
-          </trans-unit>
-        <trans-unit id="Resx/UI_ChangePasswordDescription" translate="yes" xml:space="preserve">
-          <source>Enter and confirm your new password and click save.</source>
-          <target state="new">Enter and confirm your new password and click save.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Text to describe the change password process.</note>
-          </trans-unit>
-        <trans-unit id="Resx/UI_Export" translate="yes" xml:space="preserve">
-          <source>Export</source>
-          <target state="new">Export</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Export' button, link, text, title, etc. - (String as short as possible).</note>
-          </trans-unit>
-        <trans-unit id="Resx/UI_SixDigitCode" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_SixDigitCode" translate="yes" space="preserve">
           <source>6-digit code</source>
-          <target state="new">6-digit code</target>
+          <target state="needs-review-translation">6 digit code</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Placeholder text of the field to type the 6-digit code provided for the authenticator app to verify the Multi-Factor Authentication.</note>
-          </trans-unit>
-        <trans-unit id="Resx/UI_TwoFactorAuth" translate="yes" xml:space="preserve">
-          <source>Two-Factor Authentication</source>
-          <target state="new">Two-Factor Authentication</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the 'Two-Factor Authentication' section of the security settings.</note>
-          </trans-unit>
-        <trans-unit id="Resx/UI_EnableTwoFactorAuth" translate="yes" xml:space="preserve">
-          <source>Enable Two-Factor Authentication</source>
-          <target state="new">Enable Two-Factor Authentication</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the "toggle" or "switch" button to enable/disable the Two-Factor Authentication.</note>
-          </trans-unit>
-        <trans-unit id="Resx/UI_Restore" translate="yes" xml:space="preserve">
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_Verify" translate="yes" space="preserve">
+          <source>Verify</source>
+          <target state="translated">تحقق</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Verify' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_CopySeed" translate="yes" space="preserve">
+          <source>Copy seed</source>
+          <target state="translated">Copy seed</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label of the button to copy the seed to enable the Multi-Factor Authentication - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_LostAuthDeviceQuestion" translate="yes" space="preserve">
+          <source>Lost your Authenticator device?</source>
+          <target state="translated">Lost your Authenticator device?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any link/button to help the user in case lost the authentication device for MFA - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_ChangePasswordDescription" translate="yes" space="preserve">
+          <source>Enter and confirm your new password and click save.</source>
+          <target state="translated">ادخل وتاكد من كلمة المرور الجديدة ثم اضغط حفظ</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Text to describe the change password process.</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_Export" translate="yes" space="preserve">
+          <source>Export</source>
+          <target state="translated">تصدير</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Export' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_Restore" translate="yes" space="preserve">
           <source>Restore</source>
-          <target state="new">Restore</target>
+          <target state="translated">الاستعادة</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Restore' button, link, text, title, etc. For example for restore files from the rubbish bin - (String as short as possible).</note>
-          </trans-unit>
-        <trans-unit id="Resx/UI_UsedCache" translate="yes" xml:space="preserve">
+        </trans-unit>
+        <trans-unit id="Resx/UI_UsedCache" translate="yes" space="preserve">
           <source>Used cache</source>
-          <target state="new">Used cache</target>
+          <target state="translated">Used cache</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label to indicate the amount of used cache - (String as short as possible).</note>
-          </trans-unit>
-        <trans-unit id="Resx/UI_OpenIn" translate="yes" xml:space="preserve">
+        </trans-unit>
+        <trans-unit id="Resx/UI_OpenIn" translate="yes" space="preserve">
           <source>Open in…</source>
-          <target state="new">Open in…</target>
+          <target state="translated">فتح في...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Open in...' button, link, text, title, etc. to open a file or other kind of resource with a certain app - (String as short as possible).</note>
-          </trans-unit>
+        </trans-unit>
         <trans-unit id="Resx/UI_FindApp" translate="yes" xml:space="preserve">
           <source>Find app</source>
           <target state="new">Find app</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Find app' button, link, text, title, etc, to find an app to open a file, resource, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_SessionManagement" translate="yes" xml:space="preserve">
-          <source>Session Management</source>
-          <target state="new">Session Management</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the "Settings" option to manage sessions - (String as short as possible).</note>
-          </trans-unit>
-        <trans-unit id="Resx/UI_TestPassword" translate="yes" xml:space="preserve">
-          <source>Test Password</source>
-          <target state="new">Test Password</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Test Password' button, link, text, title, etc. - (String as short as possible).</note>
-          </trans-unit>
-        <trans-unit id="Resx/UI_Close" translate="yes" xml:space="preserve">
-          <source>Close</source>
-          <target state="new">Close</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Close' button, link, etc. - (String as short as possible).</note>
-          </trans-unit>
-        <trans-unit id="Resx/UI_BackupRecoveryKey" translate="yes" xml:space="preserve">
-          <source>Backup Recovery Key</source>
-          <target state="new">Backup Recovery Key</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Backup Recovery Key' button, link, text, title, etc. - (String as short as possible).
-NOTE: Max. length 20 characters.</note>
-          </trans-unit>
-        <trans-unit id="Resx/UI_DoNotShowMeAgain" translate="yes" xml:space="preserve">
-          <source>Don’t show me again</source>
-          <target state="new">Don’t show me again</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for a check box included into a dialog to indicate don't show it again.</note>
-          </trans-unit>
       </group>
     </body>
   </file>

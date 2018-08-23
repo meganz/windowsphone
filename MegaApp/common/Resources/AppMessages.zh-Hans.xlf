@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en" target-language="zh-Hans" original="AppMessages.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp81" product-version="1.0.0.0" build-num="0">
+  <file datatype="xml" source-language="en" target-language="en" original="AppMessages.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp81" product-version="1.0.0.0" build-num="0">
     <header>
       <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="3.1.1250.0" tool-company="Microsoft" />
     </header>
@@ -651,17 +651,17 @@ Please try to save/copy the file to your device’s internal memory instead.</so
         </trans-unit>
         <trans-unit id="Resx/CurrentPinLockCodeDoNotMatch" translate="yes" space="preserve">
           <source>Current PIN code is incorrect or does not match</source>
-          <target state="translated">当前的PIN码不正确或不匹配</target>
+          <target state="translated">当前PIN码不正确或不匹配</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user is trying to change the PIN lock code and introduces an incorrect code into the field for the current PIN lock code. Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/CurrentPinLockCodeDoNotMatch_Title" translate="yes" space="preserve">
           <source>Current PIN code is incorrect</source>
-          <target state="translated">与当前的PIN码不匹配</target>
+          <target state="translated">当前PIN码不正确</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user is trying to change the PIN lock code and introduces an incorrect code into the field for the current PIN lock code - (String as short as possible). Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_RecoveryKeyCopied" translate="yes" space="preserve">
           <source>The Recovery Key has been copied to the clipboard. Please store it in a safe place.</source>
-          <target state="translated">已复制还原金钥至剪贴簿</target>
+          <target state="translated">恢复秘钥已复制到剪贴板。请妥善保管。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_RecoveryKeyCopied_Title" translate="yes" space="preserve">
@@ -1635,149 +1635,149 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="translated">SSL证书错误</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_RecoveryKeyExportFailed_Title" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/AM_PasswordReminder" translate="yes" space="preserve">
+          <source>Due to MEGA’s encryption technology you are unable to reset your password without data loss. Please make sure you remember your password.</source>
+          <target state="translated">由于MEGA的加密技术，您无法在不丢失数据的情况下重设密码。请确保你记得你的密码。</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message to describe the purpose of the password reminder dialog.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_PasswordReminder_Title" translate="yes" space="preserve">
+          <source>Do you remember your password?</source>
+          <target state="translated">你还记得本帐号的密码吗？</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the password reminder dialog.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_TestPassword" translate="yes" space="preserve">
+          <source>Please test your password below to ensure you remember it. If you lose your password, you will lose access to all your data.</source>
+          <target state="translated">请输入您的密码来确认是否正确。若您忘记密码了，您有可能因此而丢失储存的数据。</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message to describe the purpose of the dialog to test the password.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_TestPasswordSuccess" translate="yes" space="preserve">
+          <source>Password accepted, we still recommend you back up your Recovery Key.</source>
+          <target state="translated">密码已被接受，我们仍建议您备份您的恢复金匙。</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message displayed when the password test result is ok.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_TestPasswordWarning" translate="yes" space="preserve">
+          <source>Wrong password! Backup your Recovery Key as soon as possible!</source>
+          <target state="translated">密码错误！尽快备份您的恢复金匙！</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Warning message displayed when the password test fails.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_TestPassword_Title" translate="yes" space="preserve">
+          <source>Test Password</source>
+          <target state="translated">密码测试</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the test password dialog.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_RecoveryKeyExported" translate="yes" space="preserve">
+          <source>The Recovery Key has been exported. Please store it in a safe place.</source>
+          <target state="translated">恢复秘钥已导出。请妥善保管。</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog or notification displayed in cases that the app has succesful exported the recovery key.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_RecoveryKeyExported_Title" translate="yes" space="preserve">
+          <source>Recovery Key exported</source>
+          <target state="translated">恢复金匙已导出</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog or notification displayed in cases that the app has succesful exported the recovery key.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_RecoveryKeyExportFailed" translate="yes" space="preserve">
+          <source>Failed to export the Recovery Key. Please try again.</source>
+          <target state="translated">未能导出恢复金匙。请再试一次。</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog or notification displayed in cases that the app has not succesful exported the recovery key.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_RecoveryKeyExportFailed_Title" translate="yes" space="preserve">
           <source>Recovery Key export failed</source>
-          <target state="new">Recovery Key export failed</target>
+          <target state="translated">未能导出恢复金匙。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog or notification displayed in cases that the app has not succesful exported the recovery key.</note>
-          </trans-unit>
-        <trans-unit id="Resx/AM_CloseOtherSessionsQuestionMessage" translate="yes" xml:space="preserve">
+        </trans-unit>
+        <trans-unit id="Resx/AM_CloseOtherSessionsQuestionMessage" translate="yes" space="preserve">
           <source>Do you want to close all other sessions? This will log you out on all other active sessions except the current one.</source>
-          <target state="new">Do you want to close all other sessions? This will log you out on all other active sessions except the current one.</target>
+          <target state="translated">是否关闭所有其他会话？这会将您注销到除当前会话之外的所有其他活动会话。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed to ask the user to confirm want to close all the other sessions.</note>
-          </trans-unit>
-        <trans-unit id="Resx/AM_2FA_SetupDialogTitle" translate="yes" xml:space="preserve">
+        </trans-unit>
+        <trans-unit id="Resx/AM_2FA_SetupDialogDescription" translate="yes" space="preserve">
+          <source>Two-factor authentication is a second layer of security for your account. Which means that even if someone knows your password they cannot access it, without also having access to the six digit code only you have access to.</source>
+          <target state="translated">双重验证是您账户的第二层安全保护。即使他人得知您的密码，无六位数验证码也无权对其访问，因此只有您拥有访问权限。</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Description text of the dialog displayed to start setup the Two-Factor Authentication</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_2FA_SetupDialogTitle" translate="yes" space="preserve">
           <source>Why do you need two-factor authentication?</source>
-          <target state="new">Why do you need two-factor authentication?</target>
+          <target state="translated">为什么你需要双重验证？</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed to start setup the Two-Factor Authentication</note>
-          </trans-unit>
-        <trans-unit id="Resx/AM_InvalidCode" translate="yes" xml:space="preserve">
+        </trans-unit>
+        <trans-unit id="Resx/AM_InvalidCode" translate="yes" space="preserve">
           <source>This code isn’t right, please try again.</source>
-          <target state="new">This code isn’t right, please try again.</target>
+          <target state="translated">此验证码不正确，请再试一次。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message displayed when the user is trying to insert and invalid code, for example the 6-digit code of the Multi-Factor Authentication.</note>
-          </trans-unit>
-        <trans-unit id="Resx/AM_2FA_EnabledDialogTitle" translate="yes" xml:space="preserve">
+        </trans-unit>
+        <trans-unit id="Resx/AM_2FA_EnabledDialogDescription" translate="yes" space="preserve">
+          <source>Next time you login to your account you will be asked to enter a 6-digit code provided by your Authenticator app.</source>
+          <target state="translated">在您下次登录账户时，系统会要求您输入由验证程序提供的6位数验证码。</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Description text of the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_2FA_EnabledDialogTitle" translate="yes" space="preserve">
           <source>Two-Factor Authentication Enabled</source>
-          <target state="new">Two-Factor Authentication Enabled</target>
+          <target state="translated">双重验证已启用</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title text of the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication.</note>
-          </trans-unit>
-        <trans-unit id="Resx/AM_MFA_SeedCopied_Title" translate="yes" xml:space="preserve">
+        </trans-unit>
+        <trans-unit id="Resx/AM_MFA_SeedCopied" translate="yes" space="preserve">
+          <source>The seed has been copied to your clipboard.</source>
+          <target state="translated">种子已被复制到您的剪贴板。</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the seed needed to enable the Multi-Factor Authentication has been copied successfully to the clipboard.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_MFA_SeedCopiedFailed" translate="yes" space="preserve">
+          <source>Failed to copy the seed to your clipboard. Please try again.</source>
+          <target state="translated">无法将种子复制到剪贴板。 请再试一次。</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed if fails the process to copy the seed needed to enable the Multi-Factor Authentication to the clipboard.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_MFA_SeedCopiedFailed_Title" translate="yes" space="preserve">
+          <source>Seed copy failed</source>
+          <target state="translated">种子复制失败</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed if fails the process to copy the seed needed to enable the Multi-Factor Authentication to the clipboard.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_MFA_SeedCopied_Title" translate="yes" space="preserve">
           <source>Seed copied</source>
-          <target state="new">Seed copied</target>
+          <target state="translated">种子已复制</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the seed needed to enable the Multi-Factor Authentication has been copied successfully to the clipboard.</note>
-          </trans-unit>
-        <trans-unit id="Resx/AM_2FA_InputAppCodeDialogMessage" translate="yes" xml:space="preserve">
+        </trans-unit>
+        <trans-unit id="Resx/AM_2FA_InputAppCodeDialogMessage" translate="yes" space="preserve">
           <source>Please enter the code generated by your authentication app</source>
-          <target state="new">Please enter the code generated by your authentication app</target>
+          <target state="translated">请输入验证程序中生成的验证码</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Description text of the dialog displayed to introduce the 6-digit code for the MFA.</note>
-          </trans-unit>
-        <trans-unit id="Resx/AM_2FA_DisableDialogTitle" translate="yes" xml:space="preserve">
+        </trans-unit>
+        <trans-unit id="Resx/AM_2FA_DisableDialogTitle" translate="yes" space="preserve">
           <source>Disable Two-Factor Authentication</source>
-          <target state="new">Disable Two-Factor Authentication</target>
+          <target state="translated">禁用双重验证</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed to disable the Two-Factor Authentication.</note>
-          </trans-unit>
-        <trans-unit id="Resx/AM_2FA_EnabledDialogRecommendation" translate="yes" xml:space="preserve">
+        </trans-unit>
+        <trans-unit id="Resx/AM_2FA_EnabledDialogRecommendation" translate="yes" space="preserve">
           <source>If you lose access to your account after enabling 2FA and you have not backed up your Recovery Key, MEGA can’t help you gain access to it again.
 Ensure you back up your recovery key.</source>
-          <target state="new">If you lose access to your account after enabling 2FA and you have not backed up your Recovery Key, MEGA can’t help you gain access to it again.
-Ensure you back up your recovery key.</target>
+          <target state="translated">如果您在启用双重验证后失去对帐户的访问权限，并且尚未备份恢复密钥，MEGA则无法帮您再次访问它。
+请确保您已备份恢复密钥。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text recommending export the Recovery Key in the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication. KEEP the multi-line format.</note>
-          </trans-unit>
-        <trans-unit id="Resx/AM_2FA_DisabledDialogTitle" translate="yes" xml:space="preserve">
+        </trans-unit>
+        <trans-unit id="Resx/AM_2FA_DisabledDialogTitle" translate="yes" space="preserve">
           <source>Two-Factor Authentication Disabled</source>
-          <target state="new">Two-Factor Authentication Disabled</target>
+          <target state="translated">双重验证已禁用</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title text of the dialog displayed to indicate that the user has successfully disabled the Two-Factor Authentication.</note>
-          </trans-unit>
-        <trans-unit id="Resx/AM_MFA_SeedCopiedFailed_Title" translate="yes" xml:space="preserve">
-          <source>Seed copy failed</source>
-          <target state="new">Seed copy failed</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed if fails the process to copy the seed needed to enable the Multi-Factor Authentication to the clipboard.</note>
-          </trans-unit>
-        <trans-unit id="Resx/AM_MFA_SeedCopiedFailed" translate="yes" xml:space="preserve">
-          <source>Failed to copy the seed to your clipboard. Please try again.</source>
-          <target state="new">Failed to copy the seed to your clipboard. Please try again.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed if fails the process to copy the seed needed to enable the Multi-Factor Authentication to the clipboard.</note>
-          </trans-unit>
-        <trans-unit id="Resx/AM_MFA_SeedCopied" translate="yes" xml:space="preserve">
-          <source>The seed has been copied to your clipboard.</source>
-          <target state="new">The seed has been copied to your clipboard.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the seed needed to enable the Multi-Factor Authentication has been copied successfully to the clipboard.</note>
-          </trans-unit>
-        <trans-unit id="Resx/AM_2FA_EnabledDialogDescription" translate="yes" xml:space="preserve">
-          <source>Next time you login to your account you will be asked to enter a 6-digit code provided by your authentification app.</source>
-          <target state="new">Next time you login to your account you will be asked to enter a 6-digit code provided by your authentification app.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Description text of the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication.</note>
-          </trans-unit>
-        <trans-unit id="Resx/AM_2FA_SetupDialogDescription" translate="yes" xml:space="preserve">
-          <source>Two-factor authentication is a second layer of security for your account. Which means that even if someone knows your password they cannot access it, without also having access to the six digit code only you have access to.</source>
-          <target state="new">Two-factor authentication is a second layer of security for your account. Which means that even if someone knows your password they cannot access it, without also having access to the six digit code only you have access to.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Description text of the dialog displayed to start setup the Two-Factor Authentication</note>
-          </trans-unit>
-        <trans-unit id="Resx/AM_RestoreMultiFromRubbishBinFailed" translate="yes" xml:space="preserve">
+        </trans-unit>
+        <trans-unit id="Resx/AM_RestoreFromRubbishBinFailed" translate="yes" space="preserve">
+          <source>Failed to restore ‘{0}’ from rubbish bin. Please try again.</source>
+          <target state="translated">无法从垃圾桶恢复‘{0}’。请再试一次。</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to restore a node to the rubbish bin failed.
+Preserve the '{0}' code because is for include the file/folder name in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_RestoreFromRubbishBinFailed_Title" translate="yes" space="preserve">
+          <source>Restore from rubbish bin failed</source>
+          <target state="translated">从垃圾桶恢复失败</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to restore nodes from the rubbish bin failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_RestoreMultiFromRubbishBinFailed" translate="yes" space="preserve">
           <source>Failed to restore items from rubbish bin. Please try again.</source>
-          <target state="new">Failed to restore items from rubbish bin. Please try again.</target>
+          <target state="translated">无法从垃圾桶中恢复。请再试一次。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to restore multiple nodes from the rubbish bin failed.</note>
-          </trans-unit>
+        </trans-unit>
         <trans-unit id="Resx/AM_MFA_CheckStatusFailed" translate="yes" xml:space="preserve">
           <source>Failed to check the Multi-Factor Authentication status.</source>
           <target state="new">Failed to check the Multi-Factor Authentication status.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed if fails the process to check the Multi-Factor Authentication status.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_RestoreFromRubbishBinFailed_Title" translate="yes" xml:space="preserve">
-          <source>Restore from rubbish bin failed</source>
-          <target state="new">Restore from rubbish bin failed</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to restore nodes from the rubbish bin failed - (String as short as possible).</note>
-          </trans-unit>
-        <trans-unit id="Resx/AM_RestoreFromRubbishBinFailed" translate="yes" xml:space="preserve">
-          <source>Failed to restore ‘{0}’ from rubbish bin. Please try again.</source>
-          <target state="new">Failed to restore ‘{0}’ from rubbish bin. Please try again.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to restore a node to the rubbish bin failed.
-Preserve the '{0}' code because is for include the file/folder name in runtime.</note>
-          </trans-unit>
-        <trans-unit id="Resx/AM_RecoveryKeyExportFailed" translate="yes" xml:space="preserve">
-          <source>Failed to export the Recovery Key. Please try again.</source>
-          <target state="new">Failed to export the Recovery Key. Please try again.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog or notification displayed in cases that the app has not succesful exported the recovery key.</note>
-          </trans-unit>
-        <trans-unit id="Resx/AM_RecoveryKeyExported_Title" translate="yes" xml:space="preserve">
-          <source>Recovery Key exported</source>
-          <target state="new">Recovery Key exported</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog or notification displayed in cases that the app has succesful exported the recovery key.</note>
-          </trans-unit>
-        <trans-unit id="Resx/AM_RecoveryKeyExported" translate="yes" xml:space="preserve">
-          <source>The Recovery Key has been exported. Please store it in a safe place.</source>
-          <target state="new">The Recovery Key has been exported. Please store it in a safe place.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog or notification displayed in cases that the app has succesful exported the recovery key.</note>
-          </trans-unit>
-        <trans-unit id="Resx/AM_TestPassword_Title" translate="yes" xml:space="preserve">
-          <source>Test Password</source>
-          <target state="new">Test Password</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the test password dialog.</note>
-          </trans-unit>
-        <trans-unit id="Resx/AM_TestPasswordWarning" translate="yes" xml:space="preserve">
-          <source>Wrong password! Backup your Recovery Key as soon as possible!</source>
-          <target state="new">Wrong password! Backup your Recovery Key as soon as possible!</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Warning message displayed when the password test fails.</note>
-          </trans-unit>
-        <trans-unit id="Resx/AM_TestPasswordSuccess" translate="yes" xml:space="preserve">
-          <source>Password accepted, we still recommend you back up your Recovery Key.</source>
-          <target state="new">Password accepted, we still recommend you back up your Recovery Key.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message displayed when the password test result is ok.</note>
-          </trans-unit>
-        <trans-unit id="Resx/AM_TestPassword" translate="yes" xml:space="preserve">
-          <source>Please test your password below to ensure you remember it. If you lose your password, you will lose access to all your data.</source>
-          <target state="new">Please test your password below to ensure you remember it. If you lose your password, you will lose access to all your data.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message to describe the purpose of the dialog to test the password.</note>
-          </trans-unit>
-        <trans-unit id="Resx/AM_PasswordReminder_Title" translate="yes" xml:space="preserve">
-          <source>Do you remember your password?</source>
-          <target state="new">Do you remember your password?</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the password reminder dialog.</note>
-          </trans-unit>
-        <trans-unit id="Resx/AM_PasswordReminder" translate="yes" xml:space="preserve">
-          <source>Due to MEGA’s encryption technology you are unable to reset your password without data loss. Please make sure you remember your password.</source>
-          <target state="new">Due to MEGA’s encryption technology you are unable to reset your password without data loss. Please make sure you remember your password.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message to describe the purpose of the password reminder dialog.</note>
-          </trans-unit>
       </group>
     </body>
   </file>

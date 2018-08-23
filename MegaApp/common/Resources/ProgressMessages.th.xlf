@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en" target-language="th" original="ProgressMessages.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp81" product-version="1.0.0.0" build-num="0">
+  <file datatype="xml" source-language="en" target-language="en" original="ProgressMessages.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp81" product-version="1.0.0.0" build-num="0">
     <header>
       <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="3.1.1250.0" tool-company="Microsoft" />
     </header>
@@ -273,9 +273,9 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
           <target state="translated">เซิร์ฟเวอร์ไม่ว่าง กรุณารอสักครู่</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when servers are too busy. SDK is waiting for the server to complete a request due to a HTTP error 500  - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/PM_Restoring" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/PM_Restoring" translate="yes" space="preserve">
           <source>Restoring…</source>
-          <target state="new">Restoring…</target>
+          <target state="translated">กำลังเรียกคืน...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when restoring node(s) from the rubbish bin - (String as short as possible).</note>
         </trans-unit>
       </group>

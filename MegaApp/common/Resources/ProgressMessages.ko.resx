@@ -268,11 +268,12 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when confirming a MEGA account - (String as short as possible).</comment>
   </data>
   <data name="PM_CreateAccount" xml:space="preserve">
-    <value>계정 생성 중...</value>
+    <value>계정 생성 중...
+                                </value>
     <comment>Progress indicator message when creating a MEGA account - (String as short as possible).</comment>
   </data>
   <data name="PM_CreateFolder" xml:space="preserve">
-    <value>Creating folder…</value>
+    <value>폴더 생성중...</value>
     <comment>Progress indicator message when creating a folder - (String as short as possible).</comment>
   </data>
   <data name="PM_GetLink" xml:space="preserve">
@@ -280,11 +281,13 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when getting a link to export a node - (String as short as possible).</comment>
   </data>
   <data name="PM_Login" xml:space="preserve">
-    <value>로그인 중...</value>
+    <value>로그인 중...
+                                </value>
     <comment>Progress indicator message when logging in - (String as short as possible).</comment>
   </data>
   <data name="PM_Logout" xml:space="preserve">
-    <value>로그아웃 중...</value>
+    <value>로그아웃 중...
+                                </value>
     <comment>Progress indicator message when logging out - (String as short as possible).</comment>
   </data>
   <data name="PM_RemoveLink" xml:space="preserve">
@@ -330,5 +333,9 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
   <data name="PM_ServersBusy" xml:space="preserve">
     <value>서버가 너무 바쁩니다. 잠시 기다리세요.</value>
     <comment>Progress indicator message when servers are too busy. SDK is waiting for the server to complete a request due to a HTTP error 500  - (String as short as possible).</comment>
+  </data>
+  <data name="PM_Restoring" xml:space="preserve">
+    <value>복원중...</value>
+    <comment>Progress indicator message when restoring node(s) from the rubbish bin - (String as short as possible).</comment>
   </data>
 </root>
