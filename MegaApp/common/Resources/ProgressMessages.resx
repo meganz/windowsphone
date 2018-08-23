@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -118,31 +118,31 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="PM_CancelSubscription" xml:space="preserve">
-    <value>Canceling subscription...</value>
+    <value>Canceling subscription…</value>
     <comment>Progress indicator message when canceling a subscription - (String as short as possible).</comment>
   </data>
   <data name="CancelTransfer" xml:space="preserve">
-    <value>Cancelling transfer...</value>
+    <value>Cancelling transfer…</value>
     <comment>Progress indicator message when canceling a transfer - (String as short as possible).</comment>
   </data>
   <data name="PM_ChangePassword" xml:space="preserve">
-    <value>Changing password...</value>
+    <value>Changing password…</value>
     <comment>Progress indicator message when changing the MEGA account password - (String as short as possible).</comment>
   </data>
   <data name="CleanRubbishBin" xml:space="preserve">
-    <value>Clearing the rubbish bin...</value>
+    <value>Clearing the rubbish bin…</value>
     <comment>Progress indicator message when emptying the rubbish bin - (String as short as possible).</comment>
   </data>
   <data name="PM_CloseAllSessions" xml:space="preserve">
-    <value>Closing all sessions...</value>
+    <value>Closing all sessions…</value>
     <comment>Progress indicator message when clossing all sessions - (String as short as possible).</comment>
   </data>
   <data name="PM_CloseSession" xml:space="preserve">
-    <value>Closing session...</value>
+    <value>Closing session…</value>
     <comment>Progress indicator message when clossing a session - (String as short as possible).</comment>
   </data>
   <data name="PM_ConfirmAccount" xml:space="preserve">
-    <value>Confirming account...</value>
+    <value>Confirming account…</value>
     <comment>Progress indicator message when confirming a MEGA account - (String as short as possible).</comment>
   </data>
   <data name="PM_CreateAccount" xml:space="preserve">
@@ -154,73 +154,73 @@
     <comment>Progress indicator message when creating a folder - (String as short as possible).</comment>
   </data>
   <data name="CreditCardStore" xml:space="preserve">
-    <value>Storing credit card...</value>
+    <value>Storing credit card…</value>
     <comment>Progress indicator message when storing a credit card - (String as short as possible).</comment>
   </data>
   <data name="DeleteNode" xml:space="preserve">
-    <value>Deleting '{0}'...</value>
+    <value>Deleting ‘{0}’…</value>
     <comment>Progress indicator message when deleting a node (folder or file) indicating the name - (String as short as possible).
 Preserve the '{0}' code because is for include node name.</comment>
   </data>
   <data name="DownloadLink" xml:space="preserve">
-    <value>Retrieving download link...</value>
+    <value>Retrieving download link…</value>
     <comment>Progress indicator message when retieving a download link - (String as short as possible).</comment>
   </data>
   <data name="FastLogin" xml:space="preserve">
-    <value>Resuming session...</value>
+    <value>Resuming session…</value>
     <comment>Progress indicator message when resuming a session - (String as short as possible).</comment>
   </data>
   <data name="FetchingNodes" xml:space="preserve">
-    <value>Fetching files and folders... [{0}]</value>
+    <value>Fetching files and folders… [{0}]</value>
     <comment>Progress indicator message when loading nodes from MEGA web service - (String as short as possible).
 Preserve the [{0}] code because is for include current number of fetched nodes.</comment>
   </data>
   <data name="GetAccountDetails" xml:space="preserve">
-    <value>Getting account details...</value>
+    <value>Getting account details…</value>
     <comment>Progress indicator message when getting account details - (String as short as possible).</comment>
   </data>
   <data name="GetContactData" xml:space="preserve">
-    <value>Getting contact data...</value>
+    <value>Getting contact data…</value>
     <comment>Progress indicator message when getting contact details - (String as short as possible).</comment>
   </data>
   <data name="PM_GetLink" xml:space="preserve">
-    <value>Getting link...</value>
+    <value>Getting link…</value>
     <comment>Progress indicator message when getting a link to export a node - (String as short as possible).</comment>
   </data>
   <data name="GetPaymentMethods" xml:space="preserve">
-    <value>Getting payment methods...</value>
+    <value>Getting payment methods…</value>
     <comment>Progress indicator message when getting payment methods - (String as short as possible).</comment>
   </data>
   <data name="GetPaymentUrl" xml:space="preserve">
-    <value>Getting payment URL...</value>
+    <value>Getting payment URL…</value>
     <comment>Progress indicator message when getting a payment Url - (String as short as possible).</comment>
   </data>
   <data name="GetPreview" xml:space="preserve">
-    <value>Getting preview...</value>
+    <value>Getting preview…</value>
     <comment>Progress indicator message when getting a preview - (String as short as possible).</comment>
   </data>
   <data name="GetUserData" xml:space="preserve">
-    <value>Getting user data...</value>
+    <value>Getting user data…</value>
     <comment>Progress indicator message when getting account details - (String as short as possible).</comment>
   </data>
   <data name="ImportFile" xml:space="preserve">
-    <value>Importing file...</value>
+    <value>Importing file…</value>
     <comment>Progress indicator message when importing a file - (String as short as possible).</comment>
   </data>
   <data name="InviteContactAdd" xml:space="preserve">
-    <value>Sending contact request...</value>
+    <value>Sending contact request…</value>
     <comment>Progress indicator message when sending a contact request - (String as short as possible).</comment>
   </data>
   <data name="InviteContactDelete" xml:space="preserve">
-    <value>Deleting contact request...</value>
+    <value>Deleting contact request…</value>
     <comment>Progress indicator message when deleting a contact request - (String as short as possible).</comment>
   </data>
   <data name="InviteContactRemind" xml:space="preserve">
-    <value>Reminding contact about the request...</value>
+    <value>Reminding contact about the request…</value>
     <comment>Progress indicator message when reminding a contact request - (String as short as possible).</comment>
   </data>
   <data name="LoadNodes" xml:space="preserve">
-    <value>Building view...</value>
+    <value>Building view…</value>
     <comment>Progress indicator message when building a nodes view - (String as short as possible).</comment>
   </data>
   <data name="PM_Login" xml:space="preserve">
@@ -232,87 +232,87 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when logging out - (String as short as possible).</comment>
   </data>
   <data name="MoveNode" xml:space="preserve">
-    <value>Moving...</value>
+    <value>Moving…</value>
     <comment>Progress indicator message when moving a node to a different parent - (String as short as possible).</comment>
   </data>
   <data name="NodeToTrash" xml:space="preserve">
-    <value>Moving to Rubbish bin...</value>
+    <value>Moving to Rubbish bin…</value>
     <comment>Progress indicator message when moving a node to the rubbish bin (trash) - (String as short as possible).</comment>
   </data>
   <data name="PauseTransfers" xml:space="preserve">
-    <value>Pausing transfers...</value>
+    <value>Pausing transfers…</value>
     <comment>Progress indicator message when pausing transfers - (String as short as possible).</comment>
   </data>
   <data name="PrepareDownloads" xml:space="preserve">
-    <value>Preparing downloads...</value>
+    <value>Preparing downloads…</value>
     <comment>Progress indicator message when preparing downloads - (String as short as possible).</comment>
   </data>
   <data name="PrepareUploads" xml:space="preserve">
-    <value>Preparing uploads...</value>
+    <value>Preparing uploads…</value>
     <comment>Progress indicator message when preparing uploads - (String as short as possible).</comment>
   </data>
   <data name="RemoveContact" xml:space="preserve">
-    <value>Removing contact...</value>
+    <value>Removing contact…</value>
     <comment>Progress indicator message when removing a contact - (String as short as possible).</comment>
   </data>
   <data name="RemoveFromOffline" xml:space="preserve">
-    <value>Removing from offline...</value>
+    <value>Removing from offline…</value>
     <comment>Progress indicator message when removing folders/files from offline - (String as short as possible).</comment>
   </data>
   <data name="PM_RemoveLink" xml:space="preserve">
-    <value>Removing link...</value>
+    <value>Removing link…</value>
     <comment>Progress indicator message when removing a link to export a node - (String as short as possible).</comment>
   </data>
   <data name="RemoveNode" xml:space="preserve">
-    <value>Removing...</value>
+    <value>Removing…</value>
     <comment>Progress indicator message when removing a node (file or folder) - (String as short as possible).</comment>
   </data>
   <data name="RenameNode" xml:space="preserve">
-    <value>Renaming...</value>
+    <value>Renaming…</value>
     <comment>Progress indicator message when renaming a node - (String as short as possible).</comment>
   </data>
   <data name="ReplyContactRequestAccept" xml:space="preserve">
-    <value>Accepting contact request...</value>
+    <value>Accepting contact request…</value>
     <comment>Progress indicator message when accepting a contact request - (String as short as possible).</comment>
   </data>
   <data name="ReplyContactRequestDeny" xml:space="preserve">
-    <value>Denying contact request...</value>
+    <value>Denying contact request…</value>
     <comment>Progress indicator message when denying a contact request - (String as short as possible).</comment>
   </data>
   <data name="ReplyContactRequestIgnore" xml:space="preserve">
-    <value>Ignoring contact request...</value>
+    <value>Ignoring contact request…</value>
     <comment>Progress indicator message when ignoring a contact request - (String as short as possible).</comment>
   </data>
   <data name="ResumeTransfers" xml:space="preserve">
-    <value>Resuming transfers...</value>
+    <value>Resuming transfers…</value>
     <comment>Progress indicator message when resuming transfers - (String as short as possible).</comment>
   </data>
   <data name="SaveForOffline" xml:space="preserve">
-    <value>Saving for offline...</value>
+    <value>Saving for offline…</value>
     <comment>Progress indicator message when saving folders/files for offline - (String as short as possible).</comment>
   </data>
   <data name="PM_UpgradeAccount" xml:space="preserve">
-    <value>Upgrading account...</value>
+    <value>Upgrading account…</value>
     <comment>Progress indicator message when upgrading an account - (String as short as possible).</comment>
   </data>
   <data name="PM_OpenFileLink" xml:space="preserve">
-    <value>Opening file link...</value>
+    <value>Opening file link…</value>
     <comment>Progress indicator message when opening a file link to import/download - (String as short as possible).</comment>
   </data>
   <data name="PM_OpenFolderLink" xml:space="preserve">
-    <value>Opening folder link...</value>
+    <value>Opening folder link…</value>
     <comment>Progress indicator message when opening a folder link to import/download - (String as short as possible).</comment>
   </data>
   <data name="PM_CopyNode" xml:space="preserve">
-    <value>Copying...</value>
+    <value>Copying…</value>
     <comment>Progress indicator message when copying a node to a different parent - (String as short as possible).</comment>
   </data>
   <data name="PM_ImportFolder" xml:space="preserve">
-    <value>Importing folder...</value>
+    <value>Importing folder…</value>
     <comment>Progress indicator message when importing a folder - (String as short as possible).</comment>
   </data>
   <data name="PM_ValidatePurchase" xml:space="preserve">
-    <value>Validating...</value>
+    <value>Validating…</value>
     <comment>Progress indicator message when validating purchase receipt - (String as short as possible).</comment>
   </data>
   <data name="PM_ApiLocked" xml:space="preserve">
@@ -332,7 +332,7 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when servers are too busy. SDK is waiting for the server to complete a request due to a HTTP error 500  - (String as short as possible).</comment>
   </data>
   <data name="PM_Restoring" xml:space="preserve">
-    <value>Restoring...</value>
+    <value>Restoring…</value>
     <comment>Progress indicator message when restoring node(s) from the rubbish bin - (String as short as possible).</comment>
   </data>
 </root>

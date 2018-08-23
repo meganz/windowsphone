@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en" target-language="ko" original="UiResources.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp81" product-version="1.0.0.0" build-num="0">
+  <file datatype="xml" source-language="en" target-language="en" original="UiResources.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp81" product-version="1.0.0.0" build-num="0">
     <header>
       <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="3.1.1250.0" tool-company="Microsoft" />
     </header>
@@ -67,8 +67,8 @@
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Email' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/EmptyFolder" translate="yes" space="preserve">
-          <source>empty folder</source>
-          <target state="translated">빈 폴더</target>
+          <source>Empty Folder</source>
+          <target state="translated">폴더에 파일이 없음</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty forder page - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/EmptyTransfers" translate="yes" space="preserve">
@@ -82,7 +82,7 @@
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Get link' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/LoadingPreview" translate="yes" space="preserve">
-          <source>Loading preview...</source>
+          <source>Loading preview…</source>
           <target state="translated">미리보기 불러오는 중...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label shown with an animation when the app is loading a preview - (String as short as possible).</note>
         </trans-unit>
@@ -394,8 +394,8 @@ Try to preserve the PIN uppercase word.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Capture' button, link, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ChangePinLock" translate="yes" space="preserve">
-          <source>Change PIN Lock</source>
-          <target state="translated">PIN 잠금 바꾸기</target>
+          <source>Change PIN Code</source>
+          <target state="translated">PIN 코드 바꾸기</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Change PIN Lock' button, link, text, title, etc. Try to preserve the PIN uppercase word. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CleanUpTransfers" translate="yes" space="preserve">
@@ -434,7 +434,7 @@ Try to preserve the PIN uppercase word.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Text 'Export Recovery Key' placed just before two buttons into the 'settings' page to allow see (copy/paste) and export the Recovery Key.</note>
         </trans-unit>
         <trans-unit id="Resx/ExportPhotoAlbumText" translate="yes" space="preserve">
-          <source>Export images to 'saved pictures' album after download</source>
+          <source>Export images to ‘saved pictures’ album after download</source>
           <target state="translated">다운로드 후 '저장된 사진' 앨범에 이미지 내보내기</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text placed just before a switch button (on/off) into the 'settings' page indicating if the app should export automatically images to the device photo album after download.</note>
         </trans-unit>
@@ -640,7 +640,7 @@ Preserve the PIN uppercase word.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the title of the init tour page dedicated to the easy access. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/InitTourPrivacy1" translate="yes" space="preserve">
-          <source>keep your files safe with MEGA's</source>
+          <source>keep your files safe with MEGA’s</source>
           <target state="translated">파일을 안전하게 지키세요. MEGA의</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label 'keep your files safe with MEGA's' for the first part of the sentence 'keep your files safe with MEGA's end-to-end encryption.', to build this sentence in two colors into the init tour page. Don't place '.' at the end of the string.  Keep all in lowercase less the word MEGA in uppercase.</note>
         </trans-unit>
@@ -995,7 +995,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the 'Upgrade now!' button of the dialog shown randomly when a user logs into a free account - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/WarningOutOfSpace" translate="yes" space="preserve">
-          <source>You're running out of space!</source>
+          <source>You’re running out of space!</source>
           <target state="translated">공간이 부족합니다!</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Warning message in Cloud Drive when the user is running out of space</note>
         </trans-unit>
@@ -1204,11 +1204,11 @@ Preserve the {0} code because is for include a number in runtime.</note>
           <target state="translated">새 비밀번호</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'New password' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_CloseOtherSessions" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_CloseOtherSessions" translate="yes" space="preserve">
           <source>Close other sessions</source>
-          <target state="new">Close other sessions</target>
+          <target state="translated">다른 세션 닫기</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Close other sessions' button, link, etc., to close all other active sessions except the current one - (String as short as possible).</note>
-          </trans-unit>
+        </trans-unit>
         <trans-unit id="Resx/UI_CloseSession" translate="yes" space="preserve">
           <source>Close session</source>
           <target state="translated">세션 닫기</target>
@@ -1235,8 +1235,8 @@ Preserve the {0} code because is for include a number in runtime.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Saved for offline' button, link, text, title, etc. - (String as short as possible, LESS THAN 22 CHARS).</note>
         </trans-unit>
         <trans-unit id="Resx/EmptyCloudDrive" translate="yes" space="preserve">
-          <source>No files in your cloud drive</source>
-          <target state="translated">클라우드 드라이브에 파일이 없습니다</target>
+          <source>No files in your Cloud Drive</source>
+          <target state="translated">당신의 클라우드 드라이브에 파일이 없습니다</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty cloud drive page - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/EmptyOffline" translate="yes" space="preserve">
@@ -1390,7 +1390,7 @@ NOTE: Keep the capital letter if possible.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a canceled transfer - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateCompleting" translate="yes" space="preserve">
-          <source>Completing...</source>
+          <source>Completing…</source>
           <target state="translated">완료중...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being completing - (String as short as possible).</note>
         </trans-unit>
@@ -1400,7 +1400,7 @@ NOTE: Keep the capital letter if possible.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a download transfer when is finished - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateDownloading" translate="yes" space="preserve">
-          <source>Downloading...</source>
+          <source>Downloading…</source>
           <target state="translated">다운로드중...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being downloading - (String as short as possible).</note>
         </trans-unit>
@@ -1420,7 +1420,7 @@ NOTE: Keep the capital letter if possible.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a paused transfer - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStatePreparing" translate="yes" space="preserve">
-          <source>Preparing...</source>
+          <source>Preparing…</source>
           <target state="translated">준비중...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being preparing - (String as short as possible).</note>
         </trans-unit>
@@ -1430,7 +1430,7 @@ NOTE: Keep the capital letter if possible.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is queued - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateRetrying" translate="yes" space="preserve">
-          <source>Retrying...</source>
+          <source>Retrying…</source>
           <target state="translated">재시도중...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being retrying - (String as short as possible).</note>
         </trans-unit>
@@ -1440,7 +1440,7 @@ NOTE: Keep the capital letter if possible.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of an upload transfer when is finished - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateUploading" translate="yes" space="preserve">
-          <source>Uploading...</source>
+          <source>Uploading…</source>
           <target state="translated">업로드 중...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being uploading - (String as short as possible).</note>
         </trans-unit>
@@ -1496,7 +1496,7 @@ NOTE: Keep the capital letter if possible.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_OpenBrowser" translate="yes" space="preserve">
           <source>Open browser</source>
-          <target state="translated">Open browser</target>
+          <target state="translated">브라우저 열기</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the button to allow the user open the default browser - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_Retry" translate="yes" space="preserve">
@@ -1504,41 +1504,77 @@ NOTE: Keep the capital letter if possible.</note>
           <target state="translated">재시도</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Retry' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_PlainText" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_DoNotShowMeAgain" translate="yes" space="preserve">
+          <source>Don’t show me again</source>
+          <target state="translated">다시 보여주지 마세요</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for a check box included into a dialog to indicate don't show it again.</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_BackupRecoveryKey" translate="yes" space="preserve">
+          <source>Backup Recovery Key</source>
+          <target state="translated">복구 키 백업</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Backup Recovery Key' button, link, text, title, etc. - (String as short as possible).
+NOTE: Max. length 20 characters.</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_Close" translate="yes" space="preserve">
+          <source>Close</source>
+          <target state="translated">닫기</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Close' button, link, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_TestPassword" translate="yes" space="preserve">
+          <source>Test Password</source>
+          <target state="translated">비밀번호 테스트</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Test Password' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_PlainText" translate="yes" space="preserve">
           <source>Plain text</source>
-          <target state="new">Plain text</target>
+          <target state="translated">평문</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Plain text' button, link, text, title, etc. - (String as short as possible).</note>
-          </trans-unit>
-        <trans-unit id="Resx/UI_EnablePinLock" translate="yes" xml:space="preserve">
-          <source>Enable PIN lock</source>
-          <target state="new">Enable PIN lock</target>
+        </trans-unit>
+        <trans-unit id="Resx/UI_EnablePinLock" translate="yes" space="preserve">
+          <source>Enable PIN code</source>
+          <target state="translated">PIN 코드 활성화</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the switch button to enable or disable the PIN lock code. Keep PIN uppercase - (String as short as possible).</note>
-          </trans-unit>
-        <trans-unit id="Resx/UI_RecoveryKeyDescription" translate="yes" xml:space="preserve">
+        </trans-unit>
+        <trans-unit id="Resx/UI_RecoveryKeyDescription" translate="yes" space="preserve">
           <source>Your Recovery Key allows you to login to your account even if you forget your password. Store it somewhere safe.</source>
-          <target state="new">Your Recovery Key allows you to login to your account even if you forget your password. Store it somewhere safe.</target>
+          <target state="translated">복구 키는 비밀번호를 잊어도 계정에 로그인할 수 있도록 해줍니다. 안전한 곳에 보관하세요.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label to describe the 'Recovery Key' and its purpose.</note>
-          </trans-unit>
-        <trans-unit id="Resx/UI_SessionManagementDescription" translate="yes" xml:space="preserve">
+        </trans-unit>
+        <trans-unit id="Resx/UI_SessionManagement" translate="yes" space="preserve">
+          <source>Session Management</source>
+          <target state="translated">세션 관리</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the "Settings" option to manage sessions - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_SessionManagementDescription" translate="yes" space="preserve">
           <source>This will log you out on all other active sessions except the current one. You will need to re-login to your other devices to continue using MEGA.</source>
-          <target state="new">This will log you out on all other active sessions except the current one. You will need to re-login to your other devices to continue using MEGA.</target>
+          <target state="translated">이것은 현재 세션을 제외한 모든 세션에서 로그아웃합니다. 다른 기기에서 MEGA를 계속해서 사용하려면 다시 로그인해야 합니다.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label to describe the "Session Management" option of the "Settings" section.</note>
-          </trans-unit>
-        <trans-unit id="Resx/UI_Warning" translate="yes" xml:space="preserve">
+        </trans-unit>
+        <trans-unit id="Resx/UI_Warning" translate="yes" space="preserve">
           <source>Warning</source>
-          <target state="new">Warning</target>
+          <target state="translated">경고</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Warning' title, message, etc. - (String as short as possible).</note>
-          </trans-unit>
-        <trans-unit id="Resx/UI_TwoFactorAuthSettingsDescription" translate="yes" xml:space="preserve">
+        </trans-unit>
+        <trans-unit id="Resx/UI_EnableTwoFactorAuth" translate="yes" space="preserve">
+          <source>Enable Two-Factor Authentication</source>
+          <target state="translated">2단계 인증 활성화</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the "toggle" or "switch" button to enable/disable the Two-Factor Authentication.</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_TwoFactorAuth" translate="yes" space="preserve">
+          <source>Two-Factor Authentication</source>
+          <target state="translated">2단계 인증</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the 'Two-Factor Authentication' section of the security settings.</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_TwoFactorAuthSettingsDescription" translate="yes" space="preserve">
           <source>Two-factor authentication is a second layer of security for your account.</source>
-          <target state="new">Two-factor authentication is a second layer of security for your account.</target>
+          <target state="translated">2단계 인증은 당신의 계정을 위한 보안의 두번째 층입니다.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Description for the 'Two-Factor Authentication' in the security settings section.</note>
-          </trans-unit>
-        <trans-unit id="Resx/UI_Setup2FA" translate="yes" xml:space="preserve">
+        </trans-unit>
+        <trans-unit id="Resx/UI_Setup2FA" translate="yes" space="preserve">
           <source>Setup Two-Factor Authentication</source>
-          <target state="new">Setup Two-Factor Authentication</target>
+          <target state="translated">2단계 인증 설정</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Setup Two-Factor Authentication' button, link, text, title, etc. - (String as short as possible).</note>
-          </trans-unit>
+        </trans-unit>
         <trans-unit id="Resx/UI_MFA_SetupStep2" translate="yes" xml:space="preserve">
           <source>After setting up your seed on your authenticator app enter the 6-digit code provided.</source>
           <target state="new">After setting up your seed on your authenticator app enter the 6-digit code provided.</target>
@@ -1549,92 +1585,57 @@ NOTE: Keep the capital letter if possible.</note>
           <target state="new">Scan or copy the seed directly into your authenticator app. Be sure to backup this seed to a safe place in case you lose your phone.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the step 1 to setup the Multi-Factor Authentication.</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_Verify" translate="yes" xml:space="preserve">
-          <source>Verify</source>
-          <target state="new">Verify</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Verify' button, link, text, title, etc. - (String as short as possible).</note>
-          </trans-unit>
-        <trans-unit id="Resx/UI_CopySeed" translate="yes" xml:space="preserve">
-          <source>Copy seed</source>
-          <target state="new">Copy seed</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label of the button to copy the seed to enable the Multi-Factor Authentication - (String as short as possible).</note>
-          </trans-unit>
-        <trans-unit id="Resx/UI_LostAuthDeviceQuestion" translate="yes" xml:space="preserve">
-          <source>Lost your authenticator device?</source>
-          <target state="new">Lost your authenticator device?</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any link/button to help the user in case lost the authentication device for MFA - (String as short as possible).</note>
-          </trans-unit>
-        <trans-unit id="Resx/UI_ChangePasswordDescription" translate="yes" xml:space="preserve">
-          <source>Enter and confirm your new password and click save.</source>
-          <target state="new">Enter and confirm your new password and click save.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Text to describe the change password process.</note>
-          </trans-unit>
-        <trans-unit id="Resx/UI_Export" translate="yes" xml:space="preserve">
-          <source>Export</source>
-          <target state="new">Export</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Export' button, link, text, title, etc. - (String as short as possible).</note>
-          </trans-unit>
-        <trans-unit id="Resx/UI_SixDigitCode" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_SixDigitCode" translate="yes" space="preserve">
           <source>6-digit code</source>
-          <target state="new">6-digit code</target>
+          <target state="needs-review-translation">6 digit code</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Placeholder text of the field to type the 6-digit code provided for the authenticator app to verify the Multi-Factor Authentication.</note>
-          </trans-unit>
-        <trans-unit id="Resx/UI_TwoFactorAuth" translate="yes" xml:space="preserve">
-          <source>Two-Factor Authentication</source>
-          <target state="new">Two-Factor Authentication</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the 'Two-Factor Authentication' section of the security settings.</note>
-          </trans-unit>
-        <trans-unit id="Resx/UI_EnableTwoFactorAuth" translate="yes" xml:space="preserve">
-          <source>Enable Two-Factor Authentication</source>
-          <target state="new">Enable Two-Factor Authentication</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the "toggle" or "switch" button to enable/disable the Two-Factor Authentication.</note>
-          </trans-unit>
-        <trans-unit id="Resx/UI_Restore" translate="yes" xml:space="preserve">
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_Verify" translate="yes" space="preserve">
+          <source>Verify</source>
+          <target state="translated">인증</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Verify' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_CopySeed" translate="yes" space="preserve">
+          <source>Copy seed</source>
+          <target state="translated">시드 복사</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label of the button to copy the seed to enable the Multi-Factor Authentication - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_LostAuthDeviceQuestion" translate="yes" space="preserve">
+          <source>Lost your Authenticator device?</source>
+          <target state="translated">인증기 장치를 잃어버렸나요?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any link/button to help the user in case lost the authentication device for MFA - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_ChangePasswordDescription" translate="yes" space="preserve">
+          <source>Enter and confirm your new password and click save.</source>
+          <target state="translated">새 비밀번호를 입력하고 확인한 후 저장을 클릭하세요.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Text to describe the change password process.</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_Export" translate="yes" space="preserve">
+          <source>Export</source>
+          <target state="translated">내보내기</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Export' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_Restore" translate="yes" space="preserve">
           <source>Restore</source>
-          <target state="new">Restore</target>
+          <target state="translated">복구</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Restore' button, link, text, title, etc. For example for restore files from the rubbish bin - (String as short as possible).</note>
-          </trans-unit>
-        <trans-unit id="Resx/UI_UsedCache" translate="yes" xml:space="preserve">
+        </trans-unit>
+        <trans-unit id="Resx/UI_UsedCache" translate="yes" space="preserve">
           <source>Used cache</source>
-          <target state="new">Used cache</target>
+          <target state="translated">사용한 캐시</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label to indicate the amount of used cache - (String as short as possible).</note>
-          </trans-unit>
-        <trans-unit id="Resx/UI_OpenIn" translate="yes" xml:space="preserve">
-          <source>Open in...</source>
-          <target state="new">Open in...</target>
+        </trans-unit>
+        <trans-unit id="Resx/UI_OpenIn" translate="yes" space="preserve">
+          <source>Open in…</source>
+          <target state="translated">다른 곳에서 열기...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Open in...' button, link, text, title, etc. to open a file or other kind of resource with a certain app - (String as short as possible).</note>
-          </trans-unit>
+        </trans-unit>
         <trans-unit id="Resx/UI_FindApp" translate="yes" xml:space="preserve">
           <source>Find app</source>
           <target state="new">Find app</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Find app' button, link, text, title, etc, to find an app to open a file, resource, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_SessionManagement" translate="yes" xml:space="preserve">
-          <source>Session Management</source>
-          <target state="new">Session Management</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the "Settings" option to manage sessions - (String as short as possible).</note>
-          </trans-unit>
-        <trans-unit id="Resx/UI_TestPassword" translate="yes" xml:space="preserve">
-          <source>Test Password</source>
-          <target state="new">Test Password</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Test Password' button, link, text, title, etc. - (String as short as possible).</note>
-          </trans-unit>
-        <trans-unit id="Resx/UI_Close" translate="yes" xml:space="preserve">
-          <source>Close</source>
-          <target state="new">Close</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Close' button, link, etc. - (String as short as possible).</note>
-          </trans-unit>
-        <trans-unit id="Resx/UI_BackupRecoveryKey" translate="yes" xml:space="preserve">
-          <source>Backup Recovery Key</source>
-          <target state="new">Backup Recovery Key</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Backup Recovery Key' button, link, text, title, etc. - (String as short as possible).
-NOTE: Max. length 20 characters.</note>
-          </trans-unit>
-        <trans-unit id="Resx/UI_DoNotShowMeAgain" translate="yes" xml:space="preserve">
-          <source>Don’t show me again</source>
-          <target state="new">Don’t show me again</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for a check box included into a dialog to indicate don't show it again.</note>
-          </trans-unit>
       </group>
     </body>
   </file>

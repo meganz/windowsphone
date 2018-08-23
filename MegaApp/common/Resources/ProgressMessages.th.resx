@@ -331,4 +331,8 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <value>เซิร์ฟเวอร์ไม่ว่าง กรุณารอสักครู่</value>
     <comment>Progress indicator message when servers are too busy. SDK is waiting for the server to complete a request due to a HTTP error 500  - (String as short as possible).</comment>
   </data>
+  <data name="PM_Restoring" xml:space="preserve">
+    <value>กำลังเรียกคืน...</value>
+    <comment>Progress indicator message when restoring node(s) from the rubbish bin - (String as short as possible).</comment>
+  </data>
 </root>

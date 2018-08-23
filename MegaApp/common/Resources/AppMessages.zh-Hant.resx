@@ -404,7 +404,7 @@ Preserve the {0} code because is for include the number of nodes to be moved in 
     <comment>Title of the dialog displayed when remove successfully multiple nodes definitely from the rubbish bin - (String as short as possible).</comment>
   </data>
   <data name="MoveToRubbishBinFailed" xml:space="preserve">
-    <value>移至垃圾桶失敗，请重試。</value>
+    <value>無法移動檔案至垃圾桶，請重試。</value>
     <comment>Message of the dialog displayed when the process/request to move nodes to the rubbish bin failed.</comment>
   </data>
   <data name="MoveToRubbishBinFailed_Title" xml:space="preserve">
@@ -434,7 +434,7 @@ Preserve the {0} code because is for include the name of the node to be moved in
 Preserve the {0} code because is for include the number of nodes to be moved in runtime.</comment>
   </data>
   <data name="MultiMoveToRubbishBinQuestion_Title" xml:space="preserve">
-    <value>要移動項目嗎？</value>
+    <value>要移動檔案嗎？</value>
     <comment>Title of the dialog displayed when a user want to move multiple nodes to the rubbish bin, asking for confirmation to make the movement - (String as short as possible).</comment>
   </data>
   <data name="MultiMoveToRubbishBinSucces" xml:space="preserve">
@@ -554,7 +554,7 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
     <comment>Title of the dialog displayed when the process/request to upload a selfie picture failed - (String as short as possible).</comment>
   </data>
   <data name="LoadNodesFailed" xml:space="preserve">
-    <value>無法從MEGA加載檔案或資料夾，請重試或者選擇刷新。</value>
+    <value>無法自MEGA載入檔案或資料夾，請重試或者選擇重新整理。</value>
     <comment>Message of the dialog displayed when fails the process/request to load the nodes of the MEGA cloud service.</comment>
   </data>
   <data name="LoadNodesFailed_Title" xml:space="preserve">
@@ -617,11 +617,11 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type) - (String as short as possible).</comment>
   </data>
   <data name="CurrentPinLockCodeDoNotMatch" xml:space="preserve">
-    <value>當前的PIN碼不正確或不匹配</value>
+    <value>目前的PIN碼不正確或不適配</value>
     <comment>Message of the dialog displayed when a user is trying to change the PIN lock code and introduces an incorrect code into the field for the current PIN lock code. Try to preserve the PIN uppercase word.</comment>
   </data>
   <data name="CurrentPinLockCodeDoNotMatch_Title" xml:space="preserve">
-    <value>與當前的PIN碼不匹配</value>
+    <value>目前的PIN碼不正確</value>
     <comment>Title of the dialog displayed when a user is trying to change the PIN lock code and introduces an incorrect code into the field for the current PIN lock code - (String as short as possible). Try to preserve the PIN uppercase word.</comment>
   </data>
   <data name="PinLockTooShort" xml:space="preserve">
@@ -1095,14 +1095,16 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>檔案連結不存在之可能原因：
 - 因ToS / AUP違規，故該檔案連結已被刪除。
 - 無效的網址 – 您嘗試存取的連結並不存在。
-- 該使用者已將檔案連結刪除。</value>
+- 該使用者已將檔案連結刪除。
+</value>
     <comment>Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</comment>
   </data>
   <data name="AM_FolderLinkUnavailable" xml:space="preserve">
     <value>資料夾連結不存在之可能原因：
 - 因ToS / AUP違規，故該資料夾連結已被刪除。
 - 無效的網址 – 您嘗試存取的連結並不存在。
-- 該使用者已將資料夾連結刪除。</value>
+- 該使用者已將資料夾連結刪除。
+</value>
     <comment>Error message shown when a folder link doesn't exist. Keep "\n"</comment>
   </data>
   <data name="AM_LinkUnavailableTitle" xml:space="preserve">
@@ -1135,7 +1137,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when fails to copy the user's Recovery Key to the clipboard to be saved or exported - (String as short as possible).</comment>
   </data>
   <data name="AM_RecoveryKeyCopied" xml:space="preserve">
-    <value>已複製還原金鑰至剪貼簿</value>
+    <value>已複製還原金鑰至剪貼簿中。請將它存放在安全的地方。</value>
     <comment>Message of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported.</comment>
   </data>
   <data name="AM_RecoveryKeyCopied_Title" xml:space="preserve">
@@ -1391,27 +1393,27 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog shown when the user is trying to login and the account has been blocked for multiple copyright violation.</comment>
   </data>
   <data name="AM_EmptyRequiredFields" xml:space="preserve">
-    <value>Fill the required fields and try again.</value>
+    <value>請填寫必填區域，然後再試一次。</value>
     <comment>Message of the dialog displayed when required fields are empty.</comment>
   </data>
   <data name="AM_PasswordChanged" xml:space="preserve">
-    <value>We have sent you an email confirming your password change.</value>
+    <value>我們已向您發送確認更改密碼的電子郵件。</value>
     <comment>Message of the dialog displayed when the change password process finish successful.</comment>
   </data>
   <data name="AM_PasswordChanged_Title" xml:space="preserve">
-    <value>Password changed</value>
+    <value>密碼已更改</value>
     <comment>Title of the dialog displayed when the change password process finish successful.</comment>
   </data>
   <data name="AM_PasswordChangeFailed" xml:space="preserve">
-    <value>Failed to change your password. Please try again.</value>
+    <value>更改密碼失敗。請再試一次。</value>
     <comment>Message of the dialog displayed when the user has failed to change his password</comment>
   </data>
   <data name="AM_PasswordChangeFailed_Title" xml:space="preserve">
-    <value>Error changing password</value>
+    <value>更改密碼時發生錯誤</value>
     <comment>Title of the dialog displayed when the user has failed to change his password - (String as short as possible).</comment>
   </data>
   <data name="AM_IncorrectEmailFormat" xml:space="preserve">
-    <value>Incorrect email format. Please try again.</value>
+    <value>錯誤的電子郵件格式。請再試一次。</value>
     <comment>Message of the dialog displayed when the user types an email address with an incorrect format.</comment>
   </data>
   <data name="AM_VeryWeakPassword" xml:space="preserve">
@@ -1423,7 +1425,117 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
   </data>
   <data name="AM_SSLKeyError_Title" xml:space="preserve">
-    <value>SSL certificate error</value>
+    <value>SSL安全性憑證錯誤</value>
     <comment>Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
+  </data>
+  <data name="AM_PasswordReminder" xml:space="preserve">
+    <value>因MEGA使用安全加密技術，您將無法直接重新設定密碼而不遺失任何資料。所以請確保您已牢記您的密碼。</value>
+    <comment>Message to describe the purpose of the password reminder dialog.</comment>
+  </data>
+  <data name="AM_PasswordReminder_Title" xml:space="preserve">
+    <value>您還記得你的密碼嗎？</value>
+    <comment>Title of the password reminder dialog.</comment>
+  </data>
+  <data name="AM_TestPassword" xml:space="preserve">
+    <value>Please test your password below to ensure you remember it. If you lose your password, you will lose access to all your data.</value>
+    <comment>Message to describe the purpose of the dialog to test the password.</comment>
+  </data>
+  <data name="AM_TestPasswordSuccess" xml:space="preserve">
+    <value>密碼已被接受，我們仍建議您備份還原金鑰。</value>
+    <comment>Message displayed when the password test result is ok.</comment>
+  </data>
+  <data name="AM_TestPasswordWarning" xml:space="preserve">
+    <value>密碼錯誤！請盡快備份還原金鑰！</value>
+    <comment>Warning message displayed when the password test fails.</comment>
+  </data>
+  <data name="AM_TestPassword_Title" xml:space="preserve">
+    <value>測試密碼</value>
+    <comment>Title of the test password dialog.</comment>
+  </data>
+  <data name="AM_RecoveryKeyExported" xml:space="preserve">
+    <value>已匯出還原金鑰。請將它存放在安全的地方。</value>
+    <comment>Message of the dialog or notification displayed in cases that the app has succesful exported the recovery key.</comment>
+  </data>
+  <data name="AM_RecoveryKeyExported_Title" xml:space="preserve">
+    <value>已匯出還原金鑰</value>
+    <comment>Title of the dialog or notification displayed in cases that the app has succesful exported the recovery key.</comment>
+  </data>
+  <data name="AM_RecoveryKeyExportFailed" xml:space="preserve">
+    <value>匯出還原金鑰失敗。請再試一次。</value>
+    <comment>Message of the dialog or notification displayed in cases that the app has not succesful exported the recovery key.</comment>
+  </data>
+  <data name="AM_RecoveryKeyExportFailed_Title" xml:space="preserve">
+    <value>還原金鑰匯出失敗</value>
+    <comment>Title of the dialog or notification displayed in cases that the app has not succesful exported the recovery key.</comment>
+  </data>
+  <data name="AM_CloseOtherSessionsQuestionMessage" xml:space="preserve">
+    <value>您想關閉所有其他頁面嗎？這將使您登出除了目前頁面之外的所有其他活動頁面。</value>
+    <comment>Message of the dialog displayed to ask the user to confirm want to close all the other sessions.</comment>
+  </data>
+  <data name="AM_2FA_SetupDialogDescription" xml:space="preserve">
+    <value>兩階段身份驗證是您帳戶的第二層安全保護。這代表著，即使某人持有您的密碼，如果他無法知道只有您會有的六位碼，也無法登入您的帳戶。</value>
+    <comment>Description text of the dialog displayed to start setup the Two-Factor Authentication</comment>
+  </data>
+  <data name="AM_2FA_SetupDialogTitle" xml:space="preserve">
+    <value>為什麼需要兩階段安全驗證？</value>
+    <comment>Title of the dialog displayed to start setup the Two-Factor Authentication</comment>
+  </data>
+  <data name="AM_InvalidCode" xml:space="preserve">
+    <value>此碼錯誤，請重新輸入。</value>
+    <comment>Message displayed when the user is trying to insert and invalid code, for example the 6-digit code of the Multi-Factor Authentication.</comment>
+  </data>
+  <data name="AM_2FA_EnabledDialogDescription" xml:space="preserve">
+    <value>下次您登入帳戶時，系統會要求您輸入由身份驗證應用程式所發給您的6位碼。</value>
+    <comment>Description text of the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication.</comment>
+  </data>
+  <data name="AM_2FA_EnabledDialogTitle" xml:space="preserve">
+    <value>已啟用兩階段驗證</value>
+    <comment>Title text of the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication.</comment>
+  </data>
+  <data name="AM_MFA_SeedCopied" xml:space="preserve">
+    <value>The seed has been copied to your clipboard.</value>
+    <comment>Message of the dialog displayed when the seed needed to enable the Multi-Factor Authentication has been copied successfully to the clipboard.</comment>
+  </data>
+  <data name="AM_MFA_SeedCopiedFailed" xml:space="preserve">
+    <value>Failed to copy the seed to your clipboard. Please try again.</value>
+    <comment>Message of the dialog displayed if fails the process to copy the seed needed to enable the Multi-Factor Authentication to the clipboard.</comment>
+  </data>
+  <data name="AM_MFA_SeedCopiedFailed_Title" xml:space="preserve">
+    <value>Seed copy failed</value>
+    <comment>Title of the dialog displayed if fails the process to copy the seed needed to enable the Multi-Factor Authentication to the clipboard.</comment>
+  </data>
+  <data name="AM_MFA_SeedCopied_Title" xml:space="preserve">
+    <value>Seed copied</value>
+    <comment>Title of the dialog displayed when the seed needed to enable the Multi-Factor Authentication has been copied successfully to the clipboard.</comment>
+  </data>
+  <data name="AM_2FA_InputAppCodeDialogMessage" xml:space="preserve">
+    <value>請輸入您的身份驗證應用程式所生成的代碼</value>
+    <comment>Description text of the dialog displayed to introduce the 6-digit code for the MFA.</comment>
+  </data>
+  <data name="AM_2FA_DisableDialogTitle" xml:space="preserve">
+    <value>停用兩階段驗證</value>
+    <comment>Title of the dialog displayed to disable the Two-Factor Authentication.</comment>
+  </data>
+  <data name="AM_2FA_EnabledDialogRecommendation" xml:space="preserve">
+    <value>如果您在啟用兩階段驗證後失去了對帳戶的存取權並且未備份還原金鑰，則MEGA無法幫您再次登入它。
+請確保您已備份還原金鑰。</value>
+    <comment>Text recommending export the Recovery Key in the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication. KEEP the multi-line format.</comment>
+  </data>
+  <data name="AM_2FA_DisabledDialogTitle" xml:space="preserve">
+    <value>已停用兩階段驗證</value>
+    <comment>Title text of the dialog displayed to indicate that the user has successfully disabled the Two-Factor Authentication.</comment>
+  </data>
+  <data name="AM_RestoreFromRubbishBinFailed" xml:space="preserve">
+    <value>無法從垃圾桶中還原‘{0}’。請再試一次。</value>
+    <comment>Message of the dialog displayed when the process/request to restore a node to the rubbish bin failed.
+Preserve the '{0}' code because is for include the file/folder name in runtime.</comment>
+  </data>
+  <data name="AM_RestoreFromRubbishBinFailed_Title" xml:space="preserve">
+    <value>從垃圾桶中還原失敗</value>
+    <comment>Title of the dialog displayed when the process/request to restore nodes from the rubbish bin failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_RestoreMultiFromRubbishBinFailed" xml:space="preserve">
+    <value>無法從垃圾桶中還原。請再試一次。</value>
+    <comment>Message of the dialog displayed when the process/request to restore multiple nodes from the rubbish bin failed.</comment>
   </data>
 </root>
