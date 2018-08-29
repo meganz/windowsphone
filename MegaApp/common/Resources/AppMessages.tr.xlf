@@ -1786,6 +1786,11 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
           <target state="new">Failed to check the Multi-Factor Authentication status.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed if fails the process to check the Multi-Factor Authentication status.</note>
         </trans-unit>
+        <trans-unit id="Resx/AM_FolderAlreadyExists" translate="yes" xml:space="preserve">
+          <source>There is already a folder with the same name</source>
+          <target state="new">There is already a folder with the same name</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message which is shown when a folder name is duplicated during renaming or creation.</note>
+        </trans-unit>
       </group>
     </body>
   </file>

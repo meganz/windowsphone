@@ -124,7 +124,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Next time you login to your account you will be asked to enter a 6-digit code provided by your authentification app..
+        ///   Busca una cadena traducida similar a Next time you login to your account you will be asked to enter a 6-digit code provided by your Authenticator app..
         /// </summary>
         public static string AM_2FA_EnabledDialogDescription {
             get {
@@ -133,8 +133,8 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a If you lose access to your account after enabling 2FA and you have not backed up your Recovery Key, MEGA can&apos;t help you gain access to it again.
-        ///Back up your recovery key..
+        ///   Busca una cadena traducida similar a If you lose access to your account after enabling 2FA and you have not backed up your Recovery Key, MEGA can’t help you gain access to it again.
+        ///Ensure you back up your recovery key..
         /// </summary>
         public static string AM_2FA_EnabledDialogRecommendation {
             get {
@@ -170,7 +170,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Why you need two-factor authentication?.
+        ///   Busca una cadena traducida similar a Why do you need two-factor authentication?.
         /// </summary>
         public static string AM_2FA_SetupDialogTitle {
             get {
@@ -440,7 +440,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a You don&apos;t have access to the selected download path. Please select a different download path and try again..
+        ///   Busca una cadena traducida similar a You don’t have access to the selected download path. Please select a different download path and try again..
         /// </summary>
         public static string AM_DowloadPathUnauthorizedAccess {
             get {
@@ -538,6 +538,15 @@ namespace MegaApp.Resources {
         public static string AM_FileLinkUnavailable {
             get {
                 return ResourceManager.GetString("AM_FileLinkUnavailable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a There is already a folder with the same name.
+        /// </summary>
+        public static string AM_FolderAlreadyExists {
+            get {
+                return ResourceManager.GetString("AM_FolderAlreadyExists", resourceCulture);
             }
         }
         
@@ -689,7 +698,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a This code isn&apos;t right, please try again..
+        ///   Busca una cadena traducida similar a This code isn’t right, please try again..
         /// </summary>
         public static string AM_InvalidCode {
             get {
@@ -1004,7 +1013,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a The Recovery Key has been exported..
+        ///   Busca una cadena traducida similar a The Recovery Key has been exported. Please store it in a safe place..
         /// </summary>
         public static string AM_RecoveryKeyExported {
             get {
@@ -1040,7 +1049,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Failed to restore &apos;{0}&apos; from rubbish bin. Please try again..
+        ///   Busca una cadena traducida similar a Failed to restore ‘{0}’ from rubbish bin. Please try again..
         /// </summary>
         public static string AM_RestoreFromRubbishBinFailed {
             get {
@@ -1202,7 +1211,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Please test your password below to ensure you remember it. If you lost your password, you will lose access to your data..
+        ///   Busca una cadena traducida similar a Please test your password below to ensure you remember it. If you lose your password, you will lose access to all your data..
         /// </summary>
         public static string AM_TestPassword {
             get {
@@ -1220,7 +1229,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Password accepted, we still recommend you back up your Recovery key..
+        ///   Busca una cadena traducida similar a Password accepted, we still recommend you back up your Recovery Key..
         /// </summary>
         public static string AM_TestPasswordSuccess {
             get {
@@ -1229,7 +1238,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Wrong password!, backup your Recovery Key as soon as possible!.
+        ///   Busca una cadena traducida similar a Wrong password! Backup your Recovery Key as soon as possible!.
         /// </summary>
         public static string AM_TestPasswordWarning {
             get {
@@ -1346,7 +1355,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a In order for the automatic Camera Uploads to work correctly, you need to enable the option &quot;Stay logged in&quot;. Do you want to enable this option?.
+        ///   Busca una cadena traducida similar a In order for the automatic Camera Uploads to work correctly, you need to enable the option “Stay logged in”. Do you want to enable this option?.
         /// </summary>
         public static string CameraUploadNeedsStayLoggedIn {
             get {
@@ -1689,7 +1698,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Current PIN lock is not correct or does not match.
+        ///   Busca una cadena traducida similar a Current PIN code is incorrect or does not match.
         /// </summary>
         public static string CurrentPinLockCodeDoNotMatch {
             get {
@@ -1698,7 +1707,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Current PIN lock no match.
+        ///   Busca una cadena traducida similar a Current PIN code is incorrect.
         /// </summary>
         public static string CurrentPinLockCodeDoNotMatch_Title {
             get {
@@ -1887,7 +1896,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a You don&apos;t have access to the folder &apos;{0}&apos;. Please select another one and try again..
+        ///   Busca una cadena traducida similar a You don’t have access to the folder ‘{0}’. Please select another one and try again..
         /// </summary>
         public static string FolderUnauthorizedAccess {
             get {
@@ -2031,7 +2040,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Image successfully exported to &apos;saved pictures&apos; album.
+        ///   Busca una cadena traducida similar a Image successfully exported to ‘saved pictures’ album.
         /// </summary>
         public static string ImageSaved {
             get {
@@ -2049,7 +2058,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Error exporting image to  &apos;saved pictures&apos; album. Please try again.
+        ///   Busca una cadena traducida similar a Error exporting image to  ‘saved pictures’ album. Please try again.
         /// </summary>
         public static string ImageSaveError {
             get {
@@ -2076,7 +2085,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a The name of the file &apos;{0}&apos; is not valid or has illegal characters. Please change it and try again..
+        ///   Busca una cadena traducida similar a The name of the file ‘{0}’ is not valid or has illegal characters. Please change it and try again..
         /// </summary>
         public static string InvalidFileName {
             get {
@@ -2094,7 +2103,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a The name or path of the folder &apos;{0}&apos; is not valid or has illegal characters. Please change it and try again..
+        ///   Busca una cadena traducida similar a The name or path of the folder ‘{0}’ is not valid or has illegal characters. Please change it and try again..
         /// </summary>
         public static string InvalidFolderNameOrPath {
             get {
@@ -2517,7 +2526,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a The path of the file/folder &apos;{0}&apos; is too long. Please change it and try again..
+        ///   Busca una cadena traducida similar a The path of the file/folder ‘{0}’ is too long. Please change it and try again..
         /// </summary>
         public static string PathTooLong {
             get {
@@ -2895,7 +2904,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Export current image to &apos;saved pictures&apos; album?.
+        ///   Busca una cadena traducida similar a Export current image to ‘saved pictures’ album?.
         /// </summary>
         public static string SaveImageQuestion {
             get {

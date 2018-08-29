@@ -93,5 +93,26 @@ namespace MegaApp.Services
 
             return newMegaSDK;
         }
+
+        /// <summary>
+        /// Checks if a node exists by its name.
+        /// </summary>
+        /// <param name="searchNode">The parent node of the tree to explore.</param>
+        /// <param name="name">Name of the node to search.</param>
+        /// <param name="isFolder">True if the node to search is a folder or false in other case.</param>
+        /// <param name="recursive">True if you want to seach recursively in the node tree.</param>
+        /// <returns>True if the node exists or false in other case.</returns>
+        public static bool ExistsNodeByName(MNode searchNode, string name, bool isFolder, bool recursive = false)
+        {
+            var searchResults = MegaSdk.search(searchNode, name, false);
+            for (var i = 0; i < searchResults.size(); i++)
+            {
+                var node = searchResults.get(i);
+                if (node.isFolder() == isFolder && node.getName().ToLower().Equals(name.ToLower()))
+                    return true;
+            }
+
+            return false;
+        }
     }
 }

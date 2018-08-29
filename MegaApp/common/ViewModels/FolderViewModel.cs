@@ -262,22 +262,37 @@ namespace MegaApp.ViewModels
             // Only 1 CustomInputDialog should be open at the same time.
             if (this.AppInformation.PickerOrAsyncDialogIsOpen) return;
 
+            if (this.FolderRootNode == null)
+            {
+                OnUiThread(() =>
+                {
+                    new CustomMessageDialog(
+                        AppMessages.CreateFolderFailed_Title,
+                        AppMessages.CreateFolderFailed,
+                        App.AppInformation,
+                        MessageDialogButtons.Ok).ShowDialog();
+                });
+
+                return;
+            }
+
             var inputDialog = new CustomInputDialog(UiResources.AddFolder, UiResources.UI_CreateFolder, this.AppInformation);
             inputDialog.OkButtonTapped += (sender, args) =>
             {
-                if (this.FolderRootNode == null)
+                if (SdkService.ExistsNodeByName(this.FolderRootNode.OriginalMNode, args.InputText, true))
                 {
+                    inputDialog.HideDialog();
                     OnUiThread(() =>
                     {
                         new CustomMessageDialog(
-                                AppMessages.CreateFolderFailed_Title,
-                                AppMessages.CreateFolderFailed,
-                                App.AppInformation,
-                                MessageDialogButtons.Ok).ShowDialog();                        
+                            AppMessages.CreateFolderFailed_Title,
+                            AppMessages.AM_FolderAlreadyExists,
+                            App.AppInformation,
+                            MessageDialogButtons.Ok).ShowDialog();
                     });
 
                     return;
-                }                
+                }
 
                 this.MegaSdk.createFolder(args.InputText, this.FolderRootNode.OriginalMNode,
                      new CreateFolderRequestListener());                
