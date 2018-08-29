@@ -530,6 +530,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a There is already a file with the same name.
+        /// </summary>
+        public static string AM_FileAlreadyExists {
+            get {
+                return ResourceManager.GetString("AM_FileAlreadyExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a This could be due to the following reasons:
         ///- The file has been removed because of a ToS/AUP violation.
         ///- Invalid URL – the link you are trying to access does not exist.

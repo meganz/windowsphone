@@ -100,6 +100,21 @@ namespace MegaApp.ViewModels
             var inputDialog = new CustomInputDialog(UiResources.Rename, UiResources.RenameItem, this.AppInformation, settings);
             inputDialog.OkButtonTapped += (sender, args) =>
             {
+                if (SdkService.ExistsNodeByName(this.MegaSdk.getParentNode(this.OriginalMNode), args.InputText, this.OriginalMNode.isFolder()))
+                {
+                    inputDialog.HideDialog();
+                    OnUiThread(() =>
+                    {
+                        new CustomMessageDialog(
+                            AppMessages.RenameNodeFailed_Title,
+                            this.OriginalMNode.isFolder() ? AppMessages.AM_FolderAlreadyExists : AppMessages.AM_FileAlreadyExists,
+                            App.AppInformation,
+                            MessageDialogButtons.Ok).ShowDialog();
+                    });
+
+                    return;
+                }
+
                 this.MegaSdk.renameNode(this.OriginalMNode, args.InputText, new RenameNodeRequestListener(this));
             };
             inputDialog.ShowDialog();
