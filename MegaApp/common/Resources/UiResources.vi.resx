@@ -142,7 +142,7 @@
     <comment>Label for any 'Copy' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="EmptyFolder" xml:space="preserve">
-    <value>thư mục trống</value>
+    <value>Thư Mục Rỗng</value>
     <comment>Label for the background of an empty forder page - (String as short as possible).</comment>
   </data>
   <data name="EmptyTransfers" xml:space="preserve">
@@ -174,7 +174,7 @@
     <comment>Label for any 'Folders' (multiple folders) button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="MyAccount" xml:space="preserve">
-    <value>tài khoản</value>
+    <value>trang tài khoản</value>
     <comment>Label for any 'My account' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Next" xml:space="preserve">
@@ -186,7 +186,7 @@
     <comment>Label for any 'Open' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Preview" xml:space="preserve">
-    <value>Xem hình</value>
+    <value>Xem trước</value>
     <comment>Label for any 'Preview' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Previous" xml:space="preserve">
@@ -310,7 +310,7 @@
     <comment>Label for any 'Select photo' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="SelfieMode" xml:space="preserve">
-    <value>Chế độ ảnh tự sướng</value>
+    <value>Chế độ selfie</value>
     <comment>Label for 'Selfie mode' option of the dialog shown to upload nodes - (String as short as possible).</comment>
   </data>
   <data name="TakePhoto" xml:space="preserve">
@@ -370,7 +370,7 @@
     <comment>Label for any 'Capture' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="ChangePinLock" xml:space="preserve">
-    <value>Đổi mã PIN</value>
+    <value>Đổi Mã PIN</value>
     <comment>Label for any 'Change PIN Lock' button, link, text, title, etc. Try to preserve the PIN uppercase word. - (String as short as possible).</comment>
   </data>
   <data name="CleanUpTransfers" xml:space="preserve">
@@ -414,7 +414,7 @@
     <comment>Text placed just before the amount free space into the 'my account' page - (String as short as possible).</comment>
   </data>
   <data name="LargestSortOption" xml:space="preserve">
-    <value>lớn nhất</value>
+    <value>Lớn nhất</value>
     <comment>Label for the menu option to sort the nodes of the cloud drive in descending order by size (from bigger to smaller) - (String as short as possible).</comment>
   </data>
   <data name="MakePinLock" xml:space="preserve">
@@ -434,7 +434,7 @@
     <comment>Label for the menu option to sort the nodes of the cloud drive in descending order by name - (String as short as possible).</comment>
   </data>
   <data name="NewestSortOption" xml:space="preserve">
-    <value>mới nhất</value>
+    <value>Mới nhất</value>
     <comment>Label for the menu option to sort the nodes of the cloud drive in descending order by date (from newer to older) - (String as short as possible).</comment>
   </data>
   <data name="NoDataToShow" xml:space="preserve">
@@ -446,7 +446,7 @@
     <comment>Label shown when the app has no information about the subscription plans to show into 'subscription' page - (String as short as possible).</comment>
   </data>
   <data name="OldestSortOption" xml:space="preserve">
-    <value>cũ nhất</value>
+    <value>Cũ nhất</value>
     <comment>Label for the menu option to sort the nodes of the cloud drive in ascending order by size (from smaller to bigger) - (String as short as possible).</comment>
   </data>
   <data name="PauseAll" xml:space="preserve">
@@ -458,7 +458,7 @@
     <comment>Label for any 'Privacy policy' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="SmallestSortOption" xml:space="preserve">
-    <value>nhỏ nhất</value>
+    <value>Nhỏ nhất</value>
     <comment>Label for the menu option to sort the nodes of the cloud drive in ascending order by size (from smaller to bigger) - (String as short as possible).</comment>
   </data>
   <data name="SortByMenuTitle" xml:space="preserve">
@@ -466,7 +466,7 @@
     <comment>Label used like title for the sort menu.</comment>
   </data>
   <data name="StartResumeAll" xml:space="preserve">
-    <value>bắtđầu/tiếptục lại tất cả</value>
+    <value>bắtđầu/tiếptục tất cả</value>
     <comment>Label for any 'Start/resume all' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Subscribe" xml:space="preserve">
@@ -586,7 +586,7 @@
     <comment>Label for any 'Advanced' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Help" xml:space="preserve">
-    <value>Cần trợ giúp</value>
+    <value>Thắc Mắc Cần Trợ Giúp</value>
     <comment>Label for any 'Help' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="CameraUploads" xml:space="preserve">
@@ -634,7 +634,7 @@
     <comment>Label for the switch button to enable or disable the Camera Uploads service - (String as short as possible).</comment>
   </data>
   <data name="Security" xml:space="preserve">
-    <value>Bảo mật</value>
+    <value>Bảo Mật</value>
     <comment>Label for any 'Security' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Back" xml:space="preserve">
@@ -751,7 +751,7 @@ Preserve the {0} code because is for include the name/type of the selected plan 
     <comment>Label for any 'Year' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="RenewsOn" xml:space="preserve">
-    <value>Ngày đầu chu kỳ</value>
+    <value>Ngày chu kỳ mới</value>
     <comment>Label for the 'Renews on' text into the my account page, indicating the renewal date of a subscription - (String as short as possible).</comment>
   </data>
   <data name="AccountPurchased" xml:space="preserve">
@@ -760,7 +760,7 @@ Preserve the {0} code because is for include the name/type of the selected plan 
 Preserve the {0} code because is for include the name/type in runtime.</comment>
   </data>
   <data name="AccountRenewalNotice" xml:space="preserve">
-    <value>Gói thuê bao {0} sẽ tự động làm mới và thu tiền từ {0} của bạn đến khi bạn đăng nhập vào tài khoản và hủy thuê bao trước ngày đầu chu kỳ thanh toán.</value>
+    <value>Gói thuê bao {0} sẽ tự động làm chu kỳ mới và thu tiền {0} đến khi bạn đăng nhập vào tài khoản và hủy thuê bao trước ngày đầu chu kỳ thanh toán.</value>
     <comment>Label to indicate the renewal period of the purchased subscription. 
 Preserve the {0} code because is for include the renewal period string (Monthly or Annually) in runtime.</comment>
   </data>
@@ -817,7 +817,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
     <comment>Warning message in Cloud Drive when the user is running out of space</comment>
   </data>
   <data name="AddContact" xml:space="preserve">
-    <value>Thêm liên hệ</value>
+    <value>Thêm Tên Liên Lạc</value>
     <comment>Label for any 'Add contact' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="CreateContact" xml:space="preserve">
@@ -845,7 +845,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
     <comment>Label for any 'Share folders' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Profile" xml:space="preserve">
-    <value>Trang cá nhân</value>
+    <value>Cá Nhân</value>
     <comment>Label for any 'Profile' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="MEGAContacts" xml:space="preserve">
@@ -861,7 +861,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
     <comment>Label for any 'Status' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="ReceivedRequests" xml:space="preserve">
-    <value>Các yêu cầu đã nhận</value>
+    <value>Yêu cầu đã nhận</value>
     <comment>Label for 'Received requests' text, title, etc. for received contact requests - (String as short as possible).</comment>
   </data>
   <data name="SentRequests" xml:space="preserve">
@@ -957,11 +957,11 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for the auto camera upload setting options</comment>
   </data>
   <data name="Incoming" xml:space="preserve">
-    <value>Nhận Được</value>
+    <value>Mục Nhận Đuợc</value>
     <comment>Label for any 'Incoming' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Outgoing" xml:space="preserve">
-    <value>Gửi Đi</value>
+    <value>Mục Gửi Đi</value>
     <comment>Label for any 'Outgoing' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="SetupCameraUploadsQuestion" xml:space="preserve">
@@ -981,15 +981,15 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for the auto camera upload service restrictions.</comment>
   </data>
   <data name="SavedForOffline" xml:space="preserve">
-    <value>Đã lưu về ngoại tuyến</value>
+    <value>Lưu về ngoại tuyến</value>
     <comment>Label for any 'Saved for offline' button, link, text, title, etc. - (String as short as possible, LESS THAN 22 CHARS).</comment>
   </data>
   <data name="EmptyCloudDrive" xml:space="preserve">
-    <value>Không có tệp tin nào trong ổ mây của bạn</value>
+    <value>Cloud Drive của bạn không có tập tin.</value>
     <comment>Label for the background of an empty cloud drive page - (String as short as possible).</comment>
   </data>
   <data name="EmptyOffline" xml:space="preserve">
-    <value>Chưa có mục nào được tải về dùng ngoại tuyến</value>
+    <value>Chưa có mục nào đựoc tải về vào mục lưu về ngoại tuyến</value>
     <comment>Label for the background of an empty transfers page - (String as short as possible).</comment>
   </data>
   <data name="EmptyRubbishBin" xml:space="preserve">
@@ -1017,7 +1017,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Default value for the string shown into the preferences page. It will substituted by the path of the folder selected by the user when selecting a default location for downloads.</comment>
   </data>
   <data name="UI_ConfirmAccount" xml:space="preserve">
-    <value>Xác thực tài khoản</value>
+    <value>Xác nhận tài khoản</value>
     <comment>Label for any 'Confirm account' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_CreateAccount" xml:space="preserve">
@@ -1133,7 +1133,7 @@ NOTE: Keep the capital letter if possible.</comment>
 NOTE: Keep the capital letter if possible.</comment>
   </data>
   <data name="UI_Modified" xml:space="preserve">
-    <value>Chỉnh Sửa Lần Cuối</value>
+    <value>Chỉnh sửa lần cuối</value>
     <comment>Label for any 'Modified' button, link, text, title, etc. - (String as short as possible).
 NOTE: Keep the capital letter if possible.</comment>
   </data>
@@ -1157,11 +1157,11 @@ Keep the code {1} because is for include currency in runtime.</comment>
     <comment>Label for any 'Free' button, link, text, title, etc. Is to indicate that is a product free of charges, no costs - (String as short as possible).</comment>
   </data>
   <data name="UI_LinkWithKey" xml:space="preserve">
-    <value>Đường dẫn liên kết kèm mã khóa</value>
+    <value>Liên kết kèm mã khóa</value>
     <comment>Label for any 'Link with key' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_LinkWithoutKey" xml:space="preserve">
-    <value>Đường dẫn liên kết không kèm mã khóa</value>
+    <value>Liên kết không kèm mã khóa</value>
     <comment>Label for any 'Link without key' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_ProOnly" xml:space="preserve">
@@ -1288,7 +1288,7 @@ Preserve the PIN uppercase word.</comment>
     <comment>Text used as a link to view the 'Terms of Service' into the 'create account' page.</comment>
   </data>
   <data name="UI_DataProtectionRegulation" xml:space="preserve">
-    <value>Data Protection Regulation</value>
+    <value>Quy Định Bảo Vệ Dữ Liệu</value>
     <comment>Label for any 'Data Protection Regulation' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_LegalAndPolicies" xml:space="preserve">
@@ -1308,11 +1308,108 @@ Preserve the PIN uppercase word.</comment>
     <comment>Label for any 'Takedown Guidance' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_OpenBrowser" xml:space="preserve">
-    <value>Open browser</value>
+    <value>Mở trình duyệt</value>
     <comment>Label for the button to allow the user open the default browser - (String as short as possible).</comment>
   </data>
   <data name="UI_Retry" xml:space="preserve">
     <value>Thử lại</value>
     <comment>Label for any 'Retry' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_CloseOtherSessions" xml:space="preserve">
+    <value>Đóng các phiên khác lại</value>
+    <comment>Label for any 'Close other sessions' button, link, etc., to close all other active sessions except the current one - (String as short as possible).</comment>
+  </data>
+  <data name="UI_DoNotShowMeAgain" xml:space="preserve">
+    <value>Đừng hiện lại nữa</value>
+    <comment>Label for a check box included into a dialog to indicate don't show it again.</comment>
+  </data>
+  <data name="UI_BackupRecoveryKey" xml:space="preserve">
+    <value>Sao lưu Mã Khóa Phục Hồi</value>
+    <comment>Label for any 'Backup Recovery Key' button, link, text, title, etc. - (String as short as possible).
+NOTE: Max. length 20 characters.</comment>
+  </data>
+  <data name="UI_Close" xml:space="preserve">
+    <value>Đóng</value>
+    <comment>Label for any 'Close' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_TestPassword" xml:space="preserve">
+    <value>Kiểm Tra Mật Khẩu</value>
+    <comment>Label for any 'Test Password' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_PlainText" xml:space="preserve">
+    <value>Chỉ dạng chữ</value>
+    <comment>Label for any 'Plain text' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_EnablePinLock" xml:space="preserve">
+    <value>Bật mã PIN</value>
+    <comment>Label for the switch button to enable or disable the PIN lock code. Keep PIN uppercase - (String as short as possible).</comment>
+  </data>
+  <data name="UI_RecoveryKeyDescription" xml:space="preserve">
+    <value>Mã Khoá Phục Hồi được sử dụng trong trường hợp quên mất mật khẩu. Lưu giữ cẩn thận mã này ở nơi an toàn.</value>
+    <comment>Label to describe the 'Recovery Key' and its purpose.</comment>
+  </data>
+  <data name="UI_SessionManagement" xml:space="preserve">
+    <value>Quản Lý Phiên Hoạt Động</value>
+    <comment>Label for the "Settings" option to manage sessions - (String as short as possible).</comment>
+  </data>
+  <data name="UI_SessionManagementDescription" xml:space="preserve">
+    <value>This will log you out on all other active sessions except the current one. You will need to re-login to your other devices to continue using MEGA.</value>
+    <comment>Label to describe the "Session Management" option of the "Settings" section.</comment>
+  </data>
+  <data name="UI_Warning" xml:space="preserve">
+    <value>Cảnh báo</value>
+    <comment>Label for any 'Warning' title, message, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_EnableTwoFactorAuth" xml:space="preserve">
+    <value>Bật Lập Xác Minh 2-Bước</value>
+    <comment>Label for the "toggle" or "switch" button to enable/disable the Two-Factor Authentication.</comment>
+  </data>
+  <data name="UI_TwoFactorAuth" xml:space="preserve">
+    <value>Xác Minh 2-Bước</value>
+    <comment>Label for the 'Two-Factor Authentication' section of the security settings.</comment>
+  </data>
+  <data name="UI_TwoFactorAuthSettingsDescription" xml:space="preserve">
+    <value>Two-factor authentication is a second layer of security for your account.</value>
+    <comment>Description for the 'Two-Factor Authentication' in the security settings section.</comment>
+  </data>
+  <data name="UI_Setup2FA" xml:space="preserve">
+    <value>Cài Đặt Xác Minh 2-Bước</value>
+    <comment>Label for any 'Setup Two-Factor Authentication' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_SixDigitCode" xml:space="preserve">
+    <value>6 digit code</value>
+    <comment>Placeholder text of the field to type the 6-digit code provided for the authenticator app to verify the Multi-Factor Authentication.</comment>
+  </data>
+  <data name="UI_Verify" xml:space="preserve">
+    <value>Xác thực</value>
+    <comment>Label for any 'Verify' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_CopySeed" xml:space="preserve">
+    <value>Ghi nhớ chủng tử</value>
+    <comment>Label of the button to copy the seed to enable the Multi-Factor Authentication - (String as short as possible).</comment>
+  </data>
+  <data name="UI_LostAuthDeviceQuestion" xml:space="preserve">
+    <value>Thiết bị có cài app Lập Xác Thực đã bị mất?</value>
+    <comment>Label for any link/button to help the user in case lost the authentication device for MFA - (String as short as possible).</comment>
+  </data>
+  <data name="UI_ChangePasswordDescription" xml:space="preserve">
+    <value>Nhập và xác nhận mật khẩu mới rồi click nút Lưu.</value>
+    <comment>Text to describe the change password process.</comment>
+  </data>
+  <data name="UI_Export" xml:space="preserve">
+    <value>Xuất</value>
+    <comment>Label for any 'Export' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_Restore" xml:space="preserve">
+    <value>Khôi phục</value>
+    <comment>Label for any 'Restore' button, link, text, title, etc. For example for restore files from the rubbish bin - (String as short as possible).</comment>
+  </data>
+  <data name="UI_UsedCache" xml:space="preserve">
+    <value>Used cache</value>
+    <comment>Label to indicate the amount of used cache - (String as short as possible).</comment>
+  </data>
+  <data name="UI_OpenIn" xml:space="preserve">
+    <value>Mở với...</value>
+    <comment>Label for any 'Open in...' button, link, text, title, etc. to open a file or other kind of resource with a certain app - (String as short as possible).</comment>
   </data>
 </root>

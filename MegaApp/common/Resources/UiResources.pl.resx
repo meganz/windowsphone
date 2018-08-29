@@ -142,7 +142,7 @@
     <comment>Label for any 'Copy' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="EmptyFolder" xml:space="preserve">
-    <value>pusty katalog</value>
+    <value>Brak plików</value>
     <comment>Label for the background of an empty forder page - (String as short as possible).</comment>
   </data>
   <data name="EmptyTransfers" xml:space="preserve">
@@ -370,7 +370,7 @@
     <comment>Label for any 'Capture' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="ChangePinLock" xml:space="preserve">
-    <value>Zmień PIN</value>
+    <value>Zmień kod PIN</value>
     <comment>Label for any 'Change PIN Lock' button, link, text, title, etc. Try to preserve the PIN uppercase word. - (String as short as possible).</comment>
   </data>
   <data name="CleanUpTransfers" xml:space="preserve">
@@ -1308,11 +1308,108 @@ Preserve the PIN uppercase word.</comment>
     <comment>Label for any 'Takedown Guidance' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_OpenBrowser" xml:space="preserve">
-    <value>Open browser</value>
+    <value>Otwórz przeglądarkę</value>
     <comment>Label for the button to allow the user open the default browser - (String as short as possible).</comment>
   </data>
   <data name="UI_Retry" xml:space="preserve">
     <value>Ponów</value>
     <comment>Label for any 'Retry' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_CloseOtherSessions" xml:space="preserve">
+    <value>Zamknij pozostałe sesje</value>
+    <comment>Label for any 'Close other sessions' button, link, etc., to close all other active sessions except the current one - (String as short as possible).</comment>
+  </data>
+  <data name="UI_DoNotShowMeAgain" xml:space="preserve">
+    <value>Nie pokazuj ponownie</value>
+    <comment>Label for a check box included into a dialog to indicate don't show it again.</comment>
+  </data>
+  <data name="UI_BackupRecoveryKey" xml:space="preserve">
+    <value>Kopia klucza</value>
+    <comment>Label for any 'Backup Recovery Key' button, link, text, title, etc. - (String as short as possible).
+NOTE: Max. length 20 characters.</comment>
+  </data>
+  <data name="UI_Close" xml:space="preserve">
+    <value>Zamknij</value>
+    <comment>Label for any 'Close' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_TestPassword" xml:space="preserve">
+    <value>Hasło testowe</value>
+    <comment>Label for any 'Test Password' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_PlainText" xml:space="preserve">
+    <value>Zwykły tekst</value>
+    <comment>Label for any 'Plain text' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_EnablePinLock" xml:space="preserve">
+    <value>Włącz kod PIN</value>
+    <comment>Label for the switch button to enable or disable the PIN lock code. Keep PIN uppercase - (String as short as possible).</comment>
+  </data>
+  <data name="UI_RecoveryKeyDescription" xml:space="preserve">
+    <value>Klucz zapasowy umożliwia zalogowanie się na swoje konto, nawet jeśli zapomnisz hasła. Przechowuj go w bezpiecznym miejscu.</value>
+    <comment>Label to describe the 'Recovery Key' and its purpose.</comment>
+  </data>
+  <data name="UI_SessionManagement" xml:space="preserve">
+    <value>Zarządzanie sesją</value>
+    <comment>Label for the "Settings" option to manage sessions - (String as short as possible).</comment>
+  </data>
+  <data name="UI_SessionManagementDescription" xml:space="preserve">
+    <value>Spowoduje to wylogowanie wszystkich innych aktywnych sesji oprócz bieżącego. Aby nadal korzystać z MEGA, musisz ponownie zalogować się na inne urządzenia.</value>
+    <comment>Label to describe the "Session Management" option of the "Settings" section.</comment>
+  </data>
+  <data name="UI_Warning" xml:space="preserve">
+    <value>Ostrzeżenie</value>
+    <comment>Label for any 'Warning' title, message, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_EnableTwoFactorAuth" xml:space="preserve">
+    <value>Włącz uwierzytelnianie dwuskładnikowe</value>
+    <comment>Label for the "toggle" or "switch" button to enable/disable the Two-Factor Authentication.</comment>
+  </data>
+  <data name="UI_TwoFactorAuth" xml:space="preserve">
+    <value>Uwierzytelnianie dwuetapowe</value>
+    <comment>Label for the 'Two-Factor Authentication' section of the security settings.</comment>
+  </data>
+  <data name="UI_TwoFactorAuthSettingsDescription" xml:space="preserve">
+    <value>Uwierzytelnianie dwuskładnikowe to druga warstwa zabezpieczeń Twojego konta.</value>
+    <comment>Description for the 'Two-Factor Authentication' in the security settings section.</comment>
+  </data>
+  <data name="UI_Setup2FA" xml:space="preserve">
+    <value>Skonfiguruj dwuetapowe uwierzytelnianie</value>
+    <comment>Label for any 'Setup Two-Factor Authentication' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_SixDigitCode" xml:space="preserve">
+    <value>6 digit code</value>
+    <comment>Placeholder text of the field to type the 6-digit code provided for the authenticator app to verify the Multi-Factor Authentication.</comment>
+  </data>
+  <data name="UI_Verify" xml:space="preserve">
+    <value>Weryfikacja</value>
+    <comment>Label for any 'Verify' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_CopySeed" xml:space="preserve">
+    <value>Skopiuj dane</value>
+    <comment>Label of the button to copy the seed to enable the Multi-Factor Authentication - (String as short as possible).</comment>
+  </data>
+  <data name="UI_LostAuthDeviceQuestion" xml:space="preserve">
+    <value>Zgubiłeś swoje urządzenie?</value>
+    <comment>Label for any link/button to help the user in case lost the authentication device for MFA - (String as short as possible).</comment>
+  </data>
+  <data name="UI_ChangePasswordDescription" xml:space="preserve">
+    <value>Wprowadź i potwierdź nowe hasło i kliknij przycisk Zapisz.</value>
+    <comment>Text to describe the change password process.</comment>
+  </data>
+  <data name="UI_Export" xml:space="preserve">
+    <value>Eksportuj</value>
+    <comment>Label for any 'Export' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_Restore" xml:space="preserve">
+    <value>Odzyskaj</value>
+    <comment>Label for any 'Restore' button, link, text, title, etc. For example for restore files from the rubbish bin - (String as short as possible).</comment>
+  </data>
+  <data name="UI_UsedCache" xml:space="preserve">
+    <value>Używana pamięć podręczna</value>
+    <comment>Label to indicate the amount of used cache - (String as short as possible).</comment>
+  </data>
+  <data name="UI_OpenIn" xml:space="preserve">
+    <value>Otwórz...</value>
+    <comment>Label for any 'Open in...' button, link, text, title, etc. to open a file or other kind of resource with a certain app - (String as short as possible).</comment>
   </data>
 </root>
