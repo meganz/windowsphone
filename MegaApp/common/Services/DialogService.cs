@@ -1203,6 +1203,14 @@ namespace MegaApp.Services
             };
             pinLockStackPanel.Children.Add(titleLabel);
             
+            var warningMessage = new TextBlock()
+            {
+                Margin = new Thickness(12, 0, 12, 0),
+                Foreground = (Brush)Application.Current.Resources["MegaRedColorBrush"],
+                Text = string.Empty,
+                TextWrapping = TextWrapping.Wrap
+            };
+
             NumericPasswordBox currentPinLock = null;
 
             if (isChange)
@@ -1211,8 +1219,13 @@ namespace MegaApp.Services
                 currentPinLock = new NumericPasswordBox()
                 {
                     Watermark = UiResources.UI_PinLock.ToLower(),
-                    ClearButtonVisibility = Visibility.Visible
+                    ClearButtonVisibility = Visibility.Collapsed
                 };
+                currentPinLock.PasswordChanged += (sender, args) =>
+                {
+                    warningMessage.Text = string.Empty;
+                };
+
                 pinLockStackPanel.Children.Add(currentPinLock);
             }
             else
@@ -1223,14 +1236,21 @@ namespace MegaApp.Services
             var pinLock = new NumericPasswordBox()
             {
                 Watermark = UiResources.UI_NewPinLock.ToLower(),
-                ClearButtonVisibility = Visibility.Visible
+                ClearButtonVisibility = Visibility.Collapsed
             };
-
+            pinLock.PasswordChanged += (sender, args) =>
+            {
+                warningMessage.Text = string.Empty;
+            };
 
             var confirmPinLock = new NumericPasswordBox()
             {
                 Watermark = UiResources.UI_ConfirmPinLock.ToLower(),
-                ClearButtonVisibility = Visibility.Visible
+                ClearButtonVisibility = Visibility.Collapsed
+            };
+            confirmPinLock.PasswordChanged += (sender, args) =>
+            {
+                warningMessage.Text = string.Empty;
             };
 
             var confirmButton = new Button()
@@ -1248,34 +1268,24 @@ namespace MegaApp.Services
 
                         if (!hashValue.Equals(SettingsService.LoadSetting<string>(SettingsResources.UserPinLock)))
                         {
-                            new CustomMessageDialog(
-                                    AppMessages.CurrentPinLockCodeDoNotMatch_Title,
-                                    AppMessages.CurrentPinLockCodeDoNotMatch,
-                                    App.AppInformation,
-                                    MessageDialogButtons.Ok).ShowDialog();
+                            currentPinLock.Focus();
+                            warningMessage.Text = AppMessages.CurrentPinLockCodeDoNotMatch;
                             return;
                         }
                     }
-
                 }
 
                 if (pinLock.Password.Length < 4)
                 {
-                    new CustomMessageDialog(
-                            AppMessages.PinLockTooShort_Title,
-                            AppMessages.PinLockTooShort,
-                            App.AppInformation,
-                            MessageDialogButtons.Ok).ShowDialog();
+                    pinLock.Focus();
+                    warningMessage.Text = AppMessages.PinLockTooShort;
                     return;
                 }
 
                 if (!pinLock.Password.Equals(confirmPinLock.Password))
                 {
-                    new CustomMessageDialog(
-                            AppMessages.PinLockCodesDoNotMatch_Title,
-                            AppMessages.PinLockCodesDoNotMatch,
-                            App.AppInformation,
-                            MessageDialogButtons.Ok).ShowDialog();
+                    confirmPinLock.Focus();
+                    warningMessage.Text = AppMessages.PinLockCodesDoNotMatch;
                     return;
                 }
                
@@ -1304,6 +1314,7 @@ namespace MegaApp.Services
 
             pinLockStackPanel.Children.Add(pinLock);
             pinLockStackPanel.Children.Add(confirmPinLock);
+            pinLockStackPanel.Children.Add(warningMessage);
 
             pinLockButtonsGrid.Children.Add(confirmButton);
             pinLockButtonsGrid.Children.Add(cancelButton);
