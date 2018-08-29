@@ -68,9 +68,8 @@
         </trans-unit>
         <trans-unit id="Resx/EmptyFolder" translate="yes" space="preserve">
           <source>Empty Folder</source>
-          <target state="needs-review-translation">Niciun fişier în folder</target>
+          <target state="translated">Niciun fişier în folder</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty forder page - (String as short as possible).</note>
-          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/EmptyTransfers" translate="yes" space="preserve">
           <source>No transfers</source>
@@ -84,9 +83,8 @@
         </trans-unit>
         <trans-unit id="Resx/LoadingPreview" translate="yes" space="preserve">
           <source>Loading preview…</source>
-          <target state="needs-review-translation">Se încarcă previzualizarea...</target>
+          <target state="translated">Se încarcă previzualizarea...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label shown with an animation when the app is loading a preview - (String as short as possible).</note>
-          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_Login" translate="yes" space="preserve">
           <source>Login</source>
@@ -397,9 +395,8 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/ChangePinLock" translate="yes" space="preserve">
           <source>Change PIN Code</source>
-          <target state="needs-review-translation">Schimbă blocarea prin PIN</target>
+          <target state="translated">Schimbă blocarea prin PIN</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Change PIN Lock' button, link, text, title, etc. Try to preserve the PIN uppercase word. - (String as short as possible).</note>
-          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/CleanUpTransfers" translate="yes" space="preserve">
           <source>clean up transfers</source>
@@ -438,9 +435,8 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/ExportPhotoAlbumText" translate="yes" space="preserve">
           <source>Export images to ‘saved pictures’ album after download</source>
-          <target state="needs-review-translation">Exportă imaginile în albumul 'Fotografii salvate' după descărcare</target>
+          <target state="translated">Exportă imaginile în albumul 'Fotografii salvate' după descărcare</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text placed just before a switch button (on/off) into the 'settings' page indicating if the app should export automatically images to the device photo album after download.</note>
-          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/FilesAscendingSortOption" translate="yes" space="preserve">
           <source>files (ascending)</source>
@@ -645,9 +641,8 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/InitTourPrivacy1" translate="yes" space="preserve">
           <source>keep your files safe with MEGA’s</source>
-          <target state="needs-review-translation">păstrează-ţi fişierele sigure cu</target>
+          <target state="translated">păstrează-ţi fişierele sigure cu</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label 'keep your files safe with MEGA's' for the first part of the sentence 'keep your files safe with MEGA's end-to-end encryption.', to build this sentence in two colors into the init tour page. Don't place '.' at the end of the string.  Keep all in lowercase less the word MEGA in uppercase.</note>
-          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/InitTourPrivacy2" translate="yes" space="preserve">
           <source>end-to-end encryption.</source>
@@ -1001,9 +996,8 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
         </trans-unit>
         <trans-unit id="Resx/WarningOutOfSpace" translate="yes" space="preserve">
           <source>You’re running out of space!</source>
-          <target state="needs-review-translation">Ai rămas fără spaţiu!</target>
+          <target state="translated">Ai rămas fără spaţiu!</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Warning message in Cloud Drive when the user is running out of space</note>
-          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_ImportLinkBorderText" translate="yes" space="preserve">
           <source>Import to {0}</source>
@@ -1242,9 +1236,8 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/EmptyCloudDrive" translate="yes" space="preserve">
           <source>No files in your Cloud Drive</source>
-          <target state="needs-review-translation">Niciun fişier în unitatea cloud</target>
+          <target state="translated">Niciun fişier în unitatea cloud</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty cloud drive page - (String as short as possible).</note>
-          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/EmptyOffline" translate="yes" space="preserve">
           <source>No items saved for offline</source>
@@ -1398,9 +1391,8 @@ NOTE: Keep the capital letter if possible.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateCompleting" translate="yes" space="preserve">
           <source>Completing…</source>
-          <target state="needs-review-translation">Se finalizează...</target>
+          <target state="translated">Se finalizează...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being completing - (String as short as possible).</note>
-          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateDownloaded" translate="yes" space="preserve">
           <source>Downloaded</source>
@@ -1409,9 +1401,8 @@ NOTE: Keep the capital letter if possible.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateDownloading" translate="yes" space="preserve">
           <source>Downloading…</source>
-          <target state="needs-review-translation">Se descarcă...</target>
+          <target state="translated">Se descarcă...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being downloading - (String as short as possible).</note>
-          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateError" translate="yes" space="preserve">
           <source>Error on transfer</source>
@@ -1430,9 +1421,8 @@ NOTE: Keep the capital letter if possible.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStatePreparing" translate="yes" space="preserve">
           <source>Preparing…</source>
-          <target state="needs-review-translation">Se pregăteşte...</target>
+          <target state="translated">Se pregăteşte...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being preparing - (String as short as possible).</note>
-          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateQueued" translate="yes" space="preserve">
           <source>Queued</source>
@@ -1441,9 +1431,8 @@ NOTE: Keep the capital letter if possible.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateRetrying" translate="yes" space="preserve">
           <source>Retrying…</source>
-          <target state="needs-review-translation">Se reîncearcă...</target>
+          <target state="translated">Se reîncearcă...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being retrying - (String as short as possible).</note>
-          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateUploaded" translate="yes" space="preserve">
           <source>Uploaded</source>
@@ -1452,9 +1441,8 @@ NOTE: Keep the capital letter if possible.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateUploading" translate="yes" space="preserve">
           <source>Uploading…</source>
-          <target state="needs-review-translation">Se încarcă...</target>
+          <target state="translated">Se încarcă...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being uploading - (String as short as possible).</note>
-          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_CancelDownloads" translate="yes" space="preserve">
           <source>Cancel downloads</source>
@@ -1544,9 +1532,8 @@ NOTE: Max. length 20 characters.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_EnablePinLock" translate="yes" space="preserve">
           <source>Enable PIN code</source>
-          <target state="needs-review-translation">Enable PIN code</target>
+          <target state="translated">Enable PIN code</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the switch button to enable or disable the PIN lock code. Keep PIN uppercase - (String as short as possible).</note>
-          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_RecoveryKeyDescription" translate="yes" space="preserve">
           <source>Your Recovery Key allows you to login to your account even if you forget your password. Store it somewhere safe.</source>
@@ -1600,9 +1587,8 @@ NOTE: Max. length 20 characters.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_SixDigitCode" translate="yes" space="preserve">
           <source>6-digit code</source>
-          <target state="needs-review-translation">6 digit code</target>
+          <target state="translated">6 digit code</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Placeholder text of the field to type the 6-digit code provided for the authenticator app to verify the Multi-Factor Authentication.</note>
-          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_Verify" translate="yes" space="preserve">
           <source>Verify</source>
@@ -1616,9 +1602,8 @@ NOTE: Max. length 20 characters.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_LostAuthDeviceQuestion" translate="yes" space="preserve">
           <source>Lost your Authenticator device?</source>
-          <target state="needs-review-translation">Lost your Authenticator device?</target>
+          <target state="translated">Lost your Authenticator device?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any link/button to help the user in case lost the authentication device for MFA - (String as short as possible).</note>
-          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_ChangePasswordDescription" translate="yes" space="preserve">
           <source>Enter and confirm your new password and click save.</source>
@@ -1642,9 +1627,8 @@ NOTE: Max. length 20 characters.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_OpenIn" translate="yes" space="preserve">
           <source>Open in…</source>
-          <target state="needs-review-translation">Deschide în...</target>
+          <target state="translated">Deschide în...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Open in...' button, link, text, title, etc. to open a file or other kind of resource with a certain app - (String as short as possible).</note>
-          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_FindApp" translate="yes" xml:space="preserve">
           <source>Find app</source>

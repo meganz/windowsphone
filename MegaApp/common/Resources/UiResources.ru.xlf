@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en" target-language="en" original="UiResources.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp80" product-version="1.0.0.0" build-num="0">
+  <file datatype="xml" source-language="en" target-language="en" original="UiResources.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp81" product-version="1.0.0.0" build-num="0">
     <header>
       <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="3.1.1250.0" tool-company="Microsoft" />
     </header>
@@ -67,7 +67,7 @@
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Email' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/EmptyFolder" translate="yes" space="preserve">
-          <source>empty folder</source>
+          <source>Empty Folder</source>
           <target state="translated">Папка пуста</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty forder page - (String as short as possible).</note>
         </trans-unit>
@@ -82,7 +82,7 @@
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Get link' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/LoadingPreview" translate="yes" space="preserve">
-          <source>Loading preview...</source>
+          <source>Loading preview…</source>
           <target state="translated">Загрузка предпросмотра...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label shown with an animation when the app is loading a preview - (String as short as possible).</note>
         </trans-unit>
@@ -394,7 +394,7 @@ Try to preserve the PIN uppercase word.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Capture' button, link, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ChangePinLock" translate="yes" space="preserve">
-          <source>Change PIN Lock</source>
+          <source>Change PIN Code</source>
           <target state="translated">Изменить PIN-код</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Change PIN Lock' button, link, text, title, etc. Try to preserve the PIN uppercase word. - (String as short as possible).</note>
         </trans-unit>
@@ -434,7 +434,7 @@ Try to preserve the PIN uppercase word.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Text 'Export Recovery Key' placed just before two buttons into the 'settings' page to allow see (copy/paste) and export the Recovery Key.</note>
         </trans-unit>
         <trans-unit id="Resx/ExportPhotoAlbumText" translate="yes" space="preserve">
-          <source>Export images to 'saved pictures' album after download</source>
+          <source>Export images to ‘saved pictures’ album after download</source>
           <target state="translated">Экспортировать изображения в «сохранённые» после загрузки альбома</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text placed just before a switch button (on/off) into the 'settings' page indicating if the app should export automatically images to the device photo album after download.</note>
         </trans-unit>
@@ -640,7 +640,7 @@ Preserve the PIN uppercase word.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the title of the init tour page dedicated to the easy access. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/InitTourPrivacy1" translate="yes" space="preserve">
-          <source>keep your files safe with MEGA's</source>
+          <source>keep your files safe with MEGA’s</source>
           <target state="translated">храните ваши файлы в безопасности с MEGA</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label 'keep your files safe with MEGA's' for the first part of the sentence 'keep your files safe with MEGA's end-to-end encryption.', to build this sentence in two colors into the init tour page. Don't place '.' at the end of the string.  Keep all in lowercase less the word MEGA in uppercase.</note>
         </trans-unit>
@@ -995,7 +995,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the 'Upgrade now!' button of the dialog shown randomly when a user logs into a free account - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/WarningOutOfSpace" translate="yes" space="preserve">
-          <source>You're running out of space!</source>
+          <source>You’re running out of space!</source>
           <target state="translated">У Вас закончилось свободное место!</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Warning message in Cloud Drive when the user is running out of space</note>
         </trans-unit>
@@ -1235,7 +1235,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Saved for offline' button, link, text, title, etc. - (String as short as possible, LESS THAN 22 CHARS).</note>
         </trans-unit>
         <trans-unit id="Resx/EmptyCloudDrive" translate="yes" space="preserve">
-          <source>No files in your cloud drive</source>
+          <source>No files in your Cloud Drive</source>
           <target state="translated">На вашем Облачном Диске нет файлов</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty cloud drive page - (String as short as possible).</note>
         </trans-unit>
@@ -1390,7 +1390,7 @@ NOTE: Keep the capital letter if possible.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a canceled transfer - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateCompleting" translate="yes" space="preserve">
-          <source>Completing...</source>
+          <source>Completing…</source>
           <target state="translated">Завершение…</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being completing - (String as short as possible).</note>
         </trans-unit>
@@ -1400,7 +1400,7 @@ NOTE: Keep the capital letter if possible.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a download transfer when is finished - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateDownloading" translate="yes" space="preserve">
-          <source>Downloading...</source>
+          <source>Downloading…</source>
           <target state="translated">Загрузка…</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being downloading - (String as short as possible).</note>
         </trans-unit>
@@ -1420,7 +1420,7 @@ NOTE: Keep the capital letter if possible.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a paused transfer - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStatePreparing" translate="yes" space="preserve">
-          <source>Preparing...</source>
+          <source>Preparing…</source>
           <target state="translated">Подготовка…</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being preparing - (String as short as possible).</note>
         </trans-unit>
@@ -1430,7 +1430,7 @@ NOTE: Keep the capital letter if possible.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is queued - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateRetrying" translate="yes" space="preserve">
-          <source>Retrying...</source>
+          <source>Retrying…</source>
           <target state="translated">Повтор…</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being retrying - (String as short as possible).</note>
         </trans-unit>
@@ -1440,7 +1440,7 @@ NOTE: Keep the capital letter if possible.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of an upload transfer when is finished - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateUploading" translate="yes" space="preserve">
-          <source>Uploading...</source>
+          <source>Uploading…</source>
           <target state="translated">Загрузка...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being uploading - (String as short as possible).</note>
         </trans-unit>
@@ -1531,7 +1531,7 @@ NOTE: Max. length 20 characters.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Plain text' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_EnablePinLock" translate="yes" space="preserve">
-          <source>Enable PIN lock</source>
+          <source>Enable PIN code</source>
           <target state="translated">Включить PIN-код</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the switch button to enable or disable the PIN lock code. Keep PIN uppercase - (String as short as possible).</note>
         </trans-unit>
@@ -1575,25 +1575,20 @@ NOTE: Max. length 20 characters.</note>
           <target state="translated">Настроить двухфакторную аутентификацию</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Setup Two-Factor Authentication' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_MFA_ManuallySetupStep1" translate="yes" space="preserve">
-          <source>1. Scan or copy the seed directly into your authenticator app</source>
-          <target state="translated">1. Scan or copy the seed directly into your authenticator app</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the step 1 to setup the Multi-Factor Authentication.</note>
-        </trans-unit>
-        <trans-unit id="Resx/UI_MFA_ManuallySetupStep2" translate="yes" space="preserve">
-          <source>2. Confirm that it works by copying the 6-digit code generated by your authenticator app</source>
-          <target state="translated">2. Confirm that it works by copying the 6-digit code generated by your authenticator app</target>
+        <trans-unit id="Resx/UI_MFA_SetupStep2" translate="yes" xml:space="preserve">
+          <source>After setting up your seed on your authenticator app enter the 6-digit code provided.</source>
+          <target state="new">After setting up your seed on your authenticator app enter the 6-digit code provided.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the step 2 to setup the Muti-Factor Authentication.</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_MFA_ManuallySetupStep2_Description" translate="yes" space="preserve">
-          <source>After setting up your seed on your authenticator app enter the 6-digit code provided.</source>
-          <target state="translated">После ввода seed-ключа в приложение-аутентификатор введите появившийся шестизначный код.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Text to describe the step 2 to setup the Muti-Factor Authentication.</note>
+        <trans-unit id="Resx/UI_MFA_SetupStep1" translate="yes" xml:space="preserve">
+          <source>Scan or copy the seed directly into your authenticator app. Be sure to backup this seed to a safe place in case you lose your phone.</source>
+          <target state="new">Scan or copy the seed directly into your authenticator app. Be sure to backup this seed to a safe place in case you lose your phone.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the step 1 to setup the Multi-Factor Authentication.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_SixDigitCode" translate="yes" space="preserve">
-          <source>6 digit code</source>
+          <source>6-digit code</source>
           <target state="translated">6 digit code</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Placeholder text of the field to type the 6 digit code provided for the authenticator app to verify the Multi-Factor Authentication.</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">Placeholder text of the field to type the 6-digit code provided for the authenticator app to verify the Multi-Factor Authentication.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_Verify" translate="yes" space="preserve">
           <source>Verify</source>
@@ -1606,7 +1601,7 @@ NOTE: Max. length 20 characters.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label of the button to copy the seed to enable the Multi-Factor Authentication - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_LostAuthDeviceQuestion" translate="yes" space="preserve">
-          <source>Lost your authenticator device?</source>
+          <source>Lost your Authenticator device?</source>
           <target state="translated">Потеряли аутентификационное устройство?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any link/button to help the user in case lost the authentication device for MFA - (String as short as possible).</note>
         </trans-unit>
@@ -1631,9 +1626,14 @@ NOTE: Max. length 20 characters.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label to indicate the amount of used cache - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_OpenIn" translate="yes" space="preserve">
-          <source>Open in...</source>
+          <source>Open in…</source>
           <target state="translated">Открыть в…</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Open in...' button, link, text, title, etc. to open a file or other kind of resource with a certain app - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_FindApp" translate="yes" xml:space="preserve">
+          <source>Find app</source>
+          <target state="new">Find app</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Find app' button, link, text, title, etc, to find an app to open a file, resource, etc. - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>
