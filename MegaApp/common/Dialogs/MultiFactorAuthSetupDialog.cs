@@ -85,36 +85,16 @@ namespace MegaApp.Dialogs
 
         #endregion
 
-        #region Properties
-
-        private bool dialogResult;
-
-        #endregion
-
         #region Methods
 
         private void SetupMultiFactorAuth(object obj = null)
         {
-            this.dialogResult = true;
-
-            if (this.TaskCompletionSource != null)
-                this.TaskCompletionSource.TrySetResult(true);
+            this.DialogResult = true;
 
             base.CloseDialog();
 
             NavigateService.NavigateTo(typeof(MultiFactorAuthAppSetupPage),
                 NavigationParameter.Normal);
-        }
-
-        protected override bool OnWindowClosing()
-        {
-            if (!this.dialogResult)
-            {
-                if (this.TaskCompletionSource != null)
-                    this.TaskCompletionSource.TrySetResult(false);
-            }
-
-            return base.OnWindowClosing();
         }
 
         #endregion

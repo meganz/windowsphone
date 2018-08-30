@@ -13,7 +13,7 @@ using MegaApp.Views;
 
 namespace MegaApp.ViewModels
 {
-    class SettingsViewModel : BaseAppInfoAwareViewModel
+    public class SettingsViewModel : BaseAppInfoAwareViewModel
     {
         public SettingsViewModel(MegaSDK megaSdk, AppInformation appInformation)
             : base(megaSdk, appInformation)
@@ -77,7 +77,10 @@ namespace MegaApp.ViewModels
             this.AppVersion = AppService.GetAppVersion();
             this.MegaSdkVersion = AppService.GetMegaSDK_Version();
 
-            this.PinLockIsEnabled = SettingsService.LoadSetting<bool>(SettingsResources.UserPinLockIsEnabled, false);
+            // Initialize the PIN lock code setting
+            SetField(ref this._isPinLockEnabled, 
+                SettingsService.LoadSetting<bool>(SettingsResources.UserPinLockIsEnabled, false),
+                "IsMultiFactorAuthEnabled");
 
             // Do not set the property on initialize, because it fill fire the SetAutoCameraUploadStatus
             _cameraUploadsIsEnabled = MediaService.GetAutoCameraUploadStatus();
@@ -159,9 +162,9 @@ namespace MegaApp.ViewModels
             DialogService.ShowViewRecoveryKey(MegaSdk.exportMasterKey(), CopyClipboard);
         }
 
-        private void ChangePinLock(object obj)
+        private async void ChangePinLock(object obj)
         {
-            DialogService.ShowPinLockDialog(true, this);
+            await DialogService.ShowPinLockDialog(true);
         }
 
         #if WINDOWS_PHONE_81
@@ -288,6 +291,17 @@ namespace MegaApp.ViewModels
             SetField(ref this._isMultiFactorAuthEnabled, value, "IsMultiFactorAuthEnabled");
         }
 
+        private async void OnIsPinLockEnabledValueChanged()
+        {
+            if (!this.IsPinLockEnabled) return;
+
+            SetField(ref this._isPinLockEnabled,
+                    await DialogService.ShowPinLockDialog(false),
+                    "IsPinLockEnabled");
+
+            OnPropertyChanged("IsPinLockEnabledText");
+        }
+
         /// Clear the app cache
         /// </summary>
         private async void ClearCache(object obj)
@@ -367,27 +381,29 @@ namespace MegaApp.ViewModels
             }
         }
 
-        private bool _pinLockIsEnabled;
-        public bool PinLockIsEnabled
+        private bool _isPinLockEnabled;
+        public bool IsPinLockEnabled
         {
-            get { return _pinLockIsEnabled; }
+            get { return _isPinLockEnabled; }
             set
             {
-                if (_pinLockIsEnabled && !value)
+                if (_isPinLockEnabled && !value)
                 {
                     SettingsService.DeleteSetting(SettingsResources.UserPinLockIsEnabled);
                     SettingsService.DeleteSetting(SettingsResources.UserPinLock);
                 }
 
-                _pinLockIsEnabled = value;
+                if (!SetField(ref _isPinLockEnabled, value))
+                    return;
 
-                PinLockIsEnabledText = _pinLockIsEnabled ? UiResources.On : UiResources.Off;
-
-                if (_pinLockIsEnabled)
-                    DialogService.ShowPinLockDialog(false, this);
-                
-                OnPropertyChanged("PinLockIsEnabled");
+                OnPropertyChanged("IsPinLockEnabledText");
+                OnIsPinLockEnabledValueChanged();                
             }
+        }
+
+        public string IsPinLockEnabledText
+        {
+            get { return IsPinLockEnabled ? UiResources.On : UiResources.Off; }
         }
 
         private string _cameraUploadsIsEnabledText;
@@ -416,17 +432,6 @@ namespace MegaApp.ViewModels
                 _cameraUploadsIsEnabled = MediaService.SetAutoCameraUpload(value);
                 this.CameraUploadsIsEnabledText = _cameraUploadsIsEnabled ? UiResources.On : UiResources.Off;
                 OnPropertyChanged("CameraUploadsIsEnabled");
-            }
-        }
-
-        private string _pinLockIsEnabledText;
-        public string PinLockIsEnabledText
-        {
-            get { return _pinLockIsEnabledText; }
-            set
-            {
-                _pinLockIsEnabledText = value;
-                OnPropertyChanged("PinLockIsEnabledText");
             }
         }
 

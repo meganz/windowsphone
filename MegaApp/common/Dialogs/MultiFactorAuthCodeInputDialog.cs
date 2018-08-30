@@ -195,23 +195,20 @@ namespace MegaApp.Dialogs
             {
                 this.progressBar.Visibility = Visibility.Visible;
 
-                dialogResult = false;
+                this.DialogResult = false;
                 if (this.dialogAction != null)
-                    dialogResult = this.dialogAction.Invoke(this.verificationCode.Text);
+                    this.DialogResult = this.dialogAction.Invoke(this.verificationCode.Text);
 
                 if (this.dialogActionAsync != null)
-                    dialogResult = await this.dialogActionAsync.Invoke(this.verificationCode.Text);
+                    this.DialogResult = await this.dialogActionAsync.Invoke(this.verificationCode.Text);
 
                 this.progressBar.Visibility = Visibility.Collapsed;
 
-                if (!dialogResult)
+                if (!this.DialogResult)
                 {
                     this.verificationCode.Foreground = (Brush)Application.Current.Resources["MegaRedColorBrush"];
                     return;
                 }
-
-                if (this.TaskCompletionSource != null)
-                    this.TaskCompletionSource.TrySetResult(true);
 
                 base.CloseDialog();
             }
@@ -221,17 +218,6 @@ namespace MegaApp.Dialogs
         {
             var webBrowserTask = new WebBrowserTask { Uri = new Uri(AppResources.AR_RecoveryUrl) };
             webBrowserTask.Show();
-        }
-
-        protected override bool OnWindowClosing()
-        {
-            if (!this.dialogResult)
-            {
-                if (this.TaskCompletionSource != null)
-                    this.TaskCompletionSource.TrySetResult(false);
-            }
-
-            return base.OnWindowClosing();
         }
 
         #endregion
@@ -259,8 +245,6 @@ namespace MegaApp.Dialogs
 
         private Func<string, bool> dialogAction;
         private Func<string, Task<bool>> dialogActionAsync;
-
-        private bool dialogResult;
 
         public bool IsWarningMessageVisible
         {

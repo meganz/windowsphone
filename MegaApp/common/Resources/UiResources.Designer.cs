@@ -295,7 +295,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Change PIN Lock.
+        ///   Busca una cadena traducida similar a Change PIN Code.
         /// </summary>
         public static string ChangePinLock {
             get {
@@ -556,15 +556,6 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a done.
-        /// </summary>
-        public static string Done {
-            get {
-                return ResourceManager.GetString("Done", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a download.
         /// </summary>
         public static string Download {
@@ -592,7 +583,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a No files in your cloud drive.
+        ///   Busca una cadena traducida similar a No files in your Cloud Drive.
         /// </summary>
         public static string EmptyCloudDrive {
             get {
@@ -601,7 +592,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a empty folder.
+        ///   Busca una cadena traducida similar a Empty Folder.
         /// </summary>
         public static string EmptyFolder {
             get {
@@ -673,7 +664,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Export images to &apos;saved pictures&apos; album after download.
+        ///   Busca una cadena traducida similar a Export images to ‘saved pictures’ album after download.
         /// </summary>
         public static string ExportPhotoAlbumText {
             get {
@@ -862,7 +853,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a keep your files safe with MEGA&apos;s.
+        ///   Busca una cadena traducida similar a keep your files safe with MEGA’s.
         /// </summary>
         public static string InitTourPrivacy1 {
             get {
@@ -970,7 +961,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Loading preview....
+        ///   Busca una cadena traducida similar a Loading preview….
         /// </summary>
         public static string LoadingPreview {
             get {
@@ -2176,7 +2167,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Enable PIN lock.
+        ///   Busca una cadena traducida similar a Enable PIN code.
         /// </summary>
         public static string UI_EnablePinLock {
             get {
@@ -2356,7 +2347,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Lost your authenticator device?.
+        ///   Busca una cadena traducida similar a Lost your Authenticator device?.
         /// </summary>
         public static string UI_LostAuthDeviceQuestion {
             get {
@@ -2446,7 +2437,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Open in....
+        ///   Busca una cadena traducida similar a Open in….
         /// </summary>
         public static string UI_OpenIn {
             get {
@@ -2644,7 +2635,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Completing....
+        ///   Busca una cadena traducida similar a Completing….
         /// </summary>
         public static string UI_TransferStateCompleting {
             get {
@@ -2662,7 +2653,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Downloading....
+        ///   Busca una cadena traducida similar a Downloading….
         /// </summary>
         public static string UI_TransferStateDownloading {
             get {
@@ -2698,7 +2689,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Preparing....
+        ///   Busca una cadena traducida similar a Preparing….
         /// </summary>
         public static string UI_TransferStatePreparing {
             get {
@@ -2716,7 +2707,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Retrying....
+        ///   Busca una cadena traducida similar a Retrying….
         /// </summary>
         public static string UI_TransferStateRetrying {
             get {
@@ -2734,7 +2725,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Uploading....
+        ///   Busca una cadena traducida similar a Uploading….
         /// </summary>
         public static string UI_TransferStateUploading {
             get {
@@ -2914,7 +2905,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a You&apos;re running out of space!.
+        ///   Busca una cadena traducida similar a You’re running out of space!.
         /// </summary>
         public static string WarningOutOfSpace {
             get {

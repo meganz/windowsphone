@@ -41,10 +41,10 @@ namespace MegaApp.Dialogs
                 Width = Double.NaN,
                 RowDefinitions =
                 {
-                    new RowDefinition() { Height = GridLength.Auto }, // Logo row
-                    new RowDefinition() { Height = GridLength.Auto }, // Title row
-                    new RowDefinition() { Height = GridLength.Auto }, // Content row
-                    new RowDefinition() { Height = GridLength.Auto }, // Buttons row
+                    new RowDefinition() { Height = new GridLength(1, GridUnitType.Auto) }, // Logo row
+                    new RowDefinition() { Height = new GridLength(1, GridUnitType.Auto) }, // Title row
+                    new RowDefinition() { Height = new GridLength(1, GridUnitType.Star) }, // Content row
+                    new RowDefinition() { Height = new GridLength(1, GridUnitType.Auto) }, // Buttons row
                 }
             };
 
@@ -90,7 +90,12 @@ namespace MegaApp.Dialogs
 
         #region Properties
 
-        protected TaskCompletionSource<bool> TaskCompletionSource;
+        /// <summary>
+        /// Property to store the result of the dialog action.
+        /// </summary>
+        protected bool DialogResult;
+
+        private TaskCompletionSource<bool> taskCompletionSource;
 
         #endregion
 
@@ -121,13 +126,13 @@ namespace MegaApp.Dialogs
         public Task<bool> ShowDialogAsync()
         {
             // Needed to make a awaitable task
-            TaskCompletionSource = new TaskCompletionSource<bool>();
+            taskCompletionSource = new TaskCompletionSource<bool>();
 
             // Invoke the main dialog method
             ShowDialog();
 
             // Return awaitable task
-            return TaskCompletionSource.Task;
+            return taskCompletionSource.Task;
         }
         
         /// <summary>
@@ -154,6 +159,9 @@ namespace MegaApp.Dialogs
 
         protected void DialogClosed()
         {
+            if (this.taskCompletionSource != null)
+                this.taskCompletionSource.TrySetResult(this.DialogResult);
+
             // When the dialog is closed and finished remove this helper property
             App.AppInformation.PickerOrAsyncDialogIsOpen = false;
         }

@@ -378,9 +378,9 @@
                                 <telerikPrimitives:RadToggleSwitch 
                                     x:Name="BtnPinLockSwitch" 
                                     Margin="12,0" 
-                                    Content="{Binding PinLockIsEnabledText}" 
+                                    Content="{Binding IsPinLockEnabledText}" 
                                     FontFamily="Portable User Interface"
-                                    IsChecked="{Binding PinLockIsEnabled, Mode=TwoWay}" 
+                                    IsChecked="{Binding IsPinLockEnabled, Mode=TwoWay}" 
                                     VerticalAlignment="Center">
                                     <telerikPrimitives:RadToggleSwitch.ButtonStyle>
                                         <Style TargetType="telerikToggleSwitch:ToggleSwitchButton">
@@ -394,7 +394,7 @@
                                     Command="{Binding ChangePinLockCommand}"
                                     Content="{Binding LocalizedUiResources.ChangePinLock, Source={StaticResource LocalizedStrings}}" 
                                     HorizontalAlignment="Left" 
-                                    Visibility="{Binding PinLockIsEnabled, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                                    Visibility="{Binding IsPinLockEnabled, Converter={StaticResource BooleanToVisibilityConverter}}" />
                             </StackPanel>
                             
                             <!-- RECOVERY KEY -->

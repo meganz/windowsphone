@@ -1144,7 +1144,7 @@ namespace MegaApp.Services
             feedbackRadWindow.IsOpen = true;
         }
 
-        private static async void ShowCancelSubscriptionDialog(string reason)
+        private static void ShowCancelSubscriptionDialog(string reason)
         {
             var customMessageDialog = new CustomMessageDialog(AppMessages.CancelSubscription_Title,
                 AppMessages.AM_CancelSubscriptionConfirmation, App.AppInformation, MessageDialogButtons.YesNo);
@@ -1157,184 +1157,14 @@ namespace MegaApp.Services
             customMessageDialog.ShowDialog();
         }
 
-        public static void ShowPinLockDialog(bool isChange, SettingsViewModel settingsViewModel)
+        /// <summary>
+        /// Show a dialog to set or change the PIN lock code.
+        /// </summary>
+        /// <param name="isChange">True if is to change the PIN lock code or false in other case.</param>
+        public static async Task<bool> ShowPinLockDialog(bool isChange)
         {
-            var pinLockRadWindow = new RadModalWindow()
-            {
-                IsFullScreen = true,
-                Background = new SolidColorBrush(Color.FromArgb(255, 0, 0, 0)),
-                WindowSizeMode = WindowSizeMode.FitToPlacementTarget,
-                HorizontalContentAlignment = HorizontalAlignment.Stretch,
-                VerticalContentAlignment = VerticalAlignment.Stretch,
-                IsAnimationEnabled = true,
-                OpenAnimation = AnimationService.GetOpenDialogAnimation(),
-                CloseAnimation = AnimationService.GetCloseDialogAnimation()
-            };
-
-            pinLockRadWindow.WindowOpening += (sender, args) => DialogOpening(args);
-            pinLockRadWindow.WindowClosed += (sender, args) => DialogClosed();
-
-            var pinLockStackPanel = new StackPanel()
-            {
-                Orientation = Orientation.Vertical,
-                Width = Double.NaN,
-                HorizontalAlignment = HorizontalAlignment.Stretch,
-                VerticalAlignment = VerticalAlignment.Top,
-                Margin = new Thickness(12),
-                Background = new SolidColorBrush((Color)Application.Current.Resources["PhoneChromeColor"])
-            };
-
-            var pinLockButtonsGrid = new Grid()
-            {
-                Width = Double.NaN,
-                HorizontalAlignment = HorizontalAlignment.Stretch,
-                VerticalAlignment = VerticalAlignment.Bottom,
-                Background = new SolidColorBrush((Color)Application.Current.Resources["PhoneChromeColor"])
-            };
-            pinLockButtonsGrid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
-            pinLockButtonsGrid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
-
-
-            var titleLabel = new TextBlock()
-            {
-                Margin = new Thickness(12),
-                FontFamily = new FontFamily("Segoe WP Semibold"),
-                FontSize = Convert.ToDouble(Application.Current.Resources["PhoneFontSizeLarge"])
-            };
-            pinLockStackPanel.Children.Add(titleLabel);
-            
-            var warningMessage = new TextBlock()
-            {
-                Margin = new Thickness(12, 0, 12, 0),
-                Foreground = (Brush)Application.Current.Resources["MegaRedColorBrush"],
-                Text = string.Empty,
-                TextWrapping = TextWrapping.Wrap
-            };
-
-            NumericPasswordBox currentPinLock = null;
-
-            if (isChange)
-            {
-                titleLabel.Text = UiResources.ChangePinLock.ToUpper();
-                currentPinLock = new NumericPasswordBox()
-                {
-                    Watermark = UiResources.UI_PinLock.ToLower(),
-                    ClearButtonVisibility = Visibility.Collapsed
-                };
-                currentPinLock.PasswordChanged += (sender, args) =>
-                {
-                    warningMessage.Text = string.Empty;
-                };
-
-                pinLockStackPanel.Children.Add(currentPinLock);
-            }
-            else
-            {
-                titleLabel.Text = UiResources.MakePinLock.ToUpper();
-            }
-
-            var pinLock = new NumericPasswordBox()
-            {
-                Watermark = UiResources.UI_NewPinLock.ToLower(),
-                ClearButtonVisibility = Visibility.Collapsed
-            };
-            pinLock.PasswordChanged += (sender, args) =>
-            {
-                warningMessage.Text = string.Empty;
-            };
-
-            var confirmPinLock = new NumericPasswordBox()
-            {
-                Watermark = UiResources.UI_ConfirmPinLock.ToLower(),
-                ClearButtonVisibility = Visibility.Collapsed
-            };
-            confirmPinLock.PasswordChanged += (sender, args) =>
-            {
-                warningMessage.Text = string.Empty;
-            };
-
-            var confirmButton = new Button()
-            {
-                Content = UiResources.Done.ToLower(),
-                HorizontalAlignment = HorizontalAlignment.Stretch,
-            };
-            confirmButton.Tap += (sender, args) =>
-            {
-                if (isChange)
-                {
-                    if (currentPinLock != null)
-                    {
-                        string hashValue = CryptoService.HashData(currentPinLock.Password);
-
-                        if (!hashValue.Equals(SettingsService.LoadSetting<string>(SettingsResources.UserPinLock)))
-                        {
-                            currentPinLock.Focus();
-                            warningMessage.Text = AppMessages.CurrentPinLockCodeDoNotMatch;
-                            return;
-                        }
-                    }
-                }
-
-                if (pinLock.Password.Length < 4)
-                {
-                    pinLock.Focus();
-                    warningMessage.Text = AppMessages.PinLockTooShort;
-                    return;
-                }
-
-                if (!pinLock.Password.Equals(confirmPinLock.Password))
-                {
-                    confirmPinLock.Focus();
-                    warningMessage.Text = AppMessages.PinLockCodesDoNotMatch;
-                    return;
-                }
-               
-                SettingsService.SaveSetting(SettingsResources.UserPinLock, CryptoService.HashData(pinLock.Password));
-                SettingsService.SaveSetting(SettingsResources.UserPinLockIsEnabled, true);
-
-                App.AppInformation.HasPinLockIntroduced = true;
-
-                pinLockRadWindow.IsOpen = false;
-            };
-
-            var cancelButton = new Button()
-            {
-                Content = UiResources.Cancel.ToLower(),
-                HorizontalAlignment = HorizontalAlignment.Stretch,
-            };
-            cancelButton.Tap += (sender, args) =>
-            {
-                if (!isChange)
-                {
-                    settingsViewModel.PinLockIsEnabled = false;                    
-                }
-                pinLockRadWindow.IsOpen = false;
-            };
-
-
-            pinLockStackPanel.Children.Add(pinLock);
-            pinLockStackPanel.Children.Add(confirmPinLock);
-            pinLockStackPanel.Children.Add(warningMessage);
-
-            pinLockButtonsGrid.Children.Add(confirmButton);
-            pinLockButtonsGrid.Children.Add(cancelButton);
-            Grid.SetColumn(confirmButton, 0);
-            Grid.SetColumn(cancelButton, 1);
-
-            var grid = new Grid()
-            {
-                Width = Double.NaN,
-                HorizontalAlignment = HorizontalAlignment.Stretch,
-                VerticalAlignment = VerticalAlignment.Stretch,
-                Background = new SolidColorBrush((Color)Application.Current.Resources["PhoneChromeColor"])
-            };
-
-            grid.Children.Add(pinLockStackPanel);
-            grid.Children.Add(pinLockButtonsGrid);
-
-            pinLockRadWindow.Content = grid;
-      
-            pinLockRadWindow.IsOpen = true;
+            var pinLockDialog = new PinLockDialog(isChange);
+            return await pinLockDialog.ShowDialogAsync();
         }
 
         /// <summary>
