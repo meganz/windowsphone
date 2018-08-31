@@ -13,9 +13,11 @@ using MegaApp.UserControls;
 
 namespace MegaApp.Dialogs
 {
-    public class ChangePasswordDialog : MegaDialog
+    public class ChangePasswordDialog : TwoButtonsDialog
     {
-        public ChangePasswordDialog() : base(UiResources.UI_ChangePassword)
+        public ChangePasswordDialog() : 
+            base(UiResources.UI_ChangePassword,
+            new TwoButtonsDialogSettings() { ApplicationBarButtons = true, OverrideOkButtonText = UiResources.Save })
         {
             var contentStackPanel = new StackPanel()
             {
@@ -49,6 +51,14 @@ namespace MegaApp.Dialogs
             passwordStrengthIndicator.IndicatorsOpacity.Add(0.8);
             passwordStrengthIndicator.IndicatorsOpacity.Add(1.0);
 
+            var warningMessage = new TextBlock()
+            {
+                Margin = new Thickness(12, 0, 12, 0),
+                Foreground = (Brush)Application.Current.Resources["MegaRedColorBrush"],
+                Text = string.Empty,
+                TextWrapping = TextWrapping.Wrap
+            };
+
             var newPassword = new RadPasswordBox()
             {
                 Watermark = UiResources.UI_NewPassword.ToLower(),
@@ -56,6 +66,7 @@ namespace MegaApp.Dialogs
             };
             newPassword.PasswordChanged += (sender, args) =>
             {
+                warningMessage.Text = string.Empty;
                 passwordStrengthIndicator.Value =
                     ValidationService.CalculatePasswordStrength(newPassword.Password);
             };
@@ -68,42 +79,28 @@ namespace MegaApp.Dialogs
                 Watermark = UiResources.UI_ConfirmPassword.ToLower(),
                 ClearButtonVisibility = Visibility.Visible
             };
-            contentStackPanel.Children.Add(confirmPassword);
-
-            var warningMessage = new TextBlock()
+            confirmPassword.PasswordChanged += (sender, args) =>
             {
-                Margin = new Thickness(12, 0, 12, 0),
-                Foreground = (Brush)Application.Current.Resources["MegaRedColorBrush"],
-                Text = string.Empty,
-                TextWrapping = TextWrapping.Wrap
+                warningMessage.Text = string.Empty;
             };
+            contentStackPanel.Children.Add(confirmPassword);
+            
             contentStackPanel.Children.Add(warningMessage);
 
             this.MainGrid.Children.Add(contentStackPanel);
             Grid.SetRow(contentStackPanel, 2);
 
-            var buttonsGrid = new Grid()
-            {
-                Width = Double.NaN,
-                Margin = new Thickness(12),
-                HorizontalAlignment = HorizontalAlignment.Stretch,
-                VerticalAlignment = VerticalAlignment.Bottom,
-                Background = new SolidColorBrush((Color)Application.Current.Resources["PhoneChromeColor"])
-            };
-            buttonsGrid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
-            buttonsGrid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
-
-            var saveButton = new Button()
-            {
-                Content = UiResources.Save.ToLower(),
-                HorizontalAlignment = HorizontalAlignment.Stretch,
-            };
-            saveButton.Tap += async (sender, args) =>
+            this.OkButtonTapped += async (sender, args) =>
             {
                 warningMessage.Text = string.Empty;
 
                 if (string.IsNullOrWhiteSpace(newPassword.Password) || string.IsNullOrWhiteSpace(confirmPassword.Password))
                 {
+                    if (string.IsNullOrWhiteSpace(newPassword.Password))
+                        newPassword.Focus();
+                    else if (string.IsNullOrWhiteSpace(confirmPassword.Password))
+                        confirmPassword.Focus();
+
                     warningMessage.Text = AppMessages.AM_EmptyRequiredFields;
                     return;
                 }
@@ -111,6 +108,7 @@ namespace MegaApp.Dialogs
                 // If the new password and the confirmation password don't match
                 if (!newPassword.Password.Equals(confirmPassword.Password))
                 {
+                    confirmPassword.Focus();
                     warningMessage.Text = AppMessages.PasswordsDoNotMatch;
                     return;
                 }
@@ -118,6 +116,7 @@ namespace MegaApp.Dialogs
                 // If the password strength is very weak
                 if (passwordStrengthIndicator.Value == MPasswordStrength.PASSWORD_STRENGTH_VERYWEAK)
                 {
+                    newPassword.Focus();
                     warningMessage.Text = AppMessages.AM_VeryWeakPassword;
                     return;
                 }
@@ -159,6 +158,8 @@ namespace MegaApp.Dialogs
                     return;
                 }
 
+                this.CloseDialog();
+
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
                     new CustomMessageDialog(
@@ -169,20 +170,10 @@ namespace MegaApp.Dialogs
                 });
             };
 
-            var cancelButton = new Button()
+            this.CancelButtonTapped += (sender, args) =>
             {
-                Content = UiResources.Cancel.ToLower(),
-                HorizontalAlignment = HorizontalAlignment.Stretch,
-                Command = this.CloseCommand
+                this.CloseDialog();
             };
-
-            buttonsGrid.Children.Add(saveButton);
-            buttonsGrid.Children.Add(cancelButton);
-            Grid.SetColumn(saveButton, 0);
-            Grid.SetColumn(cancelButton, 1);
-
-            this.MainGrid.Children.Add(buttonsGrid);
-            Grid.SetRow(buttonsGrid, 3);
         }
     }
 }

@@ -258,6 +258,9 @@
     <Compile Include="..\common\Dialogs\PinLockDialog.cs">
       <Link>Dialogs\PinLockDialog.cs</Link>
     </Compile>
+    <Compile Include="..\common\Dialogs\TwoButtonsDialog.cs">
+      <Link>Dialogs\TwoButtonsDialog.cs</Link>
+    </Compile>
     <Compile Include="..\common\Enums\AccountBlockedReason.cs">
       <Link>Enums\AccountBlockedReason.cs</Link>
     </Compile>
