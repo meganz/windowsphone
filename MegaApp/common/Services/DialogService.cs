@@ -1375,6 +1375,7 @@ namespace MegaApp.Services
                 return;
 
             MultiFactorAuthCodeInputDialogInstance.CloseCommand.Execute(null);
+            App.AppInformation.PickerOrAsyncDialogIsOpen = false;
         }
 
         #endregion

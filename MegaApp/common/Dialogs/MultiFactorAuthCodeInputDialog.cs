@@ -71,7 +71,7 @@ namespace MegaApp.Dialogs
             };
             contentStackPanel.Children.Add(description);
 
-            this.verificationCode = this.CreateDigitInput();
+            this.CreateDigitInput();
             contentStackPanel.Children.Add(this.verificationCode);
 
             this.progressBar = new ProgressBar()
@@ -105,14 +105,14 @@ namespace MegaApp.Dialogs
             Grid.SetRow(contentStackPanel, 2);
         }
 
-        private RadTextBox CreateDigitInput()
+        private void CreateDigitInput()
         {
             var inputScope = new InputScope();
             var inputScopeName = new InputScopeName();
             inputScopeName.NameValue = InputScopeNameValue.Number;
             inputScope.Names.Add(inputScopeName);
 
-            var digitInput = new RadTextBox()
+            this.verificationCode = new RadTextBox()
             {
                 Margin = new Thickness(-12, 0, -12, 0),
                 FontSize = Convert.ToDouble(Application.Current.Resources["PhoneFontSizeMediumLarge"]),
@@ -121,19 +121,22 @@ namespace MegaApp.Dialogs
                 TextAlignment = TextAlignment.Center,
                 Watermark = UiResources.UI_SixDigitCode,
             };
-            digitInput.TextChanged += (sender, args) =>
-            {
-                this.verificationCode.Foreground = (Brush)Application.Current.Resources["PhoneTextBoxForegroundBrush"];
-                this.IsWarningMessageVisible = false;
-                this.isValidVerifyCode = !string.IsNullOrWhiteSpace(this.verificationCode.Text) &&
-                    this.verificationCode.Text.Length == this.verificationCode.MaxLength;
+            this.verificationCode.TextChanged += OnTextChanged;
+            this.verificationCode.KeyDown += OnInputTextBoxKeyDown;
+        }
 
-                if (!this.isValidVerifyCode) return;
-                this.Verify();
-            };
-            digitInput.KeyDown += OnInputTextBoxKeyDown;
-            
-            return digitInput;
+        private void OnTextChanged(object sender, EventArgs e)
+        {
+            this.verificationCode.TextChanged -= OnTextChanged;
+            this.verificationCode.Foreground = (Brush)Application.Current.Resources["PhoneTextBoxForegroundBrush"];
+            this.verificationCode.TextChanged += OnTextChanged;
+
+            this.IsWarningMessageVisible = false;
+            this.isValidVerifyCode = !string.IsNullOrWhiteSpace(this.verificationCode.Text) &&
+                this.verificationCode.Text.Length == this.verificationCode.MaxLength;
+
+            if (!this.isValidVerifyCode) return;
+            this.Verify();
         }
 
         private void OnInputTextBoxKeyDown(object sender, KeyEventArgs e)
