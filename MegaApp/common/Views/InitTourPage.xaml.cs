@@ -108,6 +108,16 @@ namespace MegaApp.Views
             NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal, new Dictionary<string, string> { { "Pivot", "1" } });            
         }
 
+        private void OnMegaHeaderLogoManipulationStarted(object sender, ManipulationStartedEventArgs e)
+        {
+            SdkService.ChangeApiUrlActionStarted();
+        }
+
+        private void OnMegaHeaderLogoManipulationFinished(object sender, ManipulationCompletedEventArgs e)
+        {
+            SdkService.ChangeApiUrlActionFinished();
+        }
+        
         private void OnMegaHeaderLogoTapped(object sender, GestureEventArgs e)
         {
             DebugService.ChangeStatusAction();

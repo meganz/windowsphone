@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Windows;
+using System.Windows.Input;
 using System.Windows.Navigation;
 using Telerik.Windows.Controls;
 using GestureEventArgs = System.Windows.Input.GestureEventArgs;
@@ -91,6 +92,16 @@ namespace MegaApp.Views
         private void OnMyAccountTap(object sender, GestureEventArgs e)
         {
             NavigateService.NavigateTo(typeof(MyAccountPage), NavigationParameter.Normal);
+        }
+
+        private void OnMegaHeaderLogoManipulationStarted(object sender, ManipulationStartedEventArgs e)
+        {
+            SdkService.ChangeApiUrlActionStarted();
+        }
+
+        private void OnMegaHeaderLogoManipulationFinished(object sender, ManipulationCompletedEventArgs e)
+        {
+            SdkService.ChangeApiUrlActionFinished();
         }
 
         private void OnSdkVersionTapped(object sender, GestureEventArgs e)

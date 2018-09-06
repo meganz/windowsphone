@@ -175,7 +175,12 @@
                                         <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
                                     </TextBlock.Foreground>
                                 </TextBlock>
-                                <Grid Grid.Row="1" Grid.ColumnSpan="2" Tap="OnSdkVersionTapped">
+                                <Grid 
+                                    Grid.Row="1" 
+                                    Grid.ColumnSpan="2" 
+                                    ManipulationStarted="OnMegaHeaderLogoManipulationStarted"
+                                    ManipulationCompleted="OnMegaHeaderLogoManipulationFinished"
+                                    Tap="OnSdkVersionTapped">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="Auto"/>
