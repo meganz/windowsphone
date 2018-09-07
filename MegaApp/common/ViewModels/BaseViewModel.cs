@@ -1,13 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Threading;
-using Microsoft.Phone.Reactive;
+using MegaApp.Services;
 
 namespace MegaApp.ViewModels
 {
@@ -25,22 +20,12 @@ namespace MegaApp.ViewModels
         /// Invoke the code/action on the UI Thread. If not on UI thread, dispatch to UI with the Dispatcher
         /// </summary>
         /// <param name="action">Action to invoke on the user interface thread</param>
-        protected static void OnUiThread(Action action)
+        protected void OnUiThread(Action action)
         {
             // If no action then do nothing and return
             if(action == null) return;
 
-
-            if (Deployment.Current.Dispatcher.CheckAccess())
-            {
-                // We are already on UI thread. Just invoke the action
-                action.Invoke();
-            }
-            else
-            {
-                // We are on a background thread. Dispatch the action to the UI thread
-                Deployment.Current.Dispatcher.BeginInvoke(action);
-            }
+            UiService.OnUiThread(action);
         }
 
         #endregion

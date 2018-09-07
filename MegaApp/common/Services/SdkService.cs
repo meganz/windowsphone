@@ -163,6 +163,8 @@ namespace MegaApp.Services
         /// </summary>
         private static async void ChangeApiUrl()
         {
+            StopChangeApiUrlTimer();
+
             if (!useStagingServer)
             {
                 var confirmDialog = new CustomMessageDialog("Change to a testing server?",
@@ -182,13 +184,16 @@ namespace MegaApp.Services
             MegaSdk.changeApiUrl(newApiUrl);
             MegaSdkFolderLinks.changeApiUrl(newApiUrl);
 
+            // If the user is logged in, do a new fetch nodes
+            if (Convert.ToBoolean(MegaSdk.isLoggedIn()))
+            {
+                var fetchNodes = new FetchNodesRequestListenerAsync();
+                var result = await fetchNodes.ExecuteAsync(() =>
+                    MegaSdk.fetchNodes(fetchNodes));
+            }
+
             new CustomMessageDialog(null, "API URL changed",
                 App.AppInformation, MessageDialogButtons.Ok).ShowDialog();
-
-            // If the user is logged in, do a new fetch nodes
-            if (!Convert.ToBoolean(MegaSdk.isLoggedIn())) return;
-
-            MegaSdk.fetchNodes();
         }
 
         /// <summary>

@@ -142,11 +142,6 @@ Preserve the '{0}' code because is for include node name.</comment>
     <value>正在恢復...</value>
     <comment>Progress indicator message when resuming a session - (String as short as possible).</comment>
   </data>
-  <data name="FetchingNodes" xml:space="preserve">
-    <value>選取檔案與資料夾... [{0}]</value>
-    <comment>Progress indicator message when loading nodes from MEGA web service - (String as short as possible).
-Preserve the [{0}] code because is for include current number of fetched nodes.</comment>
-  </data>
   <data name="GetAccountDetails" xml:space="preserve">
     <value>正在載入帳戶資料...</value>
     <comment>Progress indicator message when getting account details - (String as short as possible).</comment>
