@@ -45,9 +45,6 @@ namespace MegaApp.Services
         // Timer to count the actions needed to change the API URL.
         private static DispatcherTimer timerChangeApiUrl;
 
-        // Flag to indicate if the app is using the staging server.
-        private static bool useStagingServer = false;
-
         #endregion
 
         #region Methods
@@ -165,6 +162,7 @@ namespace MegaApp.Services
         {
             StopChangeApiUrlTimer();
 
+            var useStagingServer = SettingsService.LoadSetting<bool>(SettingsResources.UseStagingServer, false);
             if (!useStagingServer)
             {
                 var confirmDialog = new CustomMessageDialog("Change to a testing server?",
@@ -184,6 +182,8 @@ namespace MegaApp.Services
             MegaSdk.changeApiUrl(newApiUrl);
             MegaSdkFolderLinks.changeApiUrl(newApiUrl);
 
+            SettingsService.SaveSetting<bool>(SettingsResources.UseStagingServer, useStagingServer);
+
             // If the user is logged in, do a new fetch nodes
             if (Convert.ToBoolean(MegaSdk.isLoggedIn()))
             {
@@ -191,6 +191,10 @@ namespace MegaApp.Services
                 var result = await fetchNodes.ExecuteAsync(() =>
                     MegaSdk.fetchNodes(fetchNodes));
             }
+
+            // Reset the "Camera Uploads" service if is enabled
+            if (MediaService.GetAutoCameraUploadStatus())
+                MediaService.ResetAutoCameraUploads();
 
             new CustomMessageDialog(null, "API URL changed",
                 App.AppInformation, MessageDialogButtons.Ok).ShowDialog();

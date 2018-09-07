@@ -346,6 +346,8 @@ namespace MegaApp.Services
 
         public static void ClearObsoleteSettings()
         {
+            SettingsService.DeleteSetting(SettingsResources.UseStagingServer);
+
             var lastAppVersion = SettingsService.LoadSetting<string>(SettingsResources.LastAppVersion, null);
 
             if (lastAppVersion == null)
