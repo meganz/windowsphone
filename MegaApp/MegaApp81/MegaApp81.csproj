@@ -358,6 +358,9 @@
     <Compile Include="..\common\Enums\DriveDisplayMode.cs">
       <Link>Enums\DriveDisplayMode.cs</Link>
     </Compile>
+    <Compile Include="..\common\Enums\FetchNodesResult.cs">
+      <Link>Enums\FetchNodesResult.cs</Link>
+    </Compile>
     <Compile Include="..\common\Enums\GalleryDirection.cs">
       <Link>Enums\GalleryDirection.cs</Link>
     </Compile>
@@ -477,6 +480,9 @@
     </Compile>
     <Compile Include="..\common\MegaApi\FetchNodesRequestListener.cs">
       <Link>MegaApi\FetchNodesRequestListener.cs</Link>
+    </Compile>
+    <Compile Include="..\common\MegaApi\FetchNodesRequestListenerAsync.cs">
+      <Link>MegaApi\FetchNodesRequestListenerAsync.cs</Link>
     </Compile>
     <Compile Include="..\common\MegaApi\GetAccountDetailsRequestListener.cs">
       <Link>MegaApi\GetAccountDetailsRequestListener.cs</Link>

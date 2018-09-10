@@ -115,6 +115,16 @@ namespace MegaApp.Views
             if (control != null) control.TabToNextControl((Panel)control.Parent, this);
         }
 
+        private void OnMegaHeaderLogoManipulationStarted(object sender, ManipulationStartedEventArgs e)
+        {
+            SdkService.ChangeApiUrlActionStarted();
+        }
+
+        private void OnMegaHeaderLogoManipulationFinished(object sender, ManipulationCompletedEventArgs e)
+        {
+            SdkService.ChangeApiUrlActionFinished();
+        }
+
         private void OnMegaHeaderLogoTapped(object sender, GestureEventArgs e)
         {
             DebugService.ChangeStatusAction();

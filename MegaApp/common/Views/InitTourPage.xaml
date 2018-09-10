@@ -24,6 +24,8 @@
 
         <ContentPresenter 
             ContentTemplate="{StaticResource MegaPageHeaderLogo}"
+            ManipulationStarted="OnMegaHeaderLogoManipulationStarted"
+            ManipulationCompleted="OnMegaHeaderLogoManipulationFinished"
             Tap="OnMegaHeaderLogoTapped"/>
         
         <!--Pivot Control-->

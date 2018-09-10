@@ -61,7 +61,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Cancelling transfer....
+        ///   Busca una cadena traducida similar a Cancelling transfer….
         /// </summary>
         public static string CancelTransfer {
             get {
@@ -70,7 +70,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Clearing the rubbish bin....
+        ///   Busca una cadena traducida similar a Clearing the rubbish bin….
         /// </summary>
         public static string CleanRubbishBin {
             get {
@@ -79,7 +79,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Storing credit card....
+        ///   Busca una cadena traducida similar a Storing credit card….
         /// </summary>
         public static string CreditCardStore {
             get {
@@ -88,7 +88,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Deleting &apos;{0}&apos;....
+        ///   Busca una cadena traducida similar a Deleting ‘{0}’….
         /// </summary>
         public static string DeleteNode {
             get {
@@ -97,7 +97,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Retrieving download link....
+        ///   Busca una cadena traducida similar a Retrieving download link….
         /// </summary>
         public static string DownloadLink {
             get {
@@ -106,7 +106,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Resuming session....
+        ///   Busca una cadena traducida similar a Resuming session….
         /// </summary>
         public static string FastLogin {
             get {
@@ -115,16 +115,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Fetching files and folders... [{0}].
-        /// </summary>
-        public static string FetchingNodes {
-            get {
-                return ResourceManager.GetString("FetchingNodes", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Getting account details....
+        ///   Busca una cadena traducida similar a Getting account details….
         /// </summary>
         public static string GetAccountDetails {
             get {
@@ -133,7 +124,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Getting contact data....
+        ///   Busca una cadena traducida similar a Getting contact data….
         /// </summary>
         public static string GetContactData {
             get {
@@ -142,7 +133,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Getting payment methods....
+        ///   Busca una cadena traducida similar a Getting payment methods….
         /// </summary>
         public static string GetPaymentMethods {
             get {
@@ -151,7 +142,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Getting payment URL....
+        ///   Busca una cadena traducida similar a Getting payment URL….
         /// </summary>
         public static string GetPaymentUrl {
             get {
@@ -160,7 +151,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Getting preview....
+        ///   Busca una cadena traducida similar a Getting preview….
         /// </summary>
         public static string GetPreview {
             get {
@@ -169,7 +160,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Getting user data....
+        ///   Busca una cadena traducida similar a Getting user data….
         /// </summary>
         public static string GetUserData {
             get {
@@ -178,7 +169,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Importing file....
+        ///   Busca una cadena traducida similar a Importing file….
         /// </summary>
         public static string ImportFile {
             get {
@@ -187,7 +178,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Sending contact request....
+        ///   Busca una cadena traducida similar a Sending contact request….
         /// </summary>
         public static string InviteContactAdd {
             get {
@@ -196,7 +187,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Deleting contact request....
+        ///   Busca una cadena traducida similar a Deleting contact request….
         /// </summary>
         public static string InviteContactDelete {
             get {
@@ -205,7 +196,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Reminding contact about the request....
+        ///   Busca una cadena traducida similar a Reminding contact about the request….
         /// </summary>
         public static string InviteContactRemind {
             get {
@@ -214,7 +205,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Building view....
+        ///   Busca una cadena traducida similar a Building view….
         /// </summary>
         public static string LoadNodes {
             get {
@@ -223,7 +214,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Moving....
+        ///   Busca una cadena traducida similar a Moving….
         /// </summary>
         public static string MoveNode {
             get {
@@ -232,7 +223,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Moving to Rubbish bin....
+        ///   Busca una cadena traducida similar a Moving to Rubbish bin….
         /// </summary>
         public static string NodeToTrash {
             get {
@@ -241,7 +232,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Pausing transfers....
+        ///   Busca una cadena traducida similar a Pausing transfers….
         /// </summary>
         public static string PauseTransfers {
             get {
@@ -268,7 +259,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Canceling subscription....
+        ///   Busca una cadena traducida similar a Canceling subscription….
         /// </summary>
         public static string PM_CancelSubscription {
             get {
@@ -277,7 +268,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Changing password....
+        ///   Busca una cadena traducida similar a Changing password….
         /// </summary>
         public static string PM_ChangePassword {
             get {
@@ -286,7 +277,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Closing all sessions....
+        ///   Busca una cadena traducida similar a Closing all sessions….
         /// </summary>
         public static string PM_CloseAllSessions {
             get {
@@ -295,7 +286,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Closing session....
+        ///   Busca una cadena traducida similar a Closing session….
         /// </summary>
         public static string PM_CloseSession {
             get {
@@ -304,7 +295,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Confirming account....
+        ///   Busca una cadena traducida similar a Confirming account….
         /// </summary>
         public static string PM_ConfirmAccount {
             get {
@@ -322,7 +313,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Copying....
+        ///   Busca una cadena traducida similar a Copying….
         /// </summary>
         public static string PM_CopyNode {
             get {
@@ -349,7 +340,25 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Getting link....
+        ///   Busca una cadena traducida similar a Decrypting nodes....
+        /// </summary>
+        public static string PM_DecryptNodes {
+            get {
+                return ResourceManager.GetString("PM_DecryptNodes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Requesting account data....
+        /// </summary>
+        public static string PM_FetchNodes {
+            get {
+                return ResourceManager.GetString("PM_FetchNodes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Getting link….
         /// </summary>
         public static string PM_GetLink {
             get {
@@ -358,7 +367,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Importing folder....
+        ///   Busca una cadena traducida similar a Importing folder….
         /// </summary>
         public static string PM_ImportFolder {
             get {
@@ -385,7 +394,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Opening file link....
+        ///   Busca una cadena traducida similar a Opening file link….
         /// </summary>
         public static string PM_OpenFileLink {
             get {
@@ -394,7 +403,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Opening folder link....
+        ///   Busca una cadena traducida similar a Opening folder link….
         /// </summary>
         public static string PM_OpenFolderLink {
             get {
@@ -403,7 +412,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Removing link....
+        ///   Busca una cadena traducida similar a Removing link….
         /// </summary>
         public static string PM_RemoveLink {
             get {
@@ -412,7 +421,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Restoring....
+        ///   Busca una cadena traducida similar a Restoring….
         /// </summary>
         public static string PM_Restoring {
             get {
@@ -430,7 +439,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Upgrading account....
+        ///   Busca una cadena traducida similar a Upgrading account….
         /// </summary>
         public static string PM_UpgradeAccount {
             get {
@@ -439,7 +448,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Validating....
+        ///   Busca una cadena traducida similar a Validating….
         /// </summary>
         public static string PM_ValidatePurchase {
             get {
@@ -448,7 +457,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Preparing downloads....
+        ///   Busca una cadena traducida similar a Preparing downloads….
         /// </summary>
         public static string PrepareDownloads {
             get {
@@ -457,7 +466,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Preparing uploads....
+        ///   Busca una cadena traducida similar a Preparing uploads….
         /// </summary>
         public static string PrepareUploads {
             get {
@@ -466,7 +475,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Removing contact....
+        ///   Busca una cadena traducida similar a Removing contact….
         /// </summary>
         public static string RemoveContact {
             get {
@@ -475,7 +484,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Removing from offline....
+        ///   Busca una cadena traducida similar a Removing from offline….
         /// </summary>
         public static string RemoveFromOffline {
             get {
@@ -484,7 +493,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Removing....
+        ///   Busca una cadena traducida similar a Removing….
         /// </summary>
         public static string RemoveNode {
             get {
@@ -493,7 +502,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Renaming....
+        ///   Busca una cadena traducida similar a Renaming….
         /// </summary>
         public static string RenameNode {
             get {
@@ -502,7 +511,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Accepting contact request....
+        ///   Busca una cadena traducida similar a Accepting contact request….
         /// </summary>
         public static string ReplyContactRequestAccept {
             get {
@@ -511,7 +520,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Denying contact request....
+        ///   Busca una cadena traducida similar a Denying contact request….
         /// </summary>
         public static string ReplyContactRequestDeny {
             get {
@@ -520,7 +529,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Ignoring contact request....
+        ///   Busca una cadena traducida similar a Ignoring contact request….
         /// </summary>
         public static string ReplyContactRequestIgnore {
             get {
@@ -529,7 +538,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Resuming transfers....
+        ///   Busca una cadena traducida similar a Resuming transfers….
         /// </summary>
         public static string ResumeTransfers {
             get {
@@ -538,7 +547,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Saving for offline....
+        ///   Busca una cadena traducida similar a Saving for offline….
         /// </summary>
         public static string SaveForOffline {
             get {

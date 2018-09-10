@@ -124,6 +124,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a https://g.api.mega.co.nz/.
+        /// </summary>
+        public static string AR_ApiUrl {
+            get {
+                return ResourceManager.GetString("AR_ApiUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a https://mega.nz/copyright.
         /// </summary>
         public static string AR_CopyrightUrl {
@@ -201,6 +210,15 @@ namespace MegaApp.Resources {
         public static string AR_SdkVersion {
             get {
                 return ResourceManager.GetString("AR_SdkVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a https://staging.api.mega.co.nz/.
+        /// </summary>
+        public static string AR_StagingUrl {
+            get {
+                return ResourceManager.GetString("AR_StagingUrl", resourceCulture);
             }
         }
         

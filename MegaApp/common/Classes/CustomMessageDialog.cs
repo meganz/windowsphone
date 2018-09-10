@@ -184,38 +184,44 @@ namespace MegaApp.Classes
                 Grid.SetRow(_image, 0);
             }
 
-            // Create title label
-            var title = new TextBlock()
+            if (!string.IsNullOrWhiteSpace(_title))
             {
-                Text = _title.ToUpper(), // The specified title string in uppercase always
-                FontFamily = new FontFamily("Segoe WP Semibold"),
-                FontSize = Convert.ToDouble(Application.Current.Resources["PhoneFontSizeMedium"]),
-                Foreground = new SolidColorBrush((Color)Application.Current.Resources["PhoneForegroundColor"]),
-                Margin = _image == null ? new Thickness(0, 24, 0, 0) : new Thickness(0),
-                HorizontalAlignment = HorizontalAlignment.Left,
-                TextWrapping = TextWrapping.Wrap
-            };
-            
-            // Add title to the view
-            mainGrid.Children.Add(title);
-            Grid.SetRow(title, 1);
+                // Create title label
+                var title = new TextBlock()
+                {
+                    Text = _title.ToUpper(), // The specified title string in uppercase always
+                    FontFamily = new FontFamily("Segoe WP Semibold"),
+                    FontSize = Convert.ToDouble(Application.Current.Resources["PhoneFontSizeMedium"]),
+                    Foreground = new SolidColorBrush((Color)Application.Current.Resources["PhoneForegroundColor"]),
+                    Margin = _image == null ? new Thickness(0, 24, 0, 0) : new Thickness(0),
+                    HorizontalAlignment = HorizontalAlignment.Left,
+                    TextWrapping = TextWrapping.Wrap
+                };
 
-            // Create message label
-            var message = new TextBlock()
+                // Add title to the view
+                mainGrid.Children.Add(title);
+                Grid.SetRow(title, 1);
+            }
+
+            if (!string.IsNullOrWhiteSpace(_message))
             {
-                Text = _message, // The specified message
-                FontFamily = new FontFamily("Segoe WP SemiLight"),
-                FontSize = Convert.ToDouble(Application.Current.Resources["PhoneFontSizeMediumLarge"]),
-                Foreground = new SolidColorBrush((Color)Application.Current.Resources["PhoneForegroundColor"]),
-                Margin = _image == null ? new Thickness(0, 50, 0, 48) : new Thickness(0, 36, 0, 36),
-                HorizontalAlignment = HorizontalAlignment.Left,
-                VerticalAlignment = VerticalAlignment.Top,
-                TextWrapping = TextWrapping.Wrap // Needed for long strings / texts
-            };
+                // Create message label
+                var message = new TextBlock()
+                {
+                    Text = _message, // The specified message
+                    FontFamily = new FontFamily("Segoe WP SemiLight"),
+                    FontSize = Convert.ToDouble(Application.Current.Resources["PhoneFontSizeMediumLarge"]),
+                    Foreground = new SolidColorBrush((Color)Application.Current.Resources["PhoneForegroundColor"]),
+                    Margin = _image == null ? new Thickness(0, 50, 0, 48) : new Thickness(0, 36, 0, 36),
+                    HorizontalAlignment = HorizontalAlignment.Left,
+                    VerticalAlignment = VerticalAlignment.Top,
+                    TextWrapping = TextWrapping.Wrap // Needed for long strings / texts
+                };
 
-            // Add message to the view
-            mainGrid.Children.Add(message);
-            Grid.SetRow(message, 2);
+                // Add message to the view
+                mainGrid.Children.Add(message);
+                Grid.SetRow(message, 2);
+            }            
 
             // Create response controls panel
             var buttonGrid = new Grid()
@@ -337,6 +343,14 @@ namespace MegaApp.Classes
             
             // Return awaitable task
             return _taskCompletionSource.Task;
+        }
+
+        /// <summary>
+        /// Close the dialog.
+        /// </summary>
+        public void CloseDialog()
+        {
+            DialogWindow.IsOpen = false;
         }
 
         #region Private Methods

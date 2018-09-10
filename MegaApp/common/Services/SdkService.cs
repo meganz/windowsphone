@@ -1,13 +1,19 @@
 ﻿using System;
+using System.Windows;
+using System.Windows.Threading;
 using Microsoft.Phone.Info;
 using Windows.Storage;
 using mega;
+using MegaApp.Classes;
 using MegaApp.MegaApi;
+using MegaApp.Resources;
 
 namespace MegaApp.Services
 {
     public static class SdkService
     {
+        #region Properties
+
         /// <summary>
         /// Main MegaSDK instance of the app
         /// </summary>
@@ -35,6 +41,13 @@ namespace MegaApp.Services
                 return _megaSdkFolderLinks;
             }
         }
+
+        // Timer to count the actions needed to change the API URL.
+        private static DispatcherTimer timerChangeApiUrl;
+
+        #endregion
+
+        #region Methods
 
         /// <summary>
         /// Initialize all the SDK parameters
@@ -68,7 +81,7 @@ namespace MegaApp.Services
 
             // Set the language code used by the app
             var appLanguageCode = AppService.GetAppLanguageCode();
-            if (!MegaSdk.setLanguage(appLanguageCode))
+            if (!MegaSdk.setLanguage(appLanguageCode) || !MegaSdkFolderLinks.setLanguage(appLanguageCode))
             {
                 LogService.Log(MLogLevel.LOG_LEVEL_WARNING, 
                     string.Format("Invalid app language code '{0}'", appLanguageCode));
@@ -114,5 +127,91 @@ namespace MegaApp.Services
 
             return false;
         }
+
+        /// <summary>
+        /// Method that should be called when an action required for 
+        /// change the API URL is started.
+        /// </summary>
+        public static void ChangeApiUrlActionStarted()
+        {
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                if (timerChangeApiUrl == null)
+                {
+                    timerChangeApiUrl = new DispatcherTimer();
+                    timerChangeApiUrl.Interval = new TimeSpan(0, 0, 5);
+                    timerChangeApiUrl.Tick += (obj, args) => ChangeApiUrl();
+                }
+                timerChangeApiUrl.Start();
+            });
+        }
+
+        /// <summary>
+        /// Method that should be called when an action required for 
+        /// change the API URL is finished.
+        /// </summary>
+        public static void ChangeApiUrlActionFinished()
+        {
+            StopChangeApiUrlTimer();
+        }
+
+        /// <summary>
+        /// Change the API URL.
+        /// </summary>
+        private static async void ChangeApiUrl()
+        {
+            StopChangeApiUrlTimer();
+
+            var useStagingServer = SettingsService.LoadSetting<bool>(SettingsResources.UseStagingServer, false);
+            if (!useStagingServer)
+            {
+                var confirmDialog = new CustomMessageDialog("Change to a testing server?",
+                    "Are you sure you want to change to a testing server? Your account may run irrecoverable problems.",
+                    App.AppInformation, MessageDialogButtons.OkCancel);
+
+                var result = await confirmDialog.ShowDialogAsync();
+                confirmDialog.CloseDialog();
+                if (result != MessageDialogResult.OkYes) return;
+            }
+
+            useStagingServer = !useStagingServer;
+
+            var newApiUrl = useStagingServer ?
+                AppResources.AR_StagingUrl : AppResources.AR_ApiUrl;
+
+            MegaSdk.changeApiUrl(newApiUrl);
+            MegaSdkFolderLinks.changeApiUrl(newApiUrl);
+
+            SettingsService.SaveSetting<bool>(SettingsResources.UseStagingServer, useStagingServer);
+
+            // If the user is logged in, do a new fetch nodes
+            if (Convert.ToBoolean(MegaSdk.isLoggedIn()))
+            {
+                var fetchNodes = new FetchNodesRequestListenerAsync();
+                var result = await fetchNodes.ExecuteAsync(() =>
+                    MegaSdk.fetchNodes(fetchNodes));
+            }
+
+            // Reset the "Camera Uploads" service if is enabled
+            if (MediaService.GetAutoCameraUploadStatus())
+                MediaService.ResetAutoCameraUploads();
+
+            new CustomMessageDialog(null, "API URL changed",
+                App.AppInformation, MessageDialogButtons.Ok).ShowDialog();
+        }
+
+        /// <summary>
+        /// Stops the timer to detect an API URL change.
+        /// </summary>
+        private static void StopChangeApiUrlTimer()
+        {
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                if (timerChangeApiUrl != null)
+                    timerChangeApiUrl.Stop();
+            });
+        }
+
+        #endregion
     }
 }

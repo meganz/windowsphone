@@ -225,11 +225,6 @@
     <value>Obteniendo datos de contacto...</value>
     <comment>Progress indicator message when getting contact details - (String as short as possible).</comment>
   </data>
-  <data name="FetchingNodes" xml:space="preserve">
-    <value>Cargando archivos y carpetas... [{0}]</value>
-    <comment>Progress indicator message when loading nodes from MEGA web service - (String as short as possible).
-Preserve the [{0}] code because is for include current number of fetched nodes.</comment>
-  </data>
   <data name="FastLogin" xml:space="preserve">
     <value>Reanudando sesión...</value>
     <comment>Progress indicator message when resuming a session - (String as short as possible).</comment>
