@@ -81,7 +81,7 @@ namespace MegaApp.Services
 
             // Set the language code used by the app
             var appLanguageCode = AppService.GetAppLanguageCode();
-            if (!MegaSdk.setLanguage(appLanguageCode))
+            if (!MegaSdk.setLanguage(appLanguageCode) || !MegaSdkFolderLinks.setLanguage(appLanguageCode))
             {
                 LogService.Log(MLogLevel.LOG_LEVEL_WARNING, 
                     string.Format("Invalid app language code '{0}'", appLanguageCode));
