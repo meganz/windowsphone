@@ -10,7 +10,6 @@ using Microsoft.Phone.Scheduler;
 using Microsoft.Phone.Tasks;
 using Microsoft.Xna.Framework.Media;
 using MegaApp.ViewModels;
-using MegaApp.Views;
 
 namespace MegaApp.Services
 {
@@ -218,32 +217,6 @@ namespace MegaApp.Services
 
             LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error enabling CAMERA UPLOADS service", exception);
             return false;
-        }
-
-        public static void ResetAutoCameraUploads()
-        {
-            LogService.Log(MLogLevel.LOG_LEVEL_INFO, "Resetting CAMERA UPLOADS service...");
-
-            var cameraUploadsStatus = GetAutoCameraUploadStatus();
-            if (!cameraUploadsStatus)
-            {
-                LogService.Log(MLogLevel.LOG_LEVEL_INFO, "CAMERA UPLOADS service is currently disabled");
-                return;
-            }
-
-            try
-            {
-                cameraUploadsStatus = SetAutoCameraUpload(false);
-                cameraUploadsStatus = SetAutoCameraUpload(true);
-            }
-            catch (Exception e)
-            {
-                LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error resetting CAMERA UPLOADS service", e);
-            }
-            finally
-            {
-                SettingsService.SaveSetting(SettingsResources.CameraUploadsIsEnabled, cameraUploadsStatus);
-            }
         }
 
         public static bool GetAutoCameraUploadStatus()

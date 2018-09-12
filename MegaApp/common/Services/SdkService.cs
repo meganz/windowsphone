@@ -194,7 +194,11 @@ namespace MegaApp.Services
 
             // Reset the "Camera Uploads" service if is enabled
             if (MediaService.GetAutoCameraUploadStatus())
-                MediaService.ResetAutoCameraUploads();
+            {
+                LogService.Log(MLogLevel.LOG_LEVEL_INFO, "Resetting CAMERA UPLOADS service (API URL changed)");
+                SettingsService.SaveSetting(SettingsResources.CameraUploadsIsEnabled,
+                    MediaService.SetAutoCameraUpload(true));
+            }
 
             new CustomMessageDialog(null, "API URL changed",
                 App.AppInformation, MessageDialogButtons.Ok).ShowDialog();
