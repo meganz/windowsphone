@@ -1373,7 +1373,7 @@ NOTE: Max. length 20 characters.</comment>
     <comment>Label for any 'Setup Two-Factor Authentication' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_SixDigitCode" xml:space="preserve">
-    <value>6 digit code</value>
+    <value>6 자리 코드</value>
     <comment>Placeholder text of the field to type the 6-digit code provided for the authenticator app to verify the Multi-Factor Authentication.</comment>
   </data>
   <data name="UI_Verify" xml:space="preserve">
@@ -1407,5 +1407,17 @@ NOTE: Max. length 20 characters.</comment>
   <data name="UI_OpenIn" xml:space="preserve">
     <value>다른 곳에서 열기...</value>
     <comment>Label for any 'Open in...' button, link, text, title, etc. to open a file or other kind of resource with a certain app - (String as short as possible).</comment>
+  </data>
+  <data name="UI_MFA_SetupStep1" xml:space="preserve">
+    <value>시드를 인증기 앱에서 스캔하거나 복사하세요. 휴대전화를 잃어버렸을 경우를 대비하여 이 시드를 안전한 곳에 백업하세요.</value>
+    <comment>Label for the step 1 to setup the Multi-Factor Authentication.</comment>
+  </data>
+  <data name="UI_MFA_SetupStep2" xml:space="preserve">
+    <value>인증기 앱에서 시드를 설정한 후 6자리 코드가 나타납니다.</value>
+    <comment>Label for the step 2 to setup the Muti-Factor Authentication.</comment>
+  </data>
+  <data name="UI_FindApp" xml:space="preserve">
+    <value>앱 찾기</value>
+    <comment>Label for any 'Find app' button, link, text, title, etc, to find an app to open a file, resource, etc. - (String as short as possible).</comment>
   </data>
 </root>

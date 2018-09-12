@@ -1483,7 +1483,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message displayed when the user is trying to insert and invalid code, for example the 6-digit code of the Multi-Factor Authentication.</comment>
   </data>
   <data name="AM_2FA_EnabledDialogDescription" xml:space="preserve">
-    <value>在您下次登录账户时，系统会要求您输入由验证程序提供的6位数验证码。</value>
+    <value>Next time you login to your account you will be asked to enter a 6-digit code provided by your Authenticator app.</value>
     <comment>Description text of the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication.</comment>
   </data>
   <data name="AM_2FA_EnabledDialogTitle" xml:space="preserve">
@@ -1535,5 +1535,9 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
   <data name="AM_RestoreMultiFromRubbishBinFailed" xml:space="preserve">
     <value>无法从垃圾桶中恢复。请再试一次。</value>
     <comment>Message of the dialog displayed when the process/request to restore multiple nodes from the rubbish bin failed.</comment>
+  </data>
+  <data name="AM_MFA_CheckStatusFailed" xml:space="preserve">
+    <value>无法检查双重验证的状态。</value>
+    <comment>Message of the dialog displayed if fails the process to check the Multi-Factor Authentication status.</comment>
   </data>
 </root>

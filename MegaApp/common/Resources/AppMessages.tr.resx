@@ -609,8 +609,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
   </data>
   <data name="CopyFileUnauthorizedAccessException" xml:space="preserve">
     <value>Bu dosya türünü seçilen konuma aktarma iznine sahip değilsiniz. Desteklenmeyen bir dosya türünü SD kartınıza mı aktarmak istiyorsunuz?
-Lütfen cihazınızın dahili hafızasına kaydetmeyi/kopyalamayı deneyin.
-</value>
+Lütfen cihazınızın dahili hafızasına kaydetmeyi/kopyalamayı deneyin.</value>
     <comment>Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException_Title" xml:space="preserve">
@@ -662,8 +661,7 @@ Lütfen cihazınızın dahili hafızasına kaydetmeyi/kopyalamayı deneyin.
     <comment>Button of the dialog displayed the first time that a user want to download a image. Option automatically download to the photo album after downloads - (String as short as possible).</comment>
   </data>
   <data name="SelectFolderFailed" xml:space="preserve">
-    <value>Klasör seçilemedi. Lütfen tekrar deneyin veya başka birini seçin.
-</value>
+    <value>Klasör seçilemedi. Lütfen tekrar deneyin veya başka birini seçin.</value>
     <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="SelectFolderFailed_Title" xml:space="preserve">
@@ -1097,16 +1095,14 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>Bunun nedeni aşağıdakilerden biri olabilir:
 - Dosya Hizmet Koşullarını ihlal ettiği için kaldırıldı.
 - Geçersiz URL – erişmeye çalıştığınız bağlantısı mevcut değil.
-- Dosya kullanıcı tarafından kaldırıldı.
-</value>
+- Dosya kullanıcı tarafından kaldırıldı.</value>
     <comment>Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</comment>
   </data>
   <data name="AM_FolderLinkUnavailable" xml:space="preserve">
     <value>Bunun nedeni aşağıdakilerden biri olabilir:
 - Klasör Hizmet Koşullarını ihlal ettiği için kaldırıldı.
 - Geçersiz URL – erişmeye çalıştığınız bağlantı mevcut değil.
-- Klasör bağlantısı kullanıcı tarafından kaldırıldı.
-</value>
+- Klasör bağlantısı kullanıcı tarafından kaldırıldı.</value>
     <comment>Error message shown when a folder link doesn't exist. Keep "\n"</comment>
   </data>
   <data name="AM_LinkUnavailableTitle" xml:space="preserve">
@@ -1131,8 +1127,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder</comment>
   </data>
   <data name="AM_RecoveryKeyClipboardFailed" xml:space="preserve">
-    <value>Kurtarma Anahtarı panoya kopyalanamadı. Lütfen tekrar deneyin.
-</value>
+    <value>Kurtarma Anahtarı panoya kopyalanamadı. Lütfen tekrar deneyin.</value>
     <comment>Message of the dialog displayed when fails to copy the user's Recovery Key to the clipboard to be saved or exported.</comment>
   </data>
   <data name="AM_RecoveryKeyClipboardFailed_Title" xml:space="preserve">
@@ -1144,8 +1139,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported.</comment>
   </data>
   <data name="AM_RecoveryKeyCopied_Title" xml:space="preserve">
-    <value>Kurtarma Anahtarı kopyalandı
-</value>
+    <value>Kurtarma Anahtarı kopyalandı</value>
     <comment>Title of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported - (String as short as possible).</comment>
   </data>
   <data name="AM_CopyFailed" xml:space="preserve">
@@ -1433,8 +1427,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
   </data>
   <data name="AM_PasswordReminder" xml:space="preserve">
-    <value>MEGA'nın şifreleme teknolojisi veri kaybına uğramadan parola kurtarmayı imkansız kılar. Lütfen parolanızı hatırladığınıza emin olun.
-</value>
+    <value>MEGA'nın şifreleme teknolojisi veri kaybına uğramadan parola kurtarmayı imkansız kılar. Lütfen parolanızı hatırladığınıza emin olun.</value>
     <comment>Message to describe the purpose of the password reminder dialog.</comment>
   </data>
   <data name="AM_PasswordReminder_Title" xml:space="preserve">
@@ -1490,7 +1483,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message displayed when the user is trying to insert and invalid code, for example the 6-digit code of the Multi-Factor Authentication.</comment>
   </data>
   <data name="AM_2FA_EnabledDialogDescription" xml:space="preserve">
-    <value>Bir dahaki sefere hesabınıza giriş yaptığınızda, Authenticator uygulamanız tarafından sağlanan 6 basamaklı bir kod girmeniz istenecektir.</value>
+    <value>Next time you login to your account you will be asked to enter a 6-digit code provided by your Authenticator app.</value>
     <comment>Description text of the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication.</comment>
   </data>
   <data name="AM_2FA_EnabledDialogTitle" xml:space="preserve">
@@ -1498,19 +1491,19 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title text of the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication.</comment>
   </data>
   <data name="AM_MFA_SeedCopied" xml:space="preserve">
-    <value>Tohum panoya kopyalandı.</value>
+    <value>Kod panoya kopyalandı.</value>
     <comment>Message of the dialog displayed when the seed needed to enable the Multi-Factor Authentication has been copied successfully to the clipboard.</comment>
   </data>
   <data name="AM_MFA_SeedCopiedFailed" xml:space="preserve">
-    <value>Tohum panoya kopyalanamadı. Lütfen tekrar deneyin.</value>
+    <value>Kod panoya kopyalanamadı. Lütfen tekrar deneyin.</value>
     <comment>Message of the dialog displayed if fails the process to copy the seed needed to enable the Multi-Factor Authentication to the clipboard.</comment>
   </data>
   <data name="AM_MFA_SeedCopiedFailed_Title" xml:space="preserve">
-    <value>Tohum kopyalama başarısız oldu</value>
+    <value>Kod kopyalama başarısız oldu</value>
     <comment>Title of the dialog displayed if fails the process to copy the seed needed to enable the Multi-Factor Authentication to the clipboard.</comment>
   </data>
   <data name="AM_MFA_SeedCopied_Title" xml:space="preserve">
-    <value>Tohum kopyalandı</value>
+    <value>Kod kopyalandı</value>
     <comment>Title of the dialog displayed when the seed needed to enable the Multi-Factor Authentication has been copied successfully to the clipboard.</comment>
   </data>
   <data name="AM_2FA_InputAppCodeDialogMessage" xml:space="preserve">
@@ -1523,7 +1516,6 @@ Preserve the [{0}] code because is for include the error code or the error messa
   </data>
   <data name="AM_2FA_EnabledDialogRecommendation" xml:space="preserve">
     <value>2FD etkinleştirildikten sonra hesabınıza erişiminizi kaybederseniz ve Kurtarma Anahtarını kaydetmediyseniz, MEGA erişiminizi geri kazanmanıza yardımcı olamaz.
-
 Kurtarma anahtarınızı yedeklediğinizden emin olun.</value>
     <comment>Text recommending export the Recovery Key in the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication. KEEP the multi-line format.</comment>
   </data>
@@ -1543,5 +1535,9 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
   <data name="AM_RestoreMultiFromRubbishBinFailed" xml:space="preserve">
     <value>Öğeler çöp kutusundan geri yüklenemedi. Lütfen tekrar deneyin.</value>
     <comment>Message of the dialog displayed when the process/request to restore multiple nodes from the rubbish bin failed.</comment>
+  </data>
+  <data name="AM_MFA_CheckStatusFailed" xml:space="preserve">
+    <value>İki faktörlü doğrulama durumu kontrol edilemedi.</value>
+    <comment>Message of the dialog displayed if fails the process to check the Multi-Factor Authentication status.</comment>
   </data>
 </root>

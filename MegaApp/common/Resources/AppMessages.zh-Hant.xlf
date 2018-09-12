@@ -1241,8 +1241,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="translated">檔案連結不存在之可能原因：
 - 因ToS / AUP違規，故該檔案連結已被刪除。
 - 無效的網址 – 您嘗試存取的連結並不存在。
-- 該使用者已將檔案連結刪除。
-</target>
+- 該使用者已將檔案連結刪除。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</note>
         </trans-unit>
         <trans-unit id="Resx/AM_FolderLinkUnavailable" translate="yes" space="preserve">
@@ -1253,8 +1252,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="translated">資料夾連結不存在之可能原因：
 - 因ToS / AUP違規，故該資料夾連結已被刪除。
 - 無效的網址 – 您嘗試存取的連結並不存在。
-- 該使用者已將資料夾連結刪除。
-</target>
+- 該使用者已將資料夾連結刪除。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when a folder link doesn't exist. Keep "\n"</note>
         </trans-unit>
         <trans-unit id="Resx/AM_LinkUnavailableTitle" translate="yes" space="preserve">
@@ -1709,7 +1707,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_2FA_EnabledDialogDescription" translate="yes" space="preserve">
           <source>Next time you login to your account you will be asked to enter a 6-digit code provided by your Authenticator app.</source>
-          <target state="translated">下次您登入帳戶時，系統會要求您輸入由身份驗證應用程式所發給您的6位碼。</target>
+          <target state="translated">Next time you login to your account you will be asked to enter a 6-digit code provided by your Authenticator app.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Description text of the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_2FA_EnabledDialogTitle" translate="yes" space="preserve">
@@ -1775,9 +1773,9 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
           <target state="translated">無法從垃圾桶中還原。請再試一次。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to restore multiple nodes from the rubbish bin failed.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_MFA_CheckStatusFailed" translate="yes" xml:space="preserve">
-          <source>Failed to check the Multi-Factor Authentication status.</source>
-          <target state="new">Failed to check the Multi-Factor Authentication status.</target>
+        <trans-unit id="Resx/AM_MFA_CheckStatusFailed" translate="yes" space="preserve">
+          <source>Failed to check the status of two factor authentication.</source>
+          <target state="needs-review-translation">Failed to check the status of two factor authentication.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed if fails the process to check the Multi-Factor Authentication status.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_FolderAlreadyExists" translate="yes" xml:space="preserve">

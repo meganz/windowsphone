@@ -1483,7 +1483,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message displayed when the user is trying to insert and invalid code, for example the 6-digit code of the Multi-Factor Authentication.</comment>
   </data>
   <data name="AM_2FA_EnabledDialogDescription" xml:space="preserve">
-    <value>Na próxima vez que você fizer login na sua conta, você vai precisar digitar o código de seis dígitos proporcionado pelo seu aplicativo de autenticação.</value>
+    <value>Next time you login to your account you will be asked to enter a 6-digit code provided by your Authenticator app.</value>
     <comment>Description text of the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication.</comment>
   </data>
   <data name="AM_2FA_EnabledDialogTitle" xml:space="preserve">
@@ -1491,19 +1491,19 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title text of the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication.</comment>
   </data>
   <data name="AM_MFA_SeedCopied" xml:space="preserve">
-    <value>O código foi copiado para a sua área de transferência.</value>
+    <value>A chave foi copiada para a sua área de transferência.</value>
     <comment>Message of the dialog displayed when the seed needed to enable the Multi-Factor Authentication has been copied successfully to the clipboard.</comment>
   </data>
   <data name="AM_MFA_SeedCopiedFailed" xml:space="preserve">
-    <value>Não foi possível copiar o código para a sua área de transferência. Tente novamente.</value>
+    <value>Não foi possível copiar a chave para a sua área de transferência. Tente novamente.</value>
     <comment>Message of the dialog displayed if fails the process to copy the seed needed to enable the Multi-Factor Authentication to the clipboard.</comment>
   </data>
   <data name="AM_MFA_SeedCopiedFailed_Title" xml:space="preserve">
-    <value>Erro ao copiar o código</value>
+    <value>Erro ao copiar a chave</value>
     <comment>Title of the dialog displayed if fails the process to copy the seed needed to enable the Multi-Factor Authentication to the clipboard.</comment>
   </data>
   <data name="AM_MFA_SeedCopied_Title" xml:space="preserve">
-    <value>Código copiado</value>
+    <value>Chave copiada</value>
     <comment>Title of the dialog displayed when the seed needed to enable the Multi-Factor Authentication has been copied successfully to the clipboard.</comment>
   </data>
   <data name="AM_2FA_InputAppCodeDialogMessage" xml:space="preserve">
@@ -1535,5 +1535,9 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
   <data name="AM_RestoreMultiFromRubbishBinFailed" xml:space="preserve">
     <value>Não foi possível restaurar os itens da Lixeira. Tente novamente.</value>
     <comment>Message of the dialog displayed when the process/request to restore multiple nodes from the rubbish bin failed.</comment>
+  </data>
+  <data name="AM_MFA_CheckStatusFailed" xml:space="preserve">
+    <value>Não foi possível comprovar o estado da autenticação de dois fatores</value>
+    <comment>Message of the dialog displayed if fails the process to check the Multi-Factor Authentication status.</comment>
   </data>
 </root>

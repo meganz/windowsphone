@@ -651,17 +651,17 @@ Cobalah menyimpan / menyalin file ke memori internal perangkat Anda.</target>
         </trans-unit>
         <trans-unit id="Resx/CurrentPinLockCodeDoNotMatch" translate="yes" space="preserve">
           <source>Current PIN code is incorrect or does not match</source>
-          <target state="translated">PIN lock saat ini tidak benar atau tidak sama</target>
+          <target state="translated">Kode PIN saat ini salah atau tidak cocok</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user is trying to change the PIN lock code and introduces an incorrect code into the field for the current PIN lock code. Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/CurrentPinLockCodeDoNotMatch_Title" translate="yes" space="preserve">
           <source>Current PIN code is incorrect</source>
-          <target state="translated">PIN lock saat ini tidak cocok</target>
+          <target state="translated">Kode PIN saat ini salah</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user is trying to change the PIN lock code and introduces an incorrect code into the field for the current PIN lock code - (String as short as possible). Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_RecoveryKeyCopied" translate="yes" space="preserve">
           <source>The Recovery Key has been copied to the clipboard. Please store it in a safe place.</source>
-          <target state="translated">Recovery Key terkopi ke clipboard</target>
+          <target state="translated">Recovery Key telah disalin ke papan klip. Tolong simpan di tempat yang aman.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_RecoveryKeyCopied_Title" translate="yes" space="preserve">
@@ -864,8 +864,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/CancelSubscriptionFailed" translate="yes" space="preserve">
           <source>The subscription has not been canceled successfully. Please contact support@mega.nz to cancel your subscription.</source>
-          <target state="translated">Subskripsi belum dibatalkan dengan benar. Harap kontak support@mega.nz untuk membatalkan subskripsi anda.
-</target>
+          <target state="translated">Subskripsi belum dibatalkan dengan benar. Harap kontak support@mega.nz untuk membatalkan subskripsi anda.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to cancel a subscription failed.</note>
         </trans-unit>
         <trans-unit id="Resx/CancelSubscriptionFailed_Title" translate="yes" space="preserve">
@@ -1093,8 +1092,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/FolderUnauthorizedAccess" translate="yes" space="preserve">
           <source>You don’t have access to the folder ‘{0}’. Please select another one and try again.</source>
-          <target state="translated">Anda tidak memiliki akses ke path '{0}'. Harap pilih path yang lain dan coba kembali.
-</target>
+          <target state="translated">Anda tidak memiliki akses ke path '{0}'. Harap pilih path yang lain dan coba kembali.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that the app or the user doesn't have access to a folder in the device memory. For example to download a file/folder, create a new folder, etc.
 Preserve the '{0}' code because is for include the folder name in runtime.</note>
         </trans-unit>
@@ -1243,8 +1241,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="translated">Ini bisa jadi karena alasan berikut:
 - File telah dihapus karena pelanggaran ToS / AUP.
 - URL tidak valid - link yang Anda coba akses tidak ada.
-- File telah dihapus oleh pengguna.
-</target>
+- File telah dihapus oleh pengguna.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</note>
         </trans-unit>
         <trans-unit id="Resx/AM_FolderLinkUnavailable" translate="yes" space="preserve">
@@ -1255,8 +1252,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="translated">Ini bisa jadi karena alasan berikut:
 - Link folder telah dihapus karena pelanggaran ToS / AUP.
 - URL tidak valid - link yang Anda coba akses tidak ada.
-- Link folder telah dihapus oleh pengguna.
-</target>
+- Link folder telah dihapus oleh pengguna.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when a folder link doesn't exist. Keep "\n"</note>
         </trans-unit>
         <trans-unit id="Resx/AM_LinkUnavailableTitle" translate="yes" space="preserve">
@@ -1671,7 +1667,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_RecoveryKeyExported" translate="yes" space="preserve">
           <source>The Recovery Key has been exported. Please store it in a safe place.</source>
-          <target state="translated">Kunci Pemulihan telah diekspor.</target>
+          <target state="translated">Recovery Key telah diekspor. Tolong simpan di tempat yang aman.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog or notification displayed in cases that the app has succesful exported the recovery key.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_RecoveryKeyExported_Title" translate="yes" space="preserve">
@@ -1696,17 +1692,17 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_2FA_SetupDialogDescription" translate="yes" space="preserve">
           <source>Two-factor authentication is a second layer of security for your account. Which means that even if someone knows your password they cannot access it, without also having access to the six digit code only you have access to.</source>
-          <target state="translated">Two-factor authentication is a second layer of security for your account. Which means that even if someone knows your password they cannot access it, without also having access to the six digit code only you have access to.</target>
+          <target state="translated">Otentikasi dua faktor adalah lapisan keamanan kedua untuk akun Anda. Yang berarti bahwa bahkan jika seseorang mengetahui kata sandi Anda, mereka tidak dapat mengaksesnya, tanpa juga memiliki akses ke kode enam digit yang hanya Anda miliki aksesnya.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Description text of the dialog displayed to start setup the Two-Factor Authentication</note>
         </trans-unit>
         <trans-unit id="Resx/AM_2FA_SetupDialogTitle" translate="yes" space="preserve">
           <source>Why do you need two-factor authentication?</source>
-          <target state="translated">Why do you need two-factor authentication?</target>
+          <target state="translated">Mengapa Anda membutuhkan otentikasi dua faktor?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed to start setup the Two-Factor Authentication</note>
         </trans-unit>
         <trans-unit id="Resx/AM_InvalidCode" translate="yes" space="preserve">
           <source>This code isn’t right, please try again.</source>
-          <target state="translated">This code isn’t right, please try again.</target>
+          <target state="translated">Kode ini tidak benar, silakan coba lagi.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message displayed when the user is trying to insert and invalid code, for example the 6-digit code of the Multi-Factor Authentication.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_2FA_EnabledDialogDescription" translate="yes" space="preserve">
@@ -1716,70 +1712,70 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_2FA_EnabledDialogTitle" translate="yes" space="preserve">
           <source>Two-Factor Authentication Enabled</source>
-          <target state="translated">Two-Factor Authentication Enabled</target>
+          <target state="translated">Otentikasi Dua Faktor Diaktifkan</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title text of the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_MFA_SeedCopied" translate="yes" space="preserve">
           <source>The seed has been copied to your clipboard.</source>
-          <target state="translated">The seed has been copied to your clipboard.</target>
+          <target state="translated">Benih telah disalin ke papan klip Anda.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the seed needed to enable the Multi-Factor Authentication has been copied successfully to the clipboard.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_MFA_SeedCopiedFailed" translate="yes" space="preserve">
           <source>Failed to copy the seed to your clipboard. Please try again.</source>
-          <target state="translated">Failed to copy the seed to your clipboard. Please try again.</target>
+          <target state="translated">Gagal menyalin benih ke papan klip Anda. Silakan coba lagi.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed if fails the process to copy the seed needed to enable the Multi-Factor Authentication to the clipboard.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_MFA_SeedCopiedFailed_Title" translate="yes" space="preserve">
           <source>Seed copy failed</source>
-          <target state="translated">Seed copy failed</target>
+          <target state="translated">Salinan benih gagal</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed if fails the process to copy the seed needed to enable the Multi-Factor Authentication to the clipboard.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_MFA_SeedCopied_Title" translate="yes" space="preserve">
           <source>Seed copied</source>
-          <target state="translated">Seed copied</target>
+          <target state="translated">Seed disalin</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the seed needed to enable the Multi-Factor Authentication has been copied successfully to the clipboard.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_2FA_InputAppCodeDialogMessage" translate="yes" space="preserve">
           <source>Please enter the code generated by your authentication app</source>
-          <target state="translated">Please enter the code generated by your authentication app</target>
+          <target state="translated">Silakan masukkan kode yang dihasilkan oleh aplikasi otentikasi Anda</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Description text of the dialog displayed to introduce the 6-digit code for the MFA.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_2FA_DisableDialogTitle" translate="yes" space="preserve">
           <source>Disable Two-Factor Authentication</source>
-          <target state="translated">Disable Two-Factor Authentication</target>
+          <target state="translated">Nonaktifkan Autentikasi Dua Faktor</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed to disable the Two-Factor Authentication.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_2FA_EnabledDialogRecommendation" translate="yes" space="preserve">
           <source>If you lose access to your account after enabling 2FA and you have not backed up your Recovery Key, MEGA can’t help you gain access to it again.
 Ensure you back up your recovery key.</source>
-          <target state="translated">If you lose access to your account after enabling 2FA and you have not backed up your Recovery Key, MEGA can’t help you gain access to it again.
-Ensure you back up your recovery key.</target>
+          <target state="translated">Jika Anda kehilangan akses ke akun Anda setelah mengaktifkan 2FA dan Anda belum mencadangkan Kunci Pemulihan Anda, MEGA tidak dapat membantu Anda mendapatkan akses ke itu lagi.
+Pastikan Anda mencadangkan kunci pemulihan Anda.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text recommending export the Recovery Key in the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication. KEEP the multi-line format.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_2FA_DisabledDialogTitle" translate="yes" space="preserve">
           <source>Two-Factor Authentication Disabled</source>
-          <target state="translated">Two-Factor Authentication Disabled</target>
+          <target state="translated">Autentikasi Dua Faktor Dinonaktifkan</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title text of the dialog displayed to indicate that the user has successfully disabled the Two-Factor Authentication.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_RestoreFromRubbishBinFailed" translate="yes" space="preserve">
           <source>Failed to restore ‘{0}’ from rubbish bin. Please try again.</source>
-          <target state="translated">Failed to restore ‘{0}’ from rubbish bin. Please try again.</target>
+          <target state="translated">Gagal mengembalikan ‘{0}’ dari tempat sampah. Silakan coba lagi.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to restore a node to the rubbish bin failed.
 Preserve the '{0}' code because is for include the file/folder name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_RestoreFromRubbishBinFailed_Title" translate="yes" space="preserve">
           <source>Restore from rubbish bin failed</source>
-          <target state="translated">Restore from rubbish bin failed</target>
+          <target state="translated">Pulihkan dari tempat sampah gagal</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to restore nodes from the rubbish bin failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_RestoreMultiFromRubbishBinFailed" translate="yes" space="preserve">
           <source>Failed to restore items from rubbish bin. Please try again.</source>
-          <target state="translated">Failed to restore items from rubbish bin. Please try again.</target>
+          <target state="translated">Gagal mengembalikan barang dari tempat sampah. Silakan coba lagi.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to restore multiple nodes from the rubbish bin failed.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_MFA_CheckStatusFailed" translate="yes" xml:space="preserve">
-          <source>Failed to check the Multi-Factor Authentication status.</source>
-          <target state="new">Failed to check the Multi-Factor Authentication status.</target>
+        <trans-unit id="Resx/AM_MFA_CheckStatusFailed" translate="yes" space="preserve">
+          <source>Failed to check the status of two factor authentication.</source>
+          <target state="needs-review-translation">Gagal memeriksa status otentikasi dua faktor.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed if fails the process to check the Multi-Factor Authentication status.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_FolderAlreadyExists" translate="yes" xml:space="preserve">

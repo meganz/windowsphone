@@ -661,7 +661,7 @@ Bitte speichern/kopieren Sie die Datei stattdessen in den internen Gerätespeich
         </trans-unit>
         <trans-unit id="Resx/AM_RecoveryKeyCopied" translate="yes" space="preserve">
           <source>The Recovery Key has been copied to the clipboard. Please store it in a safe place.</source>
-          <target state="translated">Der Rettungsschlüssel wurde in die Zwischenablage kopiert</target>
+          <target state="translated">Der Rettungsschlüssel wurde in die Zwischenablage kopiert. Bewahren Sie ihn an einem sicheren Ort auf.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_RecoveryKeyCopied_Title" translate="yes" space="preserve">
@@ -716,7 +716,7 @@ Bitte speichern/kopieren Sie die Datei stattdessen in den internen Gerätespeich
         </trans-unit>
         <trans-unit id="Resx/SelectFolderFailed" translate="yes" space="preserve">
           <source>Failed to select folder. Please, try again or select another one.</source>
-          <target state="translated">Failed to select folder. Please, try again or select another one.</target>
+          <target state="translated">Ordner konnte nicht ausgewählt werden. Versuchen Sie es bitte noch einmal.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to select a folder failed.</note>
         </trans-unit>
         <trans-unit id="Resx/SelectFolderFailed_Title" translate="yes" space="preserve">
@@ -864,8 +864,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/CancelSubscriptionFailed" translate="yes" space="preserve">
           <source>The subscription has not been canceled successfully. Please contact support@mega.nz to cancel your subscription.</source>
-          <target state="translated">Das Abonnement konnte nicht storniert werden. Bitte setzen Sie sich mit support@mega.nz in Verbindung.
-</target>
+          <target state="translated">Das Abonnement konnte nicht storniert werden. Bitte setzen Sie sich mit support@mega.nz in Verbindung.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to cancel a subscription failed.</note>
         </trans-unit>
         <trans-unit id="Resx/CancelSubscriptionFailed_Title" translate="yes" space="preserve">
@@ -1467,7 +1466,7 @@ Preserve the {0} code because is for include the exact time until the user has t
         </trans-unit>
         <trans-unit id="Resx/AM_AccountBlocked_Title" translate="yes" space="preserve">
           <source>Suspended account</source>
-          <target state="translated">Account blockiert</target>
+          <target state="translated">Account gesperrt</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog shown when the user is trying to login and the account has been blocked.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShareFromMegaAppBusy_Message" translate="yes" space="preserve">
@@ -1638,7 +1637,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_PasswordReminder" translate="yes" space="preserve">
           <source>Due to MEGA’s encryption technology you are unable to reset your password without data loss. Please make sure you remember your password.</source>
-          <target state="translated">Due to MEGA’s encryption technology you are unable to reset your password without data loss. Please make sure you remember your password.</target>
+          <target state="translated">Aufgrund der sicheren MEGA-Verschlüsselungstechnologie ist ein Zurücksetzen Ihres Passworts ohne Datenverlust nicht möglich. Bitte stellen Sie sicher, dass Sie sich an Ihr Passwort erinnern können.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message to describe the purpose of the password reminder dialog.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PasswordReminder_Title" translate="yes" space="preserve">
@@ -1663,7 +1662,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_TestPassword_Title" translate="yes" space="preserve">
           <source>Test Password</source>
-          <target state="translated">Test Password</target>
+          <target state="translated">Passwort prüfen</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the test password dialog.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_RecoveryKeyExported" translate="yes" space="preserve">
@@ -1774,9 +1773,9 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
           <target state="translated">Failed to restore items from rubbish bin. Please try again.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to restore multiple nodes from the rubbish bin failed.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_MFA_CheckStatusFailed" translate="yes" xml:space="preserve">
-          <source>Failed to check the Multi-Factor Authentication status.</source>
-          <target state="new">Failed to check the Multi-Factor Authentication status.</target>
+        <trans-unit id="Resx/AM_MFA_CheckStatusFailed" translate="yes" space="preserve">
+          <source>Failed to check the status of two factor authentication.</source>
+          <target state="needs-review-translation">Failed to check the status of two factor authentication.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed if fails the process to check the Multi-Factor Authentication status.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_FolderAlreadyExists" translate="yes" xml:space="preserve">

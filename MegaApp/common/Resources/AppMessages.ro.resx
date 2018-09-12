@@ -1095,16 +1095,14 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>Acest lucru ar putea fi din cauza următoarelor motive:
 - Fişierul a fost eliminat din cauza unei încălcări a ToS/AUP.
 - URL nevalid – linkul pe care încerci să-l accesezi nu există.
-- Fişierul a fost şters de către utilizator.
-</value>
+- Fişierul a fost şters de către utilizator.</value>
     <comment>Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</comment>
   </data>
   <data name="AM_FolderLinkUnavailable" xml:space="preserve">
     <value>Acest lucru ar putea fi din cauza următoarelor motive:
 - Linkul folderului a fost eliminat din cauza unei încălcări a ToS/AUP.
 - URL nevalid – linkul pe care încerci să-l accesezi nu există.
-- Linkul folderului a fost şters de către utilizator.
-</value>
+- Linkul folderului a fost şters de către utilizator.</value>
     <comment>Error message shown when a folder link doesn't exist. Keep "\n"</comment>
   </data>
   <data name="AM_LinkUnavailableTitle" xml:space="preserve">
@@ -1537,5 +1535,9 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
   <data name="AM_RestoreMultiFromRubbishBinFailed" xml:space="preserve">
     <value>Failed to restore items from rubbish bin. Please try again.</value>
     <comment>Message of the dialog displayed when the process/request to restore multiple nodes from the rubbish bin failed.</comment>
+  </data>
+  <data name="AM_MFA_CheckStatusFailed" xml:space="preserve">
+    <value>Failed to check the status of two factor authentication.</value>
+    <comment>Message of the dialog displayed if fails the process to check the Multi-Factor Authentication status.</comment>
   </data>
 </root>

@@ -772,8 +772,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed in cases that the user types some data with a wrong format - (String as short as possible).</comment>
   </data>
   <data name="CancelSubscriptionFailed" xml:space="preserve">
-    <value>הרישום לא בוטל.
-אנא צור קשר עם support@mega.nz לביטול הרישום.</value>
+    <value>הרישום לא בוטל.אנא צור קשר עם support@mega.nz לביטול הרישום.</value>
     <comment>Message of the dialog displayed when the process/request to cancel a subscription failed.</comment>
   </data>
   <data name="CancelSubscriptionFailed_Title" xml:space="preserve">
@@ -1535,5 +1534,9 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
   <data name="AM_RestoreMultiFromRubbishBinFailed" xml:space="preserve">
     <value>Failed to restore items from rubbish bin. Please try again.</value>
     <comment>Message of the dialog displayed when the process/request to restore multiple nodes from the rubbish bin failed.</comment>
+  </data>
+  <data name="AM_MFA_CheckStatusFailed" xml:space="preserve">
+    <value>Failed to check the status of two factor authentication.</value>
+    <comment>Message of the dialog displayed if fails the process to check the Multi-Factor Authentication status.</comment>
   </data>
 </root>

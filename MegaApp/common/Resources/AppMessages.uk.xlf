@@ -631,8 +631,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <source>You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?
 Please try to save/copy the file to your device’s internal memory instead.</source>
           <target state="translated">Ви не маєте дозволу на копіювання цього типу файлів до місця призначення. Ви намагаєтесь зберегти/скопіювати файл непідтримуваного типу на карту SD?
-Спробуйте зберегти/скопіювати файл у внутрішню пам'ять пристрою.
-</target>
+Спробуйте зберегти/скопіювати файл у внутрішню пам'ять пристрою.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</note>
         </trans-unit>
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException_Title" translate="yes" space="preserve">
@@ -1242,8 +1241,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="translated">Це може бути пов'язано з такими причинами:
 - Файл був видалений через порушення ToS/AUP.
 - Невірна ланка — посилання за яким ви намагаєтесь перейти не існує.
-- Файл був видалений користувачем.
-</target>
+- Файл був видалений користувачем.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</note>
         </trans-unit>
         <trans-unit id="Resx/AM_FolderLinkUnavailable" translate="yes" space="preserve">
@@ -1254,8 +1252,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="translated">Це може бути пов'язано з такими причинами:
 - Тека була видалена через порушення ToS/AUP.
 - Невірна ланка — посилання за яким ви намагаєтесь перейти не існує.
-- Ланка на теку була видалена користувачем.
-</target>
+- Ланка на теку була видалена користувачем.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when a folder link doesn't exist. Keep "\n"</note>
         </trans-unit>
         <trans-unit id="Resx/AM_LinkUnavailableTitle" translate="yes" space="preserve">
@@ -1776,9 +1773,9 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
           <target state="translated">Failed to restore items from rubbish bin. Please try again.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to restore multiple nodes from the rubbish bin failed.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_MFA_CheckStatusFailed" translate="yes" xml:space="preserve">
-          <source>Failed to check the Multi-Factor Authentication status.</source>
-          <target state="new">Failed to check the Multi-Factor Authentication status.</target>
+        <trans-unit id="Resx/AM_MFA_CheckStatusFailed" translate="yes" space="preserve">
+          <source>Failed to check the status of two factor authentication.</source>
+          <target state="needs-review-translation">Failed to check the status of two factor authentication.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed if fails the process to check the Multi-Factor Authentication status.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_FolderAlreadyExists" translate="yes" xml:space="preserve">

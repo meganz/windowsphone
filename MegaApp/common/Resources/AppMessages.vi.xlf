@@ -1692,7 +1692,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_2FA_SetupDialogDescription" translate="yes" space="preserve">
           <source>Two-factor authentication is a second layer of security for your account. Which means that even if someone knows your password they cannot access it, without also having access to the six digit code only you have access to.</source>
-          <target state="translated">Two-factor authentication is a second layer of security for your account. Which means that even if someone knows your password they cannot access it, without also having access to the six digit code only you have access to.</target>
+          <target state="translated">Chức năng xác minh 2-bước là một lớp bảo mật thứ nhì cho tài khoản. Nghĩa là trong trường hợp có người biết mật khẩu để lén vào tài khoản sẽ không thể vào được, và buộc phải nhập thêm đoạn mã 6 chữ số mà chỉ chủ sở hữu tài khoản mới có.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Description text of the dialog displayed to start setup the Two-Factor Authentication</note>
         </trans-unit>
         <trans-unit id="Resx/AM_2FA_SetupDialogTitle" translate="yes" space="preserve">
@@ -1748,8 +1748,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
         <trans-unit id="Resx/AM_2FA_EnabledDialogRecommendation" translate="yes" space="preserve">
           <source>If you lose access to your account after enabling 2FA and you have not backed up your Recovery Key, MEGA can’t help you gain access to it again.
 Ensure you back up your recovery key.</source>
-          <target state="translated">If you lose access to your account after enabling 2FA and you have not backed up your Recovery Key, MEGA can’t help you gain access to it again.
-Ensure you back up your recovery key.</target>
+          <target state="translated">MEGA sẽ không thể giúp phục hồi tài khoản nếu chủ tài khoản để mất Mã Khoá Phục Hồi, và có chức năng XM2B được bật.
+Xin luôn kiểm tra và đảm bảo mã phục hồi đã được lưu giữ kỹ càng.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text recommending export the Recovery Key in the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication. KEEP the multi-line format.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_2FA_DisabledDialogTitle" translate="yes" space="preserve">
@@ -1773,9 +1773,9 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
           <target state="translated">Việc phục hồi các mục từ thùng rác bị thất bại. Xin thử lại.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to restore multiple nodes from the rubbish bin failed.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_MFA_CheckStatusFailed" translate="yes" xml:space="preserve">
-          <source>Failed to check the Multi-Factor Authentication status.</source>
-          <target state="new">Failed to check the Multi-Factor Authentication status.</target>
+        <trans-unit id="Resx/AM_MFA_CheckStatusFailed" translate="yes" space="preserve">
+          <source>Failed to check the status of two factor authentication.</source>
+          <target state="needs-review-translation">Không kiểm tra được tình trạng của chức năng xác minh 2-bước.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed if fails the process to check the Multi-Factor Authentication status.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_FolderAlreadyExists" translate="yes" xml:space="preserve">

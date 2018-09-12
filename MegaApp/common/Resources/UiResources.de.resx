@@ -1304,7 +1304,7 @@ Preserve the PIN uppercase word.</comment>
     <comment>Label for any 'Takedown Guidance' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_OpenBrowser" xml:space="preserve">
-    <value>Open browser</value>
+    <value>Browser öffnen</value>
     <comment>Label for the button to allow the user open the default browser - (String as short as possible).</comment>
   </data>
   <data name="UI_Retry" xml:space="preserve">
@@ -1312,11 +1312,11 @@ Preserve the PIN uppercase word.</comment>
     <comment>Label for any 'Retry' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_CloseOtherSessions" xml:space="preserve">
-    <value>Alle anderen Sessions terminieren</value>
+    <value>Alle anderen Sitzungen beenden</value>
     <comment>Label for any 'Close other sessions' button, link, etc., to close all other active sessions except the current one - (String as short as possible).</comment>
   </data>
   <data name="UI_DoNotShowMeAgain" xml:space="preserve">
-    <value>Don’t show me again</value>
+    <value>Nicht wieder anzeigen</value>
     <comment>Label for a check box included into a dialog to indicate don't show it again.</comment>
   </data>
   <data name="UI_BackupRecoveryKey" xml:space="preserve">
@@ -1329,7 +1329,7 @@ NOTE: Max. length 20 characters.</comment>
     <comment>Label for any 'Close' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_TestPassword" xml:space="preserve">
-    <value>Test Password</value>
+    <value>Passwort prüfen</value>
     <comment>Label for any 'Test Password' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_PlainText" xml:space="preserve">
@@ -1407,5 +1407,17 @@ NOTE: Max. length 20 characters.</comment>
   <data name="UI_OpenIn" xml:space="preserve">
     <value>Öffnen in...</value>
     <comment>Label for any 'Open in...' button, link, text, title, etc. to open a file or other kind of resource with a certain app - (String as short as possible).</comment>
+  </data>
+  <data name="UI_MFA_SetupStep1" xml:space="preserve">
+    <value>Scannen Sie diesen Code mit Ihrer Authentifizierungs-App (oder kopieren Sie Ihn). Für den Fall des Verlusts Ihres Mobilgeräts bewahren Sie bitte eine Kopie an einem sicheren Ort auf.</value>
+    <comment>Label for the step 1 to setup the Multi-Factor Authentication.</comment>
+  </data>
+  <data name="UI_MFA_SetupStep2" xml:space="preserve">
+    <value>Geben Sie nach Konfiguration Ihrer Authentifizierungs-App den angezeigten sechsstelligen Code ein.</value>
+    <comment>Label for the step 2 to setup the Muti-Factor Authentication.</comment>
+  </data>
+  <data name="UI_FindApp" xml:space="preserve">
+    <value>Find app</value>
+    <comment>Label for any 'Find app' button, link, text, title, etc, to find an app to open a file, resource, etc. - (String as short as possible).</comment>
   </data>
 </root>

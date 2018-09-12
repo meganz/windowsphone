@@ -1236,7 +1236,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/EmptyOffline" translate="yes" space="preserve">
           <source>No items saved for offline</source>
-          <target state="translated">Chưa có mục nào đựoc tải về vào mục lưu về ngoại tuyến</target>
+          <target state="translated">Không có mục nào lưu về ngoại tuyến</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty transfers page - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/EmptyRubbishBin" translate="yes" space="preserve">
@@ -1542,7 +1542,7 @@ NOTE: Max. length 20 characters.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_SessionManagementDescription" translate="yes" space="preserve">
           <source>This will log you out on all other active sessions except the current one. You will need to re-login to your other devices to continue using MEGA.</source>
-          <target state="translated">This will log you out on all other active sessions except the current one. You will need to re-login to your other devices to continue using MEGA.</target>
+          <target state="translated">Thao tác này sẽ đăng xuất tài khoản ra khỏi tất cả các thiết bị đang sử dụng, ngoại trừ phiên hiện hành này. Khi muốn tiếp tục  sử dụng MEGA cần phải tự đăng nhập lại.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label to describe the "Session Management" option of the "Settings" section.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_Warning" translate="yes" space="preserve">
@@ -1562,7 +1562,7 @@ NOTE: Max. length 20 characters.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TwoFactorAuthSettingsDescription" translate="yes" space="preserve">
           <source>Two-factor authentication is a second layer of security for your account.</source>
-          <target state="translated">Two-factor authentication is a second layer of security for your account.</target>
+          <target state="translated">Chức năng xác minh 2-bước là một lớp bảo mật thứ nhì cho tài khoản.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Description for the 'Two-Factor Authentication' in the security settings section.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_Setup2FA" translate="yes" space="preserve">
@@ -1570,19 +1570,19 @@ NOTE: Max. length 20 characters.</note>
           <target state="translated">Cài Đặt Xác Minh 2-Bước</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Setup Two-Factor Authentication' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_MFA_SetupStep2" translate="yes" xml:space="preserve">
-          <source>After setting up your seed on your authenticator app enter the 6-digit code provided.</source>
-          <target state="new">After setting up your seed on your authenticator app enter the 6-digit code provided.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the step 2 to setup the Muti-Factor Authentication.</note>
-        </trans-unit>
-        <trans-unit id="Resx/UI_MFA_SetupStep1" translate="yes" xml:space="preserve">
-          <source>Scan or copy the seed directly into your authenticator app. Be sure to backup this seed to a safe place in case you lose your phone.</source>
-          <target state="new">Scan or copy the seed directly into your authenticator app. Be sure to backup this seed to a safe place in case you lose your phone.</target>
+        <trans-unit id="Resx/UI_MFA_SetupStep1" translate="yes" space="preserve">
+          <source>Scan or copy the seed to your Authenticator App. Be sure to backup this seed to a safe place in case you lose your phone.</source>
+          <target state="needs-review-translation">Quét hay sao chép đoạn chủng tử nằm dưới đây vào app Lập Xác Thực muốn sử dụng. Cũng nên lưu lại mã này ở nơi an toàn trong trường hợp mất điện thoại.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the step 1 to setup the Multi-Factor Authentication.</note>
         </trans-unit>
+        <trans-unit id="Resx/UI_MFA_SetupStep2" translate="yes" space="preserve">
+          <source>After setting up your seed on your Authenticator app enter the 6-digit code provided.</source>
+          <target state="needs-review-translation">Sau khi chủng tử được app Lập Xác Thực nhận vào, điền vào đoạn mã dài 6 chữ số hiện ra.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the step 2 to setup the Muti-Factor Authentication.</note>
+        </trans-unit>
         <trans-unit id="Resx/UI_SixDigitCode" translate="yes" space="preserve">
-          <source>6-digit code</source>
-          <target state="translated">6 digit code</target>
+          <source>6 digit code</source>
+          <target state="needs-review-translation">6 digit code</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Placeholder text of the field to type the 6-digit code provided for the authenticator app to verify the Multi-Factor Authentication.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_Verify" translate="yes" space="preserve">
@@ -1617,7 +1617,7 @@ NOTE: Max. length 20 characters.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_UsedCache" translate="yes" space="preserve">
           <source>Used cache</source>
-          <target state="translated">Used cache</target>
+          <target state="translated">Bộ nhớ tạm đang dùng</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label to indicate the amount of used cache - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_OpenIn" translate="yes" space="preserve">
@@ -1625,9 +1625,9 @@ NOTE: Max. length 20 characters.</note>
           <target state="translated">Mở với...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Open in...' button, link, text, title, etc. to open a file or other kind of resource with a certain app - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_FindApp" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_FindApp" translate="yes" space="preserve">
           <source>Find app</source>
-          <target state="new">Find app</target>
+          <target state="translated">Tìm app</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Find app' button, link, text, title, etc, to find an app to open a file, resource, etc. - (String as short as possible).</note>
         </trans-unit>
       </group>

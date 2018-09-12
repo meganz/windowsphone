@@ -716,8 +716,7 @@ Please try to save/copy the file to your device’s internal memory instead.</so
         </trans-unit>
         <trans-unit id="Resx/SelectFolderFailed" translate="yes" space="preserve">
           <source>Failed to select folder. Please, try again or select another one.</source>
-          <target state="translated">フォルダを選択できませんでした。もう一度やり直すか、別のものを選択してください。
-</target>
+          <target state="translated">フォルダを選択できませんでした。もう一度やり直すか、別のものを選択してください。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to select a folder failed.</note>
         </trans-unit>
         <trans-unit id="Resx/SelectFolderFailed_Title" translate="yes" space="preserve">
@@ -1242,8 +1241,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="translated">これは、以下の理由による可能性があります：
 －ファイルがToS/AUP違反により削除されました。
 －URLが無効－アクセスしようとしているリンクが存在しません。
-－ファイルがユーザーによって削除されました。
-</target>
+－ファイルがユーザーによって削除されました。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</note>
         </trans-unit>
         <trans-unit id="Resx/AM_FolderLinkUnavailable" translate="yes" space="preserve">
@@ -1254,8 +1252,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="translated">これは、以下の理由による可能性があります：
 －フォルダがToS/AUP違反により削除されました。
 －URLが無効－アクセスしようとしているリンクが存在しません。
-－フォルダリンクがユーザーによって削除されました。
-</target>
+－フォルダリンクがユーザーによって削除されました。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when a folder link doesn't exist. Keep "\n"</note>
         </trans-unit>
         <trans-unit id="Resx/AM_LinkUnavailableTitle" translate="yes" space="preserve">
@@ -1710,7 +1707,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_2FA_EnabledDialogDescription" translate="yes" space="preserve">
           <source>Next time you login to your account you will be asked to enter a 6-digit code provided by your Authenticator app.</source>
-          <target state="translated">次回アカウントにログインすると、オーセンティケータアプリで提供される6桁のコードを入力するよう求められます。</target>
+          <target state="translated">Next time you login to your account you will be asked to enter a 6-digit code provided by your Authenticator app.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Description text of the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_2FA_EnabledDialogTitle" translate="yes" space="preserve">
@@ -1776,9 +1773,9 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
           <target state="translated">ごみ箱から項目を復元できませんでした。もう一度やり直してください。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to restore multiple nodes from the rubbish bin failed.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_MFA_CheckStatusFailed" translate="yes" xml:space="preserve">
-          <source>Failed to check the Multi-Factor Authentication status.</source>
-          <target state="new">Failed to check the Multi-Factor Authentication status.</target>
+        <trans-unit id="Resx/AM_MFA_CheckStatusFailed" translate="yes" space="preserve">
+          <source>Failed to check the status of two factor authentication.</source>
+          <target state="needs-review-translation">二要素認証のステータスを確認できませんでした。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed if fails the process to check the Multi-Factor Authentication status.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_FolderAlreadyExists" translate="yes" xml:space="preserve">

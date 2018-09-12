@@ -869,7 +869,7 @@ Preserve the {0} code because is for include email of the contact to be removed 
 Preserve the [{0}] code because is for include the contact email in runtime.</comment>
   </data>
   <data name="InviteContactAddSuccessfully_Title" xml:space="preserve">
-    <value>연락처가 초대되었습니다</value>
+    <value>연락처 초대됨</value>
     <comment>Title of the dialog displayed when the process/request to invite a contact finished successfully - (String as short as possible).</comment>
   </data>
   <data name="ResourceIntensiveTaskDescription" xml:space="preserve">
@@ -1095,16 +1095,14 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>다음의 이유로 인해 발생할 수 있습니다:
 - 파일이 이용 약관/이용 목적 제한 방침을 위반하여 삭제되었습니다.
 - 잘못된 URL – 접속하려는 링크가 존재하지 않습니다.
-- 파일이 이용자에 의해 삭제되었습니다.
-</value>
+- 파일이 이용자에 의해 삭제되었습니다.</value>
     <comment>Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</comment>
   </data>
   <data name="AM_FolderLinkUnavailable" xml:space="preserve">
     <value>다음의 이유로 인해 발생할 수 있습니다:
 - 폴더 링크가 이용 약관/이용 목적 제한 방침을 위반하여 삭제되었습니다.
 - 잘못된 URL – 접속하려는 링크가 존재하지 않습니다.
-- 폴더 링크가 이용자에 의해 삭제되었습니다.
-</value>
+- 폴더 링크가 이용자에 의해 삭제되었습니다.</value>
     <comment>Error message shown when a folder link doesn't exist. Keep "\n"</comment>
   </data>
   <data name="AM_LinkUnavailableTitle" xml:space="preserve">
@@ -1267,7 +1265,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Message of the dialog displayed when fails the process/request to import a folder link.</comment>
   </data>
   <data name="AM_EmailAlreadyRegistered" xml:space="preserve">
-    <value>이 이메일 주소는 이미 MEGA에 등록되어있는 계정입니다.</value>
+    <value>이 이메일 주소는 이미 MEGA에 가입되어 있습니다.</value>
     <comment>Message of the dialog shown when the users tries to create an account with an email already in use.</comment>
   </data>
   <data name="AM_IncompleteConfirmationLink" xml:space="preserve">
@@ -1429,8 +1427,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
   </data>
   <data name="AM_PasswordReminder" xml:space="preserve">
-    <value>MEGA의 암호화 기술로 인하여 데이터 손실 없이 비밀번호를 초기화할 수 없습니다. 비밀번호를 반드시 기억하도록 하세요.
-                                </value>
+    <value>MEGA의 암호화 기술로 인하여 데이터 손실 없이 비밀번호를 초기화할 수 없습니다. 비밀번호를 반드시 기억하도록 하세요.</value>
     <comment>Message to describe the purpose of the password reminder dialog.</comment>
   </data>
   <data name="AM_PasswordReminder_Title" xml:space="preserve">
@@ -1486,7 +1483,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message displayed when the user is trying to insert and invalid code, for example the 6-digit code of the Multi-Factor Authentication.</comment>
   </data>
   <data name="AM_2FA_EnabledDialogDescription" xml:space="preserve">
-    <value>다음번에 로그인할 때 당신의 인증 앱에 의해 제공된 6자리 코드를 입력하라고 요구될 것입니다.</value>
+    <value>Next time you login to your account you will be asked to enter a 6-digit code provided by your Authenticator app.</value>
     <comment>Description text of the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication.</comment>
   </data>
   <data name="AM_2FA_EnabledDialogTitle" xml:space="preserve">
@@ -1538,5 +1535,9 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
   <data name="AM_RestoreMultiFromRubbishBinFailed" xml:space="preserve">
     <value>휴지통에서 항목들을 복원하는데에 실패하였습니다. 다시 시도하세요.</value>
     <comment>Message of the dialog displayed when the process/request to restore multiple nodes from the rubbish bin failed.</comment>
+  </data>
+  <data name="AM_MFA_CheckStatusFailed" xml:space="preserve">
+    <value>2단계 인증 상태를 확인할 수 없습니다</value>
+    <comment>Message of the dialog displayed if fails the process to check the Multi-Factor Authentication status.</comment>
   </data>
 </root>

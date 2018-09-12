@@ -1095,16 +1095,14 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>檔案連結不存在之可能原因：
 - 因ToS / AUP違規，故該檔案連結已被刪除。
 - 無效的網址 – 您嘗試存取的連結並不存在。
-- 該使用者已將檔案連結刪除。
-</value>
+- 該使用者已將檔案連結刪除。</value>
     <comment>Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</comment>
   </data>
   <data name="AM_FolderLinkUnavailable" xml:space="preserve">
     <value>資料夾連結不存在之可能原因：
 - 因ToS / AUP違規，故該資料夾連結已被刪除。
 - 無效的網址 – 您嘗試存取的連結並不存在。
-- 該使用者已將資料夾連結刪除。
-</value>
+- 該使用者已將資料夾連結刪除。</value>
     <comment>Error message shown when a folder link doesn't exist. Keep "\n"</comment>
   </data>
   <data name="AM_LinkUnavailableTitle" xml:space="preserve">
@@ -1485,7 +1483,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message displayed when the user is trying to insert and invalid code, for example the 6-digit code of the Multi-Factor Authentication.</comment>
   </data>
   <data name="AM_2FA_EnabledDialogDescription" xml:space="preserve">
-    <value>下次您登入帳戶時，系統會要求您輸入由身份驗證應用程式所發給您的6位碼。</value>
+    <value>Next time you login to your account you will be asked to enter a 6-digit code provided by your Authenticator app.</value>
     <comment>Description text of the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication.</comment>
   </data>
   <data name="AM_2FA_EnabledDialogTitle" xml:space="preserve">
@@ -1537,5 +1535,9 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
   <data name="AM_RestoreMultiFromRubbishBinFailed" xml:space="preserve">
     <value>無法從垃圾桶中還原。請再試一次。</value>
     <comment>Message of the dialog displayed when the process/request to restore multiple nodes from the rubbish bin failed.</comment>
+  </data>
+  <data name="AM_MFA_CheckStatusFailed" xml:space="preserve">
+    <value>Failed to check the status of two factor authentication.</value>
+    <comment>Message of the dialog displayed if fails the process to check the Multi-Factor Authentication status.</comment>
   </data>
 </root>

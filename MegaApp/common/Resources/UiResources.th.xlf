@@ -1570,19 +1570,19 @@ NOTE: Max. length 20 characters.</note>
           <target state="translated">ตั้งค่าการรับรองความถูกต้องด้วยสองปัจจัย</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Setup Two-Factor Authentication' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_MFA_SetupStep2" translate="yes" xml:space="preserve">
-          <source>After setting up your seed on your authenticator app enter the 6-digit code provided.</source>
-          <target state="new">After setting up your seed on your authenticator app enter the 6-digit code provided.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the step 2 to setup the Muti-Factor Authentication.</note>
-        </trans-unit>
-        <trans-unit id="Resx/UI_MFA_SetupStep1" translate="yes" xml:space="preserve">
-          <source>Scan or copy the seed directly into your authenticator app. Be sure to backup this seed to a safe place in case you lose your phone.</source>
-          <target state="new">Scan or copy the seed directly into your authenticator app. Be sure to backup this seed to a safe place in case you lose your phone.</target>
+        <trans-unit id="Resx/UI_MFA_SetupStep1" translate="yes" space="preserve">
+          <source>Scan or copy the seed to your Authenticator App. Be sure to backup this seed to a safe place in case you lose your phone.</source>
+          <target state="needs-review-translation">สแกนหรือคัดลอกรหัสไปยังแอปตัวรับรองความถูกต้องของคุณ อย่าลืมสำรองรหัสนี้ไว้ในที่ปลอดภัยในกรณีที่คุณทำโทรศัพท์หาย</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the step 1 to setup the Multi-Factor Authentication.</note>
         </trans-unit>
+        <trans-unit id="Resx/UI_MFA_SetupStep2" translate="yes" space="preserve">
+          <source>After setting up your seed on your Authenticator app enter the 6-digit code provided.</source>
+          <target state="needs-review-translation">หลังจากตั้งค่ารหัสในแอปตัวรับรองความถูกต้องของคุณแล้ว ให้กรอกรหัส 6 หลักตามที่ปรากฎ</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the step 2 to setup the Muti-Factor Authentication.</note>
+        </trans-unit>
         <trans-unit id="Resx/UI_SixDigitCode" translate="yes" space="preserve">
-          <source>6-digit code</source>
-          <target state="translated">6 digit code</target>
+          <source>6 digit code</source>
+          <target state="needs-review-translation">รหัส 6 หลัก</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Placeholder text of the field to type the 6-digit code provided for the authenticator app to verify the Multi-Factor Authentication.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_Verify" translate="yes" space="preserve">
@@ -1625,9 +1625,9 @@ NOTE: Max. length 20 characters.</note>
           <target state="translated">เปิดด้วย...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Open in...' button, link, text, title, etc. to open a file or other kind of resource with a certain app - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_FindApp" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_FindApp" translate="yes" space="preserve">
           <source>Find app</source>
-          <target state="new">Find app</target>
+          <target state="translated">ค้นหาแอป</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Find app' button, link, text, title, etc, to find an app to open a file, resource, etc. - (String as short as possible).</note>
         </trans-unit>
       </group>

@@ -983,7 +983,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</no
         </trans-unit>
         <trans-unit id="Resx/InviteContactAddSuccessfully_Title" translate="yes" space="preserve">
           <source>Contact invited</source>
-          <target state="translated">연락처가 초대되었습니다</target>
+          <target state="translated">연락처 초대됨</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to invite a contact finished successfully - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ResourceIntensiveTaskDescription" translate="yes" space="preserve">
@@ -1241,8 +1241,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="translated">다음의 이유로 인해 발생할 수 있습니다:
 - 파일이 이용 약관/이용 목적 제한 방침을 위반하여 삭제되었습니다.
 - 잘못된 URL – 접속하려는 링크가 존재하지 않습니다.
-- 파일이 이용자에 의해 삭제되었습니다.
-</target>
+- 파일이 이용자에 의해 삭제되었습니다.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</note>
         </trans-unit>
         <trans-unit id="Resx/AM_FolderLinkUnavailable" translate="yes" space="preserve">
@@ -1253,8 +1252,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="translated">다음의 이유로 인해 발생할 수 있습니다:
 - 폴더 링크가 이용 약관/이용 목적 제한 방침을 위반하여 삭제되었습니다.
 - 잘못된 URL – 접속하려는 링크가 존재하지 않습니다.
-- 폴더 링크가 이용자에 의해 삭제되었습니다.
-</target>
+- 폴더 링크가 이용자에 의해 삭제되었습니다.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when a folder link doesn't exist. Keep "\n"</note>
         </trans-unit>
         <trans-unit id="Resx/AM_LinkUnavailableTitle" translate="yes" space="preserve">
@@ -1437,7 +1435,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_EmailAlreadyRegistered" translate="yes" space="preserve">
           <source>This e-mail address has already registered an account with MEGA.</source>
-          <target state="translated">이 이메일 주소는 이미 MEGA에 등록되어있는 계정입니다.</target>
+          <target state="translated">이 이메일 주소는 이미 MEGA에 가입되어 있습니다.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the users tries to create an account with an email already in use.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_IncompleteConfirmationLink" translate="yes" space="preserve">
@@ -1639,8 +1637,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_PasswordReminder" translate="yes" space="preserve">
           <source>Due to MEGA’s encryption technology you are unable to reset your password without data loss. Please make sure you remember your password.</source>
-          <target state="translated">MEGA의 암호화 기술로 인하여 데이터 손실 없이 비밀번호를 초기화할 수 없습니다. 비밀번호를 반드시 기억하도록 하세요.
-                                </target>
+          <target state="translated">MEGA의 암호화 기술로 인하여 데이터 손실 없이 비밀번호를 초기화할 수 없습니다. 비밀번호를 반드시 기억하도록 하세요.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message to describe the purpose of the password reminder dialog.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PasswordReminder_Title" translate="yes" space="preserve">
@@ -1710,7 +1707,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_2FA_EnabledDialogDescription" translate="yes" space="preserve">
           <source>Next time you login to your account you will be asked to enter a 6-digit code provided by your Authenticator app.</source>
-          <target state="translated">다음번에 로그인할 때 당신의 인증 앱에 의해 제공된 6자리 코드를 입력하라고 요구될 것입니다.</target>
+          <target state="translated">Next time you login to your account you will be asked to enter a 6-digit code provided by your Authenticator app.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Description text of the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_2FA_EnabledDialogTitle" translate="yes" space="preserve">
@@ -1776,9 +1773,9 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
           <target state="translated">휴지통에서 항목들을 복원하는데에 실패하였습니다. 다시 시도하세요.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to restore multiple nodes from the rubbish bin failed.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_MFA_CheckStatusFailed" translate="yes" xml:space="preserve">
-          <source>Failed to check the Multi-Factor Authentication status.</source>
-          <target state="new">Failed to check the Multi-Factor Authentication status.</target>
+        <trans-unit id="Resx/AM_MFA_CheckStatusFailed" translate="yes" space="preserve">
+          <source>Failed to check the status of two factor authentication.</source>
+          <target state="needs-review-translation">2단계 인증 상태를 확인할 수 없습니다</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed if fails the process to check the Multi-Factor Authentication status.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_FolderAlreadyExists" translate="yes" xml:space="preserve">

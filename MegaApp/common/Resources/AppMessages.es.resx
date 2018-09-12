@@ -358,7 +358,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the user is trying to open an invalid shortcut - (String as short as possible).</comment>
   </data>
   <data name="ShortCutFailed" xml:space="preserve">
-    <value>Ocurrió un error al intentar abrir un acceso directo. Puede ser que sea un acceso directo no válido o que el destino fue eliminado.</value>
+    <value>No se ha podido abrir un acceso directo. Puede ser que sea un acceso directo no válido o que el destino fue eliminado.</value>
     <comment>Message of the dialog displayed when the user is trying to open an invalid shortcut.</comment>
   </data>
   <data name="SaveSettingsFailed_Title" xml:space="preserve">
@@ -834,7 +834,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard finished successfully - (String as short as possible).</comment>
   </data>
   <data name="LinkCopiedToClipboard" xml:space="preserve">
-    <value>El enlace MEGA se copió en el portapapeles</value>
+    <value>El enlace MEGA se ha copiado al portapapeles</value>
     <comment>Message of the dialog displayed when the process/request to copy a MEGA link to the clipboard finished successfully.</comment>
   </data>
   <data name="ImportFileFailed_Title" xml:space="preserve">
@@ -1135,7 +1135,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when fails to copy the user's Recovery Key to the clipboard to be saved or exported - (String as short as possible).</comment>
   </data>
   <data name="AM_RecoveryKeyCopied" xml:space="preserve">
-    <value>Clave de recuperación copiada en el portapapeles. Guárdala en un lugar seguro.</value>
+    <value>Clave de recuperación copiada al portapapeles. Guárdala en un lugar seguro.</value>
     <comment>Message of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported.</comment>
   </data>
   <data name="AM_RecoveryKeyCopied_Title" xml:space="preserve">
@@ -1359,8 +1359,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app - (String as short as possible).</comment>
   </data>
   <data name="AM_ShareLinkFailed" xml:space="preserve">
-    <value>No se ha podido compartir el enlace de archivo/carpeta. 
-Inténtalo de nuevo.</value>
+    <value>No se ha podido compartir el enlace de archivo/carpeta. Inténtalo de nuevo.</value>
     <comment>Message of the dialog displayed when fails the process/request to share a file/folder link.</comment>
   </data>
   <data name="AM_ShareLinkFailed_Title" xml:space="preserve">
@@ -1444,7 +1443,7 @@ Inténtalo de nuevo.</value>
     <comment>Message displayed when the password test result is ok.</comment>
   </data>
   <data name="AM_TestPasswordWarning" xml:space="preserve">
-    <value>¡Contraseña incorrecta! Hazuna copia de seguridad de la Clave de recuperación lo antes posible.</value>
+    <value>¡Contraseña incorrecta! Guarda tu Clave de recuperación lo antes posible.</value>
     <comment>Warning message displayed when the password test fails.</comment>
   </data>
   <data name="AM_TestPassword_Title" xml:space="preserve">
@@ -1472,7 +1471,7 @@ Inténtalo de nuevo.</value>
     <comment>Message of the dialog displayed to ask the user to confirm want to close all the other sessions.</comment>
   </data>
   <data name="AM_2FA_SetupDialogDescription" xml:space="preserve">
-    <value>La autenticación de dos factores es una segunda capa de seguridad para tu cuenta. Lo que significa que incluso si alguien conoce tu contraseña no va a poder acceder a tu cuenta sin tener acceso al código de seis dígitos al que solo tú tienes acceso.</value>
+    <value>La autenticación de dos factores es una segunda capa de seguridad para tu cuenta. Esto significa que incluso si alguien conoce tu contraseña no va a poder acceder a tu cuenta sin tener acceso al código de seis dígitos al que solo tú tienes acceso.</value>
     <comment>Description text of the dialog displayed to start setup the Two-Factor Authentication</comment>
   </data>
   <data name="AM_2FA_SetupDialogTitle" xml:space="preserve">
@@ -1492,23 +1491,23 @@ Inténtalo de nuevo.</value>
     <comment>Title text of the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication.</comment>
   </data>
   <data name="AM_MFA_SeedCopied" xml:space="preserve">
-    <value>The seed has been copied to your clipboard.</value>
+    <value>La clave ha sido copiada al portapapeles.</value>
     <comment>Message of the dialog displayed when the seed needed to enable the Multi-Factor Authentication has been copied successfully to the clipboard.</comment>
   </data>
   <data name="AM_MFA_SeedCopiedFailed" xml:space="preserve">
-    <value>Failed to copy the seed to your clipboard. Please try again.</value>
+    <value>No se ha podido copiar la clave al portapapeles. Inténtalo de nuevo.</value>
     <comment>Message of the dialog displayed if fails the process to copy the seed needed to enable the Multi-Factor Authentication to the clipboard.</comment>
   </data>
   <data name="AM_MFA_SeedCopiedFailed_Title" xml:space="preserve">
-    <value>Seed copy failed</value>
+    <value>No se ha podido copiar la clave</value>
     <comment>Title of the dialog displayed if fails the process to copy the seed needed to enable the Multi-Factor Authentication to the clipboard.</comment>
   </data>
   <data name="AM_MFA_SeedCopied_Title" xml:space="preserve">
-    <value>Seed copied</value>
+    <value>Clave copiada</value>
     <comment>Title of the dialog displayed when the seed needed to enable the Multi-Factor Authentication has been copied successfully to the clipboard.</comment>
   </data>
   <data name="AM_2FA_InputAppCodeDialogMessage" xml:space="preserve">
-    <value>Please enter the code generated by your authentication app</value>
+    <value>Introduce el código generado por tu aplicación de autenticación</value>
     <comment>Description text of the dialog displayed to introduce the 6-digit code for the MFA.</comment>
   </data>
   <data name="AM_2FA_DisableDialogTitle" xml:space="preserve">
@@ -1516,8 +1515,8 @@ Inténtalo de nuevo.</value>
     <comment>Title of the dialog displayed to disable the Two-Factor Authentication.</comment>
   </data>
   <data name="AM_2FA_EnabledDialogRecommendation" xml:space="preserve">
-    <value>If you lose access to your account after enabling 2FA and you have not backed up your Recovery Key, MEGA can’t help you gain access to it again.
-Ensure you back up your recovery key.</value>
+    <value>Si pierdes el acceso a tu cuenta después de activar la autenticación de dos factores y no has hecho una copia de seguridad de tu Clave de recuperación, MEGA no podrá ayudarte a recuperar el acceso.
+Asegúrate de guardar tu Clave de recuperación.</value>
     <comment>Text recommending export the Recovery Key in the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication. KEEP the multi-line format.</comment>
   </data>
   <data name="AM_2FA_DisabledDialogTitle" xml:space="preserve">
@@ -1525,16 +1524,20 @@ Ensure you back up your recovery key.</value>
     <comment>Title text of the dialog displayed to indicate that the user has successfully disabled the Two-Factor Authentication.</comment>
   </data>
   <data name="AM_RestoreFromRubbishBinFailed" xml:space="preserve">
-    <value>Failed to restore ‘{0}’ from rubbish bin. Please try again.</value>
+    <value>Error al restaurar '{0}' de la papelera. Inténtalo de nuevo.</value>
     <comment>Message of the dialog displayed when the process/request to restore a node to the rubbish bin failed.
 Preserve the '{0}' code because is for include the file/folder name in runtime.</comment>
   </data>
   <data name="AM_RestoreFromRubbishBinFailed_Title" xml:space="preserve">
-    <value>Restore from rubbish bin failed</value>
+    <value>Error al restaurar de la papelera</value>
     <comment>Title of the dialog displayed when the process/request to restore nodes from the rubbish bin failed - (String as short as possible).</comment>
   </data>
   <data name="AM_RestoreMultiFromRubbishBinFailed" xml:space="preserve">
-    <value>Failed to restore items from rubbish bin. Please try again.</value>
+    <value>Error al restaurar elementos de la papelera. Inténtalo de nuevo.</value>
     <comment>Message of the dialog displayed when the process/request to restore multiple nodes from the rubbish bin failed.</comment>
+  </data>
+  <data name="AM_MFA_CheckStatusFailed" xml:space="preserve">
+    <value>Error al verificar el estado de la autenticación de dos factores.</value>
+    <comment>Message of the dialog displayed if fails the process to check the Multi-Factor Authentication status.</comment>
   </data>
 </root>

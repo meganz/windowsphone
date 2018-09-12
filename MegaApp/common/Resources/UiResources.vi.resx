@@ -985,7 +985,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for the background of an empty cloud drive page - (String as short as possible).</comment>
   </data>
   <data name="EmptyOffline" xml:space="preserve">
-    <value>Chưa có mục nào đựoc tải về vào mục lưu về ngoại tuyến</value>
+    <value>Không có mục nào lưu về ngoại tuyến</value>
     <comment>Label for the background of an empty transfers page - (String as short as possible).</comment>
   </data>
   <data name="EmptyRubbishBin" xml:space="preserve">
@@ -1349,7 +1349,7 @@ NOTE: Max. length 20 characters.</comment>
     <comment>Label for the "Settings" option to manage sessions - (String as short as possible).</comment>
   </data>
   <data name="UI_SessionManagementDescription" xml:space="preserve">
-    <value>This will log you out on all other active sessions except the current one. You will need to re-login to your other devices to continue using MEGA.</value>
+    <value>Thao tác này sẽ đăng xuất tài khoản ra khỏi tất cả các thiết bị đang sử dụng, ngoại trừ phiên hiện hành này. Khi muốn tiếp tục  sử dụng MEGA cần phải tự đăng nhập lại.</value>
     <comment>Label to describe the "Session Management" option of the "Settings" section.</comment>
   </data>
   <data name="UI_Warning" xml:space="preserve">
@@ -1365,7 +1365,7 @@ NOTE: Max. length 20 characters.</comment>
     <comment>Label for the 'Two-Factor Authentication' section of the security settings.</comment>
   </data>
   <data name="UI_TwoFactorAuthSettingsDescription" xml:space="preserve">
-    <value>Two-factor authentication is a second layer of security for your account.</value>
+    <value>Chức năng xác minh 2-bước là một lớp bảo mật thứ nhì cho tài khoản.</value>
     <comment>Description for the 'Two-Factor Authentication' in the security settings section.</comment>
   </data>
   <data name="UI_Setup2FA" xml:space="preserve">
@@ -1401,11 +1401,23 @@ NOTE: Max. length 20 characters.</comment>
     <comment>Label for any 'Restore' button, link, text, title, etc. For example for restore files from the rubbish bin - (String as short as possible).</comment>
   </data>
   <data name="UI_UsedCache" xml:space="preserve">
-    <value>Used cache</value>
+    <value>Bộ nhớ tạm đang dùng</value>
     <comment>Label to indicate the amount of used cache - (String as short as possible).</comment>
   </data>
   <data name="UI_OpenIn" xml:space="preserve">
     <value>Mở với...</value>
     <comment>Label for any 'Open in...' button, link, text, title, etc. to open a file or other kind of resource with a certain app - (String as short as possible).</comment>
+  </data>
+  <data name="UI_MFA_SetupStep1" xml:space="preserve">
+    <value>Quét hay sao chép đoạn chủng tử nằm dưới đây vào app Lập Xác Thực muốn sử dụng. Cũng nên lưu lại mã này ở nơi an toàn trong trường hợp mất điện thoại.</value>
+    <comment>Label for the step 1 to setup the Multi-Factor Authentication.</comment>
+  </data>
+  <data name="UI_MFA_SetupStep2" xml:space="preserve">
+    <value>Sau khi chủng tử được app Lập Xác Thực nhận vào, điền vào đoạn mã dài 6 chữ số hiện ra.</value>
+    <comment>Label for the step 2 to setup the Muti-Factor Authentication.</comment>
+  </data>
+  <data name="UI_FindApp" xml:space="preserve">
+    <value>Tìm app</value>
+    <comment>Label for any 'Find app' button, link, text, title, etc, to find an app to open a file, resource, etc. - (String as short as possible).</comment>
   </data>
 </root>

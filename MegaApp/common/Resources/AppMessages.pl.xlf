@@ -716,8 +716,7 @@ Spróbuj zapisać/skopiować plik lokalnie na swoim urządzeniu.</target>
         </trans-unit>
         <trans-unit id="Resx/SelectFolderFailed" translate="yes" space="preserve">
           <source>Failed to select folder. Please, try again or select another one.</source>
-          <target state="translated">Nie wybrano katalogu. Spróbuj ponownie.
-</target>
+          <target state="translated">Nie wybrano katalogu. Spróbuj ponownie.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to select a folder failed.</note>
         </trans-unit>
         <trans-unit id="Resx/SelectFolderFailed_Title" translate="yes" space="preserve">
@@ -1242,8 +1241,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="translated">Mogło to nastąpić z następujących powodów:
 - Podlinkowany plik został usunięty z powodu naruszenia regulaminu
 - Błędny link - link, który posiadasz nie istnieje
-- Plik został usunięty przez użytkownika.
-</target>
+- Plik został usunięty przez użytkownika.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</note>
         </trans-unit>
         <trans-unit id="Resx/AM_FolderLinkUnavailable" translate="yes" space="preserve">
@@ -1254,8 +1252,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="translated">Mogło to nastąpić z następujących powodów:
 - Podlinkowany katalog został usunięty z powodu naruszenia regulaminu
 - Błędny link - link, który posiadasz nie istnieje
-- Katalog został usunięty przez użytkownika.
-</target>
+- Katalog został usunięty przez użytkownika.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when a folder link doesn't exist. Keep "\n"</note>
         </trans-unit>
         <trans-unit id="Resx/AM_LinkUnavailableTitle" translate="yes" space="preserve">
@@ -1710,7 +1707,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_2FA_EnabledDialogDescription" translate="yes" space="preserve">
           <source>Next time you login to your account you will be asked to enter a 6-digit code provided by your Authenticator app.</source>
-          <target state="translated">Gdy następnym razem zalogujesz się na swoje konto, zostaniesz poproszony o podanie 6-cyfrowego kodu dostarczonego przez aplikację do uwierzytelniania.</target>
+          <target state="translated">Next time you login to your account you will be asked to enter a 6-digit code provided by your Authenticator app.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Description text of the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_2FA_EnabledDialogTitle" translate="yes" space="preserve">
@@ -1776,9 +1773,9 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
           <target state="translated">Nie udało się przywrócić elementów z kosza na śmieci. Proszę spróbuj ponownie.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to restore multiple nodes from the rubbish bin failed.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_MFA_CheckStatusFailed" translate="yes" xml:space="preserve">
-          <source>Failed to check the Multi-Factor Authentication status.</source>
-          <target state="new">Failed to check the Multi-Factor Authentication status.</target>
+        <trans-unit id="Resx/AM_MFA_CheckStatusFailed" translate="yes" space="preserve">
+          <source>Failed to check the status of two factor authentication.</source>
+          <target state="needs-review-translation">Nie udało się sprawdzić statusu uwierzytelniania dwuskładnikowego.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed if fails the process to check the Multi-Factor Authentication status.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_FolderAlreadyExists" translate="yes" xml:space="preserve">

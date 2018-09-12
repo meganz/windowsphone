@@ -224,7 +224,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/RemoveItemQuestion" translate="yes" space="preserve">
           <source>Are you sure you want to remove {0}?</source>
-          <target state="translated">Voulez-vous vraiment supprimer {0} ?</target>
+          <target state="translated">Voulez-vous vraiment supprimer {0} ?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to remove definitely an itemfrom the rubbish bin, asking for confirmation to do it.
 Preserve the {0} code because is for include the name of the item to be removed in runtime.</note>
         </trans-unit>
@@ -348,7 +348,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/MultiSelectRemoveQuestion" translate="yes" space="preserve">
           <source>Are you sure you want to remove {0} items?</source>
-          <target state="translated">Voulez-vous vraiment supprimer {0} éléments ?</target>
+          <target state="translated">Voulez-vous vraiment supprimer {0} éléments ?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to remove multiple nodes definitely from the rubbish bin, asking for confirmation to make the movement.
 Preserve the {0} code because is for include the number of nodes to be removed in runtime.</note>
         </trans-unit>
@@ -631,8 +631,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <source>You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?
 Please try to save/copy the file to your device’s internal memory instead.</source>
           <target state="translated">Vous n’avez pas l’autorisation de copier ce type de fichier sur le dossier de destination. Essayez-vous d’enregistrer ou de copier un fichier d’un type non pris en charge sur une carte SD ?
-Veuillez plutôt essayer d’enregistrer ou de copier le fichier sur la mémoire interne de votre appareil.
-</target>
+Veuillez plutôt essayer d’enregistrer ou de copier le fichier sur la mémoire interne de votre appareil.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</note>
         </trans-unit>
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException_Title" translate="yes" space="preserve">
@@ -642,8 +641,7 @@ Veuillez plutôt essayer d’enregistrer ou de copier le fichier sur la mémoire
         </trans-unit>
         <trans-unit id="Resx/AM_RecoveryKeyClipboardFailed" translate="yes" space="preserve">
           <source>Failed to copy the Recovery Key to your clipboard. Please try again.</source>
-          <target state="translated">Échec de copie de la clé de récupération dans votre presse-papiers. Veuillez ressayer.
-</target>
+          <target state="translated">Échec de copie de la clé de récupération dans votre presse-papiers. Veuillez ressayer.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails to copy the user's Recovery Key to the clipboard to be saved or exported.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_RecoveryKeyClipboardFailed_Title" translate="yes" space="preserve">
@@ -718,8 +716,7 @@ Veuillez plutôt essayer d’enregistrer ou de copier le fichier sur la mémoire
         </trans-unit>
         <trans-unit id="Resx/SelectFolderFailed" translate="yes" space="preserve">
           <source>Failed to select folder. Please, try again or select another one.</source>
-          <target state="translated">Échec de sélection du dossier. Veuillez ressayer ou en sélectionner un autre.
-</target>
+          <target state="translated">Échec de sélection du dossier. Veuillez ressayer ou en sélectionner un autre.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to select a folder failed.</note>
         </trans-unit>
         <trans-unit id="Resx/SelectFolderFailed_Title" translate="yes" space="preserve">
@@ -862,7 +859,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_CancelSubscriptionConfirmation" translate="yes" space="preserve">
           <source>Thank you for your feedback! Are you sure you want to cancel your MEGA subscription?</source>
-          <target state="translated">Nous vous remercions de votre rétroaction ! Voulez-vous vraiment annuler votre abonnement MEGA ?</target>
+          <target state="translated">Nous vous remercions de votre rétroaction ! Voulez-vous vraiment annuler votre abonnement MEGA ?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user is trying to cancel a subscription. This sentence is for give thanks to the user for the feedback sent during the cancellation process and asking for confirmation to do it.</note>
         </trans-unit>
         <trans-unit id="Resx/CancelSubscriptionFailed" translate="yes" space="preserve">
@@ -1070,7 +1067,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/CleanRubbishBinQuestion" translate="yes" space="preserve">
           <source>Are you sure you want to permanently delete all files from the rubbish bin?</source>
-          <target state="translated">Voulez-vous vraiment supprimer définitivement tous les fichiers de la corbeille ?</target>
+          <target state="translated">Voulez-vous vraiment supprimer définitivement tous les fichiers de la corbeille ?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to empty the rubbish bin, asking for confirmation to do it.</note>
         </trans-unit>
         <trans-unit id="Resx/CleanRubbishBinSuccess" translate="yes" space="preserve">
@@ -1515,12 +1512,12 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_CancelDownloadsQuestion" translate="yes" space="preserve">
           <source>Are you sure you want to cancel all the pending downloads?</source>
-          <target state="translated">Voulez-vous vraiment annuler les téléchargements en attente ?</target>
+          <target state="translated">Voulez-vous vraiment annuler tous les téléchargements en attente ?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user wants to cancel all the pending downloads.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_CancelUploadsQuestion" translate="yes" space="preserve">
           <source>Are you sure you want to cancel all the pending uploads?</source>
-          <target state="translated">Voulez-vous vraiment annuler les téléversements en attente ?</target>
+          <target state="translated">Voulez-vous vraiment annuler tous les téléversements en attente ?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user wants to cancel all the pending uploads.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ViewContactDetailsFailed" translate="yes" space="preserve">
@@ -1700,7 +1697,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_2FA_SetupDialogTitle" translate="yes" space="preserve">
           <source>Why do you need two-factor authentication?</source>
-          <target state="translated">Pourquoi ai-je besoin de l’authentification à deux facteurs ?</target>
+          <target state="translated">Pourquoi avez-vous besoin de l’authentification à deux facteurs ?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed to start setup the Two-Factor Authentication</note>
         </trans-unit>
         <trans-unit id="Resx/AM_InvalidCode" translate="yes" space="preserve">
@@ -1710,7 +1707,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_2FA_EnabledDialogDescription" translate="yes" space="preserve">
           <source>Next time you login to your account you will be asked to enter a 6-digit code provided by your Authenticator app.</source>
-          <target state="translated">La prochaine fois que vous vous connecterez à votre compte, un code à 6 chiffres fourni par votre appli d’authentification vous sera demandé.</target>
+          <target state="translated">Next time you login to your account you will be asked to enter a 6-digit code provided by your Authenticator app.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Description text of the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_2FA_EnabledDialogTitle" translate="yes" space="preserve">
@@ -1776,9 +1773,9 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
           <target state="translated">Échec de restauration des éléments de la corbeille. Veuillez ressayer.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to restore multiple nodes from the rubbish bin failed.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_MFA_CheckStatusFailed" translate="yes" xml:space="preserve">
-          <source>Failed to check the Multi-Factor Authentication status.</source>
-          <target state="new">Failed to check the Multi-Factor Authentication status.</target>
+        <trans-unit id="Resx/AM_MFA_CheckStatusFailed" translate="yes" space="preserve">
+          <source>Failed to check the status of two factor authentication.</source>
+          <target state="needs-review-translation">Échec de vérification de l’état de l’identification à deux facteurs.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed if fails the process to check the Multi-Factor Authentication status.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_FolderAlreadyExists" translate="yes" xml:space="preserve">

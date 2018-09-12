@@ -366,7 +366,7 @@
     <comment>Label for any 'Capture' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="ChangePinLock" xml:space="preserve">
-    <value>Ganti PIN lock</value>
+    <value>Ubah Kode PIN</value>
     <comment>Label for any 'Change PIN Lock' button, link, text, title, etc. Try to preserve the PIN uppercase word. - (String as short as possible).</comment>
   </data>
   <data name="CleanUpTransfers" xml:space="preserve">
@@ -1337,7 +1337,7 @@ NOTE: Max. length 20 characters.</comment>
     <comment>Label for any 'Plain text' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_EnablePinLock" xml:space="preserve">
-    <value>Enable PIN code</value>
+    <value>Aktifkan kode PIN</value>
     <comment>Label for the switch button to enable or disable the PIN lock code. Keep PIN uppercase - (String as short as possible).</comment>
   </data>
   <data name="UI_RecoveryKeyDescription" xml:space="preserve">
@@ -1345,11 +1345,11 @@ NOTE: Max. length 20 characters.</comment>
     <comment>Label to describe the 'Recovery Key' and its purpose.</comment>
   </data>
   <data name="UI_SessionManagement" xml:space="preserve">
-    <value>Session Management</value>
+    <value>Manajemen Sesi</value>
     <comment>Label for the "Settings" option to manage sessions - (String as short as possible).</comment>
   </data>
   <data name="UI_SessionManagementDescription" xml:space="preserve">
-    <value>This will log you out on all other active sessions except the current one. You will need to re-login to your other devices to continue using MEGA.</value>
+    <value>Ini akan mengeluarkan Anda di semua sesi aktif lainnya kecuali sesi saat ini. Anda harus masuk kembali ke perangkat lain untuk terus menggunakan MEGA.</value>
     <comment>Label to describe the "Session Management" option of the "Settings" section.</comment>
   </data>
   <data name="UI_Warning" xml:space="preserve">
@@ -1357,19 +1357,19 @@ NOTE: Max. length 20 characters.</comment>
     <comment>Label for any 'Warning' title, message, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_EnableTwoFactorAuth" xml:space="preserve">
-    <value>Enable Two-Factor Authentication</value>
+    <value>Aktifkan Autentikasi Dua Faktor</value>
     <comment>Label for the "toggle" or "switch" button to enable/disable the Two-Factor Authentication.</comment>
   </data>
   <data name="UI_TwoFactorAuth" xml:space="preserve">
-    <value>Two-Factor Authentication</value>
+    <value>Autentikasi Dua Faktor</value>
     <comment>Label for the 'Two-Factor Authentication' section of the security settings.</comment>
   </data>
   <data name="UI_TwoFactorAuthSettingsDescription" xml:space="preserve">
-    <value>Two-factor authentication is a second layer of security for your account.</value>
+    <value>Otentikasi dua faktor adalah lapisan keamanan kedua untuk akun Anda.</value>
     <comment>Description for the 'Two-Factor Authentication' in the security settings section.</comment>
   </data>
   <data name="UI_Setup2FA" xml:space="preserve">
-    <value>Setup Two-Factor Authentication</value>
+    <value>Siapkan Otentikasi Dua Faktor</value>
     <comment>Label for any 'Setup Two-Factor Authentication' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_SixDigitCode" xml:space="preserve">
@@ -1381,11 +1381,11 @@ NOTE: Max. length 20 characters.</comment>
     <comment>Label for any 'Verify' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_CopySeed" xml:space="preserve">
-    <value>Copy seed</value>
+    <value>Salin seed</value>
     <comment>Label of the button to copy the seed to enable the Multi-Factor Authentication - (String as short as possible).</comment>
   </data>
   <data name="UI_LostAuthDeviceQuestion" xml:space="preserve">
-    <value>Lost your Authenticator device?</value>
+    <value>Kehilangan perangkat Authenticator Anda?</value>
     <comment>Label for any link/button to help the user in case lost the authentication device for MFA - (String as short as possible).</comment>
   </data>
   <data name="UI_ChangePasswordDescription" xml:space="preserve">
@@ -1401,11 +1401,23 @@ NOTE: Max. length 20 characters.</comment>
     <comment>Label for any 'Restore' button, link, text, title, etc. For example for restore files from the rubbish bin - (String as short as possible).</comment>
   </data>
   <data name="UI_UsedCache" xml:space="preserve">
-    <value>Used cache</value>
+    <value>Gunakan cache</value>
     <comment>Label to indicate the amount of used cache - (String as short as possible).</comment>
   </data>
   <data name="UI_OpenIn" xml:space="preserve">
     <value>Buka dengan...</value>
     <comment>Label for any 'Open in...' button, link, text, title, etc. to open a file or other kind of resource with a certain app - (String as short as possible).</comment>
+  </data>
+  <data name="UI_MFA_SetupStep1" xml:space="preserve">
+    <value>Pindai atau salin benih ke Aplikasi Authenticator Anda. Pastikan untuk mencadangkan benih ini ke tempat yang aman jika Anda kehilangan ponsel Anda.</value>
+    <comment>Label for the step 1 to setup the Multi-Factor Authentication.</comment>
+  </data>
+  <data name="UI_MFA_SetupStep2" xml:space="preserve">
+    <value>Setelah menyiapkan benih Anda di aplikasi Authenticator Anda, masukkan kode 6-digit yang diberikan.</value>
+    <comment>Label for the step 2 to setup the Muti-Factor Authentication.</comment>
+  </data>
+  <data name="UI_FindApp" xml:space="preserve">
+    <value>Temukan aplikasi</value>
+    <comment>Label for any 'Find app' button, link, text, title, etc, to find an app to open a file, resource, etc. - (String as short as possible).</comment>
   </data>
 </root>

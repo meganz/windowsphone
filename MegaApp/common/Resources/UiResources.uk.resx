@@ -1408,4 +1408,16 @@ NOTE: Max. length 20 characters.</comment>
     <value>Відкрити в…</value>
     <comment>Label for any 'Open in...' button, link, text, title, etc. to open a file or other kind of resource with a certain app - (String as short as possible).</comment>
   </data>
+  <data name="UI_MFA_SetupStep1" xml:space="preserve">
+    <value>Scan or copy the seed to your Authenticator App. Be sure to backup this seed to a safe place in case you lose your phone.</value>
+    <comment>Label for the step 1 to setup the Multi-Factor Authentication.</comment>
+  </data>
+  <data name="UI_MFA_SetupStep2" xml:space="preserve">
+    <value>After setting up your seed on your Authenticator app enter the 6-digit code provided.</value>
+    <comment>Label for the step 2 to setup the Muti-Factor Authentication.</comment>
+  </data>
+  <data name="UI_FindApp" xml:space="preserve">
+    <value>Find app</value>
+    <comment>Label for any 'Find app' button, link, text, title, etc, to find an app to open a file, resource, etc. - (String as short as possible).</comment>
+  </data>
 </root>

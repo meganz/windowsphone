@@ -661,9 +661,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Button of the dialog displayed the first time that a user want to download a image. Option automatically download to the photo album after downloads - (String as short as possible).</comment>
   </data>
   <data name="SelectFolderFailed" xml:space="preserve">
-    <value>Не удалось выбрать папку. Пожалуйста, попробуйте ещё раз или выберите другую.
-                                
-</value>
+    <value>Не удалось выбрать папку. Пожалуйста, попробуйте ещё раз или выберите другую.</value>
     <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="SelectFolderFailed_Title" xml:space="preserve">
@@ -963,8 +961,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</comment>
   </data>
   <data name="FolderUnauthorizedAccess" xml:space="preserve">
-    <value>У вас нет доступа к папке '{0}'. Пожалуйста, выберите другую и попробуйте снова.
-</value>
+    <value>У вас нет доступа к папке '{0}'. Пожалуйста, выберите другую и попробуйте снова.</value>
     <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder in the device memory. For example to download a file/folder, create a new folder, etc.
 Preserve the '{0}' code because is for include the folder name in runtime.</comment>
   </data>
@@ -1098,16 +1095,14 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>Это может быть вызвано следующими причинами:
 - Файл был удалён из-за нарушения Условий обслуживания/Правил использования.
 - Недействительный адрес — ссылка, по которой вы пытаетесь перейти, не существует.
-- Файл был удалён пользователем.
-</value>
+- Файл был удалён пользователем.</value>
     <comment>Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</comment>
   </data>
   <data name="AM_FolderLinkUnavailable" xml:space="preserve">
     <value>Это может быть вызвано следующими причинами:
 - Ссылка на папку была удалена из-за нарушения Условий обслуживания/Правил использования.
 - Недействительный адрес — ссылка, по которой вы пытаетесь перейти, не существует.
-- Ссылка на папку была удалена пользователем.
-</value>
+- Ссылка на папку была удалена пользователем.</value>
     <comment>Error message shown when a folder link doesn't exist. Keep "\n"</comment>
   </data>
   <data name="AM_LinkUnavailableTitle" xml:space="preserve">
@@ -1488,7 +1483,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message displayed when the user is trying to insert and invalid code, for example the 6-digit code of the Multi-Factor Authentication.</comment>
   </data>
   <data name="AM_2FA_EnabledDialogDescription" xml:space="preserve">
-    <value>При следующем входе в аккаунт система запросит 6-значный код из приложения аутентификации.</value>
+    <value>Next time you login to your account you will be asked to enter a 6-digit code provided by your Authenticator app.</value>
     <comment>Description text of the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication.</comment>
   </data>
   <data name="AM_2FA_EnabledDialogTitle" xml:space="preserve">
@@ -1540,5 +1535,9 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
   <data name="AM_RestoreMultiFromRubbishBinFailed" xml:space="preserve">
     <value>Не удалось восстановить элементы из корзины. Попробуйте ещё раз.</value>
     <comment>Message of the dialog displayed when the process/request to restore multiple nodes from the rubbish bin failed.</comment>
+  </data>
+  <data name="AM_MFA_CheckStatusFailed" xml:space="preserve">
+    <value>Не удалось проверить статус двухфакторной аутентификации</value>
+    <comment>Message of the dialog displayed if fails the process to check the Multi-Factor Authentication status.</comment>
   </data>
 </root>

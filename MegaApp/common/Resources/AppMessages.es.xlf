@@ -168,7 +168,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/LinkCopiedToClipboard" translate="yes" space="preserve">
           <source>The MEGA link was copied to your clipboard</source>
-          <target state="translated">El enlace MEGA se copió en el portapapeles</target>
+          <target state="translated">El enlace MEGA se ha copiado al portapapeles</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to copy a MEGA link to the clipboard finished successfully.</note>
         </trans-unit>
         <trans-unit id="Resx/LinkCopiedToClipboard_Title" translate="yes" space="preserve">
@@ -661,7 +661,7 @@ Intenta guardar/copiar el archivo en la memoria interna de tu dispositivo.</targ
         </trans-unit>
         <trans-unit id="Resx/AM_RecoveryKeyCopied" translate="yes" space="preserve">
           <source>The Recovery Key has been copied to the clipboard. Please store it in a safe place.</source>
-          <target state="translated">Clave de recuperación copiada en el portapapeles. Guárdala en un lugar seguro.</target>
+          <target state="translated">Clave de recuperación copiada al portapapeles. Guárdala en un lugar seguro.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_RecoveryKeyCopied_Title" translate="yes" space="preserve">
@@ -819,7 +819,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/ShortCutFailed" translate="yes" space="preserve">
           <source>An error occurred when trying to open a shortcut. Maybe it is an invalid shortcut or the destination folder was deleted.</source>
-          <target state="translated">Ocurrió un error al intentar abrir un acceso directo. Puede ser que sea un acceso directo no válido o que el destino fue eliminado.</target>
+          <target state="translated">No se ha podido abrir un acceso directo. Puede ser que sea un acceso directo no válido o que el destino fue eliminado.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user is trying to open an invalid shortcut.</note>
         </trans-unit>
         <trans-unit id="Resx/ShortCutFailed_Title" translate="yes" space="preserve">
@@ -1552,8 +1552,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_ShareLinkFailed" translate="yes" space="preserve">
           <source>Failed to share the file/folder link. Please try again.</source>
-          <target state="translated">No se ha podido compartir el enlace de archivo/carpeta. 
-Inténtalo de nuevo.</target>
+          <target state="translated">No se ha podido compartir el enlace de archivo/carpeta. Inténtalo de nuevo.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to share a file/folder link.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShareLinkFailed_Title" translate="yes" space="preserve">
@@ -1658,7 +1657,7 @@ Inténtalo de nuevo.</target>
         </trans-unit>
         <trans-unit id="Resx/AM_TestPasswordWarning" translate="yes" space="preserve">
           <source>Wrong password! Backup your Recovery Key as soon as possible!</source>
-          <target state="translated">¡Contraseña incorrecta! Hazuna copia de seguridad de la Clave de recuperación lo antes posible.</target>
+          <target state="translated">¡Contraseña incorrecta! Guarda tu Clave de recuperación lo antes posible.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Warning message displayed when the password test fails.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_TestPassword_Title" translate="yes" space="preserve">
@@ -1693,7 +1692,7 @@ Inténtalo de nuevo.</target>
         </trans-unit>
         <trans-unit id="Resx/AM_2FA_SetupDialogDescription" translate="yes" space="preserve">
           <source>Two-factor authentication is a second layer of security for your account. Which means that even if someone knows your password they cannot access it, without also having access to the six digit code only you have access to.</source>
-          <target state="translated">La autenticación de dos factores es una segunda capa de seguridad para tu cuenta. Lo que significa que incluso si alguien conoce tu contraseña no va a poder acceder a tu cuenta sin tener acceso al código de seis dígitos al que solo tú tienes acceso.</target>
+          <target state="translated">La autenticación de dos factores es una segunda capa de seguridad para tu cuenta. Esto significa que incluso si alguien conoce tu contraseña no va a poder acceder a tu cuenta sin tener acceso al código de seis dígitos al que solo tú tienes acceso.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Description text of the dialog displayed to start setup the Two-Factor Authentication</note>
         </trans-unit>
         <trans-unit id="Resx/AM_2FA_SetupDialogTitle" translate="yes" space="preserve">
@@ -1718,27 +1717,27 @@ Inténtalo de nuevo.</target>
         </trans-unit>
         <trans-unit id="Resx/AM_MFA_SeedCopied" translate="yes" space="preserve">
           <source>The seed has been copied to your clipboard.</source>
-          <target state="translated">The seed has been copied to your clipboard.</target>
+          <target state="translated">La clave ha sido copiada al portapapeles.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the seed needed to enable the Multi-Factor Authentication has been copied successfully to the clipboard.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_MFA_SeedCopiedFailed" translate="yes" space="preserve">
           <source>Failed to copy the seed to your clipboard. Please try again.</source>
-          <target state="translated">Failed to copy the seed to your clipboard. Please try again.</target>
+          <target state="translated">No se ha podido copiar la clave al portapapeles. Inténtalo de nuevo.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed if fails the process to copy the seed needed to enable the Multi-Factor Authentication to the clipboard.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_MFA_SeedCopiedFailed_Title" translate="yes" space="preserve">
           <source>Seed copy failed</source>
-          <target state="translated">Seed copy failed</target>
+          <target state="translated">No se ha podido copiar la clave</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed if fails the process to copy the seed needed to enable the Multi-Factor Authentication to the clipboard.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_MFA_SeedCopied_Title" translate="yes" space="preserve">
           <source>Seed copied</source>
-          <target state="translated">Seed copied</target>
+          <target state="translated">Clave copiada</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the seed needed to enable the Multi-Factor Authentication has been copied successfully to the clipboard.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_2FA_InputAppCodeDialogMessage" translate="yes" space="preserve">
           <source>Please enter the code generated by your authentication app</source>
-          <target state="translated">Please enter the code generated by your authentication app</target>
+          <target state="translated">Introduce el código generado por tu aplicación de autenticación</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Description text of the dialog displayed to introduce the 6-digit code for the MFA.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_2FA_DisableDialogTitle" translate="yes" space="preserve">
@@ -1749,8 +1748,8 @@ Inténtalo de nuevo.</target>
         <trans-unit id="Resx/AM_2FA_EnabledDialogRecommendation" translate="yes" space="preserve">
           <source>If you lose access to your account after enabling 2FA and you have not backed up your Recovery Key, MEGA can’t help you gain access to it again.
 Ensure you back up your recovery key.</source>
-          <target state="translated">If you lose access to your account after enabling 2FA and you have not backed up your Recovery Key, MEGA can’t help you gain access to it again.
-Ensure you back up your recovery key.</target>
+          <target state="translated">Si pierdes el acceso a tu cuenta después de activar la autenticación de dos factores y no has hecho una copia de seguridad de tu Clave de recuperación, MEGA no podrá ayudarte a recuperar el acceso.
+Asegúrate de guardar tu Clave de recuperación.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text recommending export the Recovery Key in the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication. KEEP the multi-line format.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_2FA_DisabledDialogTitle" translate="yes" space="preserve">
@@ -1760,23 +1759,23 @@ Ensure you back up your recovery key.</target>
         </trans-unit>
         <trans-unit id="Resx/AM_RestoreFromRubbishBinFailed" translate="yes" space="preserve">
           <source>Failed to restore ‘{0}’ from rubbish bin. Please try again.</source>
-          <target state="translated">Failed to restore ‘{0}’ from rubbish bin. Please try again.</target>
+          <target state="translated">Error al restaurar '{0}' de la papelera. Inténtalo de nuevo.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to restore a node to the rubbish bin failed.
 Preserve the '{0}' code because is for include the file/folder name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_RestoreFromRubbishBinFailed_Title" translate="yes" space="preserve">
           <source>Restore from rubbish bin failed</source>
-          <target state="translated">Restore from rubbish bin failed</target>
+          <target state="translated">Error al restaurar de la papelera</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to restore nodes from the rubbish bin failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_RestoreMultiFromRubbishBinFailed" translate="yes" space="preserve">
           <source>Failed to restore items from rubbish bin. Please try again.</source>
-          <target state="translated">Failed to restore items from rubbish bin. Please try again.</target>
+          <target state="translated">Error al restaurar elementos de la papelera. Inténtalo de nuevo.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to restore multiple nodes from the rubbish bin failed.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_MFA_CheckStatusFailed" translate="yes" xml:space="preserve">
-          <source>Failed to check the Multi-Factor Authentication status.</source>
-          <target state="new">Failed to check the Multi-Factor Authentication status.</target>
+        <trans-unit id="Resx/AM_MFA_CheckStatusFailed" translate="yes" space="preserve">
+          <source>Failed to check the status of two factor authentication.</source>
+          <target state="needs-review-translation">Error al verificar el estado de la autenticación de dos factores.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed if fails the process to check the Multi-Factor Authentication status.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_FolderAlreadyExists" translate="yes" xml:space="preserve">

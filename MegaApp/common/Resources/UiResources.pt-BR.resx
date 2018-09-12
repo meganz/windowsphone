@@ -518,7 +518,7 @@
     <comment>Label for any 'Resume' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Start" xml:space="preserve">
-    <value>Começo</value>
+    <value>Começar</value>
     <comment>Label for any 'Start' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="CancelAllTransfers" xml:space="preserve">
@@ -602,7 +602,7 @@
     <comment>Label for any 'Sort' button, link, text, etc. - (String as short as possible).</comment>
   </data>
   <data name="ClearRubbishBin" xml:space="preserve">
-    <value>Limpar Lixeira</value>
+    <value>Lixeira vazia</value>
     <comment>Label for any 'Empty rubbish' button, link, text, etc. - (String as short as possible).</comment>
   </data>
   <data name="Ok" xml:space="preserve">
@@ -626,7 +626,7 @@
     <comment>Label for the 'Wifi only' option in the 'set up camera uploads' page - (String as short as possible).</comment>
   </data>
   <data name="EnableCameraUploads" xml:space="preserve">
-    <value>Ativar uploads da câmera</value>
+    <value>Ativar Uploads da câmera</value>
     <comment>Label for the switch button to enable or disable the Camera Uploads service - (String as short as possible).</comment>
   </data>
   <data name="Security" xml:space="preserve">
@@ -747,7 +747,7 @@ Preserve the {0} code because is for include the name/type of the selected plan 
     <comment>Label for any 'Year' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="RenewsOn" xml:space="preserve">
-    <value>renove em</value>
+    <value>Renova em</value>
     <comment>Label for the 'Renews on' text into the my account page, indicating the renewal date of a subscription - (String as short as possible).</comment>
   </data>
   <data name="AccountPurchased" xml:space="preserve">
@@ -989,7 +989,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for the background of an empty transfers page - (String as short as possible).</comment>
   </data>
   <data name="EmptyRubbishBin" xml:space="preserve">
-    <value>Limpar Lixeira</value>
+    <value>Lixeira vazia</value>
     <comment>Label for the background of an empty rubbish bin page - (String as short as possible).</comment>
   </data>
   <data name="EmptySharedFolders" xml:space="preserve">
@@ -1373,7 +1373,7 @@ NOTE: Max. length 20 characters.</comment>
     <comment>Label for any 'Setup Two-Factor Authentication' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_SixDigitCode" xml:space="preserve">
-    <value>6 digit code</value>
+    <value>Código de 6 dígitos</value>
     <comment>Placeholder text of the field to type the 6-digit code provided for the authenticator app to verify the Multi-Factor Authentication.</comment>
   </data>
   <data name="UI_Verify" xml:space="preserve">
@@ -1381,7 +1381,7 @@ NOTE: Max. length 20 characters.</comment>
     <comment>Label for any 'Verify' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_CopySeed" xml:space="preserve">
-    <value>Copiar código</value>
+    <value>Copiar chave</value>
     <comment>Label of the button to copy the seed to enable the Multi-Factor Authentication - (String as short as possible).</comment>
   </data>
   <data name="UI_LostAuthDeviceQuestion" xml:space="preserve">
@@ -1405,7 +1405,19 @@ NOTE: Max. length 20 characters.</comment>
     <comment>Label to indicate the amount of used cache - (String as short as possible).</comment>
   </data>
   <data name="UI_OpenIn" xml:space="preserve">
-    <value>Aberto em...</value>
+    <value>Abrir em...</value>
     <comment>Label for any 'Open in...' button, link, text, title, etc. to open a file or other kind of resource with a certain app - (String as short as possible).</comment>
+  </data>
+  <data name="UI_MFA_SetupStep1" xml:space="preserve">
+    <value>Escaneie ou copie a chave para o seu aplicativo de autenticação. Certifique-se de salvar esta chave em um lugar seguro, caso você perca o seu dispositivo.</value>
+    <comment>Label for the step 1 to setup the Multi-Factor Authentication.</comment>
+  </data>
+  <data name="UI_MFA_SetupStep2" xml:space="preserve">
+    <value>Depois de configurar a chave no seu aplicativo de autenticação, digite o código de 6 dígitos indicado.</value>
+    <comment>Label for the step 2 to setup the Muti-Factor Authentication.</comment>
+  </data>
+  <data name="UI_FindApp" xml:space="preserve">
+    <value>Buscar app</value>
+    <comment>Label for any 'Find app' button, link, text, title, etc, to find an app to open a file, resource, etc. - (String as short as possible).</comment>
   </data>
 </root>

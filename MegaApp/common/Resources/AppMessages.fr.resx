@@ -286,7 +286,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when save successfully a single picture in the photo album - (String as short as possible).</comment>
   </data>
   <data name="RemoveItemQuestion" xml:space="preserve">
-    <value>Voulez-vous vraiment supprimer {0} ?</value>
+    <value>Voulez-vous vraiment supprimer {0} ?</value>
     <comment>Message of the dialog displayed when a user want to remove definitely an itemfrom the rubbish bin, asking for confirmation to do it.
 Preserve the {0} code because is for include the name of the item to be removed in runtime.</comment>
   </data>
@@ -386,7 +386,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the logout to the MEGA cloud service api fails - (String as short as possible).</comment>
   </data>
   <data name="MultiSelectRemoveQuestion" xml:space="preserve">
-    <value>Voulez-vous vraiment supprimer {0} éléments ?</value>
+    <value>Voulez-vous vraiment supprimer {0} éléments ?</value>
     <comment>Message of the dialog displayed when a user want to remove multiple nodes definitely from the rubbish bin, asking for confirmation to make the movement.
 Preserve the {0} code because is for include the number of nodes to be removed in runtime.</comment>
   </data>
@@ -609,8 +609,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
   </data>
   <data name="CopyFileUnauthorizedAccessException" xml:space="preserve">
     <value>Vous n’avez pas l’autorisation de copier ce type de fichier sur le dossier de destination. Essayez-vous d’enregistrer ou de copier un fichier d’un type non pris en charge sur une carte SD ?
-Veuillez plutôt essayer d’enregistrer ou de copier le fichier sur la mémoire interne de votre appareil.
-</value>
+Veuillez plutôt essayer d’enregistrer ou de copier le fichier sur la mémoire interne de votre appareil.</value>
     <comment>Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException_Title" xml:space="preserve">
@@ -662,8 +661,7 @@ Veuillez plutôt essayer d’enregistrer ou de copier le fichier sur la mémoire
     <comment>Button of the dialog displayed the first time that a user want to download a image. Option automatically download to the photo album after downloads - (String as short as possible).</comment>
   </data>
   <data name="SelectFolderFailed" xml:space="preserve">
-    <value>Échec de sélection du dossier. Veuillez ressayer ou en sélectionner un autre.
-</value>
+    <value>Échec de sélection du dossier. Veuillez ressayer ou en sélectionner un autre.</value>
     <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="SelectFolderFailed_Title" xml:space="preserve">
@@ -939,7 +937,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the process/request to empty the rubbish bin failed.</comment>
   </data>
   <data name="CleanRubbishBinQuestion" xml:space="preserve">
-    <value>Voulez-vous vraiment supprimer définitivement tous les fichiers de la corbeille ?</value>
+    <value>Voulez-vous vraiment supprimer définitivement tous les fichiers de la corbeille ?</value>
     <comment>Message of the dialog displayed when a user want to empty the rubbish bin, asking for confirmation to do it.</comment>
   </data>
   <data name="CleanRubbishBinSuccess" xml:space="preserve">
@@ -1020,7 +1018,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 Preserve the {0} and ({1}) codes because is for include the maximum reliable download number and the precise number of nodes to be downloaded in runtime.</comment>
   </data>
   <data name="AM_CancelSubscriptionConfirmation" xml:space="preserve">
-    <value>Nous vous remercions de votre rétroaction ! Voulez-vous vraiment annuler votre abonnement MEGA ?</value>
+    <value>Nous vous remercions de votre rétroaction ! Voulez-vous vraiment annuler votre abonnement MEGA ?</value>
     <comment>Message of the dialog displayed when a user is trying to cancel a subscription. This sentence is for give thanks to the user for the feedback sent during the cancellation process and asking for confirmation to do it.</comment>
   </data>
   <data name="AM_PrepareFilesForUploadFailed" xml:space="preserve">
@@ -1129,8 +1127,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder</comment>
   </data>
   <data name="AM_RecoveryKeyClipboardFailed" xml:space="preserve">
-    <value>Échec de copie de la clé de récupération dans votre presse-papiers. Veuillez ressayer.
-</value>
+    <value>Échec de copie de la clé de récupération dans votre presse-papiers. Veuillez ressayer.</value>
     <comment>Message of the dialog displayed when fails to copy the user's Recovery Key to the clipboard to be saved or exported.</comment>
   </data>
   <data name="AM_RecoveryKeyClipboardFailed_Title" xml:space="preserve">
@@ -1330,11 +1327,11 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when a user exceeds the transfer quota limits of the account (transfer overquota error) - (String as short as possible).</comment>
   </data>
   <data name="AM_CancelDownloadsQuestion" xml:space="preserve">
-    <value>Voulez-vous vraiment annuler les téléchargements en attente ?</value>
+    <value>Voulez-vous vraiment annuler tous les téléchargements en attente ?</value>
     <comment>Message of the dialog displayed when a user wants to cancel all the pending downloads.</comment>
   </data>
   <data name="AM_CancelUploadsQuestion" xml:space="preserve">
-    <value>Voulez-vous vraiment annuler les téléversements en attente ?</value>
+    <value>Voulez-vous vraiment annuler tous les téléversements en attente ?</value>
     <comment>Message of the dialog displayed when a user wants to cancel all the pending uploads.</comment>
   </data>
   <data name="AM_ViewContactDetailsFailed" xml:space="preserve">
@@ -1478,7 +1475,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Description text of the dialog displayed to start setup the Two-Factor Authentication</comment>
   </data>
   <data name="AM_2FA_SetupDialogTitle" xml:space="preserve">
-    <value>Pourquoi ai-je besoin de l’authentification à deux facteurs ?</value>
+    <value>Pourquoi avez-vous besoin de l’authentification à deux facteurs ?</value>
     <comment>Title of the dialog displayed to start setup the Two-Factor Authentication</comment>
   </data>
   <data name="AM_InvalidCode" xml:space="preserve">
@@ -1486,7 +1483,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message displayed when the user is trying to insert and invalid code, for example the 6-digit code of the Multi-Factor Authentication.</comment>
   </data>
   <data name="AM_2FA_EnabledDialogDescription" xml:space="preserve">
-    <value>La prochaine fois que vous vous connecterez à votre compte, un code à 6 chiffres fourni par votre appli d’authentification vous sera demandé.</value>
+    <value>Next time you login to your account you will be asked to enter a 6-digit code provided by your Authenticator app.</value>
     <comment>Description text of the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication.</comment>
   </data>
   <data name="AM_2FA_EnabledDialogTitle" xml:space="preserve">
@@ -1538,5 +1535,9 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
   <data name="AM_RestoreMultiFromRubbishBinFailed" xml:space="preserve">
     <value>Échec de restauration des éléments de la corbeille. Veuillez ressayer.</value>
     <comment>Message of the dialog displayed when the process/request to restore multiple nodes from the rubbish bin failed.</comment>
+  </data>
+  <data name="AM_MFA_CheckStatusFailed" xml:space="preserve">
+    <value>Échec de vérification de l’état de l’identification à deux facteurs.</value>
+    <comment>Message of the dialog displayed if fails the process to check the Multi-Factor Authentication status.</comment>
   </data>
 </root>

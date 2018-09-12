@@ -617,11 +617,11 @@ Cobalah menyimpan / menyalin file ke memori internal perangkat Anda.</value>
     <comment>Title of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type) - (String as short as possible).</comment>
   </data>
   <data name="CurrentPinLockCodeDoNotMatch" xml:space="preserve">
-    <value>PIN lock saat ini tidak benar atau tidak sama</value>
+    <value>Kode PIN saat ini salah atau tidak cocok</value>
     <comment>Message of the dialog displayed when a user is trying to change the PIN lock code and introduces an incorrect code into the field for the current PIN lock code. Try to preserve the PIN uppercase word.</comment>
   </data>
   <data name="CurrentPinLockCodeDoNotMatch_Title" xml:space="preserve">
-    <value>PIN lock saat ini tidak cocok</value>
+    <value>Kode PIN saat ini salah</value>
     <comment>Title of the dialog displayed when a user is trying to change the PIN lock code and introduces an incorrect code into the field for the current PIN lock code - (String as short as possible). Try to preserve the PIN uppercase word.</comment>
   </data>
   <data name="PinLockTooShort" xml:space="preserve">
@@ -773,8 +773,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed in cases that the user types some data with a wrong format - (String as short as possible).</comment>
   </data>
   <data name="CancelSubscriptionFailed" xml:space="preserve">
-    <value>Subskripsi belum dibatalkan dengan benar. Harap kontak support@mega.nz untuk membatalkan subskripsi anda.
-</value>
+    <value>Subskripsi belum dibatalkan dengan benar. Harap kontak support@mega.nz untuk membatalkan subskripsi anda.</value>
     <comment>Message of the dialog displayed when the process/request to cancel a subscription failed.</comment>
   </data>
   <data name="CancelSubscriptionFailed_Title" xml:space="preserve">
@@ -962,8 +961,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</comment>
   </data>
   <data name="FolderUnauthorizedAccess" xml:space="preserve">
-    <value>Anda tidak memiliki akses ke path '{0}'. Harap pilih path yang lain dan coba kembali.
-</value>
+    <value>Anda tidak memiliki akses ke path '{0}'. Harap pilih path yang lain dan coba kembali.</value>
     <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder in the device memory. For example to download a file/folder, create a new folder, etc.
 Preserve the '{0}' code because is for include the folder name in runtime.</comment>
   </data>
@@ -1097,16 +1095,14 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>Ini bisa jadi karena alasan berikut:
 - File telah dihapus karena pelanggaran ToS / AUP.
 - URL tidak valid - link yang Anda coba akses tidak ada.
-- File telah dihapus oleh pengguna.
-</value>
+- File telah dihapus oleh pengguna.</value>
     <comment>Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</comment>
   </data>
   <data name="AM_FolderLinkUnavailable" xml:space="preserve">
     <value>Ini bisa jadi karena alasan berikut:
 - Link folder telah dihapus karena pelanggaran ToS / AUP.
 - URL tidak valid - link yang Anda coba akses tidak ada.
-- Link folder telah dihapus oleh pengguna.
-</value>
+- Link folder telah dihapus oleh pengguna.</value>
     <comment>Error message shown when a folder link doesn't exist. Keep "\n"</comment>
   </data>
   <data name="AM_LinkUnavailableTitle" xml:space="preserve">
@@ -1139,7 +1135,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when fails to copy the user's Recovery Key to the clipboard to be saved or exported - (String as short as possible).</comment>
   </data>
   <data name="AM_RecoveryKeyCopied" xml:space="preserve">
-    <value>Recovery Key terkopi ke clipboard</value>
+    <value>Recovery Key telah disalin ke papan klip. Tolong simpan di tempat yang aman.</value>
     <comment>Message of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported.</comment>
   </data>
   <data name="AM_RecoveryKeyCopied_Title" xml:space="preserve">
@@ -1455,7 +1451,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the test password dialog.</comment>
   </data>
   <data name="AM_RecoveryKeyExported" xml:space="preserve">
-    <value>Kunci Pemulihan telah diekspor.</value>
+    <value>Recovery Key telah diekspor. Tolong simpan di tempat yang aman.</value>
     <comment>Message of the dialog or notification displayed in cases that the app has succesful exported the recovery key.</comment>
   </data>
   <data name="AM_RecoveryKeyExported_Title" xml:space="preserve">
@@ -1475,15 +1471,15 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed to ask the user to confirm want to close all the other sessions.</comment>
   </data>
   <data name="AM_2FA_SetupDialogDescription" xml:space="preserve">
-    <value>Two-factor authentication is a second layer of security for your account. Which means that even if someone knows your password they cannot access it, without also having access to the six digit code only you have access to.</value>
+    <value>Otentikasi dua faktor adalah lapisan keamanan kedua untuk akun Anda. Yang berarti bahwa bahkan jika seseorang mengetahui kata sandi Anda, mereka tidak dapat mengaksesnya, tanpa juga memiliki akses ke kode enam digit yang hanya Anda miliki aksesnya.</value>
     <comment>Description text of the dialog displayed to start setup the Two-Factor Authentication</comment>
   </data>
   <data name="AM_2FA_SetupDialogTitle" xml:space="preserve">
-    <value>Why do you need two-factor authentication?</value>
+    <value>Mengapa Anda membutuhkan otentikasi dua faktor?</value>
     <comment>Title of the dialog displayed to start setup the Two-Factor Authentication</comment>
   </data>
   <data name="AM_InvalidCode" xml:space="preserve">
-    <value>This code isn’t right, please try again.</value>
+    <value>Kode ini tidak benar, silakan coba lagi.</value>
     <comment>Message displayed when the user is trying to insert and invalid code, for example the 6-digit code of the Multi-Factor Authentication.</comment>
   </data>
   <data name="AM_2FA_EnabledDialogDescription" xml:space="preserve">
@@ -1491,53 +1487,57 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Description text of the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication.</comment>
   </data>
   <data name="AM_2FA_EnabledDialogTitle" xml:space="preserve">
-    <value>Two-Factor Authentication Enabled</value>
+    <value>Otentikasi Dua Faktor Diaktifkan</value>
     <comment>Title text of the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication.</comment>
   </data>
   <data name="AM_MFA_SeedCopied" xml:space="preserve">
-    <value>The seed has been copied to your clipboard.</value>
+    <value>Benih telah disalin ke papan klip Anda.</value>
     <comment>Message of the dialog displayed when the seed needed to enable the Multi-Factor Authentication has been copied successfully to the clipboard.</comment>
   </data>
   <data name="AM_MFA_SeedCopiedFailed" xml:space="preserve">
-    <value>Failed to copy the seed to your clipboard. Please try again.</value>
+    <value>Gagal menyalin benih ke papan klip Anda. Silakan coba lagi.</value>
     <comment>Message of the dialog displayed if fails the process to copy the seed needed to enable the Multi-Factor Authentication to the clipboard.</comment>
   </data>
   <data name="AM_MFA_SeedCopiedFailed_Title" xml:space="preserve">
-    <value>Seed copy failed</value>
+    <value>Salinan benih gagal</value>
     <comment>Title of the dialog displayed if fails the process to copy the seed needed to enable the Multi-Factor Authentication to the clipboard.</comment>
   </data>
   <data name="AM_MFA_SeedCopied_Title" xml:space="preserve">
-    <value>Seed copied</value>
+    <value>Seed disalin</value>
     <comment>Title of the dialog displayed when the seed needed to enable the Multi-Factor Authentication has been copied successfully to the clipboard.</comment>
   </data>
   <data name="AM_2FA_InputAppCodeDialogMessage" xml:space="preserve">
-    <value>Please enter the code generated by your authentication app</value>
+    <value>Silakan masukkan kode yang dihasilkan oleh aplikasi otentikasi Anda</value>
     <comment>Description text of the dialog displayed to introduce the 6-digit code for the MFA.</comment>
   </data>
   <data name="AM_2FA_DisableDialogTitle" xml:space="preserve">
-    <value>Disable Two-Factor Authentication</value>
+    <value>Nonaktifkan Autentikasi Dua Faktor</value>
     <comment>Title of the dialog displayed to disable the Two-Factor Authentication.</comment>
   </data>
   <data name="AM_2FA_EnabledDialogRecommendation" xml:space="preserve">
-    <value>If you lose access to your account after enabling 2FA and you have not backed up your Recovery Key, MEGA can’t help you gain access to it again.
-Ensure you back up your recovery key.</value>
+    <value>Jika Anda kehilangan akses ke akun Anda setelah mengaktifkan 2FA dan Anda belum mencadangkan Kunci Pemulihan Anda, MEGA tidak dapat membantu Anda mendapatkan akses ke itu lagi.
+Pastikan Anda mencadangkan kunci pemulihan Anda.</value>
     <comment>Text recommending export the Recovery Key in the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication. KEEP the multi-line format.</comment>
   </data>
   <data name="AM_2FA_DisabledDialogTitle" xml:space="preserve">
-    <value>Two-Factor Authentication Disabled</value>
+    <value>Autentikasi Dua Faktor Dinonaktifkan</value>
     <comment>Title text of the dialog displayed to indicate that the user has successfully disabled the Two-Factor Authentication.</comment>
   </data>
   <data name="AM_RestoreFromRubbishBinFailed" xml:space="preserve">
-    <value>Failed to restore ‘{0}’ from rubbish bin. Please try again.</value>
+    <value>Gagal mengembalikan ‘{0}’ dari tempat sampah. Silakan coba lagi.</value>
     <comment>Message of the dialog displayed when the process/request to restore a node to the rubbish bin failed.
 Preserve the '{0}' code because is for include the file/folder name in runtime.</comment>
   </data>
   <data name="AM_RestoreFromRubbishBinFailed_Title" xml:space="preserve">
-    <value>Restore from rubbish bin failed</value>
+    <value>Pulihkan dari tempat sampah gagal</value>
     <comment>Title of the dialog displayed when the process/request to restore nodes from the rubbish bin failed - (String as short as possible).</comment>
   </data>
   <data name="AM_RestoreMultiFromRubbishBinFailed" xml:space="preserve">
-    <value>Failed to restore items from rubbish bin. Please try again.</value>
+    <value>Gagal mengembalikan barang dari tempat sampah. Silakan coba lagi.</value>
     <comment>Message of the dialog displayed when the process/request to restore multiple nodes from the rubbish bin failed.</comment>
+  </data>
+  <data name="AM_MFA_CheckStatusFailed" xml:space="preserve">
+    <value>Gagal memeriksa status otentikasi dua faktor.</value>
+    <comment>Message of the dialog displayed if fails the process to check the Multi-Factor Authentication status.</comment>
   </data>
 </root>

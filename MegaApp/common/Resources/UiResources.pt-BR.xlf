@@ -606,7 +606,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/Start" translate="yes" space="preserve">
           <source>Start</source>
-          <target state="translated">Começo</target>
+          <target state="translated">Começar</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Start' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CancelAllTransfers" translate="yes" space="preserve">
@@ -716,7 +716,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/ClearRubbishBin" translate="yes" space="preserve">
           <source>Empty rubbish bin</source>
-          <target state="translated">Limpar Lixeira</target>
+          <target state="translated">Lixeira vazia</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Empty rubbish' button, link, text, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Ok" translate="yes" space="preserve">
@@ -746,7 +746,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/EnableCameraUploads" translate="yes" space="preserve">
           <source>Enable Camera Uploads</source>
-          <target state="translated">Ativar uploads da câmera</target>
+          <target state="translated">Ativar Uploads da câmera</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the switch button to enable or disable the Camera Uploads service - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Security" translate="yes" space="preserve">
@@ -914,7 +914,7 @@ Preserve the {0} code because is for include the name/type of the selected plan 
         </trans-unit>
         <trans-unit id="Resx/RenewsOn" translate="yes" space="preserve">
           <source>Renews on</source>
-          <target state="translated">renove em</target>
+          <target state="translated">Renova em</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the 'Renews on' text into the my account page, indicating the renewal date of a subscription - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AccountPurchased" translate="yes" space="preserve">
@@ -1241,7 +1241,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/EmptyRubbishBin" translate="yes" space="preserve">
           <source>Empty rubbish bin</source>
-          <target state="translated">Limpar Lixeira</target>
+          <target state="translated">Lixeira vazia</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty rubbish bin page - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/EmptySharedFolders" translate="yes" space="preserve">
@@ -1570,19 +1570,19 @@ NOTE: Max. length 20 characters.</note>
           <target state="translated">Configurar autenticação de dois fatores</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Setup Two-Factor Authentication' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_MFA_SetupStep2" translate="yes" xml:space="preserve">
-          <source>After setting up your seed on your authenticator app enter the 6-digit code provided.</source>
-          <target state="new">After setting up your seed on your authenticator app enter the 6-digit code provided.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the step 2 to setup the Muti-Factor Authentication.</note>
-        </trans-unit>
-        <trans-unit id="Resx/UI_MFA_SetupStep1" translate="yes" xml:space="preserve">
-          <source>Scan or copy the seed directly into your authenticator app. Be sure to backup this seed to a safe place in case you lose your phone.</source>
-          <target state="new">Scan or copy the seed directly into your authenticator app. Be sure to backup this seed to a safe place in case you lose your phone.</target>
+        <trans-unit id="Resx/UI_MFA_SetupStep1" translate="yes" space="preserve">
+          <source>Scan or copy the seed to your Authenticator App. Be sure to backup this seed to a safe place in case you lose your phone.</source>
+          <target state="needs-review-translation">Escaneie ou copie a chave para o seu aplicativo de autenticação. Certifique-se de salvar esta chave em um lugar seguro, caso você perca o seu dispositivo.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the step 1 to setup the Multi-Factor Authentication.</note>
         </trans-unit>
+        <trans-unit id="Resx/UI_MFA_SetupStep2" translate="yes" space="preserve">
+          <source>After setting up your seed on your Authenticator app enter the 6-digit code provided.</source>
+          <target state="needs-review-translation">Depois de configurar a chave no seu aplicativo de autenticação, digite o código de 6 dígitos indicado.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the step 2 to setup the Muti-Factor Authentication.</note>
+        </trans-unit>
         <trans-unit id="Resx/UI_SixDigitCode" translate="yes" space="preserve">
-          <source>6-digit code</source>
-          <target state="translated">6 digit code</target>
+          <source>6 digit code</source>
+          <target state="needs-review-translation">Código de 6 dígitos</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Placeholder text of the field to type the 6-digit code provided for the authenticator app to verify the Multi-Factor Authentication.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_Verify" translate="yes" space="preserve">
@@ -1592,7 +1592,7 @@ NOTE: Max. length 20 characters.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_CopySeed" translate="yes" space="preserve">
           <source>Copy seed</source>
-          <target state="translated">Copiar código</target>
+          <target state="translated">Copiar chave</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label of the button to copy the seed to enable the Multi-Factor Authentication - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_LostAuthDeviceQuestion" translate="yes" space="preserve">
@@ -1622,12 +1622,12 @@ NOTE: Max. length 20 characters.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_OpenIn" translate="yes" space="preserve">
           <source>Open in…</source>
-          <target state="translated">Aberto em...</target>
+          <target state="translated">Abrir em...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Open in...' button, link, text, title, etc. to open a file or other kind of resource with a certain app - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_FindApp" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_FindApp" translate="yes" space="preserve">
           <source>Find app</source>
-          <target state="new">Find app</target>
+          <target state="translated">Buscar app</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Find app' button, link, text, title, etc, to find an app to open a file, resource, etc. - (String as short as possible).</note>
         </trans-unit>
       </group>

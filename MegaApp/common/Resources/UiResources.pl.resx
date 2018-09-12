@@ -1408,4 +1408,16 @@ NOTE: Max. length 20 characters.</comment>
     <value>Otwórz...</value>
     <comment>Label for any 'Open in...' button, link, text, title, etc. to open a file or other kind of resource with a certain app - (String as short as possible).</comment>
   </data>
+  <data name="UI_MFA_SetupStep1" xml:space="preserve">
+    <value>Zeskanuj lub skopiuj kod do aplikacji do uwierzytelniania. Pamiętaj, aby wykonać kopię zapasową tego materiału w bezpieczne miejsce na wypadek zgubienia telefonu.</value>
+    <comment>Label for the step 1 to setup the Multi-Factor Authentication.</comment>
+  </data>
+  <data name="UI_MFA_SetupStep2" xml:space="preserve">
+    <value>Po skonfigurowaniu w aplikacji do uwierzytelniania wprowadź 6-cyfrowy kod.</value>
+    <comment>Label for the step 2 to setup the Muti-Factor Authentication.</comment>
+  </data>
+  <data name="UI_FindApp" xml:space="preserve">
+    <value>Znajdź aplikację</value>
+    <comment>Label for any 'Find app' button, link, text, title, etc, to find an app to open a file, resource, etc. - (String as short as possible).</comment>
+  </data>
 </root>

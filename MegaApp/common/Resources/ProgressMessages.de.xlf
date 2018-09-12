@@ -259,12 +259,12 @@ Preserve the '{0}' code because is for include node name.</note>
         </trans-unit>
         <trans-unit id="Resx/PM_ApiRateLimit" translate="yes" space="preserve">
           <source>Too many requests. Please wait.</source>
-          <target state="translated">Too many requests. Please wait.</target>
+          <target state="translated">Zuviele Anfragen - bitte warten.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when the SDK is waiting for the server to complete a request due to a rate limit (API error -4) - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PM_ConnectivityIssue" translate="yes" space="preserve">
           <source>Unable to reach MEGA. Please check your connectivity or try again later.</source>
-          <target state="translated">Unable to reach MEGA. Please check your connectivity or try again later.</target>
+          <target state="translated">MEGA ist derzeit nicht erreichbar. Bitte prüfen Sie Ihre Verbindung oder versuchen Sie es später noch einmal.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when the SDK is waiting for the server to complete a request due to connectivity issue - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PM_ServersBusy" translate="yes" space="preserve">

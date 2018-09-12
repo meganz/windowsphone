@@ -609,8 +609,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
   </data>
   <data name="CopyFileUnauthorizedAccessException" xml:space="preserve">
     <value>Ви не маєте дозволу на копіювання цього типу файлів до місця призначення. Ви намагаєтесь зберегти/скопіювати файл непідтримуваного типу на карту SD?
-Спробуйте зберегти/скопіювати файл у внутрішню пам'ять пристрою.
-</value>
+Спробуйте зберегти/скопіювати файл у внутрішню пам'ять пристрою.</value>
     <comment>Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException_Title" xml:space="preserve">
@@ -1096,16 +1095,14 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>Це може бути пов'язано з такими причинами:
 - Файл був видалений через порушення ToS/AUP.
 - Невірна ланка — посилання за яким ви намагаєтесь перейти не існує.
-- Файл був видалений користувачем.
-</value>
+- Файл був видалений користувачем.</value>
     <comment>Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</comment>
   </data>
   <data name="AM_FolderLinkUnavailable" xml:space="preserve">
     <value>Це може бути пов'язано з такими причинами:
 - Тека була видалена через порушення ToS/AUP.
 - Невірна ланка — посилання за яким ви намагаєтесь перейти не існує.
-- Ланка на теку була видалена користувачем.
-</value>
+- Ланка на теку була видалена користувачем.</value>
     <comment>Error message shown when a folder link doesn't exist. Keep "\n"</comment>
   </data>
   <data name="AM_LinkUnavailableTitle" xml:space="preserve">
@@ -1538,5 +1535,9 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
   <data name="AM_RestoreMultiFromRubbishBinFailed" xml:space="preserve">
     <value>Failed to restore items from rubbish bin. Please try again.</value>
     <comment>Message of the dialog displayed when the process/request to restore multiple nodes from the rubbish bin failed.</comment>
+  </data>
+  <data name="AM_MFA_CheckStatusFailed" xml:space="preserve">
+    <value>Failed to check the status of two factor authentication.</value>
+    <comment>Message of the dialog displayed if fails the process to check the Multi-Factor Authentication status.</comment>
   </data>
 </root>
