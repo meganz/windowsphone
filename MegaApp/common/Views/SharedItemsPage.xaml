@@ -72,13 +72,13 @@
                                     <RowDefinition Height="16"/>
                                     <RowDefinition Height="24"/>
                                 </Grid.RowDefinitions>
-                                <ProgressBar VerticalAlignment="Center" IsIndeterminate="True" Foreground="{StaticResource MegaRedSolidColorBrush}" Height="8" Grid.ColumnSpan="2" Visibility="{Binding InShares.IsBusy, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                                <ProgressBar VerticalAlignment="Center" IsIndeterminate="True" Foreground="{StaticResource MegaRedColorBrush}" Height="8" Grid.ColumnSpan="2" Visibility="{Binding InShares.IsBusy, Converter={StaticResource BooleanToVisibilityConverter}}"/>
                                 <userControls:BreadCrumb x:Name="IncomingSharedBreadCrumb" ItemsSource="{Binding InShares.BreadCrumbs}" ItemsSourceType="{Binding InShares.Type}" Margin="0,0,6,0" Grid.Row="1" Grid.Column="0"/>
                                 <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Visibility="{Binding IsNetworkAvailable, Converter={StaticResource BooleanToVisibilityConverter}}">
                                     <RichTextBox TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" Margin="0" Visibility="{Binding IsInSharedItemsRootListView, Converter={StaticResource BooleanToVisibilityConverter}}">
                                         <Paragraph>
                                             <Run Text="{Binding NumberOfInSharedFoldersText}"/>
-                                            <Run Text="{Binding LocalizedUiResources.SharedFolders, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" Foreground="{StaticResource MegaRedSolidColorBrush}"/>
+                                            <Run Text="{Binding LocalizedUiResources.SharedFolders, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" Foreground="{StaticResource MegaRedColorBrush}"/>
                                         </Paragraph>
                                     </RichTextBox>
                                     <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center" Visibility="{Binding IsInSharedItemsRootListView, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=false}">
@@ -134,13 +134,13 @@
                                     <RowDefinition Height="16"/>
                                     <RowDefinition Height="24"/>
                                 </Grid.RowDefinitions>
-                                <ProgressBar VerticalAlignment="Center" IsIndeterminate="True" Foreground="{StaticResource MegaRedSolidColorBrush}" Height="8" Grid.ColumnSpan="2" Visibility="{Binding OutShares.IsBusy, Converter={StaticResource BooleanToVisibilityConverter}}"/>                                
+                                <ProgressBar VerticalAlignment="Center" IsIndeterminate="True" Foreground="{StaticResource MegaRedColorBrush}" Height="8" Grid.ColumnSpan="2" Visibility="{Binding OutShares.IsBusy, Converter={StaticResource BooleanToVisibilityConverter}}"/>                                
                                 <userControls:BreadCrumb x:Name="OutgoingSharedBreadCrumb" ItemsSource="{Binding OutShares.BreadCrumbs}" ItemsSourceType="{Binding OutShares.Type}"  Margin="0,0,6,0" Grid.Row="1" Grid.Column="0"/>
                                 <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Visibility="{Binding IsNetworkAvailable, Converter={StaticResource BooleanToVisibilityConverter}}">
                                     <RichTextBox TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" Margin="0" Visibility="{Binding IsOutSharedItemsRootListView, Converter={StaticResource BooleanToVisibilityConverter}}">
                                         <Paragraph>
                                             <Run Text="{Binding NumberOfOutSharedFoldersText}"/>
-                                            <Run Text="{Binding LocalizedUiResources.SharedFolders, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" Foreground="{StaticResource MegaRedSolidColorBrush}"/>
+                                            <Run Text="{Binding LocalizedUiResources.SharedFolders, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" Foreground="{StaticResource MegaRedColorBrush}"/>
                                         </Paragraph>
                                     </RichTextBox>
                                     <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center" Visibility="{Binding IsOutSharedItemsRootListView, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=false}">

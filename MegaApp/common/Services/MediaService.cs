@@ -10,7 +10,6 @@ using Microsoft.Phone.Scheduler;
 using Microsoft.Phone.Tasks;
 using Microsoft.Xna.Framework.Media;
 using MegaApp.ViewModels;
-using MegaApp.Views;
 
 namespace MegaApp.Services
 {

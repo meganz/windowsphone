@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Windows;
 using mega;
 using MegaApp.Classes;
+using MegaApp.Enums;
 using MegaApp.MegaApi;
 using MegaApp.Resources;
 using MegaApp.Services;
@@ -24,12 +26,90 @@ namespace MegaApp.ViewModels
 
         #region Methods
 
-        public void DoLogin()
+        /// <summary>
+        /// Log in to a MEGA account.
+        /// </summary>
+        public async void Login()
         {
-            if (CheckInputParameters())
-                this._megaSdk.login(Email, Password, new LoginRequestListener(this, _loginPage));
-            else if (_loginPage != null)
+            if (!CheckInputParameters()) return;
+
+            this.ControlState = false;
+            this.IsBusy = true;
+
+            var login = new LoginRequestListenerAsync();
+            var result = await login.ExecuteAsync(() =>
+                this.MegaSdk.login(this.Email, this.Password, login));
+
+            if (result == LoginResult.MultiFactorAuthRequired)
+            {
+                await DialogService.ShowAsyncMultiFactorAuthCodeInputDialogAsync(async (string code) =>
+                {
+                    result = await login.ExecuteAsync(() =>
+                    this.MegaSdk.multiFactorAuthLogin(this.Email, this.Password, code, login));
+
+                    if (result == LoginResult.MultiFactorAuthInvalidCode)
+                    {
+                        DialogService.SetMultiFactorAuthCodeInputDialogWarningMessage();
+                        return false;
+                    }
+
+                    return true;
+                });
+            }
+
+            if (_loginPage != null)
                 Deployment.Current.Dispatcher.BeginInvoke(() => _loginPage.SetApplicationBar(true));
+
+            this.ControlState = true;
+            this.IsBusy = false;
+
+            // Set default error content
+            var errorContent = string.Format(Resources.AppMessages.LoginFailed, login.ErrorString);
+            switch (result)
+            {
+                case LoginResult.Success:
+                    SettingsService.SaveMegaLoginData(this.Email, this.MegaSdk.dumpSession());
+
+                    // Validate product subscription license on background thread
+                    Task.Run(() => LicenseService.ValidateLicenses());
+
+                    // Navigate to the main page to load the main application for the user
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                        NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.Login));
+                    return;
+
+                case LoginResult.UnassociatedEmailOrWrongPassword:
+                    errorContent = Resources.AppMessages.WrongEmailPasswordLogin;
+                    break;
+
+                case LoginResult.TooManyLoginAttempts:
+                    // Too many failed login attempts. Wait one hour.
+                    errorContent = string.Format(Resources.AppMessages.AM_TooManyFailedLoginAttempts,
+                        DateTime.Now.AddHours(1).ToString("HH:mm:ss"));
+                    break;
+
+                case LoginResult.AccountNotConfirmed:
+                    errorContent = Resources.AppMessages.AM_AccountNotConfirmed;
+                    break;
+
+                case LoginResult.MultiFactorAuthRequired:
+                case LoginResult.MultiFactorAuthInvalidCode:
+                case LoginResult.Unknown:
+                    break;
+
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+
+            
+
+            // Show error message
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                new CustomMessageDialog(
+                    AppMessages.LoginFailed_Title, errorContent,
+                    App.AppInformation, MessageDialogButtons.Ok).ShowDialog();
+            });
         }
 
         private bool CheckInputParameters()

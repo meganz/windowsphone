@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MegaApp.Enums;
 using MegaApp.Resources;
 
@@ -29,7 +25,7 @@ namespace MegaApp.MegaApi
 
         protected override string ErrorMessageTitle
         {
-            get { return UiResources.UI_CloseAllSessions.ToUpper(); }
+            get { return UiResources.UI_CloseOtherSessions.ToUpper(); }
         }
 
         protected override bool ShowErrorMessage
@@ -44,7 +40,7 @@ namespace MegaApp.MegaApi
 
         protected override string SuccessMessageTitle
         {
-            get { return UiResources.UI_CloseAllSessions.ToUpper(); }
+            get { return UiResources.UI_CloseOtherSessions.ToUpper(); }
         }
 
         protected override bool ShowSuccesMessage

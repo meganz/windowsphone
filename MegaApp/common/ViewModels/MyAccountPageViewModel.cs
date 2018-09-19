@@ -1,13 +1,10 @@
-﻿using System;
-using System.IO;
-using System.Windows;
+﻿using System.Windows;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.MegaApi;
 using MegaApp.Resources;
 using MegaApp.Services;
-using MegaApp.Views;
 
 namespace MegaApp.ViewModels
 {
@@ -63,36 +60,13 @@ namespace MegaApp.ViewModels
 
         public async void Logout()
         {
-            if (await AccountService.ShouldShowPasswordReminderDialogAsync())
+            if (await AccountService.ShouldShowPasswordReminderDialogAsync(true))
             {
                 DialogService.ShowPasswordReminderDialog(true);
                 return;
             }
 
             MegaSdk.logout(new LogOutRequestListener());
-        }
-
-        public void ClearCache()
-        {
-            string title, message = string.Empty;
-            if (AppService.ClearAppCache(false))
-            {
-                title = AppMessages.CacheCleared_Title;
-                message = AppMessages.CacheCleared;
-            }
-            else
-            {
-                title = AppMessages.AM_ClearCacheFailed_Title;
-                message = AppMessages.AM_ClearCacheFailed;
-            }
-
-            OnUiThread(() =>
-            {
-                new CustomMessageDialog(title, message, App.AppInformation,
-                    MessageDialogButtons.Ok).ShowDialog();
-            });
-            
-            AccountDetails.CacheSize = AppService.GetAppCacheSize();
         }
 
         public void ChangePassword()
@@ -103,11 +77,6 @@ namespace MegaApp.ViewModels
         public void CancelSubscription()
         {
             DialogService.ShowCancelSubscriptionFeedbackDialog();
-        }
-
-        public void CloseAllSessions()
-        {
-            MegaSdk.killAllSessions(new KillAllSessionsRequestListener());
         }
 
         #endregion
@@ -121,8 +90,8 @@ namespace MegaApp.ViewModels
             private set { SetField(ref _emptyContentTemplate, value); }
         }
 
-        private String _emptyInformationText;
-        public String EmptyInformationText
+        private string _emptyInformationText;
+        public string EmptyInformationText
         {
             get { return _emptyInformationText; }
             private set { SetField(ref _emptyInformationText, value); }

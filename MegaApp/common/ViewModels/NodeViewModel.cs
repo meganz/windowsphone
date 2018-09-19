@@ -100,6 +100,21 @@ namespace MegaApp.ViewModels
             var inputDialog = new CustomInputDialog(UiResources.Rename, UiResources.RenameItem, this.AppInformation, settings);
             inputDialog.OkButtonTapped += (sender, args) =>
             {
+                if (SdkService.ExistsNodeByName(this.MegaSdk.getParentNode(this.OriginalMNode), args.InputText, this.OriginalMNode.isFolder()))
+                {
+                    inputDialog.HideDialog();
+                    OnUiThread(() =>
+                    {
+                        new CustomMessageDialog(
+                            AppMessages.RenameNodeFailed_Title,
+                            this.OriginalMNode.isFolder() ? AppMessages.AM_FolderAlreadyExists : AppMessages.AM_FileAlreadyExists,
+                            App.AppInformation,
+                            MessageDialogButtons.Ok).ShowDialog();
+                    });
+
+                    return;
+                }
+
                 this.MegaSdk.renameNode(this.OriginalMNode, args.InputText, new RenameNodeRequestListener(this));
             };
             inputDialog.ShowDialog();
@@ -107,37 +122,32 @@ namespace MegaApp.ViewModels
             return NodeActionResult.IsBusy;
         }
 
-        public NodeActionResult Move(IMegaNode newParentNode)
+        public async Task<NodeActionResult> MoveAsync(MNode newParentNode)
         {
             // User must be online to perform this operation
             if (!IsUserOnline()) return NodeActionResult.NotOnline;
 
-            if (this.MegaSdk.checkMove(this.OriginalMNode, newParentNode.OriginalMNode).getErrorCode() != MErrorType.API_OK)
-            {
-                OnUiThread(() =>
-                {
-                    new CustomMessageDialog(AppMessages.MoveFailed_Title, AppMessages.MoveFailed,
-                        App.AppInformation, MessageDialogButtons.Ok).ShowDialog();
-                });
-                
+            if (this.MegaSdk.checkMove(this.OriginalMNode, newParentNode).getErrorCode() != MErrorType.API_OK)
                 return NodeActionResult.Failed;
-            }
 
-            this.MegaSdk.moveNode(this.OriginalMNode, newParentNode.OriginalMNode, new MoveNodeRequestListener());
-            return NodeActionResult.IsBusy;
+            var moveNode = new MoveNodeRequestListenerAsync();
+            var result = await moveNode.ExecuteAsync(() =>
+                MegaSdk.moveNode(OriginalMNode, newParentNode, moveNode));
+
+            return result ? NodeActionResult.Succeeded : NodeActionResult.Failed;
         }
 
         /// <summary>
         /// Move the node from its current location to a new folder destination
         /// </summary>
-        /// <param name="newParentNode">The root node of the destination folder</param>
+        /// <param name="newParentNode">The new destination folder</param>
         /// <returns>Result of the action</returns>
-        public NodeActionResult Copy(IMegaNode newParentNode)
+        public NodeActionResult Copy(MNode newParentNode)
         {
             // User must be online to perform this operation
             if (!IsUserOnline()) return NodeActionResult.NotOnline;            
 
-            this.MegaSdk.copyNode(this.OriginalMNode, newParentNode.OriginalMNode, new CopyNodeRequestListener());
+            this.MegaSdk.copyNode(this.OriginalMNode, newParentNode, new CopyNodeRequestListener());
             return NodeActionResult.IsBusy;
         }
 
@@ -695,6 +705,8 @@ namespace MegaApp.ViewModels
         {
             OriginalMNode = megaNode;
             this.Handle = megaNode.getHandle();
+            this.RestoreHandle = megaNode.getRestoreHandle();
+            this.RestoreNode = this.MegaSdk.getNodeByHandle(this.RestoreHandle);
             this.Base64Handle = megaNode.getBase64Handle();
             this.Type = megaNode.getType();
             this.ParentContainerType = parentContainerType;
@@ -799,7 +811,20 @@ namespace MegaApp.ViewModels
             set { SetField(ref _information, value); }
         }
 
+        /// <summary>
+        /// Unique identifier of the node
+        /// </summary>
         public ulong Handle { get; set; }
+
+        /// <summary>
+        /// Handle of the previous parent of this node.
+        /// </summary>
+        public ulong RestoreHandle { get; set; }
+
+        /// <summary>
+        /// Previous parent of this node.
+        /// </summary>
+        public MNode RestoreNode { get; set; }
 
         public String Base64Handle { get; set; }
 
@@ -934,6 +959,18 @@ namespace MegaApp.ViewModels
                     _linkExpirationDate = null;
 
                 return _linkExpirationDate;
+            }
+        }
+
+        /// <summary>
+        /// Indicates if the node can be restored to its previous location
+        /// </summary>
+        public bool CanRestore
+        {
+            get
+            {
+                return this.MegaSdk.isInRubbish(this.OriginalMNode) &&
+                    this.RestoreNode != null && this.MegaSdk.isInCloud(this.RestoreNode);
             }
         }
 

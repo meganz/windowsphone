@@ -259,6 +259,9 @@
     <Compile Include="..\common\Converters\BooleanToColorConverter.cs">
       <Link>Converters\BooleanToColorConverter.cs</Link>
     </Compile>
+    <Compile Include="..\common\Converters\BooleanToStatusTextConverter.cs">
+      <Link>Converters\BooleanToStatusTextConverter.cs</Link>
+    </Compile>
     <Compile Include="..\common\Converters\BooleanToVisibilityConverter.cs">
       <Link>Converters\BooleanToVisibilityConverter.cs</Link>
     </Compile>
@@ -279,6 +282,9 @@
     </Compile>
     <Compile Include="..\common\Converters\NodeDisplayModeToColorBrushConverter.cs">
       <Link>Converters\NodeDisplayModeToColorBrushConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Converters\StringToVisibilityConverter.cs">
+      <Link>Converters\StringToVisibilityConverter.cs</Link>
     </Compile>
     <Compile Include="..\common\Converters\TextToLowerCaseConverter.cs">
       <Link>Converters\TextToLowerCaseConverter.cs</Link>
@@ -304,11 +310,41 @@
     <Compile Include="..\common\Database\SQLiteAsync.cs">
       <Link>Database\SQLiteAsync.cs</Link>
     </Compile>
+    <Compile Include="..\common\Dialogs\ChangePasswordDialog.cs">
+      <Link>Dialogs\ChangePasswordDialog.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Dialogs\MegaDialog.cs">
+      <Link>Dialogs\MegaDialog.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Dialogs\MultiFactorAuthCodeInputDialog.cs">
+      <Link>Dialogs\MultiFactorAuthCodeInputDialog.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Dialogs\MultiFactorAuthDisabledDialog.cs">
+      <Link>Dialogs\MultiFactorAuthDisabledDialog.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Dialogs\MultiFactorAuthEnabledDialog.cs">
+      <Link>Dialogs\MultiFactorAuthEnabledDialog.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Dialogs\MultiFactorAuthSetupDialog.cs">
+      <Link>Dialogs\MultiFactorAuthSetupDialog.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Dialogs\PasswordReminderDialog.cs">
+      <Link>Dialogs\PasswordReminderDialog.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Dialogs\PinLockDialog.cs">
+      <Link>Dialogs\PinLockDialog.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Dialogs\TwoButtonsDialog.cs">
+      <Link>Dialogs\TwoButtonsDialog.cs</Link>
+    </Compile>
     <Compile Include="..\common\Enums\AccountBlockedReason.cs">
       <Link>Enums\AccountBlockedReason.cs</Link>
     </Compile>
     <Compile Include="..\common\Enums\CameraUploadsConnectionType.cs">
       <Link>Enums\CameraUploadsConnectionType.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Enums\ChangePasswordResult.cs">
+      <Link>Enums\ChangePasswordResult.cs</Link>
     </Compile>
     <Compile Include="..\common\Enums\ContactsDisplayMode.cs">
       <Link>Enums\ContactsDisplayMode.cs</Link>
@@ -322,6 +358,9 @@
     <Compile Include="..\common\Enums\DriveDisplayMode.cs">
       <Link>Enums\DriveDisplayMode.cs</Link>
     </Compile>
+    <Compile Include="..\common\Enums\FetchNodesResult.cs">
+      <Link>Enums\FetchNodesResult.cs</Link>
+    </Compile>
     <Compile Include="..\common\Enums\GalleryDirection.cs">
       <Link>Enums\GalleryDirection.cs</Link>
     </Compile>
@@ -331,11 +370,17 @@
     <Compile Include="..\common\Enums\LinkAction.cs">
       <Link>Enums\LinkAction.cs</Link>
     </Compile>
+    <Compile Include="..\common\Enums\LoginResult.cs">
+      <Link>Enums\LoginResult.cs</Link>
+    </Compile>
     <Compile Include="..\common\Enums\MediaType.cs">
       <Link>Enums\MediaType.cs</Link>
     </Compile>
     <Compile Include="..\common\Enums\MenuType.cs">
       <Link>Enums\MenuType.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Enums\MultiFactorAuthStatus.cs">
+      <Link>Enums\MultiFactorAuthStatus.cs</Link>
     </Compile>
     <Compile Include="..\common\Enums\NavigationParameter.cs">
       <Link>Enums\NavigationParameter.cs</Link>
@@ -403,8 +448,8 @@
     <Compile Include="..\common\MegaApi\CancelTransferRequestListener.cs">
       <Link>MegaApi\CancelTransferRequestListener.cs</Link>
     </Compile>
-    <Compile Include="..\common\MegaApi\ChangePasswordRequestListener.cs">
-      <Link>MegaApi\ChangePasswordRequestListener.cs</Link>
+    <Compile Include="..\common\MegaApi\ChangePasswordRequestListenerAsync.cs">
+      <Link>MegaApi\ChangePasswordRequestListenerAsync.cs</Link>
     </Compile>
     <Compile Include="..\common\MegaApi\CleanRubbishBinRequestListener.cs">
       <Link>MegaApi\CleanRubbishBinRequestListener.cs</Link>
@@ -435,6 +480,9 @@
     </Compile>
     <Compile Include="..\common\MegaApi\FetchNodesRequestListener.cs">
       <Link>MegaApi\FetchNodesRequestListener.cs</Link>
+    </Compile>
+    <Compile Include="..\common\MegaApi\FetchNodesRequestListenerAsync.cs">
+      <Link>MegaApi\FetchNodesRequestListenerAsync.cs</Link>
     </Compile>
     <Compile Include="..\common\MegaApi\GetAccountDetailsRequestListener.cs">
       <Link>MegaApi\GetAccountDetailsRequestListener.cs</Link>
@@ -481,6 +529,9 @@
     <Compile Include="..\common\MegaApi\InviteContactRequestListener.cs">
       <Link>MegaApi\InviteContactRequestListener.cs</Link>
     </Compile>
+    <Compile Include="..\common\MegaApi\IsMasterKeyExportedRequestListenerAsync.cs">
+      <Link>MegaApi\IsMasterKeyExportedRequestListenerAsync.cs</Link>
+    </Compile>
     <Compile Include="..\common\MegaApi\KillAllSessionsRequestListener.cs">
       <Link>MegaApi\KillAllSessionsRequestListener.cs</Link>
     </Compile>
@@ -489,6 +540,9 @@
     </Compile>
     <Compile Include="..\common\MegaApi\LoginRequestListener.cs">
       <Link>MegaApi\LoginRequestListener.cs</Link>
+    </Compile>
+    <Compile Include="..\common\MegaApi\LoginRequestListenerAsync.cs">
+      <Link>MegaApi\LoginRequestListenerAsync.cs</Link>
     </Compile>
     <Compile Include="..\common\MegaApi\LoginToFolderRequestListener.cs">
       <Link>MegaApi\LoginToFolderRequestListener.cs</Link>
@@ -505,8 +559,17 @@
     <Compile Include="..\common\MegaApi\MegaRandomNumberProvider.cs">
       <Link>MegaApi\MegaRandomNumberProvider.cs</Link>
     </Compile>
-    <Compile Include="..\common\MegaApi\MoveNodeRequestListener.cs">
-      <Link>MegaApi\MoveNodeRequestListener.cs</Link>
+    <Compile Include="..\common\MegaApi\MoveNodeRequestListenerAsync.cs">
+      <Link>MegaApi\MoveNodeRequestListenerAsync.cs</Link>
+    </Compile>
+    <Compile Include="..\common\MegaApi\MultiFactorAuthCheckRequestListenerAsync.cs">
+      <Link>MegaApi\MultiFactorAuthCheckRequestListenerAsync.cs</Link>
+    </Compile>
+    <Compile Include="..\common\MegaApi\MultiFactorAuthEnableRequestListenerAsync.cs">
+      <Link>MegaApi\MultiFactorAuthEnableRequestListenerAsync.cs</Link>
+    </Compile>
+    <Compile Include="..\common\MegaApi\MultiFactorAuthGetCodeRequestListenerAsync.cs">
+      <Link>MegaApi\MultiFactorAuthGetCodeRequestListenerAsync.cs</Link>
     </Compile>
     <Compile Include="..\common\MegaApi\PauseTransferRequestListener.cs">
       <Link>MegaApi\PauseTransferRequestListener.cs</Link>
@@ -613,6 +676,9 @@
     <Compile Include="..\common\ViewModels\MemDiagnosticViewModel.cs">
       <Link>ViewModels\MemDiagnosticViewModel.cs</Link>
     </Compile>
+    <Compile Include="..\common\ViewModels\MultiFactorAuthAppSetupViewModel.cs">
+      <Link>ViewModels\MultiFactorAuthAppSetupViewModel.cs</Link>
+    </Compile>
     <Compile Include="..\common\ViewModels\MyAccountPageViewModel.cs">
       <Link>ViewModels\MyAccountPageViewModel.cs</Link>
     </Compile>
@@ -716,6 +782,10 @@
     <Compile Include="..\common\Views\MediaSelectionPage.xaml.cs">
       <Link>Views\MediaSelectionPage.xaml.cs</Link>
       <DependentUpon>MediaSelectionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\common\Views\MultiFactorAuthAppSetupPage.xaml.cs">
+      <Link>Views\MultiFactorAuthAppSetupPage.xaml.cs</Link>
+      <DependentUpon>MultiFactorAuthAppSetupPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="..\common\Views\MyAccountPage.xaml.cs">
       <Link>Views\MyAccountPage.xaml.cs</Link>
@@ -873,12 +943,6 @@
     </Compile>
     <Compile Include="..\common\UserControls\BreadCrumbTapEventArgs.cs">
       <Link>UserControls\BreadCrumbTapEventArgs.cs</Link>
-    </Compile>
-    <Compile Include="..\common\UserControls\Dialogs\MegaDialog.cs">
-      <Link>UserControls\Dialogs\MegaDialog.cs</Link>
-    </Compile>
-    <Compile Include="..\common\UserControls\Dialogs\PasswordReminderDialog.cs">
-      <Link>UserControls\Dialogs\PasswordReminderDialog.cs</Link>
     </Compile>
     <Compile Include="..\common\UserControls\DrawerLayout.cs">
       <Link>UserControls\DrawerLayout.cs</Link>
@@ -1409,6 +1473,12 @@
     <Content Include="..\common\Assets\Images\VISA_WP.Screen-WXGA.png">
       <Link>Assets\Images\VISA_WP.Screen-WXGA.png</Link>
     </Content>
+    <Content Include="..\common\Assets\MultiFactorAuth\multiFactorAuth.png">
+      <Link>Assets\MultiFactorAuth\multiFactorAuth.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\MultiFactorAuth\textFile.png">
+      <Link>Assets\MultiFactorAuth\textFile.png</Link>
+    </Content>
     <Content Include="..\common\Assets\Tiles\FolderIconImage.png">
       <Link>Assets\Tiles\FolderIconImage.png</Link>
     </Content>
@@ -1478,6 +1548,10 @@
     </Page>
     <Page Include="..\common\Views\MediaSelectionPage.xaml">
       <Link>Views\MediaSelectionPage.xaml</Link>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\common\Views\MultiFactorAuthAppSetupPage.xaml">
+      <Link>Views\MultiFactorAuthAppSetupPage.xaml</Link>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="..\common\Views\MyAccountPage.xaml">
@@ -1589,6 +1663,10 @@
     <Reference Include="Telerik.Windows.Data, Version=2017.1.118.3040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\RCWP\2017.1.118.3040\Telerik.Windows.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="zxing.wp8.0, Version=0.16.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.4\lib\wp8\zxing.wp8.0.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
@@ -2361,7 +2439,7 @@
     </XliffResource>
   </ItemGroup>
   <ItemGroup>
-    <SDKReference Include="SQLite.WP80, Version=3.23.1">
+    <SDKReference Include="SQLite.WP80, Version=3.24.0">
       <Name>SQLite for Windows Phone</Name>
     </SDKReference>
   </ItemGroup>

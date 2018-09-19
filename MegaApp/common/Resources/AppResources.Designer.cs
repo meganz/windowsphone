@@ -124,6 +124,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a https://g.api.mega.co.nz/.
+        /// </summary>
+        public static string AR_ApiUrl {
+            get {
+                return ResourceManager.GetString("AR_ApiUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a https://mega.nz/copyright.
         /// </summary>
         public static string AR_CopyrightUrl {
@@ -169,7 +178,25 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a https://github.com/meganz/sdk/tree/37a231c3fbbfbea549b8eb87230a5da83f0452d0.
+        ///   Busca una cadena traducida similar a MEGARecoveryKey.txt.
+        /// </summary>
+        public static string AR_RecoveryKeyFileName {
+            get {
+                return ResourceManager.GetString("AR_RecoveryKeyFileName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a https://mega.nz/recovery.
+        /// </summary>
+        public static string AR_RecoveryUrl {
+            get {
+                return ResourceManager.GetString("AR_RecoveryUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a https://github.com/meganz/sdk/tree/93576558f955d90ed14a48101cbc906bb45ba4cd.
         /// </summary>
         public static string AR_SdkLink {
             get {
@@ -178,11 +205,20 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a 37a231c.
+        ///   Busca una cadena traducida similar a 9357655.
         /// </summary>
         public static string AR_SdkVersion {
             get {
                 return ResourceManager.GetString("AR_SdkVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a https://staging.api.mega.co.nz/.
+        /// </summary>
+        public static string AR_StagingUrl {
+            get {
+                return ResourceManager.GetString("AR_StagingUrl", resourceCulture);
             }
         }
         

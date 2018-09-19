@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media;
 using System.Windows.Threading;
 using mega;
 using MegaApp.Resources;
@@ -23,9 +25,9 @@ namespace MegaApp.MegaApi
         private MegaSDK api;
 
         /// <summary>
-        /// Event triggered when the request is waiting/retrying during more than 10 seconds
+        /// Error description associated with an error code
         /// </summary>
-        public EventHandler<MRetryReason> IsWaiting;
+        public string ErrorString;
         
         public BaseRequestListenerAsync()
         {
@@ -38,6 +40,7 @@ namespace MegaApp.MegaApi
             });
         }
 
+        // Method which is called when the timer event is triggered
         private void ApiErrorTimerOnTick(object sender, object o)
         {
             Deployment.Current.Dispatcher.BeginInvoke(() =>
@@ -46,8 +49,31 @@ namespace MegaApp.MegaApi
                     apiErrorTimer.Stop();
             });
 
-            if (IsWaiting != null)
-                IsWaiting.Invoke(this, (MRetryReason)api.isWaiting());
+            if (this.api == null) return;
+
+            string message = string.Empty;
+            switch ((MRetryReason)this.api.isWaiting())
+            {
+                case MRetryReason.RETRY_CONNECTIVITY:
+                    message = ProgressMessages.PM_ConnectivityIssue;
+                    break;
+
+                case MRetryReason.RETRY_SERVERS_BUSY:
+                    message = ProgressMessages.PM_ServersBusy;
+                    break;
+
+                case MRetryReason.RETRY_API_LOCK:
+                    message = ProgressMessages.PM_ApiLocked;
+                    break;
+
+                case MRetryReason.RETRY_RATE_LIMIT:
+                    message = ProgressMessages.PM_ApiRateLimit;
+                    break;
+
+                default: return;
+            }
+
+            Deployment.Current.Dispatcher.BeginInvoke(() => ProgressService.SetProgressIndicator(true, message));
         }
 
         public async Task<T> ExecuteAsync(Action action)
@@ -66,13 +92,21 @@ namespace MegaApp.MegaApi
 
         public virtual void onRequestUpdate(MegaSDK api, MRequest request)
         {
-            // Do nothing
+            this.api = api;
+
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["PhoneChromeColor"]));
         }
 
         public virtual void onRequestTemporaryError(MegaSDK api, MRequest request, MError e)
         {
+            this.api = api;
+
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
+                if (DebugService.DebugSettings.IsDebugMode || Debugger.IsAttached)
+                    ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["MegaRedColor"]);
+
                 // If is the first error/retry (timer is not running) start the timer
                 if (apiErrorTimer != null && !apiErrorTimer.IsEnabled)
                     apiErrorTimer.Start();
@@ -81,8 +115,15 @@ namespace MegaApp.MegaApi
 
         public virtual void onRequestFinish(MegaSDK api, MRequest request, MError e)
         {
+            this.api = api;
+
+            this.ErrorString = e.getErrorString();
+
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
+                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["PhoneChromeColor"]);
+                ProgressService.SetProgressIndicator(false);
+
                 if (apiErrorTimer != null)
                     apiErrorTimer.Stop();
             });

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using Telerik.Windows.Controls;
@@ -12,7 +7,6 @@ namespace MegaApp.Classes
 {
     public class NumericPasswordBox : RadPasswordBox
     {
-
         private TextBox _passwordTextBox;
 
         public override void OnApplyTemplate()
@@ -34,7 +28,5 @@ namespace MegaApp.Classes
             base.OnGotFocus(e);
             _passwordTextBox.Focus();
         }
-
-        
     }
 }

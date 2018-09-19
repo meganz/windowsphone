@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en" target-language="vi" original="AppMessages.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp81" product-version="1.0.0.0" build-num="0">
+  <file datatype="xml" source-language="en" target-language="en" original="AppMessages.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp81" product-version="1.0.0.0" build-num="0">
     <header>
       <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="3.1.1250.0" tool-company="Microsoft" />
     </header>
@@ -135,7 +135,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to get a image preview failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ImageSaved" translate="yes" space="preserve">
-          <source>Image successfully exported to 'saved pictures' album</source>
+          <source>Image successfully exported to ‘saved pictures’ album</source>
           <target state="translated">Đã hoàn tất xuất hình ảnh vào album 'saved pictures'</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a image is saved/exported successfully saved to the 'saved pictures' album of the phone device.</note>
         </trans-unit>
@@ -145,7 +145,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a image is saved/exported successfully saved to the 'saved pictures' album of the phone device - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ImageSaveError" translate="yes" space="preserve">
-          <source>Error exporting image to  'saved pictures' album. Please try again</source>
+          <source>Error exporting image to  ‘saved pictures’ album. Please try again</source>
           <target state="translated">Lỗi xảy ra khi xuất ảnh vào album 'saved pictures'. Vui lòng thử lại sau</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to save/export an image to the 'saved pictures' album of the phone device.</note>
         </trans-unit>
@@ -168,12 +168,12 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/LinkCopiedToClipboard" translate="yes" space="preserve">
           <source>The MEGA link was copied to your clipboard</source>
-          <target state="translated">Liên kết MEGA đã được sao chép vào bộ ghi nhớ</target>
+          <target state="translated">Liên kết MEGA đã được ghi vào bộ nhớ</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to copy a MEGA link to the clipboard finished successfully.</note>
         </trans-unit>
         <trans-unit id="Resx/LinkCopiedToClipboard_Title" translate="yes" space="preserve">
           <source>Copied to clipboard</source>
-          <target state="translated">Đã sao chép vào bộ ghi nhớ</target>
+          <target state="translated">Đã ghi vào bộ nhớ</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard finished successfully - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/LoginFailed" translate="yes" space="preserve">
@@ -230,7 +230,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
         </trans-unit>
         <trans-unit id="Resx/RemoveItemQuestion_Title" translate="yes" space="preserve">
           <source>Remove?</source>
-          <target state="translated">Xóa không?</target>
+          <target state="translated">Xoá bỏ?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to remove definitely an item from the rubbish bin failed, asking for confirmation to do it - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/RemoveNodeFailed" translate="yes" space="preserve">
@@ -284,7 +284,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when any required field is not filled in - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/SaveImageQuestion" translate="yes" space="preserve">
-          <source>Export current image to 'saved pictures' album?</source>
+          <source>Export current image to ‘saved pictures’ album?</source>
           <target state="translated">Bạn có muốn xuất hình này vào album 'saved pictures' không?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to save a image to the 'saved pictures' album, asking for confirmation to do it.</note>
         </trans-unit>
@@ -354,7 +354,7 @@ Preserve the {0} code because is for include the number of nodes to be removed i
         </trans-unit>
         <trans-unit id="Resx/MultiSelectRemoveQuestion_Title" translate="yes" space="preserve">
           <source>Remove items?</source>
-          <target state="translated">Xóa không?</target>
+          <target state="translated">Xoá bỏ?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to remove multiple nodes definitely from the rubbish bin, asking for confirmation to make the movement - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/MultiRemoveSucces" translate="yes" space="preserve">
@@ -562,7 +562,7 @@ Preserve the {0} code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/LoadNodesFailed" translate="yes" space="preserve">
           <source>Could not load files and folders from MEGA. Please try again or click on refresh.</source>
-          <target state="translated">Không thể tải dữ liệu và thư mục từ MEGA. Xin thử lại hoặc làm mới (refresh).</target>
+          <target state="translated">Không thể tải dữ liệu và thư mục từ MEGA. Xin thử tải lại.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to load the nodes of the MEGA cloud service.</note>
         </trans-unit>
         <trans-unit id="Resx/LoadNodesFailed_Title" translate="yes" space="preserve">
@@ -597,7 +597,7 @@ Preserve the {0} code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/NoDownloadLocationSelected" translate="yes" space="preserve">
           <source>You have not selected a default download location for your files.To proceed with the download, please select a destination folder or go to settings in order to set up your default download location.</source>
-          <target state="translated">You have not selected a default download location for your files.To proceed with the download, please select a destination folder or go to settings in order to set up your default download location.</target>
+          <target state="translated">Bạn chưa thiết đặt một vị trí mặc định để lưu lại các tệp tin khi tải về. Để tiếp tục quá trình, xin chọn ra một thư mục đích hoặc vào phần thiết đặt và điều ra vị trí mặc định cho các phiên tải trong tương lai.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</note>
         </trans-unit>
         <trans-unit id="Resx/PrepareFileForUploadFailed" translate="yes" space="preserve">
@@ -650,18 +650,18 @@ Hãy thử sao chép tệp tin vào bộ nhớ trong điện thoại trước.</
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails to copy the user's Recovery Key to the clipboard to be saved or exported - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CurrentPinLockCodeDoNotMatch" translate="yes" space="preserve">
-          <source>Current PIN lock is not correct or does not match</source>
+          <source>Current PIN code is incorrect or does not match</source>
           <target state="translated">Mã PIN vừa nhập không đúng hoặc không trùng khớp</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user is trying to change the PIN lock code and introduces an incorrect code into the field for the current PIN lock code. Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/CurrentPinLockCodeDoNotMatch_Title" translate="yes" space="preserve">
-          <source>Current PIN lock no match</source>
-          <target state="translated">Không trùng với mã PIN hiện thời</target>
+          <source>Current PIN code is incorrect</source>
+          <target state="translated">Mã PIN vừa nhập không đúng</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user is trying to change the PIN lock code and introduces an incorrect code into the field for the current PIN lock code - (String as short as possible). Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_RecoveryKeyCopied" translate="yes" space="preserve">
-          <source>Recovery Key copied to clipboard</source>
-          <target state="translated">Mã Khóa Phục Hồi đã được lưu vào bộ ghi nhớ</target>
+          <source>The Recovery Key has been copied to the clipboard. Please store it in a safe place.</source>
+          <target state="translated">Mã Khóa Phục Hồi đã được lưu vào bộ ghi nhớ. Xin lưu giữ mã ở nơi an toàn.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_RecoveryKeyCopied_Title" translate="yes" space="preserve">
@@ -945,7 +945,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases when the user has disabled background agents for this application</note>
         </trans-unit>
         <trans-unit id="Resx/CameraUploadNeedsStayLoggedIn" translate="yes" space="preserve">
-          <source>In order for the automatic Camera Uploads to work correctly, you need to enable the option "Stay logged in". Do you want to enable this option?</source>
+          <source>In order for the automatic Camera Uploads to work correctly, you need to enable the option “Stay logged in”. Do you want to enable this option?</source>
           <target state="translated">Để chức năng Camera Uploads hoạt động tốt, bạn cần phải bật tùy chọn "Giữ đăng nhập". Bạn có muốn bật ngay không?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user wants to enable auto camera uploads but Stay logged in is disabled.</note>
         </trans-unit>
@@ -1091,7 +1091,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user is trying to perform any online action without an active Internet connection.</note>
         </trans-unit>
         <trans-unit id="Resx/FolderUnauthorizedAccess" translate="yes" space="preserve">
-          <source>You don't have access to the folder '{0}'. Please select another one and try again.</source>
+          <source>You don’t have access to the folder ‘{0}’. Please select another one and try again.</source>
           <target state="translated">Bạn không có quyền hạn để truy cập tới vùng '{0}'. Xin chọn cái khác hoặc thử lại.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that the app or the user doesn't have access to a folder in the device memory. For example to download a file/folder, create a new folder, etc.
 Preserve the '{0}' code because is for include the folder name in runtime.</note>
@@ -1102,7 +1102,7 @@ Preserve the '{0}' code because is for include the folder name in runtime.</note
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.</note>
         </trans-unit>
         <trans-unit id="Resx/InvalidFileName" translate="yes" space="preserve">
-          <source>The name of the file '{0}' is not valid or has illegal characters. Please change it and try again.</source>
+          <source>The name of the file ‘{0}’ is not valid or has illegal characters. Please change it and try again.</source>
           <target state="translated">Tên đặt cho tệp tin '{0}' không được chấp nhận hoặc do có sử dụng các ký tự không hợp lệ. Xin thay đổi rồi thử lại.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that a file name is not valid or has illegal characters.
 Preserve the '{0}' code because is for include the file name in runtime.</note>
@@ -1113,7 +1113,7 @@ Preserve the '{0}' code because is for include the file name in runtime.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the file name is not valid or has illegal characters - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PathTooLong" translate="yes" space="preserve">
-          <source>The path of the file/folder '{0}' is too long. Please change it and try again.</source>
+          <source>The path of the file/folder ‘{0}’ is too long. Please change it and try again.</source>
           <target state="translated">Đường dẫn tới tệp tin / thư mục '{0}' quá dài. Xin vong lòng chỉnh sửa rồi thử lại.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that the file/folder path is too long.
 Preserve the '{0}' code because is for include the file/folder name in runtime.</note>
@@ -1124,7 +1124,7 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the file/folder path is too long - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/InvalidFolderNameOrPath" translate="yes" space="preserve">
-          <source>The name or path of the folder '{0}' is not valid or has illegal characters. Please change it and try again.</source>
+          <source>The name or path of the folder ‘{0}’ is not valid or has illegal characters. Please change it and try again.</source>
           <target state="translated">Tên hoặc đường dẫn đến thư mục '{0}' không hợp lệ hoặc có chứa các ký tự đặc biệt. Xin vui lòng chỉnh sửa và thử lại sau.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that a folder name or path is not valid or has illegal characters.
 Preserve the '{0}' code because is for include the file name in runtime.</note>
@@ -1168,12 +1168,12 @@ Preserve the '{0}' code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_LoadInSharesFailed" translate="yes" space="preserve">
           <source>Failed to load incoming shared items from MEGA. Please try again or click on refresh.</source>
-          <target state="translated">MEGA gặp lỗi tải về các mục Chia Sẻ Tới. Xin thử lại hoặc tải lại trang (refresh).</target>
+          <target state="translated">MEGA gặp lỗi tải về các mục Chia Sẻ Nhận Được. Xin thử lại hoặc tải lại trang (refresh).</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to load the incoming shared items.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_LoadOutSharesFailed" translate="yes" space="preserve">
           <source>Failed to load outgoing shared items from MEGA. Please try again or click on refresh.</source>
-          <target state="translated">MEGA gặp lỗi tải về các mục Chia Sẻ Đi. Xin thử lại hoặc tải lại trang (refresh).</target>
+          <target state="translated">MEGA gặp lỗi tải về các mục Chia Sẻ Gửi Đi. Xin thử lại hoặc tải lại trang.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to load the outgoing shared items.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DeleteSettingsFailed" translate="yes" space="preserve">
@@ -1272,7 +1272,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to open a link failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DowloadPathUnauthorizedAccess" translate="yes" space="preserve">
-          <source>You don't have access to the selected download path. Please select a different download path and try again.</source>
+          <source>You don’t have access to the selected download path. Please select a different download path and try again.</source>
           <target state="translated">Bạn không có quyền hạn để truy cập tới vùng tải về này. Xin chọn và thử vùng tải về khác hoặc thử lại.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder.</note>
         </trans-unit>
@@ -1450,12 +1450,12 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AccountBlocked" translate="yes" space="preserve">
           <source>Your account was terminated due to a breach of MEGA’s Terms of Service, such as abuse of rights of others; sharing and/or importing illegal data; or system abuse.</source>
-          <target state="translated">Your account was terminated due to a breach of MEGA’s Terms of Service, such as abuse of rights of others; sharing and/or importing illegal data; or system abuse.</target>
+          <target state="translated">Tài khoản MEGA của quý khách đã bị chấm dứt hoạt động do vi phạm lỗi có nêu trong Điều Khoản Sử Dụng của MEGA, chẳng hạn như lạm dụng hệ thống, quyền hạn sử dụng hay tàng trữ dữ liệu phi pháp.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the user is trying to login and the account has been blocked.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AccountNotConfirmed" translate="yes" space="preserve">
           <source>Your account has not been confirmed yet.</source>
-          <target state="translated">Tài khoản của bạn chưa được xác thực.</target>
+          <target state="translated">Tài khoản chưa được xác nhận.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the user is trying to login and the account has not been confirmed yet.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_TooManyFailedLoginAttempts" translate="yes" space="preserve">
@@ -1562,62 +1562,62 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_InternalNodeFailed" translate="yes" space="preserve">
           <source>Failed to open the internal file/folder of the link. Please try again.</source>
-          <target state="translated">Failed to open the internal file/folder of the link. Please try again.</target>
+          <target state="translated">Quá trình mở tệp tin / thư mục nội bộ của đường liên kết bị thất bại. Xin thử lại.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fail trying to open a link of an internal node.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_InternalNodeFailed_Title" translate="yes" space="preserve">
           <source>Failed to open the internal file/folder</source>
-          <target state="translated">Failed to open the internal file/folder</target>
+          <target state="translated">Mở tệptin/thưmục nội bộ thất bại</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fail trying to open a link of an internal node - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ClearCacheFailed" translate="yes" space="preserve">
           <source>Failed to clear cache. Please try again.</source>
-          <target state="translated">Failed to clear cache. Please try again.</target>
+          <target state="translated">Dọn bộ nhớ tạm bị thất bại. Xin thử lại.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to clear cache failed.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ClearCacheFailed_Title" translate="yes" space="preserve">
           <source>Clear cache failed</source>
-          <target state="translated">Clear cache failed</target>
+          <target state="translated">Dọn bộ nhớ tạm bị thất bại</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PrepareDownloadsFailed" translate="yes" space="preserve">
           <source>Error preparing downloads. Please try again.</source>
-          <target state="translated">Error preparing downloads. Please try again.</target>
+          <target state="translated">Lỗi. Không chuẩn bị được tệp tin để tải về. Xin thử lại.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to prepare files or folders for download failed.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AccountBlockedCopyright" translate="yes" space="preserve">
           <source>Your account has been suspended due to multiple breaches of MEGA’s Terms of Service. Please check your email inbox.</source>
-          <target state="translated">Your account has been suspended due to multiple breaches of MEGA’s Terms of Service. Please check your email inbox.</target>
+          <target state="translated">Tài khoản của quý khách đã bị đình chỉ do vị phạm nhiều lỗi được nêu trong Điều Khoản Sử Dụng của MEGA. Xin kiểm tra hộp thư email.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the user is trying to login and the account has been blocked for multiple copyright violation.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_EmptyRequiredFields" translate="yes" space="preserve">
           <source>Fill the required fields and try again.</source>
-          <target state="translated">Fill the required fields and try again.</target>
+          <target state="translated">Xin điền vào các khung được yêu cầu và thử lại.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when required fields are empty.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PasswordChanged" translate="yes" space="preserve">
           <source>We have sent you an email confirming your password change.</source>
-          <target state="translated">We have sent you an email confirming your password change.</target>
+          <target state="translated">Hệ thống đã gửi đi một email tới cho bạn để xác thực việc thay đổi mật khẩu.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the change password process finish successful.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PasswordChanged_Title" translate="yes" space="preserve">
           <source>Password changed</source>
-          <target state="translated">Password changed</target>
+          <target state="translated">Mật khẩu đã được thay đổi</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the change password process finish successful.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PasswordChangeFailed" translate="yes" space="preserve">
           <source>Failed to change your password. Please try again.</source>
-          <target state="translated">Failed to change your password. Please try again.</target>
+          <target state="translated">Việc đổi mật khẩu không thành công. Xin thử lại.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user has failed to change his password</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PasswordChangeFailed_Title" translate="yes" space="preserve">
           <source>Error changing password</source>
-          <target state="translated">Error changing password</target>
+          <target state="translated">Lỗi, đổi mật khẩu thất bại</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the user has failed to change his password - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_IncorrectEmailFormat" translate="yes" space="preserve">
           <source>Incorrect email format. Please try again.</source>
-          <target state="translated">Incorrect email format. Please try again.</target>
+          <target state="translated">Định dạng email không phù hợp. Xin thử lại.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user types an email address with an incorrect format.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_VeryWeakPassword" translate="yes" space="preserve">
@@ -1627,63 +1627,166 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_SSLKeyError" translate="yes" space="preserve">
           <source>MEGA is unable to connect securely through SSL. You might be on public WiFi with additional requirements.</source>
-          <target state="translated">Không xác thực được SSL key từ máy chủ. Xem chừng bạn đã bị tác động bởi người hack trung gian.</target>
+          <target state="translated">MEGA không thực hiện đuợc kết nối bảo mật thông qua xác thực SSL. Có thể do thiết bị đang dùng mạng WiFi công cộng cần được phải chỉnh thêm.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_SSLKeyError_Title" translate="yes" space="preserve">
           <source>SSL certificate error</source>
-          <target state="translated">SSL certificate error</target>
+          <target state="translated">Chứng từ SSL bị lỗi</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_RecoveryKeyExportFailed_Title" translate="yes" xml:space="preserve">
-          <source>Recovery Key export failed</source>
-          <target state="new">Recovery Key export failed</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog or notification displayed in cases that the app has not succesful exported the recovery key.</note>
+        <trans-unit id="Resx/AM_PasswordReminder" translate="yes" space="preserve">
+          <source>Due to MEGA’s encryption technology you are unable to reset your password without data loss. Please make sure you remember your password.</source>
+          <target state="translated">Vì dạng thức thuật toán bảo mật của MEGA, mất Mã Phục Hồi và không có mật khẩu sẽ làm toàn bộ dữ liệu không thể lấy lại được. Xin hãy nhớ mật khẩu của chính mình.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message to describe the purpose of the password reminder dialog.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_RecoveryKeyExportFailed" translate="yes" xml:space="preserve">
-          <source>Failed to export the Recovery Key. Please try again.</source>
-          <target state="new">Failed to export the Recovery Key. Please try again.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog or notification displayed in cases that the app has not succesful exported the recovery key.</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_RecoveryKeyExported_Title" translate="yes" xml:space="preserve">
-          <source>Recovery Key exported</source>
-          <target state="new">Recovery Key exported</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog or notification displayed in cases that the app has succesful exported the recovery key.</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_RecoveryKeyExported" translate="yes" xml:space="preserve">
-          <source>The Recovery Key has been exported.</source>
-          <target state="new">The Recovery Key has been exported.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog or notification displayed in cases that the app has succesful exported the recovery key.</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_TestPassword_Title" translate="yes" xml:space="preserve">
-          <source>Test Password</source>
-          <target state="new">Test Password</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the test password dialog.</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_TestPasswordWarning" translate="yes" xml:space="preserve">
-          <source>Wrong password!, backup your Recovery Key as soon as possible!</source>
-          <target state="new">Wrong password!, backup your Recovery Key as soon as possible!</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Warning message displayed when the password test fails.</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_TestPasswordSuccess" translate="yes" xml:space="preserve">
-          <source>Password accepted, we still recommend you back up your Recovery key.</source>
-          <target state="new">Password accepted, we still recommend you back up your Recovery key.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message displayed when the password test result is ok.</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_TestPassword" translate="yes" xml:space="preserve">
-          <source>Please test your password below to ensure you remember it. If you lost your password, you will lose access to your data.</source>
-          <target state="new">Please test your password below to ensure you remember it. If you lost your password, you will lose access to your data.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message to describe the purpose of the dialog to test the password.</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_PasswordReminder_Title" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/AM_PasswordReminder_Title" translate="yes" space="preserve">
           <source>Do you remember your password?</source>
-          <target state="new">Do you remember your password?</target>
+          <target state="translated">Bạn có còn nhớ mật khẩu của mình không?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the password reminder dialog.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_PasswordReminder" translate="yes" xml:space="preserve">
-          <source>Due to MEGA’s encryption technology you are unable to reset your password without data loss. Please make sure you remember your password.</source>
-          <target state="new">Due to MEGA’s encryption technology you are unable to reset your password without data loss. Please make sure you remember your password.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message to describe the purpose of the password reminder dialog.</note>
+        <trans-unit id="Resx/AM_TestPassword" translate="yes" space="preserve">
+          <source>Please test your password below to ensure you remember it. If you lose your password, you will lose access to all your data.</source>
+          <target state="translated">Xin thử nhập mật khẩu để kiểm tra rằng mình còn nhớ mật khẩu. Quên mất mật khẩu đồng nghĩa với việc mất toàn quyền truy cập dữ liệu.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message to describe the purpose of the dialog to test the password.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_TestPasswordSuccess" translate="yes" space="preserve">
+          <source>Password accepted, we still recommend you back up your Recovery Key.</source>
+          <target state="translated">Mật khẩu nhập đúng, nhưng nên xuất ra Mã Phục Hồi để đề phòng.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message displayed when the password test result is ok.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_TestPasswordWarning" translate="yes" space="preserve">
+          <source>Wrong password! Backup your Recovery Key as soon as possible!</source>
+          <target state="translated">Mật khẩu không đúng! Nên lưu lại Mã Khóa Phục Hồi ngay!</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Warning message displayed when the password test fails.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_TestPassword_Title" translate="yes" space="preserve">
+          <source>Test Password</source>
+          <target state="translated">Kiểm Tra Mật Khẩu</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the test password dialog.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_RecoveryKeyExported" translate="yes" space="preserve">
+          <source>The Recovery Key has been exported. Please store it in a safe place.</source>
+          <target state="translated">Mã Khóa Phục Hồi đã được xuất ra. Xin lưu giữ mã ở nơi an toàn.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog or notification displayed in cases that the app has succesful exported the recovery key.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_RecoveryKeyExported_Title" translate="yes" space="preserve">
+          <source>Recovery Key exported</source>
+          <target state="translated">Đã xuất Mã Phục Hồi</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog or notification displayed in cases that the app has succesful exported the recovery key.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_RecoveryKeyExportFailed" translate="yes" space="preserve">
+          <source>Failed to export the Recovery Key. Please try again.</source>
+          <target state="translated">Không xuất đuợc Mã Phục Hồi. Xin thử lại sau.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog or notification displayed in cases that the app has not succesful exported the recovery key.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_RecoveryKeyExportFailed_Title" translate="yes" space="preserve">
+          <source>Recovery Key export failed</source>
+          <target state="translated">Lỗi, không xuất đuợc Mã Phục Hồi</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog or notification displayed in cases that the app has not succesful exported the recovery key.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_CloseOtherSessionsQuestionMessage" translate="yes" space="preserve">
+          <source>Do you want to close all other sessions? This will log you out on all other active sessions except the current one.</source>
+          <target state="translated">Thao tác này sẽ đăng xuất tài khoản ra khỏi tất cả các thiết bị đang sử dụng, ngoại trừ phiên hiện hành. Có chắc muốn tiến hành?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed to ask the user to confirm want to close all the other sessions.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_2FA_SetupDialogDescription" translate="yes" space="preserve">
+          <source>Two-factor authentication is a second layer of security for your account. Which means that even if someone knows your password they cannot access it, without also having access to the six digit code only you have access to.</source>
+          <target state="translated">Chức năng xác minh 2-bước là một lớp bảo mật thứ nhì cho tài khoản. Nghĩa là trong trường hợp có người biết mật khẩu để lén vào tài khoản sẽ không thể vào được, và buộc phải nhập thêm đoạn mã 6 chữ số mà chỉ chủ sở hữu tài khoản mới có.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Description text of the dialog displayed to start setup the Two-Factor Authentication</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_2FA_SetupDialogTitle" translate="yes" space="preserve">
+          <source>Why do you need two-factor authentication?</source>
+          <target state="translated">Tại sao cần sử dụng xác thực 2-bước?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed to start setup the Two-Factor Authentication</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_InvalidCode" translate="yes" space="preserve">
+          <source>This code isn’t right, please try again.</source>
+          <target state="translated">Mã không đúng, xin thử lại.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message displayed when the user is trying to insert and invalid code, for example the 6-digit code of the Multi-Factor Authentication.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_2FA_EnabledDialogDescription" translate="yes" space="preserve">
+          <source>Next time you login to your account you will be asked to enter a 6-digit code provided by your Authenticator app.</source>
+          <target state="translated">Next time you login to your account you will be asked to enter a 6-digit code provided by your Authenticator app.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Description text of the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_2FA_EnabledDialogTitle" translate="yes" space="preserve">
+          <source>Two-Factor Authentication Enabled</source>
+          <target state="translated">Xác Minh 2-Bước được Bật</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title text of the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_MFA_SeedCopied" translate="yes" space="preserve">
+          <source>The seed has been copied to your clipboard.</source>
+          <target state="translated">Đoạn chủng tử đã được ghi vào bộ nhớ.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the seed needed to enable the Multi-Factor Authentication has been copied successfully to the clipboard.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_MFA_SeedCopiedFailed" translate="yes" space="preserve">
+          <source>Failed to copy the seed to your clipboard. Please try again.</source>
+          <target state="translated">Ghi nhớ đoạn chủng tử thất bại. Xin thử lại.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed if fails the process to copy the seed needed to enable the Multi-Factor Authentication to the clipboard.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_MFA_SeedCopiedFailed_Title" translate="yes" space="preserve">
+          <source>Seed copy failed</source>
+          <target state="translated">Sao chép đoạn chủng tử thất bại</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed if fails the process to copy the seed needed to enable the Multi-Factor Authentication to the clipboard.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_MFA_SeedCopied_Title" translate="yes" space="preserve">
+          <source>Seed copied</source>
+          <target state="translated">Đoạn chủng tử đã được ghi nhớ</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the seed needed to enable the Multi-Factor Authentication has been copied successfully to the clipboard.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_2FA_InputAppCodeDialogMessage" translate="yes" space="preserve">
+          <source>Please enter the code generated by your authentication app</source>
+          <target state="translated">Xin điền vào đoạn mã số hiện ra trên app lập xác thực</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Description text of the dialog displayed to introduce the 6-digit code for the MFA.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_2FA_DisableDialogTitle" translate="yes" space="preserve">
+          <source>Disable Two-Factor Authentication</source>
+          <target state="translated">Tắt Xác Minh 2-Bước</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed to disable the Two-Factor Authentication.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_2FA_EnabledDialogRecommendation" translate="yes" space="preserve">
+          <source>If you lose access to your account after enabling 2FA and you have not backed up your Recovery Key, MEGA can’t help you gain access to it again.
+Ensure you back up your recovery key.</source>
+          <target state="translated">MEGA sẽ không thể giúp phục hồi tài khoản nếu chủ tài khoản để mất Mã Khoá Phục Hồi, và có chức năng XM2B được bật.
+Xin luôn kiểm tra và đảm bảo mã phục hồi đã được lưu giữ kỹ càng.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Text recommending export the Recovery Key in the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication. KEEP the multi-line format.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_2FA_DisabledDialogTitle" translate="yes" space="preserve">
+          <source>Two-Factor Authentication Disabled</source>
+          <target state="translated">Xác Minh 2-Bước Đã Tắt</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title text of the dialog displayed to indicate that the user has successfully disabled the Two-Factor Authentication.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_RestoreFromRubbishBinFailed" translate="yes" space="preserve">
+          <source>Failed to restore ‘{0}’ from rubbish bin. Please try again.</source>
+          <target state="translated">Việc phục hồi mục ‘{0}’ từ thùng rác bị thất bại. Xin thử lại.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to restore a node to the rubbish bin failed.
+Preserve the '{0}' code because is for include the file/folder name in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_RestoreFromRubbishBinFailed_Title" translate="yes" space="preserve">
+          <source>Restore from rubbish bin failed</source>
+          <target state="translated">Phục hồi từ thùng rác thất bại</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to restore nodes from the rubbish bin failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_RestoreMultiFromRubbishBinFailed" translate="yes" space="preserve">
+          <source>Failed to restore items from rubbish bin. Please try again.</source>
+          <target state="translated">Việc phục hồi các mục từ thùng rác bị thất bại. Xin thử lại.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to restore multiple nodes from the rubbish bin failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_MFA_CheckStatusFailed" translate="yes" space="preserve">
+          <source>Failed to check the status of two factor authentication.</source>
+          <target state="needs-review-translation">Không kiểm tra được tình trạng của chức năng xác minh 2-bước.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed if fails the process to check the Multi-Factor Authentication status.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_FolderAlreadyExists" translate="yes" xml:space="preserve">
+          <source>There is already a folder with the same name</source>
+          <target state="new">There is already a folder with the same name</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message which is shown when a folder name is duplicated during renaming or creation.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_FileAlreadyExists" translate="yes" xml:space="preserve">
+          <source>There is already a file with the same name</source>
+          <target state="new">There is already a file with the same name</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message which shows when a file name is duplicated during renaming.</note>
         </trans-unit>
       </group>
     </body>

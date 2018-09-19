@@ -1,17 +1,13 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using Microsoft.Phone.Shell;
 using mega;
-using MegaApp.Converters;
 using MegaApp.Enums;
 using Telerik.Windows.Controls;
 
@@ -67,6 +63,27 @@ namespace MegaApp.Services
                 _folderViewMode.Add(folderBase64Handle, (int)viewMode);
         }
 
+        /// <summary>
+        /// Invoke the code/action on the UI Thread. If not on UI thread, dispatch to UI with the Dispatcher
+        /// </summary>
+        /// <param name="action">Action to invoke on the user interface thread</param>
+        public static void OnUiThread(Action action)
+        {
+            // If no action then do nothing and return
+            if (action == null) return;
+
+            if (Deployment.Current.Dispatcher.CheckAccess())
+            {
+                // We are already on UI thread. Just invoke the action
+                action.Invoke();
+            }
+            else
+            {
+                // We are on a background thread. Dispatch the action to the UI thread
+                Deployment.Current.Dispatcher.BeginInvoke(action);
+            }
+        }
+
         public static RadCustomHubTile CreateHubTile(string title, Uri bitmapUri, Thickness margin)
         {
             var bitmapImage = new BitmapImage()
@@ -84,7 +101,7 @@ namespace MegaApp.Services
                 {
                     //HorizontalAlignment = HorizontalAlignment.Stretch,
                     //VerticalAlignment = VerticalAlignment.Stretch,
-                    Background = (SolidColorBrush) Application.Current.Resources["MegaRedSolidColorBrush"],
+                    Background = (SolidColorBrush) Application.Current.Resources["MegaRedColorBrush"],
                     Children =
                     {
                         new Image()

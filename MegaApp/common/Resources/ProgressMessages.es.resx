@@ -225,11 +225,6 @@
     <value>Obteniendo datos de contacto...</value>
     <comment>Progress indicator message when getting contact details - (String as short as possible).</comment>
   </data>
-  <data name="FetchingNodes" xml:space="preserve">
-    <value>Cargando archivos y carpetas... [{0}]</value>
-    <comment>Progress indicator message when loading nodes from MEGA web service - (String as short as possible).
-Preserve the [{0}] code because is for include current number of fetched nodes.</comment>
-  </data>
   <data name="FastLogin" xml:space="preserve">
     <value>Reanudando sesión...</value>
     <comment>Progress indicator message when resuming a session - (String as short as possible).</comment>
@@ -330,5 +325,9 @@ Preserve the '{0}' code because is for include node name.</comment>
   <data name="PM_ServersBusy" xml:space="preserve">
     <value>Servidores ocupados. Por favor, espera.</value>
     <comment>Progress indicator message when servers are too busy. SDK is waiting for the server to complete a request due to a HTTP error 500  - (String as short as possible).</comment>
+  </data>
+  <data name="PM_Restoring" xml:space="preserve">
+    <value>Restaurando...</value>
+    <comment>Progress indicator message when restoring node(s) from the rubbish bin - (String as short as possible).</comment>
   </data>
 </root>

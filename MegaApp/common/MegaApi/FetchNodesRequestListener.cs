@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
-using System.Windows.Threading;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
@@ -50,7 +46,7 @@ namespace MegaApp.MegaApi
 
         protected override string ProgressMessage
         {
-            get { return ProgressMessages.FetchingNodes; }
+            get { return ProgressMessages.PM_FetchNodes; }
         }
 
         protected override bool ShowProgressMessage
@@ -121,7 +117,7 @@ namespace MegaApp.MegaApi
             // If is required show the password reminder dialog on background thread
             Task.Run(async () =>
             {
-                if (await AccountService.ShouldShowPasswordReminderDialogAsync())
+                if (await AccountService.ShouldShowPasswordReminderDialogAsync(false))
                     Deployment.Current.Dispatcher.BeginInvoke(() => DialogService.ShowPasswordReminderDialog(false));
             });
 
@@ -393,13 +389,12 @@ namespace MegaApp.MegaApi
 
         public override void onRequestStart(MegaSDK api, MRequest request)
         {
+            base.onRequestStart(api, request);
+
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
                 // Disable MainPage appbar buttons
-                if (_mainPageViewModel != null) _mainPageViewModel.SetCommandStatus(false);                
-
-                ProgressService.SetProgressIndicator(true,
-                   String.Format(ProgressMessages.FetchingNodes, request.getTransferredBytes().ToStringAndSuffix(2)));
+                if (_mainPageViewModel != null) _mainPageViewModel.SetCommandStatus(false);
             });
         }
 
@@ -417,25 +412,31 @@ namespace MegaApp.MegaApi
 
         public override void onRequestUpdate(MegaSDK api, MRequest request)
         {
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            base.onRequestUpdate(api, request);
+
+            if (request.getType() != MRequestType.TYPE_FETCH_NODES) return;
+
+            if (request.getTotalBytes() > 0)
             {
-                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["PhoneChromeColor"]);
-                ProgressService.SetProgressIndicator(true, String.Format(ProgressMessages.FetchingNodes,
-                    request.getTransferredBytes().ToStringAndSuffix(2)));
-            });
-            
+                double progressValue = 100.0 * request.getTransferredBytes() / request.getTotalBytes();
+                if ((progressValue > 99) || (progressValue < 0))
+                {
+                    UiService.OnUiThread(() =>
+                        ProgressService.SetProgressIndicator(true, ProgressMessages.PM_DecryptNodes));
+                }
+            }
+
             if (AppMemoryController.IsThresholdExceeded(75UL.FromMBToBytes()))
             {
-                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                UiService.OnUiThread(() =>
                 {
                     new CustomMessageDialog(
-                            AppMessages.MemoryLimitError_Title,
-                            AppMessages.MemoryLimitError,
-                            App.AppInformation,
-                            MessageDialogButtons.Ok).ShowDialog();
+                        AppMessages.MemoryLimitError_Title,
+                        AppMessages.MemoryLimitError,
+                        App.AppInformation,
+                        MessageDialogButtons.Ok).ShowDialog();
                     Application.Current.Terminate();
                 });
-
             }
         }
 

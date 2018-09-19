@@ -142,11 +142,6 @@ Preserve the '{0}' code because is for include node name.</comment>
     <value>세션 계속하는 중...</value>
     <comment>Progress indicator message when resuming a session - (String as short as possible).</comment>
   </data>
-  <data name="FetchingNodes" xml:space="preserve">
-    <value>파일과 폴더 받아오는 중... [{0}]</value>
-    <comment>Progress indicator message when loading nodes from MEGA web service - (String as short as possible).
-Preserve the [{0}] code because is for include current number of fetched nodes.</comment>
-  </data>
   <data name="GetAccountDetails" xml:space="preserve">
     <value>계정 상세 정보 얻는 중...</value>
     <comment>Progress indicator message when getting account details - (String as short as possible).</comment>
@@ -272,7 +267,7 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when creating a MEGA account - (String as short as possible).</comment>
   </data>
   <data name="PM_CreateFolder" xml:space="preserve">
-    <value>Creating folder…</value>
+    <value>폴더 생성중...</value>
     <comment>Progress indicator message when creating a folder - (String as short as possible).</comment>
   </data>
   <data name="PM_GetLink" xml:space="preserve">
@@ -330,5 +325,9 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
   <data name="PM_ServersBusy" xml:space="preserve">
     <value>서버가 너무 바쁩니다. 잠시 기다리세요.</value>
     <comment>Progress indicator message when servers are too busy. SDK is waiting for the server to complete a request due to a HTTP error 500  - (String as short as possible).</comment>
+  </data>
+  <data name="PM_Restoring" xml:space="preserve">
+    <value>복원중...</value>
+    <comment>Progress indicator message when restoring node(s) from the rubbish bin - (String as short as possible).</comment>
   </data>
 </root>

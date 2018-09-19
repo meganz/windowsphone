@@ -75,14 +75,14 @@ namespace MegaApp.Dialogs
             this.errorMessage = new TextBlock()
             {
                 Margin = new Thickness(0, 8, 0, 16),
-                Foreground = (Brush)Application.Current.Resources["MegaRedSolidColorBrush"],
+                Foreground = (Brush)Application.Current.Resources["MegaRedColorBrush"],
                 Text = string.Empty,
                 TextWrapping = TextWrapping.Wrap
             };
             contentStackPanel.Children.Add(this.errorMessage);
 
             this.MainGrid.Children.Add(contentStackPanel);
-            Grid.SetRow(contentStackPanel, 1);
+            Grid.SetRow(contentStackPanel, 2);
 
             var buttonStackPanel = new StackPanel()
             {
@@ -117,7 +117,7 @@ namespace MegaApp.Dialogs
             buttonStackPanel.Children.Add(this.dismissButton);
 
             this.MainGrid.Children.Add(buttonStackPanel);
-            Grid.SetRow(buttonStackPanel, 2);
+            Grid.SetRow(buttonStackPanel, 3);
         }
 
         #region Commands

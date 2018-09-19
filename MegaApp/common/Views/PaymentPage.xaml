@@ -37,7 +37,7 @@
 			<!--TitlePanel contiene el nombre de la aplicación y el título de la página-->
 			<StackPanel Grid.Row="0" Margin="12,17,0,28">
                 <TextBlock x:Name="PageTitle" Text="{Binding LocalizedUiResources.SelectedPlan, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToUpperCaseConverter}}" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0,0,12" FontWeight="Bold"/>
-                <TextBlock x:Name="PageSubtitle" Text="{Binding LocalizedUiResources.ChooseRenewalPeriod, Source={StaticResource LocalizedStrings}}" Foreground="{StaticResource MegaRedSolidColorBrush}" Style="{StaticResource PhoneTextNormalStyle}"/>
+                <TextBlock x:Name="PageSubtitle" Text="{Binding LocalizedUiResources.ChooseRenewalPeriod, Source={StaticResource LocalizedStrings}}" Foreground="{StaticResource MegaRedColorBrush}" Style="{StaticResource PhoneTextNormalStyle}"/>
 			</StackPanel>
             
             <!--ContentPanel. Colocar aquí el contenido adicional-->
@@ -150,7 +150,7 @@
                             </Grid>
                         </Border>
                         <StackPanel Margin="0,17,0,28">
-                            <RichTextBox Foreground="{StaticResource MegaRedSolidColorBrush}" TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeSmall}" Margin="-12,0,12,12">
+                            <RichTextBox Foreground="{StaticResource MegaRedColorBrush}" TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeSmall}" Margin="-12,0,12,12">
                                 <Paragraph>
                                     <Run Text="*"/>
                                     <Run Text="{Binding LocalizedUiResources.Get2MonthsFree, Source={StaticResource LocalizedStrings}}"/>

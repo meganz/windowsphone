@@ -5,7 +5,10 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Shapes;
 using Telerik.Windows.Controls;
+using MegaApp.Extensions;
+using MegaApp.Resources;
 using MegaApp.Services;
 using MegaApp.ViewModels;
 
@@ -13,7 +16,7 @@ namespace MegaApp.Dialogs
 {
     public abstract class MegaDialog : RadModalWindow
     {
-        public MegaDialog(string title)
+        public MegaDialog(string title = null)
             : base()
         {
             this.CloseCommand = new DelegateCommand(this.CloseDialog);
@@ -38,23 +41,42 @@ namespace MegaApp.Dialogs
                 Width = Double.NaN,
                 RowDefinitions =
                 {
-                    new RowDefinition() { Height = GridLength.Auto }, // Title row
-                    new RowDefinition() { Height = GridLength.Auto }, // Content row
-                    new RowDefinition() { Height = GridLength.Auto }, // Buttons row
+                    new RowDefinition() { Height = new GridLength(1, GridUnitType.Auto) }, // Logo row
+                    new RowDefinition() { Height = new GridLength(1, GridUnitType.Auto) }, // Title row
+                    new RowDefinition() { Height = new GridLength(1, GridUnitType.Star) }, // Content row
+                    new RowDefinition() { Height = new GridLength(1, GridUnitType.Auto) }, // Buttons row
                 }
             };
 
-            this.Title = new TextBlock()
+            var iconPath = new Path()
             {
-                Text = title.ToUpper(),
-                FontFamily = new FontFamily("Segoe WP Semibold"),
-                FontSize = Convert.ToDouble(Application.Current.Resources["PhoneFontSizeMedium"]),
-                Margin = new Thickness(20, 12, 20, 20),
-                TextWrapping = TextWrapping.Wrap
+                Height = 24,
+                Width = 24,
+                Stretch = Stretch.Uniform,
+                HorizontalAlignment = HorizontalAlignment.Left,
+                VerticalAlignment = VerticalAlignment.Center,
+                Margin = new Thickness(20, 20, 0, 24),
+                Fill = new SolidColorBrush((Color)Application.Current.Resources["PhoneForegroundColor"])
             };
+            iconPath.SetDataBinding(VisualResources.MEGAIconPathData);
 
-            this.MainGrid.Children.Add(this.Title);
-            Grid.SetRow(this.Title, 0);
+            this.MainGrid.Children.Add(iconPath);
+            Grid.SetRow(iconPath, 0);
+
+            if (!string.IsNullOrWhiteSpace(title))
+            {
+                this.Title = new TextBlock()
+                {
+                    Text = title.ToUpper(),
+                    FontFamily = new FontFamily("Segoe WP Semibold"),
+                    FontSize = Convert.ToDouble(Application.Current.Resources["PhoneFontSizeMedium"]),
+                    Margin = new Thickness(20, 0, 20, 20),
+                    TextWrapping = TextWrapping.Wrap
+                };
+
+                this.MainGrid.Children.Add(this.Title);
+                Grid.SetRow(this.Title, 1);
+            }
 
             this.Content = this.MainGrid;
         }
@@ -68,7 +90,12 @@ namespace MegaApp.Dialogs
 
         #region Properties
 
-        private TaskCompletionSource<bool> _taskCompletionSource;
+        /// <summary>
+        /// Property to store the result of the dialog action.
+        /// </summary>
+        protected bool DialogResult;
+
+        private TaskCompletionSource<bool> taskCompletionSource;
 
         #endregion
 
@@ -99,13 +126,13 @@ namespace MegaApp.Dialogs
         public Task<bool> ShowDialogAsync()
         {
             // Needed to make a awaitable task
-            _taskCompletionSource = new TaskCompletionSource<bool>();
+            taskCompletionSource = new TaskCompletionSource<bool>();
 
             // Invoke the main dialog method
             ShowDialog();
 
             // Return awaitable task
-            return _taskCompletionSource.Task;
+            return taskCompletionSource.Task;
         }
         
         /// <summary>
@@ -132,6 +159,9 @@ namespace MegaApp.Dialogs
 
         protected void DialogClosed()
         {
+            if (this.taskCompletionSource != null)
+                this.taskCompletionSource.TrySetResult(this.DialogResult);
+
             // When the dialog is closed and finished remove this helper property
             App.AppInformation.PickerOrAsyncDialogIsOpen = false;
         }

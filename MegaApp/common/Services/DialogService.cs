@@ -26,6 +26,17 @@ namespace MegaApp.Services
 {
     static class DialogService
     {
+        #region Properties
+
+        /// <summary>
+        /// Instance of the MFA code input dialog displayed
+        /// </summary>
+        private static MultiFactorAuthCodeInputDialog MultiFactorAuthCodeInputDialogInstance;
+
+        #endregion
+
+        #region Methods
+
         /// <summary>
         /// Shows a dialog to allow copy a node link to the clipboard or share it using other app
         /// </summary>
@@ -1133,7 +1144,7 @@ namespace MegaApp.Services
             feedbackRadWindow.IsOpen = true;
         }
 
-        private static async void ShowCancelSubscriptionDialog(string reason)
+        private static void ShowCancelSubscriptionDialog(string reason)
         {
             var customMessageDialog = new CustomMessageDialog(AppMessages.CancelSubscription_Title,
                 AppMessages.AM_CancelSubscriptionConfirmation, App.AppInformation, MessageDialogButtons.YesNo);
@@ -1146,328 +1157,23 @@ namespace MegaApp.Services
             customMessageDialog.ShowDialog();
         }
 
-        public static void ShowPinLockDialog(bool isChange, SettingsViewModel settingsViewModel)
+        /// <summary>
+        /// Show a dialog to set or change the PIN lock code.
+        /// </summary>
+        /// <param name="isChange">True if is to change the PIN lock code or false in other case.</param>
+        public static async Task<bool> ShowPinLockDialog(bool isChange)
         {
-            var pinLockRadWindow = new RadModalWindow()
-            {
-                IsFullScreen = true,
-                Background = new SolidColorBrush(Color.FromArgb(255, 0, 0, 0)),
-                WindowSizeMode = WindowSizeMode.FitToPlacementTarget,
-                HorizontalContentAlignment = HorizontalAlignment.Stretch,
-                VerticalContentAlignment = VerticalAlignment.Stretch,
-                IsAnimationEnabled = true,
-                OpenAnimation = AnimationService.GetOpenDialogAnimation(),
-                CloseAnimation = AnimationService.GetCloseDialogAnimation()
-            };
-
-            pinLockRadWindow.WindowOpening += (sender, args) => DialogOpening(args);
-            pinLockRadWindow.WindowClosed += (sender, args) => DialogClosed();
-
-            var pinLockStackPanel = new StackPanel()
-            {
-                Orientation = Orientation.Vertical,
-                Width = Double.NaN,
-                HorizontalAlignment = HorizontalAlignment.Stretch,
-                VerticalAlignment = VerticalAlignment.Top,
-                Margin = new Thickness(12),
-                Background = new SolidColorBrush((Color)Application.Current.Resources["PhoneChromeColor"])
-            };
-
-            var pinLockButtonsGrid = new Grid()
-            {
-                Width = Double.NaN,
-                HorizontalAlignment = HorizontalAlignment.Stretch,
-                VerticalAlignment = VerticalAlignment.Bottom,
-                Background = new SolidColorBrush((Color)Application.Current.Resources["PhoneChromeColor"])
-            };
-            pinLockButtonsGrid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
-            pinLockButtonsGrid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
-
-
-            var titleLabel = new TextBlock()
-            {
-                Margin = new Thickness(12),
-                FontFamily = new FontFamily("Segoe WP Semibold"),
-                FontSize = Convert.ToDouble(Application.Current.Resources["PhoneFontSizeLarge"])
-            };
-            pinLockStackPanel.Children.Add(titleLabel);
-            
-            NumericPasswordBox currentPinLock = null;
-
-            if (isChange)
-            {
-                titleLabel.Text = UiResources.ChangePinLock.ToUpper();
-                currentPinLock = new NumericPasswordBox()
-                {
-                    Watermark = UiResources.UI_PinLock.ToLower(),
-                    ClearButtonVisibility = Visibility.Visible
-                };
-                pinLockStackPanel.Children.Add(currentPinLock);
-            }
-            else
-            {
-                titleLabel.Text = UiResources.MakePinLock.ToUpper();
-            }
-
-            var pinLock = new NumericPasswordBox()
-            {
-                Watermark = UiResources.UI_NewPinLock.ToLower(),
-                ClearButtonVisibility = Visibility.Visible
-            };
-
-
-            var confirmPinLock = new NumericPasswordBox()
-            {
-                Watermark = UiResources.UI_ConfirmPinLock.ToLower(),
-                ClearButtonVisibility = Visibility.Visible
-            };
-
-            var confirmButton = new Button()
-            {
-                Content = UiResources.Done.ToLower(),
-                HorizontalAlignment = HorizontalAlignment.Stretch,
-            };
-            confirmButton.Tap += (sender, args) =>
-            {
-                if (isChange)
-                {
-                    if (currentPinLock != null)
-                    {
-                        string hashValue = CryptoService.HashData(currentPinLock.Password);
-
-                        if (!hashValue.Equals(SettingsService.LoadSetting<string>(SettingsResources.UserPinLock)))
-                        {
-                            new CustomMessageDialog(
-                                    AppMessages.CurrentPinLockCodeDoNotMatch_Title,
-                                    AppMessages.CurrentPinLockCodeDoNotMatch,
-                                    App.AppInformation,
-                                    MessageDialogButtons.Ok).ShowDialog();
-                            return;
-                        }
-                    }
-
-                }
-
-                if (pinLock.Password.Length < 4)
-                {
-                    new CustomMessageDialog(
-                            AppMessages.PinLockTooShort_Title,
-                            AppMessages.PinLockTooShort,
-                            App.AppInformation,
-                            MessageDialogButtons.Ok).ShowDialog();
-                    return;
-                }
-
-                if (!pinLock.Password.Equals(confirmPinLock.Password))
-                {
-                    new CustomMessageDialog(
-                            AppMessages.PinLockCodesDoNotMatch_Title,
-                            AppMessages.PinLockCodesDoNotMatch,
-                            App.AppInformation,
-                            MessageDialogButtons.Ok).ShowDialog();
-                    return;
-                }
-               
-                SettingsService.SaveSetting(SettingsResources.UserPinLock, CryptoService.HashData(pinLock.Password));
-                SettingsService.SaveSetting(SettingsResources.UserPinLockIsEnabled, true);
-
-                App.AppInformation.HasPinLockIntroduced = true;
-
-                pinLockRadWindow.IsOpen = false;
-            };
-
-            var cancelButton = new Button()
-            {
-                Content = UiResources.Cancel.ToLower(),
-                HorizontalAlignment = HorizontalAlignment.Stretch,
-            };
-            cancelButton.Tap += (sender, args) =>
-            {
-                if (!isChange)
-                {
-                    settingsViewModel.PinLockIsEnabled = false;                    
-                }
-                pinLockRadWindow.IsOpen = false;
-            };
-
-
-            pinLockStackPanel.Children.Add(pinLock);
-            pinLockStackPanel.Children.Add(confirmPinLock);
-
-            pinLockButtonsGrid.Children.Add(confirmButton);
-            pinLockButtonsGrid.Children.Add(cancelButton);
-            Grid.SetColumn(confirmButton, 0);
-            Grid.SetColumn(cancelButton, 1);
-
-            var grid = new Grid()
-            {
-                Width = Double.NaN,
-                HorizontalAlignment = HorizontalAlignment.Stretch,
-                VerticalAlignment = VerticalAlignment.Stretch,
-                Background = new SolidColorBrush((Color)Application.Current.Resources["PhoneChromeColor"])
-            };
-
-            grid.Children.Add(pinLockStackPanel);
-            grid.Children.Add(pinLockButtonsGrid);
-
-            pinLockRadWindow.Content = grid;
-      
-            pinLockRadWindow.IsOpen = true;
+            var pinLockDialog = new PinLockDialog(isChange);
+            return await pinLockDialog.ShowDialogAsync();
         }
 
-        public static void ShowChangePasswordDialog()
+        /// <summary>
+        /// Show a dialog to change the account password
+        /// </summary>
+        public static async void ShowChangePasswordDialog()
         {
-            var changePasswordRadWindow = new RadModalWindow()
-            {
-                IsFullScreen = true,
-                Background = new SolidColorBrush(Color.FromArgb(255, 0, 0, 0)),
-                WindowSizeMode = WindowSizeMode.FitToPlacementTarget,
-                HorizontalContentAlignment = HorizontalAlignment.Stretch,
-                VerticalContentAlignment = VerticalAlignment.Stretch,
-                IsAnimationEnabled = true,
-                OpenAnimation = AnimationService.GetOpenDialogAnimation(),
-                CloseAnimation = AnimationService.GetCloseDialogAnimation()
-            };
-
-            changePasswordRadWindow.WindowOpening += (sender, args) => DialogOpening(args);
-            changePasswordRadWindow.WindowClosed += (sender, args) => DialogClosed();
-
-            var passwordStackPanel = new StackPanel()
-            {
-                Orientation = Orientation.Vertical,
-                Width = Double.NaN,
-                HorizontalAlignment = HorizontalAlignment.Stretch,
-                VerticalAlignment = VerticalAlignment.Top,
-                Margin = new Thickness(12),
-                Background = new SolidColorBrush((Color)Application.Current.Resources["PhoneChromeColor"])
-            };
-
-            var passwordButtonsGrid = new Grid()
-            {
-                Width = Double.NaN,
-                HorizontalAlignment = HorizontalAlignment.Stretch,
-                VerticalAlignment = VerticalAlignment.Bottom,
-                Background = new SolidColorBrush((Color)Application.Current.Resources["PhoneChromeColor"])
-            };
-            passwordButtonsGrid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
-            passwordButtonsGrid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
-
-
-            var titleLabel = new TextBlock()
-            {
-                Text = UiResources.UI_ChangePassword.ToUpper(),
-                Margin = new Thickness(12),
-                FontFamily = new FontFamily("Segoe WP Semibold"),
-                FontSize = Convert.ToDouble(Application.Current.Resources["PhoneFontSizeLarge"])                
-            };
-            passwordStackPanel.Children.Add(titleLabel);
-
-            var passwordStrengthIndicator = new PasswordStrengthIndicator()
-            {
-                Height = 4,
-                Margin = new Thickness(12, 0, 12, 0),
-                IndicatorBackground = (Brush)Application.Current.Resources["PhoneInactiveBrush"],
-                IndicatorForeground = (Brush)Application.Current.Resources["MegaRedSolidColorBrush"]
-            };
-            passwordStrengthIndicator.IndicatorsOpacity.Add(0.4);
-            passwordStrengthIndicator.IndicatorsOpacity.Add(0.6);
-            passwordStrengthIndicator.IndicatorsOpacity.Add(0.8);
-            passwordStrengthIndicator.IndicatorsOpacity.Add(1.0);
-            
-            var newPassword = new RadPasswordBox()
-            {
-                Watermark = UiResources.UI_NewPassword.ToLower(),
-                ClearButtonVisibility = Visibility.Visible
-            };
-            newPassword.PasswordChanged += (sender, args) =>
-            {
-                passwordStrengthIndicator.Value =
-                    ValidationService.CalculatePasswordStrength(newPassword.Password);
-            };
-            passwordStackPanel.Children.Add(newPassword);
-
-            passwordStackPanel.Children.Add(passwordStrengthIndicator);
-
-            var confirmPassword = new RadPasswordBox()
-            {
-                Watermark = UiResources.UI_ConfirmPassword.ToLower(),
-                ClearButtonVisibility = Visibility.Visible
-            };
-            passwordStackPanel.Children.Add(confirmPassword);
-
-            var warningMessage = new TextBlock()
-            {
-                Margin = new Thickness(12,0,12,0),
-                Foreground = (Brush)Application.Current.Resources["MegaRedSolidColorBrush"],
-                Text = string.Empty,
-                TextWrapping = TextWrapping.Wrap
-            };
-            passwordStackPanel.Children.Add(warningMessage);
-
-            var confirmButton = new Button()
-            {
-                Content = UiResources.Done.ToLower(),
-                HorizontalAlignment = HorizontalAlignment.Stretch,
-            };
-            confirmButton.Tap += (sender, args) =>
-            {
-                warningMessage.Text = string.Empty;
-
-                if (string.IsNullOrWhiteSpace(newPassword.Password) || string.IsNullOrWhiteSpace(confirmPassword.Password))
-                {
-                    warningMessage.Text = AppMessages.AM_EmptyRequiredFields;
-                    return;
-                }
-                
-                // If the new password and the confirmation password don't match
-                if (!newPassword.Password.Equals(confirmPassword.Password))
-                {
-                    warningMessage.Text = AppMessages.PasswordsDoNotMatch;
-                    return;
-                }
-
-                // If the password strength is very weak
-                if (passwordStrengthIndicator.Value == MPasswordStrength.PASSWORD_STRENGTH_VERYWEAK)
-                {
-                    warningMessage.Text = AppMessages.AM_VeryWeakPassword;
-                    return;
-                }
-                
-                SdkService.MegaSdk.changePasswordWithoutOld(
-                    newPassword.Password, new ChangePasswordRequestListener());
-
-                changePasswordRadWindow.IsOpen = false;
-            };
-
-            var cancelButton = new Button()
-            {
-                Content = UiResources.Cancel.ToLower(),
-                HorizontalAlignment = HorizontalAlignment.Stretch,
-            };
-            cancelButton.Tap += (sender, args) =>
-            {
-                changePasswordRadWindow.IsOpen = false;
-            };
-
-            passwordButtonsGrid.Children.Add(confirmButton);
-            passwordButtonsGrid.Children.Add(cancelButton);
-            Grid.SetColumn(confirmButton, 0);
-            Grid.SetColumn(cancelButton, 1);
-
-            var grid = new Grid()
-            {
-                Width = Double.NaN,
-                HorizontalAlignment = HorizontalAlignment.Stretch,
-                VerticalAlignment = VerticalAlignment.Stretch,
-                Background = new SolidColorBrush((Color)Application.Current.Resources["PhoneChromeColor"])
-            };
-
-            grid.Children.Add(passwordStackPanel);
-            grid.Children.Add(passwordButtonsGrid);
-
-            changePasswordRadWindow.Content = grid;
-
-            changePasswordRadWindow.IsOpen = true;
+            var changePasswordDialog = new ChangePasswordDialog();
+            await changePasswordDialog.ShowDialogAsync();
         }
 
         /// <summary>
@@ -1582,5 +1288,96 @@ namespace MegaApp.Services
                 
             }
         }
+
+        /// <summary>
+        /// Show a dialog to setup the Multi-Factor Authentication for the account
+        /// </summary>
+        /// <returns>TRUE if the user continues with the setup process or FALSE in other case</returns>
+        public static async Task<bool> ShowMultiFactorAuthSetupDialogAsync()
+        {
+            var mfaSetupDialog = new MultiFactorAuthSetupDialog();
+            var result = await mfaSetupDialog.ShowDialogAsync();
+            return result;
+        }
+
+        /// <summary>
+        /// Show a dialog to indicate that the user has successfully enabled the Multi-Factor Authentication
+        /// </summary>
+        public static async void ShowMultiFactorAuthEnabledDialog()
+        {
+            var mfaEnabledDialog = new MultiFactorAuthEnabledDialog();
+            await mfaEnabledDialog.ShowDialogAsync();
+        }
+
+        /// <summary>
+        /// Show a dialog to indicate that the user has successfully disabled the Multi-Factor Authentication
+        /// </summary>
+        public static async void ShowMultiFactorAuthDisabledDialog()
+        {
+            var mfaDisabledDialog = new MultiFactorAuthDisabledDialog();
+            await mfaDisabledDialog.ShowDialogAsync();
+        }
+
+        /// <summary>
+        /// Show an input dialog to type the MFA code and execute an action.
+        /// </summary>
+        /// <param name="dialogAction">Action to do by the primary button.</param>
+        /// <param name="title">Custom title of the input dialog.</param>
+        /// <param name="message">Custom message of the input dialog.</param>
+        /// <param name="showLostDeviceLink">Indicates if show the lost device link or not.</param>
+        /// <returns>The dialog action result as <see cref="bool"/> value.</returns>
+        public static async Task<bool> ShowMultiFactorAuthCodeInputDialogAsync(
+            Func<string, bool> dialogAction,
+            string title = null, string message = null, bool showLostDeviceLink = true)
+        {
+            var dialog = MultiFactorAuthCodeInputDialogInstance =
+                new MultiFactorAuthCodeInputDialog(dialogAction, title, message, showLostDeviceLink);
+            return await dialog.ShowDialogAsync();
+        }
+
+        /// <summary>
+        /// Show an input dialog to type the MFA code and execute an async action.
+        /// </summary>
+        /// <param name="dialogActionAsync">Async action to do by the primary button.</param>
+        /// <param name="title">Custom title of the input dialog.</param>
+        /// <param name="message">Custom message of the input dialog.</param>
+        /// <param name="showLostDeviceLink">Indicates if show the lost device link or not.</param>
+        /// <returns>The dialog action result as <see cref="bool"/> value.</returns>
+        public static async Task<bool> ShowAsyncMultiFactorAuthCodeInputDialogAsync(
+            Func<string, Task<bool>> dialogActionAsync,
+            string title = null, string message = null, bool showLostDeviceLink = true)
+        {
+            var dialog = MultiFactorAuthCodeInputDialogInstance =
+                new MultiFactorAuthCodeInputDialog(dialogActionAsync, title, message, showLostDeviceLink);
+            return await dialog.ShowDialogAsync();
+        }
+
+        /// <summary>
+        /// Set the warning message of the MFA code input dialog displayed
+        /// </summary>
+        /// <param name="warningMessage">Text of the warning message</param>
+        public static void SetMultiFactorAuthCodeInputDialogWarningMessage(string warningMessage = null)
+        {
+            if (MultiFactorAuthCodeInputDialogInstance == null) return;
+            MultiFactorAuthCodeInputDialogInstance.WarningMessageText = warningMessage ??
+                AppMessages.AM_InvalidCode;
+            MultiFactorAuthCodeInputDialogInstance.IsWarningMessageVisible = true;
+        }
+
+        /// <summary>
+        /// Close the MFA code input dialog displayed
+        /// </summary>
+        public static void CloseMultiFactorAuthCodeInputDialog()
+        {
+            if (MultiFactorAuthCodeInputDialogInstance == null ||
+                MultiFactorAuthCodeInputDialogInstance.CloseCommand == null ||
+                !MultiFactorAuthCodeInputDialogInstance.CloseCommand.CanExecute(null))
+                return;
+
+            MultiFactorAuthCodeInputDialogInstance.CloseCommand.Execute(null);
+            App.AppInformation.PickerOrAsyncDialogIsOpen = false;
+        }
+
+        #endregion
     }
 }

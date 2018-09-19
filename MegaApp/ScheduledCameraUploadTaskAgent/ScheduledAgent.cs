@@ -5,7 +5,6 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
-using Microsoft.Phone.Info;
 using Microsoft.Phone.Scheduler;
 using Microsoft.Xna.Framework.Media;
 using Windows.Storage;
@@ -56,6 +55,10 @@ namespace ScheduledCameraUploadTaskAgent
         {
             // Initialisation SDK succeeded
             scheduledAgent = this;
+
+            // Set the API to use depending on the settings
+            SdkService.MegaSdk.changeApiUrl(SettingsService.LoadSetting<bool>("{BA40B745-D0F5-4AD5-A539-44B1403A9EB8}", false) ?
+                "https://staging.api.mega.co.nz/" : "https://g.api.mega.co.nz/");
 
             // Log message to indicate that the service is invoked and the last exit reason
             LogService.Log(MLogLevel.LOG_LEVEL_INFO, "Service invoked. Last exit reason: " +  

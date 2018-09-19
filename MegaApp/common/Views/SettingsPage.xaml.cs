@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Windows;
+using System.Windows.Input;
 using System.Windows.Navigation;
 using Telerik.Windows.Controls;
 using GestureEventArgs = System.Windows.Input.GestureEventArgs;
@@ -44,17 +45,28 @@ namespace MegaApp.Views
             base.OnNavigatedTo(e);
 
             var navParam = NavigateService.ProcessQueryString(NavigationContext.QueryString);
-            
-            if (navParam == NavigationParameter.UriLaunch &&
-                NavigationContext.QueryString.ContainsKey("backup"))
-                    _settingsViewModel.ProcessBackupLink();
-
-            if (navParam == NavigationParameter.AutoCameraUpload)
+            switch(navParam)
             {
-                App.AppInformation.IsStartedAsAutoUpload = false;
-                MainSettingsPivot.SelectedItem = PivotAutoUpload;
+                case NavigationParameter.UriLaunch:
+                    if (NavigationContext.QueryString.ContainsKey("backup"))
+                        _settingsViewModel.ProcessBackupLink();
+                    break;
+
+                case NavigationParameter.AutoCameraUpload:
+                    App.AppInformation.IsStartedAsAutoUpload = false;
+                    this.MainPivot.SelectedItem = PivotAutoUpload;
+                    break;
+
+                case NavigationParameter.SecuritySettings:
+                    this.MainPivot.SelectedItem = SecurityPivot;
+                    break;
+
+                case NavigationParameter.MFA_Enabled:
+                    this.MainPivot.SelectedItem = SecurityPivot;
+                    DialogService.ShowMultiFactorAuthEnabledDialog();
+                    break;
             }
-            
+
             DebugPanel.DataContext = DebugService.DebugSettings;
 
             #if WINDOWS_PHONE_81
@@ -80,6 +92,16 @@ namespace MegaApp.Views
         private void OnMyAccountTap(object sender, GestureEventArgs e)
         {
             NavigateService.NavigateTo(typeof(MyAccountPage), NavigationParameter.Normal);
+        }
+
+        private void OnMegaHeaderLogoManipulationStarted(object sender, ManipulationStartedEventArgs e)
+        {
+            SdkService.ChangeApiUrlActionStarted();
+        }
+
+        private void OnMegaHeaderLogoManipulationFinished(object sender, ManipulationCompletedEventArgs e)
+        {
+            SdkService.ChangeApiUrlActionFinished();
         }
 
         private void OnSdkVersionTapped(object sender, GestureEventArgs e)

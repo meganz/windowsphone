@@ -171,6 +171,11 @@ namespace MegaApp.Classes
             DialogWindow.IsOpen = true;
         }
 
+        public void HideDialog()
+        {
+            DialogWindow.IsOpen = false;
+        }
+
         #endregion
 
         #region Virtual Methods

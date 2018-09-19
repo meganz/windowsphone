@@ -26,7 +26,7 @@ namespace MegaApp.ViewModels
             IsFreeAccount = true; // Default value
             IsDataLoaded = false; // Default value
 
-            CacheSize = AppService.GetAppCacheSize();
+            this.GetAppCacheSize();
         }
 
         private bool _isDataLoaded;
@@ -106,12 +106,6 @@ namespace MegaApp.ViewModels
                 _cacheSize = value;
                 OnPropertyChanged("CacheSize");
             }
-        }
-
-        public ulong MaxCache
-        {
-            //get { return 100UL.FromMBToBytes(); }
-            get { return AppService.MaxMemoryUsage(); }
         }
 
         private MAccountType _accountType;
@@ -290,5 +284,17 @@ namespace MegaApp.ViewModels
                 OnPropertyChanged("PurchaseAccountRenewalText");
             }
         }
+
+        #region Methods
+
+        /// <summary>
+        /// Get the size of the app cache
+        /// </summary>
+        public async void GetAppCacheSize()
+        {
+            CacheSize = await AppService.GetAppCacheSizeAsync();
+        }
+
+        #endregion
     }
 }

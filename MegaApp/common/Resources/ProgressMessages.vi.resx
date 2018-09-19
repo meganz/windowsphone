@@ -139,13 +139,8 @@ Preserve the '{0}' code because is for include node name.</comment>
     <comment>Progress indicator message when retieving a download link - (String as short as possible).</comment>
   </data>
   <data name="FastLogin" xml:space="preserve">
-    <value>Đang khôi phục phiên lần trước...</value>
+    <value>Đang khôi phục phiên...</value>
     <comment>Progress indicator message when resuming a session - (String as short as possible).</comment>
-  </data>
-  <data name="FetchingNodes" xml:space="preserve">
-    <value>Đang lấy tệp tin và thư mục... [{0}]</value>
-    <comment>Progress indicator message when loading nodes from MEGA web service - (String as short as possible).
-Preserve the [{0}] code because is for include current number of fetched nodes.</comment>
   </data>
   <data name="GetAccountDetails" xml:space="preserve">
     <value>Đang lấy thông tin tài khoản...</value>
@@ -256,11 +251,11 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when changing the MEGA account password - (String as short as possible).</comment>
   </data>
   <data name="PM_CloseAllSessions" xml:space="preserve">
-    <value>Đang đóng tất cả phiên hoạt động...</value>
+    <value>Đang đóng tất cả phiên...</value>
     <comment>Progress indicator message when clossing all sessions - (String as short as possible).</comment>
   </data>
   <data name="PM_CloseSession" xml:space="preserve">
-    <value>Đang đóng phiên hoạt động...</value>
+    <value>Đang đóng phiên...</value>
     <comment>Progress indicator message when clossing a session - (String as short as possible).</comment>
   </data>
   <data name="PM_ConfirmAccount" xml:space="preserve">
@@ -316,19 +311,23 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when validating purchase receipt - (String as short as possible).</comment>
   </data>
   <data name="PM_ApiLocked" xml:space="preserve">
-    <value>This process is taking longer than expected. Please wait.</value>
+    <value>Quý trình hiện diễn ra lâu hơn dự đoán. Xin chờ.</value>
     <comment>Progress indicator message when the SDK is waiting for the server to complete a request due to an API lock (API error -3) - (String as short as possible).</comment>
   </data>
   <data name="PM_ApiRateLimit" xml:space="preserve">
-    <value>Too many requests. Please wait.</value>
+    <value>Quá nhiều lời yêu cầu. Xin chờ.</value>
     <comment>Progress indicator message when the SDK is waiting for the server to complete a request due to a rate limit (API error -4) - (String as short as possible).</comment>
   </data>
   <data name="PM_ConnectivityIssue" xml:space="preserve">
-    <value>Unable to reach MEGA. Please check your connectivity or try again later.</value>
+    <value>Không liên lạc được tới MEGA. Xin kiểm tra kết nối mạng hoặc thử lại sau.</value>
     <comment>Progress indicator message when the SDK is waiting for the server to complete a request due to connectivity issue - (String as short as possible).</comment>
   </data>
   <data name="PM_ServersBusy" xml:space="preserve">
     <value>Bộ phận máy chủ hiện đang bận. Xin vui lòng chờ.</value>
     <comment>Progress indicator message when servers are too busy. SDK is waiting for the server to complete a request due to a HTTP error 500  - (String as short as possible).</comment>
+  </data>
+  <data name="PM_Restoring" xml:space="preserve">
+    <value>Đang phục hồi…</value>
+    <comment>Progress indicator message when restoring node(s) from the rubbish bin - (String as short as possible).</comment>
   </data>
 </root>

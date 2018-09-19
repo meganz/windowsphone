@@ -98,7 +98,7 @@ namespace MegaApp.Views
                 _loginAndCreateAccountViewModelContainer = new LoginAndCreateAccountViewModelContainer(this);
 
             if (Pivot_LoginAndCreateAccount.SelectedItem == PivotItem_Login)                
-                _loginAndCreateAccountViewModelContainer.LoginViewModel.DoLogin();
+                _loginAndCreateAccountViewModelContainer.LoginViewModel.Login();
             else if (Pivot_LoginAndCreateAccount.SelectedItem == PivotItem_CreateAccount)                
                 _loginAndCreateAccountViewModelContainer.CreateAccountViewModel.CreateAccount();
         }
@@ -113,6 +113,16 @@ namespace MegaApp.Views
             if (e.Key != Key.Enter) return;
             var control = sender as Control;
             if (control != null) control.TabToNextControl((Panel)control.Parent, this);
+        }
+
+        private void OnMegaHeaderLogoManipulationStarted(object sender, ManipulationStartedEventArgs e)
+        {
+            SdkService.ChangeApiUrlActionStarted();
+        }
+
+        private void OnMegaHeaderLogoManipulationFinished(object sender, ManipulationCompletedEventArgs e)
+        {
+            SdkService.ChangeApiUrlActionFinished();
         }
 
         private void OnMegaHeaderLogoTapped(object sender, GestureEventArgs e)

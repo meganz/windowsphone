@@ -1,26 +1,29 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using Microsoft.Phone.Tasks;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
+using MegaApp.MegaApi;
 using MegaApp.Resources;
 using MegaApp.Services;
+using MegaApp.Views;
 
 namespace MegaApp.ViewModels
 {
-    class SettingsViewModel : BaseAppInfoAwareViewModel
+    public class SettingsViewModel : BaseAppInfoAwareViewModel
     {
         public SettingsViewModel(MegaSDK megaSdk, AppInformation appInformation)
             : base(megaSdk, appInformation)
         {
-            this.AppVersion = AppService.GetAppVersion();
-            this.MegaSdkVersion = AppService.GetMegaSDK_Version();
             this.ShareRecoveryKeyCommand = new DelegateCommand(ShareRecoveryKey);
             this.CopyRecoveryKeyCommand = new DelegateCommand(CopyRecoveryKey);
             this.ChangePinLockCommand = new DelegateCommand(ChangePinLock);
             this.ViewRecoveryKeyCommand = new DelegateCommand(ViewRecoveryKey);
+            this.CloseOtherSessionsCommand = new DelegateCommand(CloseOtherSessions);
+            this.ClearCacheCommand = new DelegateCommand(ClearCache);
 
             #if WINDOWS_PHONE_80
             this.SelectDownloadLocationCommand = null;
@@ -38,23 +41,13 @@ namespace MegaApp.ViewModels
             this.DataProtectionRegulationCommand =
                 new DelegateCommand(NavigateToDataProtectionRegulation);
 
-            this.PinLockIsEnabled = SettingsService.LoadSetting<bool>(SettingsResources.UserPinLockIsEnabled, false);
-            
-            // Do not set the property on initialize, because it fill fire the SetAutoCameraUploadStatus
-            _cameraUploadsIsEnabled = MediaService.GetAutoCameraUploadStatus();
-            this.CameraUploadsIsEnabledText = _cameraUploadsIsEnabled ? UiResources.On : UiResources.Off;
-
-            #if WINDOWS_PHONE_80
-            this.ExportIsEnabled = SettingsService.LoadSetting<bool>(SettingsResources.ExportImagesToPhotoAlbum, false);
-            #elif WINDOWS_PHONE_81
-            this.AskDownloadLocationIsEnabled = SettingsService.LoadSetting<bool>(SettingsResources.AskDownloadLocationIsEnabled, false);
-            this.StandardDownloadLocation = SettingsService.LoadSetting<string>(
-                SettingsResources.DefaultDownloadLocation, UiResources.DefaultDownloadLocation);
-            #endif
+            this.Initialize();
 
             UpdateUserData();
 
             InitializeMenu(HamburgerMenuItemType.Settings);
+
+            AccountDetails.GetAppCacheSize();
         }
 
         #region Commands
@@ -72,10 +65,59 @@ namespace MegaApp.ViewModels
         public ICommand TakedownGuidanceCommand { get; private set; }
         public ICommand GeneralCommand { get; private set; }
         public ICommand DataProtectionRegulationCommand { get; private set; }
+        public ICommand CloseOtherSessionsCommand { get; private set; }
+        public ICommand ClearCacheCommand { get; private set; }
 
         #endregion
 
         #region Methods
+
+        private async void Initialize()
+        {
+            this.AppVersion = AppService.GetAppVersion();
+            this.MegaSdkVersion = AppService.GetMegaSDK_Version();
+
+            // Initialize the PIN lock code setting
+            SetField(ref this._isPinLockEnabled, 
+                SettingsService.LoadSetting<bool>(SettingsResources.UserPinLockIsEnabled, false),
+                "IsMultiFactorAuthEnabled");
+
+            // Do not set the property on initialize, because it fill fire the SetAutoCameraUploadStatus
+            _cameraUploadsIsEnabled = MediaService.GetAutoCameraUploadStatus();
+            this.CameraUploadsIsEnabledText = _cameraUploadsIsEnabled ? UiResources.On : UiResources.Off;
+
+            #if WINDOWS_PHONE_80
+            this.ExportIsEnabled = SettingsService.LoadSetting<bool>(SettingsResources.ExportImagesToPhotoAlbum, false);
+            #elif WINDOWS_PHONE_81
+            this.AskDownloadLocationIsEnabled = SettingsService.LoadSetting<bool>(SettingsResources.AskDownloadLocationIsEnabled, false);
+            this.StandardDownloadLocation = SettingsService.LoadSetting<string>(
+                SettingsResources.DefaultDownloadLocation, UiResources.DefaultDownloadLocation);
+            #endif
+
+            this.IsMultiFactorAuthAvailable = SdkService.MegaSdk.multiFactorAuthAvailable();
+            if (this.IsMultiFactorAuthAvailable)
+            {
+                var mfaStatus = await AccountService.CheckMultiFactorAuthStatusAsync();
+                switch (mfaStatus)
+                {
+                    case MultiFactorAuthStatus.Enabled:
+                        SetField(ref this._isMultiFactorAuthEnabled, true, "IsMultiFactorAuthEnabled");
+                        break;
+
+                    case MultiFactorAuthStatus.Disabled:
+                        SetField(ref this._isMultiFactorAuthEnabled, false, "IsMultiFactorAuthEnabled");
+                        break;
+
+                    case MultiFactorAuthStatus.Unknown:
+                        OnUiThread(() =>
+                        {
+                            new CustomMessageDialog(UiResources.UI_Warning, AppMessages.AM_MFA_CheckStatusFailed,
+                                App.AppInformation, MessageDialogButtons.Ok).ShowDialog();
+                        });
+                        break;
+                }
+            }
+        }
 
         private void ShareRecoveryKey(object obj)
         {
@@ -120,9 +162,9 @@ namespace MegaApp.ViewModels
             DialogService.ShowViewRecoveryKey(MegaSdk.exportMasterKey(), CopyClipboard);
         }
 
-        private void ChangePinLock(object obj)
+        private async void ChangePinLock(object obj)
         {
-            DialogService.ShowPinLockDialog(true, this);
+            await DialogService.ShowPinLockDialog(true);
         }
 
         #if WINDOWS_PHONE_81
@@ -181,6 +223,110 @@ namespace MegaApp.ViewModels
             webBrowserTask.Show();
         }
 
+        private async void CloseOtherSessions(object obj)
+        {
+            if (!NetworkService.IsNetworkAvailable(true)) return;
+
+            var result = await new CustomMessageDialog(
+                UiResources.UI_Warning,
+                AppMessages.AM_CloseOtherSessionsQuestionMessage,
+                App.AppInformation,
+                MessageDialogButtons.YesNo).ShowDialogAsync();
+
+            if (result == MessageDialogResult.CancelNo) return;
+
+            this.MegaSdk.killAllSessions(new KillAllSessionsRequestListener());
+        }
+
+        /// <summary>
+        /// Enable the Multi-Factor Authentication
+        /// </summary>
+        /// <returns>TRUE if all is OK or FALSE if something failed</returns>
+        private async Task<bool> EnableMultiFactorAuthAsync()
+        {
+            return await DialogService.ShowMultiFactorAuthSetupDialogAsync();
+        }
+
+        /// <summary>
+        /// Show the dialog to disable the Multi-Factor Authentication
+        /// </summary>
+        /// <returns>TRUE if all is OK or FALSE if something failed</returns>
+        private async Task<bool> ShowDisableMultiFactorAuthDialogAsync()
+        {
+            var result = await DialogService.ShowAsyncMultiFactorAuthCodeInputDialogAsync(
+                this.DisableMultiFactorAuthAsync,
+                AppMessages.AM_2FA_DisableDialogTitle);
+
+            if (result)
+            {
+                DialogService.CloseMultiFactorAuthCodeInputDialog();
+                DialogService.ShowMultiFactorAuthDisabledDialog();
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Disable the Multi-Factor Authentication
+        /// </summary>
+        /// <returns>TRUE if all is OK or FALSE if something failed</returns>
+        private async Task<bool> DisableMultiFactorAuthAsync(string code)
+        {
+            var disableMultiFactorAuth = new MultiFactorAuthDisableRequestListenerAsync();
+            var result = await disableMultiFactorAuth.ExecuteAsync(() =>
+                SdkService.MegaSdk.multiFactorAuthDisable(code, disableMultiFactorAuth));
+
+            if (!result)
+                DialogService.SetMultiFactorAuthCodeInputDialogWarningMessage();
+
+            return result;
+        }
+
+        private async void OnIsMultiFactorAuthEnabledValueChanged()
+        {
+            var value = this.IsMultiFactorAuthEnabled ?
+                await this.EnableMultiFactorAuthAsync() :
+                !await this.ShowDisableMultiFactorAuthDialogAsync();
+            
+            SetField(ref this._isMultiFactorAuthEnabled, value, "IsMultiFactorAuthEnabled");
+        }
+
+        private async void OnIsPinLockEnabledValueChanged()
+        {
+            if (!this.IsPinLockEnabled) return;
+
+            SetField(ref this._isPinLockEnabled,
+                    await DialogService.ShowPinLockDialog(false),
+                    "IsPinLockEnabled");
+
+            OnPropertyChanged("IsPinLockEnabledText");
+        }
+
+        /// Clear the app cache
+        /// </summary>
+        private async void ClearCache(object obj)
+        {
+            string title, message = string.Empty;
+            if (await AppService.ClearAppCacheAsync())
+            {
+                title = AppMessages.CacheCleared_Title;
+                message = AppMessages.CacheCleared;
+            }
+            else
+            {
+                title = AppMessages.AM_ClearCacheFailed_Title;
+                message = AppMessages.AM_ClearCacheFailed;
+            }
+
+            OnUiThread(() =>
+            {
+                new CustomMessageDialog(title, message, App.AppInformation,
+                    MessageDialogButtons.Ok).ShowDialog();
+            });
+
+            AccountDetails.GetAppCacheSize();
+        }
+
         #endregion
 
         #region Properties
@@ -235,27 +381,29 @@ namespace MegaApp.ViewModels
             }
         }
 
-        private bool _pinLockIsEnabled;
-        public bool PinLockIsEnabled
+        private bool _isPinLockEnabled;
+        public bool IsPinLockEnabled
         {
-            get { return _pinLockIsEnabled; }
+            get { return _isPinLockEnabled; }
             set
             {
-                if (_pinLockIsEnabled && !value)
+                if (_isPinLockEnabled && !value)
                 {
                     SettingsService.DeleteSetting(SettingsResources.UserPinLockIsEnabled);
                     SettingsService.DeleteSetting(SettingsResources.UserPinLock);
                 }
 
-                _pinLockIsEnabled = value;
+                if (!SetField(ref _isPinLockEnabled, value))
+                    return;
 
-                PinLockIsEnabledText = _pinLockIsEnabled ? UiResources.On : UiResources.Off;
-
-                if (_pinLockIsEnabled)
-                    DialogService.ShowPinLockDialog(false, this);
-                
-                OnPropertyChanged("PinLockIsEnabled");
+                OnPropertyChanged("IsPinLockEnabledText");
+                OnIsPinLockEnabledValueChanged();                
             }
+        }
+
+        public string IsPinLockEnabledText
+        {
+            get { return IsPinLockEnabled ? UiResources.On : UiResources.Off; }
         }
 
         private string _cameraUploadsIsEnabledText;
@@ -284,17 +432,6 @@ namespace MegaApp.ViewModels
                 _cameraUploadsIsEnabled = MediaService.SetAutoCameraUpload(value);
                 this.CameraUploadsIsEnabledText = _cameraUploadsIsEnabled ? UiResources.On : UiResources.Off;
                 OnPropertyChanged("CameraUploadsIsEnabled");
-            }
-        }
-
-        private string _pinLockIsEnabledText;
-        public string PinLockIsEnabledText
-        {
-            get { return _pinLockIsEnabledText; }
-            set
-            {
-                _pinLockIsEnabledText = value;
-                OnPropertyChanged("PinLockIsEnabledText");
             }
         }
 
@@ -329,6 +466,26 @@ namespace MegaApp.ViewModels
                 _standardDownloadLocation = value;
                 OnPropertyChanged("StandardDownloadLocation");
             }
+        }
+
+        private bool _isMultiFactorAuthEnabled;
+        public bool IsMultiFactorAuthEnabled
+        {
+            get { return _isMultiFactorAuthEnabled; }
+            set
+            {
+                if (!SetField(ref _isMultiFactorAuthEnabled, value))
+                    return;
+
+                OnIsMultiFactorAuthEnabledValueChanged();
+            }
+        }
+
+        private bool _isMultiFactorAuthAvailable;
+        public bool IsMultiFactorAuthAvailable
+        {
+            get { return _isMultiFactorAuthAvailable; }
+            set { SetField(ref _isMultiFactorAuthAvailable, value); }
         }
 
         #endregion

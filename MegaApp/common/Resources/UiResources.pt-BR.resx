@@ -142,11 +142,11 @@
     <comment>Label for any 'Copy' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="EmptyFolder" xml:space="preserve">
-    <value>pasta vazia</value>
+    <value>Pasta vazia</value>
     <comment>Label for the background of an empty forder page - (String as short as possible).</comment>
   </data>
   <data name="EmptyTransfers" xml:space="preserve">
-    <value>Sem transferências</value>
+    <value>Não há transferências</value>
     <comment>Label for the background of an empty transfers page - (String as short as possible).</comment>
   </data>
   <data name="LoadingPreview" xml:space="preserve">
@@ -178,7 +178,7 @@
     <comment>Label for any 'My account' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Next" xml:space="preserve">
-    <value>próximo</value>
+    <value>seguinte</value>
     <comment>Label for any 'Next' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Open" xml:space="preserve">
@@ -230,7 +230,7 @@
     <comment>Label for any 'Folder' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="NoTransfers" xml:space="preserve">
-    <value>Sem transferências</value>
+    <value>Não há transferências</value>
     <comment>Label shown when the app has no information about the transfers to show into 'transfers' page - (String as short as possible).</comment>
   </data>
   <data name="Upload" xml:space="preserve">
@@ -272,10 +272,6 @@
   <data name="On" xml:space="preserve">
     <value>Ativado</value>
     <comment>Label for any 'On' (On/Off) button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
-  <data name="Done" xml:space="preserve">
-    <value>OK</value>
-    <comment>Label for any 'Done' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="HomeRoot" xml:space="preserve">
     <value>Início</value>
@@ -442,7 +438,7 @@
     <comment>Label shown when the app has no information about the user account to show into 'my account' page - (String as short as possible).</comment>
   </data>
   <data name="NoPlansToDisplay" xml:space="preserve">
-    <value>Sem planos disponíveis</value>
+    <value>Não há planos disponíveis</value>
     <comment>Label shown when the app has no information about the subscription plans to show into 'subscription' page - (String as short as possible).</comment>
   </data>
   <data name="OldestSortOption" xml:space="preserve">
@@ -522,7 +518,7 @@
     <comment>Label for any 'Resume' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Start" xml:space="preserve">
-    <value>Começo</value>
+    <value>Começar</value>
     <comment>Label for any 'Start' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="CancelAllTransfers" xml:space="preserve">
@@ -606,7 +602,7 @@
     <comment>Label for any 'Sort' button, link, text, etc. - (String as short as possible).</comment>
   </data>
   <data name="ClearRubbishBin" xml:space="preserve">
-    <value>Limpar Lixeira</value>
+    <value>Lixeira vazia</value>
     <comment>Label for any 'Empty rubbish' button, link, text, etc. - (String as short as possible).</comment>
   </data>
   <data name="Ok" xml:space="preserve">
@@ -618,7 +614,7 @@
     <comment>Label used like title for the "set up camera uploads" page - (String as short as possible)</comment>
   </data>
   <data name="Skip" xml:space="preserve">
-    <value>Avançar</value>
+    <value>Pular</value>
     <comment>Label for any 'Skip' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="WifiAndDataPlan" xml:space="preserve">
@@ -630,7 +626,7 @@
     <comment>Label for the 'Wifi only' option in the 'set up camera uploads' page - (String as short as possible).</comment>
   </data>
   <data name="EnableCameraUploads" xml:space="preserve">
-    <value>Ativar uploads da câmera</value>
+    <value>Ativar Uploads da câmera</value>
     <comment>Label for the switch button to enable or disable the Camera Uploads service - (String as short as possible).</comment>
   </data>
   <data name="Security" xml:space="preserve">
@@ -670,7 +666,7 @@
     <comment>Label for any 'Country' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="CreditCardNumber" xml:space="preserve">
-    <value>Numero de cartão de credito</value>
+    <value>Número do cartão de crédito</value>
     <comment>Label for any 'Credit Card Number' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="CreditCardRecurringPayments" xml:space="preserve">
@@ -682,7 +678,7 @@
     <comment>Label for the 'CVV' text when register a credit card - (String as short as possible).</comment>
   </data>
   <data name="EnterPaymentDetails" xml:space="preserve">
-    <value>Insira os detalhes de pagamento abaixo</value>
+    <value>Digite as informações do pagamento abaixo</value>
     <comment>Label to indicate the user that is needed to type his payment data details for upgrade his account.</comment>
   </data>
   <data name="ExpiresOn" xml:space="preserve">
@@ -751,7 +747,7 @@ Preserve the {0} code because is for include the name/type of the selected plan 
     <comment>Label for any 'Year' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="RenewsOn" xml:space="preserve">
-    <value>renove em</value>
+    <value>Renova em</value>
     <comment>Label for the 'Renews on' text into the my account page, indicating the renewal date of a subscription - (String as short as possible).</comment>
   </data>
   <data name="AccountPurchased" xml:space="preserve">
@@ -981,11 +977,11 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for the auto camera upload service restrictions.</comment>
   </data>
   <data name="SavedForOffline" xml:space="preserve">
-    <value>Salvo para uso offline</value>
+    <value>Offline</value>
     <comment>Label for any 'Saved for offline' button, link, text, title, etc. - (String as short as possible, LESS THAN 22 CHARS).</comment>
   </data>
   <data name="EmptyCloudDrive" xml:space="preserve">
-    <value>Não há arquivos na sua Nuvem de arquivos</value>
+    <value>Não há arquivos na sua nuvem</value>
     <comment>Label for the background of an empty cloud drive page - (String as short as possible).</comment>
   </data>
   <data name="EmptyOffline" xml:space="preserve">
@@ -993,7 +989,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for the background of an empty transfers page - (String as short as possible).</comment>
   </data>
   <data name="EmptyRubbishBin" xml:space="preserve">
-    <value>Limpar Lixeira</value>
+    <value>Lixeira vazia</value>
     <comment>Label for the background of an empty rubbish bin page - (String as short as possible).</comment>
   </data>
   <data name="EmptySharedFolders" xml:space="preserve">
@@ -1049,12 +1045,8 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Change password' button, menu, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_CancelSubscription" xml:space="preserve">
-    <value>cancelar assinatura</value>
+    <value>Cancelar assinatura</value>
     <comment>Label for any 'Cancel subscription' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
-  <data name="UI_CloseAllSessions" xml:space="preserve">
-    <value>Feche todas as sessões</value>
-    <comment>Label for any 'Close all sessions' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_CloseSession" xml:space="preserve">
     <value>Fechar sessão</value>
@@ -1137,7 +1129,7 @@ NOTE: Keep the capital letter if possible.</comment>
 NOTE: Keep the capital letter if possible.</comment>
   </data>
   <data name="UI_Modified" xml:space="preserve">
-    <value>Modificado</value>
+    <value>Modificação</value>
     <comment>Label for any 'Modified' button, link, text, title, etc. - (String as short as possible).
 NOTE: Keep the capital letter if possible.</comment>
   </data>
@@ -1237,7 +1229,7 @@ Keep the code {1} because is for include currency in runtime.</comment>
     <comment>Label for any 'Completed' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_NoCompletedTransfers" xml:space="preserve">
-    <value>Sem transferências concluídas</value>
+    <value>Não há transferências concluídas</value>
     <comment>Label for the background of an empty completed transfers page - (String as short as possible).</comment>
   </data>
   <data name="UI_AgreeTermsOfService" xml:space="preserve">
@@ -1318,5 +1310,114 @@ Preserve the PIN uppercase word.</comment>
   <data name="UI_Retry" xml:space="preserve">
     <value>Tentar novamente</value>
     <comment>Label for any 'Retry' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_CloseOtherSessions" xml:space="preserve">
+    <value>Fechar outras sessões</value>
+    <comment>Label for any 'Close other sessions' button, link, etc., to close all other active sessions except the current one - (String as short as possible).</comment>
+  </data>
+  <data name="UI_DoNotShowMeAgain" xml:space="preserve">
+    <value>Não mostrar novamente</value>
+    <comment>Label for a check box included into a dialog to indicate don't show it again.</comment>
+  </data>
+  <data name="UI_BackupRecoveryKey" xml:space="preserve">
+    <value>Salvar chave de recuperação</value>
+    <comment>Label for any 'Backup Recovery Key' button, link, text, title, etc. - (String as short as possible).
+NOTE: Max. length 20 characters.</comment>
+  </data>
+  <data name="UI_Close" xml:space="preserve">
+    <value>Fechar</value>
+    <comment>Label for any 'Close' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_TestPassword" xml:space="preserve">
+    <value>Confirmar senha</value>
+    <comment>Label for any 'Test Password' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_PlainText" xml:space="preserve">
+    <value>Texto simples</value>
+    <comment>Label for any 'Plain text' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_EnablePinLock" xml:space="preserve">
+    <value>Ativar PIN</value>
+    <comment>Label for the switch button to enable or disable the PIN lock code. Keep PIN uppercase - (String as short as possible).</comment>
+  </data>
+  <data name="UI_RecoveryKeyDescription" xml:space="preserve">
+    <value>A sua chave de recuperação permite que você faça o login na sua conta, mesmo se você esquecer a sua senha. Guarde-a em algum lugar seguro.</value>
+    <comment>Label to describe the 'Recovery Key' and its purpose.</comment>
+  </data>
+  <data name="UI_SessionManagement" xml:space="preserve">
+    <value>Gerenciamento de sessões</value>
+    <comment>Label for the "Settings" option to manage sessions - (String as short as possible).</comment>
+  </data>
+  <data name="UI_SessionManagementDescription" xml:space="preserve">
+    <value>Você será deslogado de todas as outras sessões ativas, exceto a atual. Você precisará fazer o login novamente nos seus outros dispositivos para continuar usando o MEGA.</value>
+    <comment>Label to describe the "Session Management" option of the "Settings" section.</comment>
+  </data>
+  <data name="UI_Warning" xml:space="preserve">
+    <value>Aviso</value>
+    <comment>Label for any 'Warning' title, message, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_EnableTwoFactorAuth" xml:space="preserve">
+    <value>Desativar a autenticação de dois fatores</value>
+    <comment>Label for the "toggle" or "switch" button to enable/disable the Two-Factor Authentication.</comment>
+  </data>
+  <data name="UI_TwoFactorAuth" xml:space="preserve">
+    <value>Autenticação de dois fatores</value>
+    <comment>Label for the 'Two-Factor Authentication' section of the security settings.</comment>
+  </data>
+  <data name="UI_TwoFactorAuthSettingsDescription" xml:space="preserve">
+    <value>A autenticação de dois fatores é uma segunda camada de segurança para a sua conta.</value>
+    <comment>Description for the 'Two-Factor Authentication' in the security settings section.</comment>
+  </data>
+  <data name="UI_Setup2FA" xml:space="preserve">
+    <value>Configurar autenticação de dois fatores</value>
+    <comment>Label for any 'Setup Two-Factor Authentication' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_SixDigitCode" xml:space="preserve">
+    <value>Código de 6 dígitos</value>
+    <comment>Placeholder text of the field to type the 6-digit code provided for the authenticator app to verify the Multi-Factor Authentication.</comment>
+  </data>
+  <data name="UI_Verify" xml:space="preserve">
+    <value>Verificar</value>
+    <comment>Label for any 'Verify' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_CopySeed" xml:space="preserve">
+    <value>Copiar chave</value>
+    <comment>Label of the button to copy the seed to enable the Multi-Factor Authentication - (String as short as possible).</comment>
+  </data>
+  <data name="UI_LostAuthDeviceQuestion" xml:space="preserve">
+    <value>Você perdeu o seu dispositivo de autenticação?</value>
+    <comment>Label for any link/button to help the user in case lost the authentication device for MFA - (String as short as possible).</comment>
+  </data>
+  <data name="UI_ChangePasswordDescription" xml:space="preserve">
+    <value>Digite e confirme a sua nova senha, e clique em salvar.</value>
+    <comment>Text to describe the change password process.</comment>
+  </data>
+  <data name="UI_Export" xml:space="preserve">
+    <value>Exportar</value>
+    <comment>Label for any 'Export' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_Restore" xml:space="preserve">
+    <value>Restaurar</value>
+    <comment>Label for any 'Restore' button, link, text, title, etc. For example for restore files from the rubbish bin - (String as short as possible).</comment>
+  </data>
+  <data name="UI_UsedCache" xml:space="preserve">
+    <value>Cache usado</value>
+    <comment>Label to indicate the amount of used cache - (String as short as possible).</comment>
+  </data>
+  <data name="UI_OpenIn" xml:space="preserve">
+    <value>Abrir em...</value>
+    <comment>Label for any 'Open in...' button, link, text, title, etc. to open a file or other kind of resource with a certain app - (String as short as possible).</comment>
+  </data>
+  <data name="UI_MFA_SetupStep1" xml:space="preserve">
+    <value>Escaneie ou copie a chave para o seu aplicativo de autenticação. Certifique-se de salvar esta chave em um lugar seguro, caso você perca o seu dispositivo.</value>
+    <comment>Label for the step 1 to setup the Multi-Factor Authentication.</comment>
+  </data>
+  <data name="UI_MFA_SetupStep2" xml:space="preserve">
+    <value>Depois de configurar a chave no seu aplicativo de autenticação, digite o código de 6 dígitos indicado.</value>
+    <comment>Label for the step 2 to setup the Muti-Factor Authentication.</comment>
+  </data>
+  <data name="UI_FindApp" xml:space="preserve">
+    <value>Buscar app</value>
+    <comment>Label for any 'Find app' button, link, text, title, etc, to find an app to open a file, resource, etc. - (String as short as possible).</comment>
   </data>
 </root>
