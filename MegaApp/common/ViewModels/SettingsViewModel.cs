@@ -9,7 +9,6 @@ using MegaApp.Enums;
 using MegaApp.MegaApi;
 using MegaApp.Resources;
 using MegaApp.Services;
-using MegaApp.Views;
 
 namespace MegaApp.ViewModels
 {
@@ -71,6 +70,11 @@ namespace MegaApp.ViewModels
         #endregion
 
         #region Methods
+
+        public void ReloadSettings()
+        {
+            this.Initialize();
+        }
 
         private async void Initialize()
         {
@@ -331,7 +335,12 @@ namespace MegaApp.ViewModels
 
         #region Properties
 
-        public string AppVersion { get; private set; }
+        private string _appVersion;
+        public string AppVersion
+        {
+            get { return _appVersion; }
+            private set { SetField(ref _appVersion, value); }
+        }
 
         public string MegaSdkVersion { get; private set; }
 

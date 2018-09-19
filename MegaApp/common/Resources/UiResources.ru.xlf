@@ -1630,6 +1630,11 @@ NOTE: Max. length 20 characters.</note>
           <target state="translated">Найти</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Find app' button, link, text, title, etc, to find an app to open a file, resource, etc. - (String as short as possible).</note>
         </trans-unit>
+        <trans-unit id="Resx/UI_ResumeSession" translate="yes" xml:space="preserve">
+          <source>Resume session</source>
+          <target state="new">Resume session</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Resume session' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
       </group>
     </body>
   </file>
