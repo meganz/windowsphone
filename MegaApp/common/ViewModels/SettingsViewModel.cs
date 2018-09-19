@@ -78,7 +78,9 @@ namespace MegaApp.ViewModels
 
         private async void Initialize()
         {
-            this.AppVersion = AppService.GetAppVersion();
+            this.AppVersion = SettingsService.LoadSetting<bool>(SettingsResources.UseStagingServer, false) ?
+                string.Format("{0} (staging)", AppService.GetAppVersion()) : AppService.GetAppVersion();
+
             this.MegaSdkVersion = AppService.GetMegaSDK_Version();
 
             // Initialize the PIN lock code setting
