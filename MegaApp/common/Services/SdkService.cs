@@ -105,6 +105,13 @@ namespace MegaApp.Services
                 LogService.Log(MLogLevel.LOG_LEVEL_WARNING, 
                     string.Format("Invalid app language code '{0}'", appLanguageCode));
             }
+
+            // Change the API URL if required by settings
+            if (SettingsService.LoadSetting<bool>(SettingsResources.UseStagingServer, false))
+            {
+                MegaSdk.changeApiUrl(AppResources.AR_StagingUrl);
+                MegaSdkFolderLinks.changeApiUrl(AppResources.AR_StagingUrl);
+            }
         }
 
         /// <summary>

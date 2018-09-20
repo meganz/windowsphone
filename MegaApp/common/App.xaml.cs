@@ -214,7 +214,7 @@ namespace MegaApp
         private bool phoneApplicationInitialized = false;
 
         // Do not add any additional code to this method
-        private async void InitializePhoneApplication()
+        private void InitializePhoneApplication()
         {
             if (phoneApplicationInitialized)
                 return;
@@ -286,7 +286,7 @@ namespace MegaApp
             // Clear settings values we do no longer use
             AppService.ClearObsoleteSettings();
             
-            // Save the app version information for future use (like deleting settings)
+            // Save the app information for future use (like deleting settings)
             AppService.SaveAppInformation();
             
             // Set MEGA red as Accent Color
