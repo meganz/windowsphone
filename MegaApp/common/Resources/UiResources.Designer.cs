@@ -2374,7 +2374,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Scan or copy the seed directly into your authenticator app. Be sure to backup this seed to a safe place in case you lose your phone..
+        ///   Busca una cadena traducida similar a Scan or copy the seed to your Authenticator App. Be sure to backup this seed to a safe place in case you lose your phone..
         /// </summary>
         public static string UI_MFA_SetupStep1 {
             get {
@@ -2383,7 +2383,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a After setting up your seed on your authenticator app enter the 6-digit code provided..
+        ///   Busca una cadena traducida similar a After setting up your seed on your Authenticator app enter the 6-digit code provided..
         /// </summary>
         public static string UI_MFA_SetupStep2 {
             get {
@@ -2545,6 +2545,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Resume session.
+        /// </summary>
+        public static string UI_ResumeSession {
+            get {
+                return ResourceManager.GetString("UI_ResumeSession", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Retry.
         /// </summary>
         public static string UI_Retry {
@@ -2590,7 +2599,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a 6-digit code.
+        ///   Busca una cadena traducida similar a 6 digit code.
         /// </summary>
         public static string UI_SixDigitCode {
             get {

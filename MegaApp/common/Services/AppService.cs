@@ -344,18 +344,18 @@ namespace MegaApp.Services
             return Path.Combine(GetDownloadDirectoryPath(), AppResources.LogFileName);
         }
 
+        /// <summary>
+        /// Clear settings values we do no longer use.
+        /// </summary>
         public static void ClearObsoleteSettings()
         {
-            SettingsService.DeleteSetting(SettingsResources.UseStagingServer);
-
             var lastAppVersion = SettingsService.LoadSetting<string>(SettingsResources.LastAppVersion, null);
-
-            if (lastAppVersion == null)
-            {
-                SettingsService.DeleteSetting(SettingsResources.QuestionAskedDownloadOption);
-            }
+            if (lastAppVersion == null) return;
         }
 
+        /// <summary>
+        /// Save the app information for future use (like deleting settings).
+        /// </summary>
         public static void SaveAppInformation()
         {
             SettingsService.SaveSetting(SettingsResources.LastAppVersion, AppService.GetAppVersion());

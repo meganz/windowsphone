@@ -779,7 +779,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Failed to check the Multi-Factor Authentication status..
+        ///   Busca una cadena traducida similar a Failed to check the status of two factor authentication..
         /// </summary>
         public static string AM_MFA_CheckStatusFailed {
             get {
@@ -1081,6 +1081,15 @@ namespace MegaApp.Resources {
         public static string AM_RestoreMultiFromRubbishBinFailed {
             get {
                 return ResourceManager.GetString("AM_RestoreMultiFromRubbishBinFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Failed to resume your session. Please, close the app and try again later..
+        /// </summary>
+        public static string AM_ResumeSessionFailed {
+            get {
+                return ResourceManager.GetString("AM_ResumeSessionFailed", resourceCulture);
             }
         }
         

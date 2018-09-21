@@ -5,6 +5,7 @@ using Microsoft.Phone.Info;
 using Windows.Storage;
 using mega;
 using MegaApp.Classes;
+using MegaApp.Enums;
 using MegaApp.MegaApi;
 using MegaApp.Resources;
 
@@ -12,6 +13,24 @@ namespace MegaApp.Services
 {
     public static class SdkService
     {
+        #region Events
+
+        /// <summary>
+        /// Event triggered when the API URL is changed.
+        /// </summary>
+        public static event EventHandler ApiUrlChanged;
+
+        /// <summary>
+        /// Event invocator method called when the API URL is changed.
+        /// </summary>
+        private static void OnApiUrlChanged()
+        {
+            if (ApiUrlChanged != null)
+                ApiUrlChanged.Invoke(null, EventArgs.Empty);
+        }
+
+        #endregion
+
         #region Properties
 
         /// <summary>
@@ -85,6 +104,13 @@ namespace MegaApp.Services
             {
                 LogService.Log(MLogLevel.LOG_LEVEL_WARNING, 
                     string.Format("Invalid app language code '{0}'", appLanguageCode));
+            }
+
+            // Change the API URL if required by settings
+            if (SettingsService.LoadSetting<bool>(SettingsResources.UseStagingServer, false))
+            {
+                MegaSdk.changeApiUrl(AppResources.AR_StagingUrl);
+                MegaSdkFolderLinks.changeApiUrl(AppResources.AR_StagingUrl);
             }
         }
 
@@ -184,12 +210,41 @@ namespace MegaApp.Services
 
             SettingsService.SaveSetting<bool>(SettingsResources.UseStagingServer, useStagingServer);
 
-            // If the user is logged in, do a new fetch nodes
+            // If the user is logged in, do a new login with the current session
             if (Convert.ToBoolean(MegaSdk.isLoggedIn()))
             {
-                var fetchNodes = new FetchNodesRequestListenerAsync();
-                var result = await fetchNodes.ExecuteAsync(() =>
-                    MegaSdk.fetchNodes(fetchNodes));
+                bool fastLoginResult;
+                try
+                {
+                    var fastLogin = new FastLoginRequestListenerAsync();
+                    fastLoginResult = await fastLogin.ExecuteAsync(() =>
+                        MegaSdk.fastLogin(SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession), fastLogin));
+                }
+                // Do nothing, app is already logging out
+                catch (BadSessionIdException)
+                {
+                    LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Login failed. Bad session ID.");
+                    return;
+                }
+
+                if (fastLoginResult)
+                {
+                    // Fetch nodes from MEGA
+                    var fetchNodes = new FetchNodesRequestListenerAsync();
+                    var fetchNodesResult = await fetchNodes.ExecuteAsync(() => MegaSdk.fetchNodes(fetchNodes));
+                    if (fetchNodesResult != FetchNodesResult.Success)
+                    {
+                        LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Fetch nodes failed.");
+                        new CustomMessageDialog(AppMessages.FetchingNodesFailed_Title, AppMessages.FetchingNodesFailed,
+                            App.AppInformation, MessageDialogButtons.Ok).ShowDialog();
+                    }
+                }
+                else
+                {
+                    LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Resume session failed.");
+                    new CustomMessageDialog(UiResources.UI_ResumeSession, AppMessages.AM_ResumeSessionFailed,
+                        App.AppInformation, MessageDialogButtons.Ok).ShowDialog();
+                }
             }
 
             // Reset the "Camera Uploads" service if is enabled
@@ -202,6 +257,8 @@ namespace MegaApp.Services
 
             new CustomMessageDialog(null, "API URL changed",
                 App.AppInformation, MessageDialogButtons.Ok).ShowDialog();
+
+            OnApiUrlChanged();
         }
 
         /// <summary>

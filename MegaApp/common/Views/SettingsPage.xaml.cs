@@ -1,10 +1,10 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Navigation;
 using Telerik.Windows.Controls;
 using GestureEventArgs = System.Windows.Input.GestureEventArgs;
-using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.Resources;
 using MegaApp.Services;
@@ -40,9 +40,18 @@ namespace MegaApp.Views
             
         }
 
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            SdkService.ApiUrlChanged -= OnApiUrlChanged;
+
+            base.OnNavigatedFrom(e);
+        }
+
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
+
+            SdkService.ApiUrlChanged += OnApiUrlChanged;
 
             var navParam = NavigateService.ProcessQueryString(NavigationContext.QueryString);
             switch(navParam)
@@ -73,6 +82,11 @@ namespace MegaApp.Views
             ((SettingsViewModel)this.DataContext).StandardDownloadLocation = SettingsService.LoadSetting<string>(
                 SettingsResources.DefaultDownloadLocation, UiResources.DefaultDownloadLocation);
             #endif
+        }
+
+        private void OnApiUrlChanged(object sender, EventArgs e)
+        {
+            _settingsViewModel.ReloadSettings();
         }
 
         protected override void OnBackKeyPress(CancelEventArgs e)
