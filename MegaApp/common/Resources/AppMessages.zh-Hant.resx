@@ -1540,4 +1540,16 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
     <value>Failed to check the status of two factor authentication.</value>
     <comment>Message of the dialog displayed if fails the process to check the Multi-Factor Authentication status.</comment>
   </data>
+  <data name="AM_FileAlreadyExists" xml:space="preserve">
+    <value>已經有一個同名的檔案</value>
+    <comment>Message which shows when a file name is duplicated during renaming.</comment>
+  </data>
+  <data name="AM_FolderAlreadyExists" xml:space="preserve">
+    <value>已經有一個同名的資料夾</value>
+    <comment>Message which is shown when a folder name is duplicated during renaming or creation.</comment>
+  </data>
+  <data name="AM_ResumeSessionFailed" xml:space="preserve">
+    <value>無法恢復您的使用階段。請關閉應用程式，並於稍後再試。</value>
+    <comment>Message of the dialog displayed when the process to resume a session failed.</comment>
+  </data>
 </root>

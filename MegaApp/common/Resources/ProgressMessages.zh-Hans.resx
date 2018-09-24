@@ -122,7 +122,7 @@
     <comment>Progress indicator message when canceling a transfer - (String as short as possible).</comment>
   </data>
   <data name="CleanRubbishBin" xml:space="preserve">
-    <value>清空垃圾桶中...</value>
+    <value>正在清空垃圾桶…</value>
     <comment>Progress indicator message when emptying the rubbish bin - (String as short as possible).</comment>
   </data>
   <data name="CreditCardStore" xml:space="preserve">
@@ -329,5 +329,13 @@ Preserve the '{0}' code because is for include node name.</comment>
   <data name="PM_Restoring" xml:space="preserve">
     <value>恢复中……</value>
     <comment>Progress indicator message when restoring node(s) from the rubbish bin - (String as short as possible).</comment>
+  </data>
+  <data name="PM_FetchNodes" xml:space="preserve">
+    <value>正在请求账户信息…</value>
+    <comment>Progress indicator message when fetching nodes - (String as short as possible).</comment>
+  </data>
+  <data name="PM_DecryptNodes" xml:space="preserve">
+    <value>正在解密节点…</value>
+    <comment>Progress indicator message when decrypting nodes - (String as short as possible).</comment>
   </data>
 </root>

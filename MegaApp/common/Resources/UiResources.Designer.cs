@@ -349,15 +349,6 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Empty rubbish bin.
-        /// </summary>
-        public static string ClearRubbishBin {
-            get {
-                return ResourceManager.GetString("ClearRubbishBin", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a clear selection.
         /// </summary>
         public static string ClearSelection {
@@ -610,7 +601,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Empty rubbish bin.
+        ///   Busca una cadena traducida similar a Empty Rubbish Bin.
         /// </summary>
         public static string EmptyRubbishBin {
             get {
@@ -2001,6 +1992,15 @@ namespace MegaApp.Resources {
         public static string UI_ChangePasswordDescription {
             get {
                 return ResourceManager.GetString("UI_ChangePasswordDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Clear Rubbish Bin.
+        /// </summary>
+        public static string UI_ClearRubbishBin {
+            get {
+                return ResourceManager.GetString("UI_ClearRubbishBin", resourceCulture);
             }
         }
         

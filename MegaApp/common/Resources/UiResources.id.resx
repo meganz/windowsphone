@@ -601,10 +601,6 @@
     <value>Urutkan</value>
     <comment>Label for any 'Sort' button, link, text, etc. - (String as short as possible).</comment>
   </data>
-  <data name="ClearRubbishBin" xml:space="preserve">
-    <value>Bersihkan Tempat Sampah</value>
-    <comment>Label for any 'Empty rubbish' button, link, text, etc. - (String as short as possible).</comment>
-  </data>
   <data name="Ok" xml:space="preserve">
     <value>Ok</value>
     <comment>Label for any 'Ok' button, link, text, title, etc. - (String as short as possible).</comment>
@@ -989,7 +985,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for the background of an empty transfers page - (String as short as possible).</comment>
   </data>
   <data name="EmptyRubbishBin" xml:space="preserve">
-    <value>Bersihkan Tempat Sampah</value>
+    <value>Kosongkan Sampah</value>
     <comment>Label for the background of an empty rubbish bin page - (String as short as possible).</comment>
   </data>
   <data name="EmptySharedFolders" xml:space="preserve">
@@ -1373,7 +1369,7 @@ NOTE: Max. length 20 characters.</comment>
     <comment>Label for any 'Setup Two-Factor Authentication' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_SixDigitCode" xml:space="preserve">
-    <value>6 digit code</value>
+    <value>Kode 6 digit</value>
     <comment>Placeholder text of the field to type the 6-digit code provided for the authenticator app to verify the Multi-Factor Authentication.</comment>
   </data>
   <data name="UI_Verify" xml:space="preserve">
@@ -1419,5 +1415,13 @@ NOTE: Max. length 20 characters.</comment>
   <data name="UI_FindApp" xml:space="preserve">
     <value>Temukan aplikasi</value>
     <comment>Label for any 'Find app' button, link, text, title, etc, to find an app to open a file, resource, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_ClearRubbishBin" xml:space="preserve">
+    <value>Kosongkan Sampah</value>
+    <comment>Label for a 'Clear Rubbish Bin' button to clear the rubbish bin content - (String as short as possible).</comment>
+  </data>
+  <data name="UI_ResumeSession" xml:space="preserve">
+    <value>Lanjutkan sesi</value>
+    <comment>Label for any 'Resume session' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
 </root>

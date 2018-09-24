@@ -30,7 +30,7 @@ namespace MegaApp.MegaApi
 
         protected override string ErrorMessageTitle
         {
-            get { return UiResources.ClearRubbishBin.ToUpper(); }
+            get { return UiResources.UI_ClearRubbishBin.ToUpper(); }
         }
 
         protected override bool ShowErrorMessage
@@ -45,7 +45,7 @@ namespace MegaApp.MegaApi
 
         protected override string SuccessMessageTitle
         {
-            get { return UiResources.ClearRubbishBin.ToUpper(); }
+            get { return UiResources.UI_ClearRubbishBin.ToUpper(); }
         }
 
         protected override bool ShowSuccesMessage

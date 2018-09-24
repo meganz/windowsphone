@@ -684,9 +684,9 @@ Preserve the PIN uppercase word.</comment>
     <value>Sort</value>
     <comment>Label for any 'Sort' button, link, text, etc. - (String as short as possible).</comment>
   </data>
-  <data name="ClearRubbishBin" xml:space="preserve">
-    <value>Empty rubbish bin</value>
-    <comment>Label for any 'Empty rubbish' button, link, text, etc. - (String as short as possible).</comment>
+  <data name="UI_ClearRubbishBin" xml:space="preserve">
+    <value>Clear Rubbish Bin</value>
+    <comment>Label for a 'Clear Rubbish Bin' button to clear the rubbish bin content - (String as short as possible).</comment>
   </data>
   <data name="Ok" xml:space="preserve">
     <value>Ok</value>
@@ -1107,7 +1107,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for the background of an empty transfers page - (String as short as possible).</comment>
   </data>
   <data name="EmptyRubbishBin" xml:space="preserve">
-    <value>Empty rubbish bin</value>
+    <value>Empty Rubbish Bin</value>
     <comment>Label for the background of an empty rubbish bin page - (String as short as possible).</comment>
   </data>
   <data name="EmptySharedFolders" xml:space="preserve">

@@ -72,9 +72,9 @@ Preserve the '{0}' code because is for include node name.</note>
           <target state="translated">Đang khôi phục phiên...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when resuming a session - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/PM_FetchNodes" translate="yes" xml:space="preserve">
-          <source>Requesting account data...</source>
-          <target state="new">Requesting account data...</target>
+        <trans-unit id="Resx/PM_FetchNodes" translate="yes" space="preserve">
+          <source>Requesting account data…</source>
+          <target state="translated">Requesting account data…</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when fetching nodes - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/GetAccountDetails" translate="yes" space="preserve">
@@ -277,9 +277,9 @@ Preserve the '{0}' code because is for include node name.</note>
           <target state="translated">Đang phục hồi…</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when restoring node(s) from the rubbish bin - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/PM_DecryptNodes" translate="yes" xml:space="preserve">
-          <source>Decrypting nodes...</source>
-          <target state="new">Decrypting nodes...</target>
+        <trans-unit id="Resx/PM_DecryptNodes" translate="yes" space="preserve">
+          <source>Decrypting nodes…</source>
+          <target state="translated">Decrypting nodes…</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when decrypting nodes - (String as short as possible).</note>
         </trans-unit>
       </group>
