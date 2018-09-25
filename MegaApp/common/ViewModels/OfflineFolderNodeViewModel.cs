@@ -40,7 +40,7 @@ namespace MegaApp.ViewModels
         public void Update(DirectoryInfo folderInfo)
         {
             this.Base64Handle = "0";
-            var existingNode = SavedForOffline.ReadNodeByLocalPath(folderInfo.FullName);
+            var existingNode = SavedForOffline.SelectNodeByLocalPath(folderInfo.FullName);
             if(existingNode != null)
                 this.Base64Handle = existingNode.Base64Handle;
 

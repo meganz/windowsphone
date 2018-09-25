@@ -126,7 +126,7 @@ namespace MegaApp.ViewModels
 
         #region Private Methods
 
-        private async void InitializeModel()
+        private void InitializeModel()
         {
             this.CameraUploads = new CameraUploadsFolderViewModel(this.MegaSdk, this.AppInformation, ContainerType.CloudDrive);
         }

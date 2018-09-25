@@ -644,7 +644,7 @@ namespace MegaApp.ViewModels
         {
             this.FocusedNode = node;
 
-            var existingNode = SavedForOffline.ReadNodeByFingerprint(this.MegaSdk.getNodeFingerprint(node.OriginalMNode));
+            var existingNode = SavedForOffline.SelectNodeByFingerprint(this.MegaSdk.getNodeFingerprint(node.OriginalMNode));
             if(existingNode != null && !String.IsNullOrWhiteSpace(existingNode.LocalPath) && 
                 FileService.FileExists(existingNode.LocalPath))
             {                

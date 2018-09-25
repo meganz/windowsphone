@@ -209,15 +209,7 @@ namespace SQLite
 			BusyTimeout = TimeSpan.FromSeconds (0.1);
 		}
 		
-		static SQLiteConnection ()
-		{
-			if (_preserveDuringLinkMagic) {
-				var ti = new ColumnInfo ();
-				ti.Name = "magic";
-			}
-		}
-
-        public void EnableLoadExtension(int onoff)
+		public void EnableLoadExtension(int onoff)
         {
             SQLite3.Result r = SQLite3.EnableLoadExtension(Handle, onoff);
 			if (r != SQLite3.Result.OK) {
@@ -234,12 +226,6 @@ namespace SQLite
 			return bytes;
 		}
 		
-		/// <summary>
-		/// Used to list some code that we want the MonoTouch linker
-		/// to see, but that we never want to actually execute.
-		/// </summary>
-		static bool _preserveDuringLinkMagic;
-
 		/// <summary>
 		/// Sets a busy handler to sleep the specified amount of time when a table is locked.
 		/// The handler will sleep multiple times until a total time of <see cref="BusyTimeout"/> has accumulated.
