@@ -7,8 +7,8 @@ This repository contains all the development history of the official Windows Pho
 - Windows Phone 8.0
 - Windows Phone 8.1 (compatible with Windows 10 Mobile)
 
-#### Used 3rd party controls
-- Telerik UI for Windows Phone.
+#### Used 3rd party libraries and controls
+You can see a detailed list at [CREDITS.md](CREDITS.md)
 
 ## Compilation
 This document will guide you to build the application on a Windows machine with Microsoft Visual Studio.
@@ -30,7 +30,7 @@ https://developer.microsoft.com/en-us/windows/develop/multilingual-app-toolkit
 
 5. Open Microsoft Visual Studio and open the solution file `windowsphone\MegaApp\MegaApp.sln`
 
-6. Install the `MockIAPLib`, `sqlite-net` and `sqlite-net-wp8` NuGet packages from `Tools -> NuGet Package Manager -> Manage NuGet Packages for Solution`, and add the needed references for each of the two projects.
+6. Install the `MockIAPLib`, `sqlite-net`, `sqlite-net-wp8` and `ZXing.Net` NuGet packages from `Tools -> NuGet Package Manager -> Manage NuGet Packages for Solution`, and add the needed references for each of the two projects.
 
 7. Install the _"SQLite for Windows Phone"_ and _"SQLite for Windows Phone 8.1"_ from `Tools -> Extensions and Updates`, and add the needed references for each of the two projects.
 
