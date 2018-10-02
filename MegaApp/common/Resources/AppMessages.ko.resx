@@ -1483,7 +1483,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message displayed when the user is trying to insert and invalid code, for example the 6-digit code of the Multi-Factor Authentication.</comment>
   </data>
   <data name="AM_2FA_EnabledDialogDescription" xml:space="preserve">
-    <value>Next time you login to your account you will be asked to enter a 6-digit code provided by your Authenticator app.</value>
+    <value>다음번 로그인 때 당신의 인증기 앱에서 생성된 6자리 코드를 요구합니다.</value>
     <comment>Description text of the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication.</comment>
   </data>
   <data name="AM_2FA_EnabledDialogTitle" xml:space="preserve">

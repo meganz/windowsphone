@@ -332,7 +332,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/LoggedOut_Title" translate="yes" space="preserve">
           <source>Logged out</source>
-          <target state="translated">已登出</target>
+          <target state="translated">已注销</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user logged out successfully - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/LogoutFailed" translate="yes" space="preserve">
@@ -401,7 +401,7 @@ Preserve the {0} code because is for include the name of the node to be moved in
         </trans-unit>
         <trans-unit id="Resx/MultiMoveToRubbishBinQuestion" translate="yes" space="preserve">
           <source>Are you sure you want to move {0} items to the rubbish bin?</source>
-          <target state="translated">您确定要将{0}个项目移至垃圾箱吗？</target>
+          <target state="translated">您确定要将{0}个项目移至垃圾桶吗？</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to move multiple nodes to the rubbish bin, asking for confirmation to make the movement.
 Preserve the {0} code because is for include the number of nodes to be moved in runtime.</note>
         </trans-unit>
@@ -582,7 +582,7 @@ Preserve the {0} code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/SessionIDError" translate="yes" space="preserve">
           <source>You have been logged out on this device from another location</source>
-          <target state="translated">您已从其他地点登出此设备</target>
+          <target state="translated">您已从另一地点注销此设备</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user is logged out from another location and is trying to do any operation that requires a valid session (API_ESID Error).</note>
         </trans-unit>
         <trans-unit id="Resx/OverquotaAlert" translate="yes" space="preserve">
@@ -613,7 +613,7 @@ Preserve the {0} code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/SessionIDError_Title" translate="yes" space="preserve">
           <source>Logged out</source>
-          <target state="translated">已登出</target>
+          <target state="translated">已注销</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the user is logged out from another location and is trying to do any operation that requires a valid session (API_ESID Error) - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CopyFileFailed" translate="yes" space="preserve">
@@ -998,7 +998,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</no
         </trans-unit>
         <trans-unit id="Resx/AccountUpdated_Title" translate="yes" space="preserve">
           <source>Updated account</source>
-          <target state="translated">已更新之账户</target>
+          <target state="translated">已更新的账户</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the account is updated (upgraded or downgraded).</note>
         </trans-unit>
         <trans-unit id="Resx/AutoCameraUploadFailed" translate="yes" space="preserve">
@@ -1114,7 +1114,7 @@ Preserve the '{0}' code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/PathTooLong" translate="yes" space="preserve">
           <source>The path of the file/folder ‘{0}’ is too long. Please change it and try again.</source>
-          <target state="translated">文件/文件夹'{0}' 之路径过长。请于修改后重试。</target>
+          <target state="translated">文件/文件夹'{0}' 的路径过长。请在修改后重试。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that the file/folder path is too long.
 Preserve the '{0}' code because is for include the file/folder name in runtime.</note>
         </trans-unit>
@@ -1325,7 +1325,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShareItemFromMega_Message" translate="yes" space="preserve">
           <source>Item shared by the Windows Phone MEGA app.</source>
-          <target state="translated">从MEGA app (Windows手机) 应用程序分享之文件</target>
+          <target state="translated">通过MEGA应用程序（Windows手机）分享的文件。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message or description for the shared resource or the dialog displayed when the user is sharing one item from MEGA with other app of his Windows Phone device - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShareItemFromMega_Title" translate="yes" space="preserve">
@@ -1335,7 +1335,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShareMultipleItemsFromMega_Message" translate="yes" space="preserve">
           <source>Items shared by the Windows Phone MEGA app.</source>
-          <target state="translated">从MEGA app (Windows手机) 应用程序分享之文件</target>
+          <target state="translated">通过MEGA应用程序（Windows手机）分享的文件。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message or description for the shared resource or the dialog displayed when the user is sharing multiple items from MEGA with other app of his Windows Phone device - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShareMultipleItemsFromMega_Title" translate="yes" space="preserve">
@@ -1692,7 +1692,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_2FA_SetupDialogDescription" translate="yes" space="preserve">
           <source>Two-factor authentication is a second layer of security for your account. Which means that even if someone knows your password they cannot access it, without also having access to the six digit code only you have access to.</source>
-          <target state="translated">双重验证是您账户的第二层安全保护。即使他人得知您的密码，无六位数验证码也无权对其访问，因此只有您拥有访问权限。</target>
+          <target state="translated">双重验证是您账户的第二层安全保护。即使他人得知您的密码，无6位验证码也无权对其访问，因此只有您拥有访问权限。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Description text of the dialog displayed to start setup the Two-Factor Authentication</note>
         </trans-unit>
         <trans-unit id="Resx/AM_2FA_SetupDialogTitle" translate="yes" space="preserve">
@@ -1706,8 +1706,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <note from="MultilingualBuild" annotates="source" priority="2">Message displayed when the user is trying to insert and invalid code, for example the 6-digit code of the Multi-Factor Authentication.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_2FA_EnabledDialogDescription" translate="yes" space="preserve">
-          <source>Next time you login to your account you will be asked to enter a 6-digit code provided by your Authenticator app.</source>
-          <target state="translated">Next time you login to your account you will be asked to enter a 6-digit code provided by your Authenticator app.</target>
+          <source>Next time you login to your account you will be asked to enter a 6-digit code provided by your Authentication app.</source>
+          <target state="translated">您在下次登录账户时，系统会要求您输入验证程序提供的6位验证码。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Description text of the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_2FA_EnabledDialogTitle" translate="yes" space="preserve">

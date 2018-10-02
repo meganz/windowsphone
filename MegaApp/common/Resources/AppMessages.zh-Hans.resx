@@ -373,7 +373,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when a user logged out successfully.</comment>
   </data>
   <data name="LoggedOut_Title" xml:space="preserve">
-    <value>已登出</value>
+    <value>已注销</value>
     <comment>Title of the dialog displayed when a user logged out successfully - (String as short as possible).</comment>
   </data>
   <data name="LogoutFailed" xml:space="preserve">
@@ -429,7 +429,7 @@ Preserve the {0} code because is for include the name of the node to be moved in
     <comment>Title of the dialog displayed when move successfully one single node to the rubbish bin - (String as short as possible).</comment>
   </data>
   <data name="MultiMoveToRubbishBinQuestion" xml:space="preserve">
-    <value>您确定要将{0}个项目移至垃圾箱吗？</value>
+    <value>您确定要将{0}个项目移至垃圾桶吗？</value>
     <comment>Message of the dialog displayed when a user want to move multiple nodes to the rubbish bin, asking for confirmation to make the movement.
 Preserve the {0} code because is for include the number of nodes to be moved in runtime.</comment>
   </data>
@@ -570,7 +570,7 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
     <comment>Title  of the dialog displayed when a user are trying to create or change a PIN lock code and the introduced codes don't match. Try to preserve the PIN uppercase word - (String as short as possible).</comment>
   </data>
   <data name="SessionIDError" xml:space="preserve">
-    <value>您已从其他地点登出此设备</value>
+    <value>您已从另一地点注销此设备</value>
     <comment>Message of the dialog displayed when the user is logged out from another location and is trying to do any operation that requires a valid session (API_ESID Error).</comment>
   </data>
   <data name="OverquotaAlert" xml:space="preserve">
@@ -595,7 +595,7 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
     <comment>Title of the dialog displayed when the process to prepare a file for upload failed - (String as short as possible).</comment>
   </data>
   <data name="SessionIDError_Title" xml:space="preserve">
-    <value>已登出</value>
+    <value>已注销</value>
     <comment>Title of the dialog displayed when the user is logged out from another location and is trying to do any operation that requires a valid session (API_ESID Error) - (String as short as possible).</comment>
   </data>
   <data name="CopyFileFailed" xml:space="preserve">
@@ -881,7 +881,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</co
     <comment>Message of the dialog displayed when the account is updated (upgraded or downgraded).</comment>
   </data>
   <data name="AccountUpdated_Title" xml:space="preserve">
-    <value>已更新之账户</value>
+    <value>已更新的账户</value>
     <comment>Title of the dialog displayed when the account is updated (upgraded or downgraded).</comment>
   </data>
   <data name="AutoCameraUploadFailed" xml:space="preserve">
@@ -979,7 +979,7 @@ Preserve the '{0}' code because is for include the file name in runtime.</commen
     <comment>Title of the dialog displayed in cases that the file name is not valid or has illegal characters - (String as short as possible).</comment>
   </data>
   <data name="PathTooLong" xml:space="preserve">
-    <value>文件/文件夹'{0}' 之路径过长。请于修改后重试。</value>
+    <value>文件/文件夹'{0}' 的路径过长。请在修改后重试。</value>
     <comment>Message of the dialog displayed in cases that the file/folder path is too long.
 Preserve the '{0}' code because is for include the file/folder name in runtime.</comment>
   </data>
@@ -1177,7 +1177,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Message of the alert dialog displayed when the app starts and the DEBUG mode is enable - (String as short as possible).</comment>
   </data>
   <data name="AM_ShareItemFromMega_Message" xml:space="preserve">
-    <value>从MEGA app (Windows手机) 应用程序分享之文件</value>
+    <value>通过MEGA应用程序（Windows手机）分享的文件。</value>
     <comment>Message or description for the shared resource or the dialog displayed when the user is sharing one item from MEGA with other app of his Windows Phone device - (String as short as possible).</comment>
   </data>
   <data name="AM_ShareItemFromMega_Title" xml:space="preserve">
@@ -1185,7 +1185,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Title for the shared resource or the dialog displayed when the user is sharing one item from MEGA with other app of his Windows Phone device - (String as short as possible).</comment>
   </data>
   <data name="AM_ShareMultipleItemsFromMega_Message" xml:space="preserve">
-    <value>从MEGA app (Windows手机) 应用程序分享之文件</value>
+    <value>通过MEGA应用程序（Windows手机）分享的文件。</value>
     <comment>Message or description for the shared resource or the dialog displayed when the user is sharing multiple items from MEGA with other app of his Windows Phone device - (String as short as possible).</comment>
   </data>
   <data name="AM_ShareMultipleItemsFromMega_Title" xml:space="preserve">
@@ -1471,7 +1471,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed to ask the user to confirm want to close all the other sessions.</comment>
   </data>
   <data name="AM_2FA_SetupDialogDescription" xml:space="preserve">
-    <value>双重验证是您账户的第二层安全保护。即使他人得知您的密码，无六位数验证码也无权对其访问，因此只有您拥有访问权限。</value>
+    <value>双重验证是您账户的第二层安全保护。即使他人得知您的密码，无6位验证码也无权对其访问，因此只有您拥有访问权限。</value>
     <comment>Description text of the dialog displayed to start setup the Two-Factor Authentication</comment>
   </data>
   <data name="AM_2FA_SetupDialogTitle" xml:space="preserve">
@@ -1483,7 +1483,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message displayed when the user is trying to insert and invalid code, for example the 6-digit code of the Multi-Factor Authentication.</comment>
   </data>
   <data name="AM_2FA_EnabledDialogDescription" xml:space="preserve">
-    <value>Next time you login to your account you will be asked to enter a 6-digit code provided by your Authenticator app.</value>
+    <value>您在下次登录账户时，系统会要求您输入验证程序提供的6位验证码。</value>
     <comment>Description text of the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication.</comment>
   </data>
   <data name="AM_2FA_EnabledDialogTitle" xml:space="preserve">

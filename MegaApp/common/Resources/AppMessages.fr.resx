@@ -360,7 +360,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to get a image thumbnail failed - (String as short as possible).</comment>
   </data>
   <data name="GetAccountDetailsFailed" xml:space="preserve">
-    <value>Échec de récupération des infos de votre compte. Veuillez ressayer. [{0}]</value>
+    <value>Échec de récupération des informations de votre compte. Veuillez ressayer. [{0}]</value>
     <comment>Message of the dialog displayed when the process/request to get the user account details failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
@@ -700,12 +700,12 @@ Preserve the {0} code because is for include name of the node to be removed in r
     <comment>Title of the dialog displayed when a user want to delete permanently a node, asking for confirmation to make it - (String as short as possible).</comment>
   </data>
   <data name="GetUserDataFailed" xml:space="preserve">
-    <value>Échec de récupération de vos données utilisateurs. Veuillez ressayer [{0}]</value>
+    <value>Échec de récupération de vos données d’utilisateur. Veuillez ressayer [{0}]</value>
     <comment>Message of the dialog displayed when the process/request to get the user data failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="GetUserDataFailed_Title" xml:space="preserve">
-    <value>Échec de récupération des données utilisateur</value>
+    <value>Échec de récupération des données d’utilisateur</value>
     <comment>Title of the dialog displayed when the process/request to get the user data failed - (String as short as possible).</comment>
   </data>
   <data name="CapturePhotoFailed" xml:space="preserve">
@@ -877,7 +877,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</co
     <comment>Descripton of the task that automatic uploads photos tot MEGA. Seen in the background services Settings screen</comment>
   </data>
   <data name="AccountUpdate" xml:space="preserve">
-    <value>Votre compte a été mis à jour. Souhaitez-vous vérifier les nouvelles informations de compte ?</value>
+    <value>Votre compte a été mis à jour. Souhaitez-vous vérifier les nouvelles informations de compte ?</value>
     <comment>Message of the dialog displayed when the account is updated (upgraded or downgraded).</comment>
   </data>
   <data name="AccountUpdated_Title" xml:space="preserve">
@@ -1483,7 +1483,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message displayed when the user is trying to insert and invalid code, for example the 6-digit code of the Multi-Factor Authentication.</comment>
   </data>
   <data name="AM_2FA_EnabledDialogDescription" xml:space="preserve">
-    <value>Next time you login to your account you will be asked to enter a 6-digit code provided by your Authenticator app.</value>
+    <value>La prochaine fois que vous vous connecterez à votre compte, un code à 6 chiffres fourni par votre appli d’authentification vous sera demandé.</value>
     <comment>Description text of the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication.</comment>
   </data>
   <data name="AM_2FA_EnabledDialogTitle" xml:space="preserve">
