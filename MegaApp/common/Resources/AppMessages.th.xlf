@@ -1775,18 +1775,23 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
         </trans-unit>
         <trans-unit id="Resx/AM_MFA_CheckStatusFailed" translate="yes" space="preserve">
           <source>Failed to check the status of two factor authentication.</source>
-          <target state="needs-review-translation">ไม่สามารถตรวจสอบสถานะการรับรองความถูกต้องด้วยสองปัจจัยได้</target>
+          <target state="translated">ไม่สามารถตรวจสอบสถานะการรับรองความถูกต้องด้วยสองปัจจัยได้</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed if fails the process to check the Multi-Factor Authentication status.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_FolderAlreadyExists" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/AM_FileAlreadyExists" translate="yes" space="preserve">
+          <source>There is already a file with the same name</source>
+          <target state="translated">มีไฟล์ชื่อเดียวกันอยู่แล้ว</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message which shows when a file name is duplicated during renaming.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_FolderAlreadyExists" translate="yes" space="preserve">
           <source>There is already a folder with the same name</source>
-          <target state="new">There is already a folder with the same name</target>
+          <target state="translated">มีโฟลเดอร์ชื่อเดียวกันอยู่แล้ว</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message which is shown when a folder name is duplicated during renaming or creation.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_FileAlreadyExists" translate="yes" xml:space="preserve">
-          <source>There is already a file with the same name</source>
-          <target state="new">There is already a file with the same name</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message which shows when a file name is duplicated during renaming.</note>
+        <trans-unit id="Resx/AM_ResumeSessionFailed" translate="yes" space="preserve">
+          <source>Failed to resume your session. Please, close the app and try again later.</source>
+          <target state="translated">ไม่สามารถดำเนินการเซสชันต่อได้ กรุณาปิดแอปแล้วลองอีกครั้งในภายหลัง</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to resume a session failed.</note>
         </trans-unit>
       </group>
     </body>

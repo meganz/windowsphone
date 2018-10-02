@@ -38,109 +38,148 @@ namespace MegaApp.Database
 
         #region DatabaseHelper
 
-        // Indicate if the node exists by LocalPaht in the database table.
+        /// <summary>
+        /// Indicate if exists a node with the specified local path in the database.
+        /// </summary>
+        /// <param name="localPath">Local path of the node to search.</param>
+        /// <returns>TRUE if exists or FALSE in other case.</returns>
         public static bool ExistsNodeByLocalPath(String localPath)
         {
-            return DataBaseHelper<SavedForOffline>.ExistsNode(DB_TABLE_NAME, FIELD_LOCAL_PATH, localPath);
+            return ExistsItem(DB_TABLE_NAME, FIELD_LOCAL_PATH, localPath);
         }
 
-        // Retrieve the first node found by LocalPath in the database table.
-        public static SavedForOffline ReadNodeByLocalPath(String localPath)
+        /// <summary>
+        /// Retrieve the first node found with the specified local path in the database.
+        /// </summary>
+        /// <param name="localPath">Local path of the node to search.</param>
+        /// <returns>The first node with the specified local path.</returns>
+        public static SavedForOffline SelectNodeByLocalPath(String localPath)
         {
-            return DataBaseHelper<SavedForOffline>.ReadNode(DB_TABLE_NAME, FIELD_LOCAL_PATH, localPath);
+            return SelectItem(DB_TABLE_NAME, FIELD_LOCAL_PATH, localPath);
         }
 
-        // Retrieve the node list found by LocalPath in the database table.
-        public static ObservableCollection<SavedForOffline> ReadNodesByLocalPath(String localPath)
+        /// <summary>
+        /// Retrieve the list of nodes found with the specified local path in the database.
+        /// </summary>
+        /// <param name="localPath">Local path of the nodes to search.</param>
+        /// <returns>The list of nodes with the specified local path.</returns>
+        public static ObservableCollection<SavedForOffline> SelectNodesByLocalPath(String localPath)
         {
-            return DataBaseHelper<SavedForOffline>.ReadNodes(DB_TABLE_NAME, FIELD_LOCAL_PATH, localPath);
+            return SelectItems(DB_TABLE_NAME, FIELD_LOCAL_PATH, localPath);
         }
 
-        // Indicate if the node exists by Fingerprint in the database table.
+        /// <summary>
+        /// Indicate if exists a node with the specified fingerprint in the database.
+        /// </summary>
+        /// <param name="fingerprint">Fingerprint of the node to search.</param>
+        /// <returns>TRUE if exists or FALSE in other case.</returns>
         public static bool ExistNodeByFingerprint(String fingerprint)
         {
-            return DataBaseHelper<SavedForOffline>.ExistsNode(DB_TABLE_NAME, FIELD_FINGERPRINT, fingerprint);
+            return ExistsItem(DB_TABLE_NAME, FIELD_FINGERPRINT, fingerprint);
         }
 
-        // Retrieve the first node found by Fingerprint in the database table.
-        public static SavedForOffline ReadNodeByFingerprint(String fingerprint)
+        /// <summary>
+        /// Retrieve the first node found with the specified fingerprint in the database.
+        /// </summary>
+        /// <param name="fingerprint">Fingerprint of the node to search.</param>
+        /// <returns>The first node with the specified fingerprint.</returns>
+        public static SavedForOffline SelectNodeByFingerprint(String fingerprint)
         {
-            return DataBaseHelper<SavedForOffline>.ReadNode(DB_TABLE_NAME, FIELD_FINGERPRINT, fingerprint);
+            return SelectItem(DB_TABLE_NAME, FIELD_FINGERPRINT, fingerprint);
         }
 
-        // Retrieve the node list found by Fingerprint in the database table.
-        public static ObservableCollection<SavedForOffline> ReadNodesByFingerprint(String fingerprint)
+        /// <summary>
+        /// Retrieve the list of nodes found with the specified fingerprint in the database.
+        /// </summary>
+        /// <param name="fingerprint">Fingerprint of the nodes to search.</param>
+        /// <returns>The list of nodes with the specified fingerprint.</returns>
+        public static ObservableCollection<SavedForOffline> SelectNodesByFingerprint(String fingerprint)
         {
-            return DataBaseHelper<SavedForOffline>.ReadNodes(DB_TABLE_NAME, FIELD_FINGERPRINT, fingerprint);
+            return SelectItems(DB_TABLE_NAME, FIELD_FINGERPRINT, fingerprint);
         }
 
-        // Indicate if the node exists by Base64Handle in the database table.
+        /// <summary>
+        /// Indicate if exists a node with the specified handle in the database.
+        /// </summary>
+        /// <param name="base64Handle">Handle of the node to search.</param>
+        /// <returns>TRUE if exists or FALSE in other case.</returns>
         public static bool ExistNodeByBase64Handle(String base64Handle)
         {
-            return DataBaseHelper<SavedForOffline>.ExistsNode(DB_TABLE_NAME, FIELD_BASE_64_HANDLE, base64Handle);
+            return ExistsItem(DB_TABLE_NAME, FIELD_BASE_64_HANDLE, base64Handle);
         }
 
-        // Retrieve the first node found by Base64Handle in the database table.
-        public static SavedForOffline ReadNodeByBase64Handle(String base64Handle)
+        /// <summary>
+        /// Retrieve the first node found with the specified handle in the database.
+        /// </summary>
+        /// <param name="base64Handle">Handle of the node to search.</param>
+        /// <returns>The first node with the specified handle.</returns>
+        public static SavedForOffline SelectNodeByBase64Handle(String base64Handle)
         {
-            return DataBaseHelper<SavedForOffline>.ReadNode(DB_TABLE_NAME, FIELD_BASE_64_HANDLE, base64Handle);
+            return SelectItem(DB_TABLE_NAME, FIELD_BASE_64_HANDLE, base64Handle);
         }
 
-        // Retrieve the node list found by Base64Handle in the database table.
-        public static ObservableCollection<SavedForOffline> ReadNodesByBase64Handle(String base64Handle)
+        /// <summary>
+        /// Retrieve the list of nodes found with the specified handle in the database.
+        /// </summary>
+        /// <param name="base64Handle">Handle of the nodes to search.</param>
+        /// <returns>The list of nodes with the specified handle.</returns>
+        public static ObservableCollection<SavedForOffline> SelectNodesByBase64Handle(String base64Handle)
         {
-            return DataBaseHelper<SavedForOffline>.ReadNodes(DB_TABLE_NAME, FIELD_BASE_64_HANDLE, base64Handle);
+            return SelectItems(DB_TABLE_NAME, FIELD_BASE_64_HANDLE, base64Handle);
         }
 
-        // Indicate if the node exists by ParentBase64Handle in the database table.
+        /// <summary>
+        /// Indicate if exists a node with the specified parent handle in the database.
+        /// </summary>
+        /// <param name="parentBase64Handle">Parent handle of the node to search.</param>
+        /// <returns>TRUE if exists or FALSE in other case.</returns>
         public static bool ExistNodeByParentBase64Handle(String parentBase64Handle)
         {
-            return DataBaseHelper<SavedForOffline>.ExistsNode(DB_TABLE_NAME, FIELD_PARENT_BASE_64_HANDLE, parentBase64Handle);
+            return ExistsItem(DB_TABLE_NAME, FIELD_PARENT_BASE_64_HANDLE, parentBase64Handle);
         }
 
-        // Retrieve the first node found by ParentBase64Handle in the database table.
-        public static SavedForOffline ReadNodeByParentBase64Handle(String parentBase64Handle)
+        /// <summary>
+        /// Retrieve the first node found with the specified parent handle in the database.
+        /// </summary>
+        /// <param name="parentBase64Handle">Parent handle of the node to search.</param>
+        /// <returns>The first node with the specified parent handle.</returns>
+        public static SavedForOffline SelectNodeByParentBase64Handle(String parentBase64Handle)
         {
-            return DataBaseHelper<SavedForOffline>.ReadNode(DB_TABLE_NAME, FIELD_PARENT_BASE_64_HANDLE, parentBase64Handle);
+            return SelectItem(DB_TABLE_NAME, FIELD_PARENT_BASE_64_HANDLE, parentBase64Handle);
         }
 
-        // Retrieve the node list found by ParentBase64Handle in the database table.
-        public static ObservableCollection<SavedForOffline> ReadNodesByParentBase64Handle(String parentBase64Handle)
+        /// <summary>
+        /// Retrieve the list of nodes found with the specified parent handle in the database.
+        /// </summary>
+        /// <param name="parentBase64Handle">Parent handle of the node to search.</param>
+        /// <returns>The list of nodes with the specified parent handle.</returns>
+        public static ObservableCollection<SavedForOffline> SelectNodesByParentBase64Handle(String parentBase64Handle)
         {
-            return DataBaseHelper<SavedForOffline>.ReadNodes(DB_TABLE_NAME, FIELD_PARENT_BASE_64_HANDLE, parentBase64Handle);
+            return SelectItems(DB_TABLE_NAME, FIELD_PARENT_BASE_64_HANDLE, parentBase64Handle);
         }
 
-        // Indicate if the node exists by IsSelectedForOffline in the database table.
-        public static bool ExistNodeByIsSelectedForOffline(bool isSelectedForOffline)
+        /// <summary>
+        /// Retrieve all nodes from the database table.
+        /// </summary>
+        /// <returns>List of all nodes.</returns>
+        public static ObservableCollection<SavedForOffline> SelectAllNodes()
         {
-            return DataBaseHelper<SavedForOffline>.ExistsNode(DB_TABLE_NAME, FIELD_IS_SELECTED_FOR_OFFLINE, isSelectedForOffline.ToString());
+            return SelectAllItems();
         }
 
-        // Retrieve the first node found by IsSelectedForOffline in the database table.
-        public static SavedForOffline ReadNodeByIsSelectedForOffline(bool isSelectedForOffline)
-        {
-            return DataBaseHelper<SavedForOffline>.ReadNode(DB_TABLE_NAME, FIELD_IS_SELECTED_FOR_OFFLINE, isSelectedForOffline.ToString());
-        }
-
-        // Retrieve the node list found by IsSelectedForOffline in the database table.
-        public static ObservableCollection<SavedForOffline> ReadNodesByIsSelectedForOffline(bool isSelectedForOffline)
-        {
-            return DataBaseHelper<SavedForOffline>.ReadNodes(DB_TABLE_NAME, FIELD_IS_SELECTED_FOR_OFFLINE, isSelectedForOffline.ToString());
-        }
-
-        // Retrieve the all node list from the database table.
-        public static ObservableCollection<SavedForOffline> ReadAllNodes()
-        {
-            return DataBaseHelper<SavedForOffline>.ReadAllNodes();
-        }
-
-        // Update existing node 
+        /// <summary>
+        /// Update an existing node.
+        /// </summary>
+        /// <param name="node">Node to update.</param>
         public static void UpdateNode(SavedForOffline node)
         {
-            DataBaseHelper<SavedForOffline>.UpdateNode(node);
+            UpdateItem(node);
         }
 
-        // Update existing node 
+        /// <summary>
+        /// Update existing node.
+        /// </summary>
+        /// <param name="megaNode">Node to update.</param>
         public static void UpdateNode(MNode megaNode, bool isSelectedForOffline = false)
         {
             var nodeOfflineLocalPath = Path.Combine(ApplicationData.Current.LocalFolder.Path, AppResources.DownloadsDirectory,
@@ -158,13 +197,20 @@ namespace MegaApp.Database
             UpdateNode(sfoNode);
         }
 
-        // Insert the new node in the database. 
+        /// <summary>
+        /// Insert a node in the database.
+        /// </summary>
+        /// <param name="node">Node to insert.</param>
         public static void Insert(SavedForOffline newNode)
         {
-            DataBaseHelper<SavedForOffline>.Insert(newNode);
+            InsertItem(newNode);
         }
 
-        // Insert the new node in the SavedForOffline table. 
+        /// <summary>
+        /// Insert a node in the database.
+        /// </summary>
+        /// <param name="megaNode">Node to insert.</param>
+        /// <param name="isSelectedForOffline">Indicate if is specifically selected for offline.</param>
         public static void Insert(MNode megaNode, bool isSelectedForOffline = false)
         {
             var nodeOfflineLocalPath = Path.Combine(ApplicationData.Current.LocalFolder.Path, AppResources.DownloadsDirectory,
@@ -182,16 +228,22 @@ namespace MegaApp.Database
             Insert(sfoNode);            
         }
 
-        // Delete the first node found with the specified field value
+        /// <summary>
+        /// Delete the first node found with the specified local path.
+        /// </summary>
+        /// <param name="localPath">Local path of the node to delete.</param>
         public static void DeleteNodeByLocalPath(String localPath)
         {
-            DataBaseHelper<SavedForOffline>.DeleteNode(DB_TABLE_NAME, FIELD_LOCAL_PATH, localPath);
+            DeleteItem(DB_TABLE_NAME, FIELD_LOCAL_PATH, localPath);
         }
 
-        // Delete specific node
+        /// <summary>
+        /// Delete specific node.
+        /// </summary>
+        /// <param name="node">Node to delete.</param>
         public static void DeleteNode(SavedForOffline node)
         {
-            DataBaseHelper<SavedForOffline>.DeleteNode(node);
+            DeleteItem(node);
         }
 
         /// <summary>
@@ -200,7 +252,7 @@ namespace MegaApp.Database
         /// <returns>TRUE if all went well or FALSE in other case</returns>
         public static bool DeleteAllNodes()
         {
-            return DataBaseHelper<SavedForOffline>.DeleteAllNodes();
+            return DeleteAllItems();
         }
 
         #endregion

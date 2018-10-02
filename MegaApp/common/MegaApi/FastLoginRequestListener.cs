@@ -8,7 +8,6 @@ using MegaApp.Enums;
 using MegaApp.Resources;
 using MegaApp.Services;
 using MegaApp.ViewModels;
-using MegaApp.Views;
 
 namespace MegaApp.MegaApi
 {
@@ -35,12 +34,12 @@ namespace MegaApp.MegaApi
 
         protected override string ErrorMessage
         {
-            get { return AppMessages.LoginFailed; }
+            get { return AppMessages.AM_ResumeSessionFailed; }
         }
 
         protected override string ErrorMessageTitle
         {
-            get { return AppMessages.LoginFailed_Title.ToUpper(); }
+            get { return UiResources.UI_ResumeSession.ToUpper(); }
         }
 
         protected override bool ShowErrorMessage

@@ -601,10 +601,6 @@
     <value>Trier</value>
     <comment>Label for any 'Sort' button, link, text, etc. - (String as short as possible).</comment>
   </data>
-  <data name="ClearRubbishBin" xml:space="preserve">
-    <value>Vider la corbeille</value>
-    <comment>Label for any 'Empty rubbish' button, link, text, etc. - (String as short as possible).</comment>
-  </data>
   <data name="Ok" xml:space="preserve">
     <value>Ok</value>
     <comment>Label for any 'Ok' button, link, text, title, etc. - (String as short as possible).</comment>
@@ -1419,5 +1415,13 @@ NOTE: Max. length 20 characters.</comment>
   <data name="UI_FindApp" xml:space="preserve">
     <value>Trouver l’appli</value>
     <comment>Label for any 'Find app' button, link, text, title, etc, to find an app to open a file, resource, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_ClearRubbishBin" xml:space="preserve">
+    <value>Vider la corbeille</value>
+    <comment>Label for a 'Clear Rubbish Bin' button to clear the rubbish bin content - (String as short as possible).</comment>
+  </data>
+  <data name="UI_ResumeSession" xml:space="preserve">
+    <value>Reprendre la session</value>
+    <comment>Label for any 'Resume session' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
 </root>

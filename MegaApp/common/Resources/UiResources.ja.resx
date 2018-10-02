@@ -601,10 +601,6 @@
     <value>ソート</value>
     <comment>Label for any 'Sort' button, link, text, etc. - (String as short as possible).</comment>
   </data>
-  <data name="ClearRubbishBin" xml:space="preserve">
-    <value>ゴミ箱を空にする</value>
-    <comment>Label for any 'Empty rubbish' button, link, text, etc. - (String as short as possible).</comment>
-  </data>
   <data name="Ok" xml:space="preserve">
     <value>OK</value>
     <comment>Label for any 'Ok' button, link, text, title, etc. - (String as short as possible).</comment>
@@ -989,7 +985,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for the background of an empty transfers page - (String as short as possible).</comment>
   </data>
   <data name="EmptyRubbishBin" xml:space="preserve">
-    <value>ゴミ箱を空にする</value>
+    <value>ゴミ箱は空っぽ</value>
     <comment>Label for the background of an empty rubbish bin page - (String as short as possible).</comment>
   </data>
   <data name="EmptySharedFolders" xml:space="preserve">
@@ -1419,5 +1415,13 @@ NOTE: Max. length 20 characters.</comment>
   <data name="UI_FindApp" xml:space="preserve">
     <value>アプリを探す</value>
     <comment>Label for any 'Find app' button, link, text, title, etc, to find an app to open a file, resource, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_ClearRubbishBin" xml:space="preserve">
+    <value>ごみ箱をクリア</value>
+    <comment>Label for a 'Clear Rubbish Bin' button to clear the rubbish bin content - (String as short as possible).</comment>
+  </data>
+  <data name="UI_ResumeSession" xml:space="preserve">
+    <value>セッションを再開</value>
+    <comment>Label for any 'Resume session' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
 </root>

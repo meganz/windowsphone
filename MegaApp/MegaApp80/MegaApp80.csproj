@@ -117,6 +117,9 @@
     <Compile Include="..\common\Classes\AssociationUriMapper.cs">
       <Link>Classes\AssociationUriMapper.cs</Link>
     </Compile>
+    <Compile Include="..\common\Classes\BadSessionIdException.cs">
+      <Link>Classes\BadSessionIdException.cs</Link>
+    </Compile>
     <Compile Include="..\common\Classes\BillingDetails.cs">
       <Link>Classes\BillingDetails.cs</Link>
     </Compile>
@@ -401,6 +404,9 @@
     </Compile>
     <Compile Include="..\common\MegaApi\FastLoginRequestListener.cs">
       <Link>MegaApi\FastLoginRequestListener.cs</Link>
+    </Compile>
+    <Compile Include="..\common\MegaApi\FastLoginRequestListenerAsync.cs">
+      <Link>MegaApi\FastLoginRequestListenerAsync.cs</Link>
     </Compile>
     <Compile Include="..\common\MegaApi\FetchNodesRequestListener.cs">
       <Link>MegaApi\FetchNodesRequestListener.cs</Link>
@@ -3196,7 +3202,7 @@
     </XliffResource>
   </ItemGroup>
   <ItemGroup>
-    <SDKReference Include="SQLite.WP80, Version=3.24.0">
+    <SDKReference Include="SQLite.WP80, Version=3.25.1">
       <Name>SQLite for Windows Phone</Name>
     </SDKReference>
   </ItemGroup>

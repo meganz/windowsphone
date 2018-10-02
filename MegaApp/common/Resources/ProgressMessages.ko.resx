@@ -330,4 +330,12 @@ Preserve the '{0}' code because is for include node name.</comment>
     <value>복원중...</value>
     <comment>Progress indicator message when restoring node(s) from the rubbish bin - (String as short as possible).</comment>
   </data>
+  <data name="PM_FetchNodes" xml:space="preserve">
+    <value>계정 데이터 요청중...</value>
+    <comment>Progress indicator message when fetching nodes - (String as short as possible).</comment>
+  </data>
+  <data name="PM_DecryptNodes" xml:space="preserve">
+    <value>노드 해독중...</value>
+    <comment>Progress indicator message when decrypting nodes - (String as short as possible).</comment>
+  </data>
 </root>

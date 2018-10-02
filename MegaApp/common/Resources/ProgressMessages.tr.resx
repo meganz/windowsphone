@@ -330,4 +330,12 @@ Preserve the '{0}' code because is for include node name.</comment>
     <value>Geri yükleniyor...</value>
     <comment>Progress indicator message when restoring node(s) from the rubbish bin - (String as short as possible).</comment>
   </data>
+  <data name="PM_FetchNodes" xml:space="preserve">
+    <value>Hesap verileri isteniyor...</value>
+    <comment>Progress indicator message when fetching nodes - (String as short as possible).</comment>
+  </data>
+  <data name="PM_DecryptNodes" xml:space="preserve">
+    <value>Düğümler deşifreleniyor...</value>
+    <comment>Progress indicator message when decrypting nodes - (String as short as possible).</comment>
+  </data>
 </root>

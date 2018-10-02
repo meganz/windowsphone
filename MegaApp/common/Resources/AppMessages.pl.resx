@@ -1540,4 +1540,16 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
     <value>Nie udało się sprawdzić statusu uwierzytelniania dwuskładnikowego.</value>
     <comment>Message of the dialog displayed if fails the process to check the Multi-Factor Authentication status.</comment>
   </data>
+  <data name="AM_FileAlreadyExists" xml:space="preserve">
+    <value>Istnieje już plik o takiej nazwie</value>
+    <comment>Message which shows when a file name is duplicated during renaming.</comment>
+  </data>
+  <data name="AM_FolderAlreadyExists" xml:space="preserve">
+    <value>Istnieje już katalog o takiej nazwie</value>
+    <comment>Message which is shown when a folder name is duplicated during renaming or creation.</comment>
+  </data>
+  <data name="AM_ResumeSessionFailed" xml:space="preserve">
+    <value>Wznowienie sesji nie powiodło się, zamknij aplikację i spróbuj ponownie.</value>
+    <comment>Message of the dialog displayed when the process to resume a session failed.</comment>
+  </data>
 </root>

@@ -31,88 +31,89 @@ namespace MegaApp.Database
             }
         }
 
-        // Indicate if the node exists in the database table.
-        public static bool ExistsNode(String tableName, String fieldName, String fieldValue)
+        // Indicate if an item exists in the database table.
+        public static bool ExistsItem(String tableName, String fieldName, String fieldValue)
         {
-            return (ReadNode(tableName, fieldName, fieldValue) != null) ? true : false;
+            return (SelectItem(tableName, fieldName, fieldValue) != null) ? true : false;
         }
 
         /// <summary>
-        /// Retrieve the first node found in the database table
+        /// Retrieve the first item found in the database table
         /// </summary>
         /// <param name="tableName">Name of the database table</param>
         /// <param name="fieldName">Field by which to search the database</param>
         /// <param name="fieldValue">Field value to search in the database table</param>
-        /// <returns>The first node found in the database table</returns>
-        public static T ReadNode(String tableName, String fieldName, String fieldValue)
+        /// <returns>The first item found in the database table</returns>
+        public static T SelectItem(String tableName, String fieldName, String fieldValue)
         {
             try
             {
                 using (var dbConn = new SQLiteConnection(App.DB_PATH, SQLiteOpenFlags.ReadOnly))
                 {
-                    var existingNode = dbConn.Query<T>("select * from " + tableName + " where " + fieldName + " = '" + fieldValue + "'").FirstOrDefault();                    
-                    return existingNode;
+                    return dbConn.Query<T>(
+                        "select * from " + tableName + " where " + fieldName + " = '" + fieldValue + "'")
+                        .FirstOrDefault();
                 }
             }
             catch (Exception e) 
             {
-                LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error reading node from DB", e);
+                LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error selecting item from DB", e);
                 return default(T);
             }
         }
 
         /// <summary>
-        /// Retrieve the node list found in the database table
+        /// Retrieve the list of items found in the database table
         /// </summary>
         /// <param name="tableName">Name of the database table</param>
         /// <param name="fieldName">Field by which to search the database</param>
         /// <param name="fieldValue">Field value to search in the database table</param>
-        /// <returns>Node list found in the database table</returns>
-        public static ObservableCollection<T> ReadNodes(String tableName, String fieldName, String fieldValue)
+        /// <returns>List of items found in the database table</returns>
+        public static ObservableCollection<T> SelectItems(String tableName, String fieldName, String fieldValue)
         {
             try 
             {
                 using (var dbConn = new SQLiteConnection(App.DB_PATH, SQLiteOpenFlags.ReadOnly))
                 {
-                    List<T> _nodeList = dbConn.Query<T>("select * from " + tableName + " where " + fieldName + " = '" + fieldValue + "'").ToList<T>();
-                    ObservableCollection<T> nodeList = new ObservableCollection<T>(_nodeList);
-                    return nodeList;
+                    List<T> _itemList = dbConn.Query<T>("select * from " + tableName + " where " + fieldName + " = '" + fieldValue + "'").ToList<T>();
+                    ObservableCollection<T> itemList = new ObservableCollection<T>(_itemList);
+                    return itemList;
                 }            
             }
             catch (Exception e)
             {
-                LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error reading nodes from DB", e);
+                LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error selecting items from DB", e);
                 return null;
             }
         }
 
         /// <summary>
-        /// Retrieve the all node list from the database table
+        /// Retrieve the all items from the database table
         /// </summary>
-        /// <returns>All node list from the database table</returns>
-        public static ObservableCollection<T> ReadAllNodes()
+        /// <returns>List of all items from the database table</returns>
+        public static ObservableCollection<T> SelectAllItems()
         {
             try
             {
                 using (var dbConn = new SQLiteConnection(App.DB_PATH, SQLiteOpenFlags.ReadOnly))
                 {
-                    List<T> _nodeList = dbConn.Table<T>().ToList<T>();
-                    ObservableCollection<T> nodeList = new ObservableCollection<T>(_nodeList);
-                    return nodeList;
+                    List<T> _itemList = dbConn.Table<T>().ToList<T>();
+                    ObservableCollection<T> itemList = new ObservableCollection<T>(_itemList);
+                    return itemList;
                 }
             }
             catch (Exception e)
             {
-                LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error reading all nodes from DB", e);
+                LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error selecting all items from DB", e);
                 return null;
             }
         }                
 
         /// <summary>
-        /// Update existing node
+        /// Update existing item
         /// </summary>
-        /// <param name="node">Node to update</param>
-        public static void UpdateNode(T node)
+        /// <param name="item">Item to update</param>
+        public static void UpdateItem(T item)
         {
             try
             {
@@ -120,21 +121,21 @@ namespace MegaApp.Database
                 {
                     dbConn.RunInTransaction(() =>
                     {
-                        dbConn.Update(node);
+                        dbConn.Update(item);
                     });
                 }
             }
             catch (Exception e)
             {
-                LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error updating node of the DB", e);
+                LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error updating item of the DB", e);
             }
         }        
 
         /// <summary>
-        /// Insert the new node in the database
+        /// Insert a new item in the database
         /// </summary>
-        /// <param name="newNode">No to insert</param>
-        public static void Insert(T newNode)
+        /// <param name="newItem">Item to insert</param>
+        public static void InsertItem(T newItem)
         {
             try
             {
@@ -142,49 +143,49 @@ namespace MegaApp.Database
                 {
                     dbConn.RunInTransaction(() =>
                     {
-                        dbConn.Insert(newNode);
+                        dbConn.Insert(newItem);
                     });
                 }
             }
             catch (Exception e)
             {
-                LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error inserting node in the DB", e);
+                LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error inserting item in the DB", e);
             }
         }        
 
         /// <summary>
-        /// Delete the first node found with the specified field value
+        /// Delete the first item found with the specified field value
         /// </summary>
         /// <param name="tableName">Name of the database table</param>
         /// <param name="fieldName">Field by which to search the database</param>
         /// <param name="fieldValue">Field value to search in the database table</param>
-        public static void DeleteNode(String tableName, String fieldName, String fieldValue)
+        public static void DeleteItem(String tableName, String fieldName, String fieldValue)
         {
             try
             {
                 using (var dbConn = new SQLiteConnection(App.DB_PATH))
                 {
-                    var existingNode = dbConn.Query<T>("select * from " + tableName + " where " + fieldName + " = '" + fieldValue + "'").FirstOrDefault();
-                    if (existingNode != null)
+                    var existingItem = dbConn.Query<T>("select * from " + tableName + " where " + fieldName + " = '" + fieldValue + "'").FirstOrDefault();
+                    if (existingItem != null)
                     {
                         dbConn.RunInTransaction(() =>
                         {
-                            dbConn.Delete(existingNode);
+                            dbConn.Delete(existingItem);
                         });
                     }
                 }
             }
             catch (Exception e)
             {
-                LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error deleting node from the DB", e);
+                LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error deleting item from the DB", e);
             }
         }
 
         /// <summary>
-        /// Delete specific node
+        /// Delete specific item
         /// </summary>
-        /// <param name="node">Node to delete</param>
-        public static void DeleteNode(T node)
+        /// <param name="item">Item to delete</param>
+        public static void DeleteItem(T item)
         {
             try
             {
@@ -192,21 +193,21 @@ namespace MegaApp.Database
                 {
                     dbConn.RunInTransaction(() =>
                     {
-                        dbConn.Delete(node);
+                        dbConn.Delete(item);
                     });
                 }
             }
             catch (Exception e)
             {
-                LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error deleting node from the DB", e);
+                LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error deleting item from the DB", e);
             }
         }
 
         /// <summary>
-        /// Delete all node list or delete table 
+        /// Delete all item or delete table 
         /// </summary>
         /// <returns>TRUE if all went well or FALSE in other case</returns>
-        public static bool DeleteAllNodes()
+        public static bool DeleteAllItems()
         {
             try
             {

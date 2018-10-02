@@ -168,7 +168,7 @@ namespace MegaApp.ViewModels
                     this.TranslateAppBarItems(
                         iconButtons.Cast<ApplicationBarIconButton>().ToList(),
                         menuItems.Cast<ApplicationBarMenuItem>().ToList(),
-                        new[] { UiResources.ClearRubbishBin },
+                        new[] { UiResources.UI_ClearRubbishBin },
                         new[] { UiResources.Refresh, UiResources.Sort, UiResources.MultiSelect });
                     break;
                 }
@@ -197,7 +197,7 @@ namespace MegaApp.ViewModels
             if (this.RubbishBin.ChildNodes.Count < 1) return;
 
             var customMessageDialog = new CustomMessageDialog(
-                UiResources.ClearRubbishBin,
+                UiResources.UI_ClearRubbishBin,
                 AppMessages.CleanRubbishBinQuestion,
                 App.AppInformation,
                 MessageDialogButtons.OkCancel,

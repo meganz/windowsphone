@@ -104,7 +104,7 @@ namespace MegaApp.ViewModels
                     this.TranslateAppBarItems(
                         iconButtons.Cast<ApplicationBarIconButton>().ToList(),
                         menuItems.Cast<ApplicationBarMenuItem>().ToList(),
-                        new[] { UiResources.ClearRubbishBin },
+                        new[] { UiResources.UI_ClearRubbishBin },
                         new[] { UiResources.Refresh, UiResources.Sort, UiResources.MultiSelect });
                     break;
                 }
@@ -126,7 +126,7 @@ namespace MegaApp.ViewModels
 
         #region Private Methods
 
-        private async void InitializeModel()
+        private void InitializeModel()
         {
             this.CameraUploads = new CameraUploadsFolderViewModel(this.MegaSdk, this.AppInformation, ContainerType.CloudDrive);
         }

@@ -1135,7 +1135,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when fails to copy the user's Recovery Key to the clipboard to be saved or exported - (String as short as possible).</comment>
   </data>
   <data name="AM_RecoveryKeyCopied" xml:space="preserve">
-    <value>تم نسخ مفتاح الإستعادة إلى الحافظة</value>
+    <value>تم نسخ المفتاح الرئيسي الي الحافظة. يرجى الاحتفاظ به بمكان آمن</value>
     <comment>Message of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported.</comment>
   </data>
   <data name="AM_RecoveryKeyCopied_Title" xml:space="preserve">
@@ -1451,7 +1451,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the test password dialog.</comment>
   </data>
   <data name="AM_RecoveryKeyExported" xml:space="preserve">
-    <value>تم تصدير مفتاح الاسترجاع</value>
+    <value>تم تصدير مفتاح الاسترجاع، يرجى الاحتفاظ به بمكان آمن</value>
     <comment>Message of the dialog or notification displayed in cases that the app has succesful exported the recovery key.</comment>
   </data>
   <data name="AM_RecoveryKeyExported_Title" xml:space="preserve">
@@ -1539,5 +1539,17 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
   <data name="AM_MFA_CheckStatusFailed" xml:space="preserve">
     <value>Failed to check the status of two factor authentication.</value>
     <comment>Message of the dialog displayed if fails the process to check the Multi-Factor Authentication status.</comment>
+  </data>
+  <data name="AM_FileAlreadyExists" xml:space="preserve">
+    <value>هناك ملف بنفس الاسم</value>
+    <comment>Message which shows when a file name is duplicated during renaming.</comment>
+  </data>
+  <data name="AM_FolderAlreadyExists" xml:space="preserve">
+    <value>هناك مجلد بنفس الاسم</value>
+    <comment>Message which is shown when a folder name is duplicated during renaming or creation.</comment>
+  </data>
+  <data name="AM_ResumeSessionFailed" xml:space="preserve">
+    <value>فشل عملية استعادة الجلسة الخاصة بك. يرجى اغلاق التطبيق ثم إعادة المحاولة.</value>
+    <comment>Message of the dialog displayed when the process to resume a session failed.</comment>
   </data>
 </root>

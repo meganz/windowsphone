@@ -1537,7 +1537,19 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
     <comment>Message of the dialog displayed when the process/request to restore multiple nodes from the rubbish bin failed.</comment>
   </data>
   <data name="AM_MFA_CheckStatusFailed" xml:space="preserve">
-    <value>Failed to check the status of two factor authentication.</value>
+    <value>Mislukt om de status van twee-stap authenticatie te controleren.</value>
     <comment>Message of the dialog displayed if fails the process to check the Multi-Factor Authentication status.</comment>
+  </data>
+  <data name="AM_FileAlreadyExists" xml:space="preserve">
+    <value>Er is al een bestand met dezelfde naam</value>
+    <comment>Message which shows when a file name is duplicated during renaming.</comment>
+  </data>
+  <data name="AM_FolderAlreadyExists" xml:space="preserve">
+    <value>Er is al een map met dezelfde naam</value>
+    <comment>Message which is shown when a folder name is duplicated during renaming or creation.</comment>
+  </data>
+  <data name="AM_ResumeSessionFailed" xml:space="preserve">
+    <value>Mislukt om uw sessie te hervatten. Sluit de app en probeer later nogmaals.</value>
+    <comment>Message of the dialog displayed when the process to resume a session failed.</comment>
   </data>
 </root>

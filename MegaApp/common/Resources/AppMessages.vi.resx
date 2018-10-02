@@ -1540,4 +1540,16 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
     <value>Không kiểm tra được tình trạng của chức năng xác minh 2-bước.</value>
     <comment>Message of the dialog displayed if fails the process to check the Multi-Factor Authentication status.</comment>
   </data>
+  <data name="AM_FileAlreadyExists" xml:space="preserve">
+    <value>Đã có một tệp tin với cái tên này rồi</value>
+    <comment>Message which shows when a file name is duplicated during renaming.</comment>
+  </data>
+  <data name="AM_FolderAlreadyExists" xml:space="preserve">
+    <value>Đã có một thư mục với cái tên này rồi</value>
+    <comment>Message which is shown when a folder name is duplicated during renaming or creation.</comment>
+  </data>
+  <data name="AM_ResumeSessionFailed" xml:space="preserve">
+    <value>Việc khôi phục phiên bị thất bại. Xin đóng ứng dụng rồi thử lại sau.</value>
+    <comment>Message of the dialog displayed when the process to resume a session failed.</comment>
+  </data>
 </root>

@@ -603,7 +603,7 @@ namespace MegaApp.ViewModels
         {
             if (FileService.FileExists(Path.Combine(sfoPath, node.Name))) return true;
 
-            var existingNode = SavedForOffline.ReadNodeByFingerprint(MegaSdk.getNodeFingerprint(node.OriginalMNode));
+            var existingNode = SavedForOffline.SelectNodeByFingerprint(MegaSdk.getNodeFingerprint(node.OriginalMNode));
             if (existingNode != null)
             {                
                 bool result = await FileService.CopyFile(existingNode.LocalPath, sfoPath);
@@ -740,7 +740,7 @@ namespace MegaApp.ViewModels
 
             if(SavedForOffline.ExistsNodeByLocalPath(nodeOfflineLocalPath))            
             {
-                var existingNode = SavedForOffline.ReadNodeByLocalPath(nodeOfflineLocalPath);
+                var existingNode = SavedForOffline.SelectNodeByLocalPath(nodeOfflineLocalPath);
                 if ((megaNode.getType() == MNodeType.TYPE_FILE && FileService.FileExists(nodeOfflineLocalPath)) ||
                     (megaNode.getType() == MNodeType.TYPE_FOLDER && FolderService.FolderExists(nodeOfflineLocalPath)))
                 {

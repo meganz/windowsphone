@@ -39,7 +39,7 @@ namespace MegaApp.ViewModels
 
             if (this.IsFolder) return;
 
-            var existingNode = SavedForOffline.ReadNodeByLocalPath(this.NodePath);
+            var existingNode = SavedForOffline.SelectNodeByLocalPath(this.NodePath);
             if (existingNode != null)
             {
                 this.Base64Handle = existingNode.Base64Handle;
