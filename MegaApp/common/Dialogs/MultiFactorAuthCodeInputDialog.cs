@@ -74,6 +74,17 @@ namespace MegaApp.Dialogs
             this.CreateDigitInput();
             contentStackPanel.Children.Add(this.verificationCode);
 
+            Grid subGrid = new Grid()
+            {
+                HorizontalAlignment = HorizontalAlignment.Center,
+                MinHeight = 48,
+                RowDefinitions =
+                {
+                    new RowDefinition() { Height = new GridLength(1, GridUnitType.Auto) },
+                    new RowDefinition() { Height = new GridLength(1, GridUnitType.Star) }
+                }
+            };
+
             this.progressBar = new ProgressBar()
             {
                 Width = 160,
@@ -82,11 +93,13 @@ namespace MegaApp.Dialogs
                 IsIndeterminate = true,
                 Visibility = Visibility.Collapsed
             };
-            contentStackPanel.Children.Add(this.progressBar);
+            subGrid.Children.Add(this.progressBar);
+            Grid.SetRow(this.progressBar, 0);
 
-            this.warningMessageStackPanel = this.CreateErrorMessage();
-            contentStackPanel.Children.Add(this.warningMessageStackPanel);
-
+            this.warningMessageGrid = this.CreateErrorMessage();
+            subGrid.Children.Add(this.warningMessageGrid);
+            Grid.SetRow(this.warningMessageGrid, 0);
+            
             if (showLostDeviceLink)
             {
                 var lostAuthDeviceLink = new HyperlinkButton()
@@ -98,8 +111,11 @@ namespace MegaApp.Dialogs
                     Foreground = (Brush)Application.Current.Resources["MegaRedColorBrush"],
                     Style = (Style)Application.Current.Resources["HyperlinkButtonStyle"]
                 };
-                contentStackPanel.Children.Add(lostAuthDeviceLink);
+                subGrid.Children.Add(lostAuthDeviceLink);
+                Grid.SetRow(lostAuthDeviceLink, 1);
             }
+
+            contentStackPanel.Children.Add(subGrid);
 
             this.MainGrid.Children.Add(contentStackPanel);
             Grid.SetRow(contentStackPanel, 2);
@@ -123,6 +139,7 @@ namespace MegaApp.Dialogs
             };
             this.verificationCode.TextChanged += OnTextChanged;
             this.verificationCode.KeyDown += OnInputTextBoxKeyDown;
+            this.verificationCode.Loaded += ((sender, args) => this.verificationCode.Focus());
         }
 
         private void OnTextChanged(object sender, EventArgs e)
@@ -154,13 +171,17 @@ namespace MegaApp.Dialogs
             e.Handled = true;
         }
 
-        private StackPanel CreateErrorMessage()
+        private Grid CreateErrorMessage()
         {
-            var errorStackPanel = new StackPanel()
+            var errorGrid = new Grid()
             {
                 Margin = new Thickness(0,4,0,4),
-                Orientation = Orientation.Horizontal,
-                HorizontalAlignment = HorizontalAlignment.Center
+                HorizontalAlignment = HorizontalAlignment.Center,
+                ColumnDefinitions =
+                {
+                    new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Auto) },
+                    new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) }
+                }
             };
 
             var errorViewBox = new Viewbox()
@@ -179,7 +200,8 @@ namespace MegaApp.Dialogs
             };
             errorViewBox.Child = this.warningIcon;
 
-            errorStackPanel.Children.Add(errorViewBox);
+            errorGrid.Children.Add(errorViewBox);
+            Grid.SetColumn(errorViewBox, 0);
 
             warningMessageTextBlock = new TextBlock()
             {
@@ -187,9 +209,10 @@ namespace MegaApp.Dialogs
                 Text = AppMessages.AM_InvalidCode,
                 Visibility = Visibility.Collapsed
             };
-            errorStackPanel.Children.Add(warningMessageTextBlock);
+            errorGrid.Children.Add(warningMessageTextBlock);
+            Grid.SetColumn(warningMessageTextBlock, 1);
 
-            return errorStackPanel;
+            return errorGrid;
         }
 
         private async void Verify()
@@ -237,7 +260,7 @@ namespace MegaApp.Dialogs
         #region Controls
 
         private RadTextBox verificationCode;
-        private StackPanel warningMessageStackPanel;
+        private Grid warningMessageGrid;
         private TextBlock warningMessageTextBlock;
         private Path warningIcon;
         private ProgressBar progressBar;
