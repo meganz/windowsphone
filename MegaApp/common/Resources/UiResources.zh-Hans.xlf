@@ -258,7 +258,7 @@
         </trans-unit>
         <trans-unit id="Resx/UI_Logout" translate="yes" space="preserve">
           <source>Logout</source>
-          <target state="translated">登出</target>
+          <target state="translated">注销</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Logout' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/HomeRoot" translate="yes" space="preserve">
@@ -460,7 +460,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_RecoveryKey" translate="yes" space="preserve">
           <source>Recovery Key</source>
-          <target state="translated">还原金钥</target>
+          <target state="translated">恢复密钥</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Recovery Key' button, link, text, title, etc. Preserve uppercase - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_MEGA_SDK_Version" translate="yes" space="preserve">
@@ -1201,7 +1201,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_CloseOtherSessions" translate="yes" space="preserve">
           <source>Close other sessions</source>
-          <target state="translated">从其他设备中登出账户</target>
+          <target state="translated">关闭其他会话</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Close other sessions' button, link, etc., to close all other active sessions except the current one - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_CloseSession" translate="yes" space="preserve">
@@ -1506,7 +1506,7 @@ NOTE: Keep the capital letter if possible.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_BackupRecoveryKey" translate="yes" space="preserve">
           <source>Backup Recovery Key</source>
-          <target state="translated">备份还原秘钥</target>
+          <target state="translated">备份恢复密钥</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Backup Recovery Key' button, link, text, title, etc. - (String as short as possible).
 NOTE: Max. length 20 characters.</note>
         </trans-unit>
