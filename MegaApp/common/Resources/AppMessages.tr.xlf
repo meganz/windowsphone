@@ -8,7 +8,7 @@
       <group id="Resx">
         <trans-unit id="Resx/AgreeTermsOfService" translate="yes" space="preserve">
           <source>You must agree with our Terms of Service</source>
-          <target state="translated">Hizmet Şartımızı kabul etmeniz gerekir</target>
+          <target state="translated">Hizmet Koşullarımız'ı kabul etmek zorundasınız.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user try to create a new MEGA account without accept previously the 'Terms of Service'.</note>
         </trans-unit>
         <trans-unit id="Resx/ConfirmAccountFailed" translate="yes" space="preserve">
@@ -1410,7 +1410,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AssociatedUserAccountTerminated" translate="yes" space="preserve">
           <source>The account that created this link has been terminated due to multiple violations of our Terms of Service.</source>
-          <target state="translated">Bu linki oluşturan hesap Hizmet Koşullarını bir çok kez ihlal etmesi sonucu kaldırıldı.</target>
+          <target state="translated">Bu linki oluşturan hesap Hizmet Koşulları'nı bir çok kez ihlal etmesi sonucu kaldırıldı.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when you open a file/folder link (or other shared resource) and it's no longer available because the the associated user account has been terminated due to multiple violations of our Terms of Service.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DownloadFailed_Title" translate="yes" space="preserve">
@@ -1450,7 +1450,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AccountBlocked" translate="yes" space="preserve">
           <source>Your account was terminated due to a breach of MEGA’s Terms of Service, such as abuse of rights of others; sharing and/or importing illegal data; or system abuse.</source>
-          <target state="translated">Hesabınız, başkalarının haklarını kötüye kullanma, yasadışı verileri paylaşma ve/veya içe aktarma veya sistem kötüye kullanımı gibi MEGA Hizmet Şartları'nı ihlal ettiği için sona erdirildi.</target>
+          <target state="translated">Hesabınız, başkalarının haklarını kötüye kullanma, yasadışı verileri paylaşma ve/veya içe aktarma veya sistem kötüye kullanımı gibi MEGA Hizmet Koşulları'nı ihlal ettiği için sona erdirildi.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the user is trying to login and the account has been blocked.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AccountNotConfirmed" translate="yes" space="preserve">
@@ -1587,7 +1587,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_AccountBlockedCopyright" translate="yes" space="preserve">
           <source>Your account has been suspended due to multiple breaches of MEGA’s Terms of Service. Please check your email inbox.</source>
-          <target state="translated">Hesabınız, MEGA Hizmet Şartları'nın birden fazla ihlalinden dolayı askıya alındı. Lütfen e-posta gelen kutunuzu kontrol edin.</target>
+          <target state="translated">Hesabınız, MEGA Hizmet Koşulları'nın birden fazla ihlalinden dolayı askıya alındı. Lütfen e-posta gelen kutunuzu kontrol edin.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the user is trying to login and the account has been blocked for multiple copyright violation.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_EmptyRequiredFields" translate="yes" space="preserve">
@@ -1706,8 +1706,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <note from="MultilingualBuild" annotates="source" priority="2">Message displayed when the user is trying to insert and invalid code, for example the 6-digit code of the Multi-Factor Authentication.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_2FA_EnabledDialogDescription" translate="yes" space="preserve">
-          <source>Next time you login to your account you will be asked to enter a 6-digit code provided by your Authenticator app.</source>
-          <target state="translated">Next time you login to your account you will be asked to enter a 6-digit code provided by your Authenticator app.</target>
+          <source>Next time you login to your account you will be asked to enter a 6-digit code provided by your Authentication app.</source>
+          <target state="translated">Bir dahaki sefere hesabınıza giriş yaptığınızda, Kimlik Doğrulama uygulamanız tarafından sağlanan 6 basamaklı bir kod girmeniz istenecektir.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Description text of the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_2FA_EnabledDialogTitle" translate="yes" space="preserve">
