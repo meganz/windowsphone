@@ -11,12 +11,12 @@ namespace ScheduledCameraUploadTaskAgent.MegaApi
     {
         #region MGlobalListenerInterface
 
-        public void onAccountUpdate(MegaSDK api)
+        public void onUsersUpdate(MegaSDK api, MUserList users)
         {
             // Do nothing
         }
 
-        public void onContactRequestsUpdate(MegaSDK api, MContactRequestList requests)
+        public void onUserAlertsUpdate(MegaSDK api, MUserAlertList alerts)
         {
             // Do nothing
         }
@@ -35,12 +35,17 @@ namespace ScheduledCameraUploadTaskAgent.MegaApi
             }
         }
 
-        public void onReloadNeeded(MegaSDK api)
+        public void onAccountUpdate(MegaSDK api)
         {
             // Do nothing
         }
 
-        public void onUsersUpdate(MegaSDK api, MUserList users)
+        public void onContactRequestsUpdate(MegaSDK api, MContactRequestList requests)
+        {
+            // Do nothing
+        }
+
+        public void onReloadNeeded(MegaSDK api)
         {
             // Do nothing
         }
