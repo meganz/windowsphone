@@ -53,7 +53,7 @@
         </trans-unit>
         <trans-unit id="Resx/UI_CreateAccount" translate="yes" space="preserve">
           <source>Create account</source>
-          <target state="translated">Nuovo conto</target>
+          <target state="translated">Crea account</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Create account' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_CreateFolder" translate="yes" space="preserve">
@@ -586,7 +586,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_UpgradeAccount" translate="yes" space="preserve">
           <source>Upgrade account</source>
-          <target state="translated">Aggiorna l'account</target>
+          <target state="translated">Passa a PRO</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Upgrade account' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/About" translate="yes" space="preserve">
@@ -884,7 +884,7 @@ Preserve the {0} code because is for include the name/type of the selected plan 
         </trans-unit>
         <trans-unit id="Resx/SelectMembership" translate="yes" space="preserve">
           <source>Select membership</source>
-          <target state="translated">Seleziona conto</target>
+          <target state="translated">Seleziona il tipo di abbonamento</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label to indicate the user that is needed select a membership (monthly or annualy) for upgrade his account.</note>
         </trans-unit>
         <trans-unit id="Resx/SettingsShort" translate="yes" space="preserve">
@@ -941,7 +941,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
         </trans-unit>
         <trans-unit id="Resx/ChoosePaymentMethod" translate="yes" space="preserve">
           <source>Choose payment method</source>
-          <target state="translated">Scegli metodo di pagamentp</target>
+          <target state="translated">Scegli metodo di pagamento</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label to indicate the user that is needed choose a payment method for upgrade his account.</note>
         </trans-unit>
         <trans-unit id="Resx/NoPaymentMethodsAvailable" translate="yes" space="preserve">
@@ -976,17 +976,17 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
         </trans-unit>
         <trans-unit id="Resx/GetProAccount" translate="yes" space="preserve">
           <source>You can be a PRO user!</source>
-          <target state="translated">Puoi diventare un user PRO!</target>
+          <target state="translated">Puoi diventare un utente PRO!</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the dialog shown randomly when a user logs into a free account, notifying the user the possibility of upgrade the account - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UpgradeAccountQuestion" translate="yes" space="preserve">
           <source>Do you want to upgrade your account?</source>
-          <target state="translated">Vuoi aggiornare il tuo account?</target>
+          <target state="translated">Vuoi passare a PRO?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the dialog shown randomly when a user logs into a free account, asking if the user wants to upgrade the account - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UpgradeNow" translate="yes" space="preserve">
           <source>Upgrade now!</source>
-          <target state="translated">Aggiorna l'account ora!</target>
+          <target state="translated">Passa a PRO ora!</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the 'Upgrade now!' button of the dialog shown randomly when a user logs into a free account - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/WarningOutOfSpace" translate="yes" space="preserve">
