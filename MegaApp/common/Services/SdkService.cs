@@ -143,7 +143,7 @@ namespace MegaApp.Services
         /// <returns>True if the node exists or false in other case.</returns>
         public static bool ExistsNodeByName(MNode searchNode, string name, bool isFolder, bool recursive = false)
         {
-            var searchResults = MegaSdk.search(searchNode, name, false);
+            var searchResults = MegaSdk.search(searchNode, name, recursive);
             for (var i = 0; i < searchResults.size(); i++)
             {
                 var node = searchResults.get(i);
