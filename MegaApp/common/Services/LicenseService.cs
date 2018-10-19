@@ -3,23 +3,16 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Windows;
 using System.Xml.Linq;
-using Windows.Foundation;
-using Windows.Storage;
-using Microsoft.Phone.Tasks;
 using mega;
 using MegaApp.Classes;
-using MegaApp.Converters;
 using MegaApp.MegaApi;
 using MegaApp.Resources;
-using MegaApp.Views;
 
 // Use mocking library in DEBUG mode
 // And the real Windows Store library in RELEASE Mode
 #if DEBUG
     using MockIAPLib;
-    using Store = MockIAPLib;
 #else
     using Windows.ApplicationModel.Store;
 #endif
@@ -198,6 +191,16 @@ namespace MegaApp.Services
         private static void SendLicenseToMega(string receipt)
         {
             // Validate and activate the MEGA Windows Store (int 13) subscription on the MEGA license server
+            // If user has accessed a public node in the last 24 hours, also send the node handle (Task #10800)
+            var lastPublicNodeHandle = SettingsService.GetLastPublicNodeHandle();
+            if (lastPublicNodeHandle.HasValue)
+            {
+                SdkService.MegaSdk.submitPurchaseReceiptWithLastPublicHandle(
+                    (int)MPaymentMethod.PAYMENT_METHOD_WINDOWS_STORE,
+                    receipt, lastPublicNodeHandle.Value, new PurchaseReceiptRequestListener(receipt));
+                return;
+            }
+
             SdkService.MegaSdk.submitPurchaseReceipt((int)MPaymentMethod.PAYMENT_METHOD_WINDOWS_STORE, 
                 receipt, new PurchaseReceiptRequestListener(receipt));
         }

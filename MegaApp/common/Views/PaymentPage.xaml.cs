@@ -10,6 +10,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using Telerik.Windows.Controls;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
@@ -435,7 +436,7 @@ namespace MegaApp.Views
             _paymentViewModel.BillingDetails.CountryCode = countries.ElementAt(this.LstCountries.SelectedIndex).Item1;
         }
 
-        private async void OnSelectedPaymentMethod(object sender, Telerik.Windows.Controls.ListBoxItemTapEventArgs e)
+        private async void OnSelectedPaymentMethod(object sender, ListBoxItemTapEventArgs e)
         {
             if (!NetworkService.IsNetworkAvailable(true)) return;
 
@@ -447,7 +448,18 @@ namespace MegaApp.Views
 
                 case MPaymentMethod.PAYMENT_METHOD_CENTILI:
                 case MPaymentMethod.PAYMENT_METHOD_FORTUMO:
-                    SdkService.MegaSdk.getPaymentId(_paymentViewModel.SelectedProduct.Handle, new GetPaymentUrlRequestListener(((PaymentMethod) LstPaymentMethods.SelectedItem).PaymentMethodType));
+                    // If user has accessed a public node in the last 24 hours, also send the node handle (Task #10800)
+                    var lastPublicNodeHandle = SettingsService.GetLastPublicNodeHandle();
+                    if (lastPublicNodeHandle.HasValue)
+                    {
+                        SdkService.MegaSdk.getPaymentIdWithLastPublicHandle(
+                            _paymentViewModel.SelectedProduct.Handle, lastPublicNodeHandle.Value,
+                            new GetPaymentUrlRequestListener(((PaymentMethod)LstPaymentMethods.SelectedItem).PaymentMethodType));
+                        break;
+                    }
+
+                    SdkService.MegaSdk.getPaymentId(_paymentViewModel.SelectedProduct.Handle, 
+                        new GetPaymentUrlRequestListener(((PaymentMethod) LstPaymentMethods.SelectedItem).PaymentMethodType));
                     break;
 
                 case MPaymentMethod.PAYMENT_METHOD_CREDIT_CARD:
