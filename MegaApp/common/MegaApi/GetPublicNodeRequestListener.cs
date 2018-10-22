@@ -1,15 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
-using MegaApp.Extensions;
 using MegaApp.Resources;
 using MegaApp.Services;
 using MegaApp.ViewModels;
@@ -152,6 +146,9 @@ namespace MegaApp.MegaApi
 
             if (publicNode != null)
             {
+                // Save the handle of the last public node accessed (Task #10800)
+                SettingsService.SaveLastPublicNodeHandle(publicNode.getHandle());
+
                 #if WINDOWS_PHONE_80
                 // Detect if is an image to allow directly download to camera albums
                 bool isImage = false;

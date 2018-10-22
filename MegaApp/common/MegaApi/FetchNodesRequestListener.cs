@@ -301,6 +301,9 @@ namespace MegaApp.MegaApi
             var folderLinkRootNode = _folderLinkViewModel.FolderLink.FolderRootNode ??
                 NodeService.CreateNew(api, App.AppInformation, api.getRootNode(), ContainerType.FolderLink);
 
+            // Save the handle of the last public node accessed (Task #10800)
+            SettingsService.SaveLastPublicNodeHandle(folderLinkRootNode.Handle);
+
             var autoResetEvent = new AutoResetEvent(false);
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {

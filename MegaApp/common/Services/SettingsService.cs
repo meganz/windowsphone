@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.IO.IsolatedStorage;
-using System.Linq.Expressions;
 using System.Runtime.Serialization;
 using System.Threading;
 using System.Threading.Tasks;
@@ -352,6 +351,31 @@ namespace MegaApp.Services
             DeleteSetting(SettingsResources.UserPinLock);
                         
             DeleteFileSetting("LastUploadDate");
+        }
+
+        /// <summary>
+        /// Save the handle of the last public node accesed (file or folder).
+        /// </summary>
+        /// <param name="handle">Handle of the last public node accessed.</param>
+        public static void SaveLastPublicNodeHandle(ulong handle)
+        {
+            SaveSetting(SettingsResources.SR_LastPublicNodeHandle, handle);
+            SaveSetting(SettingsResources.SR_LastPublicNodeHandleTimestamp,
+                DateTime.Now.Subtract(DateTime.MinValue).TotalHours);
+        }
+
+        /// <summary>
+        /// Get the handle of the last public node accessed (file or folder).
+        /// </summary>
+        /// <returns>Handle of the node if was access in the last 24 hours or NULL in other case.</returns>
+        public static ulong? GetLastPublicNodeHandle()
+        {
+            var handle = LoadSetting<ulong>(SettingsResources.SR_LastPublicNodeHandle);
+            var timestamp = LoadSetting<double>(SettingsResources.SR_LastPublicNodeHandleTimestamp);
+
+            var period = DateTime.Now.Subtract(DateTime.MinValue).TotalHours - timestamp;
+            if (period < 24) return handle;
+            return null;
         }
     }
 }

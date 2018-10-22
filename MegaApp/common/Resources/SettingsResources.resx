@@ -181,4 +181,12 @@
     <value>{BA40B745-D0F5-4AD5-A539-44B1403A9EB8}</value>
     <comment>Rersource key to store if use the staging server or not - (NO-TRANSLATION).</comment>
   </data>
+  <data name="SR_LastPublicNodeHandle" xml:space="preserve">
+    <value>{B619F5C0-AD92-48C8-ACCA-08D3EEBA3025}</value>
+    <comment>Resource key to store the last public handle accessed by the user - (NO-TRANSLATION).</comment>
+  </data>
+  <data name="SR_LastPublicNodeHandleTimestamp" xml:space="preserve">
+    <value>{D77F6E2F-6702-4EC1-A903-00A982729EFB}</value>
+    <comment>Resource key to store the timestamp when the user accessed to the last public handle - (NO-TRANSLATION).</comment>
+  </data>
 </root>
