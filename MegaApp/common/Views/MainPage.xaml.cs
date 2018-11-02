@@ -1045,6 +1045,9 @@ namespace MegaApp.Views
 
             AcceptCopyAction();
 
+            _mainPageViewModel.CloudDrive.CurrentDisplayMode = _mainPageViewModel.CloudDrive.PreviousDisplayMode;
+            _mainPageViewModel.RubbishBin.CurrentDisplayMode = _mainPageViewModel.RubbishBin.PreviousDisplayMode;
+
             SetApplicationBarData();
         }
 
@@ -1081,9 +1084,6 @@ namespace MegaApp.Views
 
                 _mainPageViewModel.SourceFolderView = null;
             }
-
-            _mainPageViewModel.CloudDrive.CurrentDisplayMode = _mainPageViewModel.CloudDrive.PreviousDisplayMode;
-            _mainPageViewModel.RubbishBin.CurrentDisplayMode = _mainPageViewModel.RubbishBin.PreviousDisplayMode;
         }
 
         private void OnAcceptMoveClick(object sender, EventArgs e)
@@ -1092,6 +1092,9 @@ namespace MegaApp.Views
             SdkService.MegaSdk.retryPendingConnections();
 
             AcceptMoveAction();
+
+            _mainPageViewModel.CloudDrive.CurrentDisplayMode = _mainPageViewModel.CloudDrive.PreviousDisplayMode;
+            _mainPageViewModel.RubbishBin.CurrentDisplayMode = _mainPageViewModel.RubbishBin.PreviousDisplayMode;
             
             SetApplicationBarData();
         }
@@ -1135,9 +1138,6 @@ namespace MegaApp.Views
                     }
                 }
             }
-                        
-            _mainPageViewModel.CloudDrive.CurrentDisplayMode = _mainPageViewModel.CloudDrive.PreviousDisplayMode;
-            _mainPageViewModel.RubbishBin.CurrentDisplayMode = _mainPageViewModel.RubbishBin.PreviousDisplayMode;
         }
 
         private void OnCopyOrMoveItemTap(object sender, ContextMenuItemSelectedEventArgs e)
@@ -1318,6 +1318,11 @@ namespace MegaApp.Views
 
         private void OnItemCheckedStateChanged(object sender, ItemCheckedStateChangedEventArgs e)
         {
+            if (!this._mainPageViewModel.ActiveFolderView.IsMultiSelectActive) return;
+            
+            this._mainPageViewModel.ActiveFolderView.SelectedNodes =
+                this._mainPageViewModel.ActiveFolderView.ChildNodes.Where(n => n.IsMultiSelected).ToList();
+            
             this.SetApplicationBarData(NetworkService.IsNetworkAvailable());
         }
         
