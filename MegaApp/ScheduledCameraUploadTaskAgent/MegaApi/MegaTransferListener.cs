@@ -9,24 +9,6 @@ namespace ScheduledCameraUploadTaskAgent.MegaApi
     {
         private Timer _timer;
 
-        // Event raised so that the task agent can abort itself when storage quota is exceeded
-        public event EventHandler StorageQuotaExceeded;
-
-        // Event raised so that the task agent can finish itself when transfer quota is exceeded
-        public event EventHandler TransferQuotaExceeded;
-
-        protected virtual void OnStorageQuotaExceeded(EventArgs e)
-        {
-            if (StorageQuotaExceeded != null)
-                StorageQuotaExceeded(this, e);
-        }
-
-        protected virtual void OnTransferQuotaExceeded(EventArgs e)
-        {
-            if (TransferQuotaExceeded != null)
-                TransferQuotaExceeded(this, e);
-        }
-
         public bool onTransferData(MegaSDK api, MTransfer transfer, byte[] data)
         {
             return false;
@@ -36,15 +18,6 @@ namespace ScheduledCameraUploadTaskAgent.MegaApi
         {
             if(_timer != null) 
                 _timer.Dispose();
-
-            if (e.getErrorCode() == MErrorType.API_EGOINGOVERQUOTA || e.getErrorCode() == MErrorType.API_EOVERQUOTA)
-            {
-                //Stop the Camera Upload Service
-                LogService.Log(MLogLevel.LOG_LEVEL_INFO, 
-                    "Storage quota exceeded ({0}) - Disabling CAMERA UPLOADS service", e.getErrorCode().ToString());
-                OnStorageQuotaExceeded(EventArgs.Empty);
-                return;
-            }
 
             try
             {
@@ -97,11 +70,21 @@ namespace ScheduledCameraUploadTaskAgent.MegaApi
 
         public void onTransferTemporaryError(MegaSDK api, MTransfer transfer, MError e)
         {
-            // Transfer overquota error
-            if (e.getErrorCode() == MErrorType.API_EOVERQUOTA)
+            switch (e.getErrorCode())
             {
-                LogService.Log(MLogLevel.LOG_LEVEL_INFO, "Transfer quota exceeded (API_EOVERQUOTA)");
-                OnTransferQuotaExceeded(EventArgs.Empty);
+                case MErrorType.API_EGOINGOVERQUOTA:
+                case MErrorType.API_EOVERQUOTA:
+                    if (e.getValue() != 0) // TRANSFER OVERQUOTA ERROR
+                    {
+                        LogService.Log(MLogLevel.LOG_LEVEL_INFO,
+                            string.Format("Transfer quota exceeded ({0})", e.getErrorCode().ToString()));
+                    }
+                    else // STORAGE OVERQUOTA ERROR
+                    {
+                        LogService.Log(MLogLevel.LOG_LEVEL_INFO,
+                            string.Format("Storage quota exceeded ({0})", e.getErrorCode().ToString()));
+                    }
+                    break;
             }
         }
 

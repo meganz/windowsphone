@@ -33,6 +33,16 @@ namespace MegaApp.Services
         /// </summary>
         private static MultiFactorAuthCodeInputDialog MultiFactorAuthCodeInputDialogInstance;
 
+        /// <summary>
+        /// Avoid show multiple storage overquota alerts
+        /// </summary>
+        private static bool StorageOverquotaAlertDisplayed = false;
+
+        /// <summary>
+        /// Avoid show multiple transfer overquota warnings
+        /// </summary>
+        private static bool TransferOverquotaWarningDisplayed = false;
+
         #endregion
 
         #region Methods
@@ -348,8 +358,11 @@ namespace MegaApp.Services
             }
         }
 
-        public static void ShowOverquotaAlert()
+        public static async void ShowStorageOverquotaAlert()
         {
+            if (StorageOverquotaAlertDisplayed) return;
+            StorageOverquotaAlertDisplayed = true;
+
             var customMessageDialog = new CustomMessageDialog(AppMessages.OverquotaAlert_Title,
                 AppMessages.OverquotaAlert, App.AppInformation, MessageDialogButtons.YesNo);
             
@@ -359,11 +372,15 @@ namespace MegaApp.Services
                     new Uri("/Views/MyAccountPage.xaml?Pivot=1", UriKind.RelativeOrAbsolute));
             };
 
-            customMessageDialog.ShowDialog();
+            await customMessageDialog.ShowDialogAsync();
+            StorageOverquotaAlertDisplayed = false;
         }
 
-        public static void ShowTransferOverquotaWarning()
+        public static async void ShowTransferOverquotaWarning()
         {
+            if (TransferOverquotaWarningDisplayed) return;
+            TransferOverquotaWarningDisplayed = true;
+
             var upgradeAccountButton = new DialogButton(
                 UiResources.UI_UpgradeAccount, () =>
                 {
@@ -375,7 +392,8 @@ namespace MegaApp.Services
                 AppMessages.AM_TransferOverquotaWarning, App.AppInformation,
                 new[] { upgradeAccountButton, new DialogButton(UiResources.Dismiss, null) });
 
-            customMessageDialog.ShowDialog();
+            await customMessageDialog.ShowDialogAsync();
+            TransferOverquotaWarningDisplayed = false;
         }
 
         /// <summary>
