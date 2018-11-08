@@ -33,7 +33,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when confirm a MEGA account succesfully - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ConfirmNeeded" translate="yes" space="preserve">
-          <source>Check your e-mail and click the link to login and confirm your account</source>
+          <source>Check your email and click the link to login and confirm your account</source>
           <target state="translated">تأكد من البريد الإلكتروني الخاص بك وانقر على الرابط للدخول وتأكيد حسابك</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user create a new MEGA account successfully, informing that will receive an e-mail with a link to confirm account.</note>
         </trans-unit>
@@ -269,12 +269,12 @@ Preserve the {0} code because is for include the name of the item to be removed 
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when required fields for confirm account are not filled in.</note>
         </trans-unit>
         <trans-unit id="Resx/RequiredFieldsCreateAccount" translate="yes" space="preserve">
-          <source>Please fill in your name, e-mail address and password</source>
+          <source>Please fill in your name, email address and password</source>
           <target state="translated">يرجى تعبئة الاسم وعنوان البريد الإلكتروني وكلمة المرور</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when required fields for create account are not filled in.</note>
         </trans-unit>
         <trans-unit id="Resx/RequiredFieldsLogin" translate="yes" space="preserve">
-          <source>Please fill in your e-mail address and your MEGA password.</source>
+          <source>Please fill in your email address and your MEGA password.</source>
           <target state="translated">يرجى ملء عنوان البريد الإلكتروني وكلمة المرور الخاصة بك في MEGA.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when required fields for login are not filled in.</note>
         </trans-unit>
@@ -444,8 +444,8 @@ Preserve the {0} code because is for include the number of pending transfers in 
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user are trying to exit the application and has pending transfers. Asks for confirmation to exit - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AlreadyConfirmedAccount" translate="yes" space="preserve">
-          <source>The account is already confirmed. You can now login.</source>
-          <target state="translated">تم تفعيل الحساب بالفعل. يمكنك تسجيل الدخول الان.</target>
+          <source>Your account has been activated. Please log in.</source>
+          <target state="translated">تم تفعيل حسابك بالفعل. يُرجى تسجيل الدخول.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user try to confirm a MEGA account that has been already confirmed previously.</note>
         </trans-unit>
         <trans-unit id="Resx/AlreadyConfirmedAccount_Title" translate="yes" space="preserve">
@@ -747,7 +747,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to select files failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/WrongEmailPasswordLogin" translate="yes" space="preserve">
-          <source>Incorrect e-mail address or password. Please try again.</source>
+          <source>Incorrect email address or password. Please try again.</source>
           <target state="translated">عنوان البريد الإلكتروني أو كلمة سر خاطئة. حاول مرة اخرى.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user is trying to login with an e-mail that is not associated with a MEGA account or type a wrong password. Preserve the MEGA word in uppercase.</note>
         </trans-unit>
@@ -1434,7 +1434,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to import a folder link.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_EmailAlreadyRegistered" translate="yes" space="preserve">
-          <source>This e-mail address has already registered an account with MEGA.</source>
+          <source>This email address has already registered an account with MEGA.</source>
           <target state="translated">هذا البريد الإلكتروني لديه حساب مسجل بالفعل لدى MEGA.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the users tries to create an account with an email already in use.</note>
         </trans-unit>
@@ -1706,8 +1706,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <note from="MultilingualBuild" annotates="source" priority="2">Message displayed when the user is trying to insert and invalid code, for example the 6-digit code of the Multi-Factor Authentication.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_2FA_EnabledDialogDescription" translate="yes" space="preserve">
-          <source>Next time you login to your account you will be asked to enter a 6-digit code provided by your Authentication app.</source>
-          <target state="translated">Next time you login to your account you will be asked to enter a 6-digit code provided by your Authentication app.</target>
+          <source>Next time you login to your account you will be asked to enter a 6-digit code provided by your Authenticator App.</source>
+          <target state="translated">Next time you login to your account you will be asked to enter a 6-digit code provided by your Authenticator App.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Description text of the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_2FA_EnabledDialogTitle" translate="yes" space="preserve">
@@ -1736,8 +1736,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the seed needed to enable the Multi-Factor Authentication has been copied successfully to the clipboard.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_2FA_InputAppCodeDialogMessage" translate="yes" space="preserve">
-          <source>Please enter the code generated by your authentication app</source>
-          <target state="translated">Please enter the code generated by your authentication app</target>
+          <source>Please enter the 6-digit code generated by your Authenticator App.</source>
+          <target state="translated">Please enter the 6-digit code generated by your Authenticator App.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Description text of the dialog displayed to introduce the 6-digit code for the MFA.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_2FA_DisableDialogTitle" translate="yes" space="preserve">

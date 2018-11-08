@@ -264,7 +264,7 @@ Preserve the '{0}' code because is for include node name.</note>
         </trans-unit>
         <trans-unit id="Resx/PM_ConnectivityIssue" translate="yes" space="preserve">
           <source>Unable to reach MEGA. Please check your connectivity or try again later.</source>
-          <target state="translated">Não é possível acessar o MEGA. Por favor, verifique a sua conexão ou tente novamente mais tarde.</target>
+          <target state="translated">Não foi possível acessar o MEGA. Por favor, verifique a sua conexão ou tente novamente mais tarde.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when the SDK is waiting for the server to complete a request due to connectivity issue - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PM_ServersBusy" translate="yes" space="preserve">
