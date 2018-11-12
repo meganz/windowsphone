@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
 using mega;
@@ -10,8 +6,8 @@ using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.Resources;
 using MegaApp.Services;
-using MegaApp.ViewModels;
 using MegaApp.Views;
+using MegaApp.ViewModels;
 
 namespace MegaApp.MegaApi
 {
@@ -157,6 +153,7 @@ namespace MegaApp.MegaApi
                             break;
 
                         case MErrorType.API_ENOENT: // Wrong password
+                        case MErrorType.API_EKEY:   // Wrong password
                             new CustomMessageDialog(
                                 AppMessages.WrongPassword_Title,
                                 AppMessages.WrongPassword,

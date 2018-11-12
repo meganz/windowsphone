@@ -160,6 +160,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a {B619F5C0-AD92-48C8-ACCA-08D3EEBA3025}.
+        /// </summary>
+        public static string SR_LastPublicNodeHandle {
+            get {
+                return ResourceManager.GetString("SR_LastPublicNodeHandle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a {D77F6E2F-6702-4EC1-A903-00A982729EFB}.
+        /// </summary>
+        public static string SR_LastPublicNodeHandleTimestamp {
+            get {
+                return ResourceManager.GetString("SR_LastPublicNodeHandleTimestamp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a {92C84A5F-1387-4A44-AFE8-C44154B264D1}.
         /// </summary>
         public static string UserMegaEmailAddress {

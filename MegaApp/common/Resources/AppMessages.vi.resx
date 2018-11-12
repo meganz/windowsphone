@@ -465,7 +465,7 @@ Preserve the {0} code because is for include the number of pending transfers in 
     <comment>Title of the dialog displayed when a user are trying to exit the application and has pending transfers. Asks for confirmation to exit - (String as short as possible).</comment>
   </data>
   <data name="AlreadyConfirmedAccount" xml:space="preserve">
-    <value>Tài khoản đã được xác thực rồi. Bạn có thể dùng được ngay.</value>
+    <value>Tài khoản đã được kích hoạt rồi. Xin đăng nhập.</value>
     <comment>Message of the dialog displayed when a user try to confirm a MEGA account that has been already confirmed previously.</comment>
   </data>
   <data name="AlreadyConfirmedAccount_Title" xml:space="preserve">
@@ -1483,7 +1483,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message displayed when the user is trying to insert and invalid code, for example the 6-digit code of the Multi-Factor Authentication.</comment>
   </data>
   <data name="AM_2FA_EnabledDialogDescription" xml:space="preserve">
-    <value>Vào những lần đăng nhập tiếp theo, hệ thống sẽ yêu cầu nhập một đoạn mã dài 6 chữ số lấy từ app Lập Xác Thực.</value>
+    <value>Vào những lần đăng nhập tiếp theo, hệ thống sẽ yêu cầu nhập một đoạn mã dài 6 chữ số lấy từ App Lập Xác Thực.</value>
     <comment>Description text of the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication.</comment>
   </data>
   <data name="AM_2FA_EnabledDialogTitle" xml:space="preserve">
@@ -1507,7 +1507,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the seed needed to enable the Multi-Factor Authentication has been copied successfully to the clipboard.</comment>
   </data>
   <data name="AM_2FA_InputAppCodeDialogMessage" xml:space="preserve">
-    <value>Xin điền vào đoạn mã số hiện ra trên app lập xác thực</value>
+    <value>Xin nhập một đoạn mã dài 6 chữ số lấy từ App Lập Xác Thực.</value>
     <comment>Description text of the dialog displayed to introduce the 6-digit code for the MFA.</comment>
   </data>
   <data name="AM_2FA_DisableDialogTitle" xml:space="preserve">

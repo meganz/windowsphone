@@ -1369,7 +1369,7 @@ NOTE: Max. length 20 characters.</comment>
     <comment>Label for any 'Setup Two-Factor Authentication' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_SixDigitCode" xml:space="preserve">
-    <value>6 digit code</value>
+    <value>đoạn mã 6 chữ số</value>
     <comment>Placeholder text of the field to type the 6-digit code provided for the authenticator app to verify the Multi-Factor Authentication.</comment>
   </data>
   <data name="UI_Verify" xml:space="preserve">
@@ -1405,7 +1405,7 @@ NOTE: Max. length 20 characters.</comment>
     <comment>Label for any 'Open in...' button, link, text, title, etc. to open a file or other kind of resource with a certain app - (String as short as possible).</comment>
   </data>
   <data name="UI_MFA_SetupStep1" xml:space="preserve">
-    <value>Quét hay sao chép đoạn chủng tử nằm dưới đây vào app Lập Xác Thực muốn sử dụng. Cũng nên lưu lại mã này ở nơi an toàn trong trường hợp mất điện thoại.</value>
+    <value>Quét hay sao chép đoạn chủng tử nằm dưới đây vào app Lập Xác Thực muốn sử dụng. Cũng nên lưu lại mã này ở nơi an toàn trong trường hợp bị mất máy.</value>
     <comment>Label for the step 1 to setup the Multi-Factor Authentication.</comment>
   </data>
   <data name="UI_MFA_SetupStep2" xml:space="preserve">
@@ -1417,7 +1417,7 @@ NOTE: Max. length 20 characters.</comment>
     <comment>Label for any 'Find app' button, link, text, title, etc, to find an app to open a file, resource, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_ClearRubbishBin" xml:space="preserve">
-    <value>Clear Rubbish Bin</value>
+    <value>Dọn Thùng Rác</value>
     <comment>Label for a 'Clear Rubbish Bin' button to clear the rubbish bin content - (String as short as possible).</comment>
   </data>
   <data name="UI_ResumeSession" xml:space="preserve">

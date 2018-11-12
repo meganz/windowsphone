@@ -323,7 +323,7 @@ Preserve the '{0}' code because is for include node name.</comment>
     <comment>Progress indicator message when the SDK is waiting for the server to complete a request due to connectivity issue - (String as short as possible).</comment>
   </data>
   <data name="PM_ServersBusy" xml:space="preserve">
-    <value>I server sono troppo occupati. Per favore, aspetta.</value>
+    <value>I server sono occupati. Per favore, aspetta.</value>
     <comment>Progress indicator message when servers are too busy. SDK is waiting for the server to complete a request due to a HTTP error 500  - (String as short as possible).</comment>
   </data>
   <data name="PM_Restoring" xml:space="preserve">

@@ -158,7 +158,7 @@
     <comment>Title of the dialog displayed when the process/request to get the payment methods failed - (String as short as possible).</comment>
   </data>
   <data name="GetPaymentUrlFailed_Title" xml:space="preserve">
-    <value>Error recuperando URL de pago</value>
+    <value>Error recuperando el enlace de pago</value>
     <comment>Title of the dialog displayed when the process/request to get the payment Url failed - (String as short as possible).</comment>
   </data>
   <data name="BackgroundAgentDisabled_Title" xml:space="preserve">
@@ -288,7 +288,7 @@ Preserve the {0} code because is for include email of the contact to be removed 
     <comment>Message of the dialog displayed in cases when the user has disabled background agents for this application</comment>
   </data>
   <data name="GetPaymentUrlFailed" xml:space="preserve">
-    <value>No se ha podido recuperar la URL de pago. Inténtalo de nuevo [{0}]</value>
+    <value>No se ha podido recuperar el enlace de pago. Inténtalo de nuevo [{0}]</value>
     <comment>Message of the dialog displayed when the process/request to get the payment Url failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
@@ -610,7 +610,7 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
     <comment>Title of the dialog displayed when a user try to confirm a MEGA account that has been already confirmed previously - (String as short as possible).</comment>
   </data>
   <data name="AlreadyConfirmedAccount" xml:space="preserve">
-    <value>La cuenta ya está confirmada. Ahora puedes iniciar sesión.</value>
+    <value>Tu cuenta está activa. Por favor, inicia sesión.</value>
     <comment>Message of the dialog displayed when a user try to confirm a MEGA account that has been already confirmed previously.</comment>
   </data>
   <data name="PendingTransfersExit_Title" xml:space="preserve">
@@ -1076,7 +1076,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the warning dialog shown when you try to confirm an account but you are logged in with another one.</comment>
   </data>
   <data name="AM_AlreadyLoggedInAlert_Title" xml:space="preserve">
-    <value>Hay iniciada una sesión con otra cuenta</value>
+    <value>Tienes una sesión abierta con otra cuenta</value>
     <comment>Title of the warning dialog shown when you try to confirm an account but you are logged in with another one - (String as short as possible).</comment>
   </data>
   <data name="AM_DecryptionKeyAlertMessage" xml:space="preserve">
@@ -1156,7 +1156,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 Preserve the ({0}) code because is for include the file name in runtime.</comment>
   </data>
   <data name="AM_DisableDebugMode_Title" xml:space="preserve">
-    <value>Desactivar el modo depuración</value>
+    <value>Desactivar modo depuración</value>
     <comment>Alert title shown when the DEBUG mode is disabled - (String as short as possible).</comment>
   </data>
   <data name="AM_EnableDebugMode_Message" xml:space="preserve">
@@ -1165,7 +1165,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
 Preserve the ({0}) code because is for include the file name in runtime.</comment>
   </data>
   <data name="AM_EnableDebugMode_Title" xml:space="preserve">
-    <value>Activar el modo depuración</value>
+    <value>Activar modo depuración</value>
     <comment>Alert title shown when the DEBUG mode is enabled - (String as short as possible).</comment>
   </data>
   <data name="AM_DebugModeEnabled_Message" xml:space="preserve">
@@ -1507,7 +1507,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the seed needed to enable the Multi-Factor Authentication has been copied successfully to the clipboard.</comment>
   </data>
   <data name="AM_2FA_InputAppCodeDialogMessage" xml:space="preserve">
-    <value>Introduce el código generado por tu aplicación de autenticación</value>
+    <value>Introduce el código de 6 dígitos generado por tu aplicación de autenticación.</value>
     <comment>Description text of the dialog displayed to introduce the 6-digit code for the MFA.</comment>
   </data>
   <data name="AM_2FA_DisableDialogTitle" xml:space="preserve">

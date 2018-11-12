@@ -139,7 +139,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when confirm a MEGA account succesfully - (String as short as possible).</comment>
   </data>
   <data name="ConfirmNeeded" xml:space="preserve">
-    <value>Check your e-mail and click the link to login and confirm your account</value>
+    <value>Check your email and click the link to login and confirm your account</value>
     <comment>Message of the dialog displayed when a user create a new MEGA account successfully, informing that will receive an e-mail with a link to confirm account.</comment>
   </data>
   <data name="ConfirmNeeded_Title" xml:space="preserve">
@@ -329,11 +329,11 @@ Preserve the {0} code because is for include the name of the item to be removed 
     <comment>Message of the dialog displayed when required fields for confirm account are not filled in.</comment>
   </data>
   <data name="RequiredFieldsCreateAccount" xml:space="preserve">
-    <value>Please fill in your name, e-mail address and password</value>
+    <value>Please fill in your name, email address and password</value>
     <comment>Message of the dialog displayed when required fields for create account are not filled in.</comment>
   </data>
   <data name="RequiredFieldsLogin" xml:space="preserve">
-    <value>Please fill in your e-mail address and your MEGA password.</value>
+    <value>Please fill in your email address and your MEGA password.</value>
     <comment>Message of the dialog displayed when required fields for login are not filled in.</comment>
   </data>
   <data name="RequiredFields_Title" xml:space="preserve">
@@ -471,7 +471,7 @@ Preserve the {0} code because is for include the number of pending transfers in 
     <comment>Title of the dialog displayed when a user are trying to exit the application and has pending transfers. Asks for confirmation to exit - (String as short as possible).</comment>
   </data>
   <data name="AlreadyConfirmedAccount" xml:space="preserve">
-    <value>The account is already confirmed. You can now login.</value>
+    <value>Your account has been activated. Please log in.</value>
     <comment>Message of the dialog displayed when a user try to confirm a MEGA account that has been already confirmed previously.</comment>
   </data>
   <data name="AlreadyConfirmedAccount_Title" xml:space="preserve">
@@ -714,7 +714,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process to select files failed - (String as short as possible).</comment>
   </data>
   <data name="WrongEmailPasswordLogin" xml:space="preserve">
-    <value>Incorrect e-mail address or password. Please try again.</value>
+    <value>Incorrect email address or password. Please try again.</value>
     <comment>Message of the dialog displayed when a user is trying to login with an e-mail that is not associated with a MEGA account or type a wrong password. Preserve the MEGA word in uppercase.</comment>
   </data>
   <data name="DeleteNodeQuestion" xml:space="preserve">
@@ -1265,7 +1265,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Message of the dialog displayed when fails the process/request to import a folder link.</comment>
   </data>
   <data name="AM_EmailAlreadyRegistered" xml:space="preserve">
-    <value>This e-mail address has already registered an account with MEGA.</value>
+    <value>This email address has already registered an account with MEGA.</value>
     <comment>Message of the dialog shown when the users tries to create an account with an email already in use.</comment>
   </data>
   <data name="AM_IncompleteConfirmationLink" xml:space="preserve">
@@ -1483,7 +1483,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message displayed when the user is trying to insert and invalid code, for example the 6-digit code of the Multi-Factor Authentication.</comment>
   </data>
   <data name="AM_2FA_EnabledDialogDescription" xml:space="preserve">
-    <value>Next time you login to your account you will be asked to enter a 6-digit code provided by your Authentication app.</value>
+    <value>Next time you login to your account you will be asked to enter a 6-digit code provided by your Authenticator App.</value>
     <comment>Description text of the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication.</comment>
   </data>
   <data name="AM_2FA_EnabledDialogTitle" xml:space="preserve">
@@ -1507,7 +1507,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the seed needed to enable the Multi-Factor Authentication has been copied successfully to the clipboard.</comment>
   </data>
   <data name="AM_2FA_InputAppCodeDialogMessage" xml:space="preserve">
-    <value>Please enter the code generated by your authentication app</value>
+    <value>Please enter the 6-digit code generated by your Authenticator App.</value>
     <comment>Description text of the dialog displayed to introduce the 6-digit code for the MFA.</comment>
   </data>
   <data name="AM_2FA_DisableDialogTitle" xml:space="preserve">

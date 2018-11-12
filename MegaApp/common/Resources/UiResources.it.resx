@@ -723,7 +723,7 @@
 Preserve the {0} code because is for include the name/type of the selected plan in runtime.</comment>
   </data>
   <data name="SelectMembership" xml:space="preserve">
-    <value>Seleziona conto</value>
+    <value>Seleziona il tipo di abbonamento</value>
     <comment>Label to indicate the user that is needed select a membership (monthly or annualy) for upgrade his account.</comment>
   </data>
   <data name="SettingsShort" xml:space="preserve">
@@ -765,7 +765,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
     <comment>Label for any 'Awesome' text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="ChoosePaymentMethod" xml:space="preserve">
-    <value>Scegli metodo di pagamentp</value>
+    <value>Scegli metodo di pagamento</value>
     <comment>Label to indicate the user that is needed choose a payment method for upgrade his account.</comment>
   </data>
   <data name="NoPaymentMethodsAvailable" xml:space="preserve">
@@ -793,15 +793,15 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
     <comment>Label for any 'Limited' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="GetProAccount" xml:space="preserve">
-    <value>Puoi diventare un user PRO!</value>
+    <value>Puoi diventare un utente PRO!</value>
     <comment>Label for the dialog shown randomly when a user logs into a free account, notifying the user the possibility of upgrade the account - (String as short as possible).</comment>
   </data>
   <data name="UpgradeAccountQuestion" xml:space="preserve">
-    <value>Vuoi aggiornare il tuo account?</value>
+    <value>Vuoi passare a PRO?</value>
     <comment>Label for the dialog shown randomly when a user logs into a free account, asking if the user wants to upgrade the account - (String as short as possible).</comment>
   </data>
   <data name="UpgradeNow" xml:space="preserve">
-    <value>Aggiorna l'account ora!</value>
+    <value>Passa a PRO ora!</value>
     <comment>Label for the 'Upgrade now!' button of the dialog shown randomly when a user logs into a free account - (String as short as possible).</comment>
   </data>
   <data name="WarningOutOfSpace" xml:space="preserve">
@@ -1013,7 +1013,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Confirm account' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_CreateAccount" xml:space="preserve">
-    <value>Nuovo conto</value>
+    <value>Crea account</value>
     <comment>Label for any 'Create account' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_CreateFolder" xml:space="preserve">
@@ -1033,7 +1033,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Logout' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_UpgradeAccount" xml:space="preserve">
-    <value>Aggiorna l'account</value>
+    <value>Passa a PRO</value>
     <comment>Label for any 'Upgrade account' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_ChangePassword" xml:space="preserve">
@@ -1405,7 +1405,7 @@ NOTE: Max. length 20 characters.</comment>
     <comment>Label for any 'Open in...' button, link, text, title, etc. to open a file or other kind of resource with a certain app - (String as short as possible).</comment>
   </data>
   <data name="UI_MFA_SetupStep1" xml:space="preserve">
-    <value>Scansiona o copia il seed della tua app di autenticazione. Sii sicuro di copiare questo seed in una posizione sicura nel caso in cui tu perda il tuo telefono.</value>
+    <value>Scansiona o copia il seed della tua app di autenticazione. Sii sicuro di copiare questo seed in una posizione sicura nel caso in cui tu perda il tuo dispositivo.</value>
     <comment>Label for the step 1 to setup the Multi-Factor Authentication.</comment>
   </data>
   <data name="UI_MFA_SetupStep2" xml:space="preserve">

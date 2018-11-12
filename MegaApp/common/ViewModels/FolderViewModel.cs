@@ -41,6 +41,7 @@ namespace MegaApp.ViewModels
             this.ChildNodes = new ObservableCollection<IMegaNode>();
             this.BreadCrumbs = new ObservableCollection<IBaseNode>();
             this.BreadCrumbs.CollectionChanged += BreadCrumbs_CollectionChanged;
+            this.SelectedNodes = new List<IMegaNode>();
             this.IsMultiSelectActive = false;
             
             this.RemoveItemCommand = new DelegateCommand(this.RemoveItem);
@@ -662,6 +663,11 @@ namespace MegaApp.ViewModels
 
         public async void MultipleDownload(String downloadPath = null)
         {
+            if (this.Type == ContainerType.FolderLink)
+                this.SelectedNodes = App.LinkInformation.SelectedNodes;
+            else
+                this.SelectedNodes = ChildNodes.Where(n => n.IsMultiSelected).ToList();
+
             if (this.SelectedNodes.Count < 1) return;
 
             // Only 1 Folder Picker can be open at 1 time
@@ -1230,16 +1236,8 @@ namespace MegaApp.ViewModels
         }
         
         public DriveDisplayMode CurrentDisplayMode { get; set; }
-        public DriveDisplayMode PreviousDisplayMode { get; set; }        
-        
-        public List<IMegaNode> SelectedNodes
-        { 
-            get
-            {
-                return this.Type == ContainerType.FolderLink ?
-                    App.LinkInformation.SelectedNodes : ChildNodes.Where(n => n.IsMultiSelected).ToList(); 
-            }
-        }
+        public DriveDisplayMode PreviousDisplayMode { get; set; }
+        public List<IMegaNode> SelectedNodes;
 
         private ObservableCollection<IMegaNode> _childNodes;
         public ObservableCollection<IMegaNode> ChildNodes

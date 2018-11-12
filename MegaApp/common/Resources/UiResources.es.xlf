@@ -208,7 +208,7 @@
         </trans-unit>
         <trans-unit id="Resx/Upload" translate="yes" space="preserve">
           <source>upload</source>
-          <target state="translated">subida</target>
+          <target state="translated">subir</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Upload' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Transfers" translate="yes" space="preserve">
@@ -218,7 +218,7 @@
         </trans-unit>
         <trans-unit id="Resx/Download" translate="yes" space="preserve">
           <source>download</source>
-          <target state="translated">descarga</target>
+          <target state="translated">descargar</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Download' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Settings" translate="yes" space="preserve">
@@ -485,7 +485,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/NewestSortOption" translate="yes" space="preserve">
           <source>Newest</source>
-          <target state="translated">Más nuevo</target>
+          <target state="translated">Más reciente</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the menu option to sort the nodes of the cloud drive in descending order by date (from newer to older) - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_NewPinLock" translate="yes" space="preserve">
@@ -641,7 +641,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/InitTourPrivacy2" translate="yes" space="preserve">
           <source>end-to-end encryption.</source>
-          <target state="translated">encriptado punto a punto.</target>
+          <target state="translated">Cifrado punto a punto</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label 'end-to-end encryption.' for the second part of the sentence 'keep your files safe with MEGA's end-to-end encryption.', to build this sentence in two colors into the init tour page. Don't forget to place '.' at the end of the string. Keep all in lowercase.</note>
         </trans-unit>
         <trans-unit id="Resx/InitTourPrivacy_Title" translate="yes" space="preserve">
@@ -746,7 +746,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/EnableCameraUploads" translate="yes" space="preserve">
           <source>Enable Camera Uploads</source>
-          <target state="translated">Activar Subidas de la cámara</target>
+          <target state="translated">Activar las Subidas de la cámara</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the switch button to enable or disable the Camera Uploads service - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Security" translate="yes" space="preserve">
@@ -884,7 +884,7 @@ Preserve the {0} code because is for include the name/type of the selected plan 
         </trans-unit>
         <trans-unit id="Resx/SelectMembership" translate="yes" space="preserve">
           <source>Select membership</source>
-          <target state="translated">Seleccione plan</target>
+          <target state="translated">Selecciona tipo de suscripción</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label to indicate the user that is needed select a membership (monthly or annualy) for upgrade his account.</note>
         </trans-unit>
         <trans-unit id="Resx/SettingsShort" translate="yes" space="preserve">
@@ -1006,7 +1006,7 @@ Preserve the {0} code because is for include the name of the destination folder 
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Add contact' button, link, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CreateContact" translate="yes" space="preserve">
-          <source>Type e-mail address:</source>
+          <source>Type email address:</source>
           <target state="translated">Introduce el e-mail:</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text to show when a user wants to add a contact to type the email address of the new contact.</note>
         </trans-unit>
@@ -1542,7 +1542,7 @@ NOTE: Max. length 20 characters.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_SessionManagementDescription" translate="yes" space="preserve">
           <source>This will log you out on all other active sessions except the current one. You will need to re-login to your other devices to continue using MEGA.</source>
-          <target state="translated">Esto te desconectará de todas las demás sesiones activas, excepto la actual. Tendrás que volver a iniciar sesión en tus otros dispositivos para continuar usando MEGA.</target>
+          <target state="translated">Se cerrarán todas las demás sesiones activas, excepto la actual. Tendrás que volver a iniciar sesión en tus otros dispositivos para continuar usando MEGA.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label to describe the "Session Management" option of the "Settings" section.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_Warning" translate="yes" space="preserve">
@@ -1571,7 +1571,7 @@ NOTE: Max. length 20 characters.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Setup Two-Factor Authentication' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_MFA_SetupStep1" translate="yes" space="preserve">
-          <source>Scan or copy the seed to your Authenticator App. Be sure to backup this seed to a safe place in case you lose your phone.</source>
+          <source>Scan or copy the seed to your Authenticator App. Be sure to backup this seed to a safe place in case you lose your device.</source>
           <target state="translated">Escanea o copia la clave en tu aplicación de autenticación. Asegúrate de guardarla en un lugar seguro en caso de que pierdas tu dispositivo.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the step 1 to setup the Multi-Factor Authentication.</note>
         </trans-unit>

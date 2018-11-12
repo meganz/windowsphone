@@ -274,7 +274,7 @@
     <comment>Label for any 'Monthly' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="NewestSortOption" xml:space="preserve">
-    <value>Más nuevo</value>
+    <value>Más reciente</value>
     <comment>Label for the menu option to sort the nodes of the cloud drive in descending order by date (from newer to older) - (String as short as possible).</comment>
   </data>
   <data name="NameDescendingSortOption" xml:space="preserve">
@@ -709,7 +709,7 @@ Preserve the {0} code because is for include the name/type in runtime.</comment>
 Preserve the {0} code because is for include the name/type of the selected plan in runtime.</comment>
   </data>
   <data name="SelectMembership" xml:space="preserve">
-    <value>Seleccione plan</value>
+    <value>Selecciona tipo de suscripción</value>
     <comment>Label to indicate the user that is needed select a membership (monthly or annualy) for upgrade his account.</comment>
   </data>
   <data name="SettingsShort" xml:space="preserve">
@@ -745,7 +745,7 @@ Preserve the {0} code because is for include the name/type of the selected plan 
     <comment>Label for any 'Security' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="EnableCameraUploads" xml:space="preserve">
-    <value>Activar Subidas de la cámara</value>
+    <value>Activar las Subidas de la cámara</value>
     <comment>Label for the switch button to enable or disable the Camera Uploads service - (String as short as possible).</comment>
   </data>
   <data name="WifiOnly" xml:space="preserve">
@@ -829,7 +829,7 @@ Preserve the {0} code because is for include the name/type of the selected plan 
     <comment>Label 'register now and get' for the first part of the sentence 'register now and get 50 GB of free space.', to build this sentence in two colors into the init tour page. Don't place '.' at the end of the string. Keep all in lowercase.</comment>
   </data>
   <data name="InitTourPrivacy2" xml:space="preserve">
-    <value>encriptado punto a punto.</value>
+    <value>Cifrado punto a punto</value>
     <comment>Label 'end-to-end encryption.' for the second part of the sentence 'keep your files safe with MEGA's end-to-end encryption.', to build this sentence in two colors into the init tour page. Don't forget to place '.' at the end of the string. Keep all in lowercase.</comment>
   </data>
   <data name="InitTourPrivacy_Title" xml:space="preserve">
@@ -877,7 +877,7 @@ Preserve the {0} code because is for include the name/type of the selected plan 
     <comment>Label for any 'Settings' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Download" xml:space="preserve">
-    <value>descarga</value>
+    <value>descargar</value>
     <comment>Label for any 'Download' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Transfers" xml:space="preserve">
@@ -885,7 +885,7 @@ Preserve the {0} code because is for include the name/type of the selected plan 
     <comment>Label for any 'Transfers' button, link, text, title, etc. (i.e. total space) - (String as short as possible).</comment>
   </data>
   <data name="Upload" xml:space="preserve">
-    <value>subida</value>
+    <value>subir</value>
     <comment>Label for any 'Upload' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="NoTransfers" xml:space="preserve">
@@ -1345,7 +1345,7 @@ NOTE: Max. length 20 characters.</comment>
     <comment>Label for the "Settings" option to manage sessions - (String as short as possible).</comment>
   </data>
   <data name="UI_SessionManagementDescription" xml:space="preserve">
-    <value>Esto te desconectará de todas las demás sesiones activas, excepto la actual. Tendrás que volver a iniciar sesión en tus otros dispositivos para continuar usando MEGA.</value>
+    <value>Se cerrarán todas las demás sesiones activas, excepto la actual. Tendrás que volver a iniciar sesión en tus otros dispositivos para continuar usando MEGA.</value>
     <comment>Label to describe the "Session Management" option of the "Settings" section.</comment>
   </data>
   <data name="UI_Warning" xml:space="preserve">
