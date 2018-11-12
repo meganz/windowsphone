@@ -465,7 +465,7 @@ Preserve the {0} code because is for include the number of pending transfers in 
     <comment>Title of the dialog displayed when a user are trying to exit the application and has pending transfers. Asks for confirmation to exit - (String as short as possible).</comment>
   </data>
   <data name="AlreadyConfirmedAccount" xml:space="preserve">
-    <value>Esta conta já está confirmada. Você pode fazer o login.</value>
+    <value>A sua conta está ativa. Por favor, faça o login.</value>
     <comment>Message of the dialog displayed when a user try to confirm a MEGA account that has been already confirmed previously.</comment>
   </data>
   <data name="AlreadyConfirmedAccount_Title" xml:space="preserve">
@@ -1265,7 +1265,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Message of the dialog displayed when fails the process/request to import a folder link.</comment>
   </data>
   <data name="AM_EmailAlreadyRegistered" xml:space="preserve">
-    <value>Este endereço de e-mail já está cadastrado com uma conta MEGA.</value>
+    <value>Já existe uma conta no MEGA com esse email.</value>
     <comment>Message of the dialog shown when the users tries to create an account with an email already in use.</comment>
   </data>
   <data name="AM_IncompleteConfirmationLink" xml:space="preserve">
@@ -1443,7 +1443,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message displayed when the password test result is ok.</comment>
   </data>
   <data name="AM_TestPasswordWarning" xml:space="preserve">
-    <value>Senha incorreta! Salve a sua chave de recuperação o mais rápido possível!</value>
+    <value>Senha incorreta! Salve a sua chave de recuperação o mais rápido possível.</value>
     <comment>Warning message displayed when the password test fails.</comment>
   </data>
   <data name="AM_TestPassword_Title" xml:space="preserve">
@@ -1467,7 +1467,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog or notification displayed in cases that the app has not succesful exported the recovery key.</comment>
   </data>
   <data name="AM_CloseOtherSessionsQuestionMessage" xml:space="preserve">
-    <value>Você quer fechar todas as outras sessões? Essa ação fará logout de todas as outras sessões ativas, exceto a atual.</value>
+    <value>Você quer fechar as demais sessões? Essa ação faráo  logout de todas as outras sessões ativas, exceto a atual.</value>
     <comment>Message of the dialog displayed to ask the user to confirm want to close all the other sessions.</comment>
   </data>
   <data name="AM_2FA_SetupDialogDescription" xml:space="preserve">
@@ -1487,7 +1487,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Description text of the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication.</comment>
   </data>
   <data name="AM_2FA_EnabledDialogTitle" xml:space="preserve">
-    <value>Autenticação de dois fatores ativa</value>
+    <value>Autenticação de dois fatores ativada</value>
     <comment>Title text of the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication.</comment>
   </data>
   <data name="AM_MFA_SeedCopied" xml:space="preserve">
@@ -1507,7 +1507,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the seed needed to enable the Multi-Factor Authentication has been copied successfully to the clipboard.</comment>
   </data>
   <data name="AM_2FA_InputAppCodeDialogMessage" xml:space="preserve">
-    <value>Digite o código gerado pelo seu aplicativo de autenticação</value>
+    <value>Por favor, digite o código de 6 dígitos gerado pelo seu aplicativo de autenticação.</value>
     <comment>Description text of the dialog displayed to introduce the 6-digit code for the MFA.</comment>
   </data>
   <data name="AM_2FA_DisableDialogTitle" xml:space="preserve">
@@ -1529,11 +1529,11 @@ Confirme que você salvou a sua chave de recuperação.</value>
 Preserve the '{0}' code because is for include the file/folder name in runtime.</comment>
   </data>
   <data name="AM_RestoreFromRubbishBinFailed_Title" xml:space="preserve">
-    <value>Erro ao restaurar da Lixeira</value>
+    <value>Erro ao restaurar itens da Lixeira</value>
     <comment>Title of the dialog displayed when the process/request to restore nodes from the rubbish bin failed - (String as short as possible).</comment>
   </data>
   <data name="AM_RestoreMultiFromRubbishBinFailed" xml:space="preserve">
-    <value>Não foi possível restaurar os itens da Lixeira. Tente novamente.</value>
+    <value>Não foi possível restaurar os itens da lixeira. Tente novamente.</value>
     <comment>Message of the dialog displayed when the process/request to restore multiple nodes from the rubbish bin failed.</comment>
   </data>
   <data name="AM_MFA_CheckStatusFailed" xml:space="preserve">

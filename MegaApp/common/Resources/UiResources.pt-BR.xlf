@@ -38,7 +38,7 @@
         </trans-unit>
         <trans-unit id="Resx/UI_ConfirmAccount" translate="yes" space="preserve">
           <source>Confirm account</source>
-          <target state="translated">confirmar conta</target>
+          <target state="translated">Confirmar conta</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Confirm account' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_ConfirmPassword" translate="yes" space="preserve">
@@ -208,7 +208,7 @@
         </trans-unit>
         <trans-unit id="Resx/Upload" translate="yes" space="preserve">
           <source>upload</source>
-          <target state="translated">enviar</target>
+          <target state="translated">upload</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Upload' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Transfers" translate="yes" space="preserve">
@@ -925,7 +925,7 @@ Preserve the {0} code because is for include the name/type in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AccountRenewalNotice" translate="yes" space="preserve">
           <source>Your {0} subscription will be automatically rebilled on your {0} anniversary unless you log in to your account and cancel the subscription prior to the renewal date.</source>
-          <target state="translated">Seu {0} inscrição será automaticamente rebilled em seu {0} aniversário a menos que você faça login na sua conta e cancelar a assinatura antes da data de renovação.</target>
+          <target state="translated">A sua assinatura {0} será renovada automaticamente no seu aniversário {0} a menos que você faça login na sua conta e cancele a assinatura antes da data de renovação.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label to indicate the renewal period of the purchased subscription. 
 Preserve the {0} code because is for include the renewal period string (Monthly or Annually) in runtime.</note>
         </trans-unit>
@@ -981,7 +981,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
         </trans-unit>
         <trans-unit id="Resx/UpgradeAccountQuestion" translate="yes" space="preserve">
           <source>Do you want to upgrade your account?</source>
-          <target state="translated">Você deseja atualizar a sua conta?</target>
+          <target state="translated">Você deseja fazer upgrade da sua conta?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the dialog shown randomly when a user logs into a free account, asking if the user wants to upgrade the account - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UpgradeNow" translate="yes" space="preserve">
@@ -1006,7 +1006,7 @@ Preserve the {0} code because is for include the name of the destination folder 
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Add contact' button, link, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CreateContact" translate="yes" space="preserve">
-          <source>Type e-mail address:</source>
+          <source>Type email address:</source>
           <target state="translated">Digite o endereço de e-mail:</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text to show when a user wants to add a contact to type the email address of the new contact.</note>
         </trans-unit>
@@ -1426,7 +1426,7 @@ NOTE: Keep the capital letter if possible.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateRetrying" translate="yes" space="preserve">
           <source>Retrying…</source>
-          <target state="translated">Tentando de novo...</target>
+          <target state="translated">Tentando novamente...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being retrying - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateUploaded" translate="yes" space="preserve">
@@ -1552,7 +1552,7 @@ NOTE: Max. length 20 characters.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_EnableTwoFactorAuth" translate="yes" space="preserve">
           <source>Enable Two-Factor Authentication</source>
-          <target state="translated">Desativar a autenticação de dois fatores</target>
+          <target state="translated">Ativar a autenticação de dois fatores</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the "toggle" or "switch" button to enable/disable the Two-Factor Authentication.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TwoFactorAuth" translate="yes" space="preserve">
@@ -1567,11 +1567,11 @@ NOTE: Max. length 20 characters.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_Setup2FA" translate="yes" space="preserve">
           <source>Setup Two-Factor Authentication</source>
-          <target state="translated">Configurar autenticação de dois fatores</target>
+          <target state="translated">Configurar a autenticação de dois fatores</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Setup Two-Factor Authentication' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_MFA_SetupStep1" translate="yes" space="preserve">
-          <source>Scan or copy the seed to your Authenticator App. Be sure to backup this seed to a safe place in case you lose your phone.</source>
+          <source>Scan or copy the seed to your Authenticator App. Be sure to backup this seed to a safe place in case you lose your device.</source>
           <target state="translated">Escaneie ou copie a chave para o seu aplicativo de autenticação. Certifique-se de salvar esta chave em um lugar seguro, caso você perca o seu dispositivo.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the step 1 to setup the Multi-Factor Authentication.</note>
         </trans-unit>
