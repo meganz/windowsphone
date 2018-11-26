@@ -487,24 +487,45 @@ namespace MegaApp.MegaApi
 
         public void onEvent(MegaSDK api, MEvent ev)
         {
-            // If the account has been blocked
-            if (ev.getType() == MEventType.EVENT_ACCOUNT_BLOCKED)
+            switch (ev.getType())
             {
-                LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Blocked account: " + ev.getText());
+                // If the account has been blocked
+                case MEventType.EVENT_ACCOUNT_BLOCKED:
+                    LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Blocked account: " + ev.getText());
+                
+                    // A blocked account automatically triggers a logout
+                    AppService.LogoutActions();
 
-                // A blocked account automatically triggers a logout
-                AppService.LogoutActions();
+                    // Show the login page with the corresponding navigation parameter
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    {
+                        NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.API_EBLOCKED,
+                            new Dictionary<string, string>
+                            {
+                                { "Number", ev.getNumber().ToString() },
+                                { "Text", ev.getText() }
+                            });
+                    });
+                    break;
 
-                // Show the login page with the corresponding navigation parameter
-                Deployment.Current.Dispatcher.BeginInvoke(() =>
-                {
-                    NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.API_EBLOCKED,
-                        new Dictionary<string, string>
-                        {
-                            { "Number", ev.getNumber().ToString() },
-                            { "Text", ev.getText() }
-                        });
-                });
+                case MEventType.EVENT_STORAGE:
+                    AccountService.GetAccountDetails();
+                    switch ((MStorageState)ev.getNumber())
+                    {
+                        case MStorageState.STORAGE_STATE_GREEN:
+                            LogService.Log(MLogLevel.LOG_LEVEL_INFO, "STORAGE STATE GREEN");
+                            break;
+
+                        case MStorageState.STORAGE_STATE_ORANGE:
+                            LogService.Log(MLogLevel.LOG_LEVEL_INFO, "STORAGE STATE ORANGE");
+                            break;
+
+                        case MStorageState.STORAGE_STATE_RED:
+                            LogService.Log(MLogLevel.LOG_LEVEL_INFO, "STORAGE STATE RED");
+                            UiService.OnUiThread(DialogService.ShowStorageOverquotaAlert);
+                            break;
+                    }
+                    break;
             }
         }
 
