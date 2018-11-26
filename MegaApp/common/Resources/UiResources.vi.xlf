@@ -716,7 +716,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_ClearRubbishBin" translate="yes" space="preserve">
           <source>Clear Rubbish Bin</source>
-          <target state="translated">Clear Rubbish Bin</target>
+          <target state="translated">Dọn Thùng Rác</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for a 'Clear Rubbish Bin' button to clear the rubbish bin content - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Ok" translate="yes" space="preserve">
@@ -1006,7 +1006,7 @@ Preserve the {0} code because is for include the name of the destination folder 
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Add contact' button, link, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CreateContact" translate="yes" space="preserve">
-          <source>Type e-mail address:</source>
+          <source>Type email address:</source>
           <target state="translated">Nhập địa chỉ email:</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text to show when a user wants to add a contact to type the email address of the new contact.</note>
         </trans-unit>
@@ -1571,8 +1571,8 @@ NOTE: Max. length 20 characters.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Setup Two-Factor Authentication' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_MFA_SetupStep1" translate="yes" space="preserve">
-          <source>Scan or copy the seed to your Authenticator App. Be sure to backup this seed to a safe place in case you lose your phone.</source>
-          <target state="translated">Quét hay sao chép đoạn chủng tử nằm dưới đây vào app Lập Xác Thực muốn sử dụng. Cũng nên lưu lại mã này ở nơi an toàn trong trường hợp mất điện thoại.</target>
+          <source>Scan or copy the seed to your Authenticator App. Be sure to backup this seed to a safe place in case you lose your device.</source>
+          <target state="translated">Quét hay sao chép đoạn chủng tử nằm dưới đây vào app Lập Xác Thực muốn sử dụng. Cũng nên lưu lại mã này ở nơi an toàn trong trường hợp bị mất máy.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the step 1 to setup the Multi-Factor Authentication.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_MFA_SetupStep2" translate="yes" space="preserve">
@@ -1582,7 +1582,7 @@ NOTE: Max. length 20 characters.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_SixDigitCode" translate="yes" space="preserve">
           <source>6 digit code</source>
-          <target state="translated">6 digit code</target>
+          <target state="translated">đoạn mã 6 chữ số</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Placeholder text of the field to type the 6-digit code provided for the authenticator app to verify the Multi-Factor Authentication.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_Verify" translate="yes" space="preserve">

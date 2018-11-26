@@ -234,7 +234,7 @@
     <comment>Label shown when the app has no information about the transfers to show into 'transfers' page - (String as short as possible).</comment>
   </data>
   <data name="Upload" xml:space="preserve">
-    <value>enviar</value>
+    <value>upload</value>
     <comment>Label for any 'Upload' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Transfers" xml:space="preserve">
@@ -752,7 +752,7 @@ Preserve the {0} code because is for include the name/type of the selected plan 
 Preserve the {0} code because is for include the name/type in runtime.</comment>
   </data>
   <data name="AccountRenewalNotice" xml:space="preserve">
-    <value>Seu {0} inscrição será automaticamente rebilled em seu {0} aniversário a menos que você faça login na sua conta e cancelar a assinatura antes da data de renovação.</value>
+    <value>A sua assinatura {0} será renovada automaticamente no seu aniversário {0} a menos que você faça login na sua conta e cancele a assinatura antes da data de renovação.</value>
     <comment>Label to indicate the renewal period of the purchased subscription. 
 Preserve the {0} code because is for include the renewal period string (Monthly or Annually) in runtime.</comment>
   </data>
@@ -797,7 +797,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
     <comment>Label for the dialog shown randomly when a user logs into a free account, notifying the user the possibility of upgrade the account - (String as short as possible).</comment>
   </data>
   <data name="UpgradeAccountQuestion" xml:space="preserve">
-    <value>Você deseja atualizar a sua conta?</value>
+    <value>Você deseja fazer upgrade da sua conta?</value>
     <comment>Label for the dialog shown randomly when a user logs into a free account, asking if the user wants to upgrade the account - (String as short as possible).</comment>
   </data>
   <data name="UpgradeNow" xml:space="preserve">
@@ -1009,7 +1009,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Default value for the string shown into the preferences page. It will substituted by the path of the folder selected by the user when selecting a default location for downloads.</comment>
   </data>
   <data name="UI_ConfirmAccount" xml:space="preserve">
-    <value>confirmar conta</value>
+    <value>Confirmar conta</value>
     <comment>Label for any 'Confirm account' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_CreateAccount" xml:space="preserve">
@@ -1201,7 +1201,7 @@ Keep the code {1} because is for include currency in runtime.</comment>
     <comment>Label for the state of a transfer when is queued - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStateRetrying" xml:space="preserve">
-    <value>Tentando de novo...</value>
+    <value>Tentando novamente...</value>
     <comment>Label for the state of a transfer when is being retrying - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStateUploaded" xml:space="preserve">
@@ -1353,7 +1353,7 @@ NOTE: Max. length 20 characters.</comment>
     <comment>Label for any 'Warning' title, message, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_EnableTwoFactorAuth" xml:space="preserve">
-    <value>Desativar a autenticação de dois fatores</value>
+    <value>Ativar a autenticação de dois fatores</value>
     <comment>Label for the "toggle" or "switch" button to enable/disable the Two-Factor Authentication.</comment>
   </data>
   <data name="UI_TwoFactorAuth" xml:space="preserve">
@@ -1365,7 +1365,7 @@ NOTE: Max. length 20 characters.</comment>
     <comment>Description for the 'Two-Factor Authentication' in the security settings section.</comment>
   </data>
   <data name="UI_Setup2FA" xml:space="preserve">
-    <value>Configurar autenticação de dois fatores</value>
+    <value>Configurar a autenticação de dois fatores</value>
     <comment>Label for any 'Setup Two-Factor Authentication' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_SixDigitCode" xml:space="preserve">

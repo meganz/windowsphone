@@ -1006,7 +1006,7 @@ Preserve the {0} code because is for include the name of the destination folder 
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Add contact' button, link, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CreateContact" translate="yes" space="preserve">
-          <source>Type e-mail address:</source>
+          <source>Type email address:</source>
           <target state="translated">メールアドレスを入力して下さい:</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text to show when a user wants to add a contact to type the email address of the new contact.</note>
         </trans-unit>
@@ -1571,8 +1571,8 @@ NOTE: Max. length 20 characters.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Setup Two-Factor Authentication' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_MFA_SetupStep1" translate="yes" space="preserve">
-          <source>Scan or copy the seed to your Authenticator App. Be sure to backup this seed to a safe place in case you lose your phone.</source>
-          <target state="translated">シードをオーセンティケータアプリにスキャンまたはコピーします。携帯電話を失くした場合に備えて、このシードを安全な場所にバックアップしてください。</target>
+          <source>Scan or copy the seed to your Authenticator App. Be sure to backup this seed to a safe place in case you lose your device.</source>
+          <target state="translated">シードをオーセンティケータアプリにスキャンまたはコピーします。端末を失くした場合に備えて、このシードを安全な場所に確実にバックアップしてください。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the step 1 to setup the Multi-Factor Authentication.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_MFA_SetupStep2" translate="yes" space="preserve">

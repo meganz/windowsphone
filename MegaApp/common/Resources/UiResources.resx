@@ -919,7 +919,7 @@ Preserve the {0} code because is for include the name of the destination folder 
     <comment>Label for any 'Add contact' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="CreateContact" xml:space="preserve">
-    <value>Type e-mail address:</value>
+    <value>Type email address:</value>
     <comment>Text to show when a user wants to add a contact to type the email address of the new contact.</comment>
   </data>
   <data name="Search" xml:space="preserve">
@@ -1373,7 +1373,7 @@ NOTE: Max. length 20 characters.</comment>
     <comment>Label for any 'Setup Two-Factor Authentication' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_MFA_SetupStep1" xml:space="preserve">
-    <value>Scan or copy the seed to your Authenticator App. Be sure to backup this seed to a safe place in case you lose your phone.</value>
+    <value>Scan or copy the seed to your Authenticator App. Be sure to backup this seed to a safe place in case you lose your device.</value>
     <comment>Label for the step 1 to setup the Multi-Factor Authentication.</comment>
   </data>
   <data name="UI_MFA_SetupStep2" xml:space="preserve">

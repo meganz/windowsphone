@@ -434,7 +434,7 @@ Preserve the {0} code because is for include the name of the node to be moved in
 Preserve the {0} code because is for include the number of nodes to be moved in runtime.</comment>
   </data>
   <data name="MultiMoveToRubbishBinQuestion_Title" xml:space="preserve">
-    <value>Déplacer les éléments ?</value>
+    <value>Déplacer les éléments ?</value>
     <comment>Title of the dialog displayed when a user want to move multiple nodes to the rubbish bin, asking for confirmation to make the movement - (String as short as possible).</comment>
   </data>
   <data name="MultiMoveToRubbishBinSucces" xml:space="preserve">
@@ -465,7 +465,7 @@ Preserve the {0} code because is for include the number of pending transfers in 
     <comment>Title of the dialog displayed when a user are trying to exit the application and has pending transfers. Asks for confirmation to exit - (String as short as possible).</comment>
   </data>
   <data name="AlreadyConfirmedAccount" xml:space="preserve">
-    <value>Le compte est déjà confirmé. Vous pouvez vous connecter.</value>
+    <value>Votre compte a été activé. Veuillez vous connecter.</value>
     <comment>Message of the dialog displayed when a user try to confirm a MEGA account that has been already confirmed previously.</comment>
   </data>
   <data name="AlreadyConfirmedAccount_Title" xml:space="preserve">
@@ -641,7 +641,7 @@ Veuillez plutôt essayer d’enregistrer ou de copier le fichier sur la mémoire
     <comment>Title of the dialog displayed when the cache memory is successfully cleared by user request.</comment>
   </data>
   <data name="MemoryLimitError" xml:space="preserve">
-    <value>Pas assez d'espace mémoire pour terminer cette opération. L'appli va se fermer maintenant</value>
+    <value>Il n’y a pas assez d’espace mémoire libre pour terminer cette opération. L’appli va se fermer maintenant</value>
     <comment>Message of the dialog displayed when the app exceeds the memory limit quota of the device.</comment>
   </data>
   <data name="MemoryLimitError_Title" xml:space="preserve">
@@ -696,7 +696,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 Preserve the {0} code because is for include name of the node to be removed in runtime.</comment>
   </data>
   <data name="DeleteNodeQuestion_Title" xml:space="preserve">
-    <value>Supprimer élément</value>
+    <value>Supprimer l’élément ?</value>
     <comment>Title of the dialog displayed when a user want to delete permanently a node, asking for confirmation to make it - (String as short as possible).</comment>
   </data>
   <data name="GetUserDataFailed" xml:space="preserve">
@@ -1507,7 +1507,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the seed needed to enable the Multi-Factor Authentication has been copied successfully to the clipboard.</comment>
   </data>
   <data name="AM_2FA_InputAppCodeDialogMessage" xml:space="preserve">
-    <value>Veuillez saisir le code généré par votre appli d’authentification</value>
+    <value>Veuillez saisir le code à 6 chiffres généré par votre appli d’authentification.</value>
     <comment>Description text of the dialog displayed to introduce the 6-digit code for the MFA.</comment>
   </data>
   <data name="AM_2FA_DisableDialogTitle" xml:space="preserve">
