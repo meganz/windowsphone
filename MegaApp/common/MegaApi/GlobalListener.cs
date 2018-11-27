@@ -26,6 +26,24 @@ namespace MegaApp.MegaApi
             this.ContactsDetails = new List<ContactDetailsViewModel>();
         }
 
+        #region Events
+
+        /// <summary>
+        /// Event triggered when the storage state changes.
+        /// </summary>
+        public static event EventHandler StorageStateChanged;
+
+        /// <summary>
+        /// Event invocator method called when the storage state changes.
+        /// </summary>
+        private static void OnStorageStateChanged()
+        {
+            if (StorageStateChanged != null)
+                StorageStateChanged.Invoke(null, EventArgs.Empty);
+        }
+
+        #endregion
+
         #region MGlobalListenerInterface
 
         public void onUsersUpdate(MegaSDK api, MUserList users)
@@ -509,8 +527,10 @@ namespace MegaApp.MegaApi
                     break;
 
                 case MEventType.EVENT_STORAGE:
+                    var storageState = (MStorageState)ev.getNumber();
+                    AccountService.AccountDetails.StorageState = storageState;
                     AccountService.GetAccountDetails();
-                    switch ((MStorageState)ev.getNumber())
+                    switch (storageState)
                     {
                         case MStorageState.STORAGE_STATE_GREEN:
                             LogService.Log(MLogLevel.LOG_LEVEL_INFO, "STORAGE STATE GREEN");
@@ -525,6 +545,8 @@ namespace MegaApp.MegaApi
                             UiService.OnUiThread(() => DialogService.ShowStorageOverquotaAlert(false));
                             break;
                     }
+
+                    OnStorageStateChanged();
                     break;
             }
         }
