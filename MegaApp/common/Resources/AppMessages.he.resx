@@ -573,14 +573,6 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
     <value>החשבון במכשיר זה נותק מחשבון במכשיר אחר</value>
     <comment>Message of the dialog displayed when the user is logged out from another location and is trying to do any operation that requires a valid session (API_ESID Error).</comment>
   </data>
-  <data name="OverquotaAlert" xml:space="preserve">
-    <value>פעולה לא מאושרת, תעבור את מכסת הזכרון של חשבונך. האם אתה רוצה לשדרג את החשבון שלך?</value>
-    <comment>Message of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type.</comment>
-  </data>
-  <data name="OverquotaAlert_Title" xml:space="preserve">
-    <value>אזהרת זכרון!</value>
-    <comment>Title of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type - (String as short as possible).</comment>
-  </data>
   <data name="NoDownloadLocationSelected" xml:space="preserve">
     <value>You have not selected a default download location for your files.To proceed with the download, please select a destination folder or go to settings in order to set up your default download location.</value>
     <comment>Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</comment>
@@ -1550,5 +1542,21 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
   <data name="AM_ResumeSessionFailed" xml:space="preserve">
     <value>Failed to resume your session. Please, close the app and try again later.</value>
     <comment>Message of the dialog displayed when the process to resume a session failed.</comment>
+  </data>
+  <data name="AM_StorageOverquotaPreAlert" xml:space="preserve">
+    <value>פעולה לא מאושרת, תעבור את מכסת הזכרון של חשבונך. האם אתה רוצה לשדרג את החשבון שלך?</value>
+    <comment>Message of the dialog displayed when a user tries to make an operation that will exceed the storage space limits of the account (API_EGOINGOVERQUOTA error). Asks if user wants to upgrade the account type.</comment>
+  </data>
+  <data name="AM_StorageOverquotaPreAlert_Title" xml:space="preserve">
+    <value>אזהרת זכרון!</value>
+    <comment>Title of the dialog displayed when a user tries to make an operation that will exceed the storage space limits of the account (API_EGOINGOVERQUOTA error) - (String as short as possible).</comment>
+  </data>
+  <data name="AM_StorageOverquotaAlert" xml:space="preserve">
+    <value>You have exceeded your storage limit. Would you like to upgrade your account?</value>
+    <comment>Title of the dialog displayed when a user exceeds the storage space limits of the account.</comment>
+  </data>
+  <data name="AM_StorageOverquotaAlert_Title" xml:space="preserve">
+    <value>חריגה מהזכרון</value>
+    <comment>Title of the dialog displayed when a user exceeds the storage space limits of the account - (String as short as possible).</comment>
   </data>
 </root>

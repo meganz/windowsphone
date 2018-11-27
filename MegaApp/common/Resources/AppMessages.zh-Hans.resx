@@ -573,14 +573,6 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
     <value>您已从另一地点注销此设备</value>
     <comment>Message of the dialog displayed when the user is logged out from another location and is trying to do any operation that requires a valid session (API_ESID Error).</comment>
   </data>
-  <data name="OverquotaAlert" xml:space="preserve">
-    <value>操作被禁，您将超过您的账户储存限额。您要升级账户吗？</value>
-    <comment>Message of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type.</comment>
-  </data>
-  <data name="OverquotaAlert_Title" xml:space="preserve">
-    <value>超过配额警告！</value>
-    <comment>Title of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type - (String as short as possible).</comment>
-  </data>
   <data name="NoDownloadLocationSelected" xml:space="preserve">
     <value>您尚未为文件选择默认的下载位置。要继续下载，请选择目标文件夹或转到设置，以设置默认的下载位置。</value>
     <comment>Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</comment>
@@ -1551,5 +1543,21 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
   <data name="AM_ResumeSessionFailed" xml:space="preserve">
     <value>无法恢复会话。请关闭该应用，稍后再试。</value>
     <comment>Message of the dialog displayed when the process to resume a session failed.</comment>
+  </data>
+  <data name="AM_StorageOverquotaPreAlert" xml:space="preserve">
+    <value>操作被禁，您将超过您的账户储存限额。您要升级账户吗？</value>
+    <comment>Message of the dialog displayed when a user tries to make an operation that will exceed the storage space limits of the account (API_EGOINGOVERQUOTA error). Asks if user wants to upgrade the account type.</comment>
+  </data>
+  <data name="AM_StorageOverquotaPreAlert_Title" xml:space="preserve">
+    <value>超过配额警告！</value>
+    <comment>Title of the dialog displayed when a user tries to make an operation that will exceed the storage space limits of the account (API_EGOINGOVERQUOTA error) - (String as short as possible).</comment>
+  </data>
+  <data name="AM_StorageOverquotaAlert" xml:space="preserve">
+    <value>您已经超出了您的容量上限。您需要升级账户吗？</value>
+    <comment>Title of the dialog displayed when a user exceeds the storage space limits of the account.</comment>
+  </data>
+  <data name="AM_StorageOverquotaAlert_Title" xml:space="preserve">
+    <value>超出配额</value>
+    <comment>Title of the dialog displayed when a user exceeds the storage space limits of the account - (String as short as possible).</comment>
   </data>
 </root>

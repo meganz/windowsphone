@@ -358,13 +358,23 @@ namespace MegaApp.Services
             }
         }
 
-        public static async void ShowStorageOverquotaAlert()
+        /// <summary>
+        /// Display an alert dialog to notify that the user has exceeded or will exceed during 
+        /// the current operation (pre alert) the storage limit of the account.
+        /// </summary>
+        /// <param name="isPreAlert">Parameter to indicate if is a pre alert situation.</param>
+        public static async void ShowStorageOverquotaAlert(bool isPreAlert)
         {
             if (StorageOverquotaAlertDisplayed) return;
             StorageOverquotaAlertDisplayed = true;
 
-            var customMessageDialog = new CustomMessageDialog(AppMessages.OverquotaAlert_Title,
-                AppMessages.OverquotaAlert, App.AppInformation, MessageDialogButtons.YesNo);
+            var title = isPreAlert ? AppMessages.AM_StorageOverquotaPreAlert_Title :
+                AppMessages.AM_StorageOverquotaAlert_Title;
+            var message = isPreAlert ? AppMessages.AM_StorageOverquotaPreAlert :
+                AppMessages.AM_StorageOverquotaAlert;
+
+            var customMessageDialog = new CustomMessageDialog(title, message,
+                App.AppInformation, MessageDialogButtons.YesNo);
             
             customMessageDialog.OkOrYesButtonTapped += (sender, args) =>
             {
