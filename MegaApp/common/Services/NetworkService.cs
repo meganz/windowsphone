@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Net;
+using System.Threading;
 using System.Windows;
 using Microsoft.Phone.Net.NetworkInformation;
 using Windows.Networking.Connectivity;
+using mega;
 using MegaApp.Classes;
 using MegaApp.Resources;
 
@@ -13,6 +13,17 @@ namespace MegaApp.Services
 {
     static class NetworkService
     {
+        #region Properties
+
+        /// <summary>
+        /// DNS servers used
+        /// </summary>
+        public static string DnsServers;
+
+        #endregion
+
+        #region Methods
+
         /// <summary>
         /// Returns if there is an available network connection.
         /// </summary>        
@@ -35,6 +46,7 @@ namespace MegaApp.Services
                     });                    
                 }
 
+                LogService.Log(MLogLevel.LOG_LEVEL_INFO, "No network available.");
                 return false;
             }
 
@@ -76,5 +88,80 @@ namespace MegaApp.Services
                 App.IpAddress = ipAddresses[0]; // Storage the new primary IP address
             }
         }
+
+        /// <summary>
+        /// Gets the MEGA DNS servers IP addresses.
+        /// </summary>
+        /// <param name="refresh">Indicates if should refresh the previously stored addresses.</param>
+        /// <returns>String with the MEGA DNS servers IP addresses separated by commas.</returns>
+        public static string GetMegaDnsServers(bool refresh = false)
+        {
+            if (!refresh && !string.IsNullOrWhiteSpace(DnsServers))
+                return DnsServers;
+
+            try
+            {
+                if (!IsNetworkAvailable()) return null;
+
+                LogService.Log(MLogLevel.LOG_LEVEL_INFO, "Getting MEGA DNS servers...");
+                var endpoint = new DnsEndPoint("ns.mega.co.nz", 0);
+
+                var autoResetEvent = new AutoResetEvent(false);
+                DeviceNetworkInformation.ResolveHostNameAsync(endpoint,
+                    (NameResolutionResult result) =>
+                    {
+                        string dnsServers = string.Empty;
+
+                        try
+                        {
+                            if (result.IPEndPoints == null)
+                            {
+                                LogService.Log(MLogLevel.LOG_LEVEL_WARNING, "No MEGA DNS servers.");
+                                autoResetEvent.Set();
+                                return;
+                            }
+
+                            IPEndPoint[] endpoints = result.IPEndPoints;
+                            foreach (IPEndPoint address in endpoints)
+                            {
+                                if (dnsServers.Length > 0)
+                                    dnsServers = string.Concat(dnsServers, ",");
+
+                                dnsServers = string.Concat(dnsServers, address.Address.ToString());
+                            }
+
+                            if (string.IsNullOrWhiteSpace(dnsServers))
+                            {
+                                LogService.Log(MLogLevel.LOG_LEVEL_WARNING, "No MEGA DNS servers.");
+                                autoResetEvent.Set();
+                                return;
+                            }
+
+                            LogService.Log(MLogLevel.LOG_LEVEL_INFO, "MEGA DNS servers: " + dnsServers);
+                            DnsServers = dnsServers;
+                        }
+                        catch (Exception e)
+                        {
+                            LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error getting MEGA DNS servers.", e);
+                        }
+                        finally
+                        {
+                            autoResetEvent.Set();
+                        }
+                    },
+                    null);
+
+                autoResetEvent.WaitOne();
+
+                return DnsServers;
+            }
+            catch (Exception e)
+            {
+                LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error getting MEGA DNS servers.", e);
+                return null;
+            }
+        }
+
+        #endregion
     }
 }
