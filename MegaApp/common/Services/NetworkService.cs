@@ -16,9 +16,9 @@ namespace MegaApp.Services
         #region Properties
 
         /// <summary>
-        /// DNS servers used
+        /// MEGA DNS servers
         /// </summary>
-        public static string DnsServers;
+        private static string MegaDnsServers;
 
         #endregion
 
@@ -96,8 +96,8 @@ namespace MegaApp.Services
         /// <returns>String with the MEGA DNS servers IP addresses separated by commas.</returns>
         public static string GetMegaDnsServers(bool refresh = false)
         {
-            if (!refresh && !string.IsNullOrWhiteSpace(DnsServers))
-                return DnsServers;
+            if (!refresh && !string.IsNullOrWhiteSpace(MegaDnsServers))
+                return MegaDnsServers;
 
             try
             {
@@ -111,23 +111,18 @@ namespace MegaApp.Services
                     (NameResolutionResult result) =>
                     {
                         string dnsServers = string.Empty;
-
                         try
                         {
-                            if (result.IPEndPoints == null)
+                            if (result.IPEndPoints != null)
                             {
-                                LogService.Log(MLogLevel.LOG_LEVEL_WARNING, "No MEGA DNS servers.");
-                                autoResetEvent.Set();
-                                return;
-                            }
+                                IPEndPoint[] endpoints = result.IPEndPoints;
+                                foreach (IPEndPoint address in endpoints)
+                                {
+                                    if (dnsServers.Length > 0)
+                                        dnsServers = string.Concat(dnsServers, ",");
 
-                            IPEndPoint[] endpoints = result.IPEndPoints;
-                            foreach (IPEndPoint address in endpoints)
-                            {
-                                if (dnsServers.Length > 0)
-                                    dnsServers = string.Concat(dnsServers, ",");
-
-                                dnsServers = string.Concat(dnsServers, address.Address.ToString());
+                                    dnsServers = string.Concat(dnsServers, address.Address.ToString());
+                                }
                             }
 
                             if (string.IsNullOrWhiteSpace(dnsServers))
@@ -138,7 +133,7 @@ namespace MegaApp.Services
                             }
 
                             LogService.Log(MLogLevel.LOG_LEVEL_INFO, "MEGA DNS servers: " + dnsServers);
-                            DnsServers = dnsServers;
+                            MegaDnsServers = dnsServers;
                         }
                         catch (Exception e)
                         {
@@ -153,7 +148,7 @@ namespace MegaApp.Services
 
                 autoResetEvent.WaitOne();
 
-                return DnsServers;
+                return MegaDnsServers;
             }
             catch (Exception e)
             {
