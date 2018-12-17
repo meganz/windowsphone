@@ -527,26 +527,42 @@ namespace MegaApp.MegaApi
                     break;
 
                 case MEventType.EVENT_STORAGE:
+                    bool notifyChange = false;
                     var storageState = (MStorageState)ev.getNumber();
-                    AccountService.AccountDetails.StorageState = storageState;
-                    AccountService.GetAccountDetails();
                     switch (storageState)
                     {
                         case MStorageState.STORAGE_STATE_GREEN:
                             LogService.Log(MLogLevel.LOG_LEVEL_INFO, "STORAGE STATE GREEN");
+                            if (storageState == AccountService.AccountDetails.StorageState)
+                                notifyChange = true;
+                            AccountService.AccountDetails.StorageState = storageState;
                             break;
 
                         case MStorageState.STORAGE_STATE_ORANGE:
                             LogService.Log(MLogLevel.LOG_LEVEL_INFO, "STORAGE STATE ORANGE");
+                            if (storageState > AccountService.AccountDetails.StorageState)
+                                notifyChange = true;
+                            AccountService.AccountDetails.StorageState = storageState;
                             break;
 
                         case MStorageState.STORAGE_STATE_RED:
                             LogService.Log(MLogLevel.LOG_LEVEL_INFO, "STORAGE STATE RED");
-                            UiService.OnUiThread(() => DialogService.ShowStorageOverquotaAlert(false));
+                            if (storageState > AccountService.AccountDetails.StorageState)
+                            {
+                                UiService.OnUiThread(() => DialogService.ShowStorageOverquotaAlert(false));
+                                notifyChange = true;
+                            }
+                            AccountService.AccountDetails.StorageState = storageState;
+                            break;
+
+                        case MStorageState.STORAGE_STATE_CHANGE:
+                            LogService.Log(MLogLevel.LOG_LEVEL_INFO, "STORAGE STATE CHANGE");
+                            AccountService.GetAccountDetails();
                             break;
                     }
 
-                    OnStorageStateChanged();
+                    if (notifyChange)
+                        OnStorageStateChanged();
                     break;
             }
         }
