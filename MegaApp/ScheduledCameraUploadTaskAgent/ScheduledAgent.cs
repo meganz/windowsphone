@@ -67,8 +67,16 @@ namespace ScheduledCameraUploadTaskAgent
             // Add notifications listener
             SdkService.MegaSdk.addGlobalListener(new MegaGlobalListener());
 
+            // Notify complete when storage quota exceeded error is raised in the transferlistener	
+            // Notify complete will retry in the next task run
+            var megaTransferListener = new MegaTransferListener();
+            megaTransferListener.StorageQuotaExceeded += (sender, args) =>
+            {
+                scheduledAgent.NotifyComplete();
+            };
+
             // Add transfers listener
-            SdkService.MegaSdk.addTransferListener(new MegaTransferListener());
+            SdkService.MegaSdk.addTransferListener(megaTransferListener);
                         
             // Fast login with session token that was saved during MEGA app initial login
             FastLogin();

@@ -179,6 +179,28 @@ namespace MegaApp.MegaApi
                     }
                     break;
 
+                case MErrorType.API_EGOINGOVERQUOTA: // Not enough storage quota
+                    LogService.Log(MLogLevel.LOG_LEVEL_INFO,
+                        string.Format("Not enough storage quota ({0})", e.getErrorCode().ToString()));
+                        
+                    UiService.OnUiThread(() =>
+                    {
+                        megaTransfer.TransferState = MTransferState.STATE_FAILED;
+                        DialogService.ShowStorageOverquotaAlert(true);
+                    });
+                    break;
+
+                case MErrorType.API_EOVERQUOTA: // Storage overquota error
+                    LogService.Log(MLogLevel.LOG_LEVEL_INFO,
+                        string.Format("Storage quota exceeded ({0})", e.getErrorCode().ToString()));
+                        
+                    UiService.OnUiThread(() =>
+                    {
+                        megaTransfer.TransferState = MTransferState.STATE_FAILED;
+                        DialogService.ShowStorageOverquotaAlert(false);
+                    });
+                    break;
+
                 case MErrorType.API_EINCOMPLETE:
                     Deployment.Current.Dispatcher.BeginInvoke(() => megaTransfer.TransferState = MTransferState.STATE_CANCELLED);
                     break;
