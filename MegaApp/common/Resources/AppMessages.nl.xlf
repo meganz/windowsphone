@@ -585,15 +585,15 @@ Preserve the {0} code because is for include the file name in runtime.</note>
           <target state="translated">U bent afgemeld op dit apparaat vanaf een andere locatie</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user is logged out from another location and is trying to do any operation that requires a valid session (API_ESID Error).</note>
         </trans-unit>
-        <trans-unit id="Resx/OverquotaAlert" translate="yes" space="preserve">
+        <trans-unit id="Resx/AM_StorageOverquotaPreAlert" translate="yes" space="preserve">
           <source>Operation not allowed, you will exceed the storage limit of your account. Do you want to upgrade your account?</source>
           <target state="translated">Handeling niet toegestaan, u zult het opslag limiet van van uw rekening overschrijden. Wilt u uw account upgraden?</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type.</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user tries to make an operation that will exceed the storage space limits of the account (API_EGOINGOVERQUOTA error). Asks if user wants to upgrade the account type.</note>
         </trans-unit>
-        <trans-unit id="Resx/OverquotaAlert_Title" translate="yes" space="preserve">
+        <trans-unit id="Resx/AM_StorageOverquotaPreAlert_Title" translate="yes" space="preserve">
           <source>Overquota Alert!</source>
           <target state="translated">Over tegoed Waarschuwing!</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type - (String as short as possible).</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user tries to make an operation that will exceed the storage space limits of the account (API_EGOINGOVERQUOTA error) - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/NoDownloadLocationSelected" translate="yes" space="preserve">
           <source>You have not selected a default download location for your files.To proceed with the download, please select a destination folder or go to settings in order to set up your default download location.</source>
@@ -1792,6 +1792,16 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
           <source>Failed to resume your session. Please, close the app and try again later.</source>
           <target state="translated">Mislukt om uw sessie te hervatten. Sluit de app en probeer later nogmaals.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to resume a session failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_StorageOverquotaAlert" translate="yes" space="preserve">
+          <source>You have exceeded your storage limit. Would you like to upgrade your account?</source>
+          <target state="translated">U heeft uw opslag limiet overschreden. Wilt u uw account upgraden?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user exceeds the storage space limits of the account.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_StorageOverquotaAlert_Title" translate="yes" space="preserve">
+          <source>Storage quota exceeded</source>
+          <target state="translated">Tegoed overschreden</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user exceeds the storage space limits of the account - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>

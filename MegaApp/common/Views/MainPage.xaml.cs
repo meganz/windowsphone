@@ -327,6 +327,8 @@ namespace MegaApp.Views
             // because this is the first page loaded
             if (!CheckSessionAndPinLock(e.NavigationMode)) return;
 
+            _mainPageViewModel.ShowStorageStatusDialog();
+
             if (!NetworkService.IsNetworkAvailable())
             {
                 UpdateGUI(false);

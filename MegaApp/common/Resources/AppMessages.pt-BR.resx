@@ -573,14 +573,6 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
     <value>Você foi desconectado deste aparelho a partir de outra localização</value>
     <comment>Message of the dialog displayed when the user is logged out from another location and is trying to do any operation that requires a valid session (API_ESID Error).</comment>
   </data>
-  <data name="OverquotaAlert" xml:space="preserve">
-    <value>Esta operação não é permitida por que ultrapassa os limites de armazenamento de sua conta. Deseja aumentar o limite?</value>
-    <comment>Message of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type.</comment>
-  </data>
-  <data name="OverquotaAlert_Title" xml:space="preserve">
-    <value>Alerta de excesso de espaço!</value>
-    <comment>Title of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type - (String as short as possible).</comment>
-  </data>
   <data name="NoDownloadLocationSelected" xml:space="preserve">
     <value>Você não selecionou nenhum destino de download padrão para os seus arquivos. Para continuar com o download, selecione uma pasta de destino ou vá para as configurações para definir o seu destino de download padrão.</value>
     <comment>Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</comment>
@@ -1551,5 +1543,21 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
   <data name="AM_ResumeSessionFailed" xml:space="preserve">
     <value>Não foi possível retomar a sua sessão. Por favor, feche o aplicativo e tente novamente mais tarde.</value>
     <comment>Message of the dialog displayed when the process to resume a session failed.</comment>
+  </data>
+  <data name="AM_StorageOverquotaPreAlert" xml:space="preserve">
+    <value>Esta operação não é permitida por que ultrapassa os limites de armazenamento de sua conta. Deseja aumentar o limite?</value>
+    <comment>Message of the dialog displayed when a user tries to make an operation that will exceed the storage space limits of the account (API_EGOINGOVERQUOTA error). Asks if user wants to upgrade the account type.</comment>
+  </data>
+  <data name="AM_StorageOverquotaPreAlert_Title" xml:space="preserve">
+    <value>Alerta de excesso de espaço!</value>
+    <comment>Title of the dialog displayed when a user tries to make an operation that will exceed the storage space limits of the account (API_EGOINGOVERQUOTA error) - (String as short as possible).</comment>
+  </data>
+  <data name="AM_StorageOverquotaAlert" xml:space="preserve">
+    <value>Você excedeu o limite de armazenamento da sua conta. Você quer fazer um upgrade?</value>
+    <comment>Title of the dialog displayed when a user exceeds the storage space limits of the account.</comment>
+  </data>
+  <data name="AM_StorageOverquotaAlert_Title" xml:space="preserve">
+    <value>Cota de armazenamento excedida</value>
+    <comment>Title of the dialog displayed when a user exceeds the storage space limits of the account - (String as short as possible).</comment>
   </data>
 </root>

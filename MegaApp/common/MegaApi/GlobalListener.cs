@@ -26,6 +26,24 @@ namespace MegaApp.MegaApi
             this.ContactsDetails = new List<ContactDetailsViewModel>();
         }
 
+        #region Events
+
+        /// <summary>
+        /// Event triggered when the storage state changes.
+        /// </summary>
+        public static event EventHandler StorageStateChanged;
+
+        /// <summary>
+        /// Event invocator method called when the storage state changes.
+        /// </summary>
+        private static void OnStorageStateChanged()
+        {
+            if (StorageStateChanged != null)
+                StorageStateChanged.Invoke(null, EventArgs.Empty);
+        }
+
+        #endregion
+
         #region MGlobalListenerInterface
 
         public void onUsersUpdate(MegaSDK api, MUserList users)
@@ -487,24 +505,65 @@ namespace MegaApp.MegaApi
 
         public void onEvent(MegaSDK api, MEvent ev)
         {
-            // If the account has been blocked
-            if (ev.getType() == MEventType.EVENT_ACCOUNT_BLOCKED)
+            switch (ev.getType())
             {
-                LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Blocked account: " + ev.getText());
+                // If the account has been blocked
+                case MEventType.EVENT_ACCOUNT_BLOCKED:
+                    LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Blocked account: " + ev.getText());
+                
+                    // A blocked account automatically triggers a logout
+                    AppService.LogoutActions();
 
-                // A blocked account automatically triggers a logout
-                AppService.LogoutActions();
+                    // Show the login page with the corresponding navigation parameter
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    {
+                        NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.API_EBLOCKED,
+                            new Dictionary<string, string>
+                            {
+                                { "Number", ev.getNumber().ToString() },
+                                { "Text", ev.getText() }
+                            });
+                    });
+                    break;
 
-                // Show the login page with the corresponding navigation parameter
-                Deployment.Current.Dispatcher.BeginInvoke(() =>
-                {
-                    NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.API_EBLOCKED,
-                        new Dictionary<string, string>
-                        {
-                            { "Number", ev.getNumber().ToString() },
-                            { "Text", ev.getText() }
-                        });
-                });
+                case MEventType.EVENT_STORAGE:
+                    bool notifyChange = false;
+                    var storageState = (MStorageState)ev.getNumber();
+                    switch (storageState)
+                    {
+                        case MStorageState.STORAGE_STATE_GREEN:
+                            LogService.Log(MLogLevel.LOG_LEVEL_INFO, "STORAGE STATE GREEN");
+                            if (storageState == AccountService.AccountDetails.StorageState)
+                                notifyChange = true;
+                            AccountService.AccountDetails.StorageState = storageState;
+                            break;
+
+                        case MStorageState.STORAGE_STATE_ORANGE:
+                            LogService.Log(MLogLevel.LOG_LEVEL_INFO, "STORAGE STATE ORANGE");
+                            if (storageState > AccountService.AccountDetails.StorageState)
+                                notifyChange = true;
+                            AccountService.AccountDetails.StorageState = storageState;
+                            break;
+
+                        case MStorageState.STORAGE_STATE_RED:
+                            LogService.Log(MLogLevel.LOG_LEVEL_INFO, "STORAGE STATE RED");
+                            if (storageState > AccountService.AccountDetails.StorageState)
+                            {
+                                UiService.OnUiThread(() => DialogService.ShowStorageOverquotaAlert(false));
+                                notifyChange = true;
+                            }
+                            AccountService.AccountDetails.StorageState = storageState;
+                            break;
+
+                        case MStorageState.STORAGE_STATE_CHANGE:
+                            LogService.Log(MLogLevel.LOG_LEVEL_INFO, "STORAGE STATE CHANGE");
+                            AccountService.GetAccountDetails();
+                            break;
+                    }
+
+                    if (notifyChange)
+                        OnStorageStateChanged();
+                    break;
             }
         }
 

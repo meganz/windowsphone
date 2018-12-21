@@ -573,14 +573,6 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
     <value>Başka bir yerden bu cihazda çıkış yaptınız</value>
     <comment>Message of the dialog displayed when the user is logged out from another location and is trying to do any operation that requires a valid session (API_ESID Error).</comment>
   </data>
-  <data name="OverquotaAlert" xml:space="preserve">
-    <value>Operasyona izin verilmiyor, hesabınızın depolama sınırını aşacaksınız. Hesabınızı yükseltmek istiyor musunuz?</value>
-    <comment>Message of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type.</comment>
-  </data>
-  <data name="OverquotaAlert_Title" xml:space="preserve">
-    <value>Kota Aşımı Uyarısı!</value>
-    <comment>Title of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type - (String as short as possible).</comment>
-  </data>
   <data name="NoDownloadLocationSelected" xml:space="preserve">
     <value>Dosyalarınız için varsayılan indirme konumunu seçmediniz. İndirme işlemine devam etmek, varsayılan indirme konumunuzu ayarlamak için lütfen bir hedef klasör seçin veya ayarlara gidin.</value>
     <comment>Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</comment>
@@ -1551,5 +1543,21 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
   <data name="AM_ResumeSessionFailed" xml:space="preserve">
     <value>Oturumunuz devam ettirilemedi. Lütfen uygulamayı kapatın ve tekrar deneyin.</value>
     <comment>Message of the dialog displayed when the process to resume a session failed.</comment>
+  </data>
+  <data name="AM_StorageOverquotaPreAlert" xml:space="preserve">
+    <value>Operasyona izin verilmiyor, hesabınızın depolama sınırını aşacaksınız. Hesabınızı yükseltmek istiyor musunuz?</value>
+    <comment>Message of the dialog displayed when a user tries to make an operation that will exceed the storage space limits of the account (API_EGOINGOVERQUOTA error). Asks if user wants to upgrade the account type.</comment>
+  </data>
+  <data name="AM_StorageOverquotaPreAlert_Title" xml:space="preserve">
+    <value>Kota Aşımı Uyarısı!</value>
+    <comment>Title of the dialog displayed when a user tries to make an operation that will exceed the storage space limits of the account (API_EGOINGOVERQUOTA error) - (String as short as possible).</comment>
+  </data>
+  <data name="AM_StorageOverquotaAlert" xml:space="preserve">
+    <value>Depolama alanı limitinizi aştınız. Hesabınızı yükseltmek ister misiniz?</value>
+    <comment>Title of the dialog displayed when a user exceeds the storage space limits of the account.</comment>
+  </data>
+  <data name="AM_StorageOverquotaAlert_Title" xml:space="preserve">
+    <value>Kota aşıldı</value>
+    <comment>Title of the dialog displayed when a user exceeds the storage space limits of the account - (String as short as possible).</comment>
   </data>
 </root>

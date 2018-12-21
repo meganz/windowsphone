@@ -33,6 +33,16 @@ namespace MegaApp.Services
         /// </summary>
         private static MultiFactorAuthCodeInputDialog MultiFactorAuthCodeInputDialogInstance;
 
+        /// <summary>
+        /// Avoid show multiple storage overquota alerts
+        /// </summary>
+        private static bool StorageOverquotaAlertDisplayed = false;
+
+        /// <summary>
+        /// Avoid show multiple transfer overquota warnings
+        /// </summary>
+        private static bool TransferOverquotaWarningDisplayed = false;
+
         #endregion
 
         #region Methods
@@ -348,10 +358,23 @@ namespace MegaApp.Services
             }
         }
 
-        public static void ShowOverquotaAlert()
+        /// <summary>
+        /// Display an alert dialog to notify that the user has exceeded or will exceed during 
+        /// the current operation (pre alert) the storage limit of the account.
+        /// </summary>
+        /// <param name="isPreAlert">Parameter to indicate if is a pre alert situation.</param>
+        public static async void ShowStorageOverquotaAlert(bool isPreAlert)
         {
-            var customMessageDialog = new CustomMessageDialog(AppMessages.OverquotaAlert_Title,
-                AppMessages.OverquotaAlert, App.AppInformation, MessageDialogButtons.YesNo);
+            if (StorageOverquotaAlertDisplayed) return;
+            StorageOverquotaAlertDisplayed = true;
+
+            var title = isPreAlert ? AppMessages.AM_StorageOverquotaPreAlert_Title :
+                AppMessages.AM_StorageOverquotaAlert_Title;
+            var message = isPreAlert ? AppMessages.AM_StorageOverquotaPreAlert :
+                AppMessages.AM_StorageOverquotaAlert;
+
+            var customMessageDialog = new CustomMessageDialog(title, message,
+                App.AppInformation, MessageDialogButtons.YesNo);
             
             customMessageDialog.OkOrYesButtonTapped += (sender, args) =>
             {
@@ -359,11 +382,15 @@ namespace MegaApp.Services
                     new Uri("/Views/MyAccountPage.xaml?Pivot=1", UriKind.RelativeOrAbsolute));
             };
 
-            customMessageDialog.ShowDialog();
+            await customMessageDialog.ShowDialogAsync();
+            StorageOverquotaAlertDisplayed = false;
         }
 
-        public static void ShowTransferOverquotaWarning()
+        public static async void ShowTransferOverquotaWarning()
         {
+            if (TransferOverquotaWarningDisplayed) return;
+            TransferOverquotaWarningDisplayed = true;
+
             var upgradeAccountButton = new DialogButton(
                 UiResources.UI_UpgradeAccount, () =>
                 {
@@ -375,7 +402,8 @@ namespace MegaApp.Services
                 AppMessages.AM_TransferOverquotaWarning, App.AppInformation,
                 new[] { upgradeAccountButton, new DialogButton(UiResources.Dismiss, null) });
 
-            customMessageDialog.ShowDialog();
+            await customMessageDialog.ShowDialogAsync();
+            TransferOverquotaWarningDisplayed = false;
         }
 
         /// <summary>
