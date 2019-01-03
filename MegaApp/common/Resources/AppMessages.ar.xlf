@@ -1692,90 +1692,90 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_2FA_SetupDialogDescription" translate="yes" space="preserve">
           <source>Two-factor authentication is a second layer of security for your account. Which means that even if someone knows your password they cannot access it, without also having access to the six digit code only you have access to.</source>
-          <target state="translated">Two-factor authentication is a second layer of security for your account. Which means that even if someone knows your password they cannot access it, without also having access to the six digit code only you have access to.</target>
+          <target state="translated">المصادقة المزدوجة 2FA هو طبقة إضافية من الأمان على حسابك. فهي توفر حماية حسابك من محاولة أحد ما للولوج اليه حتى وان كان يعرف كلمة المرور الخاصة بك، حيث ان الولوج الى الحساب يحتاج  أيضاً الى الرمز المكون من 6 أرقام الذي انت وحدك تستطيع الحصول عليه.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Description text of the dialog displayed to start setup the Two-Factor Authentication</note>
         </trans-unit>
         <trans-unit id="Resx/AM_2FA_SetupDialogTitle" translate="yes" space="preserve">
           <source>Why do you need two-factor authentication?</source>
-          <target state="translated">Why do you need two-factor authentication?</target>
+          <target state="translated">لماذا تحتاج المصادقة المزدوجة 2FA؟</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed to start setup the Two-Factor Authentication</note>
         </trans-unit>
         <trans-unit id="Resx/AM_InvalidCode" translate="yes" space="preserve">
           <source>This code isn’t right, please try again.</source>
-          <target state="translated">This code isn’t right, please try again.</target>
+          <target state="translated">هذا الرمز خاطئ، يرجى إعادة المحاولة.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message displayed when the user is trying to insert and invalid code, for example the 6-digit code of the Multi-Factor Authentication.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_2FA_EnabledDialogDescription" translate="yes" space="preserve">
           <source>Next time you login to your account you will be asked to enter a 6-digit code provided by your Authenticator App.</source>
-          <target state="translated">Next time you login to your account you will be asked to enter a 6-digit code provided by your Authenticator App.</target>
+          <target state="translated">في المرة القادمة التي تسجل فيها الدخول الى حسابك سيطلب منك إدخال رمز من 6 أرقام ستزود به من تطبيق المصادقة الخاص بك.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Description text of the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_2FA_EnabledDialogTitle" translate="yes" space="preserve">
           <source>Two-Factor Authentication Enabled</source>
-          <target state="translated">Two-Factor Authentication Enabled</target>
+          <target state="translated">تم تفعيل المصادقة المزدوجة 2FA</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title text of the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_MFA_SeedCopied" translate="yes" space="preserve">
           <source>The seed has been copied to your clipboard.</source>
-          <target state="translated">The seed has been copied to your clipboard.</target>
+          <target state="translated">تم نسخ الرمز المولد الى الحافظة.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the seed needed to enable the Multi-Factor Authentication has been copied successfully to the clipboard.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_MFA_SeedCopiedFailed" translate="yes" space="preserve">
           <source>Failed to copy the seed to your clipboard. Please try again.</source>
-          <target state="translated">Failed to copy the seed to your clipboard. Please try again.</target>
+          <target state="translated">فشل نسخ الرمز المولد الى الحافظة، يرجى إعادة المحاولة.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed if fails the process to copy the seed needed to enable the Multi-Factor Authentication to the clipboard.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_MFA_SeedCopiedFailed_Title" translate="yes" space="preserve">
           <source>Seed copy failed</source>
-          <target state="translated">Seed copy failed</target>
+          <target state="translated">فشل نسخ الرمز المولد</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed if fails the process to copy the seed needed to enable the Multi-Factor Authentication to the clipboard.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_MFA_SeedCopied_Title" translate="yes" space="preserve">
           <source>Seed copied</source>
-          <target state="translated">Seed copied</target>
+          <target state="translated">تم نسخ الرمز المولد</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the seed needed to enable the Multi-Factor Authentication has been copied successfully to the clipboard.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_2FA_InputAppCodeDialogMessage" translate="yes" space="preserve">
           <source>Please enter the 6-digit code generated by your Authenticator App.</source>
-          <target state="translated">Please enter the 6-digit code generated by your Authenticator App.</target>
+          <target state="translated">يرجى إدخال الرمز المكون من 6 أرقام المولد بتطبيق المصادقة الخاص بك.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Description text of the dialog displayed to introduce the 6-digit code for the MFA.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_2FA_DisableDialogTitle" translate="yes" space="preserve">
           <source>Disable Two-Factor Authentication</source>
-          <target state="translated">Disable Two-Factor Authentication</target>
+          <target state="translated">تعطيل المصادقة المزدوجة 2FA</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed to disable the Two-Factor Authentication.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_2FA_EnabledDialogRecommendation" translate="yes" space="preserve">
           <source>If you lose access to your account after enabling 2FA and you have not backed up your Recovery Key, MEGA can’t help you gain access to it again.
 Ensure you back up your recovery key.</source>
-          <target state="translated">If you lose access to your account after enabling 2FA and you have not backed up your Recovery Key, MEGA can’t help you gain access to it again.
-Ensure you back up your recovery key.</target>
+          <target state="translated">اذا لم تعد تستطيع الدخول الى حسابك بعد تفعيل المصادقة المزدوجة 2FA ولم تقم بالنسخ الاحتياطي والاحتفاظ بمفتاح الاسترجاع خاصتك، فإن MEGA لن تكون قادرة على مساعدتك للولوج الى حسابك أبداً. 
+احرص على ان تقوم بالنسخ الاحتياطي والاحتفاظ بمفتاح الاسترجاع خاصتك.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text recommending export the Recovery Key in the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication. KEEP the multi-line format.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_2FA_DisabledDialogTitle" translate="yes" space="preserve">
           <source>Two-Factor Authentication Disabled</source>
-          <target state="translated">Two-Factor Authentication Disabled</target>
+          <target state="translated">تم تعطيل المصادقة المزدوجة 2FA</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title text of the dialog displayed to indicate that the user has successfully disabled the Two-Factor Authentication.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_RestoreFromRubbishBinFailed" translate="yes" space="preserve">
           <source>Failed to restore ‘{0}’ from rubbish bin. Please try again.</source>
-          <target state="translated">Failed to restore ‘{0}’ from rubbish bin. Please try again.</target>
+          <target state="translated">فشل عملية استرجاع ‘{0}’ من سلة المحذوفات. يرجى إعادة المحاولة.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to restore a node to the rubbish bin failed.
 Preserve the '{0}' code because is for include the file/folder name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_RestoreFromRubbishBinFailed_Title" translate="yes" space="preserve">
           <source>Restore from rubbish bin failed</source>
-          <target state="translated">Restore from rubbish bin failed</target>
+          <target state="translated">فشل عملية الاسترجاع من سلة المحذوفات</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to restore nodes from the rubbish bin failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_RestoreMultiFromRubbishBinFailed" translate="yes" space="preserve">
           <source>Failed to restore items from rubbish bin. Please try again.</source>
-          <target state="translated">Failed to restore items from rubbish bin. Please try again.</target>
+          <target state="translated">فشل عملية الاسترجاع من سلة المحذوفات. يرجى إعادة المحاولة لاحقاً.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to restore multiple nodes from the rubbish bin failed.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_MFA_CheckStatusFailed" translate="yes" space="preserve">
           <source>Failed to check the status of two factor authentication.</source>
-          <target state="translated">Failed to check the status of two factor authentication.</target>
+          <target state="translated">فشل عملية التحقق من وضع المصداقة المزدوجة 2FA.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed if fails the process to check the Multi-Factor Authentication status.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_FileAlreadyExists" translate="yes" space="preserve">
