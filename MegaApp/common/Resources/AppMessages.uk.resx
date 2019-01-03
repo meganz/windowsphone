@@ -465,7 +465,7 @@ Preserve the {0} code because is for include the number of pending transfers in 
     <comment>Title of the dialog displayed when a user are trying to exit the application and has pending transfers. Asks for confirmation to exit - (String as short as possible).</comment>
   </data>
   <data name="AlreadyConfirmedAccount" xml:space="preserve">
-    <value>Ваш обліковий запис вже активовано. Будь ласка, увійдіть.</value>
+    <value>Ваш акаунт активовано. Будь ласка, увійдіть.</value>
     <comment>Message of the dialog displayed when a user try to confirm a MEGA account that has been already confirmed previously.</comment>
   </data>
   <data name="AlreadyConfirmedAccount_Title" xml:space="preserve">
@@ -572,14 +572,6 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
   <data name="SessionIDError" xml:space="preserve">
     <value>Ви вийшли з цього пристрою з іншого місця</value>
     <comment>Message of the dialog displayed when the user is logged out from another location and is trying to do any operation that requires a valid session (API_ESID Error).</comment>
-  </data>
-  <data name="OverquotaAlert" xml:space="preserve">
-    <value>Операцію не буде виконано, інакше перевищиться ліміт збереження даних вашого облікового запису. Хочете покращити акаунт?</value>
-    <comment>Message of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type.</comment>
-  </data>
-  <data name="OverquotaAlert_Title" xml:space="preserve">
-    <value>Квоту перевищено. Увага!</value>
-    <comment>Title of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type - (String as short as possible).</comment>
   </data>
   <data name="NoDownloadLocationSelected" xml:space="preserve">
     <value>You have not selected a default download location for your files.To proceed with the download, please select a destination folder or go to settings in order to set up your default download location.</value>
@@ -1135,7 +1127,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when fails to copy the user's Recovery Key to the clipboard to be saved or exported - (String as short as possible).</comment>
   </data>
   <data name="AM_RecoveryKeyCopied" xml:space="preserve">
-    <value>Ключ відновлення скопійовано в буфер</value>
+    <value>Ключ відновлення скопійовано в буфер. Будь ласка, зберігайте його в безпечному місці.</value>
     <comment>Message of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported.</comment>
   </data>
   <data name="AM_RecoveryKeyCopied_Title" xml:space="preserve">
@@ -1419,7 +1411,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the user has chosen a very weak password.</comment>
   </data>
   <data name="AM_SSLKeyError" xml:space="preserve">
-    <value>Ключі серверу SSL не можливо перевірити. Ви можете бути уражені атакою людина-по-середині.</value>
+    <value>MEGA не може безпечно під'єднатись через SSL. Ви можете бути у громадському WiFi з додатковими вимогами.</value>
     <comment>Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
   </data>
   <data name="AM_SSLKeyError_Title" xml:space="preserve">
@@ -1551,5 +1543,21 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
   <data name="AM_ResumeSessionFailed" xml:space="preserve">
     <value>Failed to resume your session. Please, close the app and try again later.</value>
     <comment>Message of the dialog displayed when the process to resume a session failed.</comment>
+  </data>
+  <data name="AM_StorageOverquotaPreAlert" xml:space="preserve">
+    <value>Операцію не буде виконано, інакше перевищиться ліміт збереження даних вашого облікового запису. Хочете покращити акаунт?</value>
+    <comment>Message of the dialog displayed when a user tries to make an operation that will exceed the storage space limits of the account (API_EGOINGOVERQUOTA error). Asks if user wants to upgrade the account type.</comment>
+  </data>
+  <data name="AM_StorageOverquotaPreAlert_Title" xml:space="preserve">
+    <value>Квоту перевищено. Увага!</value>
+    <comment>Title of the dialog displayed when a user tries to make an operation that will exceed the storage space limits of the account (API_EGOINGOVERQUOTA error) - (String as short as possible).</comment>
+  </data>
+  <data name="AM_StorageOverquotaAlert" xml:space="preserve">
+    <value>You have exceeded your storage limit. Would you like to upgrade your account?</value>
+    <comment>Title of the dialog displayed when a user exceeds the storage space limits of the account.</comment>
+  </data>
+  <data name="AM_StorageOverquotaAlert_Title" xml:space="preserve">
+    <value>Обмеження перевищено</value>
+    <comment>Title of the dialog displayed when a user exceeds the storage space limits of the account - (String as short as possible).</comment>
   </data>
 </root>

@@ -67,21 +67,14 @@ namespace ScheduledCameraUploadTaskAgent
             // Add notifications listener
             SdkService.MegaSdk.addGlobalListener(new MegaGlobalListener());
 
-            // Abort the service when storage quota exceeded error is raised in the transferlistener
-            // Abort will stop the service and it will not be launched again until the user
-            // activates it in the main application
+            // Notify complete when storage quota exceeded error is raised in the transferlistener	
+            // Notify complete will retry in the next task run
             var megaTransferListener = new MegaTransferListener();
             megaTransferListener.StorageQuotaExceeded += (sender, args) =>
             {
-                scheduledAgent.Abort();
-            };
-            // Notify complete when tramsfer quota exceeded error is raised in the transferlistener
-            // Notify complete will retry in the next task run
-            megaTransferListener.TransferQuotaExceeded += (sender, args) =>
-            {
                 scheduledAgent.NotifyComplete();
             };
-            
+
             // Add transfers listener
             SdkService.MegaSdk.addTransferListener(megaTransferListener);
                         
@@ -106,8 +99,7 @@ namespace ScheduledCameraUploadTaskAgent
                 // Notify complete and try next run to load the session string
                 this.NotifyComplete();
                 return;
-            }
-           
+            }           
 
             if (String.IsNullOrEmpty(sessionToken) || String.IsNullOrWhiteSpace(sessionToken))
             {

@@ -233,11 +233,11 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when fails the process/request to save/export an image to the 'saved pictures' album of the phone device.</comment>
   </data>
   <data name="ImageSaveError_Title" xml:space="preserve">
-    <value>Échec d'enregistrement de l'image</value>
+    <value>Échec d’enregistrement d’une image</value>
     <comment>Title of the dialog displayed when fails the process/request to save/export an image to the 'saved pictures' album of the phone device - (String as short as possible).</comment>
   </data>
   <data name="ImportFileFailed_Title" xml:space="preserve">
-    <value>Échec d'importation de fichier</value>
+    <value>Échec d’importation d’un fichier</value>
     <comment>Title of the dialog displayed when fails the process/request to import an image - (String as short as possible).</comment>
   </data>
   <data name="LinkCopiedToClipboard" xml:space="preserve">
@@ -538,11 +538,11 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
     <comment>Title of the dialog displayed when a user try to open a file that can't be found and the process failed - (String as short as possible).</comment>
   </data>
   <data name="OpenFileFailed" xml:space="preserve">
-    <value>Échec d'ouverture du fichier sélectionné</value>
+    <value>Échec d’ouverture du fichier sélectionné</value>
     <comment>Message of the dialog displayed when the process to open a file failed.</comment>
   </data>
   <data name="OpenFileFailed_Title" xml:space="preserve">
-    <value>Échec d'ouverture du fichier</value>
+    <value>Échec d’ouverture du fichier</value>
     <comment>Title of the dialog displayed when the process to open a file failed - (String as short as possible).</comment>
   </data>
   <data name="UploadSelfieFailed" xml:space="preserve">
@@ -572,14 +572,6 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
   <data name="SessionIDError" xml:space="preserve">
     <value>Vous avez été déconnecté de cet appareil à partir d'un autre endroit</value>
     <comment>Message of the dialog displayed when the user is logged out from another location and is trying to do any operation that requires a valid session (API_ESID Error).</comment>
-  </data>
-  <data name="OverquotaAlert" xml:space="preserve">
-    <value>L'opération n'est pas autorisée. Vous dépasseriez la limite de stockage de votre compte. Souhaitez-vous surclasser votre compte ?</value>
-    <comment>Message of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type.</comment>
-  </data>
-  <data name="OverquotaAlert_Title" xml:space="preserve">
-    <value>Alerte de dépassement de quota !</value>
-    <comment>Title of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type - (String as short as possible).</comment>
   </data>
   <data name="NoDownloadLocationSelected" xml:space="preserve">
     <value>Vous n’avez pas sélectionné d’emplacement de téléchargement par défaut pour vos fichiers. Pour poursuivre le téléchargement, veuillez sélectionner un dossier de destination ou aller dans les paramètres afin de définir votre emplacement de téléchargement par défaut.</value>
@@ -732,7 +724,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="CaptureVideoFailed_Title" xml:space="preserve">
-    <value>Échec d'enregistrement vidéo</value>
+    <value>Échec d’enregistrement vidéo</value>
     <comment>Title of the dialog displayed when the process to capture video failed - (String as short as possible).</comment>
   </data>
   <data name="SaveSettingsFailed" xml:space="preserve">
@@ -741,7 +733,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="SaveSettingsFailed_Title" xml:space="preserve">
-    <value>Erreur d'enregistrement des paramètres</value>
+    <value>Erreur d’enregistrement des paramètres</value>
     <comment>Title of the dialog displayed when the process to save settings failed - (String as short as possible).</comment>
   </data>
   <data name="ShortCutFailed" xml:space="preserve">
@@ -757,7 +749,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the process/request to store a user credit card failed.</comment>
   </data>
   <data name="CreditCardStoreFailed_Title" xml:space="preserve">
-    <value>Échec d'enregistrement de la carte de crédit</value>
+    <value>Échec d’enregistrement de la carte de crédit</value>
     <comment>Title of the dialog displayed when the process/request to store a user credit card failed - (String as short as possible).</comment>
   </data>
   <data name="RequiredFieldsCreditCardPayment" xml:space="preserve">
@@ -765,7 +757,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when required fields for credit card payment are not filled in.</comment>
   </data>
   <data name="WrongDataFormatCreditCardPayment" xml:space="preserve">
-    <value>Les numéro de carte de crédit, mois/année d'expiration et code de sécurité doivent être des chiffres. Veuillez vérifier que tout est en ordre et ressayer.</value>
+    <value>Numéro de carte de crédit, mois/année d’expiration et code de sécurité doivent être des chiffres. Veuillez vérifier que tout est en ordre et ressayer.</value>
     <comment>Message of the dialog displayed when a user fill some data with a wrong format during a credit card payment.</comment>
   </data>
   <data name="WrongDataFormat_Title" xml:space="preserve">
@@ -777,7 +769,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the process/request to cancel a subscription failed.</comment>
   </data>
   <data name="CancelSubscriptionFailed_Title" xml:space="preserve">
-    <value>Échec d'annulation de l'abonnement</value>
+    <value>Échec d’annulation de l’abonnement</value>
     <comment>Title of the dialog displayed when the process/request to cancel a subscription failed - (String as short as possible).</comment>
   </data>
   <data name="CancelSubscriptionSuccessfully" xml:space="preserve">
@@ -835,7 +827,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed in cases when the user has disabled background agents for this application</comment>
   </data>
   <data name="BackgroundAgentDisabled_Title" xml:space="preserve">
-    <value>Les agents d'arrière-plan sont désactivés</value>
+    <value>Les agents d’arrière-plan sont désactivés</value>
     <comment>Title of the dialog displayed in cases when the user has disabled background agents for this application</comment>
   </data>
   <data name="CameraUploadNeedsStayLoggedIn" xml:space="preserve">
@@ -860,7 +852,7 @@ Preserve the {0} code because is for include email of the contact to be removed 
     <comment>Message of the dialog displayed when the process/request to invite a contact failed.</comment>
   </data>
   <data name="InviteContactAddFailed_Title" xml:space="preserve">
-    <value>Échec d'invitation du contact</value>
+    <value>Échec d’invitation du contact</value>
     <comment>Title of the dialog displayed when the process/request to invite a contact failed - (String as short as possible).</comment>
   </data>
   <data name="InviteContactAddSuccessfully" xml:space="preserve">
@@ -1001,13 +993,13 @@ Preserve the '{0}' code because is for include the file name in runtime.</commen
     <comment>Message of the dialog displayed when the user is trying to open an invliad lick (NO KEY).</comment>
   </data>
   <data name="AM_ImportFileFailed" xml:space="preserve">
-    <value>Échec d'importation du fichier [{0}]</value>
+    <value>Échec d’importation du fichier [{0}]</value>
     <comment>Message of the dialog displayed when fails the process/request to import an image.
 
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="AM_ImportFileFailedNoErrorCode" xml:space="preserve">
-    <value>Échec d'importation de fichier</value>
+    <value>Échec d’importation d’un fichier</value>
     <comment>Message of the dialog displayed when fails the process/request to import an image.
 
 </comment>
@@ -1110,12 +1102,12 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Error title shown when you open a file or folder link and it's no longer available - (String as short as possible).</comment>
   </data>
   <data name="AM_OpenLinkFailed" xml:space="preserve">
-    <value>Échec d'ouverture du lien [{0}]</value>
+    <value>Échec d’ouverture du lien [{0}]</value>
     <comment>Message of the dialog displayed when the process to open a link failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="AM_OpenLinkFailed_Title" xml:space="preserve">
-    <value>Échec d'ouverture d'un lien</value>
+    <value>Échec d’ouverture du lien</value>
     <comment>Title of the dialog displayed when the process to open a link failed - (String as short as possible).</comment>
   </data>
   <data name="AM_DowloadPathUnauthorizedAccess" xml:space="preserve">
@@ -1193,7 +1185,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Title for the shared resource or the dialog displayed when the user is sharing multiple items from MEGA with other app of his Windows Phone device - (String as short as possible).</comment>
   </data>
   <data name="AM_ImportFolderFailed" xml:space="preserve">
-    <value>Échec d'importation du dossier. Veuillez ressayer.</value>
+    <value>Échec d’importation du dossier. Veuillez ressayer.</value>
     <comment>Message of the dialog displayed when fails the process/request to import a folder.</comment>
   </data>
   <data name="AM_ShareFromMegaFailed_Message" xml:space="preserve">
@@ -1205,11 +1197,11 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Title of the dialog displayed when the process to share item(s) from MEGA with other app fails - (String as short as possible).</comment>
   </data>
   <data name="AM_ImportFolderFailed_Title" xml:space="preserve">
-    <value>Échec d'importation d'un dossier</value>
+    <value>Échec d’importation d’un dossier</value>
     <comment>Title of the dialog displayed when fails the process/request to import a folder - (String as short as possible).</comment>
   </data>
   <data name="AM_ImportLinkFailed_Title" xml:space="preserve">
-    <value>Échec d'importation de lien</value>
+    <value>Échec d’importation du lien</value>
     <comment>Title of the dialog displayed when fails the process/request to import a link - (String as short as possible).</comment>
   </data>
   <data name="AM_AlreadyPurchased" xml:space="preserve">
@@ -1257,7 +1249,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Message of the dialog displayed when fails the process/request to download a folder link.</comment>
   </data>
   <data name="AM_ImportFailed_Title" xml:space="preserve">
-    <value>Échec d'importation</value>
+    <value>Échec d’importation</value>
     <comment>Title of the dialog displayed when fails the process/request to import a node - (String as short as possible).</comment>
   </data>
   <data name="AM_ImportFolderLinkFailed" xml:space="preserve">
@@ -1551,5 +1543,21 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
   <data name="AM_ResumeSessionFailed" xml:space="preserve">
     <value>Échec de reprise de votre session. Veuillez fermer l’appli et ressayer plus tard.</value>
     <comment>Message of the dialog displayed when the process to resume a session failed.</comment>
+  </data>
+  <data name="AM_StorageOverquotaPreAlert" xml:space="preserve">
+    <value>L'opération n'est pas autorisée. Vous dépasseriez la limite de stockage de votre compte. Souhaitez-vous surclasser votre compte ?</value>
+    <comment>Message of the dialog displayed when a user tries to make an operation that will exceed the storage space limits of the account (API_EGOINGOVERQUOTA error). Asks if user wants to upgrade the account type.</comment>
+  </data>
+  <data name="AM_StorageOverquotaPreAlert_Title" xml:space="preserve">
+    <value>Alerte de dépassement de quota !</value>
+    <comment>Title of the dialog displayed when a user tries to make an operation that will exceed the storage space limits of the account (API_EGOINGOVERQUOTA error) - (String as short as possible).</comment>
+  </data>
+  <data name="AM_StorageOverquotaAlert" xml:space="preserve">
+    <value>Vous avez dépassé votre limite de stockage. Souhaitez-vous surclasser votre compte ?</value>
+    <comment>Title of the dialog displayed when a user exceeds the storage space limits of the account.</comment>
+  </data>
+  <data name="AM_StorageOverquotaAlert_Title" xml:space="preserve">
+    <value>Le quota de stockage a été dépassé</value>
+    <comment>Title of the dialog displayed when a user exceeds the storage space limits of the account - (String as short as possible).</comment>
   </data>
 </root>

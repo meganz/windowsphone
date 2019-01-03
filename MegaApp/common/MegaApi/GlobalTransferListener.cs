@@ -179,23 +179,26 @@ namespace MegaApp.MegaApi
                     }
                     break;
 
-                case MErrorType.API_EGOINGOVERQUOTA: // Not enough quota
-                case MErrorType.API_EOVERQUOTA: // Storage overquota error
-                    // Stop all upload transfers
+                case MErrorType.API_EGOINGOVERQUOTA: // Not enough storage quota
                     LogService.Log(MLogLevel.LOG_LEVEL_INFO,
-                        string.Format("Storage quota exceeded ({0}) - Canceling uploads", e.getErrorCode().ToString()));
-                    api.cancelTransfers((int)MTransferType.TYPE_UPLOAD);
-
-                    // Disable the "camera upload" service if is enabled
-                    if (MediaService.GetAutoCameraUploadStatus())
+                        string.Format("Not enough storage quota ({0})", e.getErrorCode().ToString()));
+                        
+                    UiService.OnUiThread(() =>
                     {
-                        LogService.Log(MLogLevel.LOG_LEVEL_INFO,
-                            string.Format("Storage quota exceeded ({0}) - Disabling CAMERA UPLOADS service", e.getErrorCode().ToString()));
-                        MediaService.SetAutoCameraUpload(false);
-                        SettingsService.SaveSetting(SettingsResources.CameraUploadsIsEnabled, false);
-                    }
+                        megaTransfer.TransferState = MTransferState.STATE_FAILED;
+                        DialogService.ShowStorageOverquotaAlert(true);
+                    });
+                    break;
 
-                    Deployment.Current.Dispatcher.BeginInvoke(() => DialogService.ShowOverquotaAlert());
+                case MErrorType.API_EOVERQUOTA: // Storage overquota error
+                    LogService.Log(MLogLevel.LOG_LEVEL_INFO,
+                        string.Format("Storage quota exceeded ({0})", e.getErrorCode().ToString()));
+                        
+                    UiService.OnUiThread(() =>
+                    {
+                        megaTransfer.TransferState = MTransferState.STATE_FAILED;
+                        DialogService.ShowStorageOverquotaAlert(false);
+                    });
                     break;
 
                 case MErrorType.API_EINCOMPLETE:
@@ -261,6 +264,23 @@ namespace MegaApp.MegaApi
 
         public void onTransferTemporaryError(MegaSDK api, MTransfer transfer, MError e)
         {
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                if (DebugService.DebugSettings.IsDebugMode || Debugger.IsAttached)
+                {
+                    if (ProgressService.GetProgressBarBackgroundColor() != (Color)Application.Current.Resources["MegaRedColor"])
+                        ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["MegaRedColor"]);
+                }
+            });
+
+            switch (e.getErrorCode())
+            {
+                case MErrorType.API_EGOINGOVERQUOTA: // Not enough quota
+                case MErrorType.API_EOVERQUOTA: // Overquota error
+                    ProcessOverquotaError(api, e);
+                    break;
+            }
+
             // Extra checking to avoid NullReferenceException
             if (transfer == null) return;
 
@@ -274,21 +294,11 @@ namespace MegaApp.MegaApi
 
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
-                if (DebugService.DebugSettings.IsDebugMode || Debugger.IsAttached)
-                {
-                    if (ProgressService.GetProgressBarBackgroundColor() != (Color)Application.Current.Resources["MegaRedColor"])
-                        ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["MegaRedColor"]);
-                }
-
                 // Only update the values if they have changed to improve the UI performance
                 if (megaTransfer.Transfer != transfer) megaTransfer.Transfer = transfer;
                 if (megaTransfer.IsBusy != isBusy) megaTransfer.IsBusy = isBusy;
                 if (megaTransfer.TransferState != transferState) megaTransfer.TransferState = transferState;
                 if (megaTransfer.TransferPriority != transferPriority) megaTransfer.TransferPriority = transferPriority;
-                
-                // Transfer overquota error
-                if (e.getErrorCode() == MErrorType.API_EOVERQUOTA)
-                    DialogService.ShowTransferOverquotaWarning(); 
             });
         }
 
@@ -327,5 +337,39 @@ namespace MegaApp.MegaApi
         }
 
         #endregion
+
+        /// <summary>
+        /// This function is called when a transfer fails by an over quota error.
+        /// It does the needed actions to process this kind of error.
+        /// </summary>
+        /// <param name="api">MegaApi object that started the transfer</param>
+        /// <param name="e">Error information</param>
+        private void ProcessOverquotaError(MegaSDK api, MError e)
+        {
+            // TRANSFER OVERQUOTA ERROR
+            if (e.getValue() != 0)
+            {
+                LogService.Log(MLogLevel.LOG_LEVEL_INFO,
+                    string.Format("Transfer quota exceeded ({0})", e.getErrorCode().ToString()));
+                UiService.OnUiThread(DialogService.ShowTransferOverquotaWarning);
+                return;
+            }
+
+            // STORAGE OVERQUOTA ERROR
+            switch (e.getErrorCode())
+            {
+                case MErrorType.API_EGOINGOVERQUOTA: // Not enough storage quota
+                    LogService.Log(MLogLevel.LOG_LEVEL_INFO,
+                        string.Format("Not enough storage quota ({0})", e.getErrorCode().ToString()));
+                    UiService.OnUiThread(() => DialogService.ShowStorageOverquotaAlert(true));
+                    break;
+
+                case MErrorType.API_EOVERQUOTA: // Storage overquota error
+                    LogService.Log(MLogLevel.LOG_LEVEL_INFO,
+                        string.Format("Storage quota exceeded ({0})", e.getErrorCode().ToString()));
+                    UiService.OnUiThread(() => DialogService.ShowStorageOverquotaAlert(false));
+                    break;
+            }
+        }
     }
 }
