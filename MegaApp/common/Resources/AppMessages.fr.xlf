@@ -151,19 +151,19 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/ImageSaveError_Title" translate="yes" space="preserve">
           <source>Failed to save image</source>
-          <target state="translated">Échec d'enregistrement de l'image</target>
+          <target state="translated">Échec d’enregistrement d’une image</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to save/export an image to the 'saved pictures' album of the phone device - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ImportFileFailed" translate="yes" space="preserve">
           <source>File import failed [{0}]</source>
-          <target state="translated">Échec d'importation du fichier [{0}]</target>
+          <target state="translated">Échec d’importation du fichier [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to import an image.
 
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/ImportFileFailed_Title" translate="yes" space="preserve">
           <source>File import failed</source>
-          <target state="translated">Échec d'importation de fichier</target>
+          <target state="translated">Échec d’importation d’un fichier</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to import an image - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/LinkCopiedToClipboard" translate="yes" space="preserve">
@@ -542,12 +542,12 @@ Preserve the {0} code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/OpenFileFailed" translate="yes" space="preserve">
           <source>Failed to open the selected file</source>
-          <target state="translated">Échec d'ouverture du fichier sélectionné</target>
+          <target state="translated">Échec d’ouverture du fichier sélectionné</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to open a file failed.</note>
         </trans-unit>
         <trans-unit id="Resx/OpenFileFailed_Title" translate="yes" space="preserve">
           <source>File failed to open</source>
-          <target state="translated">Échec d'ouverture du fichier</target>
+          <target state="translated">Échec d’ouverture du fichier</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to open a file failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UploadSelfieFailed" translate="yes" space="preserve">
@@ -585,15 +585,15 @@ Preserve the {0} code because is for include the file name in runtime.</note>
           <target state="translated">Vous avez été déconnecté de cet appareil à partir d'un autre endroit</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user is logged out from another location and is trying to do any operation that requires a valid session (API_ESID Error).</note>
         </trans-unit>
-        <trans-unit id="Resx/OverquotaAlert" translate="yes" space="preserve">
+        <trans-unit id="Resx/AM_StorageOverquotaPreAlert" translate="yes" space="preserve">
           <source>Operation not allowed, you will exceed the storage limit of your account. Do you want to upgrade your account?</source>
           <target state="translated">L'opération n'est pas autorisée. Vous dépasseriez la limite de stockage de votre compte. Souhaitez-vous surclasser votre compte ?</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type.</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user tries to make an operation that will exceed the storage space limits of the account (API_EGOINGOVERQUOTA error). Asks if user wants to upgrade the account type.</note>
         </trans-unit>
-        <trans-unit id="Resx/OverquotaAlert_Title" translate="yes" space="preserve">
+        <trans-unit id="Resx/AM_StorageOverquotaPreAlert_Title" translate="yes" space="preserve">
           <source>Overquota Alert!</source>
           <target state="translated">Alerte de dépassement de quota !</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type - (String as short as possible).</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user tries to make an operation that will exceed the storage space limits of the account (API_EGOINGOVERQUOTA error) - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/NoDownloadLocationSelected" translate="yes" space="preserve">
           <source>You have not selected a default download location for your files.To proceed with the download, please select a destination folder or go to settings in order to set up your default download location.</source>
@@ -803,7 +803,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/CaptureVideoFailed_Title" translate="yes" space="preserve">
           <source>Video capture failed</source>
-          <target state="translated">Échec d'enregistrement vidéo</target>
+          <target state="translated">Échec d’enregistrement vidéo</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to capture video failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/SaveSettingsFailed" translate="yes" space="preserve">
@@ -814,7 +814,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/SaveSettingsFailed_Title" translate="yes" space="preserve">
           <source>Error saving settings</source>
-          <target state="translated">Erreur d'enregistrement des paramètres</target>
+          <target state="translated">Erreur d’enregistrement des paramètres</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to save settings failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ShortCutFailed" translate="yes" space="preserve">
@@ -834,7 +834,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/CreditCardStoreFailed_Title" translate="yes" space="preserve">
           <source>Storing credit card failed</source>
-          <target state="translated">Échec d'enregistrement de la carte de crédit</target>
+          <target state="translated">Échec d’enregistrement de la carte de crédit</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to store a user credit card failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/RequiredFieldsCreditCardPayment" translate="yes" space="preserve">
@@ -844,7 +844,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/WrongDataFormatCreditCardPayment" translate="yes" space="preserve">
           <source>The credit card number, month/year of expiration and the CVV should be numeric. Please check that everything is correct and try again.</source>
-          <target state="translated">Les numéro de carte de crédit, mois/année d'expiration et code de sécurité doivent être des chiffres. Veuillez vérifier que tout est en ordre et ressayer.</target>
+          <target state="translated">Numéro de carte de crédit, mois/année d’expiration et code de sécurité doivent être des chiffres. Veuillez vérifier que tout est en ordre et ressayer.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user fill some data with a wrong format during a credit card payment.</note>
         </trans-unit>
         <trans-unit id="Resx/WrongDataFormat_Title" translate="yes" space="preserve">
@@ -869,7 +869,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/CancelSubscriptionFailed_Title" translate="yes" space="preserve">
           <source>Subscription cancellation failed</source>
-          <target state="translated">Échec d'annulation de l'abonnement</target>
+          <target state="translated">Échec d’annulation de l’abonnement</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to cancel a subscription failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CancelSubscriptionSuccessfully" translate="yes" space="preserve">
@@ -941,7 +941,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/BackgroundAgentDisabled_Title" translate="yes" space="preserve">
           <source>Background agents disabled</source>
-          <target state="translated">Les agents d'arrière-plan sont désactivés</target>
+          <target state="translated">Les agents d’arrière-plan sont désactivés</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases when the user has disabled background agents for this application</note>
         </trans-unit>
         <trans-unit id="Resx/CameraUploadNeedsStayLoggedIn" translate="yes" space="preserve">
@@ -972,7 +972,7 @@ Preserve the {0} code because is for include email of the contact to be removed 
         </trans-unit>
         <trans-unit id="Resx/InviteContactAddFailed_Title" translate="yes" space="preserve">
           <source>Failed to invite the contact</source>
-          <target state="translated">Échec d'invitation du contact</target>
+          <target state="translated">Échec d’invitation du contact</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to invite a contact failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/InviteContactAddSuccessfully" translate="yes" space="preserve">
@@ -1141,7 +1141,7 @@ Preserve the '{0}' code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ImportFileFailedNoErrorCode" translate="yes" space="preserve">
           <source>File import failed</source>
-          <target state="translated">Échec d'importation de fichier</target>
+          <target state="translated">Échec d’importation d’un fichier</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to import an image.
 
 </note>
@@ -1262,13 +1262,13 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_OpenLinkFailed" translate="yes" space="preserve">
           <source>Open link failed [{0}]</source>
-          <target state="translated">Échec d'ouverture du lien [{0}]</target>
+          <target state="translated">Échec d’ouverture du lien [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to open a link failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_OpenLinkFailed_Title" translate="yes" space="preserve">
           <source>Open link failed</source>
-          <target state="translated">Échec d'ouverture d'un lien</target>
+          <target state="translated">Échec d’ouverture du lien</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to open a link failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DowloadPathUnauthorizedAccess" translate="yes" space="preserve">
@@ -1345,17 +1345,17 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ImportFolderFailed" translate="yes" space="preserve">
           <source>Failed to import folder. Please try again.</source>
-          <target state="translated">Échec d'importation du dossier. Veuillez ressayer.</target>
+          <target state="translated">Échec d’importation du dossier. Veuillez ressayer.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to import a folder.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ImportFolderFailed_Title" translate="yes" space="preserve">
           <source>Folder import failed</source>
-          <target state="translated">Échec d'importation d'un dossier</target>
+          <target state="translated">Échec d’importation d’un dossier</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to import a folder - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ImportLinkFailed_Title" translate="yes" space="preserve">
           <source>Link import failed</source>
-          <target state="translated">Échec d'importation de lien</target>
+          <target state="translated">Échec d’importation du lien</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to import a link - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShareFromMegaFailed_Message" translate="yes" space="preserve">
@@ -1425,7 +1425,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ImportFailed_Title" translate="yes" space="preserve">
           <source>Import failed</source>
-          <target state="translated">Échec d'importation</target>
+          <target state="translated">Échec d’importation</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to import a node - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ImportFolderLinkFailed" translate="yes" space="preserve">
@@ -1792,6 +1792,16 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
           <source>Failed to resume your session. Please, close the app and try again later.</source>
           <target state="translated">Échec de reprise de votre session. Veuillez fermer l’appli et ressayer plus tard.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to resume a session failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_StorageOverquotaAlert" translate="yes" space="preserve">
+          <source>You have exceeded your storage limit. Would you like to upgrade your account?</source>
+          <target state="translated">Vous avez dépassé votre limite de stockage. Souhaitez-vous surclasser votre compte ?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user exceeds the storage space limits of the account.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_StorageOverquotaAlert_Title" translate="yes" space="preserve">
+          <source>Storage quota exceeded</source>
+          <target state="translated">Le quota de stockage a été dépassé</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user exceeds the storage space limits of the account - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>

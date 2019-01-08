@@ -584,13 +584,13 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
     <value>You have been logged out on this device from another location</value>
     <comment>Message of the dialog displayed when the user is logged out from another location and is trying to do any operation that requires a valid session (API_ESID Error).</comment>
   </data>
-  <data name="OverquotaAlert" xml:space="preserve">
+  <data name="AM_StorageOverquotaPreAlert" xml:space="preserve">
     <value>Operation not allowed, you will exceed the storage limit of your account. Do you want to upgrade your account?</value>
-    <comment>Message of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type.</comment>
+    <comment>Message of the dialog displayed when a user tries to make an operation that will exceed the storage space limits of the account (API_EGOINGOVERQUOTA error). Asks if user wants to upgrade the account type.</comment>
   </data>
-  <data name="OverquotaAlert_Title" xml:space="preserve">
+  <data name="AM_StorageOverquotaPreAlert_Title" xml:space="preserve">
     <value>Overquota Alert!</value>
-    <comment>Title of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type - (String as short as possible).</comment>
+    <comment>Title of the dialog displayed when a user tries to make an operation that will exceed the storage space limits of the account (API_EGOINGOVERQUOTA error) - (String as short as possible).</comment>
   </data>
   <data name="NoDownloadLocationSelected" xml:space="preserve">
     <value>You have not selected a default download location for your files.To proceed with the download, please select a destination folder or go to settings in order to set up your default download location.</value>
@@ -1551,5 +1551,13 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
   <data name="AM_ResumeSessionFailed" xml:space="preserve">
     <value>Failed to resume your session. Please, close the app and try again later.</value>
     <comment>Message of the dialog displayed when the process to resume a session failed.</comment>
+  </data>
+  <data name="AM_StorageOverquotaAlert" xml:space="preserve">
+    <value>You have exceeded your storage limit. Would you like to upgrade your account?</value>
+    <comment>Title of the dialog displayed when a user exceeds the storage space limits of the account.</comment>
+  </data>
+  <data name="AM_StorageOverquotaAlert_Title" xml:space="preserve">
+    <value>Storage quota exceeded</value>
+    <comment>Title of the dialog displayed when a user exceeds the storage space limits of the account - (String as short as possible).</comment>
   </data>
 </root>

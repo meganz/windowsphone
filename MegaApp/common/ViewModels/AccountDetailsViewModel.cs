@@ -40,6 +40,13 @@ namespace MegaApp.ViewModels
             }
         }
 
+        private MStorageState _storageState = MStorageState.STORAGE_STATE_GREEN;
+        public MStorageState StorageState
+        {
+            get { return _storageState; }
+            set { SetField(ref _storageState, value); }
+        }
+
         private ulong _totalSpace;
         public ulong TotalSpace
         {

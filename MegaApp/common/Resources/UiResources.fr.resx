@@ -150,7 +150,7 @@
     <comment>Label for the background of an empty transfers page - (String as short as possible).</comment>
   </data>
   <data name="LoadingPreview" xml:space="preserve">
-    <value>Chargement de l’aperçu...</value>
+    <value>Chargement de l’aperçu…</value>
     <comment>Label shown with an animation when the app is loading a preview - (String as short as possible).</comment>
   </data>
   <data name="MegaLinkTitle" xml:space="preserve">
@@ -438,7 +438,7 @@
     <comment>Label shown when the app has no information about the user account to show into 'my account' page - (String as short as possible).</comment>
   </data>
   <data name="NoPlansToDisplay" xml:space="preserve">
-    <value>Aucune offre à afficher</value>
+    <value>Aucun abonnement à afficher</value>
     <comment>Label shown when the app has no information about the subscription plans to show into 'subscription' page - (String as short as possible).</comment>
   </data>
   <data name="OldestSortOption" xml:space="preserve">
@@ -470,7 +470,7 @@
     <comment>Label for any 'Subscribe' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="TermsOfService" xml:space="preserve">
-    <value>Conditions générales d'utilisation</value>
+    <value>Conditions générales d’utilisation</value>
     <comment>Label for any 'Terms of Service' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Total" xml:space="preserve">
@@ -530,11 +530,11 @@
     <comment>Label 'get' for the first part of the sentence 'get fully encrypted access anywhere, anytime.', to build this sentence in three colors into the init tour page. Don't place '.' at the end of the string. Keep all in lowercase.</comment>
   </data>
   <data name="InitTourAccess2" xml:space="preserve">
-    <value>d'un accès entièrement chiffré</value>
+    <value>un accès entièrement chiffré</value>
     <comment>Label 'fully encrypted access' for the second part of the sentence 'get fully encrypted access anywhere, anytime.', to build this sentence in three colors into the init tour page. Don't place '.' at the end of the string. Keep all in lowercase.</comment>
   </data>
   <data name="InitTourAccess3" xml:space="preserve">
-    <value>n'importe où, n'importe quand.</value>
+    <value>n’importe où, n’importe quand.</value>
     <comment>Label 'anywhere, anytime.' for the third part of the sentence 'get fully encrypted access anywhere, anytime.', to build this sentence in three colors into the init tour page. Don't forget to place '.' at the end of the string. Keep all in lowercase.</comment>
   </data>
   <data name="InitTourAccess_Title" xml:space="preserve">
@@ -686,7 +686,7 @@
     <comment>Label for any 'First name' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Get2MonthsFree" xml:space="preserve">
-    <value>Obtenez 2 mois gratuits avec un abonnement PRO d'un an</value>
+    <value>Obtenez 2 mois gratuits avec un abonnement PRO d’un an</value>
     <comment>Label to indicate the user that he obtains 2 free months with a one-year pro plan subscription.</comment>
   </data>
   <data name="LastName" xml:space="preserve">
@@ -718,7 +718,7 @@
     <comment>Label for any 'Province' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="SelectedPlan" xml:space="preserve">
-    <value>Vous avez choisi l'offre {0}</value>
+    <value>Vous avez choisi l’abonnement {0}</value>
     <comment>Label to indicate the selected plan during the payment process.
 Preserve the {0} code because is for include the name/type of the selected plan in runtime.</comment>
   </data>
@@ -769,7 +769,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
     <comment>Label to indicate the user that is needed choose a payment method for upgrade his account.</comment>
   </data>
   <data name="NoPaymentMethodsAvailable" xml:space="preserve">
-    <value>Actuellement, aucun mode de paiement n'est proposé pour cette offre</value>
+    <value>Actuellement, aucun mode de paiement n'est proposé pour cet abonnement</value>
     <comment>Label shown when the app has no available payment methods to the selected subscription plan.</comment>
   </data>
   <data name="CreditCard" xml:space="preserve">
@@ -969,7 +969,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Manage link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="OSRestrictions" xml:space="preserve">
-    <value>Restrictions du système d'exploitation</value>
+    <value>Restrictions du système d’exploitation</value>
     <comment>Label for the auto camera upload service restrictions.</comment>
   </data>
   <data name="SavedForOffline" xml:space="preserve">
@@ -1161,7 +1161,7 @@ Keep the code {1} because is for include currency in runtime.</comment>
     <comment>Label to indicate that a feature is only available for PRO users. Keep between parentheses and capital letters  - (String as short as possible).</comment>
   </data>
   <data name="UI_SetExpirationDate" xml:space="preserve">
-    <value>Définir une date d'expiration</value>
+    <value>Définir une date d’expiration</value>
     <comment>Label for any 'Set expiry date' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStateCanceled" xml:space="preserve">
@@ -1169,7 +1169,7 @@ Keep the code {1} because is for include currency in runtime.</comment>
     <comment>Label for the state of a canceled transfer - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStateCompleting" xml:space="preserve">
-    <value>Finalisation...</value>
+    <value>Finalisation…</value>
     <comment>Label for the state of a transfer when is being completing - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStateDownloaded" xml:space="preserve">
@@ -1193,7 +1193,7 @@ Keep the code {1} because is for include currency in runtime.</comment>
     <comment>Label for the state of a paused transfer - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStatePreparing" xml:space="preserve">
-    <value>Préparation...</value>
+    <value>Préparation…</value>
     <comment>Label for the state of a transfer when is being preparing - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStateQueued" xml:space="preserve">
@@ -1201,7 +1201,7 @@ Keep the code {1} because is for include currency in runtime.</comment>
     <comment>Label for the state of a transfer when is queued - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStateRetrying" xml:space="preserve">
-    <value>Nouvel essai...</value>
+    <value>Nouvel essai…</value>
     <comment>Label for the state of a transfer when is being retrying - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStateUploaded" xml:space="preserve">
@@ -1209,7 +1209,7 @@ Keep the code {1} because is for include currency in runtime.</comment>
     <comment>Label for the state of an upload transfer when is finished - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStateUploading" xml:space="preserve">
-    <value>Téléversement...</value>
+    <value>Téléversement…</value>
     <comment>Label for the state of a transfer when is being uploading - (String as short as possible).</comment>
   </data>
   <data name="UI_CancelDownloads" xml:space="preserve">
@@ -1288,7 +1288,7 @@ Preserve the PIN uppercase word.</comment>
     <comment>Label for the title of the "Legal and Policies" section which include links to the Terms of Service, Privacy Policy, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_Copyright" xml:space="preserve">
-    <value>Droits d’auteur</value>
+    <value>Droit d’auteur</value>
     <comment>Label for any 'Copyright' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_LearnMore" xml:space="preserve">

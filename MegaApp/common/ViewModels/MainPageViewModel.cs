@@ -57,7 +57,7 @@ namespace MegaApp.ViewModels
 
         public void Initialize(GlobalListener globalListener)
         {
-            AccountService.GetAccountDetailsFinish += OnGetAccountDetailsFinish;
+            GlobalListener.StorageStateChanged += OnStorageStateChanged;
 
             // Add folders to global listener to receive notifications
             globalListener.Folders.Add(this.CloudDrive);
@@ -66,7 +66,7 @@ namespace MegaApp.ViewModels
 
         public void Deinitialize(GlobalListener globalListener)
         {
-            AccountService.GetAccountDetailsFinish -= OnGetAccountDetailsFinish;
+            GlobalListener.StorageStateChanged -= OnStorageStateChanged;
 
             // Add folders to global listener to receive notifications
             globalListener.Folders.Remove(this.CloudDrive);
@@ -278,37 +278,53 @@ namespace MegaApp.ViewModels
             this.ActiveFolderView = this.CloudDrive;
         }
 
-        private void OnGetAccountDetailsFinish(object sender, EventArgs e)
+        private void OnStorageStateChanged(object sender, EventArgs e)
         {
-            int usedSpacePercent;
-            if ((AccountService.AccountDetails.TotalSpace > 0) && (AccountService.AccountDetails.UsedSpace > 0))
-                usedSpacePercent = (int)(AccountService.AccountDetails.UsedSpace * 100 / AccountService.AccountDetails.TotalSpace);
-            else
-                usedSpacePercent = 0;
+            this.ShowStorageStatusDialog();
+        }
 
-            // If used space is less than 95% and is a free account, the 5% of the times show a message to upgrade the account
-            if (usedSpacePercent <= 95)
+        public void ShowStorageStatusDialog()
+        {
+            switch (AccountService.AccountDetails.StorageState)
             {
-                if (AccountService.AccountDetails.AccountType == MAccountType.ACCOUNT_TYPE_FREE)
-                {
+                case MStorageState.STORAGE_STATE_GREEN:
+                    if (AccountService.AccountDetails.AccountType == MAccountType.ACCOUNT_TYPE_FREE)
+                    {
+                        Task.Run(() =>
+                        {
+                            Visibility visibility = GetRandomVisibility(5);
+                            UiService.OnUiThread(() =>
+                            {
+                                _mainPage.ChangeWarningOutOfSpaceBorderVisibility(Visibility.Collapsed);
+                                _mainPage.ChangeGetProAccountBorderVisibility(visibility);
+                            });
+
+                            if (visibility == Visibility.Visible)
+                                this.TimerGetProAccountVisibility(30000);
+                        });
+                    }
+                    break;
+
+                case MStorageState.STORAGE_STATE_ORANGE:
                     Task.Run(() =>
                     {
-                        Visibility visibility = GetRandomVisibility(5);
-                        Deployment.Current.Dispatcher.BeginInvoke(() => _mainPage.ChangeGetProAccountBorderVisibility(visibility));
-
-                        if (visibility == Visibility.Visible)
-                            this.TimerGetProAccountVisibility(30000);
+                        UiService.OnUiThread(() =>
+                        {
+                            _mainPage.ChangeGetProAccountBorderVisibility(Visibility.Collapsed);
+                            _mainPage.ChangeWarningOutOfSpaceBorderVisibility(Visibility.Visible);
+                        });
+                        this.TimerWarningOutOfSpaceVisibility(15000);
                     });
-                }
-            }
-            // Else show a warning message indicating the user is running out of space
-            else
-            {
-                Task.Run(() =>
-                {
-                    Deployment.Current.Dispatcher.BeginInvoke(() => _mainPage.ChangeWarningOutOfSpaceBorderVisibility(Visibility.Visible));
-                    this.TimerWarningOutOfSpaceVisibility(15000);
-                });
+                    break;
+
+                case MStorageState.STORAGE_STATE_RED:
+                    UiService.OnUiThread(() =>
+                    {
+                        _mainPage.ChangeGetProAccountBorderVisibility(Visibility.Collapsed);
+                        _mainPage.ChangeWarningOutOfSpaceBorderVisibility(Visibility.Collapsed);
+                        DialogService.ShowStorageOverquotaAlert(false);
+                    });
+                    break;
             }
         }
         
