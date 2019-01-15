@@ -128,7 +128,7 @@ namespace MegaApp.Services
                 new MegaRandomNumberProvider());
 
             // Use custom DNS servers in the new SDK instance
-            SetDnsServers(newMegaSDK);
+            SetDnsServers(newMegaSDK, false);
 
             // Enable retrying when public key pinning fails
             newMegaSDK.retrySSLerrors(true);
@@ -140,9 +140,10 @@ namespace MegaApp.Services
         /// Use custom DNS servers in the selected SDK instance.
         /// </summary>
         /// <param name="megaSdk">SDK instance to set the custom DNS servers.</param>
-        private static void SetDnsServers(MegaSDK megaSdk)
+        /// <param name="refresh">Indicates if should refresh the previously stored addresses.</param>
+        private static void SetDnsServers(MegaSDK megaSdk, bool refresh = true)
         {
-            var dnsServers = NetworkService.GetMegaDnsServers(true);
+            var dnsServers = NetworkService.GetMegaDnsServers(refresh);
             if (!string.IsNullOrWhiteSpace(dnsServers))
                 megaSdk.setDnsServers(dnsServers);
         }
@@ -150,9 +151,10 @@ namespace MegaApp.Services
         /// <summary>
         /// Use custom DNS servers in all the SDK instances.
         /// </summary>
-        public static void SetDnsServers()
+        /// <param name="refresh">Indicates if should refresh the previously stored addresses.</param>
+        public static void SetDnsServers(bool refresh = true)
         {
-            var dnsServers = NetworkService.GetMegaDnsServers(true);
+            var dnsServers = NetworkService.GetMegaDnsServers(refresh);
             if (!string.IsNullOrWhiteSpace(dnsServers))
             {
                 SdkService.MegaSdk.setDnsServers(dnsServers);

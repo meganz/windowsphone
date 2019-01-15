@@ -2,14 +2,20 @@
 using System.Collections.Generic;
 using System.Net;
 using System.Threading;
-using System.Windows;
 using Microsoft.Phone.Net.NetworkInformation;
 using Windows.Networking.Connectivity;
 using mega;
+
+#if !CAMERA_UPLOADS_SERVICE
 using MegaApp.Classes;
 using MegaApp.Resources;
+#endif
 
+#if CAMERA_UPLOADS_SERVICE
+namespace ScheduledCameraUploadTaskAgent.Services
+#else
 namespace MegaApp.Services
+#endif
 {
     static class NetworkService
     {
@@ -18,12 +24,12 @@ namespace MegaApp.Services
         /// <summary>
         /// IP address assigned by the network
         /// </summary>
-        private static string IpAddress { get; set; }
+        private static string IpAddress;
 
         /// <summary>
         /// Profile name of the network
         /// </summary>
-        private static string ProfileName { get; set; }
+        private static string ProfileName;
 
         /// <summary>
         /// MEGA DNS servers
@@ -34,18 +40,27 @@ namespace MegaApp.Services
 
         #region Methods
 
+#if CAMERA_UPLOADS_SERVICE
         /// <summary>
         /// Returns if there is an available network connection.
         /// </summary>        
+        /// <returns>True if there is an available network connection. False in other case.</returns>
+        public static bool IsNetworkAvailable()
+#else
+        /// <summary>
+        /// Returns if there is an available network connection.
+        /// </summary>
         /// <param name="showMessageDialog">Boolean parameter to indicate if show a message if no Intenert connection</param>
-        /// <returns>True if there is an available network connection., False in other case.</returns>
+        /// <returns>True if there is an available network connection. False in other case.</returns>
         public static bool IsNetworkAvailable(bool showMessageDialog = false)
+#endif
         {
             if (!NetworkInterface.GetIsNetworkAvailable())
             {
+#if !CAMERA_UPLOADS_SERVICE
                 if (showMessageDialog)
                 {
-                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    UiService.OnUiThread(() =>
                     {
                         new CustomMessageDialog(
                             UiResources.NoInternetConnection.ToUpper(),
@@ -53,9 +68,9 @@ namespace MegaApp.Services
                             App.AppInformation,
                             MessageDialogButtons.Ok,
                             MessageDialogImage.NoInternetConnection).ShowDialog();
-                    });                    
+                    });
                 }
-
+#endif
                 LogService.Log(MLogLevel.LOG_LEVEL_INFO, "No network available.");
                 return false;
             }
@@ -153,7 +168,7 @@ namespace MegaApp.Services
         /// </summary>
         /// <param name="refresh">Indicates if should refresh the previously stored addresses.</param>
         /// <returns>String with the MEGA DNS servers IP addresses separated by commas.</returns>
-        public static string GetMegaDnsServers(bool refresh = false)
+        public static string GetMegaDnsServers(bool refresh = true)
         {
             if (!refresh && !string.IsNullOrWhiteSpace(MegaDnsServers))
                 return MegaDnsServers;
@@ -215,7 +230,7 @@ namespace MegaApp.Services
                 return null;
             }
         }
-
+        
         #endregion
     }
 }
