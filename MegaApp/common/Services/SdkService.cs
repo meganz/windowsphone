@@ -127,10 +127,37 @@ namespace MegaApp.Services
                 ApplicationData.Current.LocalFolder.Path,
                 new MegaRandomNumberProvider());
 
+            // Use custom DNS servers in the new SDK instance
+            SetDnsServers(newMegaSDK);
+
             // Enable retrying when public key pinning fails
             newMegaSDK.retrySSLerrors(true);
 
             return newMegaSDK;
+        }
+
+        /// <summary>
+        /// Use custom DNS servers in the selected SDK instance.
+        /// </summary>
+        /// <param name="megaSdk">SDK instance to set the custom DNS servers.</param>
+        private static void SetDnsServers(MegaSDK megaSdk)
+        {
+            var dnsServers = NetworkService.GetMegaDnsServers(true);
+            if (!string.IsNullOrWhiteSpace(dnsServers))
+                megaSdk.setDnsServers(dnsServers);
+        }
+
+        /// <summary>
+        /// Use custom DNS servers in all the SDK instances.
+        /// </summary>
+        public static void SetDnsServers()
+        {
+            var dnsServers = NetworkService.GetMegaDnsServers(true);
+            if (!string.IsNullOrWhiteSpace(dnsServers))
+            {
+                SdkService.MegaSdk.setDnsServers(dnsServers);
+                SdkService.MegaSdkFolderLinks.setDnsServers(dnsServers);
+            }
         }
 
         /// <summary>

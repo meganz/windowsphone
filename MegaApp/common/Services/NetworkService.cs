@@ -16,6 +16,16 @@ namespace MegaApp.Services
         #region Properties
 
         /// <summary>
+        /// IP address assigned by the network
+        /// </summary>
+        private static string IpAddress { get; set; }
+
+        /// <summary>
+        /// Profile name of the network
+        /// </summary>
+        private static string ProfileName { get; set; }
+
+        /// <summary>
         /// MEGA DNS servers
         /// </summary>
         private static string MegaDnsServers;
@@ -53,8 +63,56 @@ namespace MegaApp.Services
             return true;
         }
 
-        // Code to detect if the IP has changed and refresh all open connections on this case
-        public static void CheckChangesIP()
+        /// <summary>
+        /// Initialize the network parameters
+        /// </summary>
+        public static void InitializeNetworkParams()
+        {
+            HasChangedIP();
+            HasChangedProfileName();
+        }
+
+        /// <summary>
+        /// Code to detect if the network has changed and refresh all open connections on this case
+        /// </summary>
+        public static void CheckNetworkChange()
+        {
+            var ipAddressChanged = HasChangedIP();
+            var profileNameChanged = HasChangedProfileName();
+
+            if (ipAddressChanged || profileNameChanged)
+                SdkService.SetDnsServers();
+        }
+
+        /// <summary>
+        /// Code to detect if the network profile name has changed
+        /// </summary>
+        /// <returns>TRUE if the has changed or FALSE in other case.</returns>
+        private static bool HasChangedProfileName()
+        {
+            var internetConnection = NetworkInformation.GetInternetConnectionProfile();
+
+            // If no network device is connected, do nothing
+            if (internetConnection == null)
+            {
+                ProfileName = null;
+                return false;
+            }
+
+            // If the profile name hasn't changed, do nothing
+            if (internetConnection.ProfileName == ProfileName)
+                return false;
+
+            // Store the new profile name
+            ProfileName = internetConnection.ProfileName;
+            return true;
+        }
+
+        /// <summary>
+        /// Code to detect if the IP has changed
+        /// </summary>
+        /// <returns>TRUE if the IP has changed or FALSE in other case.</returns>
+        private static bool HasChangedIP()
         {
             List<String> ipAddresses = null;
 
@@ -72,21 +130,22 @@ namespace MegaApp.Services
                     }
                 }
             }
-            catch (ArgumentException) { return; }
+            catch (ArgumentException) { return false; }
 
             // If no network device is connected, do nothing
             if ((ipAddresses == null) || (ipAddresses.Count < 1))
             {
-                App.IpAddress = null;
-                return;
+                IpAddress = null;
+                return false;
             }
 
-            // If the primary IP has changed
-            if (ipAddresses[0] != App.IpAddress)
-            {
-                SdkService.MegaSdk.reconnect();        // Refresh all open connections
-                App.IpAddress = ipAddresses[0]; // Storage the new primary IP address
-            }
+            // If the IP hasn't changed, do nothing
+            if (ipAddresses[0] == IpAddress)
+                return false;
+
+            // Store the new IP address
+            IpAddress = ipAddresses[0];
+            return true;
         }
 
         /// <summary>

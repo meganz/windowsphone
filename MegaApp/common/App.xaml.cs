@@ -1,5 +1,4 @@
-﻿using SQLite;
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.IO;
 using System.Windows;
@@ -12,7 +11,6 @@ using Microsoft.Phone.Shell;
 using Telerik.Windows.Controls;
 using mega;
 using MegaApp.Classes;
-using MegaApp.Database;
 using MegaApp.Enums;
 using MegaApp.MegaApi;
 using MegaApp.Resources;
@@ -40,8 +38,7 @@ namespace MegaApp
         /// Provides easy access to usefull application information
         /// </summary>
         public static AppInformation AppInformation { get; private set; }        
-        public static String IpAddress { get; set; }
-
+        
         public static CloudDriveViewModel CloudDrive { get; set; }
         public static MainPageViewModel MainPageViewModel { get; set; }
         public static SavedForOfflineViewModel SavedForOfflineViewModel { get; set; }
@@ -136,7 +133,7 @@ namespace MegaApp
             // Initialize Telerik Diagnostics with the actual app version information
             ApplicationUsageHelper.Init(AppService.GetAppVersion());
             AppInformation.HasPinLockIntroduced = false;
-            NetworkService.CheckChangesIP();
+            NetworkService.CheckNetworkChange();
 
             #if WINDOWS_PHONE_81
             // Code to intercept files that are send to MEGA as share target
@@ -156,7 +153,7 @@ namespace MegaApp
             ApplicationUsageHelper.OnApplicationActivated();
             AppInformation.IsStartupModeActivate = true;
             AppInformation.HasPinLockIntroduced = false;
-            NetworkService.CheckChangesIP();
+            NetworkService.CheckNetworkChange();
         }
 
         // Code to execute when the application is deactivated (sent to background)
@@ -178,11 +175,12 @@ namespace MegaApp
         {
             switch (e.NotificationType)
             {
-                case NetworkNotificationType.InterfaceConnected:                    
-                case NetworkNotificationType.InterfaceDisconnected:
-                    NetworkService.CheckChangesIP();
-                    break;
+                case NetworkNotificationType.InterfaceConnected:
                 case NetworkNotificationType.CharacteristicUpdate:                    
+                    NetworkService.CheckNetworkChange();
+                    break;
+
+                case NetworkNotificationType.InterfaceDisconnected:
                 default:
                     break;
             }
@@ -257,6 +255,9 @@ namespace MegaApp
 
             // Initialize the links information
             LinkInformation = new LinkInformation();
+
+            // Initialize the network parameters
+            NetworkService.InitializeNetworkParams();
 
             // Initialize SDK parameters
             SdkService.InitializeSdkParams();
