@@ -50,6 +50,8 @@ namespace MegaApp.Views
 
         private void SetControlState(bool state)
         {
+            if (this.ApplicationBar == null) return;
+
             UiService.ChangeAppBarStatus(this.ApplicationBar.Buttons,
                 this.ApplicationBar.MenuItems, state);
         }
