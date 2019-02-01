@@ -879,6 +879,7 @@ namespace MegaApp.ViewModels
 
         private void DownloadItem(object obj)
         {
+            if (FocusedNode == null) return;
             FocusedNode.Download(TransfersService.MegaTransfers);
         }
 
