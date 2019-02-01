@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Net;
 using System.Threading;
@@ -29,7 +30,7 @@ namespace MegaApp.Services
         /// <summary>
         /// Profile name of the network
         /// </summary>
-        private static string ProfileName;
+        private static string NetworkName;
 
         /// <summary>
         /// MEGA DNS servers
@@ -84,7 +85,7 @@ namespace MegaApp.Services
         public static void InitializeNetworkParams()
         {
             HasChangedIP();
-            HasChangedProfileName();
+            HasChangedNetworkName();
         }
 
         /// <summary>
@@ -93,9 +94,9 @@ namespace MegaApp.Services
         public static void CheckNetworkChange()
         {
             var ipAddressChanged = HasChangedIP();
-            var profileNameChanged = HasChangedProfileName();
+            var networkNameChanged = HasChangedNetworkName();
 
-            if (ipAddressChanged || profileNameChanged)
+            if (ipAddressChanged || networkNameChanged)
                 SdkService.SetDnsServers();
         }
 
@@ -103,24 +104,24 @@ namespace MegaApp.Services
         /// Code to detect if the network profile name has changed
         /// </summary>
         /// <returns>TRUE if the has changed or FALSE in other case.</returns>
-        private static bool HasChangedProfileName()
+        private static bool HasChangedNetworkName()
         {
-            var internetConnection = NetworkInformation.GetInternetConnectionProfile();
-
-            // If no network device is connected, do nothing
-            if (internetConnection == null)
+            try
             {
-                ProfileName = null;
+                var profile = NetworkInformation.GetInternetConnectionProfile();
+                if (profile == null) return false;
+
+                if (profile.ProfileName == NetworkName)
+                    return false;
+
+                NetworkName = profile.ProfileName;
+                return true;
+            }
+            catch (Exception e)
+            {
+                LogService.Log(MLogLevel.LOG_LEVEL_WARNING, "Error checking a possible network name change", e);
                 return false;
             }
-
-            // If the profile name hasn't changed, do nothing
-            if (internetConnection.ProfileName == ProfileName)
-                return false;
-
-            // Store the new profile name
-            ProfileName = internetConnection.ProfileName;
-            return true;
         }
 
         /// <summary>
@@ -129,38 +130,26 @@ namespace MegaApp.Services
         /// <returns>TRUE if the IP has changed or FALSE in other case.</returns>
         private static bool HasChangedIP()
         {
-            List<String> ipAddresses = null;
-
-            // Find the IP of all network devices
             try
             {
-                ipAddresses = new List<String>();
-                var hostnames = NetworkInformation.GetHostNames();
-                foreach (var hn in hostnames)
-                {
-                    if (hn.IPInformation != null)// && hn.Type == Windows.Networking.HostNameType.Ipv4)
-                    {
-                        string ipAddress = hn.DisplayName;
-                        ipAddresses.Add(ipAddress);
-                    }
-                }
-            }
-            catch (ArgumentException) { return false; }
+                var profile = NetworkInformation.GetInternetConnectionProfile();
+                if (profile == null || profile.NetworkAdapter == null) return false;
 
-            // If no network device is connected, do nothing
-            if ((ipAddresses == null) || (ipAddresses.Count < 1))
+                var hostname = NetworkInformation.GetHostNames().SingleOrDefault(hn =>
+                    hn != null && hn.IPInformation != null && hn.IPInformation.NetworkAdapter != null &&
+                    hn.IPInformation.NetworkAdapter.NetworkAdapterId == profile.NetworkAdapter.NetworkAdapterId);
+
+                if (hostname == null || string.IsNullOrWhiteSpace(hostname.CanonicalName) || hostname.CanonicalName == IpAddress)
+                    return false;
+
+                IpAddress = hostname.CanonicalName;
+                return true;
+            }
+            catch (Exception e)
             {
-                IpAddress = null;
+                LogService.Log(MLogLevel.LOG_LEVEL_WARNING, "Error checking a possible IP address change", e);
                 return false;
             }
-
-            // If the IP hasn't changed, do nothing
-            if (ipAddresses[0] == IpAddress)
-                return false;
-
-            // Store the new IP address
-            IpAddress = ipAddresses[0];
-            return true;
         }
 
         /// <summary>

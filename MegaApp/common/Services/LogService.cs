@@ -2,9 +2,18 @@
 using System.IO;
 using System.Runtime.CompilerServices;
 using mega;
-using MegaApp.MegaApi;
 
+#if CAMERA_UPLOADS_SERVICE
+using ScheduledCameraUploadTaskAgent.MegaApi;
+#else
+using MegaApp.MegaApi;
+#endif
+
+#if CAMERA_UPLOADS_SERVICE
+namespace ScheduledCameraUploadTaskAgent.Services
+#else
 namespace MegaApp.Services
+#endif
 {
     /// <summary>
     /// Helper service to send logs to the loggin system
