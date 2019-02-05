@@ -1143,7 +1143,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to copy a node failed - (String as short as possible).</comment>
   </data>
   <data name="AM_DisableDebugMode_Message" xml:space="preserve">
-    <value>Tệp log ghi lại các hoạt động sẽ bị xóa khỏi mục Ngoại Tuyến.</value>
+    <value>Tệp log ghi chép hoạt động ({0}) sẽ bị xóa khỏi mục Ngoại Tuyến.</value>
     <comment>Alert message shown when the DEBUG mode is disabled.
 Preserve the ({0}) code because is for include the file name in runtime.</comment>
   </data>

@@ -786,7 +786,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/CapturePhotoVideoFailed" translate="yes" space="preserve">
           <source>Failed to capture photo or video. Please, try again [{0}]</source>
-          <target state="translated">フォト又はビデオとれず。再度トライして下さい。</target>
+          <target state="translated">写真か動画のキャプチャに失敗しました。もう一度やり直してください[{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to capture photo or video failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
@@ -1189,7 +1189,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_LoadSettingsFailed" translate="yes" space="preserve">
           <source>Failed to load settings. Please try again. [{0}]</source>
-          <target state="translated">設定をロードエラー。もう一度やり直してください。</target>
+          <target state="translated">設定を読み込めませんでした。もう一度やり直してください。 [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to load settings failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>

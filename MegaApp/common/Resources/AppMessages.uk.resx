@@ -701,7 +701,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to get the user data failed - (String as short as possible).</comment>
   </data>
   <data name="CapturePhotoFailed" xml:space="preserve">
-    <value>Не вдалося захопити фото. Будь ласка, спробуйте ще раз {0}]</value>
+    <value>Не вдалося захопити фото. Будь ласка, спробуйте ще раз [{0}]</value>
     <comment>Message of the dialog displayed when the process to capture photo failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
@@ -710,7 +710,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process to capture photo failed - (String as short as possible).</comment>
   </data>
   <data name="CapturePhotoVideoFailed" xml:space="preserve">
-    <value>Не вдалося захопити фото чи відео. Будь ласка, спробуйте ще раз {0}]</value>
+    <value>Не вдалося захопити фото чи відео. Будь ласка, спробуйте ще раз [{0}]</value>
     <comment>Message of the dialog displayed when the process to capture photo or video failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
@@ -719,7 +719,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process to capture photo or video failed - (String as short as possible).</comment>
   </data>
   <data name="CaptureVideoFailed" xml:space="preserve">
-    <value>Не вдалося захопити відео. Будь ласка, спробуйте ще раз {0}]</value>
+    <value>Не вдалося захопити відео. Будь ласка, спробуйте ще раз [{0}]</value>
     <comment>Message of the dialog displayed when the process to capture video failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
@@ -805,7 +805,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to upgrade an user account finished successfully - (String as short as possible).</comment>
   </data>
   <data name="GetPaymentMethodsFailed" xml:space="preserve">
-    <value>Не вдалося отримати доступні методи оплати. Будь ласка, спробуйте ще раз.</value>
+    <value>Не вдалося отримати доступні методи оплати. Будь ласка, спробуйте ще раз. [{0}]</value>
     <comment>Message of the dialog displayed when the process/request to get the payment methods failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>

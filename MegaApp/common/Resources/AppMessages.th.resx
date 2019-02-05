@@ -1005,7 +1005,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 </comment>
   </data>
   <data name="DownloadLimitMessage" xml:space="preserve">
-    <value>คุณได้เลือกรายการที่จะดาวน์โหลดเกินกว่า {0} รายการ ({0}) ดำเนินการต่อหรือไม่</value>
+    <value>คุณเลือกดาวน์โหลดมากกว่า {0} รายการ ({1}) คุณต้องการดำเนินการต่อหรือไม่</value>
     <comment>Message of the dialog displayed when a user would try to download at the same time more nodes than the reliable number of simultaneous downloads for a good app performance. This dialog ask confirmation to start the download process. 
 Preserve the {0} and ({1}) codes because is for include the maximum reliable download number and the precise number of nodes to be downloaded in runtime.</comment>
   </data>

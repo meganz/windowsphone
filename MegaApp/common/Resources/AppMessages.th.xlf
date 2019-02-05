@@ -465,7 +465,7 @@ Preserve the {0} code because is for include the number of pending transfers in 
         </trans-unit>
         <trans-unit id="Resx/DownloadLimitMessage" translate="yes" space="preserve">
           <source>You have selected over {0} items ({1}) to download. Do you want to proceed?</source>
-          <target state="translated">คุณได้เลือกรายการที่จะดาวน์โหลดเกินกว่า {0} รายการ ({0}) ดำเนินการต่อหรือไม่</target>
+          <target state="translated">คุณเลือกดาวน์โหลดมากกว่า {0} รายการ ({1}) คุณต้องการดำเนินการต่อหรือไม่</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user would try to download at the same time more nodes than the reliable number of simultaneous downloads for a good app performance. This dialog ask confirmation to start the download process. 
 Preserve the {0} and ({1}) codes because is for include the maximum reliable download number and the precise number of nodes to be downloaded in runtime.</note>
         </trans-unit>

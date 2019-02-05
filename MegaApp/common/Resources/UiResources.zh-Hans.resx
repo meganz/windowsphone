@@ -142,7 +142,7 @@
     <comment>Label for any 'Copy' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="EmptyFolder" xml:space="preserve">
-    <value>文件夹中没有文件</value>
+    <value>空的文件夹</value>
     <comment>Label for the background of an empty forder page - (String as short as possible).</comment>
   </data>
   <data name="EmptyTransfers" xml:space="preserve">
@@ -214,7 +214,7 @@
     <comment>Text placed into the dialog to type the new name when the user wants to rename a file or folder.</comment>
   </data>
   <data name="Save" xml:space="preserve">
-    <value>储存</value>
+    <value>保存</value>
     <comment>Label for any 'Save' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Share" xml:space="preserve">
@@ -350,7 +350,7 @@
     <comment>Label for available space into the 'my account' page - (String as short as possible, MAX 10 characters).</comment>
   </data>
   <data name="Bandwidth" xml:space="preserve">
-    <value>传输配额(频宽)</value>
+    <value>传输流量</value>
     <comment>Label for any 'Bandwidth' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Cache" xml:space="preserve">
@@ -386,7 +386,7 @@
     <comment>Label for any 'Clipboard' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="DefaultDownloadLocationText" xml:space="preserve">
-    <value>预设下载位置</value>
+    <value>默认下载位置</value>
     <comment>Text placed just before a text label into the 'settings' page indicating the default download location.</comment>
   </data>
   <data name="Downloads" xml:space="preserve">
@@ -430,7 +430,7 @@
     <comment>Label for the menu option to sort the nodes of the cloud drive in descending order by name - (String as short as possible).</comment>
   </data>
   <data name="NewestSortOption" xml:space="preserve">
-    <value>由新到旧</value>
+    <value>从新到旧</value>
     <comment>Label for the menu option to sort the nodes of the cloud drive in descending order by date (from newer to older) - (String as short as possible).</comment>
   </data>
   <data name="NoDataToShow" xml:space="preserve">
@@ -442,7 +442,7 @@
     <comment>Label shown when the app has no information about the subscription plans to show into 'subscription' page - (String as short as possible).</comment>
   </data>
   <data name="OldestSortOption" xml:space="preserve">
-    <value>由旧至新</value>
+    <value>从旧到新</value>
     <comment>Label for the menu option to sort the nodes of the cloud drive in ascending order by size (from smaller to bigger) - (String as short as possible).</comment>
   </data>
   <data name="PauseAll" xml:space="preserve">
@@ -454,7 +454,7 @@
     <comment>Label for any 'Privacy policy' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="SmallestSortOption" xml:space="preserve">
-    <value>由小至大</value>
+    <value>从小到大</value>
     <comment>Label for the menu option to sort the nodes of the cloud drive in ascending order by size (from smaller to bigger) - (String as short as possible).</comment>
   </data>
   <data name="SortByMenuTitle" xml:space="preserve">
@@ -582,7 +582,7 @@
     <comment>Label for any 'Advanced' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Help" xml:space="preserve">
-    <value>客户服务</value>
+    <value>帮助</value>
     <comment>Label for any 'Help' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="CameraUploads" xml:space="preserve">
@@ -622,7 +622,7 @@
     <comment>Label for the 'Wifi only' option in the 'set up camera uploads' page - (String as short as possible).</comment>
   </data>
   <data name="EnableCameraUploads" xml:space="preserve">
-    <value>允许从相机上传</value>
+    <value>启用相机上传</value>
     <comment>Label for the switch button to enable or disable the Camera Uploads service - (String as short as possible).</comment>
   </data>
   <data name="Security" xml:space="preserve">
@@ -638,7 +638,7 @@
     <comment>Label for any 'Dismiss' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Send" xml:space="preserve">
-    <value>送出</value>
+    <value>发送</value>
     <comment>Label for any 'Send' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Address" xml:space="preserve">
@@ -789,7 +789,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
     <comment>Label for 'Recurring' payments - (String as short as possible).</comment>
   </data>
   <data name="Limited" xml:space="preserve">
-    <value>有限制的</value>
+    <value>限制</value>
     <comment>Label for any 'Limited' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="GetProAccount" xml:space="preserve">
@@ -829,7 +829,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
     <comment>Label for any 'Message' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="SendFile" xml:space="preserve">
-    <value>寄送文件</value>
+    <value>发送文件</value>
     <comment>Label for any 'Send file' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="ShareFolders" xml:space="preserve">
@@ -937,7 +937,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'View details' button, link, text, title, etc. (i.e. View contact details) - (String as short as possible).</comment>
   </data>
   <data name="PhotosOnly" xml:space="preserve">
-    <value>只有照片</value>
+    <value>仅照片</value>
     <comment>Label for the "Photos only" auto camera upload settings</comment>
   </data>
   <data name="PowerConnected" xml:space="preserve">
@@ -1021,7 +1021,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Text to show when a user wants to create a new folder to type the name for the new folder.</comment>
   </data>
   <data name="UI_GetLink" xml:space="preserve">
-    <value>取得链接</value>
+    <value>获得链接</value>
     <comment>Label for any 'Get link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_Login" xml:space="preserve">
@@ -1033,11 +1033,11 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Logout' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_UpgradeAccount" xml:space="preserve">
-    <value>付费升级账户</value>
+    <value>升级帐户</value>
     <comment>Label for any 'Upgrade account' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_ChangePassword" xml:space="preserve">
-    <value>变更密码</value>
+    <value>更改密码</value>
     <comment>Label for any 'Change password' button, menu, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_CancelSubscription" xml:space="preserve">
@@ -1189,7 +1189,7 @@ Keep the code {1} because is for include currency in runtime.</comment>
     <comment>Label for the state of a transfer when is ready but not started for some reason - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStatePaused" xml:space="preserve">
-    <value>暂停</value>
+    <value>已暂停</value>
     <comment>Label for the state of a paused transfer - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStatePreparing" xml:space="preserve">

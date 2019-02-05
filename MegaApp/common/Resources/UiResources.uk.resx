@@ -718,7 +718,7 @@
     <comment>Label for any 'Province' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="SelectedPlan" xml:space="preserve">
-    <value>Ви вибрали План %1</value>
+    <value>Ви вибрали План {0}</value>
     <comment>Label to indicate the selected plan during the payment process.
 Preserve the {0} code because is for include the name/type of the selected plan in runtime.</comment>
   </data>
@@ -752,7 +752,7 @@ Preserve the {0} code because is for include the name/type of the selected plan 
 Preserve the {0} code because is for include the name/type in runtime.</comment>
   </data>
   <data name="AccountRenewalNotice" xml:space="preserve">
-    <value>Вашу підписку {0} буде автоматично оновлено щорічно, доки ви не увійдете до свого облікового запису і не скасуєте оплату підписки до моменту оновлення.</value>
+    <value>Ваша підписка {0} буде автоматично продовжуватися щоперіоду {0}, доки ви не увійдете в акаунт і не скасуєте її, або не змінете дату оновлення.</value>
     <comment>Label to indicate the renewal period of the purchased subscription. 
 Preserve the {0} code because is for include the renewal period string (Monthly or Annually) in runtime.</comment>
   </data>

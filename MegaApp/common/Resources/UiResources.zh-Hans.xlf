@@ -68,7 +68,7 @@
         </trans-unit>
         <trans-unit id="Resx/EmptyFolder" translate="yes" space="preserve">
           <source>Empty Folder</source>
-          <target state="translated">文件夹中没有文件</target>
+          <target state="translated">空的文件夹</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty forder page - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/EmptyTransfers" translate="yes" space="preserve">
@@ -78,7 +78,7 @@
         </trans-unit>
         <trans-unit id="Resx/UI_GetLink" translate="yes" space="preserve">
           <source>Get link</source>
-          <target state="translated">取得链接</target>
+          <target state="translated">获得链接</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Get link' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/LoadingPreview" translate="yes" space="preserve">
@@ -183,7 +183,7 @@
         </trans-unit>
         <trans-unit id="Resx/Save" translate="yes" space="preserve">
           <source>Save</source>
-          <target state="translated">储存</target>
+          <target state="translated">保存</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Save' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Share" translate="yes" space="preserve">
@@ -370,7 +370,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/Bandwidth" translate="yes" space="preserve">
           <source>Transfer quota</source>
-          <target state="translated">传输配额(频宽)</target>
+          <target state="translated">传输流量</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Bandwidth' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Cache" translate="yes" space="preserve">
@@ -415,7 +415,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/DefaultDownloadLocationText" translate="yes" space="preserve">
           <source>Default download location</source>
-          <target state="translated">预设下载位置</target>
+          <target state="translated">默认下载位置</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text placed just before a text label into the 'settings' page indicating the default download location.</note>
         </trans-unit>
         <trans-unit id="Resx/Downloads" translate="yes" space="preserve">
@@ -485,7 +485,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/NewestSortOption" translate="yes" space="preserve">
           <source>Newest</source>
-          <target state="translated">由新到旧</target>
+          <target state="translated">从新到旧</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the menu option to sort the nodes of the cloud drive in descending order by date (from newer to older) - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_NewPinLock" translate="yes" space="preserve">
@@ -506,7 +506,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/OldestSortOption" translate="yes" space="preserve">
           <source>Oldest</source>
-          <target state="translated">由旧至新</target>
+          <target state="translated">从旧到新</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the menu option to sort the nodes of the cloud drive in ascending order by size (from smaller to bigger) - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PauseAll" translate="yes" space="preserve">
@@ -521,7 +521,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/SmallestSortOption" translate="yes" space="preserve">
           <source>Smallest</source>
-          <target state="translated">由小至大</target>
+          <target state="translated">从小到大</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the menu option to sort the nodes of the cloud drive in ascending order by size (from smaller to bigger) - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/SortByMenuTitle" translate="yes" space="preserve">
@@ -586,7 +586,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_UpgradeAccount" translate="yes" space="preserve">
           <source>Upgrade account</source>
-          <target state="translated">付费升级账户</target>
+          <target state="translated">升级帐户</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Upgrade account' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/About" translate="yes" space="preserve">
@@ -680,8 +680,8 @@ Preserve the PIN uppercase word.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the title of the init tour page dedicated to the speed. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_ChangePassword" translate="yes" space="preserve">
-          <source>Change password</source>
-          <target state="translated">变更密码</target>
+          <source>Change Password</source>
+          <target state="translated">更改密码</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Change password' button, menu, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Advanced" translate="yes" space="preserve">
@@ -691,7 +691,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/Help" translate="yes" space="preserve">
           <source>Help</source>
-          <target state="translated">客户服务</target>
+          <target state="translated">帮助</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Help' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CameraUploads" translate="yes" space="preserve">
@@ -746,7 +746,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/EnableCameraUploads" translate="yes" space="preserve">
           <source>Enable Camera Uploads</source>
-          <target state="translated">允许从相机上传</target>
+          <target state="translated">启用相机上传</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the switch button to enable or disable the Camera Uploads service - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Security" translate="yes" space="preserve">
@@ -771,7 +771,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/Send" translate="yes" space="preserve">
           <source>Send</source>
-          <target state="translated">送出</target>
+          <target state="translated">发送</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Send' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Address" translate="yes" space="preserve">
@@ -971,7 +971,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
         </trans-unit>
         <trans-unit id="Resx/Limited" translate="yes" space="preserve">
           <source>Limited</source>
-          <target state="translated">有限制的</target>
+          <target state="translated">限制</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Limited' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/GetProAccount" translate="yes" space="preserve">
@@ -1027,7 +1027,7 @@ Preserve the {0} code because is for include the name of the destination folder 
         </trans-unit>
         <trans-unit id="Resx/SendFile" translate="yes" space="preserve">
           <source>Send file</source>
-          <target state="translated">寄送文件</target>
+          <target state="translated">发送文件</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Send file' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ShareFolders" translate="yes" space="preserve">
@@ -1161,7 +1161,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/PhotosOnly" translate="yes" space="preserve">
           <source>Photos only</source>
-          <target state="translated">只有照片</target>
+          <target state="translated">仅照片</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the "Photos only" auto camera upload settings</note>
         </trans-unit>
         <trans-unit id="Resx/PowerConnected" translate="yes" space="preserve">
@@ -1411,7 +1411,7 @@ NOTE: Keep the capital letter if possible.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStatePaused" translate="yes" space="preserve">
           <source>Paused</source>
-          <target state="translated">暂停</target>
+          <target state="translated">已暂停</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a paused transfer - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStatePreparing" translate="yes" space="preserve">

@@ -18,7 +18,7 @@
         </trans-unit>
         <trans-unit id="Resx/UI_AgreeTermsOfService" translate="yes" space="preserve">
           <source>I agree with the Terms of Service</source>
-          <target state="translated">J’accepte les conditions générales d'utilisation</target>
+          <target state="translated">J’accepte les conditions générales d’utilisation</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text placed just after a checkbox to indicate that user is agree with the 'Terms of Service' into the 'create account' page.</note>
         </trans-unit>
         <trans-unit id="Resx/Cancel" translate="yes" space="preserve">
@@ -680,13 +680,13 @@ Preserve the PIN uppercase word.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the title of the init tour page dedicated to the speed. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_ChangePassword" translate="yes" space="preserve">
-          <source>Change password</source>
+          <source>Change Password</source>
           <target state="translated">Changer le mot de passe</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Change password' button, menu, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Advanced" translate="yes" space="preserve">
           <source>Advanced</source>
-          <target state="translated">Avancé</target>
+          <target state="translated">Paramètres avancés</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Advanced' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Help" translate="yes" space="preserve">
@@ -843,7 +843,7 @@ Keep the code {1} because is for include currency in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/LastName" translate="yes" space="preserve">
           <source>Last name</source>
-          <target state="translated">Nom</target>
+          <target state="translated">Nom de famille</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Last name' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Month" translate="yes" space="preserve">
@@ -1256,7 +1256,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/NoInternetConnection" translate="yes" space="preserve">
           <source>No internet connection</source>
-          <target state="translated">Aucune connexion Internet</target>
+          <target state="translated">Il n’y a pas de connexion à Internet</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty state when no internet connection - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/NoUploads" translate="yes" space="preserve">
@@ -1271,7 +1271,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_LastName" translate="yes" space="preserve">
           <source>Last name</source>
-          <target state="translated">Nom</target>
+          <target state="translated">Nom de famille</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Last name' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/SelectAll" translate="yes" space="preserve">

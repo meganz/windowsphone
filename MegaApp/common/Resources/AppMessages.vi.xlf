@@ -1293,7 +1293,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_DisableDebugMode_Message" translate="yes" space="preserve">
           <source>The log ({0}) will be deleted from the Offline section.</source>
-          <target state="translated">Tệp log ghi lại các hoạt động sẽ bị xóa khỏi mục Ngoại Tuyến.</target>
+          <target state="translated">Tệp log ghi chép hoạt động ({0}) sẽ bị xóa khỏi mục Ngoại Tuyến.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Alert message shown when the DEBUG mode is disabled.
 Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>

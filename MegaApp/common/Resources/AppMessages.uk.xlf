@@ -775,7 +775,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/CapturePhotoFailed" translate="yes" space="preserve">
           <source>Failed to capture photo. Please, try again [{0}]</source>
-          <target state="translated">Не вдалося захопити фото. Будь ласка, спробуйте ще раз {0}]</target>
+          <target state="translated">Не вдалося захопити фото. Будь ласка, спробуйте ще раз [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to capture photo failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
@@ -786,7 +786,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/CapturePhotoVideoFailed" translate="yes" space="preserve">
           <source>Failed to capture photo or video. Please, try again [{0}]</source>
-          <target state="translated">Не вдалося захопити фото чи відео. Будь ласка, спробуйте ще раз {0}]</target>
+          <target state="translated">Не вдалося захопити фото чи відео. Будь ласка, спробуйте ще раз [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to capture photo or video failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
@@ -797,7 +797,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/CaptureVideoFailed" translate="yes" space="preserve">
           <source>Failed to capture video. Please, try again [{0}]</source>
-          <target state="translated">Не вдалося захопити відео. Будь ласка, спробуйте ще раз {0}]</target>
+          <target state="translated">Не вдалося захопити відео. Будь ласка, спробуйте ще раз [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to capture video failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
@@ -914,7 +914,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/GetPaymentMethodsFailed" translate="yes" space="preserve">
           <source>Failed to retrieve the available payment methods. Please try again. [{0}]</source>
-          <target state="translated">Не вдалося отримати доступні методи оплати. Будь ласка, спробуйте ще раз.</target>
+          <target state="translated">Не вдалося отримати доступні методи оплати. Будь ласка, спробуйте ще раз. [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to get the payment methods failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>

@@ -1400,7 +1400,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseValidationFailed" translate="yes" space="preserve">
           <source>Your purchase of a MEGA subscription has not passed validation at our licence server. On restart of this app we will retry to validate your subscription licences. Please contact MEGA support if the error continues.</source>
-          <target state="translated">Votre achat d'un abonnement MEGA n'a pas été validé par notre serveur de licences. Lors du redémarrage de cette appli, nous retenterons de valider vos licences d'abonnement. Veuillez contacter l'assistance MEGA si l'erreur persiste.</target>
+          <target state="translated">Votre achat d’un abonnement MEGA n’a pas été validé par notre serveur de licences. Lors du redémarrage de cette appli, nous retenterons de valider vos licences d’abonnement. Veuillez contacter l’assistance de MEGA si l’erreur persiste.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseValidationFailed_Title" translate="yes" space="preserve">
@@ -1692,7 +1692,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_2FA_SetupDialogDescription" translate="yes" space="preserve">
           <source>Two-factor authentication is a second layer of security for your account. Which means that even if someone knows your password they cannot access it, without also having access to the six digit code only you have access to.</source>
-          <target state="translated">L’authentification à deux facteurs est un niveau supplémentaire de sécurité pour votre compte. Cela signifie que même si quelqu’un connaissait votre mot de passe, il ne pourrait pas y accéder sans avoir aussi le code à 6 chiffres que seul vous aurez.</target>
+          <target state="translated">L’authentification à deux facteurs est un niveau supplémentaire de sécurité pour votre compte. Cela signifie que même si quelqu’un connaissait votre mot de passe, cette personne ne pourrait pas y accéder sans avoir aussi le code à 6 chiffres auquel vous seul pourrez accéder.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Description text of the dialog displayed to start setup the Two-Factor Authentication</note>
         </trans-unit>
         <trans-unit id="Resx/AM_2FA_SetupDialogTitle" translate="yes" space="preserve">

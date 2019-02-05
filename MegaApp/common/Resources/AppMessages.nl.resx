@@ -377,7 +377,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when a user logged out successfully - (String as short as possible).</comment>
   </data>
   <data name="LogoutFailed" xml:space="preserve">
-    <value>Mislukt af te melden.</value>
+    <value>Mislukt af te melden. Probeer nogmaals. [{0}]</value>
     <comment>Message of the dialog displayed when the logout to the MEGA cloud service api fails. 
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
@@ -1483,19 +1483,19 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title text of the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication.</comment>
   </data>
   <data name="AM_MFA_SeedCopied" xml:space="preserve">
-    <value>The seed has been copied to your clipboard.</value>
+    <value>De seed is ge gekopieerd naar uw klembord.</value>
     <comment>Message of the dialog displayed when the seed needed to enable the Multi-Factor Authentication has been copied successfully to the clipboard.</comment>
   </data>
   <data name="AM_MFA_SeedCopiedFailed" xml:space="preserve">
-    <value>Failed to copy the seed to your clipboard. Please try again.</value>
+    <value>Mislukt om de seed te kopiëren naar uw klembord. Probeer nogmaals.</value>
     <comment>Message of the dialog displayed if fails the process to copy the seed needed to enable the Multi-Factor Authentication to the clipboard.</comment>
   </data>
   <data name="AM_MFA_SeedCopiedFailed_Title" xml:space="preserve">
-    <value>Seed copy failed</value>
+    <value>Kopiëren seed mislukt</value>
     <comment>Title of the dialog displayed if fails the process to copy the seed needed to enable the Multi-Factor Authentication to the clipboard.</comment>
   </data>
   <data name="AM_MFA_SeedCopied_Title" xml:space="preserve">
-    <value>Seed copied</value>
+    <value>Seed gekopieerd</value>
     <comment>Title of the dialog displayed when the seed needed to enable the Multi-Factor Authentication has been copied successfully to the clipboard.</comment>
   </data>
   <data name="AM_2FA_InputAppCodeDialogMessage" xml:space="preserve">

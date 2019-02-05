@@ -1652,7 +1652,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_TestPasswordSuccess" translate="yes" space="preserve">
           <source>Password accepted, we still recommend you back up your Recovery Key.</source>
-          <target state="translated">비밀번호가 확인되었습니다, 그래도 복구 키를 백업할 것을 권장합니다.</target>
+          <target state="translated">비밀번호가 확인되었습니다만, 그래도 복구 키를 백업할 것을 권장합니다.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message displayed when the password test result is ok.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_TestPasswordWarning" translate="yes" space="preserve">

@@ -1431,7 +1431,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message to describe the purpose of the dialog to test the password.</comment>
   </data>
   <data name="AM_TestPasswordSuccess" xml:space="preserve">
-    <value>비밀번호가 확인되었습니다, 그래도 복구 키를 백업할 것을 권장합니다.</value>
+    <value>비밀번호가 확인되었습니다만, 그래도 복구 키를 백업할 것을 권장합니다.</value>
     <comment>Message displayed when the password test result is ok.</comment>
   </data>
   <data name="AM_TestPasswordWarning" xml:space="preserve">

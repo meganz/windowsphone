@@ -337,7 +337,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/LogoutFailed" translate="yes" space="preserve">
           <source>Failed to logout. Please try again. [{0}]</source>
-          <target state="translated">Mislukt af te melden.</target>
+          <target state="translated">Mislukt af te melden. Probeer nogmaals. [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the logout to the MEGA cloud service api fails. 
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
@@ -1717,22 +1717,22 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_MFA_SeedCopied" translate="yes" space="preserve">
           <source>The seed has been copied to your clipboard.</source>
-          <target state="translated">The seed has been copied to your clipboard.</target>
+          <target state="translated">De seed is ge gekopieerd naar uw klembord.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the seed needed to enable the Multi-Factor Authentication has been copied successfully to the clipboard.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_MFA_SeedCopiedFailed" translate="yes" space="preserve">
           <source>Failed to copy the seed to your clipboard. Please try again.</source>
-          <target state="translated">Failed to copy the seed to your clipboard. Please try again.</target>
+          <target state="translated">Mislukt om de seed te kopiëren naar uw klembord. Probeer nogmaals.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed if fails the process to copy the seed needed to enable the Multi-Factor Authentication to the clipboard.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_MFA_SeedCopiedFailed_Title" translate="yes" space="preserve">
           <source>Seed copy failed</source>
-          <target state="translated">Seed copy failed</target>
+          <target state="translated">Kopiëren seed mislukt</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed if fails the process to copy the seed needed to enable the Multi-Factor Authentication to the clipboard.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_MFA_SeedCopied_Title" translate="yes" space="preserve">
           <source>Seed copied</source>
-          <target state="translated">Seed copied</target>
+          <target state="translated">Seed gekopieerd</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the seed needed to enable the Multi-Factor Authentication has been copied successfully to the clipboard.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_2FA_InputAppCodeDialogMessage" translate="yes" space="preserve">

@@ -173,7 +173,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/LinkCopiedToClipboard_Title" translate="yes" space="preserve">
           <source>Copied to clipboard</source>
-          <target state="translated">已复制到剪贴簿</target>
+          <target state="translated">已复制到剪贴板</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard finished successfully - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/LoginFailed" translate="yes" space="preserve">
@@ -587,7 +587,7 @@ Preserve the {0} code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_StorageOverquotaPreAlert" translate="yes" space="preserve">
           <source>Operation not allowed, you will exceed the storage limit of your account. Do you want to upgrade your account?</source>
-          <target state="translated">操作被禁，您将超过您的账户储存限额。您要升级账户吗？</target>
+          <target state="translated">操作未允许，您将超过您的账户存储限额。您是否想要升级帐户？</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user tries to make an operation that will exceed the storage space limits of the account (API_EGOINGOVERQUOTA error). Asks if user wants to upgrade the account type.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_StorageOverquotaPreAlert_Title" translate="yes" space="preserve">
@@ -641,7 +641,7 @@ Please try to save/copy the file to your device’s internal memory instead.</so
         </trans-unit>
         <trans-unit id="Resx/AM_RecoveryKeyClipboardFailed" translate="yes" space="preserve">
           <source>Failed to copy the Recovery Key to your clipboard. Please try again.</source>
-          <target state="translated">复制还原金钥至剪贴簿失败，请重试。</target>
+          <target state="translated">复制恢复密钥到剪贴板失败。请再试一次。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails to copy the user's Recovery Key to the clipboard to be saved or exported.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_RecoveryKeyClipboardFailed_Title" translate="yes" space="preserve">
@@ -666,7 +666,7 @@ Please try to save/copy the file to your device’s internal memory instead.</so
         </trans-unit>
         <trans-unit id="Resx/AM_RecoveryKeyCopied_Title" translate="yes" space="preserve">
           <source>Recovery Key copied</source>
-          <target state="translated">已复制还原金钥</target>
+          <target state="translated">恢复密钥已复制</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PinLockTooShort" translate="yes" space="preserve">
@@ -859,7 +859,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_CancelSubscriptionConfirmation" translate="yes" space="preserve">
           <source>Thank you for your feedback! Are you sure you want to cancel your MEGA subscription?</source>
-          <target state="translated">感谢您的建议！您确定要取消您的MEGA订购吗？</target>
+          <target state="translated">感谢您的建议！您确定要取消MEGA订阅吗？</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user is trying to cancel a subscription. This sentence is for give thanks to the user for the feedback sent during the cancellation process and asking for confirmation to do it.</note>
         </trans-unit>
         <trans-unit id="Resx/CancelSubscriptionFailed" translate="yes" space="preserve">

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en" target-language="en" original="UiResources.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp81" product-version="1.0.0.0" build-num="0">
+  <file datatype="xml" source-language="en" target-language="uk" original="UiResources.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp81" product-version="1.0.0.0" build-num="0">
     <header>
       <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="3.1.1250.0" tool-company="Microsoft" />
     </header>
@@ -680,7 +680,7 @@ Preserve the PIN uppercase word.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the title of the init tour page dedicated to the speed. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_ChangePassword" translate="yes" space="preserve">
-          <source>Change password</source>
+          <source>Change Password</source>
           <target state="translated">Змінити пароль</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Change password' button, menu, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
@@ -878,7 +878,7 @@ Keep the code {1} because is for include currency in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/SelectedPlan" translate="yes" space="preserve">
           <source>You have selected the {0} Plan</source>
-          <target state="translated">Ви вибрали План %1</target>
+          <target state="translated">Ви вибрали План {0}</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label to indicate the selected plan during the payment process.
 Preserve the {0} code because is for include the name/type of the selected plan in runtime.</note>
         </trans-unit>
@@ -925,7 +925,7 @@ Preserve the {0} code because is for include the name/type in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AccountRenewalNotice" translate="yes" space="preserve">
           <source>Your {0} subscription will be automatically rebilled on your {0} anniversary unless you log in to your account and cancel the subscription prior to the renewal date.</source>
-          <target state="translated">Вашу підписку {0} буде автоматично оновлено щорічно, доки ви не увійдете до свого облікового запису і не скасуєте оплату підписки до моменту оновлення.</target>
+          <target state="translated">Ваша підписка {0} буде автоматично продовжуватися щоперіоду {0}, доки ви не увійдете в акаунт і не скасуєте її, або не змінете дату оновлення.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label to indicate the renewal period of the purchased subscription. 
 Preserve the {0} code because is for include the renewal period string (Monthly or Annually) in runtime.</note>
         </trans-unit>

@@ -680,8 +680,8 @@ Preserve the PIN uppercase word.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the title of the init tour page dedicated to the speed. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_ChangePassword" translate="yes" space="preserve">
-          <source>Change password</source>
-          <target state="translated">Wijzig wachtwoord</target>
+          <source>Change Password</source>
+          <target state="translated">Wijzig Wachtwoord</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Change password' button, menu, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Advanced" translate="yes" space="preserve">
@@ -1572,12 +1572,12 @@ NOTE: Max. length 20 characters.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_MFA_SetupStep1" translate="yes" space="preserve">
           <source>Scan or copy the seed to your Authenticator App. Be sure to backup this seed to a safe place in case you lose your device.</source>
-          <target state="translated">Scan or copy the seed to your Authenticator App. Be sure to backup this seed to a safe place in case you lose your device.</target>
+          <target state="translated">Scan of kopieer de seed naar uw Authenticator Applicatie. Zorg ervoor dat u een reservekopie maakt op een veilige plek voor het geval u uw apparaat verliest.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the step 1 to setup the Multi-Factor Authentication.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_MFA_SetupStep2" translate="yes" space="preserve">
           <source>After setting up your seed on your Authenticator app enter the 6-digit code provided.</source>
-          <target state="translated">After setting up your seed on your Authenticator app enter the 6-digit code provided.</target>
+          <target state="translated">Nadat u uw seed heeft ingesteld op uw Authenticator Applicatie voer de 6-cijferige bijgevoegde code in.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the step 2 to setup the Muti-Factor Authentication.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_SixDigitCode" translate="yes" space="preserve">
@@ -1592,7 +1592,7 @@ NOTE: Max. length 20 characters.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_CopySeed" translate="yes" space="preserve">
           <source>Copy seed</source>
-          <target state="translated">Copy seed</target>
+          <target state="translated">Seed kopiëren</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label of the button to copy the seed to enable the Multi-Factor Authentication - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_LostAuthDeviceQuestion" translate="yes" space="preserve">
