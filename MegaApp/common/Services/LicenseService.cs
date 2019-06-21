@@ -36,10 +36,11 @@ namespace MegaApp.Services
                 // If no products are available. We need not to show any information so return False
                 return products != null && products.Any();
             }
-            catch
+            catch (Exception e)
             {
                 // If listing information can not be loaded. No internet is available or the 
                 // Windows Store is unavailable for retrieving data
+                LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Failure retrieving Windows Store listing information", e);
                 return false;
             }
         }
@@ -175,8 +176,9 @@ namespace MegaApp.Services
                         throw new ArgumentOutOfRangeException();
                 }
             }
-            catch
+            catch (Exception e)
             {
+                LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Failure purchasing product", e);
                 new CustomMessageDialog(
                     AppMessages.AM_PurchaseFailed_Title,
                     AppMessages.AM_PurchaseFailed,
@@ -190,6 +192,9 @@ namespace MegaApp.Services
         /// <param name="receipt">In app purchase receipt received from the Windows Store</param>
         private static void SendLicenseToMega(string receipt)
         {
+            LogService.Log(MLogLevel.LOG_LEVEL_INFO, "Sending license to MEGA License Server...");
+            LogService.Log(MLogLevel.LOG_LEVEL_DEBUG, "License info: " + receipt);
+
             // Validate and activate the MEGA Windows Store (int 13) subscription on the MEGA license server
             // If user has accessed a public node in the last 24 hours, also send the node handle (Task #10800)
             var lastPublicNodeHandle = SettingsService.GetLastPublicNodeHandle();
@@ -219,6 +224,8 @@ namespace MegaApp.Services
                 // If no licenses available. Stop validation process
                 if (!licenses.Any()) return;
 
+                LogService.Log(MLogLevel.LOG_LEVEL_INFO, "Validating licenses...");
+
                 // Validate the licenses
                 foreach (var productLicense in licenses)
                 {
@@ -228,9 +235,10 @@ namespace MegaApp.Services
                     LicenseCheck(productLicense.Value.ProductId);
                 }
             }
-            catch
+            catch (Exception e)
             {
-                // if an error occurs, ignore. App will try again on restart
+                // If an error occurs, ignore. App will try again on restart
+                LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error validating licenses", e);
             }
             
         }
@@ -247,6 +255,9 @@ namespace MegaApp.Services
                 var receipt = await CurrentApp.GetProductReceiptAsync(productId);
                 if (string.IsNullOrEmpty(receipt)) return;
 
+                LogService.Log(MLogLevel.LOG_LEVEL_INFO, "(Re-)checking product license...");
+                LogService.Log(MLogLevel.LOG_LEVEL_DEBUG, "License info: " + receipt);
+
                 var xDoc = XDocument.Parse(receipt, LoadOptions.None);
                 var uniqueId = xDoc.Root.Descendants().First().Attribute("Id").Value;
 
@@ -255,9 +266,10 @@ namespace MegaApp.Services
                 var isValidated = currentIdsList.Any(id => id.Equals(uniqueId));
                 if (!isValidated) SendLicenseToMega(receipt);
             }
-            catch
+            catch (Exception e)
             {
-                // if an error occurs, ignore. App will try again on restart
+                // If an error occurs, ignore. App will try again on restart
+                LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error (re-)checking licenses", e);
             }
         }
 
