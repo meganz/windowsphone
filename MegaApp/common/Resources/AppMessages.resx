@@ -1560,4 +1560,12 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
     <value>Storage quota exceeded</value>
     <comment>Title of the dialog displayed when a user exceeds the storage space limits of the account - (String as short as possible).</comment>
   </data>
+  <data name="AM_ChangeToStagingServer" xml:space="preserve">
+    <value>Are you sure you want to change to a test server? Your account may suffer irrecoverable problems.</value>
+    <comment>Message of the alert dialog when the user is changing the API URL to staging.</comment>
+  </data>
+  <data name="AM_ChangeToStagingServer_Title" xml:space="preserve">
+    <value>Change to a test server?</value>
+    <comment>Title of the alert dialog when the user is changing the API URL to staging.</comment>
+  </data>
 </root>

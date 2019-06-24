@@ -5,6 +5,7 @@ using Microsoft.Phone.Info;
 using Windows.Storage;
 using mega;
 using MegaApp.Classes;
+using MegaApp.Dialogs;
 using MegaApp.Enums;
 using MegaApp.MegaApi;
 using MegaApp.Resources;
@@ -112,6 +113,11 @@ namespace MegaApp.Services
                 MegaSdk.changeApiUrl(AppResources.AR_StagingUrl);
                 MegaSdkFolderLinks.changeApiUrl(AppResources.AR_StagingUrl);
             }
+            else if (SettingsService.LoadSetting<bool>(SettingsResources.UseStagingServerPort444, false))
+            {
+                MegaSdk.changeApiUrl(AppResources.AR_StagingUrlPort444);
+                MegaSdkFolderLinks.changeApiUrl(AppResources.AR_StagingUrlPort444);
+            }
         }
 
         /// <summary>
@@ -217,27 +223,21 @@ namespace MegaApp.Services
         {
             StopChangeApiUrlTimer();
 
-            var useStagingServer = SettingsService.LoadSetting<bool>(SettingsResources.UseStagingServer, false);
-            if (!useStagingServer)
+            var usingStagingServer = SettingsService.LoadSetting<bool>(SettingsResources.UseStagingServer, false) ||
+                SettingsService.LoadSetting<bool>(SettingsResources.UseStagingServerPort444, false);
+
+            if (!usingStagingServer)
             {
-                var confirmDialog = new CustomMessageDialog("Change to a testing server?",
-                    "Are you sure you want to change to a testing server? Your account may run irrecoverable problems.",
-                    App.AppInformation, MessageDialogButtons.OkCancel);
-
-                var result = await confirmDialog.ShowDialogAsync();
-                confirmDialog.CloseDialog();
-                if (result != MessageDialogResult.OkYes) return;
+                var result = await DialogService.ShowChangeToStagingServerDialog();
+                if (!result) return;
             }
-
-            useStagingServer = !useStagingServer;
-
-            var newApiUrl = useStagingServer ?
-                AppResources.AR_StagingUrl : AppResources.AR_ApiUrl;
-
-            MegaSdk.changeApiUrl(newApiUrl);
-            MegaSdkFolderLinks.changeApiUrl(newApiUrl);
-
-            SettingsService.SaveSetting<bool>(SettingsResources.UseStagingServer, useStagingServer);
+            else
+            {
+                SettingsService.SaveSetting<bool>(SettingsResources.UseStagingServer, false);
+                SettingsService.SaveSetting<bool>(SettingsResources.UseStagingServerPort444, false);
+                MegaSdk.changeApiUrl(AppResources.AR_ApiUrl, false);
+                MegaSdkFolderLinks.changeApiUrl(AppResources.AR_ApiUrl, false);
+            }
 
             // If the user is logged in, do a new login with the current session
             if (Convert.ToBoolean(MegaSdk.isLoggedIn()))

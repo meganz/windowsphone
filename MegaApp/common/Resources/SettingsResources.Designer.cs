@@ -221,5 +221,14 @@ namespace MegaApp.Resources {
                 return ResourceManager.GetString("UseStagingServer", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a {E53E24D2-5CD9-410C-BC3A-6DD2A88C81EE}.
+        /// </summary>
+        public static string UseStagingServerPort444 {
+            get {
+                return ResourceManager.GetString("UseStagingServerPort444", resourceCulture);
+            }
+        }
     }
 }

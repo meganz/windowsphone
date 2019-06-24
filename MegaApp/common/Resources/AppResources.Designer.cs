@@ -223,6 +223,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a https://staging.api.mega.co.nz:444/.
+        /// </summary>
+        public static string AR_StagingUrlPort444 {
+            get {
+                return ResourceManager.GetString("AR_StagingUrlPort444", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a https://mega.nz/takedown.
         /// </summary>
         public static string AR_TakedownGuidanceUrl {

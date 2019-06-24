@@ -296,6 +296,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Are you sure you want to change to a test server? Your account may suffer irrecoverable problems..
+        /// </summary>
+        public static string AM_ChangeToStagingServer {
+            get {
+                return ResourceManager.GetString("AM_ChangeToStagingServer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Change to a test server?.
+        /// </summary>
+        public static string AM_ChangeToStagingServer_Title {
+            get {
+                return ResourceManager.GetString("AM_ChangeToStagingServer_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Failed to clear cache. Please try again..
         /// </summary>
         public static string AM_ClearCacheFailed {

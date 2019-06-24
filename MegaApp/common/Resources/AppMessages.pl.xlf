@@ -1803,6 +1803,16 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
           <target state="translated">Dostępny limit został przekroczony</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user exceeds the storage space limits of the account - (String as short as possible).</note>
         </trans-unit>
+        <trans-unit id="Resx/AM_ChangeToStagingServer_Title" translate="yes" xml:space="preserve">
+          <source>Change to a test server?</source>
+          <target state="new">Change to a test server?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the alert dialog when the user is changing the API URL to staging.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ChangeToStagingServer" translate="yes" xml:space="preserve">
+          <source>Are you sure you want to change to a test server? Your account may suffer irrecoverable problems.</source>
+          <target state="new">Are you sure you want to change to a test server? Your account may suffer irrecoverable problems.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the alert dialog when the user is changing the API URL to staging.</note>
+        </trans-unit>
       </group>
     </body>
   </file>
