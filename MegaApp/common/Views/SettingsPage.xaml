@@ -166,21 +166,45 @@
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="Auto"/>
                                 </Grid.ColumnDefinitions>
-                                <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0,0,0,10">
-                                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.AppVersionText, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface"/>
-                                    <TextBlock HorizontalAlignment="Left" Text=":" VerticalAlignment="Center" FontFamily="Portable User Interface"/>
-                                </StackPanel>
-                                <TextBlock HorizontalAlignment="Right" Margin="0,0,0,10" TextWrapping="Wrap" Text="{Binding AppVersion}" VerticalAlignment="Center" FontFamily="Portable User Interface" Grid.Column="1">
-                                    <TextBlock.Foreground>
-                                        <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
-                                    </TextBlock.Foreground>
-                                </TextBlock>
+                                <Grid
+                                    Grid.Row="0" 
+                                    Grid.ColumnSpan="2" 
+                                    ManipulationStarted="OnAppVersionManipulationStarted"
+                                    ManipulationCompleted="OnAppVersionManipulationFinished"
+                                    Margin="0,0,0,12"
+                                    Tap="OnAppVersionTapped">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel Orientation="Horizontal" Grid.Row="0">
+                                        <TextBlock 
+                                            FontFamily="Portable User Interface"
+                                            HorizontalAlignment="Left" 
+                                            Text="{Binding LocalizedUiResources.AppVersionText, Source={StaticResource LocalizedStrings}}"
+                                            TextWrapping="Wrap"                                            
+                                            VerticalAlignment="Center"/>
+                                        <TextBlock
+                                            FontFamily="Portable User Interface"
+                                            HorizontalAlignment="Left"
+                                            Text=":"
+                                            VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                    <TextBlock
+                                        Grid.Column="1"
+                                        FontFamily="Portable User Interface"
+                                        HorizontalAlignment="Right"
+                                        Text="{Binding AppVersion}"
+                                        TextWrapping="Wrap"
+                                        VerticalAlignment="Center">
+                                        <TextBlock.Foreground>
+                                            <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
+                                        </TextBlock.Foreground>
+                                    </TextBlock>
+                                </Grid>
                                 <Grid 
                                     Grid.Row="1" 
-                                    Grid.ColumnSpan="2" 
-                                    ManipulationStarted="OnMegaHeaderLogoManipulationStarted"
-                                    ManipulationCompleted="OnMegaHeaderLogoManipulationFinished"
-                                    Tap="OnSdkVersionTapped">
+                                    Grid.ColumnSpan="2">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="Auto"/>

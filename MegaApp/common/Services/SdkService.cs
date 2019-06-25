@@ -284,6 +284,7 @@ namespace MegaApp.Services
                     MediaService.SetAutoCameraUpload(true));
             }
 
+            LogService.Log(MLogLevel.LOG_LEVEL_INFO, "API URL changed");
             new CustomMessageDialog(null, "API URL changed",
                 App.AppInformation, MessageDialogButtons.Ok).ShowDialog();
 

@@ -7,6 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
+using mega;
 using MegaApp.Resources;
 using MegaApp.Services;
 using MegaApp.ViewModels;
@@ -104,6 +105,7 @@ namespace MegaApp.Dialogs
 
             if (this.useSpecialPortCheckBox.IsChecked == true)
             {
+                LogService.Log(MLogLevel.LOG_LEVEL_INFO, "Changing API URL to staging server...");
                 SettingsService.SaveSetting<bool>(SettingsResources.UseStagingServer, false);
                 SettingsService.SaveSetting<bool>(SettingsResources.UseStagingServerPort444, true);
                 SdkService.MegaSdk.changeApiUrl(AppResources.AR_StagingUrlPort444, true);
@@ -111,6 +113,7 @@ namespace MegaApp.Dialogs
             }
             else
             {
+                LogService.Log(MLogLevel.LOG_LEVEL_INFO, "Changing API URL to staging server (port 444)...");
                 SettingsService.SaveSetting<bool>(SettingsResources.UseStagingServer, true);
                 SettingsService.SaveSetting<bool>(SettingsResources.UseStagingServerPort444, false);
                 SdkService.MegaSdk.changeApiUrl(AppResources.AR_StagingUrl, false);
