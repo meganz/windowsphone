@@ -116,8 +116,8 @@ namespace MegaApp.Dialogs
                 LogService.Log(MLogLevel.LOG_LEVEL_INFO, "Changing API URL to staging server (port 444)...");
                 SettingsService.SaveSetting<bool>(SettingsResources.UseStagingServer, true);
                 SettingsService.SaveSetting<bool>(SettingsResources.UseStagingServerPort444, false);
-                SdkService.MegaSdk.changeApiUrl(AppResources.AR_StagingUrl, false);
-                SdkService.MegaSdkFolderLinks.changeApiUrl(AppResources.AR_StagingUrl, false);
+                SdkService.MegaSdk.changeApiUrl(AppResources.AR_StagingUrl);
+                SdkService.MegaSdkFolderLinks.changeApiUrl(AppResources.AR_StagingUrl);
             }
 
             this.CloseDialog();

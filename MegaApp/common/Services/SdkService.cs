@@ -110,8 +110,8 @@ namespace MegaApp.Services
             // Change the API URL if required by settings
             if (SettingsService.LoadSetting<bool>(SettingsResources.UseStagingServer, false))
             {
-                MegaSdk.changeApiUrl(AppResources.AR_StagingUrl, false);
-                MegaSdkFolderLinks.changeApiUrl(AppResources.AR_StagingUrl, false);
+                MegaSdk.changeApiUrl(AppResources.AR_StagingUrl);
+                MegaSdkFolderLinks.changeApiUrl(AppResources.AR_StagingUrl);
             }
             else if (SettingsService.LoadSetting<bool>(SettingsResources.UseStagingServerPort444, false))
             {
@@ -235,8 +235,8 @@ namespace MegaApp.Services
             {
                 SettingsService.SaveSetting<bool>(SettingsResources.UseStagingServer, false);
                 SettingsService.SaveSetting<bool>(SettingsResources.UseStagingServerPort444, false);
-                MegaSdk.changeApiUrl(AppResources.AR_ApiUrl, false);
-                MegaSdkFolderLinks.changeApiUrl(AppResources.AR_ApiUrl, false);
+                MegaSdk.changeApiUrl(AppResources.AR_ApiUrl);
+                MegaSdkFolderLinks.changeApiUrl(AppResources.AR_ApiUrl);
             }
 
             // If the user is logged in, do a new login with the current session
