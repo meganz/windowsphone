@@ -42,7 +42,7 @@ namespace MegaApp.Dialogs
             };
             contentStackPanel.Children.Add(description);
 
-            this.useSpecialPortCheckBox = new CheckBox()
+            this.useSpecificPortCheckBox = new CheckBox()
             {
                 Margin = new Thickness(-12, 0, -12, 0),
                 Content = new TextBlock()
@@ -52,7 +52,7 @@ namespace MegaApp.Dialogs
                     VerticalAlignment = VerticalAlignment.Center
                 }
             };
-            contentStackPanel.Children.Add(this.useSpecialPortCheckBox);
+            contentStackPanel.Children.Add(this.useSpecificPortCheckBox);
 
             this.MainGrid.Children.Add(contentStackPanel);
             Grid.SetRow(contentStackPanel, 2);
@@ -103,7 +103,7 @@ namespace MegaApp.Dialogs
         {
             this.DialogResult = true;
 
-            if (this.useSpecialPortCheckBox.IsChecked == true)
+            if (this.useSpecificPortCheckBox.IsChecked == true)
             {
                 LogService.Log(MLogLevel.LOG_LEVEL_INFO, "Changing API URL to staging server...");
                 SettingsService.SaveSetting<bool>(SettingsResources.UseStagingServer, false);
@@ -128,9 +128,9 @@ namespace MegaApp.Dialogs
         #region Controls
 
         /// <summary>
-        /// Check box to allow select a special port (444) for the staging server.
+        /// Check box to allow select a specific port for the staging server.
         /// </summary>
-        private CheckBox useSpecialPortCheckBox { get; set; }
+        private CheckBox useSpecificPortCheckBox { get; set; }
         
         #endregion
     }
