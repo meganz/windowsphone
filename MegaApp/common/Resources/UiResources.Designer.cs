@@ -2779,11 +2779,11 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Use port 444.
+        ///   Busca una cadena traducida similar a Use port {0}.
         /// </summary>
-        public static string UI_UsePort444 {
+        public static string UI_UseSpecificPort {
             get {
-                return ResourceManager.GetString("UI_UsePort444", resourceCulture);
+                return ResourceManager.GetString("UI_UseSpecificPort", resourceCulture);
             }
         }
         

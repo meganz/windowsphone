@@ -1635,10 +1635,11 @@ NOTE: Max. length 20 characters.</note>
           <target state="translated">متابعة الجلسة</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Resume session' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_UsePort444" translate="yes" xml:space="preserve">
-          <source>Use port 444</source>
-          <target state="new">Use port 444</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the checkbox of the dialog displayed to confirm change to staging server using port 444.</note>
+        <trans-unit id="Resx/UI_UseSpecificPort" translate="yes" xml:space="preserve">
+          <source>Use port {0}</source>
+          <target state="new">Use port {0}</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the checkbox of the dialog displayed to confirm change to staging server using a specific port.
+Keep the {0} code because is for include the port number in runtime.</note>
         </trans-unit>
       </group>
     </body>

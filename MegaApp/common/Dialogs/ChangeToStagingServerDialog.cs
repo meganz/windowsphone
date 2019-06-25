@@ -48,7 +48,7 @@ namespace MegaApp.Dialogs
                 Content = new TextBlock()
                 {
                     Opacity = 0.8,
-                    Text = UiResources.UI_UsePort444,
+                    Text = string.Format(UiResources.UI_UseSpecificPort, 444),
                     VerticalAlignment = VerticalAlignment.Center
                 }
             };
