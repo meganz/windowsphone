@@ -85,8 +85,12 @@ namespace ScheduledCameraUploadTaskAgent
             NetworkService.CheckNetworkChange();
 
             // Set the API to use depending on the settings
-            SdkService.MegaSdk.changeApiUrl(SettingsService.LoadSetting<bool>("{BA40B745-D0F5-4AD5-A539-44B1403A9EB8}", false) ?
-                "https://staging.api.mega.co.nz/" : "https://g.api.mega.co.nz/");
+            if (SettingsService.LoadSetting<bool>("{BA40B745-D0F5-4AD5-A539-44B1403A9EB8}", false))
+                SdkService.MegaSdk.changeApiUrl("https://staging.api.mega.co.nz/", false);
+            else if (SettingsService.LoadSetting<bool>("{E53E24D2-5CD9-410C-BC3A-6DD2A88C81EE}", false))
+                SdkService.MegaSdk.changeApiUrl("https://staging.api.mega.co.nz:444/", true);
+            else
+                SdkService.MegaSdk.changeApiUrl("https://g.api.mega.co.nz/", false);
 
             // Log message to indicate that the service is invoked and the last exit reason
             LogService.Log(MLogLevel.LOG_LEVEL_INFO, "Service invoked. Last exit reason: " +  

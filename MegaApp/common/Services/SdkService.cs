@@ -110,13 +110,13 @@ namespace MegaApp.Services
             // Change the API URL if required by settings
             if (SettingsService.LoadSetting<bool>(SettingsResources.UseStagingServer, false))
             {
-                MegaSdk.changeApiUrl(AppResources.AR_StagingUrl);
-                MegaSdkFolderLinks.changeApiUrl(AppResources.AR_StagingUrl);
+                MegaSdk.changeApiUrl(AppResources.AR_StagingUrl, false);
+                MegaSdkFolderLinks.changeApiUrl(AppResources.AR_StagingUrl, false);
             }
             else if (SettingsService.LoadSetting<bool>(SettingsResources.UseStagingServerPort444, false))
             {
-                MegaSdk.changeApiUrl(AppResources.AR_StagingUrlPort444);
-                MegaSdkFolderLinks.changeApiUrl(AppResources.AR_StagingUrlPort444);
+                MegaSdk.changeApiUrl(AppResources.AR_StagingUrlPort444, true);
+                MegaSdkFolderLinks.changeApiUrl(AppResources.AR_StagingUrlPort444, true);
             }
         }
 
