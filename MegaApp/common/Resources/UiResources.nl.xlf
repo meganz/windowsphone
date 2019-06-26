@@ -8,7 +8,7 @@
       <group id="Resx">
         <trans-unit id="Resx/Add" translate="yes" space="preserve">
           <source>Add</source>
-          <target state="translated">Toevoegen</target>
+          <target state="translated">Voeg toe</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Add' button, link, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AddFolder" translate="yes" space="preserve">
@@ -48,7 +48,7 @@
         </trans-unit>
         <trans-unit id="Resx/Copy" translate="yes" space="preserve">
           <source>Copy</source>
-          <target state="translated">Kopiëren</target>
+          <target state="translated">Kopieer</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Copy' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_CreateAccount" translate="yes" space="preserve">
@@ -168,12 +168,12 @@
         </trans-unit>
         <trans-unit id="Resx/Remove" translate="yes" space="preserve">
           <source>Remove</source>
-          <target state="translated">Verwijder</target>
+          <target state="translated">Verwijderen</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Remove' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Rename" translate="yes" space="preserve">
           <source>Rename</source>
-          <target state="translated">Hernoemen</target>
+          <target state="translated">Naam wijzigen</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Rename' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/RenameItem" translate="yes" space="preserve">
@@ -242,7 +242,7 @@
           <note from="MultilingualBuild" annotates="source" priority="2">Text placed into the 'acknowledgements' page introducing the list of acknowledgements.</note>
         </trans-unit>
         <trans-unit id="Resx/RubbishBinName" translate="yes" space="preserve">
-          <source>Rubbish bin</source>
+          <source>Rubbish Bin</source>
           <target state="translated">Prullenbak</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Rubbish bin' button, link, text, etc. - (String as short as possible).</note>
         </trans-unit>
@@ -300,7 +300,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/Import" translate="yes" space="preserve">
           <source>Import</source>
-          <target state="translated">Importeer</target>
+          <target state="translated">Importeren</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Import' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/LinkOptions" translate="yes" space="preserve">
@@ -680,8 +680,8 @@ Preserve the PIN uppercase word.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the title of the init tour page dedicated to the speed. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_ChangePassword" translate="yes" space="preserve">
-          <source>Change Password</source>
-          <target state="translated">Wijzig Wachtwoord</target>
+          <source>Change password</source>
+          <target state="translated">Wijzig wachtwoord</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Change password' button, menu, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Advanced" translate="yes" space="preserve">
@@ -1012,7 +1012,7 @@ Preserve the {0} code because is for include the name of the destination folder 
         </trans-unit>
         <trans-unit id="Resx/Search" translate="yes" space="preserve">
           <source>Search</source>
-          <target state="translated">Zoeken</target>
+          <target state="translated">Zoek</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Search' button, link, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Select" translate="yes" space="preserve">
@@ -1512,7 +1512,7 @@ NOTE: Max. length 20 characters.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_Close" translate="yes" space="preserve">
           <source>Close</source>
-          <target state="translated">Sluiten</target>
+          <target state="translated">Sluit</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Close' button, link, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TestPassword" translate="yes" space="preserve">
@@ -1572,7 +1572,7 @@ NOTE: Max. length 20 characters.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_MFA_SetupStep1" translate="yes" space="preserve">
           <source>Scan or copy the seed to your Authenticator App. Be sure to backup this seed to a safe place in case you lose your device.</source>
-          <target state="translated">Scan of kopieer de seed naar uw Authenticator Applicatie. Zorg ervoor dat u een reservekopie maakt op een veilige plek voor het geval u uw apparaat verliest.</target>
+          <target state="translated">Scan of kopieer de seed naar uw Authenticator Applicatie. Zorg ervoor dat u een backup maakt op een veilige plek voor het geval u uw apparaat verliest.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the step 1 to setup the Multi-Factor Authentication.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_MFA_SetupStep2" translate="yes" space="preserve">
@@ -1635,9 +1635,9 @@ NOTE: Max. length 20 characters.</note>
           <target state="translated">Sessie hervatten</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Resume session' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_UseSpecificPort" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_UseSpecificPort" translate="yes" space="preserve">
           <source>Use port {0}</source>
-          <target state="new">Use port {0}</target>
+          <target state="translated">Use port {0}</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the checkbox of the dialog displayed to confirm change to staging server using a specific port.
 Keep the {0} code because is for include the port number in runtime.</note>
         </trans-unit>

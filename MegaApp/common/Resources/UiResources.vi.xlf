@@ -23,7 +23,7 @@
         </trans-unit>
         <trans-unit id="Resx/Cancel" translate="yes" space="preserve">
           <source>Cancel</source>
-          <target state="translated">Hủy bỏ</target>
+          <target state="translated">Hủy</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Cancel' button, link, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CloudDriveName" translate="yes" space="preserve">
@@ -242,7 +242,7 @@
           <note from="MultilingualBuild" annotates="source" priority="2">Text placed into the 'acknowledgements' page introducing the list of acknowledgements.</note>
         </trans-unit>
         <trans-unit id="Resx/RubbishBinName" translate="yes" space="preserve">
-          <source>Rubbish bin</source>
+          <source>Rubbish Bin</source>
           <target state="translated">Thùng rác</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Rubbish bin' button, link, text, etc. - (String as short as possible).</note>
         </trans-unit>
@@ -300,7 +300,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/Import" translate="yes" space="preserve">
           <source>Import</source>
-          <target state="translated">Lấy nội dung</target>
+          <target state="translated">Chuyển nhập</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Import' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/LinkOptions" translate="yes" space="preserve">
@@ -680,8 +680,8 @@ Preserve the PIN uppercase word.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the title of the init tour page dedicated to the speed. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_ChangePassword" translate="yes" space="preserve">
-          <source>Change Password</source>
-          <target state="translated">Đổi Mật Khẩu</target>
+          <source>Change password</source>
+          <target state="translated">Đổi mật khẩu</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Change password' button, menu, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Advanced" translate="yes" space="preserve">
@@ -701,7 +701,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/Contacts" translate="yes" space="preserve">
           <source>Contacts</source>
-          <target state="translated">Danh bạ</target>
+          <target state="translated">Danh Bạ</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Contacts' button, link, text, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/SharedItems" translate="yes" space="preserve">
@@ -1062,7 +1062,7 @@ Preserve the {0} code because is for include the name of the destination folder 
         </trans-unit>
         <trans-unit id="Resx/SentRequests" translate="yes" space="preserve">
           <source>Sent requests</source>
-          <target state="translated">Yêu cầu đã gửi</target>
+          <target state="translated">Yêu cầu gửi đi</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for 'Sent requests' text, title, etc. for sent contact requests - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Accepted" translate="yes" space="preserve">
@@ -1327,7 +1327,7 @@ NOTE: Keep the capital letter if possible.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_AvailableOffline" translate="yes" space="preserve">
           <source>Available Offline</source>
-          <target state="translated">Lưu Về Ngoại Tuyến</target>
+          <target state="translated">Lưu Ngoại Tuyến</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Available Offline' button, link, text, title, etc. - (String as short as possible).
 NOTE: Keep the capital letter if possible.</note>
         </trans-unit>
@@ -1486,7 +1486,7 @@ NOTE: Keep the capital letter if possible.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TakedownGuidance" translate="yes" space="preserve">
           <source>Takedown Guidance</source>
-          <target state="translated">Xử Lý Tranh Chấp Bản Quyền</target>
+          <target state="translated">Xử Lý Tranh Chấp Quyền Sở Hữu</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Takedown Guidance' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_OpenBrowser" translate="yes" space="preserve">
@@ -1506,7 +1506,7 @@ NOTE: Keep the capital letter if possible.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_BackupRecoveryKey" translate="yes" space="preserve">
           <source>Backup Recovery Key</source>
-          <target state="translated">Sao lưu Mã Khóa Phục Hồi</target>
+          <target state="translated">Sao lưu Mã Phục Hồi</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Backup Recovery Key' button, link, text, title, etc. - (String as short as possible).
 NOTE: Max. length 20 characters.</note>
         </trans-unit>
@@ -1547,12 +1547,12 @@ NOTE: Max. length 20 characters.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_Warning" translate="yes" space="preserve">
           <source>Warning</source>
-          <target state="translated">Cảnh báo</target>
+          <target state="translated">Chú Ý</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Warning' title, message, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_EnableTwoFactorAuth" translate="yes" space="preserve">
           <source>Enable Two-Factor Authentication</source>
-          <target state="translated">Bật Lập Xác Minh 2-Bước</target>
+          <target state="translated">Bật Xác Minh 2-Bước</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the "toggle" or "switch" button to enable/disable the Two-Factor Authentication.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TwoFactorAuth" translate="yes" space="preserve">
@@ -1572,12 +1572,12 @@ NOTE: Max. length 20 characters.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_MFA_SetupStep1" translate="yes" space="preserve">
           <source>Scan or copy the seed to your Authenticator App. Be sure to backup this seed to a safe place in case you lose your device.</source>
-          <target state="translated">Quét hay sao chép đoạn chủng tử nằm dưới đây vào app Lập Xác Thực muốn sử dụng. Cũng nên lưu lại mã này ở nơi an toàn trong trường hợp bị mất máy.</target>
+          <target state="translated">Quét hay sao chép đoạn chủng tử nằm dưới đây vào app Lập Xác Minh muốn sử dụng. Cũng nên lưu lại mã này ở nơi an toàn trong trường hợp bị mất máy.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the step 1 to setup the Multi-Factor Authentication.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_MFA_SetupStep2" translate="yes" space="preserve">
           <source>After setting up your seed on your Authenticator app enter the 6-digit code provided.</source>
-          <target state="translated">Sau khi chủng tử được app Lập Xác Thực nhận vào, điền vào đoạn mã dài 6 chữ số hiện ra.</target>
+          <target state="translated">Sau khi chủng tử được app Lập Xác Minh nhận vào, điền vào đoạn mã dài 6 chữ số hiện ra.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the step 2 to setup the Muti-Factor Authentication.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_SixDigitCode" translate="yes" space="preserve">
@@ -1597,7 +1597,7 @@ NOTE: Max. length 20 characters.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_LostAuthDeviceQuestion" translate="yes" space="preserve">
           <source>Lost your Authenticator device?</source>
-          <target state="translated">Thiết bị có cài app Lập Xác Thực đã bị mất?</target>
+          <target state="translated">Thiết bị có cài app Lập Xác Minh đã bị mất?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any link/button to help the user in case lost the authentication device for MFA - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_ChangePasswordDescription" translate="yes" space="preserve">
@@ -1635,9 +1635,9 @@ NOTE: Max. length 20 characters.</note>
           <target state="translated">Tiếp tục phiên</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Resume session' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_UseSpecificPort" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_UseSpecificPort" translate="yes" space="preserve">
           <source>Use port {0}</source>
-          <target state="new">Use port {0}</target>
+          <target state="translated">Use port {0}</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the checkbox of the dialog displayed to confirm change to staging server using a specific port.
 Keep the {0} code because is for include the port number in runtime.</note>
         </trans-unit>

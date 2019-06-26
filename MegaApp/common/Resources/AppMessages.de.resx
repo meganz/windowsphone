@@ -245,7 +245,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the process/request to copy a MEGA link to the clipboard finished successfully.</comment>
   </data>
   <data name="LinkCopiedToClipboard_Title" xml:space="preserve">
-    <value>In Zwischenablage kopiert</value>
+    <value>In die Zwischenablage kopiert</value>
     <comment>Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard finished successfully - (String as short as possible).</comment>
   </data>
   <data name="LoginFailed" xml:space="preserve">
@@ -856,7 +856,7 @@ Preserve the {0} code because is for include email of the contact to be removed 
     <comment>Title of the dialog displayed when the process/request to invite a contact failed - (String as short as possible).</comment>
   </data>
   <data name="InviteContactAddSuccessfully" xml:space="preserve">
-    <value>Der Benutzer {0} wurde eingeladen und wird nach Annahme in Ihrer Kontaktliste auftauchen.</value>
+    <value>Der Benutzer {0} wurde eingeladen und wird nach Annahme in Ihrer Kontaktliste erscheinen.</value>
     <comment>Message of the dialog displayed when the process/request to invite a contact finished successfully - (String as short as possible).
 Preserve the [{0}] code because is for include the contact email in runtime.</comment>
   </data>
@@ -1415,7 +1415,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
   </data>
   <data name="AM_SSLKeyError_Title" xml:space="preserve">
-    <value>SSL certificate error</value>
+    <value>SSL-Schlüssel ungültig</value>
     <comment>Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
   </data>
   <data name="AM_PasswordReminder" xml:space="preserve">
@@ -1463,11 +1463,11 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed to ask the user to confirm want to close all the other sessions.</comment>
   </data>
   <data name="AM_2FA_SetupDialogDescription" xml:space="preserve">
-    <value>Two-factor authentication is a second layer of security for your account. Which means that even if someone knows your password they cannot access it, without also having access to the six digit code only you have access to.</value>
+    <value>Zwei-Faktor-Authentifizierung schützt Ihren Account vor unberechtigtem Zugriff, selbst wenn jemand Ihr Passwort kennt.</value>
     <comment>Description text of the dialog displayed to start setup the Two-Factor Authentication</comment>
   </data>
   <data name="AM_2FA_SetupDialogTitle" xml:space="preserve">
-    <value>Why do you need two-factor authentication?</value>
+    <value>Zwei-Faktor-Authentifizierung - warum?</value>
     <comment>Title of the dialog displayed to start setup the Two-Factor Authentication</comment>
   </data>
   <data name="AM_InvalidCode" xml:space="preserve">
@@ -1516,16 +1516,16 @@ Ensure you back up your recovery key.</value>
     <comment>Title text of the dialog displayed to indicate that the user has successfully disabled the Two-Factor Authentication.</comment>
   </data>
   <data name="AM_RestoreFromRubbishBinFailed" xml:space="preserve">
-    <value>Failed to restore ‘{0}’ from rubbish bin. Please try again.</value>
+    <value>Failed to restore ‘{0}’ from Rubbish Bin. Please try again.</value>
     <comment>Message of the dialog displayed when the process/request to restore a node to the rubbish bin failed.
 Preserve the '{0}' code because is for include the file/folder name in runtime.</comment>
   </data>
   <data name="AM_RestoreFromRubbishBinFailed_Title" xml:space="preserve">
-    <value>Restore from rubbish bin failed</value>
+    <value>Restore from Rubbish Bin failed</value>
     <comment>Title of the dialog displayed when the process/request to restore nodes from the rubbish bin failed - (String as short as possible).</comment>
   </data>
   <data name="AM_RestoreMultiFromRubbishBinFailed" xml:space="preserve">
-    <value>Failed to restore items from rubbish bin. Please try again.</value>
+    <value>Failed to restore items from Rubbish Bin. Please try again.</value>
     <comment>Message of the dialog displayed when the process/request to restore multiple nodes from the rubbish bin failed.</comment>
   </data>
   <data name="AM_MFA_CheckStatusFailed" xml:space="preserve">
@@ -1559,5 +1559,13 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
   <data name="AM_StorageOverquotaAlert_Title" xml:space="preserve">
     <value>Speicherlimit überschritten</value>
     <comment>Title of the dialog displayed when a user exceeds the storage space limits of the account - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ChangeToStagingServer" xml:space="preserve">
+    <value>Auf den Testserver wechseln? Dies ist mit erheblichen Risiken behaftet.</value>
+    <comment>Message of the alert dialog when the user is changing the API URL to staging.</comment>
+  </data>
+  <data name="AM_ChangeToStagingServer_Title" xml:space="preserve">
+    <value>Auf den Testserver wechseln?</value>
+    <comment>Title of the alert dialog when the user is changing the API URL to staging.</comment>
   </data>
 </root>

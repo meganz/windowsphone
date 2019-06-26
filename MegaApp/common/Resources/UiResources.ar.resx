@@ -262,7 +262,7 @@
     <comment>Text placed into the 'acknowledgements' page introducing the list of acknowledgements.</comment>
   </data>
   <data name="RubbishBinName" xml:space="preserve">
-    <value>سلة المهملات</value>
+    <value>سلة المحذوفات</value>
     <comment>Label for any 'Rubbish bin' button, link, text, etc. - (String as short as possible).</comment>
   </data>
   <data name="Off" xml:space="preserve">
@@ -278,7 +278,7 @@
     <comment>Label for the name of the Cloud Drive breadcum root node - (String as short as possible).</comment>
   </data>
   <data name="RubbishBinRoot" xml:space="preserve">
-    <value>سلة المهملات</value>
+    <value>سلة المحذوفات</value>
     <comment>Label for the name of the Rubbish bin breadcum root node - (String as short as possible).</comment>
   </data>
   <data name="No" xml:space="preserve">
@@ -809,7 +809,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
     <comment>Warning message in Cloud Drive when the user is running out of space</comment>
   </data>
   <data name="AddContact" xml:space="preserve">
-    <value>إضافة جهة اتصال</value>
+    <value>إدخال متصّل</value>
     <comment>Label for any 'Add contact' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="CreateContact" xml:space="preserve">
@@ -817,7 +817,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
     <comment>Text to show when a user wants to add a contact to type the email address of the new contact.</comment>
   </data>
   <data name="Search" xml:space="preserve">
-    <value>بحث</value>
+    <value>البحث</value>
     <comment>Label for any 'Search' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="Select" xml:space="preserve">
@@ -1021,7 +1021,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Text to show when a user wants to create a new folder to type the name for the new folder.</comment>
   </data>
   <data name="UI_GetLink" xml:space="preserve">
-    <value>الحصول على الرابط</value>
+    <value>الحصول على الرّابط</value>
     <comment>Label for any 'Get link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_Login" xml:space="preserve">
@@ -1423,5 +1423,10 @@ NOTE: Max. length 20 characters.</comment>
   <data name="UI_ResumeSession" xml:space="preserve">
     <value>متابعة الجلسة</value>
     <comment>Label for any 'Resume session' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_UseSpecificPort" xml:space="preserve">
+    <value>Use port {0}</value>
+    <comment>Label for the checkbox of the dialog displayed to confirm change to staging server using a specific port.
+Keep the {0} code because is for include the port number in runtime.</comment>
   </data>
 </root>

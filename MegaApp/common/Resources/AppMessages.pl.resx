@@ -1257,7 +1257,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Message of the dialog displayed when fails the process/request to import a folder link.</comment>
   </data>
   <data name="AM_EmailAlreadyRegistered" xml:space="preserve">
-    <value>Ten adres emailowy jest już zarejestrowany w MEGA.</value>
+    <value>Podany adres e-mail został już użyty podczas rejestracji.</value>
     <comment>Message of the dialog shown when the users tries to create an account with an email already in use.</comment>
   </data>
   <data name="AM_IncompleteConfirmationLink" xml:space="preserve">
@@ -1415,7 +1415,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
   </data>
   <data name="AM_SSLKeyError_Title" xml:space="preserve">
-    <value>Błąd certyfikatu SSL</value>
+    <value>Błąd klucza SSL</value>
     <comment>Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
   </data>
   <data name="AM_PasswordReminder" xml:space="preserve">
@@ -1559,5 +1559,13 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
   <data name="AM_StorageOverquotaAlert_Title" xml:space="preserve">
     <value>Dostępny limit został przekroczony</value>
     <comment>Title of the dialog displayed when a user exceeds the storage space limits of the account - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ChangeToStagingServer" xml:space="preserve">
+    <value>Czy na pewno chcesz przejść na serwer testowy? Na Twoim koncie mogą wystąpić nieodwracalne problemy</value>
+    <comment>Message of the alert dialog when the user is changing the API URL to staging.</comment>
+  </data>
+  <data name="AM_ChangeToStagingServer_Title" xml:space="preserve">
+    <value>Przejdź na serwer testowy?</value>
+    <comment>Title of the alert dialog when the user is changing the API URL to staging.</comment>
   </data>
 </root>

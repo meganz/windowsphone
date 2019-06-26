@@ -294,7 +294,7 @@
     <comment>Label for 'File upload' option of the dialog shown to upload nodes - (String as short as possible).</comment>
   </data>
   <data name="Import" xml:space="preserve">
-    <value>导入</value>
+    <value>输入</value>
     <comment>Label for any 'Import' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="LinkOptions" xml:space="preserve">
@@ -466,7 +466,7 @@
     <comment>Label for any 'Start/resume all' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Subscribe" xml:space="preserve">
-    <value>签约</value>
+    <value>订阅</value>
     <comment>Label for any 'Subscribe' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="TermsOfService" xml:space="preserve">
@@ -686,7 +686,7 @@
     <comment>Label for any 'First name' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Get2MonthsFree" xml:space="preserve">
-    <value>订购一年期Pro计划，即可获得两个月免费</value>
+    <value>订阅一年PRO计划，即可获得两个月免费</value>
     <comment>Label to indicate the user that he obtains 2 free months with a one-year pro plan subscription.</comment>
   </data>
   <data name="LastName" xml:space="preserve">
@@ -1423,5 +1423,10 @@ NOTE: Max. length 20 characters.</comment>
   <data name="UI_ResumeSession" xml:space="preserve">
     <value>恢复会话</value>
     <comment>Label for any 'Resume session' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_UseSpecificPort" xml:space="preserve">
+    <value>Use port {0}</value>
+    <comment>Label for the checkbox of the dialog displayed to confirm change to staging server using a specific port.
+Keep the {0} code because is for include the port number in runtime.</comment>
   </data>
 </root>

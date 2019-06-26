@@ -242,7 +242,7 @@
           <note from="MultilingualBuild" annotates="source" priority="2">Text placed into the 'acknowledgements' page introducing the list of acknowledgements.</note>
         </trans-unit>
         <trans-unit id="Resx/RubbishBinName" translate="yes" space="preserve">
-          <source>Rubbish bin</source>
+          <source>Rubbish Bin</source>
           <target state="translated">垃圾桶</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Rubbish bin' button, link, text, etc. - (String as short as possible).</note>
         </trans-unit>
@@ -300,7 +300,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/Import" translate="yes" space="preserve">
           <source>Import</source>
-          <target state="translated">导入</target>
+          <target state="translated">输入</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Import' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/LinkOptions" translate="yes" space="preserve">
@@ -536,7 +536,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/Subscribe" translate="yes" space="preserve">
           <source>subscribe</source>
-          <target state="translated">签约</target>
+          <target state="translated">订阅</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Subscribe' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/TermsOfService" translate="yes" space="preserve">
@@ -680,7 +680,7 @@ Preserve the PIN uppercase word.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the title of the init tour page dedicated to the speed. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_ChangePassword" translate="yes" space="preserve">
-          <source>Change Password</source>
+          <source>Change password</source>
           <target state="translated">更改密码</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Change password' button, menu, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
@@ -838,7 +838,7 @@ Keep the code {1} because is for include currency in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/Get2MonthsFree" translate="yes" space="preserve">
           <source>Get 2 months free if you subscribe to a one-year PRO plan</source>
-          <target state="translated">订购一年期Pro计划，即可获得两个月免费</target>
+          <target state="translated">订阅一年PRO计划，即可获得两个月免费</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label to indicate the user that he obtains 2 free months with a one-year pro plan subscription.</note>
         </trans-unit>
         <trans-unit id="Resx/LastName" translate="yes" space="preserve">
@@ -1635,9 +1635,9 @@ NOTE: Max. length 20 characters.</note>
           <target state="translated">恢复会话</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Resume session' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_UseSpecificPort" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_UseSpecificPort" translate="yes" space="preserve">
           <source>Use port {0}</source>
-          <target state="new">Use port {0}</target>
+          <target state="translated">Use port {0}</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the checkbox of the dialog displayed to confirm change to staging server using a specific port.
 Keep the {0} code because is for include the port number in runtime.</note>
         </trans-unit>

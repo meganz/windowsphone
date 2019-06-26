@@ -162,7 +162,7 @@
     <comment>Text used as title of the message to share a MEGA link.</comment>
   </data>
   <data name="Move" xml:space="preserve">
-    <value>Mută</value>
+    <value>Mutare</value>
     <comment>Label for any 'Move' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="MultipleFiles" xml:space="preserve">
@@ -458,7 +458,7 @@
     <comment>Label for the menu option to sort the nodes of the cloud drive in ascending order by size (from smaller to bigger) - (String as short as possible).</comment>
   </data>
   <data name="SortByMenuTitle" xml:space="preserve">
-    <value>SORTEAZĂ DUPĂ</value>
+    <value>Sortează după</value>
     <comment>Label used like title for the sort menu.</comment>
   </data>
   <data name="StartResumeAll" xml:space="preserve">
@@ -510,7 +510,7 @@
     <comment>Label for any 'About' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Pause" xml:space="preserve">
-    <value>Pauză</value>
+    <value>Pune pe pauză</value>
     <comment>Label for any 'Pause' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Resume" xml:space="preserve">
@@ -634,7 +634,7 @@
     <comment>Label for any 'Back' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Dismiss" xml:space="preserve">
-    <value>Îndepărtează</value>
+    <value>Înlătură</value>
     <comment>Label for any 'Dismiss' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Send" xml:space="preserve">
@@ -654,7 +654,7 @@
     <comment>Label to indicate the user that is needed choose a renewal period for upgrade his account.</comment>
   </data>
   <data name="City" xml:space="preserve">
-    <value>Orașul</value>
+    <value>Oraș</value>
     <comment>Label for any 'City' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Country" xml:space="preserve">
@@ -731,7 +731,7 @@ Preserve the {0} code because is for include the name/type of the selected plan 
     <comment>Label abreviated for any 'Settings' button, link, text, title, etc. - (String as short as possible - MAX 10 characteres).</comment>
   </data>
   <data name="State" xml:space="preserve">
-    <value>Stare</value>
+    <value>Stat</value>
     <comment>Label for any 'State' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="StorageShort" xml:space="preserve">
@@ -1139,7 +1139,7 @@ NOTE: Keep the capital letter if possible.</comment>
     <comment>Label for any 'In app purchase' (IAP) button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_FromBasePrice" xml:space="preserve">
-    <value>De la From {0:N}{1}/lună</value>
+    <value>De la {0:N}{1}/lună</value>
     <comment>Label for indicate the base price of a product or plan, for example "From 9,99 €/month" - (String as short as possible).
 Keep the code {0:N} because is for include price of the product in runtime.
 Keep the code {1} because is for include currency in runtime.</comment>
@@ -1423,5 +1423,10 @@ NOTE: Max. length 20 characters.</comment>
   <data name="UI_ResumeSession" xml:space="preserve">
     <value>Reia sesiunea</value>
     <comment>Label for any 'Resume session' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_UseSpecificPort" xml:space="preserve">
+    <value>Use port {0}</value>
+    <comment>Label for the checkbox of the dialog displayed to confirm change to staging server using a specific port.
+Keep the {0} code because is for include the port number in runtime.</comment>
   </data>
 </root>

@@ -194,7 +194,7 @@
     <comment>Label for any 'Previous' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Refresh" xml:space="preserve">
-    <value>atualizar</value>
+    <value>recarregar</value>
     <comment>Label for any 'Refresh' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="StayLoggedInText" xml:space="preserve">
@@ -1021,7 +1021,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Text to show when a user wants to create a new folder to type the name for the new folder.</comment>
   </data>
   <data name="UI_GetLink" xml:space="preserve">
-    <value>Obter link</value>
+    <value>Obter Link</value>
     <comment>Label for any 'Get link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_Login" xml:space="preserve">
@@ -1423,5 +1423,10 @@ NOTE: Max. length 20 characters.</comment>
   <data name="UI_ResumeSession" xml:space="preserve">
     <value>Retomar sessão</value>
     <comment>Label for any 'Resume session' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_UseSpecificPort" xml:space="preserve">
+    <value>Use port {0}</value>
+    <comment>Label for the checkbox of the dialog displayed to confirm change to staging server using a specific port.
+Keep the {0} code because is for include the port number in runtime.</comment>
   </data>
 </root>

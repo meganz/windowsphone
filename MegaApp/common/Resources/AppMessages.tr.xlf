@@ -369,30 +369,35 @@ Preserve the {0} code because is for include the number of nodes to be moved in 
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when remove successfully multiple nodes definitely from the rubbish bin - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/MoveToRubbishBinFailed" translate="yes" space="preserve">
-          <source>Failed to move item to rubbish bin. Please try again</source>
-          <target state="translated">Öğe çöp kutusuna taşınamadı. Lütfen tekrar deneyin</target>
+          <source>Failed to move item to Rubbish Bin. Please try again</source>
+          <target state="needs-review-translation">Öğe çöp kutusuna taşınamadı. Lütfen tekrar deneyin</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to move nodes to the rubbish bin failed.</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/MoveToRubbishBinFailed_Title" translate="yes" space="preserve">
-          <source>Move to rubbish bin failed</source>
-          <target state="translated">Çöp kutusuna taşıma başarısız oldu</target>
+          <source>Move to Rubbish Bin failed</source>
+          <target state="needs-review-translation">Çöp kutusuna taşıma başarısız oldu</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to move nodes to the rubbish bin failed - (String as short as possible).</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/MoveToRubbishBinQuestion" translate="yes" space="preserve">
-          <source>Are you sure you want to move {0} to the rubbish bin?</source>
-          <target state="translated">{0} öğesini çöp tenekesine taşımak istediğinizden emin misiniz?</target>
+          <source>Are you sure you want to move {0} to the Rubbish Bin?</source>
+          <target state="needs-review-translation">{0} öğesini çöp tenekesine taşımak istediğinizden emin misiniz?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to move a single node to the rubbish bin, asking for confirmation to make the movement.
 Preserve the {0} code because is for include the name of the node to be moved in runtime.</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/MoveToRubbishBinQuestion_Title" translate="yes" space="preserve">
-          <source>Move to rubbish bin?</source>
-          <target state="translated">Çöp kutusuna taşınsın mı?</target>
+          <source>Move to Rubbish Bin?</source>
+          <target state="needs-review-translation">Çöp kutusuna taşınsın mı?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to move a single node to the rubbish bin, asking for confirmation to make the movement - (String as short as possible).</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/MoveToRubbishBinSuccess" translate="yes" space="preserve">
-          <source>Item successfully moved to the rubbish bin</source>
-          <target state="translated">Öğe başarıyla çöp tenekesine taşındı</target>
+          <source>Item successfully moved to the Rubbish Bin</source>
+          <target state="needs-review-translation">Öğe başarıyla çöp tenekesine taşındı</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when move successfully one single node to the rubbish bin.</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/MoveToRubbishBinSuccess_Title" translate="yes" space="preserve">
           <source>Item moved</source>
@@ -400,10 +405,11 @@ Preserve the {0} code because is for include the name of the node to be moved in
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when move successfully one single node to the rubbish bin - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/MultiMoveToRubbishBinQuestion" translate="yes" space="preserve">
-          <source>Are you sure you want to move {0} items to the rubbish bin?</source>
-          <target state="translated">{0} öğeyei çöp kutusuna taşımak istediğinizden emin misiniz?</target>
+          <source>Are you sure you want to move {0} items to the Rubbish Bin?</source>
+          <target state="needs-review-translation">{0} öğeyei çöp kutusuna taşımak istediğinizden emin misiniz?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to move multiple nodes to the rubbish bin, asking for confirmation to make the movement.
 Preserve the {0} code because is for include the number of nodes to be moved in runtime.</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/MultiMoveToRubbishBinQuestion_Title" translate="yes" space="preserve">
           <source>Move items?</source>
@@ -411,10 +417,11 @@ Preserve the {0} code because is for include the number of nodes to be moved in 
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to move multiple nodes to the rubbish bin, asking for confirmation to make the movement - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/MultiMoveToRubbishBinSucces" translate="yes" space="preserve">
-          <source>{0} items moved to the rubbish bin</source>
-          <target state="translated">{0} öğe çöp kutusuna taşındı</target>
+          <source>{0} items moved to the Rubbish Bin</source>
+          <target state="needs-review-translation">{0} öğe çöp kutusuna taşındı</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when move successfully multiple nodes to the rubbish bin.
 Preserve the {0} code because is for include the number of nodes to be moved in runtime.</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/MultiMoveToRubbishBinSucces_Title" translate="yes" space="preserve">
           <source>Items moved</source>
@@ -1061,19 +1068,22 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when close or kill a session succesfully.</note>
         </trans-unit>
         <trans-unit id="Resx/CleanRubbishBinFailed" translate="yes" space="preserve">
-          <source>Failed to clear the rubbish bin. Please try again.</source>
-          <target state="translated">Çöp kutusu temizleme başarısız oldu. Lütfen tekrar deneyin.</target>
+          <source>Failed to clear the Rubbish Bin. Please try again.</source>
+          <target state="needs-review-translation">Çöp kutusu temizleme başarısız oldu. Lütfen tekrar deneyin.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to empty the rubbish bin failed.</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/CleanRubbishBinQuestion" translate="yes" space="preserve">
-          <source>Are you sure you want to permanently delete all files from the rubbish bin?</source>
-          <target state="translated">Çöp kutusundaki tüm dosyaları kalıcı olarak silmek istediğinizden emin misiniz?</target>
+          <source>Are you sure you want to permanently delete all files from the Rubbish Bin?</source>
+          <target state="needs-review-translation">Çöp kutusundaki tüm dosyaları kalıcı olarak silmek istediğinizden emin misiniz?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to empty the rubbish bin, asking for confirmation to do it.</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/CleanRubbishBinSuccess" translate="yes" space="preserve">
-          <source>The rubbish bin has been cleared successfully.</source>
-          <target state="translated">Çöp kutusu başarıyla temizlendi.</target>
+          <source>The Rubbish Bin has been cleared successfully.</source>
+          <target state="needs-review-translation">Çöp kutusu başarıyla temizlendi.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when empty the rubbish bin succesfully.</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/InviteContactAddFailedOwnEmail" translate="yes" space="preserve">
           <source>You are trying to add your own email as a contact.</source>
@@ -1631,9 +1641,10 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_SSLKeyError_Title" translate="yes" space="preserve">
-          <source>SSL certificate error</source>
-          <target state="translated">SSL sertifika hatası</target>
+          <source>SSL key error</source>
+          <target state="needs-review-translation">SSL sertifika hatası</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PasswordReminder" translate="yes" space="preserve">
           <source>Due to MEGA’s encryption technology you are unable to reset your password without data loss. Please make sure you remember your password.</source>
@@ -1758,20 +1769,23 @@ Kurtarma anahtarınızı yedeklediğinizden emin olun.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title text of the dialog displayed to indicate that the user has successfully disabled the Two-Factor Authentication.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_RestoreFromRubbishBinFailed" translate="yes" space="preserve">
-          <source>Failed to restore ‘{0}’ from rubbish bin. Please try again.</source>
-          <target state="translated">‘{0}' çöp kutusundan geri yüklenemedi. Lütfen tekrar deneyin.</target>
+          <source>Failed to restore ‘{0}’ from Rubbish Bin. Please try again.</source>
+          <target state="needs-review-translation">‘{0}' çöp kutusundan geri yüklenemedi. Lütfen tekrar deneyin.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to restore a node to the rubbish bin failed.
 Preserve the '{0}' code because is for include the file/folder name in runtime.</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_RestoreFromRubbishBinFailed_Title" translate="yes" space="preserve">
-          <source>Restore from rubbish bin failed</source>
-          <target state="translated">Çöp kutusundan geri yükleme başarısız oldu</target>
+          <source>Restore from Rubbish Bin failed</source>
+          <target state="needs-review-translation">Çöp kutusundan geri yükleme başarısız oldu</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to restore nodes from the rubbish bin failed - (String as short as possible).</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_RestoreMultiFromRubbishBinFailed" translate="yes" space="preserve">
-          <source>Failed to restore items from rubbish bin. Please try again.</source>
-          <target state="translated">Öğeler çöp kutusundan geri yüklenemedi. Lütfen tekrar deneyin.</target>
+          <source>Failed to restore items from Rubbish Bin. Please try again.</source>
+          <target state="needs-review-translation">Öğeler çöp kutusundan geri yüklenemedi. Lütfen tekrar deneyin.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to restore multiple nodes from the rubbish bin failed.</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_MFA_CheckStatusFailed" translate="yes" space="preserve">
           <source>Failed to check the status of two factor authentication.</source>
@@ -1809,8 +1823,8 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the alert dialog when the user is changing the API URL to staging.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ChangeToStagingServer" translate="yes" xml:space="preserve">
-          <source>Are you sure you want to change to a test server? Your account may suffer irrecoverable problems.</source>
-          <target state="new">Are you sure you want to change to a test server? Your account may suffer irrecoverable problems.</target>
+          <source>Are you sure you want to change to a test server? Your account may suffer irrecoverable problems</source>
+          <target state="new">Are you sure you want to change to a test server? Your account may suffer irrecoverable problems</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the alert dialog when the user is changing the API URL to staging.</note>
         </trans-unit>
       </group>

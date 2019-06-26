@@ -198,7 +198,7 @@
     <comment>Label for any 'Refresh' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="StayLoggedInText" xml:space="preserve">
-    <value>保持登錄</value>
+    <value>保持登入</value>
     <comment>Text placed into the 'login' page just after a checkbox to select the option to stay logged into the app.</comment>
   </data>
   <data name="Remove" xml:space="preserve">
@@ -206,7 +206,7 @@
     <comment>Label for any 'Remove' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Rename" xml:space="preserve">
-    <value>重新命名</value>
+    <value>重命名</value>
     <comment>Label for any 'Rename' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="RenameItem" xml:space="preserve">
@@ -282,7 +282,7 @@
     <comment>Label for the name of the Rubbish bin breadcum root node - (String as short as possible).</comment>
   </data>
   <data name="No" xml:space="preserve">
-    <value>不是</value>
+    <value>否</value>
     <comment>Label for any 'No' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Yes" xml:space="preserve">
@@ -294,7 +294,7 @@
     <comment>Label for 'File upload' option of the dialog shown to upload nodes - (String as short as possible).</comment>
   </data>
   <data name="Import" xml:space="preserve">
-    <value>輸入</value>
+    <value>匯入</value>
     <comment>Label for any 'Import' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="LinkOptions" xml:space="preserve">
@@ -334,7 +334,7 @@
     <comment>Label for any 'Acknowledgements' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Annually" xml:space="preserve">
-    <value>年付</value>
+    <value>年付費</value>
     <comment>Label for any 'Annually' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="AppVersionText" xml:space="preserve">
@@ -418,7 +418,7 @@
     <comment>Text placed just before the form to 'Make a PIN Lock'. Try to preserve the PIN uppercase word. - (String as short as possible).</comment>
   </data>
   <data name="Monthly" xml:space="preserve">
-    <value>月付</value>
+    <value>月付費</value>
     <comment>Label for any 'Monthly' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="NameAscendingSortOption" xml:space="preserve">
@@ -642,7 +642,7 @@
     <comment>Label for any 'Send' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Address" xml:space="preserve">
-    <value>住址</value>
+    <value>地址</value>
     <comment>Label for any 'Address' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="BillingDetails" xml:space="preserve">
@@ -977,7 +977,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Saved for offline' button, link, text, title, etc. - (String as short as possible, LESS THAN 22 CHARS).</comment>
   </data>
   <data name="EmptyCloudDrive" xml:space="preserve">
-    <value>您的雲端硬碟中沒有檔案</value>
+    <value>您的雲端硬盤沒有檔案</value>
     <comment>Label for the background of an empty cloud drive page - (String as short as possible).</comment>
   </data>
   <data name="EmptyOffline" xml:space="preserve">
@@ -1021,11 +1021,11 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Text to show when a user wants to create a new folder to type the name for the new folder.</comment>
   </data>
   <data name="UI_GetLink" xml:space="preserve">
-    <value>取得連結</value>
+    <value>取得鏈接</value>
     <comment>Label for any 'Get link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_Login" xml:space="preserve">
-    <value>登錄</value>
+    <value>登入</value>
     <comment>Label for any 'Login' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_Logout" xml:space="preserve">
@@ -1205,7 +1205,7 @@ Keep the code {1} because is for include currency in runtime.</comment>
     <comment>Label for the state of a transfer when is being retrying - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStateUploaded" xml:space="preserve">
-    <value>已上傳</value>
+    <value>上載於</value>
     <comment>Label for the state of an upload transfer when is finished - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStateUploading" xml:space="preserve">
@@ -1369,7 +1369,7 @@ NOTE: Max. length 20 characters.</comment>
     <comment>Label for any 'Setup Two-Factor Authentication' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_SixDigitCode" xml:space="preserve">
-    <value>6 digit code</value>
+    <value>6位碼</value>
     <comment>Placeholder text of the field to type the 6-digit code provided for the authenticator app to verify the Multi-Factor Authentication.</comment>
   </data>
   <data name="UI_Verify" xml:space="preserve">
@@ -1377,11 +1377,11 @@ NOTE: Max. length 20 characters.</comment>
     <comment>Label for any 'Verify' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_CopySeed" xml:space="preserve">
-    <value>Copy seed</value>
+    <value>複製種子</value>
     <comment>Label of the button to copy the seed to enable the Multi-Factor Authentication - (String as short as possible).</comment>
   </data>
   <data name="UI_LostAuthDeviceQuestion" xml:space="preserve">
-    <value>Lost your Authenticator device?</value>
+    <value>您的驗證設備不見了？</value>
     <comment>Label for any link/button to help the user in case lost the authentication device for MFA - (String as short as possible).</comment>
   </data>
   <data name="UI_ChangePasswordDescription" xml:space="preserve">
@@ -1397,7 +1397,7 @@ NOTE: Max. length 20 characters.</comment>
     <comment>Label for any 'Restore' button, link, text, title, etc. For example for restore files from the rubbish bin - (String as short as possible).</comment>
   </data>
   <data name="UI_UsedCache" xml:space="preserve">
-    <value>Used cache</value>
+    <value>已使用快取</value>
     <comment>Label to indicate the amount of used cache - (String as short as possible).</comment>
   </data>
   <data name="UI_OpenIn" xml:space="preserve">
@@ -1405,23 +1405,28 @@ NOTE: Max. length 20 characters.</comment>
     <comment>Label for any 'Open in...' button, link, text, title, etc. to open a file or other kind of resource with a certain app - (String as short as possible).</comment>
   </data>
   <data name="UI_MFA_SetupStep1" xml:space="preserve">
-    <value>Scan or copy the seed to your Authenticator App. Be sure to backup this seed to a safe place in case you lose your device.</value>
+    <value>請掃描或複製種子到您的身份驗證App中。請務必將此種子備份於安全之處，以防設備遺失所帶來的風險。</value>
     <comment>Label for the step 1 to setup the Multi-Factor Authentication.</comment>
   </data>
   <data name="UI_MFA_SetupStep2" xml:space="preserve">
-    <value>After setting up your seed on your Authenticator app enter the 6-digit code provided.</value>
+    <value>在驗證app中設定種子後，請輸入提供的6位碼。</value>
     <comment>Label for the step 2 to setup the Muti-Factor Authentication.</comment>
   </data>
   <data name="UI_FindApp" xml:space="preserve">
-    <value>Find app</value>
+    <value>使用App</value>
     <comment>Label for any 'Find app' button, link, text, title, etc, to find an app to open a file, resource, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_ClearRubbishBin" xml:space="preserve">
-    <value>Clear Rubbish Bin</value>
+    <value>清空垃圾桶</value>
     <comment>Label for a 'Clear Rubbish Bin' button to clear the rubbish bin content - (String as short as possible).</comment>
   </data>
   <data name="UI_ResumeSession" xml:space="preserve">
     <value>恢復段落</value>
     <comment>Label for any 'Resume session' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_UseSpecificPort" xml:space="preserve">
+    <value>Use port {0}</value>
+    <comment>Label for the checkbox of the dialog displayed to confirm change to staging server using a specific port.
+Keep the {0} code because is for include the port number in runtime.</comment>
   </data>
 </root>

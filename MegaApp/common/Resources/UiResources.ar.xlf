@@ -78,7 +78,7 @@
         </trans-unit>
         <trans-unit id="Resx/UI_GetLink" translate="yes" space="preserve">
           <source>Get link</source>
-          <target state="translated">الحصول على الرابط</target>
+          <target state="translated">الحصول على الرّابط</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Get link' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/LoadingPreview" translate="yes" space="preserve">
@@ -242,8 +242,8 @@
           <note from="MultilingualBuild" annotates="source" priority="2">Text placed into the 'acknowledgements' page introducing the list of acknowledgements.</note>
         </trans-unit>
         <trans-unit id="Resx/RubbishBinName" translate="yes" space="preserve">
-          <source>Rubbish bin</source>
-          <target state="translated">سلة المهملات</target>
+          <source>Rubbish Bin</source>
+          <target state="translated">سلة المحذوفات</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Rubbish bin' button, link, text, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Off" translate="yes" space="preserve">
@@ -268,7 +268,7 @@
         </trans-unit>
         <trans-unit id="Resx/RubbishBinRoot" translate="yes" space="preserve">
           <source>Rubbish Bin</source>
-          <target state="translated">سلة المهملات</target>
+          <target state="translated">سلة المحذوفات</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the name of the Rubbish bin breadcum root node - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_ConfirmPinLock" translate="yes" space="preserve">
@@ -680,7 +680,7 @@ Preserve the PIN uppercase word.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the title of the init tour page dedicated to the speed. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_ChangePassword" translate="yes" space="preserve">
-          <source>Change Password</source>
+          <source>Change password</source>
           <target state="translated">تغيير كلمة المرور</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Change password' button, menu, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
@@ -1002,7 +1002,7 @@ Preserve the {0} code because is for include the name of the destination folder 
         </trans-unit>
         <trans-unit id="Resx/AddContact" translate="yes" space="preserve">
           <source>Add Contact</source>
-          <target state="translated">إضافة جهة اتصال</target>
+          <target state="translated">إدخال متصّل</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Add contact' button, link, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CreateContact" translate="yes" space="preserve">
@@ -1012,7 +1012,7 @@ Preserve the {0} code because is for include the name of the destination folder 
         </trans-unit>
         <trans-unit id="Resx/Search" translate="yes" space="preserve">
           <source>Search</source>
-          <target state="translated">بحث</target>
+          <target state="translated">البحث</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Search' button, link, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Select" translate="yes" space="preserve">
@@ -1635,9 +1635,9 @@ NOTE: Max. length 20 characters.</note>
           <target state="translated">متابعة الجلسة</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Resume session' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_UseSpecificPort" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_UseSpecificPort" translate="yes" space="preserve">
           <source>Use port {0}</source>
-          <target state="new">Use port {0}</target>
+          <target state="translated">Use port {0}</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the checkbox of the dialog displayed to confirm change to staging server using a specific port.
 Keep the {0} code because is for include the port number in runtime.</note>
         </trans-unit>

@@ -245,7 +245,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the process/request to copy a MEGA link to the clipboard finished successfully.</comment>
   </data>
   <data name="LinkCopiedToClipboard_Title" xml:space="preserve">
-    <value>Gekopieërd naar het klembord</value>
+    <value>Gekopiëerd naar klembord</value>
     <comment>Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard finished successfully - (String as short as possible).</comment>
   </data>
   <data name="LoginFailed" xml:space="preserve">
@@ -1257,7 +1257,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Message of the dialog displayed when fails the process/request to import a folder link.</comment>
   </data>
   <data name="AM_EmailAlreadyRegistered" xml:space="preserve">
-    <value>Met dit e-mail adres werd al een account bij MEGA geregistreerd.</value>
+    <value>Met dit e-mail adres is al een account bij MEGA geregistreerd.</value>
     <comment>Message of the dialog shown when the users tries to create an account with an email already in use.</comment>
   </data>
   <data name="AM_IncompleteConfirmationLink" xml:space="preserve">
@@ -1415,7 +1415,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
   </data>
   <data name="AM_SSLKeyError_Title" xml:space="preserve">
-    <value>SSL certificatie fout</value>
+    <value>SSL sleutel fout</value>
     <comment>Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
   </data>
   <data name="AM_PasswordReminder" xml:space="preserve">
@@ -1431,11 +1431,11 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message to describe the purpose of the dialog to test the password.</comment>
   </data>
   <data name="AM_TestPasswordSuccess" xml:space="preserve">
-    <value>Wachtwoord geaccepteerd, we raden het aan dat u een reservekopie maakt van uw Herstelsleutel.</value>
+    <value>Wachtwoord geaccepteerd, we raden het aan dat u een backup maakt van uw Herstelsleutel.</value>
     <comment>Message displayed when the password test result is ok.</comment>
   </data>
   <data name="AM_TestPasswordWarning" xml:space="preserve">
-    <value>Onjuist wachtwoord! Maak zo snel mogelijk een reservekopie van uw Herstelsleutel.</value>
+    <value>Onjuist wachtwoord! Maak zo snel mogelijk een backup van uw Herstelsleutel.</value>
     <comment>Warning message displayed when the password test fails.</comment>
   </data>
   <data name="AM_TestPassword_Title" xml:space="preserve">
@@ -1507,8 +1507,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed to disable the Two-Factor Authentication.</comment>
   </data>
   <data name="AM_2FA_EnabledDialogRecommendation" xml:space="preserve">
-    <value>Als u toegang verliest tot uw account nadat u 2FA heeft ingeschakeld en niet een reservekopie heeft van uw Herstelsleutel, kan MEGA u niet helpen toegang weer te terug te krijgen.
-Zorg ervoor dat u een reservekopie maakt van uw herstelsleutel.</value>
+    <value>Als u toegang verliest tot uw account nadat u 2FA heeft ingeschakeld en niet een backup heeft van uw Herstelsleutel, kan MEGA u niet helpen toegang weer te terug te krijgen. 
+Zorg ervoor dat u een backup maakt van uw herstelsleutel.</value>
     <comment>Text recommending export the Recovery Key in the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication. KEEP the multi-line format.</comment>
   </data>
   <data name="AM_2FA_DisabledDialogTitle" xml:space="preserve">
@@ -1559,5 +1559,13 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
   <data name="AM_StorageOverquotaAlert_Title" xml:space="preserve">
     <value>Tegoed overschreden</value>
     <comment>Title of the dialog displayed when a user exceeds the storage space limits of the account - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ChangeToStagingServer" xml:space="preserve">
+    <value>Weet u zeker dat u wilt wijzigen naar een test server? Uw account kan onherstelbare problemen krijgen</value>
+    <comment>Message of the alert dialog when the user is changing the API URL to staging.</comment>
+  </data>
+  <data name="AM_ChangeToStagingServer_Title" xml:space="preserve">
+    <value>naar een test server?</value>
+    <comment>Title of the alert dialog when the user is changing the API URL to staging.</comment>
   </data>
 </root>

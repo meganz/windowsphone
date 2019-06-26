@@ -242,9 +242,10 @@
           <note from="MultilingualBuild" annotates="source" priority="2">Text placed into the 'acknowledgements' page introducing the list of acknowledgements.</note>
         </trans-unit>
         <trans-unit id="Resx/RubbishBinName" translate="yes" space="preserve">
-          <source>Rubbish bin</source>
-          <target state="translated">פח אשפה</target>
+          <source>Rubbish Bin</source>
+          <target state="needs-review-translation">פח אשפה</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Rubbish bin' button, link, text, etc. - (String as short as possible).</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/Off" translate="yes" space="preserve">
           <source>Off</source>
@@ -680,9 +681,10 @@ Preserve the PIN uppercase word.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the title of the init tour page dedicated to the speed. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_ChangePassword" translate="yes" space="preserve">
-          <source>Change Password</source>
-          <target state="translated">שנה סיסמה</target>
+          <source>Change password</source>
+          <target state="needs-review-translation">שנה סיסמה</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Change password' button, menu, link, text, title, etc. - (String as short as possible).</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/Advanced" translate="yes" space="preserve">
           <source>Advanced</source>

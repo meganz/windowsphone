@@ -103,7 +103,7 @@
         </trans-unit>
         <trans-unit id="Resx/Move" translate="yes" space="preserve">
           <source>Move</source>
-          <target state="translated">Mută</target>
+          <target state="translated">Mutare</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Move' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/MultipleFiles" translate="yes" space="preserve">
@@ -242,7 +242,7 @@
           <note from="MultilingualBuild" annotates="source" priority="2">Text placed into the 'acknowledgements' page introducing the list of acknowledgements.</note>
         </trans-unit>
         <trans-unit id="Resx/RubbishBinName" translate="yes" space="preserve">
-          <source>Rubbish bin</source>
+          <source>Rubbish Bin</source>
           <target state="translated">Coș de gunoi</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Rubbish bin' button, link, text, etc. - (String as short as possible).</note>
         </trans-unit>
@@ -526,7 +526,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/SortByMenuTitle" translate="yes" space="preserve">
           <source>Sort by</source>
-          <target state="translated">SORTEAZĂ DUPĂ</target>
+          <target state="translated">Sortează după</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label used like title for the sort menu.</note>
         </trans-unit>
         <trans-unit id="Resx/StartResumeAll" translate="yes" space="preserve">
@@ -596,7 +596,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/Pause" translate="yes" space="preserve">
           <source>Pause</source>
-          <target state="translated">Pauză</target>
+          <target state="translated">Pune pe pauză</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Pause' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Resume" translate="yes" space="preserve">
@@ -680,7 +680,7 @@ Preserve the PIN uppercase word.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the title of the init tour page dedicated to the speed. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_ChangePassword" translate="yes" space="preserve">
-          <source>Change Password</source>
+          <source>Change password</source>
           <target state="translated">Schimbă parola</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Change password' button, menu, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
@@ -766,7 +766,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/Dismiss" translate="yes" space="preserve">
           <source>Dismiss</source>
-          <target state="translated">Îndepărtează</target>
+          <target state="translated">Înlătură</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Dismiss' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Send" translate="yes" space="preserve">
@@ -791,7 +791,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/City" translate="yes" space="preserve">
           <source>City</source>
-          <target state="translated">Orașul</target>
+          <target state="translated">Oraș</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'City' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Country" translate="yes" space="preserve">
@@ -831,7 +831,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_FromBasePrice" translate="yes" space="preserve">
           <source>From {0:N} {1}/month</source>
-          <target state="translated">De la From {0:N}{1}/lună</target>
+          <target state="translated">De la {0:N}{1}/lună</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for indicate the base price of a product or plan, for example "From 9,99 €/month" - (String as short as possible).
 Keep the code {0:N} because is for include price of the product in runtime.
 Keep the code {1} because is for include currency in runtime.</note>
@@ -894,7 +894,7 @@ Preserve the {0} code because is for include the name/type of the selected plan 
         </trans-unit>
         <trans-unit id="Resx/State" translate="yes" space="preserve">
           <source>State</source>
-          <target state="translated">Stare</target>
+          <target state="translated">Stat</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'State' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/StorageShort" translate="yes" space="preserve">
@@ -1635,9 +1635,9 @@ NOTE: Max. length 20 characters.</note>
           <target state="translated">Reia sesiunea</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Resume session' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_UseSpecificPort" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_UseSpecificPort" translate="yes" space="preserve">
           <source>Use port {0}</source>
-          <target state="new">Use port {0}</target>
+          <target state="translated">Use port {0}</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the checkbox of the dialog displayed to confirm change to staging server using a specific port.
 Keep the {0} code because is for include the port number in runtime.</note>
         </trans-unit>

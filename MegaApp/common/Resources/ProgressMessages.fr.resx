@@ -143,7 +143,7 @@ Preserve the '{0}' code because is for include node name.</comment>
     <comment>Progress indicator message when resuming a session - (String as short as possible).</comment>
   </data>
   <data name="GetAccountDetails" xml:space="preserve">
-    <value>Récupération des informations du compte…</value>
+    <value>Récupération des renseignements du compte…</value>
     <comment>Progress indicator message when getting account details - (String as short as possible).</comment>
   </data>
   <data name="GetContactData" xml:space="preserve">
@@ -319,7 +319,7 @@ Preserve the '{0}' code because is for include node name.</comment>
     <comment>Progress indicator message when the SDK is waiting for the server to complete a request due to a rate limit (API error -4) - (String as short as possible).</comment>
   </data>
   <data name="PM_ConnectivityIssue" xml:space="preserve">
-    <value>Impossible d’atteindre MEGA. Veuillez vérifier votre connectivité ou ressayer plus tard.</value>
+    <value>Impossible d’atteindre MEGA. Veuillez vérifier votre connectivité ou ressayer ultérieurement.</value>
     <comment>Progress indicator message when the SDK is waiting for the server to complete a request due to connectivity issue - (String as short as possible).</comment>
   </data>
   <data name="PM_ServersBusy" xml:space="preserve">

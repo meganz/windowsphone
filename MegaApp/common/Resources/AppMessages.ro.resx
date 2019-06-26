@@ -213,7 +213,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to get a link to a node failed - (String as short as possible).</comment>
   </data>
   <data name="GetPreviewFailed" xml:space="preserve">
-    <value>Eșec la obținerea previzualizării</value>
+    <value>Eșec la preluarea previzualizării</value>
     <comment>Message of the dialog displayed when the process/request to get a image preview failed.</comment>
   </data>
   <data name="GetPreviewFailed_Title" xml:space="preserve">
@@ -692,7 +692,7 @@ Preserve the {0} code because is for include name of the node to be removed in r
     <comment>Title of the dialog displayed when a user want to delete permanently a node, asking for confirmation to make it - (String as short as possible).</comment>
   </data>
   <data name="GetUserDataFailed" xml:space="preserve">
-    <value>Eșec la obținerea datelor utilizatorului. Te rugăm să încerci din nou. [{0}]</value>
+    <value>Eșec la preluarea datelor utilizatorului. Te rugăm să încerci din nou. [{0}]</value>
     <comment>Message of the dialog displayed when the process/request to get the user data failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
@@ -805,7 +805,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to upgrade an user account finished successfully - (String as short as possible).</comment>
   </data>
   <data name="GetPaymentMethodsFailed" xml:space="preserve">
-    <value>Eșec la obținerea de metode de plată disponibile. Te rugăm să încerci din nou. [{0}]</value>
+    <value>Eșec la preluarea metodelor de plată disponibile. Te rugăm să încerci din nou. [{0}]</value>
     <comment>Message of the dialog displayed when the process/request to get the payment methods failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
@@ -814,7 +814,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to get the payment methods failed - (String as short as possible).</comment>
   </data>
   <data name="GetPaymentUrlFailed" xml:space="preserve">
-    <value>Eșec la obținerea URL-ului de plată. Te rugăm să încerci din nou. [{0}]</value>
+    <value>Eșec la preluarea URL-ului de plată. Te rugăm să încerci din nou. [{0}]</value>
     <comment>Message of the dialog displayed when the process/request to get the payment Url failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
@@ -1415,7 +1415,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
   </data>
   <data name="AM_SSLKeyError_Title" xml:space="preserve">
-    <value>Eroare privind certificatul SSL</value>
+    <value>Eroare privind cheia SSL</value>
     <comment>Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
   </data>
   <data name="AM_PasswordReminder" xml:space="preserve">
@@ -1559,5 +1559,13 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
   <data name="AM_StorageOverquotaAlert_Title" xml:space="preserve">
     <value>Cota de stocare depășită</value>
     <comment>Title of the dialog displayed when a user exceeds the storage space limits of the account - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ChangeToStagingServer" xml:space="preserve">
+    <value>Sigur vrei să schimbi pe un server de test? Contul tău poate suferi probleme irecuperabile</value>
+    <comment>Message of the alert dialog when the user is changing the API URL to staging.</comment>
+  </data>
+  <data name="AM_ChangeToStagingServer_Title" xml:space="preserve">
+    <value>Schimbi pe un server de test?</value>
+    <comment>Title of the alert dialog when the user is changing the API URL to staging.</comment>
   </data>
 </root>

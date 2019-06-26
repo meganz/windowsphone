@@ -22,7 +22,7 @@
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when changing the MEGA account password - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CleanRubbishBin" translate="yes" space="preserve">
-          <source>Clearing the rubbish bin…</source>
+          <source>Clearing the Rubbish Bin…</source>
           <target state="translated">Vidage de la corbeille…</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when emptying the rubbish bin - (String as short as possible).</note>
         </trans-unit>
@@ -79,7 +79,7 @@ Preserve the '{0}' code because is for include node name.</note>
         </trans-unit>
         <trans-unit id="Resx/GetAccountDetails" translate="yes" space="preserve">
           <source>Getting account details…</source>
-          <target state="translated">Récupération des informations du compte…</target>
+          <target state="translated">Récupération des renseignements du compte…</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when getting account details - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/GetContactData" translate="yes" space="preserve">
@@ -153,7 +153,7 @@ Preserve the '{0}' code because is for include node name.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when moving a node to a different parent - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/NodeToTrash" translate="yes" space="preserve">
-          <source>Moving to Rubbish bin…</source>
+          <source>Moving to Rubbish Bin…</source>
           <target state="translated">Déplacement vers la corbeille…</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when moving a node to the rubbish bin (trash) - (String as short as possible).</note>
         </trans-unit>
@@ -264,7 +264,7 @@ Preserve the '{0}' code because is for include node name.</note>
         </trans-unit>
         <trans-unit id="Resx/PM_ConnectivityIssue" translate="yes" space="preserve">
           <source>Unable to reach MEGA. Please check your connectivity or try again later.</source>
-          <target state="translated">Impossible d’atteindre MEGA. Veuillez vérifier votre connectivité ou ressayer plus tard.</target>
+          <target state="translated">Impossible d’atteindre MEGA. Veuillez vérifier votre connectivité ou ressayer ultérieurement.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when the SDK is waiting for the server to complete a request due to connectivity issue - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PM_ServersBusy" translate="yes" space="preserve">

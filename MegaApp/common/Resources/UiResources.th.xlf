@@ -28,7 +28,7 @@
         </trans-unit>
         <trans-unit id="Resx/CloudDriveName" translate="yes" space="preserve">
           <source>Cloud Drive</source>
-          <target state="translated">คลาวด์ไดร์ฟ</target>
+          <target state="translated">คลาวด์ไดรฟ์</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Cloud Drive' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Confirm" translate="yes" space="preserve">
@@ -68,7 +68,7 @@
         </trans-unit>
         <trans-unit id="Resx/EmptyFolder" translate="yes" space="preserve">
           <source>Empty Folder</source>
-          <target state="translated">โฟล์เดอร์ว่าง</target>
+          <target state="translated">โฟลเดอร์ว่างเปล่า</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty forder page - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/EmptyTransfers" translate="yes" space="preserve">
@@ -242,7 +242,7 @@
           <note from="MultilingualBuild" annotates="source" priority="2">Text placed into the 'acknowledgements' page introducing the list of acknowledgements.</note>
         </trans-unit>
         <trans-unit id="Resx/RubbishBinName" translate="yes" space="preserve">
-          <source>Rubbish bin</source>
+          <source>Rubbish Bin</source>
           <target state="translated">ถังขยะ</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Rubbish bin' button, link, text, etc. - (String as short as possible).</note>
         </trans-unit>
@@ -335,7 +335,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/Storage" translate="yes" space="preserve">
           <source>Storage</source>
-          <target state="translated">พื้นที่จัดเก็บข้อมูล</target>
+          <target state="translated">ที่เก็บข้อมูล</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Storage' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Accept" translate="yes" space="preserve">
@@ -680,7 +680,7 @@ Preserve the PIN uppercase word.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the title of the init tour page dedicated to the speed. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_ChangePassword" translate="yes" space="preserve">
-          <source>Change Password</source>
+          <source>Change password</source>
           <target state="translated">เปลี่ยนรหัสผ่าน</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Change password' button, menu, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
@@ -791,7 +791,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/City" translate="yes" space="preserve">
           <source>City</source>
-          <target state="translated">นคร</target>
+          <target state="translated">เมือง/อำเภอ</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'City' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Country" translate="yes" space="preserve">
@@ -899,7 +899,7 @@ Preserve the {0} code because is for include the name/type of the selected plan 
         </trans-unit>
         <trans-unit id="Resx/StorageShort" translate="yes" space="preserve">
           <source>Storage</source>
-          <target state="translated">พื้นที่จัดเก็บข้อมูล</target>
+          <target state="translated">ที่เก็บข้อมูล</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label abreviated for any 'Storage' button, link, text, title, etc. - (String as short as possible - MAX 10 characteres).</note>
         </trans-unit>
         <trans-unit id="Resx/Year" translate="yes" space="preserve">
@@ -1231,7 +1231,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/EmptyCloudDrive" translate="yes" space="preserve">
           <source>No files in your Cloud Drive</source>
-          <target state="translated">ไม่มีไฟล์ใดๆ</target>
+          <target state="translated">ไม่มีไฟล์ในคลาวด์ไดรฟ์ของคุณ</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty cloud drive page - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/EmptyOffline" translate="yes" space="preserve">
@@ -1635,9 +1635,9 @@ NOTE: Max. length 20 characters.</note>
           <target state="translated">กลับมาทำงานต่อ</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Resume session' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_UseSpecificPort" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_UseSpecificPort" translate="yes" space="preserve">
           <source>Use port {0}</source>
-          <target state="new">Use port {0}</target>
+          <target state="translated">Use port {0}</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the checkbox of the dialog displayed to confirm change to staging server using a specific port.
 Keep the {0} code because is for include the port number in runtime.</note>
         </trans-unit>

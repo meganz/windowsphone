@@ -242,7 +242,7 @@
           <note from="MultilingualBuild" annotates="source" priority="2">Text placed into the 'acknowledgements' page introducing the list of acknowledgements.</note>
         </trans-unit>
         <trans-unit id="Resx/RubbishBinName" translate="yes" space="preserve">
-          <source>Rubbish bin</source>
+          <source>Rubbish Bin</source>
           <target state="translated">Papierkorb</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Rubbish bin' button, link, text, etc. - (String as short as possible).</note>
         </trans-unit>
@@ -680,8 +680,8 @@ Preserve the PIN uppercase word.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the title of the init tour page dedicated to the speed. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_ChangePassword" translate="yes" space="preserve">
-          <source>Change Password</source>
-          <target state="translated">Passwort Ändern</target>
+          <source>Change password</source>
+          <target state="translated">Passwort ändern</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Change password' button, menu, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Advanced" translate="yes" space="preserve">
@@ -716,7 +716,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_ClearRubbishBin" translate="yes" space="preserve">
           <source>Clear Rubbish Bin</source>
-          <target state="translated">Clear Rubbish Bin</target>
+          <target state="translated">Papierkorb leeren</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for a 'Clear Rubbish Bin' button to clear the rubbish bin content - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Ok" translate="yes" space="preserve">
@@ -1012,7 +1012,7 @@ Preserve the {0} code because is for include the name of the destination folder 
         </trans-unit>
         <trans-unit id="Resx/Search" translate="yes" space="preserve">
           <source>Search</source>
-          <target state="translated">Suche</target>
+          <target state="translated">Suchen</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Search' button, link, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Select" translate="yes" space="preserve">
@@ -1087,7 +1087,7 @@ Preserve the {0} code because is for include the name of the destination folder 
         </trans-unit>
         <trans-unit id="Resx/Pending" translate="yes" space="preserve">
           <source>Pending</source>
-          <target state="translated">In Warteschlage</target>
+          <target state="translated">Unbestätigt</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Pending' button, link, text, label, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Reminded" translate="yes" space="preserve">
@@ -1431,7 +1431,7 @@ NOTE: Keep the capital letter if possible.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateUploaded" translate="yes" space="preserve">
           <source>Uploaded</source>
-          <target state="translated">Erstellt</target>
+          <target state="translated">Hochgeladen am</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of an upload transfer when is finished - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateUploading" translate="yes" space="preserve">
@@ -1451,7 +1451,7 @@ NOTE: Keep the capital letter if possible.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_Completed" translate="yes" space="preserve">
           <source>Completed</source>
-          <target state="translated">Beendet</target>
+          <target state="translated">Abgeschlossen</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Completed' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_NoCompletedTransfers" translate="yes" space="preserve">
@@ -1476,7 +1476,7 @@ NOTE: Keep the capital letter if possible.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_Copyright" translate="yes" space="preserve">
           <source>Copyright</source>
-          <target state="translated">Copyright</target>
+          <target state="translated">Urheberrecht</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Copyright' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_LearnMore" translate="yes" space="preserve">
@@ -1552,7 +1552,7 @@ NOTE: Max. length 20 characters.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_EnableTwoFactorAuth" translate="yes" space="preserve">
           <source>Enable Two-Factor Authentication</source>
-          <target state="translated">Enable Two-Factor Authentication</target>
+          <target state="translated">Zwei-Faktor-Authentifizierung freischalten</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the "toggle" or "switch" button to enable/disable the Two-Factor Authentication.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TwoFactorAuth" translate="yes" space="preserve">
@@ -1635,9 +1635,9 @@ NOTE: Max. length 20 characters.</note>
           <target state="translated">Resume session</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Resume session' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_UseSpecificPort" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_UseSpecificPort" translate="yes" space="preserve">
           <source>Use port {0}</source>
-          <target state="new">Use port {0}</target>
+          <target state="translated">Use port {0}</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the checkbox of the dialog displayed to confirm change to staging server using a specific port.
 Keep the {0} code because is for include the port number in runtime.</note>
         </trans-unit>

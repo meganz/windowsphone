@@ -126,7 +126,7 @@
     <comment>Label for any 'Add folder' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="Cancel" xml:space="preserve">
-    <value>Hủy bỏ</value>
+    <value>Hủy</value>
     <comment>Label for any 'Cancel' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="CloudDriveName" xml:space="preserve">
@@ -294,7 +294,7 @@
     <comment>Label for 'File upload' option of the dialog shown to upload nodes - (String as short as possible).</comment>
   </data>
   <data name="Import" xml:space="preserve">
-    <value>Lấy nội dung</value>
+    <value>Chuyển nhập</value>
     <comment>Label for any 'Import' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="LinkOptions" xml:space="preserve">
@@ -590,7 +590,7 @@
     <comment>Label for any 'Camera Uploads' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Contacts" xml:space="preserve">
-    <value>Danh bạ</value>
+    <value>Danh Bạ</value>
     <comment>Label for any 'Contacts' button, link, text, etc. - (String as short as possible).</comment>
   </data>
   <data name="SharedItems" xml:space="preserve">
@@ -857,7 +857,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
     <comment>Label for 'Received requests' text, title, etc. for received contact requests - (String as short as possible).</comment>
   </data>
   <data name="SentRequests" xml:space="preserve">
-    <value>Yêu cầu đã gửi</value>
+    <value>Yêu cầu gửi đi</value>
     <comment>Label for 'Sent requests' text, title, etc. for sent contact requests - (String as short as possible).</comment>
   </data>
   <data name="Accepted" xml:space="preserve">
@@ -1037,7 +1037,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Upgrade account' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_ChangePassword" xml:space="preserve">
-    <value>Đổi Mật Khẩu</value>
+    <value>Đổi mật khẩu</value>
     <comment>Label for any 'Change password' button, menu, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_CancelSubscription" xml:space="preserve">
@@ -1115,7 +1115,7 @@ Preserve the {0} code because is for include the name of the destination folder 
 NOTE: Keep the capital letter if possible.</comment>
   </data>
   <data name="UI_AvailableOffline" xml:space="preserve">
-    <value>Lưu Về Ngoại Tuyến</value>
+    <value>Lưu Ngoại Tuyến</value>
     <comment>Label for any 'Available Offline' button, link, text, title, etc. - (String as short as possible).
 NOTE: Keep the capital letter if possible.</comment>
   </data>
@@ -1296,7 +1296,7 @@ Preserve the PIN uppercase word.</comment>
     <comment>Label for any 'Learn more' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_TakedownGuidance" xml:space="preserve">
-    <value>Xử Lý Tranh Chấp Bản Quyền</value>
+    <value>Xử Lý Tranh Chấp Quyền Sở Hữu</value>
     <comment>Label for any 'Takedown Guidance' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_OpenBrowser" xml:space="preserve">
@@ -1316,7 +1316,7 @@ Preserve the PIN uppercase word.</comment>
     <comment>Label for a check box included into a dialog to indicate don't show it again.</comment>
   </data>
   <data name="UI_BackupRecoveryKey" xml:space="preserve">
-    <value>Sao lưu Mã Khóa Phục Hồi</value>
+    <value>Sao lưu Mã Phục Hồi</value>
     <comment>Label for any 'Backup Recovery Key' button, link, text, title, etc. - (String as short as possible).
 NOTE: Max. length 20 characters.</comment>
   </data>
@@ -1349,11 +1349,11 @@ NOTE: Max. length 20 characters.</comment>
     <comment>Label to describe the "Session Management" option of the "Settings" section.</comment>
   </data>
   <data name="UI_Warning" xml:space="preserve">
-    <value>Cảnh báo</value>
+    <value>Chú Ý</value>
     <comment>Label for any 'Warning' title, message, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_EnableTwoFactorAuth" xml:space="preserve">
-    <value>Bật Lập Xác Minh 2-Bước</value>
+    <value>Bật Xác Minh 2-Bước</value>
     <comment>Label for the "toggle" or "switch" button to enable/disable the Two-Factor Authentication.</comment>
   </data>
   <data name="UI_TwoFactorAuth" xml:space="preserve">
@@ -1381,7 +1381,7 @@ NOTE: Max. length 20 characters.</comment>
     <comment>Label of the button to copy the seed to enable the Multi-Factor Authentication - (String as short as possible).</comment>
   </data>
   <data name="UI_LostAuthDeviceQuestion" xml:space="preserve">
-    <value>Thiết bị có cài app Lập Xác Thực đã bị mất?</value>
+    <value>Thiết bị có cài app Lập Xác Minh đã bị mất?</value>
     <comment>Label for any link/button to help the user in case lost the authentication device for MFA - (String as short as possible).</comment>
   </data>
   <data name="UI_ChangePasswordDescription" xml:space="preserve">
@@ -1405,11 +1405,11 @@ NOTE: Max. length 20 characters.</comment>
     <comment>Label for any 'Open in...' button, link, text, title, etc. to open a file or other kind of resource with a certain app - (String as short as possible).</comment>
   </data>
   <data name="UI_MFA_SetupStep1" xml:space="preserve">
-    <value>Quét hay sao chép đoạn chủng tử nằm dưới đây vào app Lập Xác Thực muốn sử dụng. Cũng nên lưu lại mã này ở nơi an toàn trong trường hợp bị mất máy.</value>
+    <value>Quét hay sao chép đoạn chủng tử nằm dưới đây vào app Lập Xác Minh muốn sử dụng. Cũng nên lưu lại mã này ở nơi an toàn trong trường hợp bị mất máy.</value>
     <comment>Label for the step 1 to setup the Multi-Factor Authentication.</comment>
   </data>
   <data name="UI_MFA_SetupStep2" xml:space="preserve">
-    <value>Sau khi chủng tử được app Lập Xác Thực nhận vào, điền vào đoạn mã dài 6 chữ số hiện ra.</value>
+    <value>Sau khi chủng tử được app Lập Xác Minh nhận vào, điền vào đoạn mã dài 6 chữ số hiện ra.</value>
     <comment>Label for the step 2 to setup the Muti-Factor Authentication.</comment>
   </data>
   <data name="UI_FindApp" xml:space="preserve">
@@ -1423,5 +1423,10 @@ NOTE: Max. length 20 characters.</comment>
   <data name="UI_ResumeSession" xml:space="preserve">
     <value>Tiếp tục phiên</value>
     <comment>Label for any 'Resume session' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_UseSpecificPort" xml:space="preserve">
+    <value>Use port {0}</value>
+    <comment>Label for the checkbox of the dialog displayed to confirm change to staging server using a specific port.
+Keep the {0} code because is for include the port number in runtime.</comment>
   </data>
 </root>

@@ -861,7 +861,7 @@ Preserve the {0} code because is for include email of the contact to be removed 
 Preserve the [{0}] code because is for include the contact email in runtime.</comment>
   </data>
   <data name="InviteContactAddSuccessfully_Title" xml:space="preserve">
-    <value>Liên hệ được mời:</value>
+    <value>Liên lạc được mời</value>
     <comment>Title of the dialog displayed when the process/request to invite a contact finished successfully - (String as short as possible).</comment>
   </data>
   <data name="ResourceIntensiveTaskDescription" xml:space="preserve">
@@ -1257,7 +1257,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Message of the dialog displayed when fails the process/request to import a folder link.</comment>
   </data>
   <data name="AM_EmailAlreadyRegistered" xml:space="preserve">
-    <value>Email này đã được đăng ký.</value>
+    <value>Địa chỉ email này đã đăng ký từ trước với MEGA.</value>
     <comment>Message of the dialog shown when the users tries to create an account with an email already in use.</comment>
   </data>
   <data name="AM_IncompleteConfirmationLink" xml:space="preserve">
@@ -1415,7 +1415,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
   </data>
   <data name="AM_SSLKeyError_Title" xml:space="preserve">
-    <value>Chứng từ SSL bị lỗi</value>
+    <value>SSL key bị lỗi</value>
     <comment>Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
   </data>
   <data name="AM_PasswordReminder" xml:space="preserve">
@@ -1467,7 +1467,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Description text of the dialog displayed to start setup the Two-Factor Authentication</comment>
   </data>
   <data name="AM_2FA_SetupDialogTitle" xml:space="preserve">
-    <value>Tại sao cần sử dụng xác thực 2-bước?</value>
+    <value>Tại sao cần sử dụng xác minh 2-bước?</value>
     <comment>Title of the dialog displayed to start setup the Two-Factor Authentication</comment>
   </data>
   <data name="AM_InvalidCode" xml:space="preserve">
@@ -1475,7 +1475,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message displayed when the user is trying to insert and invalid code, for example the 6-digit code of the Multi-Factor Authentication.</comment>
   </data>
   <data name="AM_2FA_EnabledDialogDescription" xml:space="preserve">
-    <value>Vào những lần đăng nhập tiếp theo, hệ thống sẽ yêu cầu nhập một đoạn mã dài 6 chữ số lấy từ App Lập Xác Thực.</value>
+    <value>Vào những lần đăng nhập tiếp theo, hệ thống sẽ yêu cầu nhập một đoạn mã dài 6 chữ số lấy từ App Lập Xác Minh.</value>
     <comment>Description text of the dialog displayed to indicate that the user has successfully enabled the Two-Factor Authentication.</comment>
   </data>
   <data name="AM_2FA_EnabledDialogTitle" xml:space="preserve">
@@ -1499,7 +1499,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the seed needed to enable the Multi-Factor Authentication has been copied successfully to the clipboard.</comment>
   </data>
   <data name="AM_2FA_InputAppCodeDialogMessage" xml:space="preserve">
-    <value>Xin nhập một đoạn mã dài 6 chữ số lấy từ App Lập Xác Thực.</value>
+    <value>Xin nhập một đoạn mã dài 6 chữ số lấy từ App Lập Xác Minh.</value>
     <comment>Description text of the dialog displayed to introduce the 6-digit code for the MFA.</comment>
   </data>
   <data name="AM_2FA_DisableDialogTitle" xml:space="preserve">
@@ -1529,7 +1529,7 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
     <comment>Message of the dialog displayed when the process/request to restore multiple nodes from the rubbish bin failed.</comment>
   </data>
   <data name="AM_MFA_CheckStatusFailed" xml:space="preserve">
-    <value>Không kiểm tra được tình trạng của chức năng xác minh 2-bước.</value>
+    <value>Không kiểm tra được tình trạng của chức năng xác thực 2-bước.</value>
     <comment>Message of the dialog displayed if fails the process to check the Multi-Factor Authentication status.</comment>
   </data>
   <data name="AM_FileAlreadyExists" xml:space="preserve">
@@ -1559,5 +1559,13 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
   <data name="AM_StorageOverquotaAlert_Title" xml:space="preserve">
     <value>Cảnh báo vượt mức</value>
     <comment>Title of the dialog displayed when a user exceeds the storage space limits of the account - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ChangeToStagingServer" xml:space="preserve">
+    <value>Bạn có chắc muốn chuyển sang máy chủ thử nghiệm? Tài khoản có thể sẽ gặp các vấn đề không thể phục hồi</value>
+    <comment>Message of the alert dialog when the user is changing the API URL to staging.</comment>
+  </data>
+  <data name="AM_ChangeToStagingServer_Title" xml:space="preserve">
+    <value>Đổi sang máy chủ thử nghiệm?</value>
+    <comment>Title of the alert dialog when the user is changing the API URL to staging.</comment>
   </data>
 </root>

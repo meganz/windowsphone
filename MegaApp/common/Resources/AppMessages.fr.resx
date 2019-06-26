@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AgreeTermsOfService" xml:space="preserve">
-    <value>Vous devez accepter nos conditions générales d'utilisation.</value>
+    <value>Vous devez accepter nos conditions générales d’utilisation.</value>
     <comment>Message of the dialog displayed when a user try to create a new MEGA account without accept previously the 'Terms of Service'.</comment>
   </data>
   <data name="ConfirmAccountFailed" xml:space="preserve">
@@ -172,7 +172,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when create a folder successfully - (String as short as possible).</comment>
   </data>
   <data name="DownloadLinkFailed" xml:space="preserve">
-    <value>Échec de récupération d'un lien de téléchargement. Veuillez ressayer.</value>
+    <value>Échec de récupération d’un lien de téléchargement. Veuillez ressayer.</value>
     <comment>Message of the dialog displayed when failed to retrieve a download link.</comment>
   </data>
   <data name="DownloadLinkFailed_Title" xml:space="preserve">
@@ -229,7 +229,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when a image is saved/exported successfully saved to the 'saved pictures' album of the phone device - (String as short as possible).</comment>
   </data>
   <data name="ImageSaveError" xml:space="preserve">
-    <value>Erreur d'exportation de l'image vers l'album « images enregistrées ». Veuillez ressayer.</value>
+    <value>Erreur d’exportation de l’image vers l’album « images enregistrées ». Veuillez ressayer.</value>
     <comment>Message of the dialog displayed when fails the process/request to save/export an image to the 'saved pictures' album of the phone device.</comment>
   </data>
   <data name="ImageSaveError_Title" xml:space="preserve">
@@ -245,7 +245,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the process/request to copy a MEGA link to the clipboard finished successfully.</comment>
   </data>
   <data name="LinkCopiedToClipboard_Title" xml:space="preserve">
-    <value>Copié dans le presse-papiers</value>
+    <value>Copié dans le presse-papier</value>
     <comment>Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard finished successfully - (String as short as possible).</comment>
   </data>
   <data name="LoginFailed" xml:space="preserve">
@@ -258,7 +258,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the login to the MEGA cloud service api fails - (String as short as possible).</comment>
   </data>
   <data name="MoveEqualsParent" xml:space="preserve">
-    <value>Le dossier de destination est le même que le dossier d'origine. Le déplacement a été annulé.</value>
+    <value>Le dossier de destination est le même que le dossier d’origine. Le déplacement a été annulé.</value>
     <comment>Message of the dialog displayed when a user want to move nodes and the destination folder is the same than the source folder.</comment>
   </data>
   <data name="MoveEqualsParent_Title" xml:space="preserve">
@@ -360,7 +360,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to get a image thumbnail failed - (String as short as possible).</comment>
   </data>
   <data name="GetAccountDetailsFailed" xml:space="preserve">
-    <value>Échec de récupération des informations de votre compte. Veuillez ressayer. [{0}]</value>
+    <value>Échec de récupération des renseignements de votre compte. Veuillez ressayer. [{0}]</value>
     <comment>Message of the dialog displayed when the process/request to get the user account details failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
@@ -570,7 +570,7 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
     <comment>Title  of the dialog displayed when a user are trying to create or change a PIN lock code and the introduced codes don't match. Try to preserve the PIN uppercase word - (String as short as possible).</comment>
   </data>
   <data name="SessionIDError" xml:space="preserve">
-    <value>Vous avez été déconnecté de cet appareil à partir d'un autre endroit</value>
+    <value>Vous avez été déconnecté de cet appareil d’un autre endroit</value>
     <comment>Message of the dialog displayed when the user is logged out from another location and is trying to do any operation that requires a valid session (API_ESID Error).</comment>
   </data>
   <data name="NoDownloadLocationSelected" xml:space="preserve">
@@ -728,7 +728,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process to capture video failed - (String as short as possible).</comment>
   </data>
   <data name="SaveSettingsFailed" xml:space="preserve">
-    <value>Échec d'enregistrement des paramètres. Veuillez ressayer [{0}]</value>
+    <value>Échec d’enregistrement des paramètres. Veuillez ressayer [{0}]</value>
     <comment>Message of the dialog displayed when the process to save settings failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
@@ -737,7 +737,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process to save settings failed - (String as short as possible).</comment>
   </data>
   <data name="ShortCutFailed" xml:space="preserve">
-    <value>Une erreur est survenue en tentant d'ouvrir un raccourci. Il est peut-être invalide ou le dossier de destination a été supprimé.</value>
+    <value>Une erreur est survenue en tentant d’ouvrir un raccourci. Il est peut-être invalide ou le dossier de destination a été supprimé.</value>
     <comment>Message of the dialog displayed when the user is trying to open an invalid shortcut.</comment>
   </data>
   <data name="ShortCutFailed_Title" xml:space="preserve">
@@ -745,7 +745,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the user is trying to open an invalid shortcut - (String as short as possible).</comment>
   </data>
   <data name="CreditCardStoreFailed" xml:space="preserve">
-    <value>Les informations liées à la carte de crédit sont incorrectes. La carte de crédit ne sera pas facturée.</value>
+    <value>Les renseignements liés à la carte de crédit sont incorrectes. La carte de crédit ne sera pas facturée.</value>
     <comment>Message of the dialog displayed when the process/request to store a user credit card failed.</comment>
   </data>
   <data name="CreditCardStoreFailed_Title" xml:space="preserve">
@@ -823,7 +823,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to get the payment Url failed - (String as short as possible).</comment>
   </data>
   <data name="BackgroundAgentDisabled" xml:space="preserve">
-    <value>Les agents d'arrière-plan de MEGA ont été désactivés par l'utilisateur</value>
+    <value>Les agents d’arrière-plan de MEGA ont été désactivés par l’utilisateur</value>
     <comment>Message of the dialog displayed in cases when the user has disabled background agents for this application</comment>
   </data>
   <data name="BackgroundAgentDisabled_Title" xml:space="preserve">
@@ -831,11 +831,11 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed in cases when the user has disabled background agents for this application</comment>
   </data>
   <data name="CameraUploadNeedsStayLoggedIn" xml:space="preserve">
-    <value>Afin que les téléversements automatiques de la caméra fonctionnent correctement, vous devez activer l’option « Rester connecté ». Souhaitez-vous activer cette option ?</value>
+    <value>Afin que les téléversements automatiques de l’appareil photo fonctionnent correctement, vous devez activer l’option « Rester connecté ». Souhaitez-vous activer cette option ?</value>
     <comment>Message of the dialog displayed when the user wants to enable auto camera uploads but Stay logged in is disabled.</comment>
   </data>
   <data name="CameraUploadNeedsStayLoggedIn_Title" xml:space="preserve">
-    <value>Prérequis des téléversements automatiques de la caméra</value>
+    <value>Prérequis des téléversements automatiques de l’appareil photo</value>
     <comment>Title of the dialog displayed when the user wants to enable auto camera uploads but Stay logged in is disabled.</comment>
   </data>
   <data name="DeleteContactQuestion" xml:space="preserve">
@@ -865,11 +865,11 @@ Preserve the [{0}] code because is for include the contact email in runtime.</co
     <comment>Title of the dialog displayed when the process/request to invite a contact finished successfully - (String as short as possible).</comment>
   </data>
   <data name="ResourceIntensiveTaskDescription" xml:space="preserve">
-    <value>MEGA Téléversement automatique de la caméra</value>
+    <value>MEGA Téléversements automatiques de l’appareil photo</value>
     <comment>Descripton of the task that automatic uploads photos tot MEGA. Seen in the background services Settings screen</comment>
   </data>
   <data name="AccountUpdate" xml:space="preserve">
-    <value>Votre compte a été mis à jour. Souhaitez-vous vérifier les nouvelles informations de compte ?</value>
+    <value>Votre compte a été mis à jour. Souhaitez-vous vérifier les nouveaux renseignements de compte ?</value>
     <comment>Message of the dialog displayed when the account is updated (upgraded or downgraded).</comment>
   </data>
   <data name="AccountUpdated_Title" xml:space="preserve">
@@ -881,7 +881,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</co
     <comment>Message of the dialog displayed when the auto camera upload service failed.</comment>
   </data>
   <data name="AutoCameraUploadFailed_Title" xml:space="preserve">
-    <value>Échec du téléversement automatique de la caméra</value>
+    <value>Échec du téléversement automatique de l’appareil photo</value>
     <comment>Title of the dialog displayed when the auto camera upload service failed.</comment>
   </data>
   <data name="DeleteContactFailed" xml:space="preserve">
@@ -937,7 +937,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when empty the rubbish bin succesfully.</comment>
   </data>
   <data name="InviteContactAddFailedOwnEmail" xml:space="preserve">
-    <value>Vous tentez d'ajouter votre propre adresse courriel comme contact.</value>
+    <value>Vous essayez d’ajouter votre propre adresse courriel comme contact.</value>
     <comment>Message of the dialog displayed when the process/request to invite a contact failed because the user is trying to his/her own e-mail.</comment>
   </data>
   <data name="RemoveLinkFailed" xml:space="preserve">
@@ -1148,7 +1148,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 Preserve the ({0}) code because is for include the file name in runtime.</comment>
   </data>
   <data name="AM_DisableDebugMode_Title" xml:space="preserve">
-    <value>Désactiver le mode DÉBOGAGE</value>
+    <value>Désactiver le mode de DÉBOGAGE</value>
     <comment>Alert title shown when the DEBUG mode is disabled - (String as short as possible).</comment>
   </data>
   <data name="AM_EnableDebugMode_Message" xml:space="preserve">
@@ -1157,15 +1157,15 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
 Preserve the ({0}) code because is for include the file name in runtime.</comment>
   </data>
   <data name="AM_EnableDebugMode_Title" xml:space="preserve">
-    <value>Activer le mode DÉBOGAGE</value>
+    <value>Activer le mode de DÉBOGAGE</value>
     <comment>Alert title shown when the DEBUG mode is enabled - (String as short as possible).</comment>
   </data>
   <data name="AM_DebugModeEnabled_Message" xml:space="preserve">
-    <value>Le mode débogage est activé. Voulez-vous le désactiver ?</value>
+    <value>Le mode de débogage est activé. Voulez-vous le désactiver ?</value>
     <comment>Message of the alert dialog displayed when the app starts and the DEBUG mode is enable. This alert is to try to avoid that the user forget disable the DEBUG mode and the log file size grows a lot in the offline section.</comment>
   </data>
   <data name="AM_DebugModeEnabled_Title" xml:space="preserve">
-    <value>Mode débogage</value>
+    <value>Mode de débogage</value>
     <comment>Message of the alert dialog displayed when the app starts and the DEBUG mode is enable - (String as short as possible).</comment>
   </data>
   <data name="AM_ShareItemFromMega_Message" xml:space="preserve">
@@ -1189,7 +1189,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Message of the dialog displayed when fails the process/request to import a folder.</comment>
   </data>
   <data name="AM_ShareFromMegaFailed_Message" xml:space="preserve">
-    <value>Échec de partage d'éléments de MEGA. Veuillez ressayer.</value>
+    <value>Échec de partage d’éléments de MEGA. Veuillez ressayer.</value>
     <comment>Message of the dialog displayed when the process to share item(s) from MEGA with other app fails.</comment>
   </data>
   <data name="AM_ShareFromMegaFailed_Title" xml:space="preserve">
@@ -1237,7 +1237,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Title of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</comment>
   </data>
   <data name="AM_AssociatedUserAccountTerminated" xml:space="preserve">
-    <value>Le compte qui a créé ce lien a été annulé en raison du non-respect répété de nos conditions générales d'utilisation.</value>
+    <value>Le compte qui a créé ce lien a été annulé en raison du non-respect répété de nos conditions générales d’utilisation.</value>
     <comment>Error message shown when you open a file/folder link (or other shared resource) and it's no longer available because the the associated user account has been terminated due to multiple violations of our Terms of Service.</comment>
   </data>
   <data name="AM_DownloadFailed_Title" xml:space="preserve">
@@ -1253,7 +1253,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Title of the dialog displayed when fails the process/request to import a node - (String as short as possible).</comment>
   </data>
   <data name="AM_ImportFolderLinkFailed" xml:space="preserve">
-    <value>Impossible d'importer le lien de dossier. Veuillez ressayer.</value>
+    <value>Impossible d’importer le lien de dossier. Veuillez ressayer.</value>
     <comment>Message of the dialog displayed when fails the process/request to import a folder link.</comment>
   </data>
   <data name="AM_EmailAlreadyRegistered" xml:space="preserve">
@@ -1286,7 +1286,7 @@ Preserve the {0} code because is for include the exact time until the user has t
     <comment>Title of the dialog shown when the user is trying to login and the account has been blocked.</comment>
   </data>
   <data name="AM_ShareFromMegaAppBusy_Message" xml:space="preserve">
-    <value>Échec de partage des éléments de MEGA. L'application de destination semble occupée. Veuillez ressayer plus tard.</value>
+    <value>Échec de partage des éléments de MEGA. L’application de destination semble occupée. Veuillez ressayer ultérieurement.</value>
     <comment>Message of the dialog displayed when the process to share item(s) from MEGA with other app fails because the destination app is busy.</comment>
   </data>
   <data name="AM_GetNodeDetailsFailed" xml:space="preserve">
@@ -1327,7 +1327,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when a user wants to cancel all the pending uploads.</comment>
   </data>
   <data name="AM_ViewContactDetailsFailed" xml:space="preserve">
-    <value>Échec de visualisation des coordonnées. Veuillez ressayer plus tard.</value>
+    <value>Échec de visualisation des coordonnées. Veuillez ressayer ultérieurement.</value>
     <comment>Message of the dialog displayed when the process/request to view a contact details failed.</comment>
   </data>
   <data name="AM_ViewContactDetailsFailed_Title" xml:space="preserve">
@@ -1335,7 +1335,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to view a contact details failed - (String as short as possible).</comment>
   </data>
   <data name="AM_ShowUploadOptionsFailed" xml:space="preserve">
-    <value>Échec d'affichage des options de téléversement. Veuillez ressayer plus tard.</value>
+    <value>Échec d’affichage des options de téléversement. Veuillez ressayer ultérieurement.</value>
     <comment>Message of the dialog displayed when the process/request to show the upload options failed.</comment>
   </data>
   <data name="AM_ShowUploadOptionsFailed_Title" xml:space="preserve">
@@ -1343,7 +1343,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to show the upload options failed - (String as short as possible).</comment>
   </data>
   <data name="AM_SaveLogFile" xml:space="preserve">
-    <value>Voulez-vous enregistrer le fichier journal dans un emplacement externe pour l'utiliser plus tard ?</value>
+    <value>Voulez-vous enregistrer le fichier journal dans un emplacement externe pour l’utiliser ultérieurement ?</value>
     <comment>Message of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app.</comment>
   </data>
   <data name="AM_SaveLogFile_Title" xml:space="preserve">
@@ -1415,7 +1415,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
   </data>
   <data name="AM_SSLKeyError_Title" xml:space="preserve">
-    <value>Erreur de certificat SSL</value>
+    <value>Erreur de clé SSL</value>
     <comment>Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
   </data>
   <data name="AM_PasswordReminder" xml:space="preserve">
@@ -1487,7 +1487,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the seed needed to enable the Multi-Factor Authentication has been copied successfully to the clipboard.</comment>
   </data>
   <data name="AM_MFA_SeedCopiedFailed" xml:space="preserve">
-    <value>Échec de copie de la graine dans le presse-papiers ? Veuillez ressayer.</value>
+    <value>Échec de copie de la graine dans le presse-papiers. Veuillez ressayer.</value>
     <comment>Message of the dialog displayed if fails the process to copy the seed needed to enable the Multi-Factor Authentication to the clipboard.</comment>
   </data>
   <data name="AM_MFA_SeedCopiedFailed_Title" xml:space="preserve">
@@ -1541,7 +1541,7 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
     <comment>Message which is shown when a folder name is duplicated during renaming or creation.</comment>
   </data>
   <data name="AM_ResumeSessionFailed" xml:space="preserve">
-    <value>Échec de reprise de votre session. Veuillez fermer l’appli et ressayer plus tard.</value>
+    <value>Échec de reprise de votre session. Veuillez fermer l’appli et ressayer ultérieurement.</value>
     <comment>Message of the dialog displayed when the process to resume a session failed.</comment>
   </data>
   <data name="AM_StorageOverquotaPreAlert" xml:space="preserve">
@@ -1559,5 +1559,13 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
   <data name="AM_StorageOverquotaAlert_Title" xml:space="preserve">
     <value>Le quota de stockage a été dépassé</value>
     <comment>Title of the dialog displayed when a user exceeds the storage space limits of the account - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ChangeToStagingServer" xml:space="preserve">
+    <value>Voulez-vous vraiment changer pour un serveur de test ? Votre compte pourrait subir des problèmes irrécupérables</value>
+    <comment>Message of the alert dialog when the user is changing the API URL to staging.</comment>
+  </data>
+  <data name="AM_ChangeToStagingServer_Title" xml:space="preserve">
+    <value>Changer pour un serveur de test ?</value>
+    <comment>Title of the alert dialog when the user is changing the API URL to staging.</comment>
   </data>
 </root>

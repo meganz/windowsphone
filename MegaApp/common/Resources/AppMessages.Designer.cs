@@ -296,7 +296,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Are you sure you want to change to a test server? Your account may suffer irrecoverable problems..
+        ///   Busca una cadena traducida similar a Are you sure you want to change to a test server? Your account may suffer irrecoverable problems.
         /// </summary>
         public static string AM_ChangeToStagingServer {
             get {
@@ -1076,7 +1076,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Failed to restore ‘{0}’ from rubbish bin. Please try again..
+        ///   Busca una cadena traducida similar a Failed to restore ‘{0}’ from Rubbish Bin. Please try again..
         /// </summary>
         public static string AM_RestoreFromRubbishBinFailed {
             get {
@@ -1085,7 +1085,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Restore from rubbish bin failed.
+        ///   Busca una cadena traducida similar a Restore from Rubbish Bin failed.
         /// </summary>
         public static string AM_RestoreFromRubbishBinFailed_Title {
             get {
@@ -1094,7 +1094,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Failed to restore items from rubbish bin. Please try again..
+        ///   Busca una cadena traducida similar a Failed to restore items from Rubbish Bin. Please try again..
         /// </summary>
         public static string AM_RestoreMultiFromRubbishBinFailed {
             get {
@@ -1238,7 +1238,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a SSL certificate error.
+        ///   Busca una cadena traducida similar a SSL key error.
         /// </summary>
         public static string AM_SSLKeyError_Title {
             get {
@@ -1544,7 +1544,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Failed to clear the rubbish bin. Please try again..
+        ///   Busca una cadena traducida similar a Failed to clear the Rubbish Bin. Please try again..
         /// </summary>
         public static string CleanRubbishBinFailed {
             get {
@@ -1553,7 +1553,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Are you sure you want to permanently delete all files from the rubbish bin?.
+        ///   Busca una cadena traducida similar a Are you sure you want to permanently delete all files from the Rubbish Bin?.
         /// </summary>
         public static string CleanRubbishBinQuestion {
             get {
@@ -1562,7 +1562,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a The rubbish bin has been cleared successfully..
+        ///   Busca una cadena traducida similar a The Rubbish Bin has been cleared successfully..
         /// </summary>
         public static string CleanRubbishBinSuccess {
             get {
@@ -2400,7 +2400,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Failed to move item to rubbish bin. Please try again.
+        ///   Busca una cadena traducida similar a Failed to move item to Rubbish Bin. Please try again.
         /// </summary>
         public static string MoveToRubbishBinFailed {
             get {
@@ -2409,7 +2409,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Move to rubbish bin failed.
+        ///   Busca una cadena traducida similar a Move to Rubbish Bin failed.
         /// </summary>
         public static string MoveToRubbishBinFailed_Title {
             get {
@@ -2418,7 +2418,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Are you sure you want to move {0} to the rubbish bin?.
+        ///   Busca una cadena traducida similar a Are you sure you want to move {0} to the Rubbish Bin?.
         /// </summary>
         public static string MoveToRubbishBinQuestion {
             get {
@@ -2427,7 +2427,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Move to rubbish bin?.
+        ///   Busca una cadena traducida similar a Move to Rubbish Bin?.
         /// </summary>
         public static string MoveToRubbishBinQuestion_Title {
             get {
@@ -2436,7 +2436,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Item successfully moved to the rubbish bin.
+        ///   Busca una cadena traducida similar a Item successfully moved to the Rubbish Bin.
         /// </summary>
         public static string MoveToRubbishBinSuccess {
             get {
@@ -2454,7 +2454,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Are you sure you want to move {0} items to the rubbish bin?.
+        ///   Busca una cadena traducida similar a Are you sure you want to move {0} items to the Rubbish Bin?.
         /// </summary>
         public static string MultiMoveToRubbishBinQuestion {
             get {
@@ -2472,7 +2472,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a {0} items moved to the rubbish bin.
+        ///   Busca una cadena traducida similar a {0} items moved to the Rubbish Bin.
         /// </summary>
         public static string MultiMoveToRubbishBinSucces {
             get {
