@@ -162,7 +162,7 @@
     <comment>Label for any 'Uploads' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UsedSpace" xml:space="preserve">
-    <value>Espacio Usado</value>
+    <value>Espacio utilizado</value>
     <comment>Text placed just before the amount used space into the 'my account' page - (String as short as possible).</comment>
   </data>
   <data name="Used" xml:space="preserve">
@@ -270,7 +270,7 @@
     <comment>Label for any 'Clean cache' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Monthly" xml:space="preserve">
-    <value>Mensual</value>
+    <value>Mensualmente</value>
     <comment>Label for any 'Monthly' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="NewestSortOption" xml:space="preserve">
@@ -566,7 +566,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Search' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="AddContact" xml:space="preserve">
-    <value>Añadir contacto</value>
+    <value>Añadir Contacto</value>
     <comment>Label for any 'Add contact' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="CreateContact" xml:space="preserve">
@@ -737,7 +737,7 @@ Preserve the {0} code because is for include the name/type of the selected plan 
     <comment>Label for any 'Dismiss' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Back" xml:space="preserve">
-    <value>Volver</value>
+    <value>Atrás</value>
     <comment>Label for any 'Back' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Security" xml:space="preserve">
@@ -925,7 +925,7 @@ Preserve the {0} code because is for include the name/type of the selected plan 
     <comment>Text placed into the 'login' page just after a checkbox to select the option to stay logged into the app.</comment>
   </data>
   <data name="Refresh" xml:space="preserve">
-    <value>Actualizar</value>
+    <value>recargar</value>
     <comment>Label for any 'Refresh' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Previous" xml:space="preserve">
@@ -1021,7 +1021,7 @@ Preserve the {0} code because is for include the name/type of the selected plan 
     <comment>Label for any 'Get link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_Login" xml:space="preserve">
-    <value>Iniciar Sesión</value>
+    <value>Iniciar sesión</value>
     <comment>Label for any 'Login' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_Logout" xml:space="preserve">
@@ -1288,7 +1288,7 @@ Preserve the PIN uppercase word.</comment>
     <comment>Label for the title of the "Legal and Policies" section which include links to the Terms of Service, Privacy Policy, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_Copyright" xml:space="preserve">
-    <value>Derechos de autor</value>
+    <value>Copyright</value>
     <comment>Label for any 'Copyright' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_LearnMore" xml:space="preserve">
@@ -1316,7 +1316,7 @@ Preserve the PIN uppercase word.</comment>
     <comment>Label for a check box included into a dialog to indicate don't show it again.</comment>
   </data>
   <data name="UI_BackupRecoveryKey" xml:space="preserve">
-    <value>Guarda tu Clave de recuperación</value>
+    <value>Guardar Clave de recuperación</value>
     <comment>Label for any 'Backup Recovery Key' button, link, text, title, etc. - (String as short as possible).
 NOTE: Max. length 20 characters.</comment>
   </data>
@@ -1423,5 +1423,10 @@ NOTE: Max. length 20 characters.</comment>
   <data name="UI_ResumeSession" xml:space="preserve">
     <value>Reanudar sesión</value>
     <comment>Label for any 'Resume session' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_UseSpecificPort" xml:space="preserve">
+    <value>Use port {0}</value>
+    <comment>Label for the checkbox of the dialog displayed to confirm change to staging server using a specific port.
+Keep the {0} code because is for include the port number in runtime.</comment>
   </data>
 </root>

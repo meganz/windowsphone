@@ -412,7 +412,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Type e-mail address:.
+        ///   Busca una cadena traducida similar a Type email address:.
         /// </summary>
         public static string CreateContact {
             get {
@@ -1978,7 +1978,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Change password.
+        ///   Busca una cadena traducida similar a Change Password.
         /// </summary>
         public static string UI_ChangePassword {
             get {
@@ -2374,7 +2374,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Scan or copy the seed to your Authenticator App. Be sure to backup this seed to a safe place in case you lose your phone..
+        ///   Busca una cadena traducida similar a Scan or copy the seed to your Authenticator App. Be sure to backup this seed to a safe place in case you lose your device..
         /// </summary>
         public static string UI_MFA_SetupStep1 {
             get {
@@ -2775,6 +2775,15 @@ namespace MegaApp.Resources {
         public static string UI_UsedCache {
             get {
                 return ResourceManager.GetString("UI_UsedCache", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Use port {0}.
+        /// </summary>
+        public static string UI_UseSpecificPort {
+            get {
+                return ResourceManager.GetString("UI_UseSpecificPort", resourceCulture);
             }
         }
         

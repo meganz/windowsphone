@@ -5,6 +5,7 @@ using Microsoft.Phone.Info;
 using Windows.Storage;
 using mega;
 using MegaApp.Classes;
+using MegaApp.Dialogs;
 using MegaApp.Enums;
 using MegaApp.MegaApi;
 using MegaApp.Resources;
@@ -112,6 +113,11 @@ namespace MegaApp.Services
                 MegaSdk.changeApiUrl(AppResources.AR_StagingUrl);
                 MegaSdkFolderLinks.changeApiUrl(AppResources.AR_StagingUrl);
             }
+            else if (SettingsService.LoadSetting<bool>(SettingsResources.UseStagingServerPort444, false))
+            {
+                MegaSdk.changeApiUrl(AppResources.AR_StagingUrlPort444, true);
+                MegaSdkFolderLinks.changeApiUrl(AppResources.AR_StagingUrlPort444, true);
+            }
         }
 
         /// <summary>
@@ -127,10 +133,39 @@ namespace MegaApp.Services
                 ApplicationData.Current.LocalFolder.Path,
                 new MegaRandomNumberProvider());
 
+            // Use custom DNS servers in the new SDK instance
+            SetDnsServers(newMegaSDK, false);
+
             // Enable retrying when public key pinning fails
             newMegaSDK.retrySSLerrors(true);
 
             return newMegaSDK;
+        }
+
+        /// <summary>
+        /// Use custom DNS servers in the selected SDK instance.
+        /// </summary>
+        /// <param name="megaSdk">SDK instance to set the custom DNS servers.</param>
+        /// <param name="refresh">Indicates if should refresh the previously stored addresses.</param>
+        private static void SetDnsServers(MegaSDK megaSdk, bool refresh = true)
+        {
+            var dnsServers = NetworkService.GetMegaDnsServers(refresh);
+            if (!string.IsNullOrWhiteSpace(dnsServers))
+                megaSdk.setDnsServers(dnsServers);
+        }
+
+        /// <summary>
+        /// Use custom DNS servers in all the SDK instances.
+        /// </summary>
+        /// <param name="refresh">Indicates if should refresh the previously stored addresses.</param>
+        public static void SetDnsServers(bool refresh = true)
+        {
+            var dnsServers = NetworkService.GetMegaDnsServers(refresh);
+            if (!string.IsNullOrWhiteSpace(dnsServers))
+            {
+                SdkService.MegaSdk.setDnsServers(dnsServers);
+                SdkService.MegaSdkFolderLinks.setDnsServers(dnsServers);
+            }
         }
 
         /// <summary>
@@ -188,27 +223,21 @@ namespace MegaApp.Services
         {
             StopChangeApiUrlTimer();
 
-            var useStagingServer = SettingsService.LoadSetting<bool>(SettingsResources.UseStagingServer, false);
-            if (!useStagingServer)
+            var usingStagingServer = SettingsService.LoadSetting<bool>(SettingsResources.UseStagingServer, false) ||
+                SettingsService.LoadSetting<bool>(SettingsResources.UseStagingServerPort444, false);
+
+            if (!usingStagingServer)
             {
-                var confirmDialog = new CustomMessageDialog("Change to a testing server?",
-                    "Are you sure you want to change to a testing server? Your account may run irrecoverable problems.",
-                    App.AppInformation, MessageDialogButtons.OkCancel);
-
-                var result = await confirmDialog.ShowDialogAsync();
-                confirmDialog.CloseDialog();
-                if (result != MessageDialogResult.OkYes) return;
+                var result = await DialogService.ShowChangeToStagingServerDialog();
+                if (!result) return;
             }
-
-            useStagingServer = !useStagingServer;
-
-            var newApiUrl = useStagingServer ?
-                AppResources.AR_StagingUrl : AppResources.AR_ApiUrl;
-
-            MegaSdk.changeApiUrl(newApiUrl);
-            MegaSdkFolderLinks.changeApiUrl(newApiUrl);
-
-            SettingsService.SaveSetting<bool>(SettingsResources.UseStagingServer, useStagingServer);
+            else
+            {
+                SettingsService.SaveSetting<bool>(SettingsResources.UseStagingServer, false);
+                SettingsService.SaveSetting<bool>(SettingsResources.UseStagingServerPort444, false);
+                MegaSdk.changeApiUrl(AppResources.AR_ApiUrl);
+                MegaSdkFolderLinks.changeApiUrl(AppResources.AR_ApiUrl);
+            }
 
             // If the user is logged in, do a new login with the current session
             if (Convert.ToBoolean(MegaSdk.isLoggedIn()))
@@ -255,6 +284,7 @@ namespace MegaApp.Services
                     MediaService.SetAutoCameraUpload(true));
             }
 
+            LogService.Log(MLogLevel.LOG_LEVEL_INFO, "API URL changed");
             new CustomMessageDialog(null, "API URL changed",
                 App.AppInformation, MessageDialogButtons.Ok).ShowDialog();
 

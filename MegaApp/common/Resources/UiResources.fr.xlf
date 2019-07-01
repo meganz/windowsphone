@@ -18,7 +18,7 @@
         </trans-unit>
         <trans-unit id="Resx/UI_AgreeTermsOfService" translate="yes" space="preserve">
           <source>I agree with the Terms of Service</source>
-          <target state="translated">J’accepte les conditions générales d'utilisation</target>
+          <target state="translated">J’accepte les conditions générales d’utilisation</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text placed just after a checkbox to indicate that user is agree with the 'Terms of Service' into the 'create account' page.</note>
         </trans-unit>
         <trans-unit id="Resx/Cancel" translate="yes" space="preserve">
@@ -242,7 +242,7 @@
           <note from="MultilingualBuild" annotates="source" priority="2">Text placed into the 'acknowledgements' page introducing the list of acknowledgements.</note>
         </trans-unit>
         <trans-unit id="Resx/RubbishBinName" translate="yes" space="preserve">
-          <source>Rubbish bin</source>
+          <source>Rubbish Bin</source>
           <target state="translated">Corbeille</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Rubbish bin' button, link, text, etc. - (String as short as possible).</note>
         </trans-unit>
@@ -646,7 +646,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/InitTourPrivacy_Title" translate="yes" space="preserve">
           <source>MEGA privacy</source>
-          <target state="translated">Vie privée avec MEGA</target>
+          <target state="translated">La confidentialité avec MEGA</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the title of the init tour page dedicated to the privacy. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/InitTourSpace1" translate="yes" space="preserve">
@@ -656,7 +656,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/InitTourSpace2" translate="yes" space="preserve">
           <source>50 GB of free space.</source>
-          <target state="translated">50 Go d’espace de stockage gratuits</target>
+          <target state="translated">50 Go gratuits d’espace de stockage</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label '50 GB of free space.' for the second part of the sentence 'register now and get 50 GB of free space.', to build this sentence in two colors into the init tour page. Don't forget to place '.' at the end of the string.</note>
         </trans-unit>
         <trans-unit id="Resx/InitTourSpace_Title" translate="yes" space="preserve">
@@ -686,7 +686,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/Advanced" translate="yes" space="preserve">
           <source>Advanced</source>
-          <target state="translated">Avancé</target>
+          <target state="translated">Paramètres avancés</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Advanced' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Help" translate="yes" space="preserve">
@@ -696,7 +696,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/CameraUploads" translate="yes" space="preserve">
           <source>Camera Uploads</source>
-          <target state="translated">Téléversements de la caméra</target>
+          <target state="translated">Téléversements de l’appareil photo</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Camera Uploads' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Contacts" translate="yes" space="preserve">
@@ -726,7 +726,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/SetupCameraUploadsTitle" translate="yes" space="preserve">
           <source>Set up camera uploads</source>
-          <target state="translated">Configurer les téléversements de la caméra</target>
+          <target state="translated">Configurer les téléversements de l’appareil photo</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label used like title for the "set up camera uploads" page - (String as short as possible)</note>
         </trans-unit>
         <trans-unit id="Resx/Skip" translate="yes" space="preserve">
@@ -843,7 +843,7 @@ Keep the code {1} because is for include currency in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/LastName" translate="yes" space="preserve">
           <source>Last name</source>
-          <target state="translated">Nom</target>
+          <target state="translated">Nom de famille</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Last name' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Month" translate="yes" space="preserve">
@@ -941,7 +941,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
         </trans-unit>
         <trans-unit id="Resx/ChoosePaymentMethod" translate="yes" space="preserve">
           <source>Choose payment method</source>
-          <target state="translated">Choisir le mode de paiement</target>
+          <target state="translated">Choisir un mode de paiement</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label to indicate the user that is needed choose a payment method for upgrade his account.</note>
         </trans-unit>
         <trans-unit id="Resx/NoPaymentMethodsAvailable" translate="yes" space="preserve">
@@ -1256,7 +1256,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/NoInternetConnection" translate="yes" space="preserve">
           <source>No internet connection</source>
-          <target state="translated">Aucune connexion Internet</target>
+          <target state="translated">Il n’y a pas de connexion à Internet</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty state when no internet connection - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/NoUploads" translate="yes" space="preserve">
@@ -1271,7 +1271,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_LastName" translate="yes" space="preserve">
           <source>Last name</source>
-          <target state="translated">Nom</target>
+          <target state="translated">Nom de famille</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Last name' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/SelectAll" translate="yes" space="preserve">
@@ -1311,7 +1311,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_DebugMode" translate="yes" space="preserve">
           <source>Debug mode</source>
-          <target state="translated">Mode débogage</target>
+          <target state="translated">Mode de débogage</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Debug mode' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_MemoryStatistics" translate="yes" space="preserve">
@@ -1486,7 +1486,7 @@ NOTE: Keep the capital letter if possible.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TakedownGuidance" translate="yes" space="preserve">
           <source>Takedown Guidance</source>
-          <target state="translated">Informations sur les retraits</target>
+          <target state="translated">Conseils sur les retraits</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Takedown Guidance' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_OpenBrowser" translate="yes" space="preserve">
@@ -1634,6 +1634,12 @@ NOTE: Max. length 20 characters.</note>
           <source>Resume session</source>
           <target state="translated">Reprendre la session</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Resume session' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_UseSpecificPort" translate="yes" space="preserve">
+          <source>Use port {0}</source>
+          <target state="translated">Use port {0}</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the checkbox of the dialog displayed to confirm change to staging server using a specific port.
+Keep the {0} code because is for include the port number in runtime.</note>
         </trans-unit>
       </group>
     </body>

@@ -23,12 +23,12 @@
         </trans-unit>
         <trans-unit id="Resx/Cancel" translate="yes" space="preserve">
           <source>Cancel</source>
-          <target state="translated">Відмінити</target>
+          <target state="translated">Скасувати</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Cancel' button, link, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CloudDriveName" translate="yes" space="preserve">
           <source>Cloud Drive</source>
-          <target state="translated">Хмарний Диск</target>
+          <target state="translated">Хмарний диск</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Cloud Drive' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Confirm" translate="yes" space="preserve">
@@ -48,7 +48,7 @@
         </trans-unit>
         <trans-unit id="Resx/Copy" translate="yes" space="preserve">
           <source>Copy</source>
-          <target state="translated">Скопіювати</target>
+          <target state="translated">Копіювати</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Copy' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_CreateAccount" translate="yes" space="preserve">
@@ -78,7 +78,7 @@
         </trans-unit>
         <trans-unit id="Resx/UI_GetLink" translate="yes" space="preserve">
           <source>Get link</source>
-          <target state="translated">Отримати посилання</target>
+          <target state="translated">Отримати ланку</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Get link' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/LoadingPreview" translate="yes" space="preserve">
@@ -242,8 +242,8 @@
           <note from="MultilingualBuild" annotates="source" priority="2">Text placed into the 'acknowledgements' page introducing the list of acknowledgements.</note>
         </trans-unit>
         <trans-unit id="Resx/RubbishBinName" translate="yes" space="preserve">
-          <source>Rubbish bin</source>
-          <target state="translated">Кошик</target>
+          <source>Rubbish Bin</source>
+          <target state="translated">Корзина</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Rubbish bin' button, link, text, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Off" translate="yes" space="preserve">
@@ -300,7 +300,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/Import" translate="yes" space="preserve">
           <source>Import</source>
-          <target state="translated">Імпорт</target>
+          <target state="translated">Імпортувати</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Import' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/LinkOptions" translate="yes" space="preserve">
@@ -335,7 +335,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/Storage" translate="yes" space="preserve">
           <source>Storage</source>
-          <target state="translated">Місце</target>
+          <target state="translated">Сховище</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Storage' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Accept" translate="yes" space="preserve">
@@ -470,7 +470,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/Monthly" translate="yes" space="preserve">
           <source>Monthly</source>
-          <target state="translated">Щомісячне</target>
+          <target state="translated">Щомісяця</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Monthly' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/NameAscendingSortOption" translate="yes" space="preserve">
@@ -681,7 +681,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_ChangePassword" translate="yes" space="preserve">
           <source>Change password</source>
-          <target state="translated">Змінити пароль</target>
+          <target state="translated">Change password</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Change password' button, menu, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Advanced" translate="yes" space="preserve">
@@ -878,7 +878,7 @@ Keep the code {1} because is for include currency in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/SelectedPlan" translate="yes" space="preserve">
           <source>You have selected the {0} Plan</source>
-          <target state="translated">Ви вибрали План %1</target>
+          <target state="translated">Ви вибрали План {0}</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label to indicate the selected plan during the payment process.
 Preserve the {0} code because is for include the name/type of the selected plan in runtime.</note>
         </trans-unit>
@@ -899,7 +899,7 @@ Preserve the {0} code because is for include the name/type of the selected plan 
         </trans-unit>
         <trans-unit id="Resx/StorageShort" translate="yes" space="preserve">
           <source>Storage</source>
-          <target state="translated">Місце</target>
+          <target state="translated">Сховище</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label abreviated for any 'Storage' button, link, text, title, etc. - (String as short as possible - MAX 10 characteres).</note>
         </trans-unit>
         <trans-unit id="Resx/Year" translate="yes" space="preserve">
@@ -925,7 +925,7 @@ Preserve the {0} code because is for include the name/type in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AccountRenewalNotice" translate="yes" space="preserve">
           <source>Your {0} subscription will be automatically rebilled on your {0} anniversary unless you log in to your account and cancel the subscription prior to the renewal date.</source>
-          <target state="translated">Вашу підписку {0} буде автоматично оновлено щорічно, доки ви не увійдете до свого облікового запису і не скасуєте оплату підписки до моменту оновлення.</target>
+          <target state="translated">Ваша підписка {0} буде автоматично продовжуватися щоперіоду {0}, доки ви не увійдете в акаунт і не скасуєте її, або не змінете дату оновлення.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label to indicate the renewal period of the purchased subscription. 
 Preserve the {0} code because is for include the renewal period string (Monthly or Annually) in runtime.</note>
         </trans-unit>
@@ -1634,6 +1634,12 @@ NOTE: Max. length 20 characters.</note>
           <source>Resume session</source>
           <target state="translated">Resume session</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Resume session' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_UseSpecificPort" translate="yes" space="preserve">
+          <source>Use port {0}</source>
+          <target state="translated">Use port {0}</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the checkbox of the dialog displayed to confirm change to staging server using a specific port.
+Keep the {0} code because is for include the port number in runtime.</note>
         </trans-unit>
       </group>
     </body>

@@ -17,7 +17,7 @@
     <SilverlightVersion>
     </SilverlightVersion>
     <SilverlightApplication>true</SilverlightApplication>
-    <SupportedCultures>ar;de;es;fr;he;id;it;ja;ko;nl;pl;pt-BR;ro;ru;th;tr;uk;vi;zh-Hans;zh-Hant</SupportedCultures>
+    <SupportedCultures>ar;de;es;fr;id;it;ja;ko;nl;pl;pt-BR;ro;ru;th;uk;vi;zh-Hans;zh-Hant</SupportedCultures>
     <XapOutputs>true</XapOutputs>
     <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
     <XapFilename>MegaApp_$(Configuration)_$(Platform).xap</XapFilename>
@@ -315,6 +315,9 @@
     </Compile>
     <Compile Include="..\common\Dialogs\ChangePasswordDialog.cs">
       <Link>Dialogs\ChangePasswordDialog.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Dialogs\ChangeToStagingServerDialog.cs">
+      <Link>Dialogs\ChangeToStagingServerDialog.cs</Link>
     </Compile>
     <Compile Include="..\common\Dialogs\MegaDialog.cs">
       <Link>Dialogs\MegaDialog.cs</Link>
@@ -1716,13 +1719,6 @@
       <DependentUpon>AppMessages.fr.xlf</DependentUpon>
       <culture>fr</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\AppMessages.he.resx">
-      <Link>Resources\AppMessages.he.resx</Link>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AppMessages.he.xlf</DependentUpon>
-      <culture>he</culture>
-    </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\AppMessages.id.resx">
       <Link>Resources\AppMessages.id.resx</Link>
       <AutoGen>True</AutoGen>
@@ -1799,13 +1795,6 @@
       <DependentUpon>AppMessages.th.xlf</DependentUpon>
       <culture>th</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\AppMessages.tr.resx">
-      <Link>Resources\AppMessages.tr.resx</Link>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AppMessages.tr.xlf</DependentUpon>
-      <culture>tr</culture>
-    </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\AppMessages.uk.resx">
       <Link>Resources\AppMessages.uk.resx</Link>
       <AutoGen>True</AutoGen>
@@ -1861,13 +1850,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ProgressMessages.fr.xlf</DependentUpon>
       <culture>fr</culture>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\ProgressMessages.he.resx">
-      <Link>Resources\ProgressMessages.he.resx</Link>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ProgressMessages.he.xlf</DependentUpon>
-      <culture>he</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\ProgressMessages.id.resx">
       <Link>Resources\ProgressMessages.id.resx</Link>
@@ -1939,13 +1921,6 @@
       <DependentUpon>ProgressMessages.th.xlf</DependentUpon>
       <culture>th</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\ProgressMessages.tr.resx">
-      <Link>Resources\ProgressMessages.tr.resx</Link>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ProgressMessages.tr.xlf</DependentUpon>
-      <culture>tr</culture>
-    </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\ProgressMessages.uk.resx">
       <Link>Resources\ProgressMessages.uk.resx</Link>
       <AutoGen>True</AutoGen>
@@ -2001,13 +1976,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UiResources.fr.xlf</DependentUpon>
       <culture>fr</culture>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\UiResources.he.resx">
-      <Link>Resources\UiResources.he.resx</Link>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UiResources.he.xlf</DependentUpon>
-      <culture>he</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\UiResources.id.resx">
       <Link>Resources\UiResources.id.resx</Link>
@@ -2100,13 +2068,6 @@
       <DependentUpon>UiResources.th.xlf</DependentUpon>
       <culture>th</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\UiResources.tr.resx">
-      <Link>Resources\UiResources.tr.resx</Link>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UiResources.tr.xlf</DependentUpon>
-      <culture>tr</culture>
-    </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\UiResources.uk.resx">
       <Link>Resources\UiResources.uk.resx</Link>
       <AutoGen>True</AutoGen>
@@ -2163,11 +2124,6 @@
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>AppMessages.fr.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\AppMessages.he.xlf">
-      <Link>Resources\AppMessages.he.xlf</Link>
-      <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>AppMessages.he.resx</LastGenOutput>
-    </XliffResource>
     <XliffResource Include="..\common\Resources\AppMessages.id.xlf">
       <Link>Resources\AppMessages.id.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
@@ -2218,11 +2174,6 @@
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>AppMessages.th.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\AppMessages.tr.xlf">
-      <Link>Resources\AppMessages.tr.xlf</Link>
-      <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>AppMessages.tr.resx</LastGenOutput>
-    </XliffResource>
     <XliffResource Include="..\common\Resources\AppMessages.uk.xlf">
       <Link>Resources\AppMessages.uk.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
@@ -2262,11 +2213,6 @@
       <Link>Resources\ProgressMessages.fr.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>ProgressMessages.fr.resx</LastGenOutput>
-    </XliffResource>
-    <XliffResource Include="..\common\Resources\ProgressMessages.he.xlf">
-      <Link>Resources\ProgressMessages.he.xlf</Link>
-      <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>ProgressMessages.he.resx</LastGenOutput>
     </XliffResource>
     <XliffResource Include="..\common\Resources\ProgressMessages.id.xlf">
       <Link>Resources\ProgressMessages.id.xlf</Link>
@@ -2318,11 +2264,6 @@
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>ProgressMessages.th.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\ProgressMessages.tr.xlf">
-      <Link>Resources\ProgressMessages.tr.xlf</Link>
-      <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>ProgressMessages.tr.resx</LastGenOutput>
-    </XliffResource>
     <XliffResource Include="..\common\Resources\ProgressMessages.uk.xlf">
       <Link>Resources\ProgressMessages.uk.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
@@ -2362,11 +2303,6 @@
       <Link>Resources\UiResources.fr.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>UiResources.fr.resx</LastGenOutput>
-    </XliffResource>
-    <XliffResource Include="..\common\Resources\UiResources.he.xlf">
-      <Link>Resources\UiResources.he.xlf</Link>
-      <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>UiResources.he.resx</LastGenOutput>
     </XliffResource>
     <XliffResource Include="..\common\Resources\UiResources.id.xlf">
       <Link>Resources\UiResources.id.xlf</Link>
@@ -2418,11 +2354,6 @@
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>UiResources.th.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\UiResources.tr.xlf">
-      <Link>Resources\UiResources.tr.xlf</Link>
-      <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>UiResources.tr.resx</LastGenOutput>
-    </XliffResource>
     <XliffResource Include="..\common\Resources\UiResources.uk.xlf">
       <Link>Resources\UiResources.uk.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
@@ -2445,7 +2376,7 @@
     </XliffResource>
   </ItemGroup>
   <ItemGroup>
-    <SDKReference Include="SQLite.WP80, Version=3.26.0">
+    <SDKReference Include="SQLite.WP80, Version=3.28.0">
       <Name>SQLite for Windows Phone</Name>
     </SDKReference>
   </ItemGroup>

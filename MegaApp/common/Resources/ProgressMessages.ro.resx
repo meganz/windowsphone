@@ -122,7 +122,7 @@
     <comment>Progress indicator message when canceling a transfer - (String as short as possible).</comment>
   </data>
   <data name="CleanRubbishBin" xml:space="preserve">
-    <value>Se goleşte coşul de gunoi...</value>
+    <value>Se golește coșul de gunoi...</value>
     <comment>Progress indicator message when emptying the rubbish bin - (String as short as possible).</comment>
   </data>
   <data name="CreditCardStore" xml:space="preserve">
@@ -130,12 +130,12 @@
     <comment>Progress indicator message when storing a credit card - (String as short as possible).</comment>
   </data>
   <data name="DeleteNode" xml:space="preserve">
-    <value>Se şterge '{0}'...</value>
+    <value>Se șterge '{0}'...</value>
     <comment>Progress indicator message when deleting a node (folder or file) indicating the name - (String as short as possible).
 Preserve the '{0}' code because is for include node name.</comment>
   </data>
   <data name="DownloadLink" xml:space="preserve">
-    <value>Se obţine adresa de descărcare...</value>
+    <value>Se obține adresa de descărcare...</value>
     <comment>Progress indicator message when retieving a download link - (String as short as possible).</comment>
   </data>
   <data name="FastLogin" xml:space="preserve">
@@ -143,31 +143,31 @@ Preserve the '{0}' code because is for include node name.</comment>
     <comment>Progress indicator message when resuming a session - (String as short as possible).</comment>
   </data>
   <data name="GetAccountDetails" xml:space="preserve">
-    <value>Se obţin detaliile contului...</value>
+    <value>Se obțin detaliile contului...</value>
     <comment>Progress indicator message when getting account details - (String as short as possible).</comment>
   </data>
   <data name="GetContactData" xml:space="preserve">
-    <value>Se obţin datele contactului...</value>
+    <value>Se obțin datele contactului...</value>
     <comment>Progress indicator message when getting contact details - (String as short as possible).</comment>
   </data>
   <data name="GetPaymentMethods" xml:space="preserve">
-    <value>Se obţin metodele de plată...</value>
+    <value>Se obțin metodele de plată...</value>
     <comment>Progress indicator message when getting payment methods - (String as short as possible).</comment>
   </data>
   <data name="GetPaymentUrl" xml:space="preserve">
-    <value>Se obţine URL-ul plăţii...</value>
+    <value>Se obține URL-ul plății...</value>
     <comment>Progress indicator message when getting a payment Url - (String as short as possible).</comment>
   </data>
   <data name="GetPreview" xml:space="preserve">
-    <value>Se obţine previzualizarea...</value>
+    <value>Se obține previzualizarea...</value>
     <comment>Progress indicator message when getting a preview - (String as short as possible).</comment>
   </data>
   <data name="GetUserData" xml:space="preserve">
-    <value>Se obţin date privind utilizatorul...</value>
+    <value>Se obțin date privind utilizatorul...</value>
     <comment>Progress indicator message when getting account details - (String as short as possible).</comment>
   </data>
   <data name="ImportFile" xml:space="preserve">
-    <value>Se importă fişierul...</value>
+    <value>Se importă fișierul...</value>
     <comment>Progress indicator message when importing a file - (String as short as possible).</comment>
   </data>
   <data name="InviteContactAdd" xml:space="preserve">
@@ -175,7 +175,7 @@ Preserve the '{0}' code because is for include node name.</comment>
     <comment>Progress indicator message when sending a contact request - (String as short as possible).</comment>
   </data>
   <data name="InviteContactDelete" xml:space="preserve">
-    <value>Se şterge cererea de contact...</value>
+    <value>Se șterge cererea de contact...</value>
     <comment>Progress indicator message when deleting a contact request - (String as short as possible).</comment>
   </data>
   <data name="InviteContactRemind" xml:space="preserve">
@@ -183,7 +183,7 @@ Preserve the '{0}' code because is for include node name.</comment>
     <comment>Progress indicator message when reminding a contact request - (String as short as possible).</comment>
   </data>
   <data name="LoadNodes" xml:space="preserve">
-    <value>Se construieşte vizualizarea...</value>
+    <value>Se construiește vizualizarea...</value>
     <comment>Progress indicator message when building a nodes view - (String as short as possible).</comment>
   </data>
   <data name="MoveNode" xml:space="preserve">
@@ -191,7 +191,7 @@ Preserve the '{0}' code because is for include node name.</comment>
     <comment>Progress indicator message when moving a node to a different parent - (String as short as possible).</comment>
   </data>
   <data name="NodeToTrash" xml:space="preserve">
-    <value>Se mută în coşul de gunoi...</value>
+    <value>Se mută în coșul de gunoi...</value>
     <comment>Progress indicator message when moving a node to the rubbish bin (trash) - (String as short as possible).</comment>
   </data>
   <data name="PauseTransfers" xml:space="preserve">
@@ -219,7 +219,7 @@ Preserve the '{0}' code because is for include node name.</comment>
     <comment>Progress indicator message when removing a node (file or folder) - (String as short as possible).</comment>
   </data>
   <data name="RenameNode" xml:space="preserve">
-    <value>Se redenumeşte...</value>
+    <value>Se redenumește...</value>
     <comment>Progress indicator message when renaming a node - (String as short as possible).</comment>
   </data>
   <data name="ReplyContactRequestAccept" xml:space="preserve">
@@ -263,23 +263,23 @@ Preserve the '{0}' code because is for include node name.</comment>
     <comment>Progress indicator message when confirming a MEGA account - (String as short as possible).</comment>
   </data>
   <data name="PM_CreateAccount" xml:space="preserve">
-    <value>Se creează contul...</value>
+    <value>Se creează contul…</value>
     <comment>Progress indicator message when creating a MEGA account - (String as short as possible).</comment>
   </data>
   <data name="PM_CreateFolder" xml:space="preserve">
-    <value>Creating folder…</value>
+    <value>Se creează folderul…</value>
     <comment>Progress indicator message when creating a folder - (String as short as possible).</comment>
   </data>
   <data name="PM_GetLink" xml:space="preserve">
-    <value>Se obţine linkul...</value>
+    <value>Se obține linkul...</value>
     <comment>Progress indicator message when getting a link to export a node - (String as short as possible).</comment>
   </data>
   <data name="PM_Login" xml:space="preserve">
-    <value>Se autentifică...</value>
+    <value>Se autentifică…</value>
     <comment>Progress indicator message when logging in - (String as short as possible).</comment>
   </data>
   <data name="PM_Logout" xml:space="preserve">
-    <value>Se deconectează...</value>
+    <value>Se deconectează…</value>
     <comment>Progress indicator message when logging out - (String as short as possible).</comment>
   </data>
   <data name="PM_RemoveLink" xml:space="preserve">
@@ -291,11 +291,11 @@ Preserve the '{0}' code because is for include node name.</comment>
     <comment>Progress indicator message when upgrading an account - (String as short as possible).</comment>
   </data>
   <data name="PM_OpenFileLink" xml:space="preserve">
-    <value>Se deschide linkul fişierului...</value>
+    <value>Se deschide linkul fișierului...</value>
     <comment>Progress indicator message when opening a file link to import/download - (String as short as possible).</comment>
   </data>
   <data name="PM_OpenFolderLink" xml:space="preserve">
-    <value>Se deschide linkul fişierului...</value>
+    <value>Se deschide linkul fișierului...</value>
     <comment>Progress indicator message when opening a folder link to import/download - (String as short as possible).</comment>
   </data>
   <data name="PM_CopyNode" xml:space="preserve">
@@ -311,31 +311,31 @@ Preserve the '{0}' code because is for include node name.</comment>
     <comment>Progress indicator message when validating purchase receipt - (String as short as possible).</comment>
   </data>
   <data name="PM_ApiLocked" xml:space="preserve">
-    <value>This process is taking longer than expected. Please wait.</value>
+    <value>Procesul durează mai mult decât era de așteptat. Te rugăm să aștepți...</value>
     <comment>Progress indicator message when the SDK is waiting for the server to complete a request due to an API lock (API error -3) - (String as short as possible).</comment>
   </data>
   <data name="PM_ApiRateLimit" xml:space="preserve">
-    <value>Too many requests. Please wait.</value>
+    <value>Prea multe cereri. Te rugăm să aștepți.</value>
     <comment>Progress indicator message when the SDK is waiting for the server to complete a request due to a rate limit (API error -4) - (String as short as possible).</comment>
   </data>
   <data name="PM_ConnectivityIssue" xml:space="preserve">
-    <value>Unable to reach MEGA. Please check your connectivity or try again later.</value>
+    <value>Nu se poate accesa MEGA. Te rugăm să verifici conectivitatea sau încearcă din nou mai târziu.</value>
     <comment>Progress indicator message when the SDK is waiting for the server to complete a request due to connectivity issue - (String as short as possible).</comment>
   </data>
   <data name="PM_ServersBusy" xml:space="preserve">
-    <value>Serverele sunt prea ocupate. Te rugăm să aştepţi.</value>
+    <value>Serverele sunt prea ocupate. Te rugăm să aștepți.</value>
     <comment>Progress indicator message when servers are too busy. SDK is waiting for the server to complete a request due to a HTTP error 500  - (String as short as possible).</comment>
   </data>
   <data name="PM_Restoring" xml:space="preserve">
-    <value>Restoring…</value>
+    <value>Se restaurează…</value>
     <comment>Progress indicator message when restoring node(s) from the rubbish bin - (String as short as possible).</comment>
   </data>
   <data name="PM_FetchNodes" xml:space="preserve">
-    <value>Requesting account data…</value>
+    <value>Se solicită datele contului…</value>
     <comment>Progress indicator message when fetching nodes - (String as short as possible).</comment>
   </data>
   <data name="PM_DecryptNodes" xml:space="preserve">
-    <value>Decrypting nodes…</value>
+    <value>Se decriptează nodurile…</value>
     <comment>Progress indicator message when decrypting nodes - (String as short as possible).</comment>
   </data>
 </root>

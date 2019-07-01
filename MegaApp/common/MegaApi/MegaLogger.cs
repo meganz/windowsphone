@@ -4,25 +4,28 @@
 //DEBUG and MAX are reserved for Debug builds
 
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Diagnostics;
-using System.Windows;
+using System.IO;
 using mega;
-using MegaApp.Resources;
-using MegaApp.Services;
 
+#if CAMERA_UPLOADS_SERVICE
+using Windows.Storage;
+#else
+using MegaApp.Services;
+#endif
+
+#if CAMERA_UPLOADS_SERVICE
+namespace ScheduledCameraUploadTaskAgent.MegaApi
+#else
 namespace MegaApp.MegaApi
+#endif
 {
     class MegaLogger : MLoggerInterface
     {
         public virtual void log(string time, int loglevel, string source, string message)
         {
-            String logLevelString;
-            switch((MLogLevel)loglevel)
+            string logLevelString;
+            switch ((MLogLevel)loglevel)
             {
                 case MLogLevel.LOG_LEVEL_DEBUG:
                     logLevelString = " (debug): ";
@@ -47,30 +50,48 @@ namespace MegaApp.MegaApi
                     break;
             }
 
-            if(!string.IsNullOrEmpty(source))
+            if (!string.IsNullOrEmpty(source))
             {
                 int index = source.LastIndexOf('\\');
-                if(index >=0 && source.Length > (index + 1))
+                if (index >= 0 && source.Length > (index + 1))
                 {
-                   source = source.Substring(index + 1);
+                    source = source.Substring(index + 1);
                 }
-                message += " (" + source + ")"; 
+                message += " (" + source + ")";
             }
 
+#if CAMERA_UPLOADS_SERVICE
+            Debug.WriteLine("{0}{1}CAMERA UPLOADS - {2}", time, logLevelString, message);
+
+            // If the APP log file exists (DEBUG mode enabled) append the "CAMERA UPLOADS" log messages.
+            string logFilePath = Path.Combine(ApplicationData.Current.LocalFolder.Path, "offline", "MEGA_UWP.log");
+            if (File.Exists(logFilePath))
+            {
+                try
+                {
+                    using (StreamWriter sw = File.AppendText(logFilePath))
+                    {
+                        sw.WriteLine("{0}{1}CAMERA UPLOADS - {2}", time, logLevelString, message);
+                    }
+                }
+                catch (Exception) { }
+            }
+#else
             Debug.WriteLine("{0}{1}{2}", time, logLevelString, message);
 
-            if (DebugService.DebugSettings != null &&
-                DebugService.DebugSettings.IsDebugMode)
+            if (DebugService.DebugSettings != null && DebugService.DebugSettings.IsDebugMode)
             {
-                try 
+                try
                 {
                     using (StreamWriter sw = File.AppendText(AppService.GetFileLogPath()))
                     {
                         sw.WriteLine("{0}{1}{2}", time, logLevelString, message);
+                        sw.Flush();
                     }
                 }
-                catch (Exception) { }                
+                catch (Exception) { }
             }
+#endif
         }
     }
 }

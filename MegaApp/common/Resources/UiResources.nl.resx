@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Add" xml:space="preserve">
-    <value>Toevoegen</value>
+    <value>Voeg toe</value>
     <comment>Label for any 'Add' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="AddFolder" xml:space="preserve">
@@ -138,7 +138,7 @@
     <comment>Label for any 'Confirm' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Copy" xml:space="preserve">
-    <value>Kopiëren</value>
+    <value>Kopieer</value>
     <comment>Label for any 'Copy' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="EmptyFolder" xml:space="preserve">
@@ -202,11 +202,11 @@
     <comment>Text placed into the 'login' page just after a checkbox to select the option to stay logged into the app.</comment>
   </data>
   <data name="Remove" xml:space="preserve">
-    <value>Verwijder</value>
+    <value>Verwijderen</value>
     <comment>Label for any 'Remove' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Rename" xml:space="preserve">
-    <value>Hernoemen</value>
+    <value>Naam wijzigen</value>
     <comment>Label for any 'Rename' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="RenameItem" xml:space="preserve">
@@ -294,7 +294,7 @@
     <comment>Label for 'File upload' option of the dialog shown to upload nodes - (String as short as possible).</comment>
   </data>
   <data name="Import" xml:space="preserve">
-    <value>Importeer</value>
+    <value>Importeren</value>
     <comment>Label for any 'Import' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="LinkOptions" xml:space="preserve">
@@ -817,7 +817,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
     <comment>Text to show when a user wants to add a contact to type the email address of the new contact.</comment>
   </data>
   <data name="Search" xml:space="preserve">
-    <value>Zoeken</value>
+    <value>Zoek</value>
     <comment>Label for any 'Search' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="Select" xml:space="preserve">
@@ -1321,7 +1321,7 @@ Preserve the PIN uppercase word.</comment>
 NOTE: Max. length 20 characters.</comment>
   </data>
   <data name="UI_Close" xml:space="preserve">
-    <value>Sluiten</value>
+    <value>Sluit</value>
     <comment>Label for any 'Close' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_TestPassword" xml:space="preserve">
@@ -1377,7 +1377,7 @@ NOTE: Max. length 20 characters.</comment>
     <comment>Label for any 'Verify' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_CopySeed" xml:space="preserve">
-    <value>Copy seed</value>
+    <value>Seed kopiëren</value>
     <comment>Label of the button to copy the seed to enable the Multi-Factor Authentication - (String as short as possible).</comment>
   </data>
   <data name="UI_LostAuthDeviceQuestion" xml:space="preserve">
@@ -1405,11 +1405,11 @@ NOTE: Max. length 20 characters.</comment>
     <comment>Label for any 'Open in...' button, link, text, title, etc. to open a file or other kind of resource with a certain app - (String as short as possible).</comment>
   </data>
   <data name="UI_MFA_SetupStep1" xml:space="preserve">
-    <value>Scan or copy the seed to your Authenticator App. Be sure to backup this seed to a safe place in case you lose your device.</value>
+    <value>Scan of kopieer de seed naar uw Authenticator Applicatie. Zorg ervoor dat u een backup maakt op een veilige plek voor het geval u uw apparaat verliest.</value>
     <comment>Label for the step 1 to setup the Multi-Factor Authentication.</comment>
   </data>
   <data name="UI_MFA_SetupStep2" xml:space="preserve">
-    <value>After setting up your seed on your Authenticator app enter the 6-digit code provided.</value>
+    <value>Nadat u uw seed heeft ingesteld op uw Authenticator Applicatie voer de 6-cijferige bijgevoegde code in.</value>
     <comment>Label for the step 2 to setup the Muti-Factor Authentication.</comment>
   </data>
   <data name="UI_FindApp" xml:space="preserve">
@@ -1423,5 +1423,10 @@ NOTE: Max. length 20 characters.</comment>
   <data name="UI_ResumeSession" xml:space="preserve">
     <value>Sessie hervatten</value>
     <comment>Label for any 'Resume session' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_UseSpecificPort" xml:space="preserve">
+    <value>Use port {0}</value>
+    <comment>Label for the checkbox of the dialog displayed to confirm change to staging server using a specific port.
+Keep the {0} code because is for include the port number in runtime.</comment>
   </data>
 </root>

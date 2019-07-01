@@ -234,11 +234,11 @@
     <comment>Label for the name of the 'PRO III' account type. Try to preserve uppercase - (NO-TRANSLATION).</comment>
   </data>
   <data name="AR_SdkLink" xml:space="preserve">
-    <value>https://github.com/meganz/sdk/tree/4ca0a05e5808226d57f2a7876550cc68ca66190c</value>
+    <value>https://github.com/meganz/sdk/tree/3dc732c1a8ee0c80094d448ab0eda723286d5308</value>
     <comment>Link to respository of the current SDK used in the app - (NO-TRANSLATION).</comment>
   </data>
   <data name="AR_SdkVersion" xml:space="preserve">
-    <value>4ca0a05</value>
+    <value>3dc732c</value>
     <comment>Current SDK version used in the app - (NO-TRANSLATION).</comment>
   </data>
   <data name="AR_DataProtectionRegulationUrl" xml:space="preserve">
@@ -276,5 +276,9 @@
   <data name="AR_StagingUrl" xml:space="preserve">
     <value>https://staging.api.mega.co.nz/</value>
     <comment>URL of the staging API server - (NO-TRANSLATION).</comment>
+  </data>
+  <data name="AR_StagingUrlPort444" xml:space="preserve">
+    <value>https://staging.api.mega.co.nz:444/</value>
+    <comment>URL of the staging API server using port 444 - (NO-TRANSLATION).</comment>
   </data>
 </root>

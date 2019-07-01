@@ -1406,6 +1406,15 @@ namespace MegaApp.Services
             App.AppInformation.PickerOrAsyncDialogIsOpen = false;
         }
 
+        /// <summary>
+        /// Show a dialog to change the API URL to staging server
+        /// </summary>
+        public static async Task<bool> ShowChangeToStagingServerDialog()
+        {
+            var dialog = new ChangeToStagingServerDialog();
+            return await dialog.ShowDialogAsync();
+        }
+
         #endregion
     }
 }

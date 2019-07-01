@@ -25,7 +25,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Bin\Debug</OutputPath>
-    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;SILVERLIGHT;WINDOWS_PHONE;CAMERA_UPLOADS_SERVICE</DefineConstants>
     <NoStdLib>true</NoStdLib>
     <NoConfig>true</NoConfig>
     <ErrorReport>prompt</ErrorReport>
@@ -35,7 +35,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>Bin\Release</OutputPath>
-    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE;CAMERA_UPLOADS_SERVICE</DefineConstants>
     <NoStdLib>true</NoStdLib>
     <NoConfig>true</NoConfig>
     <ErrorReport>prompt</ErrorReport>
@@ -46,7 +46,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Bin\x86\Debug</OutputPath>
-    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;SILVERLIGHT;WINDOWS_PHONE;CAMERA_UPLOADS_SERVICE</DefineConstants>
     <NoStdLib>true</NoStdLib>
     <NoConfig>true</NoConfig>
     <ErrorReport>prompt</ErrorReport>
@@ -56,7 +56,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>Bin\x86\Release</OutputPath>
-    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE;CAMERA_UPLOADS_SERVICE</DefineConstants>
     <NoStdLib>true</NoStdLib>
     <NoConfig>true</NoConfig>
     <ErrorReport>prompt</ErrorReport>
@@ -67,7 +67,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Bin\ARM\Debug</OutputPath>
-    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;SILVERLIGHT;WINDOWS_PHONE;CAMERA_UPLOADS_SERVICE</DefineConstants>
     <NoStdLib>true</NoStdLib>
     <NoConfig>true</NoConfig>
     <ErrorReport>prompt</ErrorReport>
@@ -77,21 +77,30 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>Bin\ARM\Release</OutputPath>
-    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE;CAMERA_UPLOADS_SERVICE</DefineConstants>
     <NoStdLib>true</NoStdLib>
     <NoConfig>true</NoConfig>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="..\common\MegaApi\MegaInputStream.cs">
+      <Link>MegaApi\MegaInputStream.cs</Link>
+    </Compile>
+    <Compile Include="..\common\MegaApi\MegaLogger.cs">
+      <Link>MegaApi\MegaLogger.cs</Link>
+    </Compile>
     <Compile Include="..\common\MegaApi\MegaRandomNumberProvider.cs">
       <Link>MegaApi\MegaRandomNumberProvider.cs</Link>
     </Compile>
+    <Compile Include="..\common\Services\LogService.cs">
+      <Link>Services\LogService.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Services\NetworkService.cs">
+      <Link>Services\NetworkService.cs</Link>
+    </Compile>
     <Compile Include="Services\ErrorProcessingService.cs" />
-    <Compile Include="Services\LogService.cs" />
     <Compile Include="MegaApi\MegaGlobalListener.cs" />
-    <Compile Include="MegaInputStream.cs" />
-    <Compile Include="MegaApi\MegaLogger.cs" />
     <Compile Include="MegaApi\MegaRequestListener.cs" />
     <Compile Include="MegaApi\MegaTransferListener.cs" />
     <Compile Include="ScheduledAgent.cs" />

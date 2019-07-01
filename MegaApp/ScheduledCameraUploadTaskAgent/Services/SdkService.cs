@@ -46,9 +46,6 @@ namespace ScheduledCameraUploadTaskAgent.Services
             //You can send messages to the logger using MEGASDK.log(), those messages will be received
             //in the active logger
             MegaSDK.log(MLogLevel.LOG_LEVEL_INFO, "Example log message");
-
-            // Set the ID for statistics
-            MegaSDK.setStatsID(Convert.ToBase64String((byte[])DeviceExtendedProperties.GetValue("DeviceUniqueId")));
         }
 
         /// <summary>
@@ -61,7 +58,8 @@ namespace ScheduledCameraUploadTaskAgent.Services
             if (!Directory.Exists(folderCameraUploadService))
                 Directory.CreateDirectory(folderCameraUploadService);
 
-            return new MegaSDK(
+            // Initialize a MegaSDK instance
+            var newMegaSDK = new MegaSDK(
                 "Z5dGhQhL",
                 String.Format("{0}/{1}/{2}",
                     ScheduledAgent.GetBackgroundAgentUserAgent(),
@@ -69,6 +67,34 @@ namespace ScheduledCameraUploadTaskAgent.Services
                     DeviceStatus.DeviceName),
                 folderCameraUploadService,
                 new MegaRandomNumberProvider());
+
+            // Use custom DNS servers in the new SDK instance
+            SetDnsServers(newMegaSDK, false);
+
+            return newMegaSDK;
+        }
+
+        /// <summary>
+        /// Use custom DNS servers in the selected SDK instance.
+        /// </summary>
+        /// <param name="megaSdk">SDK instance to set the custom DNS servers.</param>
+        /// <param name="refresh">Indicates if should refresh the previously stored addresses.</param>
+        private static void SetDnsServers(MegaSDK megaSdk, bool refresh = true)
+        {
+            var dnsServers = NetworkService.GetMegaDnsServers(refresh);
+            if (!string.IsNullOrWhiteSpace(dnsServers))
+                megaSdk.setDnsServers(dnsServers);
+        }
+
+        /// <summary>
+        /// Use custom DNS servers in all the SDK instances.
+        /// </summary>
+        /// <param name="refresh">Indicates if should refresh the previously stored addresses.</param>
+        public static void SetDnsServers(bool refresh = true)
+        {
+            var dnsServers = NetworkService.GetMegaDnsServers(refresh);
+            if (!string.IsNullOrWhiteSpace(dnsServers))
+                MegaSdk.setDnsServers(dnsServers);
         }
     }
 }

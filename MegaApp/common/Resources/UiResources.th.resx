@@ -130,7 +130,7 @@
     <comment>Label for any 'Cancel' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="CloudDriveName" xml:space="preserve">
-    <value>คลาวด์ไดร์ฟ</value>
+    <value>คลาวด์ไดรฟ์</value>
     <comment>Label for any 'Cloud Drive' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Confirm" xml:space="preserve">
@@ -142,7 +142,7 @@
     <comment>Label for any 'Copy' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="EmptyFolder" xml:space="preserve">
-    <value>โฟล์เดอร์ว่าง</value>
+    <value>โฟลเดอร์ว่างเปล่า</value>
     <comment>Label for the background of an empty forder page - (String as short as possible).</comment>
   </data>
   <data name="EmptyTransfers" xml:space="preserve">
@@ -322,7 +322,7 @@
     <comment>Label for 'Image upload' option of the dialog shown to upload nodes - (String as short as possible).</comment>
   </data>
   <data name="Storage" xml:space="preserve">
-    <value>พื้นที่จัดเก็บข้อมูล</value>
+    <value>ที่เก็บข้อมูล</value>
     <comment>Label for any 'Storage' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Accept" xml:space="preserve">
@@ -654,7 +654,7 @@
     <comment>Label to indicate the user that is needed choose a renewal period for upgrade his account.</comment>
   </data>
   <data name="City" xml:space="preserve">
-    <value>นคร</value>
+    <value>เมือง/อำเภอ</value>
     <comment>Label for any 'City' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Country" xml:space="preserve">
@@ -735,7 +735,7 @@ Preserve the {0} code because is for include the name/type of the selected plan 
     <comment>Label for any 'State' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="StorageShort" xml:space="preserve">
-    <value>พื้นที่จัดเก็บข้อมูล</value>
+    <value>ที่เก็บข้อมูล</value>
     <comment>Label abreviated for any 'Storage' button, link, text, title, etc. - (String as short as possible - MAX 10 characteres).</comment>
   </data>
   <data name="Year" xml:space="preserve">
@@ -977,7 +977,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Saved for offline' button, link, text, title, etc. - (String as short as possible, LESS THAN 22 CHARS).</comment>
   </data>
   <data name="EmptyCloudDrive" xml:space="preserve">
-    <value>ไม่มีไฟล์ใดๆ</value>
+    <value>ไม่มีไฟล์ในคลาวด์ไดรฟ์ของคุณ</value>
     <comment>Label for the background of an empty cloud drive page - (String as short as possible).</comment>
   </data>
   <data name="EmptyOffline" xml:space="preserve">
@@ -1037,7 +1037,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Upgrade account' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_ChangePassword" xml:space="preserve">
-    <value>เปลี่ยนรหัส</value>
+    <value>เปลี่ยนรหัสผ่าน</value>
     <comment>Label for any 'Change password' button, menu, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_CancelSubscription" xml:space="preserve">
@@ -1423,5 +1423,10 @@ NOTE: Max. length 20 characters.</comment>
   <data name="UI_ResumeSession" xml:space="preserve">
     <value>กลับมาทำงานต่อ</value>
     <comment>Label for any 'Resume session' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_UseSpecificPort" xml:space="preserve">
+    <value>Use port {0}</value>
+    <comment>Label for the checkbox of the dialog displayed to confirm change to staging server using a specific port.
+Keep the {0} code because is for include the port number in runtime.</comment>
   </data>
 </root>

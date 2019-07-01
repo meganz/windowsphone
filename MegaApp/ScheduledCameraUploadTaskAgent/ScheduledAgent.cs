@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using Microsoft.Phone.Net.NetworkInformation;
 using Microsoft.Phone.Scheduler;
 using Microsoft.Xna.Framework.Media;
 using Windows.Storage;
@@ -23,13 +24,37 @@ namespace ScheduledCameraUploadTaskAgent
         /// </remarks>
         static ScheduledAgent()
         {
+            // Initialize SDK parameters
             SdkService.InitializeSdkParams();
+
+            // Initialize the network parameters
+            NetworkService.InitializeNetworkParams();
+
+            // Subscribe to the NetworkAvailabilityChanged event
+            DeviceNetworkInformation.NetworkAvailabilityChanged +=
+                new EventHandler<NetworkNotificationEventArgs>(NetworkAvailabilityChanged);            
 
             // Subscribe to the managed exception handler
             Deployment.Current.Dispatcher.BeginInvoke(delegate
             {
                 Application.Current.UnhandledException += UnhandledException;
             });
+        }
+
+        // Code to execute when the application detects a Network change.
+        private static void NetworkAvailabilityChanged(object sender, NetworkNotificationEventArgs e)
+        {
+            switch (e.NotificationType)
+            {
+                case NetworkNotificationType.InterfaceConnected:
+                case NetworkNotificationType.CharacteristicUpdate:
+                    NetworkService.CheckNetworkChange();
+                    break;
+
+                case NetworkNotificationType.InterfaceDisconnected:
+                default:
+                    break;
+            }
         }
 
         /// Code to execute on Unhandled Exceptions
@@ -56,9 +81,16 @@ namespace ScheduledCameraUploadTaskAgent
             // Initialisation SDK succeeded
             scheduledAgent = this;
 
+            // Check for network changes
+            NetworkService.CheckNetworkChange();
+
             // Set the API to use depending on the settings
-            SdkService.MegaSdk.changeApiUrl(SettingsService.LoadSetting<bool>("{BA40B745-D0F5-4AD5-A539-44B1403A9EB8}", false) ?
-                "https://staging.api.mega.co.nz/" : "https://g.api.mega.co.nz/");
+            if (SettingsService.LoadSetting<bool>("{BA40B745-D0F5-4AD5-A539-44B1403A9EB8}", false))
+                SdkService.MegaSdk.changeApiUrl("https://staging.api.mega.co.nz/");
+            else if (SettingsService.LoadSetting<bool>("{E53E24D2-5CD9-410C-BC3A-6DD2A88C81EE}", false))
+                SdkService.MegaSdk.changeApiUrl("https://staging.api.mega.co.nz:444/", true);
+            else
+                SdkService.MegaSdk.changeApiUrl("https://g.api.mega.co.nz/");
 
             // Log message to indicate that the service is invoked and the last exit reason
             LogService.Log(MLogLevel.LOG_LEVEL_INFO, "Service invoked. Last exit reason: " +  
@@ -353,7 +385,7 @@ namespace ScheduledCameraUploadTaskAgent
 
         public static string GetBackgroundAgentUserAgent()
         {
-            return String.Format("MEGAWindowsPhoneBackgroundAgent/{0}", "1.0.0.0");
+            return String.Format("MEGAWindowsPhoneBackgroundAgent/{0}", "3.0.0.0");
         }
 
         //private static void ShowAbortToast(string message)

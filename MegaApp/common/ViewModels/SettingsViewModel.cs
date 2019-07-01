@@ -78,8 +78,12 @@ namespace MegaApp.ViewModels
 
         private async void Initialize()
         {
-            this.AppVersion = SettingsService.LoadSetting<bool>(SettingsResources.UseStagingServer, false) ?
-                string.Format("{0} (staging)", AppService.GetAppVersion()) : AppService.GetAppVersion();
+            if (SettingsService.LoadSetting<bool>(SettingsResources.UseStagingServer, false))
+                this.AppVersion = string.Format("{0} (staging)", AppService.GetAppVersion());
+            else if (SettingsService.LoadSetting<bool>(SettingsResources.UseStagingServerPort444, false))
+                this.AppVersion = string.Format("{0} (staging:444)", AppService.GetAppVersion());
+            else
+                this.AppVersion = AppService.GetAppVersion();
 
             this.MegaSdkVersion = AppService.GetMegaSDK_Version();
 

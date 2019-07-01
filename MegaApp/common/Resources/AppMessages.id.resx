@@ -1560,4 +1560,12 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
     <value>Quota terlewati</value>
     <comment>Title of the dialog displayed when a user exceeds the storage space limits of the account - (String as short as possible).</comment>
   </data>
+  <data name="AM_ChangeToStagingServer" xml:space="preserve">
+    <value>Anda yakin ingin berganti ke server uji? Akun Anda mungkin mengalami masalah yang tidak dapat diperbaiki</value>
+    <comment>Message of the alert dialog when the user is changing the API URL to staging.</comment>
+  </data>
+  <data name="AM_ChangeToStagingServer_Title" xml:space="preserve">
+    <value>Ubah ke server uji?</value>
+    <comment>Title of the alert dialog when the user is changing the API URL to staging.</comment>
+  </data>
 </root>

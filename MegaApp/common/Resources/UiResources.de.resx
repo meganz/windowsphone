@@ -817,7 +817,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
     <comment>Text to show when a user wants to add a contact to type the email address of the new contact.</comment>
   </data>
   <data name="Search" xml:space="preserve">
-    <value>Suche</value>
+    <value>Suchen</value>
     <comment>Label for any 'Search' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="Select" xml:space="preserve">
@@ -877,7 +877,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
     <comment>Label for any 'Ignored' button, link, text, label, etc. - (String as short as possible).</comment>
   </data>
   <data name="Pending" xml:space="preserve">
-    <value>In Warteschlage</value>
+    <value>Unbestätigt</value>
     <comment>Label for any 'Pending' button, link, text, label, etc. - (String as short as possible).</comment>
   </data>
   <data name="Reminded" xml:space="preserve">
@@ -1205,7 +1205,7 @@ Keep the code {1} because is for include currency in runtime.</comment>
     <comment>Label for the state of a transfer when is being retrying - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStateUploaded" xml:space="preserve">
-    <value>Erstellt</value>
+    <value>Hochgeladen am</value>
     <comment>Label for the state of an upload transfer when is finished - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStateUploading" xml:space="preserve">
@@ -1221,7 +1221,7 @@ Keep the code {1} because is for include currency in runtime.</comment>
     <comment>Label for any 'Cancel uploads' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_Completed" xml:space="preserve">
-    <value>Beendet</value>
+    <value>Abgeschlossen</value>
     <comment>Label for any 'Completed' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_NoCompletedTransfers" xml:space="preserve">
@@ -1288,7 +1288,7 @@ Preserve the PIN uppercase word.</comment>
     <comment>Label for the title of the "Legal and Policies" section which include links to the Terms of Service, Privacy Policy, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_Copyright" xml:space="preserve">
-    <value>Copyright</value>
+    <value>Urheberrecht</value>
     <comment>Label for any 'Copyright' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_LearnMore" xml:space="preserve">
@@ -1353,7 +1353,7 @@ NOTE: Max. length 20 characters.</comment>
     <comment>Label for any 'Warning' title, message, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_EnableTwoFactorAuth" xml:space="preserve">
-    <value>Enable Two-Factor Authentication</value>
+    <value>Zwei-Faktor-Authentifizierung freischalten</value>
     <comment>Label for the "toggle" or "switch" button to enable/disable the Two-Factor Authentication.</comment>
   </data>
   <data name="UI_TwoFactorAuth" xml:space="preserve">
@@ -1417,11 +1417,16 @@ NOTE: Max. length 20 characters.</comment>
     <comment>Label for any 'Find app' button, link, text, title, etc, to find an app to open a file, resource, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_ClearRubbishBin" xml:space="preserve">
-    <value>Clear Rubbish Bin</value>
+    <value>Papierkorb leeren</value>
     <comment>Label for a 'Clear Rubbish Bin' button to clear the rubbish bin content - (String as short as possible).</comment>
   </data>
   <data name="UI_ResumeSession" xml:space="preserve">
     <value>Resume session</value>
     <comment>Label for any 'Resume session' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_UseSpecificPort" xml:space="preserve">
+    <value>Use port {0}</value>
+    <comment>Label for the checkbox of the dialog displayed to confirm change to staging server using a specific port.
+Keep the {0} code because is for include the port number in runtime.</comment>
   </data>
 </root>

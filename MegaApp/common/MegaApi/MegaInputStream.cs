@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.IO;
+﻿using System.IO;
 using mega;
 
+#if CAMERA_UPLOADS_SERVICE
+namespace ScheduledCameraUploadTaskAgent.MegaApi
+#else
 namespace MegaApp.MegaApi
+#endif
 {
     class MegaInputStream : MInputStream
     {

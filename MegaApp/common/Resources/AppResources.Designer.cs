@@ -196,7 +196,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a https://github.com/meganz/sdk/tree/4ca0a05e5808226d57f2a7876550cc68ca66190c.
+        ///   Busca una cadena traducida similar a https://github.com/meganz/sdk/tree/3dc732c1a8ee0c80094d448ab0eda723286d5308.
         /// </summary>
         public static string AR_SdkLink {
             get {
@@ -205,7 +205,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a 4ca0a05.
+        ///   Busca una cadena traducida similar a 3dc732c.
         /// </summary>
         public static string AR_SdkVersion {
             get {
@@ -219,6 +219,15 @@ namespace MegaApp.Resources {
         public static string AR_StagingUrl {
             get {
                 return ResourceManager.GetString("AR_StagingUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a https://staging.api.mega.co.nz:444/.
+        /// </summary>
+        public static string AR_StagingUrlPort444 {
+            get {
+                return ResourceManager.GetString("AR_StagingUrlPort444", resourceCulture);
             }
         }
         

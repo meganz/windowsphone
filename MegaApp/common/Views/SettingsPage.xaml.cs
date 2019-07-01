@@ -108,17 +108,17 @@ namespace MegaApp.Views
             NavigateService.NavigateTo(typeof(MyAccountPage), NavigationParameter.Normal);
         }
 
-        private void OnMegaHeaderLogoManipulationStarted(object sender, ManipulationStartedEventArgs e)
+        private void OnAppVersionManipulationStarted(object sender, ManipulationStartedEventArgs e)
         {
             SdkService.ChangeApiUrlActionStarted();
         }
 
-        private void OnMegaHeaderLogoManipulationFinished(object sender, ManipulationCompletedEventArgs e)
+        private void OnAppVersionManipulationFinished(object sender, ManipulationCompletedEventArgs e)
         {
             SdkService.ChangeApiUrlActionFinished();
         }
 
-        private void OnSdkVersionTapped(object sender, GestureEventArgs e)
+        private void OnAppVersionTapped(object sender, GestureEventArgs e)
         {
             DebugService.ChangeStatusAction();
         }
